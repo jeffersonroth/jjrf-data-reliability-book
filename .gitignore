@@ -1,0 +1,8 @@
+book
+
+# Other
+.vscode/
+.DS_Store
+.idea/
+**/nohup.out
+**/pre-commit.log
