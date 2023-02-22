@@ -689,10 +689,6 @@ Business Intelligence specialists and Data Analysts can generate reports and dev
 <p><strong>Progression</strong>: getting data in one place is a necessary step before progressing to other stages because loading data from one source makes it easier to work with BI tools. Data Lake helps you make data cleaner and error-free data that has less repetition.</p>
 <p><strong>Costs</strong>: S3 repositories are a cost-efficient storage of large volumes of data.</p>
 <h2 id="data-lake-architecture"><a class="header" href="#data-lake-architecture">Data Lake Architecture</a></h2>
-<blockquote>
-<p>Data Lakes are often structured in zones or layers models. These models define in which processing degrees (raw, cleansed, aggregated) data are available in the data lake, and how they are governed (regarding access rights, data quality, and responsibilities).</p>
-</blockquote>
-<p>Zones are similar to the layers in data warehousing, but data may not move through all zones or even move back.</p>
 <div style="position: relative; width: 100%; height: 0; padding-top: 50.0000%;
  padding-bottom: 0; box-shadow: 0 2px 8px 0 rgba(63,69,81,0.16); margin-top: 1.6em; margin-bottom: 0.9em; overflow: hidden;
  border-radius: 8px; will-change: transform;">
@@ -701,7 +697,19 @@ Business Intelligence specialists and Data Analysts can generate reports and dev
   </iframe>
 </div>
 <a href="https:&#x2F;&#x2F;www.canva.com&#x2F;design&#x2F;DAFbUxswrb4&#x2F;view?utm_content=DAFbUxswrb4&amp;utm_campaign=designshare&amp;utm_medium=embeds&amp;utm_source=link" target="_blank" rel="noopener"><p style="text-align: center;">Data Lake Architecture Framework.</p></a>
+<blockquote>
+<p>Data Lakes are often structured in zones or layers models. These models define in which processing degrees (raw, cleansed, aggregated) data are available in the data lake, and how they are governed (regarding access rights, data quality, and responsibilities).</p>
+</blockquote>
+<p>Zones are similar to the layers in data warehousing, but data may not move through all zones or even move back.</p>
 <h3 id="layers"><a class="header" href="#layers">Layers</a></h3>
+<div style="position: relative; width: 100%; height: 0; padding-top: 35.0000%;
+ padding-bottom: 0; box-shadow: 0 2px 8px 0 rgba(63,69,81,0.16); margin-top: 1.6em; margin-bottom: 0.9em; overflow: hidden;
+ border-radius: 8px; will-change: transform;">
+  <iframe loading="lazy" style="position: absolute; width: 100%; height: 100%; top: 0; left: 0; border: none; padding: 0;margin: 0;"
+    src="https:&#x2F;&#x2F;www.canva.com&#x2F;design&#x2F;DAFbVHIphys&#x2F;view?embed" allowfullscreen="allowfullscreen" allow="fullscreen">
+  </iframe>
+</div>
+<a href="https:&#x2F;&#x2F;www.canva.com&#x2F;design&#x2F;DAFbVHIphys&#x2F;view?utm_content=DAFbVHIphys&amp;utm_campaign=designshare&amp;utm_medium=embeds&amp;utm_source=link" target="_blank" rel="noopener"><p style="text-align: center;">Data Lake Layers.</p></a>
 <p>The following data lake model approach is structured in layers:</p>
 <ul>
 <li>Ingestion Layer</li>
@@ -710,10 +718,10 @@ Business Intelligence specialists and Data Analysts can generate reports and dev
 <li>Insights Layer</li>
 <li>Unified Operations Layer</li>
 </ul>
+<p>The <strong>Raw Data</strong> entering the Data Lake consists of the organizations internal data (Operational Systems), specially relational data from databases, also streaming and batch data from data partners.</p>
+<p>In the other extreme, representing the data leaving the Data Lake, the <strong>Business Systems</strong>, consists of databases, the Data Warehouse, dashboards, reports, and external data connections.</p>
 <p>The first three layers constitute the medallion architecture, which is a is a data design pattern used to logically organize data in a Data Lake (similar as in a Data Lakehouse), with the goal of incrementally and progressively improving the structure and quality of data as it flows through each layer of the architecture (from Bronze ⇒ Silver ⇒ Gold layer tables).
 Medallion architectures are sometimes also referred to as &quot;multi-hop&quot; architectures.</p>
-<p>#TODO: draw and insert here diagram with data lake architecture in layers.
-Data Lake Architecture - Layers</p>
 <h4 id="ingestion-layer-bronze"><a class="header" href="#ingestion-layer-bronze">Ingestion Layer (Bronze)</a></h4>
 <blockquote>
 <p>The purpose of the Ingestion Layer of the Data Lake Architecture is to ingest raw data into the Data Lake. There is no data modification in this layer. This is where we land all the data from external source systems.</p>
@@ -761,7 +769,15 @@ While QuickSight doesn’t connect directly to the data lake, integration with A
 </blockquote>
 <p>It includes auditing and proficiency management, data management, workflow management. AWS data lake environments and monitoring tools and best practices are described here.</p>
 <h3 id="zones"><a class="header" href="#zones">Zones</a></h3>
-<p>The following data lake approach is explored by the University of Stuttgart and Bosch GmbH, and known as Zone Reference Model for Enterprise-Grade Data Lake Management. It consists of:</p>
+<div style="position: relative; width: 100%; height: 0; padding-top: 35.0000%;
+ padding-bottom: 0; box-shadow: 0 2px 8px 0 rgba(63,69,81,0.16); margin-top: 1.6em; margin-bottom: 0.9em; overflow: hidden;
+ border-radius: 8px; will-change: transform;">
+  <iframe loading="lazy" style="position: absolute; width: 100%; height: 100%; top: 0; left: 0; border: none; padding: 0;margin: 0;"
+    src="https:&#x2F;&#x2F;www.canva.com&#x2F;design&#x2F;DAFbVKs6Or4&#x2F;view?embed" allowfullscreen="allowfullscreen" allow="fullscreen">
+  </iframe>
+</div>
+<a href="https:&#x2F;&#x2F;www.canva.com&#x2F;design&#x2F;DAFbVKs6Or4&#x2F;view?utm_content=DAFbVKs6Or4&amp;utm_campaign=designshare&amp;utm_medium=embeds&amp;utm_source=link" target="_blank" rel="noopener"><p style="text-align: center;">Zone Reference Model for Enterprise-Grade Data Lake Management - Data Flow.</p></a>
+<p>The following data lake approach is explored by the <a href="https://www.ipvs.uni-stuttgart.de/departments/as/publications/giebleca/20_zoneReferenceModel_EDOC_Preprint.pdf">University of Stuttgart and Bosch GmbH</a>, and known as Zone Reference Model for Enterprise-Grade Data Lake Management. It consists of:</p>
 <ul>
 <li>Landing Zone</li>
 <li>Raw Zone</li>
@@ -770,13 +786,32 @@ While QuickSight doesn’t connect directly to the data lake, integration with A
 <li>Delivery Zone</li>
 <li>Explorative Zone</li>
 </ul>
-<p>#TODO: draw and insert here data flow diagrams for zone reference model.
-Zone Reference Model for Enterprise-Grade Data Lake Management - Data Flow.</p>
-<p>#TODO: draw and insert here zones comparisom diagrams for zone reference model.
-Zone Reference Model for Enterprise-Grade Data Lake Management - Zones comparison.</p>
+<pre><code class="language-mermaid">mindmap
+  root((Zone))
+    Properties
+        ::icon(mdi mdi-tag-multiple-outline)
+        Governed
+        Historized
+        Persistent
+        Protected
+        Use Case Independent
+    Data Characteristics
+        ::icon(mdi mdi-database-cog-outline)
+        Granularity
+        Schema
+        Syntax
+        Semantics
+    User Groups
+        ::icon(mdi mdi-account-group-outline)
+    Name
+        ::icon(mdi mdi-card-account-details-outline)
+    Modelling Approach
+        ::icon(mdi mdi-file-table-box-multiple-outline)
+</code></pre>
+<p style="text-align: center;">Zone Reference Model for Enterprise-Grade Data Lake Management - meta-model for zones - attributes.</p>
+<p>The following describes how a zone interacts with other zones and the outside world.</p>
 <p>#TODO: draw and insert here meta-model diagrams for zone reference model.
 Zone Reference Model for Enterprise-Grade Data Lake Management - meta-model for zones.</p>
-<p>The left side of the meta-model contains the attributes of a zone. The right side describes how a zone interacts with other zones and the outside world.</p>
 <p>All zones contain a protected part.
 This part is encrypted and secured, and stores data that need extensive protection (for example, PII, personal data). Data wander from the protected part of one zone to the protected part of the next zone.
 They may only leave the protected part after being desensitized (for example, by anonymization).
@@ -845,6 +880,9 @@ Data from this zone may be forwarded to external data sinks.</p>
 <p>The Delivery Zone especially supports users with little knowledge on data analytics.
 Data have to be easily findable and importable into various analytics tools.
 As for the modeling approach, data are available in whatever format supports the intended use case best, for example, dimensional modeling for OLAP, or flat tables for operational use.</p>
+<h4 id="zones-comparisom"><a class="header" href="#zones-comparisom">Zones Comparisom</a></h4>
+<p>#TODO: draw and insert here zones comparisom diagrams for zone reference model.
+Zone Reference Model for Enterprise-Grade Data Lake Management - Zones comparison.</p>
 <h3 id="sandbox"><a class="header" href="#sandbox">Sandbox</a></h3>
 <blockquote>
 <p>Also known as the Analytics Sandbox, it provides data scientists and advanced analysts with a place for data exploration.</p>
