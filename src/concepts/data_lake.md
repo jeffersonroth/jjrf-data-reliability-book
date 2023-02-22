@@ -26,10 +26,6 @@ Data Warehouses store data in a hierarchical format using files and folders. Thi
 **Costs**: S3 repositories are a cost-efficient storage of large volumes of data.
 
 ## Data Lake Architecture
-> Data Lakes are often structured in zones or layers models. These models define in which processing degrees (raw, cleansed, aggregated) data are available in the data lake, and how they are governed (regarding access rights, data quality, and responsibilities).
-
-Zones are similar to the layers in data warehousing, but data may not move through all zones or even move back.
-
 <div style="position: relative; width: 100%; height: 0; padding-top: 50.0000%;
  padding-bottom: 0; box-shadow: 0 2px 8px 0 rgba(63,69,81,0.16); margin-top: 1.6em; margin-bottom: 0.9em; overflow: hidden;
  border-radius: 8px; will-change: transform;">
@@ -39,7 +35,20 @@ Zones are similar to the layers in data warehousing, but data may not move throu
 </div>
 <a href="https:&#x2F;&#x2F;www.canva.com&#x2F;design&#x2F;DAFbUxswrb4&#x2F;view?utm_content=DAFbUxswrb4&amp;utm_campaign=designshare&amp;utm_medium=embeds&amp;utm_source=link" target="_blank" rel="noopener"><p style="text-align: center;">Data Lake Architecture Framework.</p></a>
 
+> Data Lakes are often structured in zones or layers models. These models define in which processing degrees (raw, cleansed, aggregated) data are available in the data lake, and how they are governed (regarding access rights, data quality, and responsibilities).
+
+Zones are similar to the layers in data warehousing, but data may not move through all zones or even move back.
+
 ### Layers
+<div style="position: relative; width: 100%; height: 0; padding-top: 35.0000%;
+ padding-bottom: 0; box-shadow: 0 2px 8px 0 rgba(63,69,81,0.16); margin-top: 1.6em; margin-bottom: 0.9em; overflow: hidden;
+ border-radius: 8px; will-change: transform;">
+  <iframe loading="lazy" style="position: absolute; width: 100%; height: 100%; top: 0; left: 0; border: none; padding: 0;margin: 0;"
+    src="https:&#x2F;&#x2F;www.canva.com&#x2F;design&#x2F;DAFbVHIphys&#x2F;view?embed" allowfullscreen="allowfullscreen" allow="fullscreen">
+  </iframe>
+</div>
+<a href="https:&#x2F;&#x2F;www.canva.com&#x2F;design&#x2F;DAFbVHIphys&#x2F;view?utm_content=DAFbVHIphys&amp;utm_campaign=designshare&amp;utm_medium=embeds&amp;utm_source=link" target="_blank" rel="noopener"><p style="text-align: center;">Data Lake Layers.</p></a>
+
 The following data lake model approach is structured in layers:
 - Ingestion Layer
 - Distilation Layer
@@ -47,11 +56,12 @@ The following data lake model approach is structured in layers:
 - Insights Layer
 - Unified Operations Layer
 
+The **Raw Data** entering the Data Lake consists of the organizations internal data (Operational Systems), specially relational data from databases, also streaming and batch data from data partners.
+
+In the other extreme, representing the data leaving the Data Lake, the **Business Systems**, consists of databases, the Data Warehouse, dashboards, reports, and external data connections.
+
 The first three layers constitute the medallion architecture, which is a is a data design pattern used to logically organize data in a Data Lake (similar as in a Data Lakehouse), with the goal of incrementally and progressively improving the structure and quality of data as it flows through each layer of the architecture (from Bronze ⇒ Silver ⇒ Gold layer tables).
 Medallion architectures are sometimes also referred to as "multi-hop" architectures.
-
-#TODO: draw and insert here diagram with data lake architecture in layers.
-Data Lake Architecture - Layers
 
 #### Ingestion Layer (Bronze)
 > The purpose of the Ingestion Layer of the Data Lake Architecture is to ingest raw data into the Data Lake. There is no data modification in this layer. This is where we land all the data from external source systems.
@@ -106,7 +116,17 @@ While QuickSight doesn’t connect directly to the data lake, integration with A
 It includes auditing and proficiency management, data management, workflow management. AWS data lake environments and monitoring tools and best practices are described here.
 
 ### Zones
-The following data lake approach is explored by the University of Stuttgart and Bosch GmbH, and known as Zone Reference Model for Enterprise-Grade Data Lake Management. It consists of:
+
+<div style="position: relative; width: 100%; height: 0; padding-top: 35.0000%;
+ padding-bottom: 0; box-shadow: 0 2px 8px 0 rgba(63,69,81,0.16); margin-top: 1.6em; margin-bottom: 0.9em; overflow: hidden;
+ border-radius: 8px; will-change: transform;">
+  <iframe loading="lazy" style="position: absolute; width: 100%; height: 100%; top: 0; left: 0; border: none; padding: 0;margin: 0;"
+    src="https:&#x2F;&#x2F;www.canva.com&#x2F;design&#x2F;DAFbVKs6Or4&#x2F;view?embed" allowfullscreen="allowfullscreen" allow="fullscreen">
+  </iframe>
+</div>
+<a href="https:&#x2F;&#x2F;www.canva.com&#x2F;design&#x2F;DAFbVKs6Or4&#x2F;view?utm_content=DAFbVKs6Or4&amp;utm_campaign=designshare&amp;utm_medium=embeds&amp;utm_source=link" target="_blank" rel="noopener"><p style="text-align: center;">Zone Reference Model for Enterprise-Grade Data Lake Management - Data Flow.</p></a>
+
+The following data lake approach is explored by the [University of Stuttgart and Bosch GmbH](https://www.ipvs.uni-stuttgart.de/departments/as/publications/giebleca/20_zoneReferenceModel_EDOC_Preprint.pdf), and known as Zone Reference Model for Enterprise-Grade Data Lake Management. It consists of:
 - Landing Zone
 - Raw Zone
 - Harmonized Zone
@@ -114,16 +134,35 @@ The following data lake approach is explored by the University of Stuttgart and 
 - Delivery Zone
 - Explorative Zone
 
-#TODO: draw and insert here data flow diagrams for zone reference model.
-Zone Reference Model for Enterprise-Grade Data Lake Management - Data Flow.
+```mermaid
+mindmap
+  root((Zone))
+    Properties
+        ::icon(mdi mdi-tag-multiple-outline)
+        Governed
+        Historized
+        Persistent
+        Protected
+        Use Case Independent
+    Data Characteristics
+        ::icon(mdi mdi-database-cog-outline)
+        Granularity
+        Schema
+        Syntax
+        Semantics
+    User Groups
+        ::icon(mdi mdi-account-group-outline)
+    Name
+        ::icon(mdi mdi-card-account-details-outline)
+    Modelling Approach
+        ::icon(mdi mdi-file-table-box-multiple-outline)
+```
+<p style="text-align: center;">Zone Reference Model for Enterprise-Grade Data Lake Management - meta-model for zones - attributes.</p>
 
-#TODO: draw and insert here zones comparisom diagrams for zone reference model.
-Zone Reference Model for Enterprise-Grade Data Lake Management - Zones comparison.
+The following describes how a zone interacts with other zones and the outside world.
 
 #TODO: draw and insert here meta-model diagrams for zone reference model.
 Zone Reference Model for Enterprise-Grade Data Lake Management - meta-model for zones.
-
-The left side of the meta-model contains the attributes of a zone. The right side describes how a zone interacts with other zones and the outside world.
 
 All zones contain a protected part.
 This part is encrypted and secured, and stores data that need extensive protection (for example, PII, personal data). Data wander from the protected part of one zone to the protected part of the next zone.
@@ -197,6 +236,10 @@ Data from this zone may be forwarded to external data sinks.
 The Delivery Zone especially supports users with little knowledge on data analytics.
 Data have to be easily findable and importable into various analytics tools.
 As for the modeling approach, data are available in whatever format supports the intended use case best, for example, dimensional modeling for OLAP, or flat tables for operational use.
+
+#### Zones Comparisom
+#TODO: draw and insert here zones comparisom diagrams for zone reference model.
+Zone Reference Model for Enterprise-Grade Data Lake Management - Zones comparison.
 
 ### Sandbox
 > Also known as the Analytics Sandbox, it provides data scientists and advanced analysts with a place for data exploration.
