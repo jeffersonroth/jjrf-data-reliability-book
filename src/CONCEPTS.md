@@ -1,14 +1,18 @@
-# Conceptos
-> La idéa de introducir todos estos conceptos, es que el profesional internalize marcos de trabajo centrados en la confiabilidad, más que solamente hacer uso de herramientas o replicar casos de uso sin las bases sólidas que conllevan.
+# Concepts
+> The first part of this book exposes the different concepts around the data reliability engineering subject. It's intended to be heavilly technical, in contrast with the subsequent parts, intended to explore practical use cases.
 
-Esta porción del libro se dedica a introducir los términos y conceptos de ingeniería, sistemas, confiabilidad, calidad y datos, bien cómo metodologías y herramientas sobre la Ingeniería y Confiabilidad de Datos.
+## [Introduction to Systems](./concepts/systems_intro.md) and [Systems Reliability](./concepts/systems_reliability.md)
+> These chapters explore what are systems, what is reliability, and how to understand systems reliability, specially its impediments, its attributes, and mechanisms to design and maintain reliable systems. All this for general systems, data systems, and data products.
 
-Primeramente se hará una [Introducción a Sistemas](./concepts/systems_intro.html), dónde ...
+## [Data Quality](./concepts/data_quality.md)
+> This chapter explores what is data, what is quality, and what is data quality, to finally explore what is data reliability.
+The goal is to understand these concepts in all aspects of the data: life cycle, design, modelling, governance, management, access, security, uses, legal frameworks, best practices, maturity, standards, etc.
 
-Luego, sobre el tema de [Confiabilidad de Sistemas](./concepts/systems_reliability.md), que comprende una introducción sobre que es la confiabilidad, y cómo entenderla en el ámbito de sistemas, abordando temas como los impedimentos que puede sufrir el funcionamento de un sistema, y principalmente los mecanismos para asegurar la confiabilidad de los mismos.
+## [Processes](./concepts/processes.md)
+> This chapter explores, for a given system, the concept of data processes, data and information flow, workflows, orchestration, pipelines, ETL, and ELT.
 
-Teniendo claro que es la confiabilidad, luego se explorará los conceptos de datos y calidad de datos, para que entonces sea posíble hablar de la confiabilidad de datos. El capítulo de [Calidad de Datos](./concepts/data_quality_intro.md) explorará los fundamentos de calidad de datos, como el ciclo de vida de los datos, y temas de gobierno y gestión de los datos, los datos maestros, dónde exploramos su arquitectura, modelos de madurez y estándares, bien como la calidad de los procesos de datos y los diferentes modelos de calidad de datos. El capítulo de [Confiabilidad de Datos](./concepts/data_relibility.md) ...
+## [Operations](./concepts/operations.md)
+> This chapter explores the concept of SRE, DataOps, DevOps, Agile methodologies, CI/CD, and other methodologies to assure reliable data operations.
 
-En el capítulo de [Procesos](), se explorará temas de definición de procesos dentro de sistemas, flujos de datos e información, flujos de trabajo, la orquestación de procesos, los DAGs, los pipelines, y por fin conceptos de ETL y ELT.
-
-Para cerrar los capítulos conceptuales, tenemos el capítulo de [Operaciones](), que explorará temas de SRE, DataOps, DevOps, Lean Manufacturing, Six Sigma, metodologías ágiles, CD/CI, ...
+## [Data Architecture](./concepts/data_architecture.md)
+> This chapter explores what is data architecture, including its sources, its storage (Data Lake, Data Warehouses, Data Marts), its application (OLAP servers, processing engines), and its presentation (dashboards, reports).
