@@ -142,7 +142,47 @@
 
                 <div id="content" class="content">
                     <main>
-                        <h1 id="impediments"><a class="header" href="#impediments">Impediments</a></h1>
+                        <h1 id="impedimentos"><a class="header" href="#impedimentos">Impedimentos</a></h1>
+<h2 id="fallos-errores-y-defectos"><a class="header" href="#fallos-errores-y-defectos">Fallos, Errores y Defectos</a></h2>
+<blockquote>
+<p>Los <strong>fallos</strong> son el resultado de problemas internos no esperados que el sistema manifiesta eventualmente en su comportamiento externo. Estos problemas se llaman <strong>errores</strong>, y sus causas mecánicas o algorítmicas se denominan <strong>defectos</strong>. Cuando el comportamiento de un sistema se desvía del especificado para él, se dice que es un fallo.</p>
+</blockquote>
+<p>Los sistemas están compuestos de <strong>componentes</strong>, cada uno de los cuales se puede considerar como un sistema en sí mismo. Así, un fallo en un sistema puede inducir un defecto en otro, el cual puede acabar en un error y en un fallo potencial de este sistema. Esto puede continuar y producir un efecto en cualquier sistema relacionado, y así sucesivamente.</p>
+<p>Un componente defectuoso de un sistema es un componente que producirá un error bajo un conjunto concreto de circunstancias durante la vida del sistema. Visto en términos de transición de estados, <em>un sistema puede ser considerado como un número de estados externos e internos</em>. </p>
+<p>Un estado externo no especificado en el comportamiento del sistema se considerará un fallo del sistema. El sistema en sí mismo consta de un número de componentes (cada uno con sus propios estados), contribuyendo todos ellos al comportamiento externo del sistema. La combinación de los estados de estos componentes se denomina estado interno del sistema. <em>Un estado interno no especificado se considera un error, y el componente que produjo la transición de estados ilegal se dice que es defectuoso</em>.</p>
+<p>Definiré tres tipos de fallos:</p>
+<ul>
+<li><strong>Fallos transitorios</strong>: comienza en un instante de tiempo concreto, se mantiene en el sistema durante algún periodo de tiempo, y luego desaparece.</li>
+<li><strong>Fallos permanentes</strong>: comienzan en un instante determinado y permanecen en el sistema hasta que son reparados.</li>
+<li><strong>Fallos intermitentes</strong>: son fallos transitorios que ocurren de vez en cuando.</li>
+</ul>
+<h2 id="modos-de-fallos"><a class="header" href="#modos-de-fallos">Modos de Fallos</a></h2>
+<blockquote>
+<p>Un sistema puede fallar de muchas maneras. Un diseñador puede diseñar el sistema suponiendo un número finito de modos de fallo, sin embargo el sistema puede fallar de manera diferente a lo esperado. </p>
+</blockquote>
+<p>Podemos clasificar los modos de fallos de los servicios que proporciona un sistema, los cuales:</p>
+<ul>
+<li><strong>Fallos de valor</strong>: el valor asociado con el servicio es erróneo.</li>
+<li><strong>Fallo de tiempo</strong>: el servicio se completa a destiempo.</li>
+<li><strong>Fallo arbitrario</strong>: combinación de fallos de valor y tiempo.</li>
+</ul>
+<p>Los modos de fallo de valor se denominan <strong>domínio de valor</strong>, y son clasificados en <strong>error de límites</strong>, y <strong>valor erróneo</strong>, dónde el valor se encuentra fuera del rango estipulado.</p>
+<p>Los fallos en el dominio del tiempo pueden hacer que el servicio sea entregado:</p>
+<ul>
+<li><strong>Demasiado pronto</strong> (adelantado): el servicio se entrega antes de lo requerido.</li>
+<li><strong>Demasiado tarde</strong> (retrasado o error de prestaciones): el servicio se entrega después de lo requerido.</li>
+<li><strong>Infinitamente tarde</strong> (fallo de omisión): el servicio nunca es entregado.</li>
+<li><strong>No esperado</strong> (fallo de encargo o improvisación): el servicio es entregado sin ser esperado.</li>
+</ul>
+<p>En general, podemos suponer los modos que un sistema puede fallar:</p>
+<ul>
+<li><strong>Fallo descontrolado</strong>: un sistema que produce errores arbitrales, tanto en el dominio del valor como en el del tiempo (incluyendo errores de improvisación).</li>
+<li><strong>Fallo de retraso</strong>: un sistema que produce servicios correctos en el dominio del valor, pero que sufre errores de retraso en el tiempo.</li>
+<li><strong>Fallo de silencio</strong>: un sistema que produce servicios correctos tanto en el dominio del valor como en el del tiempo, hasta que falla. El único fallo posible es el de omisión, y cuando ocurre, todos los servicios siguientes también sufrirán fallos de omisión.</li>
+<li><strong>Fallo de parada</strong>: un sistema que tiene todas las propiedades de un fallo silencioso, pero que permite que otros sistemas puedan detectar que ha entrado en el estado de fallo de silencio.</li>
+<li><strong>Fallo controlado</strong>: un sistema que falla de una forma especificada y controlada.</li>
+<li><strong>Sin fallos</strong>: un sistema que siempre produce los servicios correctos.</li>
+</ul>
 
                     </main>
 

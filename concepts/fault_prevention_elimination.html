@@ -142,7 +142,14 @@
 
                 <div id="content" class="content">
                     <main>
-                        <h1 id="fault-prevention-elimination"><a class="header" href="#fault-prevention-elimination">Fault Prevention: Elimination</a></h1>
+                        <h1 id="prevención-de-fallos-eliminación"><a class="header" href="#prevención-de-fallos-eliminación">Prevención de Fallos: Eliminación</a></h1>
+<p>La segunda fase de prevención de fallos es la eliminación de fallos. Consiste normalmente en procedimientos para encontrar y eliminar las causas de los errores. Aunque se pueden utilizar técnicas como los revisores de código (IDEs, linter) y el debugging en local, ni siempre se llevan a cabo las revisiones por pares y pruebas exhaustivas con las distintas combinaciones de estados de entrada y entorno. </p>
+<p>Las pruebas en QA no pueden verificar que los valores de salida sean compatibles con el negocio y sus aplicaciones, así que se concentran normalmente en modos de fallo de tiempo (timeouts) y <strong>defectos</strong>. Desafortunadamente, la prueba del sistema no puede ser exhaustiva y eliminar todos los potenciales fallos, principalmente por:</p>
+<ul>
+<li>Las pruebas se utilizan para demostrar la presencia de fallos, no su ausencia.</li>
+<li>La dificultad de realizar pruebas en producción. La manera de probar fallas en producción son del tipo <strong>combate real</strong>, o sea, la consecuencia de los errores pueden afectar directamente el negocio, haciendo que pueda tomar malas decisiones (ejemplo: un mal cálculo de un KPI, puede además de llevar a acciones erróneas, disminuir la confianza del negocio en los procesos de data). Existen alternativas de diseño de procesos para detección de fallos en producción, las cuales discutiré más adelante.</li>
+<li>Los errores que han sido introducidos en la etapa de requisitos del sistema puede que no se manifiesten hasta que el sistema esté operativo. Ejemplo: Un DAG para el procesamiento y limpieza de la data de delivery de las campañas de marketing online que se diseñó para ejecutar antes del proceso de atribución de media, a las 4am, no llevó en consideración que la data no estará disponible hasta las 5am.</li>
+</ul>
 
                     </main>
 

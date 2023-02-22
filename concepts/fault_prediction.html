@@ -142,7 +142,17 @@
 
                 <div id="content" class="content">
                     <main>
-                        <h1 id="fault-prediction"><a class="header" href="#fault-prediction">Fault Prediction</a></h1>
+                        <h1 id="predicción-de-fallos"><a class="header" href="#predicción-de-fallos">Predicción de Fallos</a></h1>
+<p>La predicción acurada y rápida de los fallos posibilita a los que mantenemos los procesos asegurar mayor disponibilidad de los servicios. Desafortunadamente, la predicción de fallos es muchísimo menos sencilla que su detección.</p>
+<p>Para poder predecir un fallo, éste debe ser identificado y clasificado. Los fallos también deben ser predecibles (o capaces de predicción), lo que significa que existen alteraciones de estados de los sistemas (y componentes) que llevan al fallo, o el fallo ocurre regularmente siguiendo algún patrón. Ambos casos pueden ser traducidos a problemas de predicción de series temporales, y la data de los sensores y logs puede ser trabajada para entrenar los modelos de predicción.</p>
+<p>La data colectada muy difícilmente estará lista para ser utilizada por los modelos de predicción, así que uno o más tareas de preprocesamiento deben llevarse a cabo:</p>
+<ul>
+<li><strong>Sincronización de la data</strong>: las métricas colectadas por diversos agentes (sensores) deben alinearse en la dimensión de tiempo.</li>
+<li><strong>Limpieza de la data</strong>: remoción de data innecesaria, y generación de data faltante (ej: interpolación).</li>
+<li><strong>Normalización de la data</strong>: los valores de las métricas son normalizados para que las magnitudes sean comparables.</li>
+<li><strong>Selección de features</strong>: las métricas relevantes son identificadas para su utilización en los modelos.</li>
+</ul>
+<p>Una vez preprocesada la data, la misma será utilizada en dos pipelines: pipeline de entrenamiento, y pipeline de inferencia. El pipeline de entrenamiento usa la data en bulk, para entrenar el modelo a ser disponibilizado al pipeline de inferencia. Los resultados de la inferencia indicará la existencia o no de tipos específicos de fallas, sobre la muestra de métricas monitoreadas.</p>
 
                     </main>
 
