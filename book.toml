@@ -9,4 +9,4 @@ src = "src"
 command = "mdbook-mermaid"
 
 [output.html]
-additional-js = ["mermaid.min.js", "mermaid-init.js"]
+additional-js = ["assets/mermaid.min.js", "assets/mermaid-init.js"]
