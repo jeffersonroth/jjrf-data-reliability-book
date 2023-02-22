@@ -1,0 +1,6 @@
+[book]
+title = "Data Reliability Engineering"
+authors = ["Jefferson Roth"]
+language = "en"
+multilingual = false
+src = "src"
