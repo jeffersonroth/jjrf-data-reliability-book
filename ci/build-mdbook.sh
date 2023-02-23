@@ -15,7 +15,7 @@ cargo install mdbook-emojicodes
 cargo install mdbook-mermaid
 cargo install mdbook-plantuml
 # cargo install mdbook-svgbob
-cargo install mdbook-man
+# cargo install mdbook-man
 cargo install mdbook-pdf
 # cargo install mdbook-katex
 # cargo install mdbook-epub

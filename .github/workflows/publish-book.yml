@@ -2,29 +2,29 @@ name: Publish mdbook Github Pages
 
 on:
   push:
-    branches: [ main ]
+    branches: [main]
   pull_request:
-    branches: [ main ]
+    branches: [main]
 
 jobs:
   build:
     name: build
     runs-on: ubuntu-latest
     steps:
-    - uses: actions/checkout@master
-    - name: Change Wrapper Permissions
-      run: chmod -R +x ci
-    - name: Install hub
-      run: ci/install-hub.sh
-      shell: bash
-    - name: Install Rust
-      run: ci/install-rust.sh stable
-      shell: bash
-    - name: Build and Deploy Artifacts
-      env:
-        GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
-      run: ci/build-mdbook.sh
-      shell: bash
+      - uses: actions/checkout@master
+      - name: Change Wrapper Permissions
+        run: chmod -R +x ci
+      - name: Install hub
+        run: ci/install-hub.sh
+        shell: bash
+      - name: Install Rust
+        run: ci/install-rust.sh stable
+        shell: bash
+      - name: Build and Deploy Artifacts
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+        run: ci/build-mdbook.sh
+        shell: bash
   deploy:
     name: deploy
     needs: build
@@ -34,8 +34,7 @@ jobs:
       - name: Setup mdBook
         uses: peaceiris/actions-mdbook@v1
         with:
-          mdbook-version: 'latest'
-      - run: mdbook build
+          mdbook-version: "latest"
       - name: Deploy
         uses: peaceiris/actions-gh-pages@v3
         with:
