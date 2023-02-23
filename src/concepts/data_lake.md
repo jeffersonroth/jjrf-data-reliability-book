@@ -137,35 +137,35 @@ The following data lake approach is explored by the [University of Stuttgart and
 - Delivery Zone
 - Explorative Zone
 
-```mermaid
-mindmap
-  root((Zone))
-    Properties
-        ::icon(mdi mdi-tag-multiple-outline)
-        Governed
-        Historized
-        Persistent
-        Protected
-        Use Case Independent
-    Data Characteristics
-        ::icon(mdi mdi-database-cog-outline)
-        Granularity
-        Schema
-        Syntax
-        Semantics
-    User Groups
-        ::icon(mdi mdi-account-group-outline)
-    Name
-        ::icon(mdi mdi-card-account-details-outline)
-    Modelling Approach
-        ::icon(mdi mdi-file-table-box-multiple-outline)
+```plantuml
+@startmindmap
++ Zone
+++_ Properties
++++_ Governed
++++_ Historized
++++_ Persistent
++++_ Protected
++++_ Use Case Independent
+--_ Data Characteristics
+---_ Granularity
+---_ Schema
+---_ Syntax
+---_ Semantics
+--_ User Groups
+--_ Name
+--_ Modelling Approach
+@endmindmap
 ```
-<p style="text-align: center;">Zone Reference Model for Enterprise-Grade Data Lake Management - meta-model for zones - attributes.</p>
+<p style="text-align: center;">Zone Reference Model for Enterprise-Grade Data Lake Management - Meta-model for zones - Attributes.</p>
 
 The following describes how a zone interacts with other zones and the outside world.
 
-#TODO: draw and insert here meta-model diagrams for zone reference model.
-Zone Reference Model for Enterprise-Grade Data Lake Management - meta-model for zones.
+```plantuml
+@startuml
+:Zone;
+@enduml
+```
+<p style="text-align: center;">Zone Reference Model for Enterprise-Grade Data Lake Management - Meta-model for zones - Interactions.</p>
 
 All zones contain a protected part.
 This part is encrypted and secured, and stores data that need extensive protection (for example, PII, personal data). Data wander from the protected part of one zone to the protected part of the next zone.
