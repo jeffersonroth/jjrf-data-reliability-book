@@ -43,31 +43,6 @@
             var default_theme = window.matchMedia("(prefers-color-scheme: dark)").matches ? "navy" : "light";
         </script>
 
-        <!-- Custom JS scripts for mdbook-pdf PDF generation -->
-        <script type='text/javascript'>
-            let markAllContentHasLoadedForPrinting = () =>
-                window.setTimeout(
-                    () => {
-                        let p = document.createElement('div');
-                        p.setAttribute('id', 'content-has-all-loaded-for-mdbook-pdf-generation');
-                        document.body.appendChild(p);
-                    }, 100
-                );
-
-            window.addEventListener('load', () => {
-                // Expand all the <details> elements for printing.
-                r = document.getElementsByTagName('details');
-                for (let i of r)
-                    i.open = true;
-
-                try {
-                    MathJax.Hub.Register.StartupHook('End', markAllContentHasLoadedForPrinting);
-                } catch (e) {
-                    markAllContentHasLoadedForPrinting();
-                }
-            });
-        </script>
-
         <!-- Work around some values being stored in localStorage wrapped in quotes -->
         <script>
             try {
@@ -942,19 +917,116 @@ Data from this zone may be forwarded to external data sinks.</p>
 Data have to be easily findable and importable into various analytics tools.
 As for the modeling approach, data are available in whatever format supports the intended use case best, for example, dimensional modeling for OLAP, or flat tables for operational use.</p>
 <h4 id="zones-comparisom"><a class="header" href="#zones-comparisom">Zones Comparisom</a></h4>
-<p>|  	| <strong>Landing</strong> 	| <strong>Raw</strong> 	| <strong>Harmonized</strong> 	| <strong>Distilled</strong> 	| <strong>Explorative</strong> 	| <strong>Delivery</strong> 	|
-|---:	|:---:	|:---:	|:---:	|:---:	|:---:	|:---:	|
-| <strong>Granularity</strong> 	| Raw 	| Raw 	| Raw 	| Aggregated 	| Any 	| Any 	|
-| <strong>Schema</strong> 	| Any 	| Any 	| Consolidated 	| Consolidated, Enriched 	| Any 	| Any 	|
-| <strong>Syntax</strong> 	| Basic transformations 	| Basic transformations 	| Consolidated 	| Consolidated 	| Any 	| Any 	|
-| <strong>Semantics</strong> 	| Mostly unchanged* 	| Mostly unchanged* 	| Mostly unchanged* 	| Complex processing 	| Any 	| Any 	|
-| <strong>Governed</strong> 	| True 	| True 	| True 	| True 	| False 	| True 	|
-| <strong>Historized</strong> 	| False 	| True 	| True 	| True 	| N/A 	| N/A 	|
-| <strong>Persistent</strong> 	| False 	| True 	| True 	| True 	| False 	| True 	|
-| <strong>Has Protected Part</strong> 	| True 	| True 	| True 	| True 	| True 	| True 	|
-| <strong>Use Case Dependent</strong> 	| False 	| False 	| False 	| True 	| True 	| True 	|
-| <strong>User Groups</strong> 	| Systems, Processes 	| Data Scientists, Systems, Processes 	| Data Scientists, Systems, Processes 	| Data Scientists, Domain Experts, Systems, Processes 	| Data Scientists 	| Anyone 	|
-| <strong>Modelling Approach</strong> 	| Any 	| Any 	| Standardized 	| Standardized 	| Any 	| Any 	|</p>
+<table>
+    <tr>
+        <td></td>
+        <td><strong>Landing</strong></td>
+        <td><strong>Raw</strong></td>
+        <td><strong>Harmonized</strong></td>
+        <td><strong>Distilled</strong></td>
+        <td><strong>Explorative</strong></td>
+        <td><strong>Delivery</strong></td>
+    </tr>
+    <tr>
+        <td><strong>Granularity</strong></td>
+        <td>Raw</td>
+        <td>Raw</td>
+        <td>Raw</td>
+        <td>Aggregated</td>
+        <td>Any</td>
+        <td>Any</td>
+    </tr>
+    <tr>
+        <td><strong>Schema</strong></td>
+        <td>Any</td>
+        <td>Any</td>
+        <td>Consolidated</td>
+        <td>Consolidated, Enriched</td>
+        <td>Any</td>
+        <td>Any</td>
+    </tr>
+    <tr>
+        <td><strong>Syntax</strong></td>
+        <td>Basic transformations</td>
+        <td>Basic transformations</td>
+        <td>Consolidated</td>
+        <td>Consolidated</td>
+        <td>Any</td>
+        <td>Any</td>
+    </tr>
+    <tr>
+        <td><strong>Semantics</strong></td>
+        <td>Mostly unchanged, unless needed for compliance</td>
+        <td>Mostly unchanged, unless needed for compliance</td>
+        <td>Mostly unchanged, unless needed for compliance</td>
+        <td>Complex processing</td>
+        <td>Any</td>
+        <td>Any</td>
+    </tr>
+    <tr>
+        <td><strong>Governed</strong></td>
+        <td>True</td>
+        <td>True</td>
+        <td>True</td>
+        <td>True</td>
+        <td>False</td>
+        <td>True</td>
+    </tr>
+    <tr>
+        <td><strong>Historized</strong></td>
+        <td>False</td>
+        <td>True</td>
+        <td>True</td>
+        <td>True</td>
+        <td>N/A</td>
+        <td>N/A</td>
+    </tr>
+    <tr>
+        <td><strong>Persistent</strong></td>
+        <td>False</td>
+        <td>True</td>
+        <td>True</td>
+        <td>True</td>
+        <td>False</td>
+        <td>True</td>
+    </tr>
+    <tr>
+        <td><strong>Has Protected Part</strong></td>
+        <td>True</td>
+        <td>True</td>
+        <td>True</td>
+        <td>True</td>
+        <td>True</td>
+        <td>True</td>
+    </tr>
+    <tr>
+        <td><strong>Use Case Dependent</strong></td>
+        <td>False</td>
+        <td>False</td>
+        <td>False</td>
+        <td>True</td>
+        <td>True</td>
+        <td>True</td>
+    </tr>
+    <tr>
+        <td><strong>User Groups</strong></td>
+        <td>Systems, Processes</td>
+        <td>Data Scientists, Systems, Processes</td>
+        <td>Data Scientists, Systems, Processes</td>
+        <td>Data Scientists, Domain Experts, Systems, Processes</td>
+        <td>Data Scientists</td>
+        <td>Anyone</td>
+    </tr>
+    <tr>
+        <td><strong>Modelling Approach</strong></td>
+        <td>Any</td>
+        <td>Any</td>
+        <td>Standardized</td>
+        <td>Standardized</td>
+        <td>Any</td>
+        <td>Any</td>
+    </tr>
+</table>
 <p style="text-align: center;">Zone Reference Model for Enterprise-Grade Data Lake Management - Zones comparison.</p>
 <h3 id="sandbox"><a class="header" href="#sandbox">Sandbox</a></h3>
 <blockquote>
