@@ -5,7 +5,22 @@ set -ex
 export CARGO_PROFILE_RELEASE_LTO=true
 
 echo "installing mdbook"
-cargo install mdbook mdbook-linkcheck mdbook-man mdbook-mermaid mdbook-plantuml mdbook-admonish mdbook-catppuccin mdbook-pdf mdbook-template mdbook-toc mdbook-svgbob
+cargo install mdbook
+cargo install mdbook-linkcheck
+cargo install mdbook-i18n
+cargo install mdbook-toc
+cargo install mdbook-footnote
+cargo install mdbook-emojicodes
+# cargo install mdbook-admonish
+cargo install mdbook-mermaid
+cargo install mdbook-plantuml
+# cargo install mdbook-svgbob
+cargo install mdbook-man
+cargo install mdbook-pdf
+# cargo install mdbook-katex
+# cargo install mdbook-epub
+cargo install mdbook-catppuccin
+cargo install mdbook-template
 echo "init mdbook"
 mdbook init --title="Data Reliability Engineering"
 echo "recovering book.toml from backup"
