@@ -1,8 +1,10 @@
 #!/usr/bin/env bash
 
+export CARGO_PROFILE_RELEASE_LTO=true
+
 # mdbook init
 echo "mdbook init"
-docker run -d --rm -v $(pwd):/data -u $(id -u):$(id -g) -it hrektts/mdbook mdbook init
+docker run -d --rm -v $(pwd):/data -u $(id -u):$(id -g) -it hrektts/mdbook mdbook init  --ignore=none
 
 # book.toml from backup
 echo "book.toml from backup"

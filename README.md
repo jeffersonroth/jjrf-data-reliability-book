@@ -45,9 +45,7 @@
    cargo install mdbook-emojicodes
    cargo install mdbook-mermaid
    cargo install mdbook-plantuml
-   cargo install mdbook-pdf
    cargo install mdbook-catppuccin
-   cargo install mdbook-template
    ```
 
 ### Packages
