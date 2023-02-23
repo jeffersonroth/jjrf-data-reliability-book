@@ -241,19 +241,116 @@ Data have to be easily findable and importable into various analytics tools.
 As for the modeling approach, data are available in whatever format supports the intended use case best, for example, dimensional modeling for OLAP, or flat tables for operational use.
 
 #### Zones Comparisom
-|  	| **Landing** 	| **Raw** 	| **Harmonized** 	| **Distilled** 	| **Explorative** 	| **Delivery** 	|
-|---:	|:---:	|:---:	|:---:	|:---:	|:---:	|:---:	|
-| **Granularity** 	| Raw 	| Raw 	| Raw 	| Aggregated 	| Any 	| Any 	|
-| **Schema** 	| Any 	| Any 	| Consolidated 	| Consolidated, Enriched 	| Any 	| Any 	|
-| **Syntax** 	| Basic transformations 	| Basic transformations 	| Consolidated 	| Consolidated 	| Any 	| Any 	|
-| **Semantics** 	| Mostly unchanged* 	| Mostly unchanged* 	| Mostly unchanged* 	| Complex processing 	| Any 	| Any 	|
-| **Governed** 	| True 	| True 	| True 	| True 	| False 	| True 	|
-| **Historized** 	| False 	| True 	| True 	| True 	| N/A 	| N/A 	|
-| **Persistent** 	| False 	| True 	| True 	| True 	| False 	| True 	|
-| **Has Protected Part** 	| True 	| True 	| True 	| True 	| True 	| True 	|
-| **Use Case Dependent** 	| False 	| False 	| False 	| True 	| True 	| True 	|
-| **User Groups** 	| Systems, Processes 	| Data Scientists, Systems, Processes 	| Data Scientists, Systems, Processes 	| Data Scientists, Domain Experts, Systems, Processes 	| Data Scientists 	| Anyone 	|
-| **Modelling Approach** 	| Any 	| Any 	| Standardized 	| Standardized 	| Any 	| Any 	|
+<table>
+    <tr>
+        <td></td>
+        <td><strong>Landing</strong></td>
+        <td><strong>Raw</strong></td>
+        <td><strong>Harmonized</strong></td>
+        <td><strong>Distilled</strong></td>
+        <td><strong>Explorative</strong></td>
+        <td><strong>Delivery</strong></td>
+    </tr>
+    <tr>
+        <td><strong>Granularity</strong></td>
+        <td>Raw</td>
+        <td>Raw</td>
+        <td>Raw</td>
+        <td>Aggregated</td>
+        <td>Any</td>
+        <td>Any</td>
+    </tr>
+    <tr>
+        <td><strong>Schema</strong></td>
+        <td>Any</td>
+        <td>Any</td>
+        <td>Consolidated</td>
+        <td>Consolidated, Enriched</td>
+        <td>Any</td>
+        <td>Any</td>
+    </tr>
+    <tr>
+        <td><strong>Syntax</strong></td>
+        <td>Basic transformations</td>
+        <td>Basic transformations</td>
+        <td>Consolidated</td>
+        <td>Consolidated</td>
+        <td>Any</td>
+        <td>Any</td>
+    </tr>
+    <tr>
+        <td><strong>Semantics</strong></td>
+        <td>Mostly unchanged, unless needed for compliance</td>
+        <td>Mostly unchanged, unless needed for compliance</td>
+        <td>Mostly unchanged, unless needed for compliance</td>
+        <td>Complex processing</td>
+        <td>Any</td>
+        <td>Any</td>
+    </tr>
+    <tr>
+        <td><strong>Governed</strong></td>
+        <td>True</td>
+        <td>True</td>
+        <td>True</td>
+        <td>True</td>
+        <td>False</td>
+        <td>True</td>
+    </tr>
+    <tr>
+        <td><strong>Historized</strong></td>
+        <td>False</td>
+        <td>True</td>
+        <td>True</td>
+        <td>True</td>
+        <td>N/A</td>
+        <td>N/A</td>
+    </tr>
+    <tr>
+        <td><strong>Persistent</strong></td>
+        <td>False</td>
+        <td>True</td>
+        <td>True</td>
+        <td>True</td>
+        <td>False</td>
+        <td>True</td>
+    </tr>
+    <tr>
+        <td><strong>Has Protected Part</strong></td>
+        <td>True</td>
+        <td>True</td>
+        <td>True</td>
+        <td>True</td>
+        <td>True</td>
+        <td>True</td>
+    </tr>
+    <tr>
+        <td><strong>Use Case Dependent</strong></td>
+        <td>False</td>
+        <td>False</td>
+        <td>False</td>
+        <td>True</td>
+        <td>True</td>
+        <td>True</td>
+    </tr>
+    <tr>
+        <td><strong>User Groups</strong></td>
+        <td>Systems, Processes</td>
+        <td>Data Scientists, Systems, Processes</td>
+        <td>Data Scientists, Systems, Processes</td>
+        <td>Data Scientists, Domain Experts, Systems, Processes</td>
+        <td>Data Scientists</td>
+        <td>Anyone</td>
+    </tr>
+    <tr>
+        <td><strong>Modelling Approach</strong></td>
+        <td>Any</td>
+        <td>Any</td>
+        <td>Standardized</td>
+        <td>Standardized</td>
+        <td>Any</td>
+        <td>Any</td>
+    </tr>
+</table>
 
 <p style="text-align: center;">Zone Reference Model for Enterprise-Grade Data Lake Management - Zones comparison.</p>
 

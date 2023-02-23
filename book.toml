@@ -22,6 +22,9 @@ max-level = 4
 # Footnote
 [preprocessor.footnote]
 
+# Emoji Codes
+[preprocessor.emojicodes]
+
 # Mermaid
 [preprocessor.mermaid]
 command = "mdbook-mermaid"
@@ -34,9 +37,6 @@ plantuml-cmd="plantuml.exe"
 # [preprocessor.admonish]
 # command = "mdbook-admonish"
 
-# Template
-[preprocessor.template]
-
 # SVG Bob
 # [preprocessor.svgbob]
 
@@ -44,12 +44,9 @@ plantuml-cmd="plantuml.exe"
 # [preprocessor.katex]
 # renderers = ["html"]
 
-# Emoji Codes
-[preprocessor.emojicodes]
-
 # Outputs
 # Linkcheck
-[output.linkcheck]
+# [output.linkcheck]
 
 # HTML
 [output.html]
@@ -61,7 +58,7 @@ additional-css = ["assets/mdbook-admonish.css", "assets/catppuccin.css", "assets
 enable = true
 
 # PDF
-[output.pdf]
+# [output.pdf]
 
 # MAN
 # [output.man]
