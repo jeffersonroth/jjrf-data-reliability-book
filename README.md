@@ -43,6 +43,7 @@
    cargo install mdbook
    cargo install mdbook-linkcheck
    cargo install mdbook-man
+   cargo install mdbook-mermaid
    ```
 
 
