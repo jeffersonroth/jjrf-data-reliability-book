@@ -15,8 +15,6 @@
   </p>
 </p>
 
-
-
 <!-- TABLE OF CONTENTS -->
 <details open="open">
   <summary>Table of Contents</summary>
@@ -29,9 +27,8 @@
   </ol>
 </details>
 
-
-
 <!-- GETTING STARTED -->
+
 ## Getting Started
 
 1. Clone the repo
@@ -42,19 +39,60 @@
    ```sh
    cargo install mdbook
    cargo install mdbook-linkcheck
-   cargo install mdbook-man
+   cargo install mdbook-i18n
+   cargo install mdbook-toc
+   cargo install mdbook-footnote
+   cargo install mdbook-emojicodes
+   cargo install mdbook-mermaid
+   cargo install mdbook-plantuml
+   cargo install mdbook-pdf
+   cargo install mdbook-catppuccin
+   cargo install mdbook-template
    ```
 
+### Packages
+
+[mdbook](https://crates.io/crates/mdbook)
+
+[mdbook-linkcheck](https://crates.io/crates/mdbook-linkcheck)
+
+[mdbook-man](https://crates.io/crates/mdbook-man)
+
+[mdbook-mermaid](https://crates.io/crates/mdbook-mermaid)
+
+[mdbook-plantuml](https://crates.io/crates/mdbook-plantuml)
+
+[mdbook-admonish](https://crates.io/crates/mdbook-admonish)
+
+[mdbook-catppuccin](https://crates.io/crates/mdbook-catppuccin)
+
+[mdbook-pdf](https://crates.io/crates/mdbook-pdf)
+
+[mdbook-template](https://crates.io/crates/mdbook-template)
+
+[mdbook-toc](https://crates.io/crates/mdbook-toc)
+
+[mdbook-footnote](https://crates.io/crates/mdbook-footnote)
+
+[mdbook-svgbob](https://crates.io/crates/mdbook-svgbob)
+
+[mdbox-katex](https://crates.io/crates/mdbook-katex)
+
+[mdbook-epub](https://crates.io/crates/mdbook-epub)
+
+[mdbook-emojicodes](https://crates.io/crates/mdbook-emojicodes)
+
+[mdbook-i18n](https://crates.io/crates/mdbook-i18n)
 
 
 <!-- LICENSE -->
+
 ## License
 
 Copyright (C) 2021 Jefferson Johannes Roth Filho. See `LICENSE` for more information.
 
-
-
 <!-- CONTACT -->
+
 ## Contact
 
 Jefferson Roth - jjrothfilho@gmail.com

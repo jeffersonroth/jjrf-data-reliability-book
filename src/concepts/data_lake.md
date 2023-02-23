@@ -4,6 +4,9 @@
 It is a repository for storing all types of data in its native format without fixed limits on account size or file. Data Lake stores a high data quantity to increase native integration and analytic performance.
 The Data Lake democratizes data and provides a cost-effective way of storing all organization data for later processing.
 
+* auto-gen TOC;
+{:toc}
+
 ## Data Lake vs Data Warehouse
 > A Data Warehouse is a repository that exclusively keeps pre-processed data from a Data Lake or many databases.
 
@@ -238,8 +241,22 @@ Data have to be easily findable and importable into various analytics tools.
 As for the modeling approach, data are available in whatever format supports the intended use case best, for example, dimensional modeling for OLAP, or flat tables for operational use.
 
 #### Zones Comparisom
-#TODO: draw and insert here zones comparisom diagrams for zone reference model.
-Zone Reference Model for Enterprise-Grade Data Lake Management - Zones comparison.
+|  	| **Landing** 	| **Raw** 	| **Harmonized** 	| **Distilled** 	| **Explorative** 	| **Delivery** 	|
+|---:	|:---:	|:---:	|:---:	|:---:	|:---:	|:---:	|
+| **Granularity** 	| Raw 	| Raw 	| Raw 	| Aggregated 	| Any 	| Any 	|
+| **Schema** 	| Any 	| Any 	| Consolidated 	| Consolidated, Enriched 	| Any 	| Any 	|
+| **Syntax** 	| Basic transformations 	| Basic transformations 	| Consolidated 	| Consolidated 	| Any 	| Any 	|
+| **Semantics** 	| Mostly unchanged* 	| Mostly unchanged* 	| Mostly unchanged* 	| Complex processing 	| Any 	| Any 	|
+| **Governed** 	| True 	| True 	| True 	| True 	| False 	| True 	|
+| **Historized** 	| False 	| True 	| True 	| True 	| N/A 	| N/A 	|
+| **Persistent** 	| False 	| True 	| True 	| True 	| False 	| True 	|
+| **Has Protected Part** 	| True 	| True 	| True 	| True 	| True 	| True 	|
+| **Use Case Dependent** 	| False 	| False 	| False 	| True 	| True 	| True 	|
+| **User Groups** 	| Systems, Processes 	| Data Scientists, Systems, Processes 	| Data Scientists, Systems, Processes 	| Data Scientists, Domain Experts, Systems, Processes 	| Data Scientists 	| Anyone 	|
+| **Modelling Approach** 	| Any 	| Any 	| Standardized 	| Standardized 	| Any 	| Any 	|
+
+<p style="text-align: center;">Zone Reference Model for Enterprise-Grade Data Lake Management - Zones comparison.</p>
+
 
 ### Sandbox
 > Also known as the Analytics Sandbox, it provides data scientists and advanced analysts with a place for data exploration.
