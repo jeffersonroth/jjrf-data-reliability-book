@@ -8,17 +8,14 @@ The Data Lake democratizes data and provides a cost-effective way of storing all
 {:toc}
 
 ## Data Lake vs Data Warehouse
-> A Data Warehouse is a repository that exclusively keeps pre-processed data from a Data Lake or many databases.
+> A Data Warehouse is a repository that exclusively keeps pre-processed data from a Data Lake and many databases.
 
-ETL operations are used to arrange data in multi-dimensional structures so that Analytics workflows using Data Warehouses can be accelerated.
-Business Intelligence specialists and Data Analysts can generate reports and develop dashboards using the data housed in a Data Warehouse.
-
-Data Warehouses store data in a hierarchical format using files and folders. This is not the case with a Data Lake as Data Lake Architecture is a flat architecture. In a Data Lake, every data element is identified by a unique identifier and a set of metadata information.
+Data Warehouses store data in a hierarchical format using files and folders. This is not the case with a Data Lake as it has flat architecture. In a Data Lake, every data element is identified by a unique identifier and a set of metadata information.
 
 ## Goals
 > Building and maintaining a Data Lake have five main goals: unifying the data, full query access, performance and scalability, progression, and costs.
 
-**Unification**: Data Lake is a perfect solution to accumulate all the data from distinct data sources (ERP, CRM, logs, data partners data, internal generated data) in one place. The Data Lake Architecture makes it easier for companies to get a holistic view of data and generate insights from it.
+**Unification**: Data Lake is a perfect solution to accumulate all the data from distinct data sources (ERP, CRM, logs, data partners data, internal generated data) in one place. The Data Lake architecture makes it easier for companies to get a holistic view of data and generate insights from it.
 
 **Full Query Access**: storing data in Data Lakes allows full access to data that can be directly used by BI tools to pull data whenever needed. ELT process is a flexible, reliable, and fast way to load data into Data Lake and then use it with other tools.
 
@@ -139,33 +136,30 @@ The following data lake approach is explored by the [University of Stuttgart and
 
 ```plantuml
 @startmindmap
-+ Zone
-++_ Properties
-+++_ Governed
-+++_ Historized
-+++_ Persistent
-+++_ Protected
-+++_ Use Case Independent
---_ Data Characteristics
----_ Granularity
----_ Schema
----_ Syntax
----_ Semantics
---_ User Groups
---_ Name
---_ Modelling Approach
++[#lightblue] Zone
+++ Name
+-- Modelling Approach
+++ Properties
++++ Governed
++++ Historized
++++ Persistent
++++ Protected
++++ Use Case Independent
+-- Data Characteristics
+--- Granularity
+--- Schema
+--- Syntax
+--- Semantics
+-- User Groups
 @endmindmap
 ```
 <p style="text-align: center;">Zone Reference Model for Enterprise-Grade Data Lake Management - Meta-model for zones - Attributes.</p>
 
-The following describes how a zone interacts with other zones and the outside world.
-
-```plantuml
-@startuml
-:Zone;
-@enduml
-```
-<p style="text-align: center;">Zone Reference Model for Enterprise-Grade Data Lake Management - Meta-model for zones - Interactions.</p>
+Regarding how a zone interacts with other zones and the outside world, we have:
+- **Zone** *receives* data from another **Zone**
+- **Zone** *forwards* data to another **Zone**
+- **Zone** *imports* data from **Data Source**
+- **Zone** *exports* data to **Data Sink**
 
 All zones contain a protected part.
 This part is encrypted and secured, and stores data that need extensive protection (for example, PII, personal data). Data wander from the protected part of one zone to the protected part of the next zone.
@@ -402,7 +396,43 @@ Both playing their part in analytics.
 It includes the adoption of information governance, information lifecycle management capabilities, and Metadata management.
 
 ## Key Components of Data Lake Architecture
-#TODO: draw and include here diagram of data lake architecture including data sources, data processing layer, and data targets.
+```plantuml
+@startuml
+top to bottom direction
+
+interface "ETL/API" as ETL
+interface "ETL/API" as API
+
+note right of ETL: Data Lake micro-services
+note right of API:  Data Warehouse micro-services, Airflow...
+
+[Data Sources] --> ETL
+note right of [Data Sources]
+Internal Applications (Operational System Databases, Logs...)
+Business Applications
+SaaS Applications (ERP, CRM...)
+Documents
+External Data (Appsflyer, Google Ads, Amplitude, Braze...)
+end note
+
+ETL --> [Data Processing Layer]
+note right of [Data Processing Layer]
+Objects Storage
+Metadata Storage
+Replications
+end note
+[Data Processing Layer] --> API
+
+API --> [Data Targets]
+note right of [Data Targets]
+Data Warehouse
+BI Platforms
+Data Science Projects
+end note
+
+@enduml
+```
+<p style="text-align: center;">Key Components of Data Lake Architecture.</p>
 
 #### Data Ingestion
 > Data Ingestion allows connectors to get data from a different data sources and load into the Data Lake.

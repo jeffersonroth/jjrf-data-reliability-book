@@ -7,7 +7,7 @@ export CARGO_PROFILE_RELEASE_LTO=true
 echo "installing mdbook"
 cargo install mdbook
 # cargo install mdbook-linkcheck
-cargo install mdbook-i18n
+# cargo install mdbook-i18n
 cargo install mdbook-toc
 cargo install mdbook-footnote
 cargo install mdbook-emojicodes

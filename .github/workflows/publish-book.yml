@@ -12,19 +12,27 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@master
+
       - name: Change Wrapper Permissions
         run: chmod -R +x ci
+
       - name: Install hub
         run: ci/install-hub.sh
         shell: bash
+
       - name: Install Rust
         run: ci/install-rust.sh stable
         shell: bash
+
+      - name: Setup for using PlantUML
+        run: sudo apt-get update && sudo apt-get install -y build-essential openjdk-11-jre graphviz plantuml
+
       - name: Build and Deploy Artifacts
         env:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
         run: ci/build-mdbook.sh
         shell: bash
+
       - name: Deploy
         uses: peaceiris/actions-gh-pages@v3
         with:
