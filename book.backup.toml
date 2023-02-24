@@ -2,14 +2,14 @@
 title = "Data Reliability Engineering"
 authors = ["Jefferson Roth"]
 language = "en"
-multilingual = true
+multilingual = false
 src = "src"
 
 # Translations
-[[output.i18n.translations]]
-language = "es"
-translators = ["Jefferson Roth"]
-title = "Ingeniería y Confiabilidad de Datos"
+# [[output.i18n.translations]]
+# language = "es"
+# translators = ["Jefferson Roth"]
+# title = "Ingeniería y Confiabilidad de Datos"
 
 # Preprocessors
 # Table of Contents
@@ -31,7 +31,7 @@ command = "mdbook-mermaid"
 
 # PlantUML
 [preprocessor.plantuml]
-plantuml-cmd="plantuml.exe"
+plantuml-cmd="java -jar /usr/share/plantuml/plantuml.jar"
 
 # Admonish
 # [preprocessor.admonish]

@@ -1,5 +1,8 @@
 book
 
+# Cache
+.mdbook-plantuml-cache/
+
 # Other
 .vscode/
 .DS_Store

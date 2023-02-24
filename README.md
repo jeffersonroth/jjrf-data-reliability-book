@@ -11,7 +11,7 @@
     Book about data reliability engineering and data architecture.
     <br />
     <br />
-    <a href="https://jeffersonroth.github.io/jjrf-data-reliability-book/">Preview</a>
+    <a href="https://jeffersonroth.github.io/jjrf-data-reliability-book/html/">Preview</a>
   </p>
 </p>
 
