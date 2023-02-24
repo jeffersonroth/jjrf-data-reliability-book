@@ -136,21 +136,21 @@ The following data lake approach is explored by the [University of Stuttgart and
 
 ```plantuml
 @startmindmap
-+ Zone
-++_ Properties
-+++_ Governed
-+++_ Historized
-+++_ Persistent
-+++_ Protected
-+++_ Use Case Independent
---_ Data Characteristics
----_ Granularity
----_ Schema
----_ Syntax
----_ Semantics
---_ User Groups
---_ Name
---_ Modelling Approach
++[#lightblue] Zone
+++ Name
+-- Modelling Approach
+++ Properties
++++ Governed
++++ Historized
++++ Persistent
++++ Protected
++++ Use Case Independent
+-- Data Characteristics
+--- Granularity
+--- Schema
+--- Syntax
+--- Semantics
+-- User Groups
 @endmindmap
 ```
 <p style="text-align: center;">Zone Reference Model for Enterprise-Grade Data Lake Management - Meta-model for zones - Attributes.</p>
@@ -432,7 +432,7 @@ end note
 
 @enduml
 ```
-<p style="text-align: center;">Key Components of Data Lake Architecture..</p>
+<p style="text-align: center;">Key Components of Data Lake Architecture.</p>
 
 #### Data Ingestion
 > Data Ingestion allows connectors to get data from a different data sources and load into the Data Lake.
