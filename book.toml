@@ -33,38 +33,15 @@ command = "mdbook-mermaid"
 [preprocessor.plantuml]
 plantuml-cmd="java -jar /usr/share/plantuml/plantuml.jar"
 
-# Admonish
-# [preprocessor.admonish]
-# command = "mdbook-admonish"
-
-# SVG Bob
-# [preprocessor.svgbob]
-
-# Katex LaTex
-# [preprocessor.katex]
-# renderers = ["html"]
+[preprocessor.catppuccin]
+assets_version = "0.1.1" # DO NOT EDIT: Managed by `mdbook-catppuccin install`
 
 # Outputs
-# Linkcheck
-# [output.linkcheck]
-
 # HTML
 [output.html]
 additional-js = ["assets/mermaid.min.js", "assets/mermaid-init.js"]
-additional-css = ["assets/mdbook-admonish.css", "assets/catppuccin.css", "assets/catppuccin-highlight.css"]
+additional-css = ["theme/catppuccin.css", "theme/catppuccin-highlight.css"]
 # mathjax-support = true
 
 [output.html.print]
 enable = true
-
-# PDF
-# [output.pdf]
-
-# MAN
-# [output.man]
-
-# Katex LaTex
-# [output.katex]
-
-# EPUB
-# [output.epub]

@@ -34,6 +34,8 @@
     - [Data Tier](./concepts/data_tier.md)
       - [Data Lake](./concepts/data_lake.md)
       - [Data Warehouse](./concepts/data_warehouse.md)
+        - [Application Tier](./concepts/data_warehouse_application_tier.md)
+        - [Data Modelling](./concepts/data_modelling.md)
       - [Data Lakehouse](./concepts/data_lakehouse.md)
       - [Data Marts](./concepts/data_marts.md)
     - [Application Tier](./concepts/application_tier.md)

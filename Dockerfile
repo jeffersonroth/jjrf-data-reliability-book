@@ -9,7 +9,7 @@ WORKDIR /
 
 COPY ./assets .
 COPY ./images .
-# COPY ./translations .
+COPY ./theme .
 COPY ./ci/build-mdbook.sh .
 COPY ./book.backup.toml .
 
