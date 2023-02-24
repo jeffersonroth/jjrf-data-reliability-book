@@ -116,7 +116,6 @@ While QuickSight doesn’t connect directly to the data lake, integration with A
 It includes auditing and proficiency management, data management, workflow management. AWS data lake environments and monitoring tools and best practices are described here.
 
 ### Zones
-
 <div style="position: relative; width: 100%; height: 0; padding-top: 35.0000%;
  padding-bottom: 0; box-shadow: 0 2px 8px 0 rgba(63,69,81,0.16); margin-top: 1.6em; margin-bottom: 0.9em; overflow: hidden;
  border-radius: 8px; will-change: transform;">
@@ -136,7 +135,7 @@ The following data lake approach is explored by the [University of Stuttgart and
 
 ```plantuml
 @startmindmap
-+[#lightblue] Zone
++ Zone
 ++ Name
 -- Modelling Approach
 ++ Properties
