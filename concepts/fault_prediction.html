@@ -148,17 +148,17 @@
 
                 <div id="content" class="content">
                     <main>
-                        <h1 id="predicción-de-fallos"><a class="header" href="#predicción-de-fallos">Predicción de Fallos</a></h1>
-<p>La predicción acurada y rápida de los fallos posibilita a los que mantenemos los procesos asegurar mayor disponibilidad de los servicios. Desafortunadamente, la predicción de fallos es muchísimo menos sencilla que su detección.</p>
-<p>Para poder predecir un fallo, éste debe ser identificado y clasificado. Los fallos también deben ser predecibles (o capaces de predicción), lo que significa que existen alteraciones de estados de los sistemas (y componentes) que llevan al fallo, o el fallo ocurre regularmente siguiendo algún patrón. Ambos casos pueden ser traducidos a problemas de predicción de series temporales, y la data de los sensores y logs puede ser trabajada para entrenar los modelos de predicción.</p>
-<p>La data colectada muy difícilmente estará lista para ser utilizada por los modelos de predicción, así que uno o más tareas de preprocesamiento deben llevarse a cabo:</p>
+                        <h1 id="failure-prediction"><a class="header" href="#failure-prediction">Failure Prediction</a></h1>
+<p>Accurate and rapid prediction of failures allows those of us maintaining processes to ensure higher service availability. Unfortunately, failure prediction is much more complex than detection.</p>
+<p>To predict a failure, it must be identified and classified. Failures must also be predictable, meaning there are system (and component) state changes that lead to failure, or the failure occurs regularly following some pattern. Both cases can be translated into time series prediction problems, and sensor and log data can be used to train prediction models.</p>
+<p>The collected data will hardly be ready for use by prediction models, so one or more preprocessing tasks must be carried out:</p>
 <ul>
-<li><strong>Sincronización de la data</strong>: las métricas colectadas por diversos agentes (sensores) deben alinearse en la dimensión de tiempo.</li>
-<li><strong>Limpieza de la data</strong>: remoción de data innecesaria, y generación de data faltante (ej: interpolación).</li>
-<li><strong>Normalización de la data</strong>: los valores de las métricas son normalizados para que las magnitudes sean comparables.</li>
-<li><strong>Selección de features</strong>: las métricas relevantes son identificadas para su utilización en los modelos.</li>
+<li><strong>Data synchronization</strong>: metrics collected by various agents must be aligned in time.</li>
+<li><strong>Data cleaning</strong>: removal of unnecessary data and generation of missing data (e.g., interpolation).</li>
+<li><strong>Data normalization</strong>: metric values are normalized to make magnitudes comparable.</li>
+<li><strong>Feature selection</strong>: relevant metrics are identified for use in the models.</li>
 </ul>
-<p>Una vez preprocesada la data, la misma será utilizada en dos pipelines: pipeline de entrenamiento, y pipeline de inferencia. El pipeline de entrenamiento usa la data en bulk, para entrenar el modelo a ser disponibilizado al pipeline de inferencia. Los resultados de la inferencia indicará la existencia o no de tipos específicos de fallas, sobre la muestra de métricas monitoreadas.</p>
+<p>Once the data is preprocessed, it will be used in two pipelines: a training pipeline and an inference pipeline. The training pipeline uses bulk data to train the model to be made available to the inference pipeline. The inference results will indicate the presence or absence of specific types of failures in the monitored metric sample.</p>
 
                     </main>
 

@@ -148,46 +148,47 @@
 
                 <div id="content" class="content">
                     <main>
-                        <h1 id="impedimentos"><a class="header" href="#impedimentos">Impedimentos</a></h1>
-<h2 id="fallos-errores-y-defectos"><a class="header" href="#fallos-errores-y-defectos">Fallos, Errores y Defectos</a></h2>
+                        <h1 id="impediments"><a class="header" href="#impediments">Impediments</a></h1>
+<h2 id="failures-errors-and-faults"><a class="header" href="#failures-errors-and-faults">Failures, Errors, and Faults</a></h2>
 <blockquote>
-<p>Los <strong>fallos</strong> son el resultado de problemas internos no esperados que el sistema manifiesta eventualmente en su comportamiento externo. Estos problemas se llaman <strong>errores</strong>, y sus causas mecánicas o algorítmicas se denominan <strong>defectos</strong>. Cuando el comportamiento de un sistema se desvía del especificado para él, se dice que es un fallo.</p>
+<p><strong>Failures</strong> are the result of unexpected internal problems that a system eventually exhibits in its external behavior. These problems are called <strong>errors</strong>, and their mechanical or algorithmic causes are referred to as <strong>faults</strong>.
+When a system's behavior deviates from what is specified for it, it is said to have a <strong>failure</strong>, or the system have <strong>failed</strong>.</p>
 </blockquote>
-<p>Los sistemas están compuestos de <strong>componentes</strong>, cada uno de los cuales se puede considerar como un sistema en sí mismo. Así, un fallo en un sistema puede inducir un defecto en otro, el cual puede acabar en un error y en un fallo potencial de este sistema. Esto puede continuar y producir un efecto en cualquier sistema relacionado, y así sucesivamente.</p>
-<p>Un componente defectuoso de un sistema es un componente que producirá un error bajo un conjunto concreto de circunstancias durante la vida del sistema. Visto en términos de transición de estados, <em>un sistema puede ser considerado como un número de estados externos e internos</em>.</p>
-<p>Un estado externo no especificado en el comportamiento del sistema se considerará un fallo del sistema. El sistema en sí mismo consta de un número de componentes (cada uno con sus propios estados), contribuyendo todos ellos al comportamiento externo del sistema. La combinación de los estados de estos componentes se denomina estado interno del sistema. <em>Un estado interno no especificado se considera un error, y el componente que produjo la transición de estados ilegal se dice que es defectuoso</em>.</p>
-<p>Definiré tres tipos de fallos:</p>
+<p>Systems are composed of <strong>components</strong>, each of which can be considered a system in itself. Thus, a failure in one system can induce a fault in another, which may result in an error and a potential failure of this system. This can continue and produce an effect on any related system, and so on.</p>
+<p>A faulty component of a system is one that will produce an error under a specific set of circumstances during the system's lifetime. Seen in terms of state transitions, <em>a system can be considered as a number of external and internal states</em>.</p>
+<p>An external state not specified in the system's behavior will be considered a system failure. The system itself consists of a number of components (each with its own states), all contributing to the system's external behavior. The combination of these components' states is called the system's internal state. <em>An unspecified internal state is considered an error, and the component that produced the illegal state transition is said to be faulty</em>.</p>
+<p>The three types of failures:</p>
 <ul>
-<li><strong>Fallos transitorios</strong>: comienza en un instante de tiempo concreto, se mantiene en el sistema durante algún periodo de tiempo, y luego desaparece.</li>
-<li><strong>Fallos permanentes</strong>: comienzan en un instante determinado y permanecen en el sistema hasta que son reparados.</li>
-<li><strong>Fallos intermitentes</strong>: son fallos transitorios que ocurren de vez en cuando.</li>
+<li><strong>Transient failures</strong>: begin at a specific point in time, remain in the system for some period, and then disappear.</li>
+<li><strong>Permanent failures</strong>: begin at a certain point and remain in the system until they are repaired.</li>
+<li><strong>Intermittent failures</strong>: are transient failures that occur sporadically.</li>
 </ul>
-<h2 id="modos-de-fallos"><a class="header" href="#modos-de-fallos">Modos de Fallos</a></h2>
+<h2 id="failure-modes"><a class="header" href="#failure-modes">Failure Modes</a></h2>
 <blockquote>
-<p>Un sistema puede fallar de muchas maneras. Un diseñador puede diseñar el sistema suponiendo un número finito de modos de fallo, sin embargo el sistema puede fallar de manera diferente a lo esperado.</p>
+<p>A system can fail in many ways. A designer may design the system assuming a finite number of failure modes, however, the system may fail in ways that were not anticipated.</p>
 </blockquote>
-<p>Podemos clasificar los modos de fallos de los servicios que proporciona un sistema, los cuales:</p>
+<p>We can classify the failure modes of the services that a system provides, which are:</p>
 <ul>
-<li><strong>Fallos de valor</strong>: el valor asociado con el servicio es erróneo.</li>
-<li><strong>Fallo de tiempo</strong>: el servicio se completa a destiempo.</li>
-<li><strong>Fallo arbitrario</strong>: combinación de fallos de valor y tiempo.</li>
+<li><strong>Value failures</strong>: the value associated with the service is incorrect.</li>
+<li><strong>Timing failure</strong>: the service is completed at the wrong time.</li>
+<li><strong>Arbitrary failure</strong>: a combination of value and timing failures.</li>
 </ul>
-<p>Los modos de fallo de valor se denominan <strong>domínio de valor</strong>, y son clasificados en <strong>error de límites</strong>, y <strong>valor erróneo</strong>, dónde el valor se encuentra fuera del rango estipulado.</p>
-<p>Los fallos en el dominio del tiempo pueden hacer que el servicio sea entregado:</p>
+<p>Value failure modes are called <strong>value domain</strong>, and are classified into <strong>boundary error</strong>, and <strong>wrong value</strong>, where the value is outside the stipulated range.</p>
+<p>Failures in the time domain can cause the service to be delivered:</p>
 <ul>
-<li><strong>Demasiado pronto</strong> (adelantado): el servicio se entrega antes de lo requerido.</li>
-<li><strong>Demasiado tarde</strong> (retrasado o error de prestaciones): el servicio se entrega después de lo requerido.</li>
-<li><strong>Infinitamente tarde</strong> (fallo de omisión): el servicio nunca es entregado.</li>
-<li><strong>No esperado</strong> (fallo de encargo o improvisación): el servicio es entregado sin ser esperado.</li>
+<li><strong>Too early</strong> (premature): the service is delivered before it is required.</li>
+<li><strong>Too late</strong> (delayed or performance error): the service is delivered after it is required.</li>
+<li><strong>Infinitely late</strong> (omission failure): the service is never delivered.</li>
+<li><strong>Unexpected</strong> (commission failure or improvisation): the service is delivered without being expected.</li>
 </ul>
-<p>En general, podemos suponer los modos que un sistema puede fallar:</p>
+<p>In general, we can assume the modes in which a system can fail:</p>
 <ul>
-<li><strong>Fallo descontrolado</strong>: un sistema que produce errores arbitrales, tanto en el dominio del valor como en el del tiempo (incluyendo errores de improvisación).</li>
-<li><strong>Fallo de retraso</strong>: un sistema que produce servicios correctos en el dominio del valor, pero que sufre errores de retraso en el tiempo.</li>
-<li><strong>Fallo de silencio</strong>: un sistema que produce servicios correctos tanto en el dominio del valor como en el del tiempo, hasta que falla. El único fallo posible es el de omisión, y cuando ocurre, todos los servicios siguientes también sufrirán fallos de omisión.</li>
-<li><strong>Fallo de parada</strong>: un sistema que tiene todas las propiedades de un fallo silencioso, pero que permite que otros sistemas puedan detectar que ha entrado en el estado de fallo de silencio.</li>
-<li><strong>Fallo controlado</strong>: un sistema que falla de una forma especificada y controlada.</li>
-<li><strong>Sin fallos</strong>: un sistema que siempre produce los servicios correctos.</li>
+<li><strong>Uncontrolled failure</strong>: a system that produces arbitrary errors, both in the value domain and in the time domain (including improvisation errors).</li>
+<li><strong>Delay failure</strong>: a system that produces correct services in the value domain but suffers from timing delays.</li>
+<li><strong>Silent failure</strong>: a system that produces correct services in both the value and time domains, until it fails. The only possible failure is omission, and when it occurs, all subsequent services will also suffer from omission failures.</li>
+<li><strong>Crash failure</strong>: a system that has all the properties of a silent failure but allows other systems to detect that it has entered the state of silent failure.</li>
+<li><strong>Controlled failure</strong>: a system that fails in a specified and controlled manner.</li>
+<li><strong>Failure-free</strong>: a system that always produces the correct services.</li>
 </ul>
 
                     </main>
