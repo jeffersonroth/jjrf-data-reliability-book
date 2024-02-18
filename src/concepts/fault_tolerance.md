@@ -1,51 +1,51 @@
-# Tolerancia de Fallos
-> Debido a las limitaciones en las prevenciones de fallos, una vez que la data y los procesos cambian con frecuencia, es necesario recurrir a la tolerancia de fallos.
+# Fault Tolerance
+> Given the limitations in fault prevention, especially as data and processes frequently change, it becomes necessary to resort to fault tolerance.
 
-Existen diferentes niveles de tolerancia a fallos:
-* **Tolerancia total**: no hay manejo de condiciones adversas o no deseadas, el proceso no se adapta a las validaciones y variables de entorno u otras informaciones externas para la ejecución de los tasks.
-* **Degradación controlada** (o caída suave): notificaciones serán disparadas en la presencia de fallos, y siendo el suficiente importantes para interrumpir el flujo de tareas (thresholds, inexistencia o indisponibilidad de la data), los operadores de rama seleccionarán los tasks subsiguientes.
-* **Fallo seguro**: los fallos detectados son suficientes para detectar que el proceso no debe ocurrir, un operador de cortocircuito cancela la ejecución de los subsiguientes tasks, los responsables son notificados, y caso no exista un proceso automático para lidiar con el problema, el equipo de data puede tomar acciones como volver a ejecutar los procesos que generan los inputs necesarios, o escalar el caso.
+There are different levels of fault tolerance:
+* **Full tolerance**: there is no management of adverse or unwanted conditions; the process does not adapt to validations and environmental variables or other external information for the execution of tasks.
+* **Controlled degradation** (or graceful degradation): notifications are triggered in the presence of faults, and if they are significant enough to interrupt the task flow (thresholds, non-existence, or unavailability of data), branch operators will select the subsequent tasks.
+* **Fail-safe**: detected faults are significant enough to determine that the process should not occur; a short-circuit or circuit breaker operator cancels the execution of subsequent tasks, stakeholders are notified, and if there is no automatic process to deal with the problem, the data team can take actions such as rerunning the processes that generate the necessary inputs or escalating the case.
 
-El diseño de los procesos tolerantes a fallos supone:
-* Los algoritmos de las tareas se han diseñado correctamente.
-* Se conocen todos los posibles modos de fallos de los componentes.
-* Se han tenido en cuenta todas las posibles interacciones entre el proceso y su entorno.
+The design of fault-tolerant processes assumes:
+* The task algorithms have been correctly designed.
+* All possible failure modes of the components are known.
+* All possible interactions between the process and its environment have been considered.
 
-## Redundancia
-> Todas las técnicas utilizadas para conseguir tolerancia a fallos se basan en añadir elementos externos al sistema para que detecte y se recupere de fallos. Estos elementos son redundantes en el sentido de que no son necesarios para el normal funcionamiento del sistema, a esto llamamos **redundancia protectora**. El objetivo de la tolerancia es minimizar la redundancia, maximizando la fiabilidad, siempre bajo las restricciones de complejidad y tamaño del sistema. **Se debe tener cuidado al diseñar los sistemas tolerantes a fallos, ya que los componentes incrementan la complejidad y mantenimiento de todo el sistema, lo que puede en sí, conducir a sistemas menos fiables**.
+## Redundancy
+> All techniques used to achieve fault tolerance are based on adding external elements to the system to detect and recover from faults. These elements are redundant in the sense that they are not necessary for the system's normal operation; this is called **protective redundancy**. The goal of tolerance is to minimize redundancy while maximizing reliability, always under the constraints of system complexity and size. *Care must be taken when designing fault-tolerant systems, as components increase the complexity and maintenance of the entire system, which can in itself lead to less reliable systems*.
 
-Clasificamos la redundancia en los sistemas en estáticas y dinámicas. La **redundancia estática**, o enmascaramiento, consiste en que los componentes redundantes son utilizados para ocultar los efectos de los fallos. La **redundancia dinámica** es la redundancia aportada dentro de un componente que hace que el mismo indique, implícita o explícitamente, que la salida es errónea; la recuperación debe ser proporcionada por otro componente. Esta técnica de tolerancia a fallos tiene cuatro fases:
-1. **Detección de errores**: no se utilizará ningún esquema de tolerancia a fallos hasta que se haya detectado un error.
-2. **Confinamiento y valoración de daños**: cuando se detecte un error, debe estimarse la extensión del sistema que ha sido corrompida (diagnóstico de error) y su escopo.
-3. **Recuperación del error**: este es uno de los aspectos más importantes de la tolerancia a fallos. Las técnicas de recuperación de errores deberían dirigir al sistema corrupto a un estado a partir del cual pueda continuar con su normal funcionamiento (quizás con una degradación funcional).
-4. **Tratamiento del fallo y continuación del servicio**: un error es un síntoma de un fallo; aunque el daño pudiera haber sido reparado, el fallo continúa existiendo, y por lo tanto el error puede volver a darse a menos que se realice algún tipo de mantenimiento.
+Redundancy in systems is classified into static and dynamic. **Static redundancy**, or masking, involves using redundant components to hide the effects of faults. **Dynamic redundancy** is redundancy within a component that makes it indicate, implicitly or explicitly, that the output is erroneous; recovery must be provided by another component. This fault tolerance technique has four phases:
+1. **Error detection**: no fault tolerance action will be taken until an error has been detected.
+2. **Damage confinement and assessment**: when an error is detected, the extent of the system that has been corrupted and its scope must be estimated (error diagnosis).
+3. **Error recovery**: this is one of the most important aspects of fault tolerance. Error recovery techniques should direct the corrupted system to a state from which it can continue its normal operation (perhaps with functional degradation).
+4. **Failure treatment and service continuation**: an error is a symptom of a failure; although the damage might have been repaired, the failure still exists, and therefore the error may recur unless some form of maintenance is performed.
 
-### 1. Detección de errores
-> La efectividad de un sistema tolerante a fallos depende de la **efectividad de detección de errores**.
+### 1. Error Detection
+> The effectiveness of a fault-tolerant system depends on the **effectiveness of error detection**.
 
-La detección de errores se clasifican en:
-* **Detecciones en el entorno**. Los errores se detectan en el entorno en el cual se ejecutan el programa. Son manejados por las excepciones (exceptions).
-* **Detección en la aplicación**. Los errores se detectan en la misma aplicación.
-  * **Comprobaciones inversas**. Aplicadas en componentes de relación isomórfica (uno a uno) entre la entrada y la salida. En este método, se toma la salida y se calcula la entrada, lo cual es comparado con el valor de entrada original. Para casos de números reales, es necesario adoptar técnicas de comparación inexactas.
-  * **Comprobación de racionalidad**. Se basan en el conocimiento del diseño y de la construcción del sistema. Comprueban que el estado de los datos o el valor de un objeto es razonable basándose en su supuesto uso.
+Error detection is classified into:
+* **Environmental detections**: Errors are detected in the environment in which the program runs. They are handled by exceptions.
+* **Application detection**: Errors are detected within the application itself.
+  * **Reverse checks**: Applied in components with an isomorphic relationship (one-to-one) between input and output. In this method, the output is taken and the input is calculated, which is compared with the original input value. For real numbers, inexact comparison techniques must be adopted.
+  * **Rationality checks**: Based on the design and construction knowledge of the system. They verify that the state of the data or the value of an object is reasonable based on its intended use.
 
-### 2. Confinamiento y valoración de los daños
-> Siempre existirá una magnitud de tiempo, entre la ocurrencia de un defecto y la detección del error, siendo por lo tanto importante la valoración de cualquier daño que se haya podido producir en este intervalo de tiempo.
+### 2. Damage Confinement and Assessment
+> There will always be a time magnitude between the occurrence of a defect and the detection of the error, making it important to assess any damage that may have occurred in this time interval.
 
-Aunque el tipo de error detectado podrá dar ideas sobre el daño a la rutina de tratamiento del error, podrían haber sido diseminadas informaciones erróneas por el sistema y su entorno. Así, la valoración de los daños estará directamente relacionada con las precauciones tomadas por el diseñador de este sistema para el confinamiento del daño (**construcción de cortafuegos**). El confinamiento del daño se refiere a la estructuración del sistema de modo que se minimicen los daños causados por un componente defectuoso.
+Although the type of error detected can provide ideas about the damage to the error handling routine, erroneous information could have been disseminated through the system and its environment. Thus, damage assessment is directly related to the precautions taken by the system designer for damage confinement. Damage confinement refers to structuring the system in such a way as to minimize the damage caused by a faulty component.
 
-Existen dos técnicas principales para estructurar los sistemas de modo que se facilite el confinamiento de daños: **descomposición modular** y **acciones atómicas**. Por descomposición modular entiéndase que los sistemas deben ser descompuestos en componentes, cada uno de los cuales se representa por uno o más módulos. La interacción de los componentes se produce a través de interfaces bien definidas, y los detalles internos de los módulos están ocultos y no son accesibles directamente desde el exterior. Esto hace más difícil que un error en un componente pase indiscriminadamente a otro.
+There are two main techniques for structuring systems to facilitate damage confinement: **modular decomposition** and **atomic actions**. Modular decomposition means that systems should be broken down into components, each represented by one or more modules. The interaction of the components occurs through well-defined interfaces, and the internal details of the modules are hidden and not directly accessible from the outside. This makes it more difficult for an error in one component to indiscriminately pass to another.
 
-La descomposición modular proporciona al sistema una estructura estática, ya las acciones atómicas proporcionan al mismo una estructura dinámica. Se dice que una acción es atómica si no existen interacciones entre la actividad y el sistema durante el transcurso de la acción. Estas acciones se utilizan para mover el sistema de un estado consistente a otro, y para restringir el flujo de información entre los componentes.
+Modular decomposition provides the system with a static structure, while atomic actions provide it with a dynamic structure. An action is said to be atomic if there are no interactions between the activity and the system during the course of the action. These actions are used to move the system from one consistent state to another and to restrict the flow of information between components.
 
-### 3. Recuperación de errores
-> Una vez detectada la situación de error, y que sus posibles daños hayan sido valorados, se inician los procedimientos de recuperación de errores. Esta fase es probablemente la más importante dentro de las técnicas de tolerancia a fallos, la cual debe transformar un estado erróneo del sistema en otro desde el cual el sistema pueda continuar con su funcionamiento normal, quizás con una cierta degradación en el servicio.
+### 3. Error Recovery
+> Once the error situation has been detected and its possible damages have been assessed, error recovery procedures begin. This phase is probably the most important within fault tolerance techniques, which must transform an erroneous state of the system into another from which the system can continue its normal operation, perhaps with some service degradation.
 
-Aquí citaré dos estrategias para la recuperación de errores: recuperación **hacia adelante**, y **hacia atrás**. La recuperación de errores hacia adelante intenta continuar desde el estado erróneo realizando correcciones selectivas en el estado del sistema, que incluye proteger cualquier aspecto del entorno controlado que pudiera ser puesto en riesgo o dañado por el fallo.
+Here it's worth mentioning two strategies for error recovery: **forward recovery** and **backward recovery**. Forward error recovery attempts to continue from the erroneous state by making selective corrections to the system's state, including protecting any aspect of the controlled environment that could be put at risk or damaged by the failure.
 
-La recuperación hacia atrás se basa en restaurar el sistema a un estado seguro previo a aquél en el que se produjo el error, para luego ejecutar una sección alternativa de la tarea. Ésta tendrá la misma funcionalidad que la sección que produjo el defecto, pero utilizando un algoritmo distinto. Se espera que esta alternativa no produzca el mismo defecto que la versión anterior, así que dependerá del conocimiento del diseñador sobre los posibles modos de fallo de este componente.
+Backward recovery is based on restoring the system to a safe state prior to the one in which the error occurred, and then executing an alternative section of the task. This will have the same functionality as the section that produced the defect, but using a different algorithm. It is expected that this alternative will not produce the same defect as the previous version, so it will rely on the designer's knowledge of the possible failure modes of this component.
 
-El diseñador debe tener claro los niveles de degradación de un servicio, teniendo en cuenta los servicios y procesos que dependen de éste. La recuperación de errores hace parte de los procesos de acción correctiva y acciones preventivas (CAPA - Corrective Action and Preventive Action Process), el cual se trabajará en dos momentos: en ese mismo capitulo de tolerancia a fallos cuando se trabajen las acciones correctivas, y en el próximo capitulo, prevención de fallos, cuando se aborde el tema de acciones preventivas.
+The designer must be clear about the levels of service degradation, taking into account the services and processes that depend on it. Error recovery is part of the Corrective Action and Preventive Action processes (CAPA), which will be worked on in two moments: in this same chapter on fault tolerance when corrective actions are worked on, and in the next chapter, fault prevention, when preventive actions are addressed.
 
-### 4. Tratamiento de los fallos y servicio continuado
-> Un error es una manifestación de un defecto, y aunque la fase de recuperación del error puede haber llevado el sistema a un estado libre de error, el error se puede volver a producir. Por lo tanto, la fase final de la tolerancia de fallos es erradicar el fallo del sistema, de forma que se pueda continuar con el servicio normal.
+### 4. Failure Treatment and Continued Service
+> An error is a manifestation of a defect, and although the error recovery phase may have brought the system to an error-free state, the error can recur. Therefore, the final phase of fault tolerance is to eradicate the failure from the system so that normal service can continue.

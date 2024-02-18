@@ -1,12 +1,12 @@
-# Predicción de Fallos
-La predicción acurada y rápida de los fallos posibilita a los que mantenemos los procesos asegurar mayor disponibilidad de los servicios. Desafortunadamente, la predicción de fallos es muchísimo menos sencilla que su detección.
+# Failure Prediction
+Accurate and rapid prediction of failures allows those of us maintaining processes to ensure higher service availability. Unfortunately, failure prediction is much more complex than detection.
 
-Para poder predecir un fallo, éste debe ser identificado y clasificado. Los fallos también deben ser predecibles (o capaces de predicción), lo que significa que existen alteraciones de estados de los sistemas (y componentes) que llevan al fallo, o el fallo ocurre regularmente siguiendo algún patrón. Ambos casos pueden ser traducidos a problemas de predicción de series temporales, y la data de los sensores y logs puede ser trabajada para entrenar los modelos de predicción.
+To predict a failure, it must be identified and classified. Failures must also be predictable, meaning there are system (and component) state changes that lead to failure, or the failure occurs regularly following some pattern. Both cases can be translated into time series prediction problems, and sensor and log data can be used to train prediction models.
 
-La data colectada muy difícilmente estará lista para ser utilizada por los modelos de predicción, así que uno o más tareas de preprocesamiento deben llevarse a cabo:
-* **Sincronización de la data**: las métricas colectadas por diversos agentes (sensores) deben alinearse en la dimensión de tiempo.
-* **Limpieza de la data**: remoción de data innecesaria, y generación de data faltante (ej: interpolación).
-* **Normalización de la data**: los valores de las métricas son normalizados para que las magnitudes sean comparables.
-* **Selección de features**: las métricas relevantes son identificadas para su utilización en los modelos.
+The collected data will hardly be ready for use by prediction models, so one or more preprocessing tasks must be carried out:
+* **Data synchronization**: metrics collected by various agents must be aligned in time.
+* **Data cleaning**: removal of unnecessary data and generation of missing data (e.g., interpolation).
+* **Data normalization**: metric values are normalized to make magnitudes comparable.
+* **Feature selection**: relevant metrics are identified for use in the models.
 
-Una vez preprocesada la data, la misma será utilizada en dos pipelines: pipeline de entrenamiento, y pipeline de inferencia. El pipeline de entrenamiento usa la data en bulk, para entrenar el modelo a ser disponibilizado al pipeline de inferencia. Los resultados de la inferencia indicará la existencia o no de tipos específicos de fallas, sobre la muestra de métricas monitoreadas.
+Once the data is preprocessed, it will be used in two pipelines: a training pipeline and an inference pipeline. The training pipeline uses bulk data to train the model to be made available to the inference pipeline. The inference results will indicate the presence or absence of specific types of failures in the monitored metric sample.

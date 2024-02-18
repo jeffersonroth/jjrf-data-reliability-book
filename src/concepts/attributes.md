@@ -1,32 +1,34 @@
-# Atributos
-## Confiabilidad
-> Es la probabilidad *R(t)* de que el sistema **siga funcionando al final del proceso**. El tiempo *t* se mide en horas continuas de trabajo entre diagnósticos. La tasa constante de fallos &lambda; se mide en *fallos/h*. La vida útil de un componente del sistema es la región constante (escala logarítmica) de la curva entre vida del componente (Component Age) y su tasa de fallos (Failure Rate). La región de la gráfica antes del equilibrio es el Burn In Phase, y la región en donde la tasa de fallos empieza a crecer es el End of Life Phase. Así tenemos *R(t)=exp(-&lambda;t)*.
+# Attributes
+## Reliability
+> It is the probability *R(t)* that the system will **continue functioning at the end of the process**.
 
-## Disponibilidad
-> Es la medida de la **frecuencia de los periodos de servicio incorrecto**.
+The time *t* is measured in continuous working hours between diagnostics. The constant failure rate &lambda; is measured in *failures/hour*. The useful life of a system component is the constant region (on a logarithmic scale) of the curve between the component's age and its failure rate. The region of the graph before equilibrium is the Burn-In Phase, and the region where the failure rate starts to increase is the End of Life Phase. Thus, we have *R(t) = exp(-&lambda;t)*.
 
-## Fiabilidad
-> Continuidad de entrega del servicio. 
+## Availability
+> It is the measure of the **frequency of incorrect service periods**.
 
-Es una medida (probabilidad) del **éxito con el que el sistema se ajusta a la especificación definitiva de su comportamiento**.
+## Dependability
+> Continuity of service delivery.
 
-## Seguridad
-> Es la ausencia de condiciones que pueden causar daños y propagación de **daños catastróficos** en producción.
+It is a measure (probability) of the **success with which the system conforms to the definitive specification of its behavior**.
 
-Sin embargo, como esa definición puede clasificar cómo inseguros virtualmente cualquier proceso, consideraremos a menudo el término **percance**.
+## Safety
+> It is the absence of conditions that can cause damage and the propagation of **catastrophic damage** in production.
 
-> Un percance es un **evento no planeado** o secuencia de eventos que pueden producir daños catastróficos.
+However, as this definition can classify virtually any process as unsafe, we often consider the term **mishap**.
 
-Por mayores que sean su similitud con la definición de **fiabilidad**, se debe considerar la diferencia en su énfasis. La fiabilidad es la medida de éxito con la cual el sistema se ajusta a la especificación de su comportamiento, normalmente en términos de **probabilidad**. La seguridad, sin embargo, es la **improbabilidad de que se den las condiciones que conducen a un percance, independientemente si se realiza la función prevista**.
+> A mishap is an **unplanned event** or sequence of events that can produce catastrophic damage.
 
-## Integridad
-> Es la ausencia de condiciones que pueden llevar a alteraciones inapropiadas de los datos en producción. Es la **improbabilidad de que se den las condiciones que alteran en producción datos inapropiados, independientemente si se realiza la función prevista**.
+Despite its similarity to the definition of **dependability**, the difference in emphasis should be noted. Dependability is the measure of success with which the system conforms to the specification of its behavior, typically in terms of **probability**. Safety, however, is the **improbability of conditions leading to a mishap occurring, regardless of whether the intended function is performed**.
 
-## Mantenimiento
-> Capacidad de superar reparaciones y evolucionar.
+## Integrity
+> It is the absence of conditions that can lead to inappropriate alterations of data in production. It is the **improbability of conditions occurring that alter inappropriate data in production, regardless of whether the intended function is performed**.
 
-## Escalabilidad
-> Capacidad de adecuación al negocio.
+## Maintainability
+> Ability to undergo repairs and evolve.
 
-## Deficiencias
-> Circunstancias que causan o son producto de la no **confiabilidad**.
+## Scalability
+> Ability to adapt to business needs.
+
+## Deficiencies
+> Circumstances that cause or are a product of **unreliability**.
