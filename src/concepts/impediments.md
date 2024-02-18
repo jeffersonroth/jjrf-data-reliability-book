@@ -1,39 +1,40 @@
-# Impedimentos
+# Impediments
 
-## Fallos, Errores y Defectos
-> Los **fallos** son el resultado de problemas internos no esperados que el sistema manifiesta eventualmente en su comportamiento externo. Estos problemas se llaman **errores**, y sus causas mecánicas o algorítmicas se denominan **defectos**. Cuando el comportamiento de un sistema se desvía del especificado para él, se dice que es un fallo.
+## Failures, Errors, and Faults
+> **Failures** are the result of unexpected internal problems that a system eventually exhibits in its external behavior. These problems are called **errors**, and their mechanical or algorithmic causes are referred to as **faults**.
+> When a system's behavior deviates from what is specified for it, it is said to have a **failure**, or the system have **failed**.
 
-Los sistemas están compuestos de **componentes**, cada uno de los cuales se puede considerar como un sistema en sí mismo. Así, un fallo en un sistema puede inducir un defecto en otro, el cual puede acabar en un error y en un fallo potencial de este sistema. Esto puede continuar y producir un efecto en cualquier sistema relacionado, y así sucesivamente.
+Systems are composed of **components**, each of which can be considered a system in itself. Thus, a failure in one system can induce a fault in another, which may result in an error and a potential failure of this system. This can continue and produce an effect on any related system, and so on.
 
-Un componente defectuoso de un sistema es un componente que producirá un error bajo un conjunto concreto de circunstancias durante la vida del sistema. Visto en términos de transición de estados, *un sistema puede ser considerado como un número de estados externos e internos*. 
+A faulty component of a system is one that will produce an error under a specific set of circumstances during the system's lifetime. Seen in terms of state transitions, *a system can be considered as a number of external and internal states*. 
 
-Un estado externo no especificado en el comportamiento del sistema se considerará un fallo del sistema. El sistema en sí mismo consta de un número de componentes (cada uno con sus propios estados), contribuyendo todos ellos al comportamiento externo del sistema. La combinación de los estados de estos componentes se denomina estado interno del sistema. *Un estado interno no especificado se considera un error, y el componente que produjo la transición de estados ilegal se dice que es defectuoso*.
+An external state not specified in the system's behavior will be considered a system failure. The system itself consists of a number of components (each with its own states), all contributing to the system's external behavior. The combination of these components' states is called the system's internal state. *An unspecified internal state is considered an error, and the component that produced the illegal state transition is said to be faulty*.
 
-Definiré tres tipos de fallos:
-* **Fallos transitorios**: comienza en un instante de tiempo concreto, se mantiene en el sistema durante algún periodo de tiempo, y luego desaparece.
-* **Fallos permanentes**: comienzan en un instante determinado y permanecen en el sistema hasta que son reparados.
-* **Fallos intermitentes**: son fallos transitorios que ocurren de vez en cuando.
+The three types of failures:
+* **Transient failures**: begin at a specific point in time, remain in the system for some period, and then disappear.
+* **Permanent failures**: begin at a certain point and remain in the system until they are repaired.
+* **Intermittent failures**: are transient failures that occur sporadically.
 
-## Modos de Fallos
-> Un sistema puede fallar de muchas maneras. Un diseñador puede diseñar el sistema suponiendo un número finito de modos de fallo, sin embargo el sistema puede fallar de manera diferente a lo esperado. 
+## Failure Modes
+> A system can fail in many ways. A designer may design the system assuming a finite number of failure modes, however, the system may fail in ways that were not anticipated. 
 
-Podemos clasificar los modos de fallos de los servicios que proporciona un sistema, los cuales:
-* **Fallos de valor**: el valor asociado con el servicio es erróneo.
-* **Fallo de tiempo**: el servicio se completa a destiempo.
-* **Fallo arbitrario**: combinación de fallos de valor y tiempo.
+We can classify the failure modes of the services that a system provides, which are:
+* **Value failures**: the value associated with the service is incorrect.
+* **Timing failure**: the service is completed at the wrong time.
+* **Arbitrary failure**: a combination of value and timing failures.
 
-Los modos de fallo de valor se denominan **domínio de valor**, y son clasificados en **error de límites**, y **valor erróneo**, dónde el valor se encuentra fuera del rango estipulado.
+Value failure modes are called **value domain**, and are classified into **boundary error**, and **wrong value**, where the value is outside the stipulated range.
 
-Los fallos en el dominio del tiempo pueden hacer que el servicio sea entregado:
-* **Demasiado pronto** (adelantado): el servicio se entrega antes de lo requerido.
-* **Demasiado tarde** (retrasado o error de prestaciones): el servicio se entrega después de lo requerido.
-* **Infinitamente tarde** (fallo de omisión): el servicio nunca es entregado.
-* **No esperado** (fallo de encargo o improvisación): el servicio es entregado sin ser esperado.
+Failures in the time domain can cause the service to be delivered:
+* **Too early** (premature): the service is delivered before it is required.
+* **Too late** (delayed or performance error): the service is delivered after it is required.
+* **Infinitely late** (omission failure): the service is never delivered.
+* **Unexpected** (commission failure or improvisation): the service is delivered without being expected.
 
-En general, podemos suponer los modos que un sistema puede fallar:
-* **Fallo descontrolado**: un sistema que produce errores arbitrales, tanto en el dominio del valor como en el del tiempo (incluyendo errores de improvisación).
-* **Fallo de retraso**: un sistema que produce servicios correctos en el dominio del valor, pero que sufre errores de retraso en el tiempo.
-* **Fallo de silencio**: un sistema que produce servicios correctos tanto en el dominio del valor como en el del tiempo, hasta que falla. El único fallo posible es el de omisión, y cuando ocurre, todos los servicios siguientes también sufrirán fallos de omisión.
-* **Fallo de parada**: un sistema que tiene todas las propiedades de un fallo silencioso, pero que permite que otros sistemas puedan detectar que ha entrado en el estado de fallo de silencio.
-* **Fallo controlado**: un sistema que falla de una forma especificada y controlada.
-* **Sin fallos**: un sistema que siempre produce los servicios correctos.
+In general, we can assume the modes in which a system can fail:
+* **Uncontrolled failure**: a system that produces arbitrary errors, both in the value domain and in the time domain (including improvisation errors).
+* **Delay failure**: a system that produces correct services in the value domain but suffers from timing delays.
+* **Silent failure**: a system that produces correct services in both the value and time domains, until it fails. The only possible failure is omission, and when it occurs, all subsequent services will also suffer from omission failures.
+* **Crash failure**: a system that has all the properties of a silent failure but allows other systems to detect that it has entered the state of silent failure.
+* **Controlled failure**: a system that fails in a specified and controlled manner.
+* **Failure-free**: a system that always produces the correct services.

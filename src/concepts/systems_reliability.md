@@ -1,13 +1,13 @@
-# Confiabilidad de Sistemas
-> La confiabilidad de un sistema es la propiedad del sistema que permite calificar, justificadamente, como fiable al servicio que proporciona.
+# Systems Reliability
+> The reliability of a system is the property that allows the system's service to be justifiably qualified as reliable.
 
-El objetivo de este capítulo es introducir los conceptos de confiabilidad y seguridad explorados por Alan Burns y Andy Wellings en su libro "Sistemas de Tiempo Real y Lenguajes de Programación", conceptos desarrollados por diferentes industrias principalmente entre los años 60 y 90, y los conceptos de Site Reliability Engineering (SRE) desarrollados a partir de los 2000, además de complementarlo con conceptos de confiabilidad trabajados en otras ingenierías (mecánica, industrial, etc.), bien cómo contextualizarlo con conceptos trabajados actualmente en la industria de software y sistemas informáticos.
+The goal of this chapter is to introduce the concepts of reliability and safety explored by Alan Burns and Andy Wellings in their book "Real-Time Systems and Programming Languages", concepts developed by different industries mainly between the 60s and 90s, and the concepts of Site Reliability Engineering (SRE) developed from the 2000s onwards, in addition to complementing it with reliability concepts worked on in other engineering fields (mechanical, industrial, etc.), as well as contextualizing it with concepts currently worked on in the software and computer systems industry.
 
-## [Impedimentos](./impediments.md)
-> Los impedimentos impiden el perfecto funcionamento de un sistema, o son consecuencia de este. En ese subcapítulo se trabajará la detección de los diferentes tipos de impedimentos, los cuales, los **Fallos**, **Errores** y **Defectos**.
+## [Impediments](./impediments.md)
+> Impediments prevent a system from functioning perfectly, or are a consequence of it. This subsection will address the detection of different types of impediments, which include **Failures**, **Errors**, and **Defects**.
 
-## [Atributos](./attributes.md)
-> El modo y las medidas mediante las cuales se puede **estimar la calidad de un servicio confiable**.
+## [Attributes](./attributes.md)
+> The way and measures by which the **quality of a reliable service can be estimated**.
 
-## [Mecanismos](./mechanisms.md)
-> Los mecanismos los cuales se trabaja la confiabilidad de sistemas, sea por interiorización y adopción de buenas prácticas, sea por la aplicación de metodologías, arquitecturas o herramientas específicas. Este subcapítulo busca formar un **marco de trabajo** el cual los ingeníeros puedan adoptar la confiabilidad de sistemas desde el mismo diseño.
+## [Mechanisms](./mechanisms.md)
+> The mechanisms through which system reliability is addressed, whether by internalization and adoption of best practices, or by the application of specific methodologies, architectures, or tools. This subsection aims to create a **framework** that engineers can adopt for system reliability from the design phase itself.
