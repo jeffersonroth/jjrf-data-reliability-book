@@ -63,6 +63,8 @@ In the other extreme, representing the data leaving the Data Lake, the **Busines
 The first three layers constitute the medallion architecture, which is a is a data design pattern used to logically organize data in a Data Lake (similar as in a Data Lakehouse), with the goal of incrementally and progressively improving the structure and quality of data as it flows through each layer of the architecture (from Bronze ⇒ Silver ⇒ Gold layer tables).
 Medallion architectures are sometimes also referred to as "multi-hop" architectures.
 
+You can see more details regarding this architecture approach in the [article](https://www.researchgate.net/profile/Sidharth-S-Prakash/publication/343219651_Evolution_of_Data_Warehouses_to_Data_Lakes_for_Enterprise_Business_Intelligence/links/5f1d52ad92851cd5fa48958a/Evolution-of-Data-Warehouses-to-Data-Lakes-for-Enterprise-Business-Intelligence.pdf){{Prakash, S. S. (2020). Evolution of Data Warehouses to Data Lakes for Enterprise Business Intelligence. Evolution, 8(4).}} "Evolution of Data Warehouses to Data Lakes for Enterprise Business Intelligence".
+
 #### Ingestion Layer (Bronze)
 > The purpose of the Ingestion Layer of the Data Lake Architecture is to ingest raw data into the Data Lake. There is no data modification in this layer. This is where we land all the data from external source systems.
 
@@ -113,7 +115,7 @@ While QuickSight doesn’t connect directly to the data lake, integration with A
 #### Unified Operations Layer
 > This layer governs system management and monitoring.
 
-It includes auditing and proficiency management, data management, workflow management. AWS data lake environments and monitoring tools and best practices are described here.
+It includes auditing and proficiency management, data management, workflow management. AWS data lake environments and monitoring tools and best practices are described in this [article](https://docs.aws.amazon.com/whitepapers/latest/building-data-lakes/monitoring-optimizing-data-lake-environment.html){{footnote: The article discuss data lake optimizations using AWS products, like CloudWatch, Macie, CloudTrail, and S3 Intelligent-Tiering.}} from AWS.
 
 ### Zones
 <div style="position: relative; width: 100%; height: 0; padding-top: 35.0000%;
@@ -125,7 +127,7 @@ It includes auditing and proficiency management, data management, workflow manag
 </div>
 <a href="https:&#x2F;&#x2F;www.canva.com&#x2F;design&#x2F;DAFbVKs6Or4&#x2F;view?utm_content=DAFbVKs6Or4&amp;utm_campaign=designshare&amp;utm_medium=embeds&amp;utm_source=link" target="_blank" rel="noopener"><p style="text-align: center;">Zone Reference Model for Enterprise-Grade Data Lake Management - Data Flow.</p></a>
 
-The following data lake approach is explored by the [University of Stuttgart and Bosch GmbH](https://www.ipvs.uni-stuttgart.de/departments/as/publications/giebleca/20_zoneReferenceModel_EDOC_Preprint.pdf), and known as Zone Reference Model for Enterprise-Grade Data Lake Management. It consists of:
+The following data lake approach is explored by the [University of Stuttgart and Bosch GmbH](https://www.ipvs.uni-stuttgart.de/departments/as/publications/giebleca/20_zoneReferenceModel_EDOC_Preprint.pdf){{footnote: C. Giebler, C. Gröger, E. Hoos, H. Schwarz and B. Mitschang, "A Zone Reference Model for Enterprise-Grade Data Lake Management," 2020 IEEE 24th International Enterprise Distributed Object Computing Conference (EDOC), Eindhoven, Netherlands, 2020, pp. 57-66, doi: 10.1109/EDOC49727.2020.00017.}}, and known as Zone Reference Model for Enterprise-Grade Data Lake Management. It consists of:
 - Landing Zone
 - Raw Zone
 - Harmonized Zone
@@ -472,3 +474,6 @@ The main Data auditing tasks are:
 > It is the beginning stage of data analysis. It helps to identify right dataset is vital before starting Data Exploration.
 
 All given components need to work together to play an important part in Data Lake building easily evolve and explore the environment.
+
+## Other Architecture Approaches
+**Data Lake Lambda Architecture for Smart Grids Big Data Analytics**: relies on Lambda architecture that is capable of performing parallel batch and real-time operations on distributed data. See the [article](https://ieeexplore.ieee.org/abstract/document/8417407){{A. A. Munshi and Y. A. -R. I. Mohamed, "Data Lake Lambda Architecture for Smart Grids Big Data Analytics," in IEEE Access, vol. 6, pp. 40463-40471, 2018, doi: 10.1109/ACCESS.2018.2858256.}}. Also see a brief explantion of the Lambda Architecture in this [article](https://www.researchgate.net/profile/Ajit-Singh-46/publication/331890045_Architecture_of_Data_Lake/links/6061ef85458515e8347d6ecc/Architecture-of-Data-Lake.pdf){{Ajit Singh, "Architecture of Data Lake", International Journal of Scientific Research in Computer Science, Engineering and Information Technology (IJSRCSEIT), ISSN : 2456-3307, Volume 5 Issue 2, pp. 411-414, March-April 2019. Available at doi: https://doi.org/10.32628/CSEIT1952121}}.
