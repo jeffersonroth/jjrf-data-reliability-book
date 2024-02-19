@@ -27,7 +27,7 @@
     - [Master Data](./concepts/data_quality_master_data.md)
     - [Data Management](./concepts/data_quality_management.md)
     - [Data Quality Models](./concepts/data_quality_models.md)
-    - [Data Quality & Data Reliability](./concepts/data_quality_reliability.md)
+    - [Final Thoughts on Data Quality](./concepts/data_quality_conclusions.md)
   - [Data Reliability](./concepts/data_relibility.md)
   - [Processes](./concepts/processes.md)
   - [Operations](./concepts/operations.md)

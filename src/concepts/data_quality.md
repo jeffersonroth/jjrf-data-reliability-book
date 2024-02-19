@@ -46,23 +46,5 @@ The structure and order of topics within this chapter on Data Quality are inspir
 ## [Data Quality Models](./data_quality_models.md)
 ### Data Quality Model
 > Delve into the concept of a data quality model, defining criteria and dimensions that measure data quality.
-### Data Quality Measures
-> Explore various measures and metrics used to quantitatively assess data quality across different dimensions.
-### Evaluation Process
-> Describe the process for evaluating data quality, including assessment techniques, tools, and the implementation of corrective actions for quality improvement.
 
-## [Data Quality & Data Reliability](./data_quality_reliability.md)
-### The Role of Data Quality in Data Reliability
-> Discuss how data quality acts as a cornerstone for data reliability, explaining how aspects of data quality such as accuracy, completeness, and consistency directly impact the reliability of data systems.
-### Data Anomalies and Their Impact on Reliability
-> Discuss different types of data anomalies, including outliers, inconsistencies, and temporal anomalies, and how they affect the reliability of data systems. Provide strategies for detecting and addressing these anomalies to maintain data integrity.
-### Data Quality in Data Integration and Migration
-> Examine the challenges and best practices for ensuring data quality during data integration and migration projects, emphasizing the importance of data quality for the reliability of consolidated data repositories.
-### The Influence of Data Architecture on Data Quality
-> Delve into how well-designed data architectures support data quality by providing clear data lineage, metadata management, and data governance capabilities, thereby enhancing overall data reliability.
-### Role of Metadata in Data Quality and Reliability
-> Highlight the role of metadata in managing data quality, including using metadata for data quality rules, tracking data lineage, and facilitating data quality audits.
-### Addressing Data Quality at the Source
-> Stress the importance of addressing data quality issues at the source, including strategies for working with data providers and implementing source-side data quality checks to ensure high-quality data input.
-### Building Resilience with Quality Data
-> Conclude by emphasizing how high-quality data forms the backbone of resilient, reliable data systems, and how ongoing commitment to data quality is essential for organizations to thrive in a data-driven world.
+## [Final Thoughts on Data Quality](./data_quality_conclusions.md)
