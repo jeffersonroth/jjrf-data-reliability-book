@@ -49,39 +49,26 @@
    ```
 
 ### Packages
+* [mdbook](https://crates.io/crates/mdbook)
+* [mdbook-toc](https://crates.io/crates/mdbook-toc)
+* [mdbook-footnote](https://crates.io/crates/mdbook-footnote)
+* [mdbook-emojicodes](https://crates.io/crates/mdbook-emojicodes)
+* [mdbook-mermaid](https://crates.io/crates/mdbook-mermaid)
+* [mdbook-plantuml](https://crates.io/crates/mdbook-plantuml)
+* [mdbook-catppuccin](https://crates.io/crates/mdbook-catppuccin)
+* [~~mdbook-linkcheck~~](https://crates.io/crates/mdbook-linkcheck)
+* [~~mdbook-i18n~~](https://crates.io/crates/mdbook-i18n)
+* [~~mdbook-admonish~~](https://crates.io/crates/mdbook-admonish)
+* [~~mdbook-svgbob~~](https://crates.io/crates/mdbook-svgbob)
+* [~~mdbook-man~~](https://crates.io/crates/mdbook-man)
+* [~~mdbook-pdf~~](https://crates.io/crates/mdbook-pdf)
+* [~~mdbox-katex~~](https://crates.io/crates/mdbook-katex)
+* [~~mdbook-epub~~](https://crates.io/crates/mdbook-epub)
+* [~~mdbook-template~~](https://crates.io/crates/mdbook-template)
 
-[mdbook](https://crates.io/crates/mdbook)
-
-[mdbook-linkcheck](https://crates.io/crates/mdbook-linkcheck)
-
-[mdbook-man](https://crates.io/crates/mdbook-man)
-
-[mdbook-mermaid](https://crates.io/crates/mdbook-mermaid)
-
-[mdbook-plantuml](https://crates.io/crates/mdbook-plantuml)
-
-[mdbook-admonish](https://crates.io/crates/mdbook-admonish)
-
-[mdbook-catppuccin](https://crates.io/crates/mdbook-catppuccin)
-
-[mdbook-pdf](https://crates.io/crates/mdbook-pdf)
-
-[mdbook-template](https://crates.io/crates/mdbook-template)
-
-[mdbook-toc](https://crates.io/crates/mdbook-toc)
-
-[mdbook-footnote](https://crates.io/crates/mdbook-footnote)
-
-[mdbook-svgbob](https://crates.io/crates/mdbook-svgbob)
-
-[mdbox-katex](https://crates.io/crates/mdbook-katex)
-
-[mdbook-epub](https://crates.io/crates/mdbook-epub)
-
-[mdbook-emojicodes](https://crates.io/crates/mdbook-emojicodes)
-
-[mdbook-i18n](https://crates.io/crates/mdbook-i18n)
-
+### Math Jax
+* [Documentation](https://bearnok.com/grva/en/knowledge/software/mathjax)
+* [Playground](https://www.mdraft.net/)
 
 <!-- LICENSE -->
 
