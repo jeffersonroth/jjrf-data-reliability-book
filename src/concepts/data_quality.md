@@ -34,8 +34,6 @@ The structure and order of topics within this chapter on Data Quality are inspir
 > Discuss Aiken's Model and its approach to improving data process quality through a structured framework.
 ### Data Management Maturity Model (DMM)
 > Introduce the DMM model, which provides a roadmap for organizations to achieve higher levels of data process quality.
-### IBM Model
-> Describe IBM's model for data quality, focusing on its practices and methodologies for ensuring high-quality data processes.
 ### Gartner's Model
 > Outline Gartner's approach to data quality, highlighting its strategic recommendations for data process improvement.
 ### TQDM

@@ -61,34 +61,6 @@ For data teams, applying COBIT's governance and management frameworks to the dat
 
 In summary, COBIT's approach to the data lifecycle underscores the importance of governance, risk management, and compliance practices in every stage of data management. By integrating these practices, organizations can enhance the reliability and value of their data, supporting strategic objectives and operational efficiency.
 
-### IBM
-IBM's approach to the data lifecycle encompasses a comprehensive suite of processes and technologies designed to manage data from its inception to disposal, with a strong emphasis on data quality, security, and governance. Their general philosophy can be distilled into several key stages, each contributing to the overall reliability and value of the data within an organization.
-
-Data Lifecycle Stages According to IBM:
-1. **Data Discovery and Understanding**:
-This initial stage involves identifying data sources and understanding the type, nature, and structure of the data.
-
-2. **Data Integration and Ingestion**:
-Data integration involves combining data from different sources, while ingestion refers to the process of importing data into a system. IBM emphasizes the use of robust ETL (Extract, Transform, Load) processes and tools to ensure that data is accurately and efficiently collected, transformed, and loaded into data repositories.
-
-3. **Data Storage and Organization**:
-Once ingested, data must be stored securely and organized in a way that supports efficient access and analysis. This includes databases, data warehouses, and data lakes.
-
-4. **Data Quality and Governance**:
-Maintaining high data quality and effective governance is crucial throughout the data lifecycle. Data quality tools automate the process of cleaning, deduplicating, and validating data to ensure its accuracy and reliability. Governance tools help in enforcing policies related to data access, usage, and compliance.
-
-5. **Data Analysis and Insights**:
-With data stored and quality assured, the next stage involves analyzing the data to derive actionable insights. Analytics platforms and tools provide powerful capabilities for data analysis, machine learning, and AI, enabling organizations to extract value from their data.
-
-6. **Data Security and Privacy**:
-Ensuring the security and privacy of data is paramount throughout its lifecycle. IBM emphasizes the importance of implementing robust security measures, including encryption, access controls, and compliance with privacy regulations, to protect data against unauthorized access and breaches.
-
-7. **Data Archiving and Retention**:
-Data that is no longer actively used but needs to be retained for legal, regulatory, or historical reasons is archived. Tools for this phase support efficient data archiving and retention strategies, ensuring that data is preserved in a cost-effective and compliant manner.
-
-8. **Data Disposal and Decommissioning**:
-Finally, data that is no longer needed or has surpassed its retention period must be securely disposed of or decommissioned. IBM emphasizes secure data disposal, ensuring that sensitive information is irretrievably destroyed to prevent any potential misuse.
-
 ## Governance vs. Data Management vs. Data Quality Management
 Understanding the distinctions between governance, data management, and data quality management is crucial for data teams to effectively organize their roles, responsibilities, and processes. Aligning these activities with the ISO/IEC 38500 standards can further ensure that data practices contribute positively to the organization's strategic objectives, manage risks associated with IT and data, and optimize the performance of data and IT resources.
 
