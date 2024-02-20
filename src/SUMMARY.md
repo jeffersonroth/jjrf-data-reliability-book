@@ -22,7 +22,6 @@
       - [Fault Prediction](./concepts/fault_prediction.md)
       - [Reliability Tools](./concepts/reliability_tools.md)
   - [Data Quality](./concepts/data_quality.md)
-    - [Introduction to Data Quality](./concepts/data_quality_intro.md)
     - [Foundations of Data Quality](./concepts/data_quality_foundations.md)
     - [Master Data](./concepts/data_quality_master_data.md)
     - [Data Management](./concepts/data_quality_management.md)
