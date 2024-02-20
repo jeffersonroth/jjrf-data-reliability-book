@@ -1,11 +1,11 @@
 # Foundations of Data Quality
-
 ## Data Lifecycle
 ### DAMA
 The Data Management Association International (DAMA) provides a comprehensive framework for understanding and managing the data lifecycle within organizations. This lifecycle encompasses all stages through which data passes, from its initial creation or capture to its eventual archiving or deletion. DAMA emphasizes the importance of managing each stage with best practices to ensure the overall quality and reliability of data.
 
 ### POSMAD Data Flow Model
 The POSMAD model, which stands for Plan, Obtain, Store, Maintain, Apply, and Dispose, offers a structured approach to managing the data lifecycle:
+
 1. **Plan**:
 Define the objectives and requirements for data collection, including what data is needed, for what purpose, and how it will be managed throughout its lifecycle.
 
