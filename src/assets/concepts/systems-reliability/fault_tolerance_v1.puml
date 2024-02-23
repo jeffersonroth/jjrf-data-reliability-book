@@ -1,0 +1,13 @@
+@startmindmap Fault Tolerance
++_ Redudancy
+++ Implementation
++++ Error Detection
++++ Damage Confinement
++++ Assessment
++++ Error Recovery
++++ Failure Treatment
++++ Service Continuation
+-- Classification
+--- Static
+--- Dynamic
+@endmindmap

@@ -14,6 +14,10 @@ The design of fault-tolerant processes assumes:
 ## Redundancy
 > All techniques used to achieve fault tolerance are based on adding external elements to the system to detect and recover from faults. These elements are redundant in the sense that they are not necessary for the system's normal operation; this is called **protective redundancy**. The goal of tolerance is to minimize redundancy while maximizing reliability, always under the constraints of system complexity and size. *Care must be taken when designing fault-tolerant systems, as components increase the complexity and maintenance of the entire system, which can in itself lead to less reliable systems*.
 
+<p align="center">
+  <img src="../../assets/concepts/systems-reliability/fault_tolerance_v1.svg" alt="Systems Reliability - Mechanisms - Fault Tolerance - Redudancy">
+</p>
+
 Redundancy in systems is classified into static and dynamic. **Static redundancy**, or masking, involves using redundant components to hide the effects of faults. **Dynamic redundancy** is redundancy within a component that makes it indicate, implicitly or explicitly, that the output is erroneous; recovery must be provided by another component. This fault tolerance technique has four phases:
 1. **Error detection**: no fault tolerance action will be taken until an error has been detected.
 2. **Damage confinement and assessment**: when an error is detected, the extent of the system that has been corrupted and its scope must be estimated (error diagnosis).

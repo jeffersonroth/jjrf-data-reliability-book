@@ -1,0 +1,11 @@
+@startmindmap Mechanisms
++_ Mechanisms
+++ Prevention
++++ Avoidance
++++ Elimination
+++ Fault Tolerance
++++ Full Tolerance
++++ Controlled Degradation
++++ Fail-Safe
+++ Prediction
+@endmindmap

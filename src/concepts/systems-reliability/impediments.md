@@ -1,5 +1,9 @@
 # Impediments
 
+<p align="center">
+  <img src="../../assets/concepts/systems-reliability/impediments_v1.svg" alt="System Reliability - Impediments">
+</p>
+
 ## Failures, Errors, and Faults
 > **Failures** are the result of unexpected internal problems that a system eventually exhibits in its external behavior. These problems are called **errors**, and their mechanical or algorithmic causes are referred to as **faults**.
 > When a system's behavior deviates from what is specified for it, it is said to have a **failure**, or the system have **failed**.

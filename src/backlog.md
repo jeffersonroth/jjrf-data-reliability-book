@@ -13,13 +13,9 @@
 ## Topics
 
 **Fault Tolerant Systems**:
-* General Reliability Development Hazard logs (FRACAS) [Redundancia]
-* High Availability [https://www.controlglobal.com/assets/14WPpdf/140324-ISA-ControlSystemsHighAvailability.pdf]
 * Technical documentation: Manuals, specifications, and guidelines that describe how systems or software operate. (Worth exploring further)
 * Safety cases: Documented arguments that a system is safe for a given application in a given environment.
-* Bulkhead: A design pattern that isolates elements within a system so that failures in one component do not propagate to others. (Worth exploring further)
 * Change Control: The process of managing changes to system or software specifications, ensuring that no unnecessary changes are made and that all changes are documented. (Worth exploring further)
-* Cold Standby: A redundancy method where backup systems are kept offline and only activated when the primary system fails.
 * Defensive Design: Strategies implemented in the design phase to anticipate and mitigate potential system failures or misuse. (Worth exploring further)
 * Derating: Using components below their maximum capacity to reduce the risk of failure, thereby increasing reliability.
 * Design Debt: The future cost incurred as a result of taking shortcuts or employing suboptimal design solutions in the short term.
