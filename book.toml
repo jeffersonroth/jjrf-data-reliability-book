@@ -2,46 +2,30 @@
 title = "Data Reliability Engineering"
 authors = ["Jefferson Roth"]
 language = "en"
-multilingual = false
+multilingual = true
 src = "src"
 
-# Translations
-# [[output.i18n.translations]]
-# language = "es"
-# translators = ["Jefferson Roth"]
-# title = "Ingeniería y Confiabilidad de Datos"
-
-# Preprocessors
-# Table of Contents
 [preprocessor.toc]
 command = "mdbook-toc"
 renderer = ["html"]
 marker = "* auto-gen TOC;\n{:toc}"
 max-level = 4
 
-# Footnote
 [preprocessor.footnote]
 
-# Emoji Codes
 [preprocessor.emojicodes]
 
-# Mermaid
 [preprocessor.mermaid]
 command = "mdbook-mermaid"
-
-# PlantUML
-[preprocessor.plantuml]
-plantuml-cmd="java -jar /usr/share/plantuml/plantuml.jar"
 
 [preprocessor.catppuccin]
 assets_version = "0.1.1" # DO NOT EDIT: Managed by `mdbook-catppuccin install`
 
-# Outputs
-# HTML
+
 [output.html]
 additional-js = ["assets/mermaid.min.js", "assets/mermaid-init.js"]
-additional-css = ["theme/catppuccin.css", "theme/catppuccin-highlight.css"]
-# mathjax-support = true
+additional-css = ["theme/catppuccin.css", "theme/catppuccin-highlight.css", '.\theme\catppuccin.css', '.\theme\catppuccin-highlight.css']
+mathjax-support = true
 
 [output.html.print]
 enable = true

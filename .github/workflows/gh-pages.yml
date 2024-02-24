@@ -1,0 +1,73 @@
+name: Publish mdbook Github Pages
+
+on:
+  push:
+    branches:
+      - main
+  pull_request:
+  workflow_dispatch:
+
+permissions:
+  contents: read
+  pages: write
+  id-token: write
+
+concurrency:
+  group: "pages"
+  cancel-in-progress: false
+
+jobs:
+  # Build job
+  build:
+    runs-on: ubuntu-latest
+    env:
+      MDBOOK_VERSION: 0.4.36
+    steps:
+      - uses: actions/checkout@v4
+      - uses: Swatinem/rust-cache@v2
+
+      - name: 'Validate .md files (use "just fmt-md" to fix)'
+        uses: DavidAnson/markdownlint-cli2-action@v15
+        with:
+          config: ".github/files/config.markdownlint-cli2.jsonc"
+
+      - name: 'Check Markdown URLs (same as "just clippy-md")'
+        uses: gaurav-nelson/github-action-markdown-link-check@v1
+        with:
+          use-quiet-mode: "no"
+          use-verbose-mode: "yes"
+          folder-path: "src"
+          file-path: "./README.md"
+          config-file: ".github/files/markdown.links.config.json"
+
+      - name: Install mdBook
+        run: |
+          curl --proto '=https' --tlsv1.2 https://sh.rustup.rs -sSf -y | sh
+          rustup update
+          cargo install --path .
+
+      - name: Setup Pages
+        id: pages
+        uses: actions/configure-pages@v3
+
+      - name: Build with mdBook
+        run: |
+          mdbook-catppuccin install
+          mdbook build
+
+      - name: Upload artifact
+        uses: actions/upload-pages-artifact@v1
+        with:
+          path: ./book
+
+  # Deployment job
+  deploy:
+    environment:
+      name: github-pages
+      url: ${{ steps.deployment.outputs.page_url }}
+    runs-on: ubuntu-latest
+    needs: build
+    steps:
+      - name: Deploy to GitHub Pages
+        id: deployment
+        uses: actions/deploy-pages@v1
