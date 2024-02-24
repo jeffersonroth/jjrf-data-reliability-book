@@ -53,6 +53,7 @@
     - [Application Tier](./concepts/application_tier.md)
     - [Presentation Tier](./concepts/presentation_tier.md)
     - [Metadata Management Tools](./concepts/metadata_management_tools.md)
+    - [Operational Data Stores](./concepts/operational_data_stores.md)
 - [II - Use Cases]()
   - [A - Aranduka Inc.]()
     - [Data Architecture]()

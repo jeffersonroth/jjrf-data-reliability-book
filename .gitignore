@@ -9,3 +9,4 @@ book
 .idea/
 **/nohup.out
 **/pre-commit.log
+.venv
