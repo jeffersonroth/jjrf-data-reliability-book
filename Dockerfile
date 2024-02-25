@@ -1,27 +1,13 @@
-FROM rust:buster
+FROM yourusername/mdbook-environment
 
 WORKDIR /usr/src/app
 
-COPY ./Cargo.toml ./Cargo.lock ./
-
-# Create a dummy source file to allow `cargo build` to cache dependencies
-RUN mkdir src \
-    && echo "fn main() {}" > src/main.rs \
-    && cargo build --release \
-    && rm -rf src
-
-RUN cargo install mdbook \
-    && cargo install mdbook-toc \
-    && cargo install mdbook-footnote \
-    && cargo install mdbook-emojicodes \
-    && cargo install mdbook-mermaid \
-    && cargo install mdbook-catppuccin\
-    && cargo install mdbook-plantuml
-
 COPY . .
 
-RUN cargo build --release
+# Build the project. This step is optional if there's no additional Rust code to compile.
+# RUN cargo build --release
 
+# Build the mdBook project
 RUN mdbook build
 
-CMD [ "mdbook", "serve", "--hostname", "0.0.0.0" ]
+CMD ["mdbook", "serve", "--hostname", "0.0.0.0"]
