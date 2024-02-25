@@ -22,7 +22,7 @@ Regularly update and cleanse the data to ensure it remains accurate, relevant, a
 Utilize the data in analyses, decision-making processes, or operational workflows, applying it in a way that maximizes its value and utility.
 
 6. **Dispose**:
-When data is no longer needed or has reached the end of its useful life, it should be securely archived or destroyed in accordance with data governance policies and regulatory requirements.
+When data is no longer needed or has reached the end of its useful life, it should be securely archived or destroyed per data governance policies and regulatory requirements.
 
 Understanding and managing the data lifecycle is crucial for data teams to ensure that the data they work with is accurate, timely, and relevant. Each stage of the POSMAD model presents opportunities to enhance data quality and mitigate risks associated with data mismanagement. For instance, during the "Maintain" stage, data teams can implement quality checks and balances to correct any inaccuracies, ensuring the data's reliability for downstream applications.
 
@@ -33,7 +33,7 @@ The management of the data lifecycle, as outlined by DAMA and the POSMAD model, 
 In summary, a thorough understanding and management of the data lifecycle, from the perspective of DAMA and the POSMAD model, are essential for maintaining data quality and reliability. It ensures that data remains a valuable asset for the organization, supporting informed decision-making and efficient operations.
 
 ### COBIT
-The data lifecycle according to COBIT (Control Objectives for Information and Related Technologies) framework involves a structured approach to managing and governing information and technology in an enterprise. COBIT's perspective on the data lifecycle focuses on governance and management practices that ensure data integrity, security, and availability throughout its lifecycle stages. While COBIT does not explicitly define a "data lifecycle" in the same way as DAMA's POSMAD model, its principles and processes can be applied across various stages of data management to enhance data quality and reliability.
+The data lifecycle according to the COBIT (Control Objectives for Information and Related Technologies) framework involves a structured approach to managing and governing information and technology in an enterprise. COBIT's perspective on the data lifecycle focuses on governance and management practices that ensure data integrity, security, and availability throughout its lifecycle stages. While COBIT does not explicitly define a "data lifecycle" in the same way as DAMA's POSMAD model, its principles and processes can be applied across various stages of data management to enhance data quality and reliability.
 
 Data Lifecycle Stages in the Context of COBIT:
 1. **Identification and Classification**:

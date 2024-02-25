@@ -1,5 +1,5 @@
 # Summary
-
+<!-- markdownlint-disable no-empty-links -->
 [Cover](./COVER.md)
 [Title](./TITLE.md)
 [Summary](./SUMMARY.md)
@@ -32,11 +32,22 @@
         - [Failure Reporting, Analysis, and Corrective Action System (FRACAS)](./concepts/systems-reliability/fracas.md)
         - [Reliability Block Diagrams](./concepts/systems-reliability/reliability_block_diagrams.md)
   - [Data Quality](./concepts/data_quality.md)
-    - [Foundations of Data Quality](./concepts/data_quality_foundations.md)
-    - [Master Data](./concepts/data_quality_master_data.md)
-    - [Data Management](./concepts/data_quality_management.md)
-    - [Data Quality Models](./concepts/data_quality_models.md)
-    - [Final Thoughts on Data Quality](./concepts/data_quality_conclusions.md)
+    - [Foundations of Data Quality](./concepts/data-quality/foundations.md)
+    - [Master Data](./concepts/data-quality/master_data.md)
+    - [Data Management](./concepts/data-quality/management.md)
+    - [Data Quality Models](./concepts/data-quality/models.md)
+      - [Accuracy Dimension](./concepts/data-quality/accuracy_dimension.md)
+      - [Completeness Dimension](./concepts/data-quality/completeness_dimension.md)
+      - [Consistency Dimension](./concepts/data-quality/consistency_dimension.md)
+      - [Timeliness Dimension](./concepts/data-quality/timeliness_dimension.md)
+      - [Relevance Dimension](./concepts/data-quality/relevance_dimension.md)
+      - [Reliability Dimension](./concepts/data-quality/reliability_dimension.md)
+      - [Uniqueness Dimension](./concepts/data-quality/uniqueness_dimension.md)
+      - [Validity Dimension](./concepts/data-quality/validity_dimension.md)
+      - [Accessibility Dimension](./concepts/data-quality/accessibility_dimension.md)
+      - [Integrity Dimension](./concepts/data-quality/integrity_dimension.md)
+      - [Final Thoughts on Data Quality Dimensions](./concepts/data-quality/dimensions_final_thoughts.md)
+    - [Final Thoughts on Data Quality](./concepts/data-quality/final_thoughts.md)
   - [Data Reliability](./concepts/data_relibility.md)
   - [Processes](./concepts/processes.md)
   - [Operations](./concepts/operations.md)
@@ -54,7 +65,6 @@
     - [Presentation Tier](./concepts/presentation_tier.md)
     - [Metadata Management Tools](./concepts/metadata_management_tools.md)
     - [Operational Data Stores](./concepts/operational_data_stores.md)
-<!-- markdownlint-disable no-empty-links -->
 - [II - Use Cases]()
   - [A - Aranduka Inc.]()
     - [Data Architecture]()
@@ -80,7 +90,6 @@
   - [BI Engineers]()
 - [IV - Appendices]()
   - [Reliability Tools]()
-    <!-- markdownlint-enable no-empty-links -->
     - [Chaos Engineering Tools](./concepts/systems-reliability/chaos_engineering_tools.md)
     - [Corrective Actions](./concepts/systems-reliability/corrective_actions.md)
     - [High Availability](./concepts/systems-reliability/high_availability.md)
@@ -99,3 +108,4 @@
 [Back Cover](./BACK_COVER.md)
 
 [Backlog](./backlog.md)
+<!-- markdownlint-enable no-empty-links -->
