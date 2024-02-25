@@ -45,6 +45,13 @@ jobs:
           curl --proto '=https' --tlsv1.2 https://sh.rustup.rs -sSf -y | sh
           rustup update
           cargo install --path .
+          cargo install mdbook
+          cargo install mdbook-catppuccin
+          cargo install mdbook-toc
+          cargo install mdbook-mermaid
+          cargo install mdbook-plantuml
+          cargo install mdbook-footnote
+          cargo install mdbook-emojicodes
 
       - name: Setup Pages
         id: pages

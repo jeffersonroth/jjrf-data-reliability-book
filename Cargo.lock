@@ -3,18 +3,6 @@
 version = 3
 
 [[package]]
-name = "DataReliabilityBook"
-version = "0.1.0"
-dependencies = [
- "mdbook",
- "mdbook-catppuccin",
- "mdbook-emojicodes",
- "mdbook-footnote",
- "mdbook-mermaid",
- "mdbook-toc",
-]
-
-[[package]]
 name = "addr2line"
 version = "0.21.0"
 source = "registry+https://github.com/rust-lang/crates.io-index"
@@ -386,6 +374,18 @@ name = "data-encoding"
 version = "2.5.0"
 source = "registry+https://github.com/rust-lang/crates.io-index"
 checksum = "7e962a19be5cfc3f3bf6dd8f61eb50107f356ad6270fbb3ed41476571db78be5"
+
+[[package]]
+name = "data_reliability_engineering_book"
+version = "0.1.0"
+dependencies = [
+ "mdbook",
+ "mdbook-catppuccin",
+ "mdbook-emojicodes",
+ "mdbook-footnote",
+ "mdbook-mermaid",
+ "mdbook-toc",
+]
 
 [[package]]
 name = "diff"
