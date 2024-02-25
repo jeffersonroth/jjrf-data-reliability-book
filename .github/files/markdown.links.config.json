@@ -6,8 +6,9 @@
       "replacement": ""
     }
   ],
-  "timeout": "2s",
+  "timeout": "5s",
   "retryOn429": true,
+  "aliveStatusCodes": [403, 200],
   "ignorePatterns": [
     {
       "pattern": "^http://127.0.0.1"

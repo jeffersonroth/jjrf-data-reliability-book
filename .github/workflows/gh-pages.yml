@@ -26,12 +26,12 @@ jobs:
       - uses: actions/checkout@v4
       - uses: Swatinem/rust-cache@v2
 
-      - name: 'Validate .md files (use "just fmt-md" to fix)'
+      - name: Validate Markdown Files
         uses: DavidAnson/markdownlint-cli2-action@v15
         with:
           config: ".github/files/config.markdownlint-cli2.jsonc"
 
-      - name: 'Check Markdown URLs (same as "just clippy-md")'
+      - name: Validate Markdown URLs
         uses: gaurav-nelson/github-action-markdown-link-check@v1
         with:
           use-quiet-mode: "no"
