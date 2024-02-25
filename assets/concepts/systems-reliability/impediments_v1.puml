@@ -1,0 +1,20 @@
+@startmindmap Impediments
++_ Impediments
+++ Errors
+++ Defects
+++ Deficiencies
+++ Faults
++++ Failures
+++++ Transient
+++++ Permanent
+++++ Intermittent
++++ Failure Modes Classification
+++++ Value Domain
+++++ Time Domain
++++ Failure Modes Types
+++++ Uncontrolled
+++++ Delay
+++++ Silent
+++++ Crash
+++++ Controlled
+@endmindmap

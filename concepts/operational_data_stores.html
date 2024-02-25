@@ -1,0 +1,408 @@
+<!DOCTYPE HTML>
+<html lang="en" class="sidebar-visible no-js light">
+    <head>
+        <!-- Book generated using mdBook -->
+        <meta charset="UTF-8">
+        <title>Operational Data Stores - Data Reliability Engineering</title>
+
+
+        <!-- Custom HTML head -->
+        
+        <meta content="text/html; charset=utf-8" http-equiv="Content-Type">
+        <meta name="description" content="">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <meta name="theme-color" content="#ffffff" />
+
+        <link rel="icon" href="../favicon.svg">
+        <link rel="shortcut icon" href="../favicon.png">
+        <link rel="stylesheet" href="../css/variables.css">
+        <link rel="stylesheet" href="../css/general.css">
+        <link rel="stylesheet" href="../css/chrome.css">
+        <link rel="stylesheet" href="../css/print.css" media="print">
+
+        <!-- Fonts -->
+        <link rel="stylesheet" href="../FontAwesome/css/font-awesome.css">
+        <link rel="stylesheet" href="../fonts/fonts.css">
+
+        <!-- Highlight.js Stylesheets -->
+        <link rel="stylesheet" href="../highlight.css">
+        <link rel="stylesheet" href="../tomorrow-night.css">
+        <link rel="stylesheet" href="../ayu-highlight.css">
+
+        <!-- Custom theme stylesheets -->
+        <link rel="stylesheet" href="../theme/catppuccin.css">
+        <link rel="stylesheet" href="../theme/catppuccin-highlight.css">
+
+        <!-- MathJax -->
+        <script async type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.1/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
+    </head>
+    <body>
+        <!-- Provide site root to javascript -->
+        <script type="text/javascript">
+            var path_to_root = "../";
+            var default_theme = window.matchMedia("(prefers-color-scheme: dark)").matches ? "navy" : "light";
+        </script>
+
+        <!-- Work around some values being stored in localStorage wrapped in quotes -->
+        <script type="text/javascript">
+            try {
+                var theme = localStorage.getItem('mdbook-theme');
+                var sidebar = localStorage.getItem('mdbook-sidebar');
+
+                if (theme.startsWith('"') && theme.endsWith('"')) {
+                    localStorage.setItem('mdbook-theme', theme.slice(1, theme.length - 1));
+                }
+
+                if (sidebar.startsWith('"') && sidebar.endsWith('"')) {
+                    localStorage.setItem('mdbook-sidebar', sidebar.slice(1, sidebar.length - 1));
+                }
+            } catch (e) { }
+        </script>
+
+        <!-- Set the theme before any content is loaded, prevents flash -->
+        <script type="text/javascript">
+            var theme;
+            try { theme = localStorage.getItem('mdbook-theme'); } catch(e) { }
+            if (theme === null || theme === undefined) { theme = default_theme; }
+            var html = document.querySelector('html');
+            html.classList.remove('no-js')
+            html.classList.remove('light')
+            html.classList.add(theme);
+            html.classList.add('js');
+        </script>
+
+        <!-- Hide / unhide sidebar before it is displayed -->
+        <script type="text/javascript">
+            var html = document.querySelector('html');
+            var sidebar = 'hidden';
+            if (document.body.clientWidth >= 1080) {
+                try { sidebar = localStorage.getItem('mdbook-sidebar'); } catch(e) { }
+                sidebar = sidebar || 'visible';
+            }
+            html.classList.remove('sidebar-visible');
+            html.classList.add("sidebar-" + sidebar);
+        </script>
+
+        <nav id="sidebar" class="sidebar" aria-label="Table of contents">
+            <div class="sidebar-scrollbox">
+                <ol class="chapter"><li class="chapter-item expanded affix "><a href="../COVER.html">Cover</a></li><li class="chapter-item expanded affix "><a href="../TITLE.html">Title</a></li><li class="chapter-item expanded affix "><a href="../SUMMARY.html">Summary</a></li><li class="chapter-item expanded affix "><a href="../DEDICATION.html">Dedication</a></li><li class="chapter-item expanded affix "><a href="../FOREWORD.html">Foreword</a></li><li class="chapter-item expanded affix "><a href="../PREFACE.html">Preface</a></li><li class="chapter-item expanded affix "><a href="../AUTHOR.html">Author</a></li><li class="chapter-item expanded affix "><a href="../OBJECTIVES.html">Objectives</a></li><li class="chapter-item expanded affix "><a href="../STRUCTURE.html">Structure</a></li><li class="chapter-item expanded "><a href="../CONCEPTS.html"><strong aria-hidden="true">1.</strong> I - Concepts</a></li><li><ol class="section"><li class="chapter-item expanded "><a href="../concepts/systems_intro.html"><strong aria-hidden="true">1.1.</strong> Introduction to Systems</a></li><li class="chapter-item expanded "><a href="../concepts/systems_reliability.html"><strong aria-hidden="true">1.2.</strong> Systems Reliability</a></li><li><ol class="section"><li class="chapter-item expanded "><a href="../concepts/systems-reliability/impediments.html"><strong aria-hidden="true">1.2.1.</strong> Impediments</a></li><li class="chapter-item expanded "><a href="../concepts/systems-reliability/attributes.html"><strong aria-hidden="true">1.2.2.</strong> Attributes</a></li><li class="chapter-item expanded "><a href="../concepts/systems-reliability/mechanisms.html"><strong aria-hidden="true">1.2.3.</strong> Mechanisms</a></li><li><ol class="section"><li class="chapter-item expanded "><a href="../concepts/systems-reliability/fault_prevention_avoidance.html"><strong aria-hidden="true">1.2.3.1.</strong> Fault Prevention: Avoidance</a></li><li class="chapter-item expanded "><a href="../concepts/systems-reliability/fault_tolerance.html"><strong aria-hidden="true">1.2.3.2.</strong> Fault Tolerance</a></li><li class="chapter-item expanded "><a href="../concepts/systems-reliability/fault_prevention_elimination.html"><strong aria-hidden="true">1.2.3.3.</strong> Fault Prevention: Elimination</a></li><li class="chapter-item expanded "><a href="../concepts/systems-reliability/fault_prediction.html"><strong aria-hidden="true">1.2.3.4.</strong> Fault Prediction</a></li><li class="chapter-item expanded "><a href="../concepts/systems-reliability/reliability_tools.html"><strong aria-hidden="true">1.2.3.5.</strong> Reliability Tools</a></li><li><ol class="section"><li class="chapter-item expanded "><a href="../concepts/systems-reliability/observability_tools.html"><strong aria-hidden="true">1.2.3.5.1.</strong> Observability Tools</a></li><li class="chapter-item expanded "><a href="../concepts/systems-reliability/data_quality_automation_tools.html"><strong aria-hidden="true">1.2.3.5.2.</strong> Data Quality Automation Tools</a></li><li class="chapter-item expanded "><a href="../concepts/systems-reliability/version_control_systems.html"><strong aria-hidden="true">1.2.3.5.3.</strong> Version Control Systems</a></li><li class="chapter-item expanded "><a href="../concepts/systems-reliability/data_lineage_tools.html"><strong aria-hidden="true">1.2.3.5.4.</strong> Data Lineage Tools</a></li><li class="chapter-item expanded "><a href="../concepts/systems-reliability/workflow_orchestration_tools.html"><strong aria-hidden="true">1.2.3.5.5.</strong> Workflow Orchestration Tools</a></li><li class="chapter-item expanded "><a href="../concepts/systems-reliability/data_transformation_tools.html"><strong aria-hidden="true">1.2.3.5.6.</strong> Data Transformation and Testing Tools</a></li><li class="chapter-item expanded "><a href="../concepts/systems-reliability/infrastructure_as_code_tools.html"><strong aria-hidden="true">1.2.3.5.7.</strong> Infrastructure as Code Tools</a></li><li class="chapter-item expanded "><a href="../concepts/systems-reliability/container_orchestration_tools.html"><strong aria-hidden="true">1.2.3.5.8.</strong> Container Orchestration Tools</a></li><li class="chapter-item expanded "><a href="../concepts/systems-reliability/fracas.html"><strong aria-hidden="true">1.2.3.5.9.</strong> Failure Reporting, Analysis, and Corrective Action System (FRACAS)</a></li><li class="chapter-item expanded "><a href="../concepts/systems-reliability/reliability_block_diagrams.html"><strong aria-hidden="true">1.2.3.5.10.</strong> Reliability Block Diagrams</a></li></ol></li></ol></li></ol></li><li class="chapter-item expanded "><a href="../concepts/data_quality.html"><strong aria-hidden="true">1.3.</strong> Data Quality</a></li><li><ol class="section"><li class="chapter-item expanded "><a href="../concepts/data-quality/foundations.html"><strong aria-hidden="true">1.3.1.</strong> Foundations of Data Quality</a></li><li class="chapter-item expanded "><a href="../concepts/data-quality/master_data.html"><strong aria-hidden="true">1.3.2.</strong> Master Data</a></li><li class="chapter-item expanded "><a href="../concepts/data-quality/management.html"><strong aria-hidden="true">1.3.3.</strong> Data Management</a></li><li class="chapter-item expanded "><a href="../concepts/data-quality/models.html"><strong aria-hidden="true">1.3.4.</strong> Data Quality Models</a></li><li><ol class="section"><li class="chapter-item expanded "><a href="../concepts/data-quality/accuracy_dimension.html"><strong aria-hidden="true">1.3.4.1.</strong> Accuracy Dimension</a></li><li class="chapter-item expanded "><a href="../concepts/data-quality/completeness_dimension.html"><strong aria-hidden="true">1.3.4.2.</strong> Completeness Dimension</a></li><li class="chapter-item expanded "><a href="../concepts/data-quality/consistency_dimension.html"><strong aria-hidden="true">1.3.4.3.</strong> Consistency Dimension</a></li><li class="chapter-item expanded "><a href="../concepts/data-quality/timeliness_dimension.html"><strong aria-hidden="true">1.3.4.4.</strong> Timeliness Dimension</a></li><li class="chapter-item expanded "><a href="../concepts/data-quality/relevance_dimension.html"><strong aria-hidden="true">1.3.4.5.</strong> Relevance Dimension</a></li><li class="chapter-item expanded "><a href="../concepts/data-quality/reliability_dimension.html"><strong aria-hidden="true">1.3.4.6.</strong> Reliability Dimension</a></li><li class="chapter-item expanded "><a href="../concepts/data-quality/uniqueness_dimension.html"><strong aria-hidden="true">1.3.4.7.</strong> Uniqueness Dimension</a></li><li class="chapter-item expanded "><a href="../concepts/data-quality/validity_dimension.html"><strong aria-hidden="true">1.3.4.8.</strong> Validity Dimension</a></li><li class="chapter-item expanded "><a href="../concepts/data-quality/accessibility_dimension.html"><strong aria-hidden="true">1.3.4.9.</strong> Accessibility Dimension</a></li><li class="chapter-item expanded "><a href="../concepts/data-quality/integrity_dimension.html"><strong aria-hidden="true">1.3.4.10.</strong> Integrity Dimension</a></li><li class="chapter-item expanded "><a href="../concepts/data-quality/dimensions_final_thoughts.html"><strong aria-hidden="true">1.3.4.11.</strong> Final Thoughts on Data Quality Dimensions</a></li></ol></li><li class="chapter-item expanded "><a href="../concepts/data-quality/final_thoughts.html"><strong aria-hidden="true">1.3.5.</strong> Final Thoughts on Data Quality</a></li></ol></li><li class="chapter-item expanded "><a href="../concepts/data_relibility.html"><strong aria-hidden="true">1.4.</strong> Data Reliability</a></li><li class="chapter-item expanded "><a href="../concepts/processes.html"><strong aria-hidden="true">1.5.</strong> Processes</a></li><li class="chapter-item expanded "><a href="../concepts/operations.html"><strong aria-hidden="true">1.6.</strong> Operations</a></li><li class="chapter-item expanded "><a href="../concepts/data_architecture.html"><strong aria-hidden="true">1.7.</strong> Data Architecture</a></li><li><ol class="section"><li class="chapter-item expanded "><a href="../concepts/data_sources.html"><strong aria-hidden="true">1.7.1.</strong> Data Sources</a></li><li class="chapter-item expanded "><a href="../concepts/data_tier.html"><strong aria-hidden="true">1.7.2.</strong> Data Tier</a></li><li><ol class="section"><li class="chapter-item expanded "><a href="../concepts/data_lake.html"><strong aria-hidden="true">1.7.2.1.</strong> Data Lake</a></li><li class="chapter-item expanded "><a href="../concepts/data_warehouse.html"><strong aria-hidden="true">1.7.2.2.</strong> Data Warehouse</a></li><li><ol class="section"><li class="chapter-item expanded "><a href="../concepts/data_warehouse_tier_architecture.html"><strong aria-hidden="true">1.7.2.2.1.</strong> Two-Tier vs Three-Tier Architecture</a></li><li><ol class="section"><li class="chapter-item expanded "><a href="../concepts/data_warehouse_application_tier.html"><strong aria-hidden="true">1.7.2.2.1.1.</strong> Application Tier</a></li></ol></li><li class="chapter-item expanded "><a href="../concepts/data_modelling.html"><strong aria-hidden="true">1.7.2.2.2.</strong> Data Modelling</a></li></ol></li><li class="chapter-item expanded "><a href="../concepts/data_lakehouse.html"><strong aria-hidden="true">1.7.2.3.</strong> Data Lakehouse</a></li><li class="chapter-item expanded "><a href="../concepts/data_marts.html"><strong aria-hidden="true">1.7.2.4.</strong> Data Marts</a></li></ol></li><li class="chapter-item expanded "><a href="../concepts/application_tier.html"><strong aria-hidden="true">1.7.3.</strong> Application Tier</a></li><li class="chapter-item expanded "><a href="../concepts/presentation_tier.html"><strong aria-hidden="true">1.7.4.</strong> Presentation Tier</a></li><li class="chapter-item expanded "><a href="../concepts/metadata_management_tools.html"><strong aria-hidden="true">1.7.5.</strong> Metadata Management Tools</a></li><li class="chapter-item expanded "><a href="../concepts/operational_data_stores.html" class="active"><strong aria-hidden="true">1.7.6.</strong> Operational Data Stores</a></li></ol></li></ol></li><li class="chapter-item expanded "><div><strong aria-hidden="true">2.</strong> II - Use Cases</div></li><li><ol class="section"><li class="chapter-item expanded "><div><strong aria-hidden="true">2.1.</strong> A - Aranduka Inc.</div></li><li><ol class="section"><li class="chapter-item expanded "><div><strong aria-hidden="true">2.1.1.</strong> Data Architecture</div></li><li><ol class="section"><li class="chapter-item expanded "><div><strong aria-hidden="true">2.1.1.1.</strong> Operational System and Internal Data Sources</div></li><li class="chapter-item expanded "><div><strong aria-hidden="true">2.1.1.2.</strong> Integrating Data Partners</div></li><li class="chapter-item expanded "><div><strong aria-hidden="true">2.1.1.3.</strong> Designing the Data Lake</div></li><li><ol class="section"><li class="chapter-item expanded "><div><strong aria-hidden="true">2.1.1.3.1.</strong> Anonymized Data</div></li><li class="chapter-item expanded "><div><strong aria-hidden="true">2.1.1.3.2.</strong> Distilled Data</div></li></ol></li><li class="chapter-item expanded "><div><strong aria-hidden="true">2.1.1.4.</strong> Designing the Data Warehouse</div></li><li><ol class="section"><li class="chapter-item expanded "><div><strong aria-hidden="true">2.1.1.4.1.</strong> Core Data</div></li></ol></li><li class="chapter-item expanded "><div><strong aria-hidden="true">2.1.1.5.</strong> Designing the Data Marts</div></li></ol></li><li class="chapter-item expanded "><div><strong aria-hidden="true">2.1.2.</strong> BICC & BI</div></li><li><ol class="section"><li class="chapter-item expanded "><div><strong aria-hidden="true">2.1.2.1.</strong> Building Reliable Pipelines</div></li><li class="chapter-item expanded "><div><strong aria-hidden="true">2.1.2.2.</strong> Data Quality Assurance & Monitoring</div></li><li class="chapter-item expanded "><div><strong aria-hidden="true">2.1.2.3.</strong> Continuous Service</div></li></ol></li><li class="chapter-item expanded "><div><strong aria-hidden="true">2.1.3.</strong> Growth, Marketing & Attribution Models</div></li><li class="chapter-item expanded "><div><strong aria-hidden="true">2.1.4.</strong> Multidimensional Analysis: Geo vs Verticals</div></li></ol></li></ol></li><li class="chapter-item expanded "><div><strong aria-hidden="true">3.</strong> III - Incorporating Data Reliability Engineering</div></li><li><ol class="section"><li class="chapter-item expanded "><div><strong aria-hidden="true">3.1.</strong> Solutions Architects</div></li><li><ol class="section"><li class="chapter-item expanded "><div><strong aria-hidden="true">3.1.1.</strong> Data Architect</div></li></ol></li><li class="chapter-item expanded "><div><strong aria-hidden="true">3.2.</strong> Data Engineers</div></li><li class="chapter-item expanded "><div><strong aria-hidden="true">3.3.</strong> Backend Engineers</div></li><li class="chapter-item expanded "><div><strong aria-hidden="true">3.4.</strong> BI Engineers</div></li></ol></li><li class="chapter-item expanded "><div><strong aria-hidden="true">4.</strong> IV - Appendices</div></li><li><ol class="section"><li class="chapter-item expanded "><div><strong aria-hidden="true">4.1.</strong> Reliability Tools</div></li><li><ol class="section"><li class="chapter-item expanded "><a href="../concepts/systems-reliability/chaos_engineering_tools.html"><strong aria-hidden="true">4.1.1.</strong> Chaos Engineering Tools</a></li><li class="chapter-item expanded "><a href="../concepts/systems-reliability/corrective_actions.html"><strong aria-hidden="true">4.1.2.</strong> Corrective Actions</a></li><li class="chapter-item expanded "><a href="../concepts/systems-reliability/high_availability.html"><strong aria-hidden="true">4.1.3.</strong> High Availability</a></li><li class="chapter-item expanded "><a href="../concepts/systems-reliability/antifragility.html"><strong aria-hidden="true">4.1.4.</strong> Antifragility</a></li><li class="chapter-item expanded "><a href="../concepts/systems-reliability/bulkhead_pattern.html"><strong aria-hidden="true">4.1.5.</strong> Bulkhead Pattern</a></li><li class="chapter-item expanded "><a href="../concepts/systems-reliability/cold_standby.html"><strong aria-hidden="true">4.1.6.</strong> Cold Standby</a></li><li class="chapter-item expanded "><a href="../concepts/systems-reliability/single_point_of_failure.html"><strong aria-hidden="true">4.1.7.</strong> Single Point of Failure (SPOF)</a></li><li class="chapter-item expanded "><a href="../concepts/systems-reliability/grdhl.html"><strong aria-hidden="true">4.1.8.</strong> General Reliability Development Hazard Logs (GRDHL)</a></li><li class="chapter-item expanded "><a href="../concepts/systems-reliability/spare_parts_stocking_strategy.html"><strong aria-hidden="true">4.1.9.</strong> Spare Parts Stocking Strategy</a></li><li class="chapter-item expanded "><a href="../concepts/systems-reliability/availability_controls.html"><strong aria-hidden="true">4.1.10.</strong> Availability Controls</a></li></ol></li></ol></li><li class="chapter-item expanded "><a href="../EPILOGUE.html">Epilogue</a></li><li class="chapter-item expanded affix "><a href="../DICTIONARY.html">Dictionary</a></li><li class="chapter-item expanded affix "><a href="../REFERENCES.html">References</a></li><li class="chapter-item expanded affix "><a href="../NEXT.html">Next</a></li><li class="chapter-item expanded affix "><a href="../BACK_COVER.html">Back Cover</a></li><li class="chapter-item expanded affix "><a href="../backlog.html">Backlog</a></li></ol>
+            </div>
+            <div id="sidebar-resize-handle" class="sidebar-resize-handle"></div>
+        </nav>
+
+        <div id="page-wrapper" class="page-wrapper">
+
+            <div class="page">
+                                <div id="menu-bar-hover-placeholder"></div>
+                <div id="menu-bar" class="menu-bar sticky bordered">
+                    <div class="left-buttons">
+                        <button id="sidebar-toggle" class="icon-button" type="button" title="Toggle Table of Contents" aria-label="Toggle Table of Contents" aria-controls="sidebar">
+                            <i class="fa fa-bars"></i>
+                        </button>
+                        <button id="theme-toggle" class="icon-button" type="button" title="Change theme" aria-label="Change theme" aria-haspopup="true" aria-expanded="false" aria-controls="theme-list">
+                            <i class="fa fa-paint-brush"></i>
+                        </button>
+                        <ul id="theme-list" class="theme-popup" aria-label="Themes" role="menu">
+                            <li role="none"><button role="menuitem" class="theme" id="light">Light (default)</button></li>
+                            <li role="none"><button role="menuitem" class="theme" id="rust">Rust</button></li>
+                            <li role="none"><button role="menuitem" class="theme" id="coal">Coal</button></li>
+                            <li role="none"><button role="menuitem" class="theme" id="navy">Navy</button></li>
+                            <li role="none"><button role="menuitem" class="theme" id="ayu">Ayu</button></li>
+                            <li role="none"><button role="menuitem" class="theme" id="latte">Latte</button></li>
+                            <li role="none"><button role="menuitem" class="theme" id="frappe">Frappé</button></li>
+                            <li role="none"><button role="menuitem" class="theme" id="macchiato">Macchiato</button></li>
+                            <li role="none"><button role="menuitem" class="theme" id="mocha">Mocha</button></li>
+                        </ul>
+                        <button id="search-toggle" class="icon-button" type="button" title="Search. (Shortkey: s)" aria-label="Toggle Searchbar" aria-expanded="false" aria-keyshortcuts="S" aria-controls="searchbar">
+                            <i class="fa fa-search"></i>
+                        </button>
+                    </div>
+
+                    <h1 class="menu-title">Data Reliability Engineering</h1>
+
+                    <div class="right-buttons">
+                        <a href="../print.html" title="Print this book" aria-label="Print this book">
+                            <i id="print-button" class="fa fa-print"></i>
+                        </a>
+
+                    </div>
+                </div>
+
+                <div id="search-wrapper" class="hidden">
+                    <form id="searchbar-outer" class="searchbar-outer">
+                        <input type="search" id="searchbar" name="searchbar" placeholder="Search this book ..." aria-controls="searchresults-outer" aria-describedby="searchresults-header">
+                    </form>
+                    <div id="searchresults-outer" class="searchresults-outer hidden">
+                        <div id="searchresults-header" class="searchresults-header"></div>
+                        <ul id="searchresults">
+                        </ul>
+                    </div>
+                </div>
+
+                <!-- Apply ARIA attributes after the sidebar and the sidebar toggle button are added to the DOM -->
+                <script type="text/javascript">
+                    document.getElementById('sidebar-toggle').setAttribute('aria-expanded', sidebar === 'visible');
+                    document.getElementById('sidebar').setAttribute('aria-hidden', sidebar !== 'visible');
+                    Array.from(document.querySelectorAll('#sidebar a')).forEach(function(link) {
+                        link.setAttribute('tabIndex', sidebar === 'visible' ? 0 : -1);
+                    });
+                </script>
+
+                <div id="content" class="content">
+                    <main>
+                        <h1 id="operational-data-stores-ods--data-operational-stores-dos"><a class="header" href="#operational-data-stores-ods--data-operational-stores-dos">Operational Data Stores (ODS) &amp; Data Operational Stores (DOS)</a></h1>
+<p>The terms "Operational Data Stores" (ODS) and "Data Operational Stores" (DOS) are often used interchangeably in the industry, but they can represent slightly different concepts depending on the context in which they are used. Here's a breakdown of the differences based on common interpretations:</p>
+<h3 id="operational-data-stores-ods"><a class="header" href="#operational-data-stores-ods">Operational Data Stores (ODS)</a></h3>
+<ul>
+<li>
+<p><strong>Purpose</strong>:
+An ODS is primarily designed for integrating data from multiple sources to provide a unified and current view of operational data. It's optimized for routine, operational reporting and queries that require up-to-the-minute data.</p>
+</li>
+<li>
+<p><strong>Data Freshness</strong>:
+The data in an ODS is near real-time and reflects the most current state of business operations. It's commonly used for operational reporting and day-to-day decision-making.</p>
+</li>
+<li>
+<p><strong>Data Integration and Cleansing</strong>:
+An ODS often involves data integration, cleansing, and consolidation processes to ensure data quality and consistency across different systems.</p>
+</li>
+<li>
+<p><strong>Usage</strong>:
+Used by business users and analysts for operational reporting, customer service inquiries, and as an interim store for data that will be loaded into a data warehouse for historical analysis.</p>
+</li>
+</ul>
+<h3 id="data-operational-stores-dos"><a class="header" href="#data-operational-stores-dos">Data Operational Stores (DOS)</a></h3>
+<ul>
+<li>
+<p><strong>Purpose</strong>:
+DOS can sometimes refer to the broader category of storage systems used for operational purposes, including databases that support online transaction processing (OLTP) systems.</p>
+</li>
+<li>
+<p><strong>Data Freshness</strong>:
+While also dealing with current data, DOS in this context might not necessarily integrate data from multiple sources. Each DOS might be dedicated to a specific application or operational system.</p>
+</li>
+<li>
+<p><strong>Data Integration and Cleansing</strong>:
+A DOS might not always include data cleansing and integration functionalities. It may store data as it is generated or captured by operational systems.</p>
+</li>
+<li>
+<p><strong>Usage</strong>:
+Used by applications and operational systems for immediate transaction processing, such as order processing systems, inventory management systems, and other OLTP systems.</p>
+</li>
+</ul>
+<h3 id="key-differences"><a class="header" href="#key-differences">Key Differences</a></h3>
+<ul>
+<li>
+<p><strong>Integration</strong>:
+ODS typically integrates data from multiple sources and provides a unified view, whereas DOS might refer to individual operational systems or databases optimized for specific applications.</p>
+</li>
+<li>
+<p><strong>Data Processing</strong>:
+ODS may include more sophisticated data processing capabilities, such as data cleansing and transformation, to ensure data quality and consistency. DOS, in the broader sense, may focus on efficiently handling transactions and queries for specific operational processes.</p>
+</li>
+<li>
+<p><strong>Use Case</strong>:
+ODS is more closely aligned with operational reporting and analytics, providing a comprehensive view of business operations for decision-making. DOS, when referred to as individual operational databases, supports the immediate transactional needs of specific applications.</p>
+</li>
+</ul>
+<p>In practice, the distinction between ODS and DOS can be subtle and depends on the organizational context and specific architecture. Some organizations might use the term DOS to describe what is traditionally known as an ODS, especially when emphasizing the operational aspect of the data store.</p>
+<h2 id="operational-data-stores-ods-1"><a class="header" href="#operational-data-stores-ods-1">Operational Data Stores (ODS)</a></h2>
+<p>Operational Data Stores (ODS) are centralized databases designed to integrate data from multiple sources for additional operations such as reporting, analysis, and operational support. The ODS is optimized for fast query performance and near real-time analysis, making it a critical component for day-to-day business operations.</p>
+<h3 id="goals"><a class="header" href="#goals">Goals</a></h3>
+<ul>
+<li>
+<p><strong>Data Integration</strong>:
+ODS serves as an intermediary between transactional databases and analytical data warehouses, integrating data from various sources into a unified format for operational reporting and decision-making.</p>
+</li>
+<li>
+<p><strong>Real-Time or Near Real-Time Analysis</strong>:
+Unlike data warehouses that are optimized for historical data analysis, ODS provides access to current or near real-time data, supporting operational decision-making and reporting.</p>
+</li>
+<li>
+<p><strong>Improved Data Quality</strong>:
+Data passing through an ODS is cleansed and transformed, improving overall data quality and consistency across the organization.</p>
+</li>
+<li>
+<p><strong>Reduced Load on Transactional Systems</strong>:
+By offloading queries from transactional systems to an ODS, organizations can ensure that their operational systems remain efficient and responsive.</p>
+</li>
+</ul>
+<h3 id="ods-uses-in-modern-data-architecture"><a class="header" href="#ods-uses-in-modern-data-architecture">ODS Uses in Modern Data Architecture</a></h3>
+<p>In contemporary data architectures, ODS coexist with data lakes and data warehouses, each serving distinct purposes:</p>
+<ul>
+<li>
+<p><strong>Complementing Data Warehouses</strong>:
+While data warehouses store historical, aggregated data for in-depth analysis, ODS provides a snapshot of current operational data, allowing for timely operational reporting and analysis.</p>
+</li>
+<li>
+<p><strong>Feeding Data Lakes and Warehouses</strong>:
+ODS can act as a source for data lakes and warehouses, where data is further processed, enriched, and stored for long-term analysis and machine learning applications.</p>
+</li>
+<li>
+<p><strong>Operational Analytics</strong>:
+Modern data architectures often include specialized analytical tools that directly query the ODS for operational reporting, dashboarding, and alerting, enabling faster decision-making.</p>
+</li>
+</ul>
+<h3 id="modern-use-cases-of-ods"><a class="header" href="#modern-use-cases-of-ods">Modern Use Cases of ODS</a></h3>
+<ul>
+<li>
+<p><strong>Customer 360 View</strong>:
+ODS is used to aggregate data from various customer touchpoints, providing a comprehensive view of customer interactions and behavior in near real-time.</p>
+</li>
+<li>
+<p><strong>Operational Reporting</strong>:
+Financial institutions, e-commerce platforms, and other businesses use ODS for operational reports that require the most current data, such as daily sales reports or inventory levels.</p>
+</li>
+<li>
+<p><strong>Data Quality Monitoring</strong>:
+Organizations use ODS to monitor data quality, ensuring that operational processes are based on accurate and consistent data.</p>
+</li>
+<li>
+<p><strong>Compliance and Auditing</strong>:
+An ODS can store detailed transactional data required for regulatory compliance and auditing purposes, providing easy access to current and historical operational data.</p>
+</li>
+</ul>
+<h3 id="technologies-for-ods"><a class="header" href="#technologies-for-ods">Technologies for ODS</a></h3>
+<ul>
+<li>
+<p><strong>Relational Databases</strong>:
+Traditional relational databases like Oracle, SQL Server, and MySQL are commonly used for ODS due to their ACID compliance and robust query capabilities.</p>
+</li>
+<li>
+<p><strong>In-Memory Databases</strong>:
+Technologies like SAP HANA and Redis are used for ODS implementations requiring high-speed data access and processing.</p>
+</li>
+<li>
+<p><strong>Cloud-Based Solutions</strong>:
+Cloud services like AWS RDS, Azure SQL Database, and Google Cloud SQL offer managed database services suitable for hosting an ODS, providing scalability and high availability.</p>
+</li>
+</ul>
+<p>In the landscape of modern data architecture, ODS plays a vital role in bridging the gap between raw operational data and analytical insights. By providing timely, integrated, and cleansed data, an ODS enhances operational efficiency and decision-making, complementing the deeper, historical insights derived from data lakes and warehouses.</p>
+<h2 id="data-operational-stores-dos-1"><a class="header" href="#data-operational-stores-dos-1">Data Operational Stores (DOS)</a></h2>
+<p>Data operational stores (DOS) are specialized databases designed to support operational applications with real-time, transactional data requirements. Unlike analytical data stores, such as data warehouses and data lakes that are optimized for large-scale querying and analysis, DOS is optimized for high-performance, transactional workloads where speed and efficiency of read/write operations are critical.</p>
+<h3 id="goals-1"><a class="header" href="#goals-1">Goals</a></h3>
+<ul>
+<li>
+<p><strong>Real-Time Operations</strong>:
+DOS are used in scenarios where applications need immediate access to current, transactional data, such as e-commerce platforms, online banking systems, and other customer-facing applications.</p>
+</li>
+<li>
+<p><strong>High Transaction Throughput</strong>:
+They are designed to handle a high volume of transactions per second, making them suitable for operational systems where data is frequently updated or accessed.</p>
+</li>
+<li>
+<p><strong>Low Latency</strong>:
+DOSs provide low-latency access to data, which is essential for applications that require instantaneous responses, such as payment processing systems.</p>
+</li>
+<li>
+<p><strong>Application Integration</strong>:
+They often serve as a backend for operational applications, providing a centralized store for application data that can be easily accessed and manipulated by various services.</p>
+</li>
+</ul>
+<h3 id="dos-uses-in-modern-data-architecture"><a class="header" href="#dos-uses-in-modern-data-architecture">DOS Uses in Modern Data Architecture</a></h3>
+<p>In modern data architectures, DOSs coexist with data lakes and data warehouses as part of a broader data ecosystem. While data lakes and data warehouses are used for storing and analyzing large volumes of historical data, DOSs are used for operational applications that need real-time access to current data. The interaction between these components might look like this:</p>
+<ul>
+<li>
+<p><strong>Data Ingestion</strong>:
+Data generated by operational activities in the DOS can be ingested into data lakes and data warehouses for long-term storage, historical analysis, and reporting.</p>
+</li>
+<li>
+<p><strong>Data Enrichment</strong>:
+Data from data lakes or warehouses can be used to enrich the operational data in the DOS, providing additional context or insights to support operational decision-making.</p>
+</li>
+<li>
+<p><strong>Hybrid Processing</strong>:
+Some modern architectures use hybrid processing models where transactional and analytical workloads coexist, leveraging technologies like HTAP (Hybrid Transactional/Analytical Processing) systems.</p>
+</li>
+</ul>
+<h3 id="examples-of-data-operational-stores"><a class="header" href="#examples-of-data-operational-stores">Examples of Data Operational Stores</a></h3>
+<ul>
+<li>
+<p><strong>Relational Databases</strong>:
+Traditional relational databases like MySQL, PostgreSQL, and Oracle Database often serve as operational stores, offering ACID (Atomicity, Consistency, Isolation, Durability) properties essential for transactional data integrity.</p>
+</li>
+<li>
+<p><strong>NoSQL Databases</strong>:
+NoSQL databases like MongoDB, Cassandra, and Couchbase are used for operational stores, especially when dealing with unstructured data, needs for horizontal scalability, or specific data models like key-value, document, or columnar stores.</p>
+</li>
+<li>
+<p><strong>NewSQL Databases</strong>:
+Systems like Google Spanner and CockroachDB combine the scalability of NoSQL systems with the ACID guarantees of traditional relational databases, making them suitable for distributed operational stores.</p>
+</li>
+</ul>
+<p>In summary, data operational stores are a critical component of modern data architecture, particularly for applications requiring real-time data access and high transactional throughput. They complement data lakes and data warehouses by providing a layer optimized for operational activities while enabling seamless data flow and integration across the data ecosystem.</p>
+<h3 id="dos-vs-microservices-databases-backend"><a class="header" href="#dos-vs-microservices-databases-backend">DOS vs. Microservices Databases (Backend)</a></h3>
+<p>Databases used by microservices in a backend architecture can be seen as a specialized form of Data Operational Stores (DOS), tailored to the specific requirements of a microservices architecture. These databases share the operational focus of traditional DOS, aimed at supporting real-time or near-real-time data access and transaction processing. However, there are notable distinctions rooted in the architectural principles and data management strategies of microservices:</p>
+<ul>
+<li>
+<p><strong>Service Autonomy</strong>:
+Microservices architectures advocate for a database-per-service model, where each microservice's database is dedicated solely to that service's functionality. This encapsulation ensures service autonomy, a principle that diverges from traditional DOS, which might aggregate and integrate data from various operational systems to provide a unified view.</p>
+</li>
+<li>
+<p><strong>Data Isolation</strong>:
+In line with microservices principles, these databases prioritize data isolation, limiting the scope of data to the boundaries of each service. This approach contrasts with DOS's objective of integrating data from multiple sources for comprehensive operational reporting and analytics.</p>
+</li>
+<li>
+<p><strong>Integration and Duplication</strong>:
+Data integration in a microservices ecosystem is commonly handled through APIs, events, or messaging systems, respecting the decoupled nature of services. This method differs from DOS, where data integration occurs at the storage level. Moreover, microservices architectures may intentionally duplicate data across services to maintain decoupling, a practice generally minimized in DOS to ensure data consistency.</p>
+</li>
+<li>
+<p><strong>Operational Reporting</strong>:
+While traditional DOS is often used for operational reporting and analysis across integrated data sets, microservices databases are typically not designed for this purpose. Their role is more focused on supporting the specific operational needs of individual services rather than providing a cross-functional operational data view.</p>
+</li>
+</ul>
+<p>The operational databases within a microservices architecture can be viewed as a variant of DOS, with a narrower scope aligned with the microservice they support. The key distinction lies in the microservices' emphasis on service autonomy, data encapsulation, and decentralized data management, which contrasts with the broader, integrative purpose of traditional DOS in providing a unified operational data view. This nuanced understanding bridges the conceptual gap between microservices databases and DOS, highlighting their shared operational focus while acknowledging their architectural and functional differences.</p>
+<p>In modern architectures, both play crucial roles, with microservices' databases ensuring service independence and a DOS enhancing organizational-wide data accessibility and decision-making.</p>
+
+                    </main>
+
+                    <nav class="nav-wrapper" aria-label="Page navigation">
+                        <!-- Mobile navigation buttons -->
+                            <a rel="prev" href="../concepts/metadata_management_tools.html" class="mobile-nav-chapters previous" title="Previous chapter" aria-label="Previous chapter" aria-keyshortcuts="Left">
+                                <i class="fa fa-angle-left"></i>
+                            </a>
+
+                            <a rel="next" href="../concepts/systems-reliability/chaos_engineering_tools.html" class="mobile-nav-chapters next" title="Next chapter" aria-label="Next chapter" aria-keyshortcuts="Right">
+                                <i class="fa fa-angle-right"></i>
+                            </a>
+
+                        <div style="clear: both"></div>
+                    </nav>
+                </div>
+            </div>
+
+            <nav class="nav-wide-wrapper" aria-label="Page navigation">
+                    <a rel="prev" href="../concepts/metadata_management_tools.html" class="nav-chapters previous" title="Previous chapter" aria-label="Previous chapter" aria-keyshortcuts="Left">
+                        <i class="fa fa-angle-left"></i>
+                    </a>
+
+                    <a rel="next" href="../concepts/systems-reliability/chaos_engineering_tools.html" class="nav-chapters next" title="Next chapter" aria-label="Next chapter" aria-keyshortcuts="Right">
+                        <i class="fa fa-angle-right"></i>
+                    </a>
+            </nav>
+
+        </div>
+
+
+
+
+        <script type="text/javascript">
+            window.playground_copyable = true;
+        </script>
+
+
+        <script src="../elasticlunr.min.js" type="text/javascript" charset="utf-8"></script>
+        <script src="../mark.min.js" type="text/javascript" charset="utf-8"></script>
+        <script src="../searcher.js" type="text/javascript" charset="utf-8"></script>
+
+        <script src="../clipboard.min.js" type="text/javascript" charset="utf-8"></script>
+        <script src="../highlight.js" type="text/javascript" charset="utf-8"></script>
+        <script src="../book.js" type="text/javascript" charset="utf-8"></script>
+
+        <!-- Custom JS scripts -->
+        <script type="text/javascript" src="../assets/mermaid.min.js"></script>
+        <script type="text/javascript" src="../assets/mermaid-init.js"></script>
+
+
+    </body>
+</html>
