@@ -44,10 +44,9 @@ jobs:
         run: |
           curl --proto '=https' --tlsv1.2 https://sh.rustup.rs -sSf -y | sh
           rustup update
-          cargo install --path .
           cargo install mdbook
-          cargo install mdbook-catppuccin
           cargo install mdbook-toc
+          cargo install mdbook-catppuccin
           cargo install mdbook-mermaid
           cargo install mdbook-plantuml
           cargo install mdbook-footnote
@@ -59,7 +58,6 @@ jobs:
 
       - name: Build with mdBook
         run: |
-          mdbook-catppuccin install
           mdbook build
 
       - name: Upload artifact

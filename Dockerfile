@@ -1,23 +1,27 @@
 FROM rust:buster
 
-WORKDIR /
+WORKDIR /usr/src/app
 
-COPY ./Cargo.toml ./Cargo.toml
-COPY ./Cargo.lock ./Cargo.lock
-COPY ./book.toml ./book.toml
-COPY ./assets ./assets
-COPY ./src ./src
+COPY ./Cargo.toml ./Cargo.lock ./
 
-RUN cargo install --path . &&\
-    cargo install mdbook &&\
-    cargo install mdbook-catppuccin &&\
-    cargo install mdbook-toc &&\
-    cargo install mdbook-mermaid &&\
-    cargo install mdbook-plantuml &&\
-    cargo install mdbook-footnote &&\
-    cargo install mdbook-emojicodes
+# Create a dummy source file to allow `cargo build` to cache dependencies
+RUN mkdir src \
+    && echo "fn main() {}" > src/main.rs \
+    && cargo build --release \
+    && rm -rf src
 
-RUN mdbook-catppuccin install &&\
-    mdbook build
+RUN cargo install mdbook \
+    && cargo install mdbook-toc \
+    && cargo install mdbook-footnote \
+    && cargo install mdbook-emojicodes \
+    && cargo install mdbook-mermaid \
+    && cargo install mdbook-catppuccin\
+    && cargo install mdbook-plantuml
 
-CMD [ "/bin/sh", "-c", "mdbook serve --hostname '0.0.0.0'" ]
+COPY . .
+
+RUN cargo build --release
+
+RUN mdbook build
+
+CMD [ "mdbook", "serve", "--hostname", "0.0.0.0" ]

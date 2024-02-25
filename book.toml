@@ -24,7 +24,7 @@ assets_version = "0.1.1" # DO NOT EDIT: Managed by `mdbook-catppuccin install`
 
 [output.html]
 additional-js = ["assets/mermaid.min.js", "assets/mermaid-init.js"]
-additional-css = ["theme/catppuccin.css", "theme/catppuccin-highlight.css", '.\theme\catppuccin.css', '.\theme\catppuccin-highlight.css']
+additional-css = ["theme/catppuccin.css", "theme/catppuccin-highlight.css"]
 mathjax-support = true
 
 [output.html.print]

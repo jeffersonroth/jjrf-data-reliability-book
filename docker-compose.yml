@@ -1,13 +1,13 @@
 version: "3.7"
 services:
   app:
-    build: /
-    working_dir: /
+    build: .
     environment:
       - USER=$USER
     ports:
       - "3000:3000"
     volumes:
-      - ./:/:cached
-      - /target
-      - /book
+      - .:/usr/src/app:cached # Mount current directory to a non-root directory in the container
+      - /usr/src/app/target # Persist the cargo build cache
+      - /usr/src/app/book # Persist the generated book if necessary
+    working_dir: /usr/src/app # Set the working directory to where the volume is mounted
