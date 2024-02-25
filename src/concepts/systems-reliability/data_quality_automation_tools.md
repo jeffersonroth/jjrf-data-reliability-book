@@ -31,8 +31,6 @@ Other options, which I haven't personally tried but frequently appear in online 
 
 * [**BigEye**](https://www.bigeye.com/): A monitoring platform designed for data engineers, providing automated data quality checks to ensure data reliability in real-time.
 
-* [**Innovative Systems**](https://www.innovativesystems.com/): A data quality, data management, and AML compliance platform.
-
 * [**Data Ladder**](https://dataladder.com/): A data quality software that provides cleansing, matching, deduplication, and enrichment features to improve data quality.
 
 * [**DQLabs Data Quality Platform**](https://www.dqlabs.ai/platform/): An AI-driven platform for managing data quality, offering features like profiling, cataloging, and anomaly detection.

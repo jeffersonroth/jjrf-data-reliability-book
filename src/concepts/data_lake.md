@@ -473,7 +473,11 @@ The main Data auditing tasks are:
 #### Data Exploration
 > It is the beginning stage of data analysis. It helps to identify right dataset is vital before starting Data Exploration.
 
-All given components need to work together to play an important part in Data Lake building easily evolve and explore the environment.
+All given components need to work together to play an important part in Data Lake building easily evolving and exploring the environment.
 
 ## Other Architecture Approaches
-**Data Lake Lambda Architecture for Smart Grids Big Data Analytics**: relies on Lambda architecture that is capable of performing parallel batch and real-time operations on distributed data. See the [article](https://ieeexplore.ieee.org/abstract/document/8417407){{A. A. Munshi and Y. A. -R. I. Mohamed, "Data Lake Lambda Architecture for Smart Grids Big Data Analytics," in IEEE Access, vol. 6, pp. 40463-40471, 2018, doi: 10.1109/ACCESS.2018.2858256.}}. Also see a brief explantion of the Lambda Architecture in this [article](https://www.researchgate.net/profile/Ajit-Singh-46/publication/331890045_Architecture_of_Data_Lake/links/6061ef85458515e8347d6ecc/Architecture-of-Data-Lake.pdf){{Ajit Singh, "Architecture of Data Lake", International Journal of Scientific Research in Computer Science, Engineering and Information Technology (IJSRCSEIT), ISSN : 2456-3307, Volume 5 Issue 2, pp. 411-414, March-April 2019. Available at doi: https://doi.org/10.32628/CSEIT1952121}}.
+**Data Lake Lambda Architecture for Smart Grids Big Data Analytics**: relies on Lambda architecture that is capable of performing parallel batch and real-time operations on distributed data. See the [article](https://ieeexplore.ieee.org/abstract/document/8417407). Also, see a brief explanation of the Lambda Architecture in this [article](https://www.researchgate.net/profile/Ajit-Singh-46/publication/331890045_Architecture_of_Data_Lake/links/6061ef85458515e8347d6ecc/Architecture-of-Data-Lake.pdf).
+
+A. A. Munshi and Y. A. -R. I. Mohamed, "Data Lake Lambda Architecture for Smart Grids Big Data Analytics," in IEEE Access, vol. 6, pp. 40463-40471, 2018, doi: 10.1109/ACCESS.2018.2858256.
+
+Ajit Singh, "Architecture of Data Lake", International Journal of Scientific Research in Computer Science, Engineering and Information Technology (IJSRCSEIT), ISSN : 2456-3307, Volume 5 Issue 2, pp. 411-414, March-April 2019. Available at doi: https://doi.org/10.32628/CSEIT1952121

@@ -1,4 +1,5 @@
 book
+target
 
 # Cache
 .mdbook-plantuml-cache/
@@ -10,3 +11,4 @@ book
 **/nohup.out
 **/pre-commit.log
 .venv
+node_modules

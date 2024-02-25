@@ -1,18 +1,27 @@
 FROM rust:buster
 
-RUN apt-get update
-RUN apt-get install -y build-essential openjdk-11-jre graphviz plantuml
+WORKDIR /usr/src/app
 
-RUN java -jar /usr/share/plantuml/plantuml.jar -h
+COPY ./Cargo.toml ./Cargo.lock ./
 
-WORKDIR /
+# Create a dummy source file to allow `cargo build` to cache dependencies
+RUN mkdir src \
+    && echo "fn main() {}" > src/main.rs \
+    && cargo build --release \
+    && rm -rf src
 
-COPY ./assets .
-COPY ./images .
-COPY ./theme .
-COPY ./ci/build-mdbook.sh .
-COPY ./book.backup.toml .
+RUN cargo install mdbook \
+    && cargo install mdbook-toc \
+    && cargo install mdbook-footnote \
+    && cargo install mdbook-emojicodes \
+    && cargo install mdbook-mermaid \
+    && cargo install mdbook-catppuccin\
+    && cargo install mdbook-plantuml
 
-RUN bash build-mdbook.sh
+COPY . .
 
-CMD [ "/bin/sh", "-c", "mdbook serve --hostname '0.0.0.0'" ]
+RUN cargo build --release
+
+RUN mdbook build
+
+CMD [ "mdbook", "serve", "--hostname", "0.0.0.0" ]

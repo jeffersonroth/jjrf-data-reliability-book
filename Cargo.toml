@@ -1,0 +1,13 @@
+[package]
+name = "data_reliability_engineering_book"
+version = "0.1.0"
+edition = "2021"
+
+[dependencies]
+mdbook = "0.4.37"
+mdbook-toc = "0.14.2"
+mdbook-footnote = "0.1.1"
+mdbook-emojicodes = "0.3.0"
+mdbook-mermaid = "0.13.0"
+mdbook-catppuccin = "2.1.0"
+mdbook-plantuml = "0.8.0"
