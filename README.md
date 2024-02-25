@@ -32,10 +32,13 @@
 ## Getting Started
 
 1. Clone the repo
+
    ```sh
    git clone https://github.com/jeffersonroth/jjrf-data-reliability-book.git
    ```
+
 2. Install cargo packages
+
    ```sh
    cargo install mdbook
    cargo install mdbook-linkcheck
@@ -49,6 +52,7 @@
    ```
 
 ### Packages
+
 * [mdbook](https://crates.io/crates/mdbook)
 * [mdbook-toc](https://crates.io/crates/mdbook-toc)
 * [mdbook-footnote](https://crates.io/crates/mdbook-footnote)
@@ -67,6 +71,7 @@
 * [~~mdbook-template~~](https://crates.io/crates/mdbook-template)
 
 ### Math Jax
+
 * [Documentation](https://bearnok.com/grva/en/knowledge/software/mathjax)
 * [Playground](https://www.mdraft.net/)
 
@@ -80,6 +85,6 @@ Copyright (C) 2021 Jefferson Johannes Roth Filho. See `LICENSE` for more informa
 
 ## Contact
 
-Jefferson Roth - jjrothfilho@gmail.com
+Jefferson Roth - <jjrothfilho@gmail.com>
 
 Project Link: [https://github.com/jeffersonroth/jjrf-data-reliability-book](https://github.com/jeffersonroth/jjrf-data-reliability-book)

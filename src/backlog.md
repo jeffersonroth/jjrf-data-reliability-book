@@ -1,6 +1,7 @@
 # Backlog
 
 ## Chapters (Section I)
+
 * Data Engineering
 * Modern Data Architecture
 * DataOps
@@ -13,6 +14,7 @@
 ## Topics
 
 **Fault Tolerant Systems**:
+
 * Technical documentation: Manuals, specifications, and guidelines that describe how systems or software operate. (Worth exploring further)
 * Safety cases: Documented arguments that a system is safe for a given application in a given environment.
 * Change Control: The process of managing changes to system or software specifications, ensuring that no unnecessary changes are made and that all changes are documented. (Worth exploring further)
@@ -47,6 +49,7 @@
 * Eliminating Single Point of Failure (SPOF): Designing systems to remove any one component whose failure would cause the entire system to fail. (Worth exploring further)
 
 **Analysis**:
+
 * Root Cause Analysis (RCA): Identifying the primary cause of a fault or problem to prevent recurrence. (Worth exploring further)
 * Fault Tree Analysis (FTA): A top-down approach to identify various causes of system failures. (Worth exploring further)
 * Failure Mode and Effects Analysis (FMEA): Assessing potential failures in products or processes and their effects. (Worth exploring further)
@@ -69,6 +72,7 @@
 * Mean Time Between Failures (MTBF), Mean Time to Repair (MTTR), Mean Corrective Maintenance Time (MCMT), Mean Preventive Maintenance Time (MPMT), Mean Maintenance Hours per Repair (MMH/Repair), Maximum Corrective Maintenance Time (MaxCMT): Metrics that provide insights into system reliability, maintenance efficiency, and repair times. (Worth exploring further)
 
 **Data Quality**:
+
 * Data Integrity: The accuracy and consistency of data stored in a database or a data warehouse over its entire lifecycle. (Worth exploring further)
 * Data Cleansing: The process of detecting and correcting (or removing) corrupt or inaccurate records from a record set, table, or database. (Worth exploring further)
 * Data Corruption: The occurrence of unintended changes to data in storage or transit, leading to a loss of data accuracy and integrity.
@@ -85,11 +89,13 @@
 * Reusability: The ease with which parts of a system can be used in other systems; in data management, this might relate to the ability to repurpose data models, schemas, or ETL processes.
 
 **Maintenance**:
+
 * Maintenance Requirement Allocation: Assigning specific maintenance tasks and intervals based on reliability data and requirements to ensure optimal system performance. (Worth exploring)
 * Predictive and Preventive Maintenance: Techniques for anticipating maintenance needs to prevent failures and for performing regular maintenance to avoid unexpected breakdowns, respectively. (Worth exploring)
 * Reliability Centered Maintenance (RCM): A process to determine the most effective maintenance approach, including predictive, preventive, and corrective actions, to ensure system reliability. (Worth exploring)
 
 **Failures**:
+
 * Manufacturing-induced Failures: Failures that originate from defects or issues introduced during the manufacturing process.
 * Assembly-induced Failures: Failures caused by mistakes or issues during the assembly of components or systems.
 * Transport-induced Failures: Failures that occur as a result of damage or stresses during transportation.
@@ -97,10 +103,12 @@
 * Systematic Failures: Failures that are predictable and consistent, often due to inherent design issues or flaws in the system.
 
 **Tests**:
+
 * System Diagnostics Design: Creating systems or procedures for diagnosing issues or failures within a system, crucial for effective maintenance and troubleshooting.
 * Failure/Reliability Testing: Conducting tests to evaluate a system's susceptibility to failure or to assess its reliability under various conditions. (Worth exploring)
 
 **Human Factors**:
+
 * Human Factors: The study of how humans interact with systems and environments, aiming to improve efficiency, safety, and usability.
 * Human Interaction: The ways in which people engage with and influence systems, and how these interactions can be optimized for better performance and safety.
 * Human Errors: Mistakes made by humans that can lead to system failures or reduced performance, often analyzed to improve system design and training.
@@ -109,6 +117,7 @@
 **DataOps**:
 
 **Business Process Management**:
+
 * BPM
 * BPI
 * BPE

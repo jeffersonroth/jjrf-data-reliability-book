@@ -1,0 +1,18 @@
+{
+  "config": {
+    "default": true,
+    "relative-links": true,
+    // Line length Check. See https://github.com/DavidAnson/markdownlint/blob/v0.32.1/doc/md013.md
+    "MD013": false,
+    // First line in a file should be a top-level heading
+    "MD041": false,
+    // Inline HTML
+    "MD033": false,
+    // Images should have alternate text (alt text)
+    "MD045": false,
+    // Heading levels should only increment by one level at a time
+    "MD001": false
+  },
+  // globs expression. See https://github.com/DavidAnson/markdownlint-cli2#command-line
+  "globs": ["README.md", "src/*.md"]
+}
