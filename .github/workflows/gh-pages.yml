@@ -19,12 +19,9 @@ concurrency:
 jobs:
   build:
     runs-on: ubuntu-latest
-    env:
-      MDBOOK_VERSION: 0.4.37
+    container: jeffroth/mdbook-environment:latest
     steps:
       - uses: actions/checkout@v4
-
-      - uses: Swatinem/rust-cache@v2
 
       - name: Validate Markdown Files
         uses: DavidAnson/markdownlint-cli2-action@v15
@@ -40,18 +37,7 @@ jobs:
           file-path: "./README.md"
           config-file: ".github/files/markdown.links.config.json"
 
-      - name: Install mdBook and Plugins
-        run: |
-          cargo install mdbook --vers $MDBOOK_VERSION
-          cargo install mdbook-toc
-          cargo install mdbook-catppuccin
-          cargo install mdbook-mermaid
-          cargo install mdbook-plantuml
-          cargo install mdbook-footnote
-          cargo install mdbook-emojicodes
-
       - name: Setup Pages
-        id: pages
         uses: actions/configure-pages@v3
 
       - name: Build with mdBook
