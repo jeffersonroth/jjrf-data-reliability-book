@@ -1,4 +1,4 @@
-name: Publish mdbook Github Pages
+name: Publish mdbook to GitHub Pages
 
 on:
   push:
@@ -13,17 +13,17 @@ permissions:
   id-token: write
 
 concurrency:
-  group: "pages"
-  cancel-in-progress: false
+  group: ${{ github.ref }}
+  cancel-in-progress: true
 
 jobs:
-  # Build job
   build:
     runs-on: ubuntu-latest
     env:
-      MDBOOK_VERSION: 0.4.36
+      MDBOOK_VERSION: 0.4.37
     steps:
       - uses: actions/checkout@v4
+
       - uses: Swatinem/rust-cache@v2
 
       - name: Validate Markdown Files
@@ -40,11 +40,9 @@ jobs:
           file-path: "./README.md"
           config-file: ".github/files/markdown.links.config.json"
 
-      - name: Install mdBook
+      - name: Install mdBook and Plugins
         run: |
-          curl --proto '=https' --tlsv1.2 https://sh.rustup.rs -sSf -y | sh
-          rustup update
-          cargo install mdbook
+          cargo install mdbook --vers $MDBOOK_VERSION
           cargo install mdbook-toc
           cargo install mdbook-catppuccin
           cargo install mdbook-mermaid
@@ -65,14 +63,10 @@ jobs:
         with:
           path: ./book
 
-  # Deployment job
   deploy:
-    environment:
-      name: github-pages
-      url: ${{ steps.deployment.outputs.page_url }}
+    if: github.event_name != 'pull_request'
     runs-on: ubuntu-latest
     needs: build
     steps:
       - name: Deploy to GitHub Pages
-        id: deployment
         uses: actions/deploy-pages@v1
