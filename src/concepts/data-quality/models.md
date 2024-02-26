@@ -45,3 +45,6 @@ Before delving into the specific dimensions of data quality, it's important to o
 * **ETLs (Extract, Transform, Load)**: This process is centered around data transformation. Tools such as dbt, pandas, and Informatica are commonly used for this purpose.
 
 Depending on the use case, the presence and significance of these components may vary. Similarly, the dimensions of data quality being assessed might also differ based on the specific requirements and context of each scenario.
+
+## Data Quality Metrics/Audit Database & Service
+Maintaining [Data Quality Metrics/Audit databases and services](./metrics_database.md) is foundational to managing modern data ecosystems effectively. They provide the visibility, accountability, and insights necessary to ensure data reliability, optimize operations, maintain compliance, and secure data assets, ultimately supporting the organization's strategic objectives.
