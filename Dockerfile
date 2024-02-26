@@ -1,4 +1,4 @@
-FROM yourusername/mdbook-environment
+FROM jeffroth/mdbook-environment
 
 WORKDIR /usr/src/app
 
