@@ -14,7 +14,7 @@ To evaluate consistency, data teams apply specific metrics that help identify di
 #### Example: Cross-System Consistency Rate
 \\[ Consistency \ Ratio = \frac{Number\ of \ Consistent \ Records \ Across \ Systems}{Total \ Number \ of \ Compared \ Records} \times 100 \\]
 
-The *Cross-System Consistency Rate* compares key data elements (e.g., customer information, and product details) across different operational systems to identify inconsistencies. SQL queries or data comparison tools can facilitate this process.
+The *Cross-System Consistency Rate* metric compares key data elements (e.g., customer information, and product details) across different operational systems to identify inconsistencies. SQL queries or data comparison tools can facilitate this process.
 
 ### ELT Processes
 * **Schema Consistency Checks**:
@@ -24,7 +24,7 @@ The *Cross-System Consistency Rate* compares key data elements (e.g., customer i
   Verify that the transformation logic in ELT does not introduce inconsistencies, especially when aggregating or modifying data.
 
 #### Example: Transformation Consistency Check
-The *Transformation Consistency Check* implements automated checks or tests within ELT pipelines to ensure that loaded data maintains data integrity. There is no fixed formula; it involves verifying that data transformations produce consistent results across different batches or datasets.
+The *Transformation Consistency Check* metric consists of implementing automated checks or tests within ELT pipelines to ensure that loaded data maintains data integrity. There is no fixed formula; it involves verifying that data transformations produce consistent results across different batches or datasets.
 
 ### Data Lakes and Data Warehouses
 * **Historical Data Alignment**:
@@ -36,7 +36,7 @@ The *Transformation Consistency Check* implements automated checks or tests with
 #### Example: Historical Data Consistency
 \\[ Historical \ Consistency \ Rate = \frac{Number\ of \ Records \ Matching \ Historical \ Patterns}{Total \ Number \ of \ Records} \times 100 \\]
 
-The *Historical Data Consistency* analyzes time-series data or historical records within the data lake or warehouse to ensure that data remains consistent over time. This may involve trend analysis or anomaly detection techniques.
+The *Historical Data Consistency* metric analyzes time-series data or historical records within the data lake or warehouse to ensure that data remains consistent over time. This may involve trend analysis or anomaly detection techniques.
 
 ### Data Marts
 * **Report Data Consistency**:
@@ -48,7 +48,7 @@ The *Historical Data Consistency* analyzes time-series data or historical record
 #### Example: Dimensional Consistency
 \\[ Dimensional \ Consistency \ Rate = \frac{Number\ of \ Consistent \ Dimension \ Records}{Total \ Number \ of \ Dimension \ Records} \times 100 \\]
 
-In data marts, the *Dimensional Consistency* assesses the consistency of dimension tables (e.g., time dimensions, geographical hierarchies) to ensure they align with business rules and definitions.
+In data marts, the *Dimensional Consistency* metric assesses the consistency of dimension tables (e.g., time dimensions, geographical hierarchies) to ensure they align with business rules and definitions.
 
 ## Ensuring and Improving Consistency
 Strategies to maintain and enhance data consistency across the data infrastructure include:
