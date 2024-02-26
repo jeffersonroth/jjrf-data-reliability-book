@@ -7,20 +7,20 @@ To assess the uniqueness of data, data teams utilize specific metrics that help 
 ### Data Sources (Operational Data) - Duplication Rate
 \\[ Duplication \ Rate = \frac{Number\ of \ Duplicate \ Records}{Total \ Number \ of \ Records} \times 100 \\]
 
-The *Duplication Rate* metric analyzes operational data for duplicate entries by comparing key identifiers (e.g., customer IDs, product codes) within the source system. SQL queries or data profiling tools can facilitate this process.
+**Application**: Analyze operational data for duplicate entries by comparing key identifiers (e.g., customer IDs, product codes) within the source system. SQL queries or data profiling tools can facilitate this process.
 
 ### Data Lakes and Data Warehouses - Entity Uniqueness Score
 \\[ Entity \ Uniqueness \ Score = \frac{Number \ of \ Unique \ Entity \ Records}{Total \ Number \ of \ Entity \ Records} \times 100 \\]
 
-In data lakes and warehouses, the *Entity Uniqueness Score* metric assesses the uniqueness of entities across datasets by comparing key attributes. Data quality tools can automate the identification of duplicates across disparate datasets.
+**Application**: In data lakes and warehouses, assess the uniqueness of entities across datasets by comparing key attributes. Data quality tools can automate the identification of duplicates across disparate datasets.
 
 ### Data Marts - Dimensional Key Uniqueness
 \\[ Dimensional \ Key \ Uniqueness = \frac{Number \ of \ Unique \ Dimension \ Keys}{Total \ Number \ of \ Dimension \ Records} \times 100 \\]
 
-For data marts, the *Dimensional Key Uniqueness* metric ensures that dimensional keys (e.g., time dimensions, product dimensions) are unique to maintain data integrity and accurate reporting.
+**Application**: For data marts, ensure that dimensional keys (e.g., time dimensions, product dimensions) are unique to maintain data integrity and accurate reporting.
 
 ### Reports and Dashboards - Report Data Redundancy Check
-*Report Data Redundancy Check* validates that reports and dashboards do not present redundant information, which could mislead decision-making. This involves both user feedback and automated data validation techniques. It is a qualitative assessment based on user validation and automated data checks.
+**Application**: Validate that reports and dashboards do not present redundant information, which could mislead decision-making. This involves both user feedback and automated data validation techniques. It is a qualitative assessment based on user validation and automated data checks.
 
 ### Ensuring and Improving Uniqueness
 To maintain high levels of uniqueness across the data infrastructure, several best practices can be implemented:
@@ -44,38 +44,38 @@ To maintain high levels of uniqueness across the data infrastructure, several be
 Uniqueness in data quality plays a crucial role in maintaining the integrity and usefulness of data, especially in environments where the accuracy of records is paramount. Here are examples of metrics that can be applied to measure and ensure the uniqueness dimension in various data environments:
 
 ### Duplicate Record Rate
-> Calculate the percentage of duplicate records within a dataset to identify the extent of redundancy in data storage.
+**Application**: Calculate the percentage of duplicate records within a dataset to identify the extent of redundancy in data storage.
 
-Example: In a CRM system, this metric can help identify duplicate customer profiles, ensuring each customer is represented only once.
+**Example**: In a CRM system, this metric can help identify duplicate customer profiles, ensuring each customer is represented only once.
 
 ### Unique Entity Ratio
-> Measure the ratio of unique entities (such as customers, products, or transactions) to the total number of records, highlighting the effectiveness of deduplication efforts.
+**Application**: Measure the ratio of unique entities (such as customers, products, or transactions) to the total number of records, highlighting the effectiveness of deduplication efforts.
 
-Example: An e-commerce platform might use this metric to ensure that each product listing is unique and not duplicated across different categories.
+**Example**: An e-commerce platform might use this metric to ensure that each product listing is unique and not duplicated across different categories.
 
 ### Key Integrity Index
-> Assess the integrity of primary and foreign keys in relational databases, ensuring that each key uniquely identifies a record without overlaps.
+**Application**: Assess the integrity of primary and foreign keys in relational databases, ensuring that each key uniquely identifies a record without overlaps.
 
-Example: In a data warehouse, maintaining a high key integrity index is crucial to ensure that joins and relationships between tables accurately reflect unique entities.
+**Example**: In a data warehouse, maintaining a high key integrity index is crucial to ensure that joins and relationships between tables accurately reflect unique entities.
 
 ### Cross-System Uniqueness Verification
-> Verify that entities are unique not just within a single system but across interconnected systems, essential for integrated data environments.
+**Application**: Verify that entities are unique not just within a single system but across interconnected systems, essential for integrated data environments.
 
-Example: A business might check that employee IDs are unique not only within the HR system but also across access control, payroll, and other internal systems.
+**Example**: A business might check that employee IDs are unique not only within the HR system but also across access control, payroll, and other internal systems.
 
 ### Incremental Load Uniqueness Check
-> During data ETL (Extract, Transform, Load) processes, ensure that each incrementally loaded record is unique and does not duplicate existing data.
+**Application**: During data ETL (Extract, Transform, Load) processes, ensure that each incrementally loaded record is unique and does not duplicate existing data.
 
-Example: When loading daily sales transactions into a data warehouse, this metric ensures each transaction is recorded once, even across multiple loads.
+**Example**: When loading daily sales transactions into a data warehouse, this metric ensures each transaction is recorded once, even across multiple loads.
 
 ### Uniqueness Trend Over Time
-> Monitor the trend of unique records over time to identify patterns or changes in data capture processes that may affect data uniqueness.
+**Application**: Monitor the trend of unique records over time to identify patterns or changes in data capture processes that may affect data uniqueness.
 
-Example: An organization might track the uniqueness trend of contact information in its marketing database to ensure that data collection methods continue to produce unique entries.
+**Example**: An organization might track the uniqueness trend of contact information in its marketing database to ensure that data collection methods continue to produce unique entries.
 
 ### Match and Merge Effectiveness
-> In systems employing match-and-merge techniques for deduplication, measure the effectiveness of these operations in consolidating duplicate records into unique entities.
+**Application**: In systems employing match-and-merge techniques for deduplication, measure the effectiveness of these operations in consolidating duplicate records into unique entities.
 
-Example: In healthcare databases, this metric can ensure patient records are uniquely merged from various sources without losing critical information.
+**Example**: In healthcare databases, this metric can ensure patient records are uniquely merged from various sources without losing critical information.
 
 By monitoring these uniqueness metrics, organizations can detect and address issues related to duplicate data, thereby enhancing the quality and reliability of their information assets. Ensuring data uniqueness is essential for accurate analytics, efficient operations, and effective decision-making, particularly in contexts where the precision of each data entity is critical.

@@ -7,20 +7,20 @@ Assessing the relevance of data involves evaluating how well the data meets the 
 ### Data Sources (Operational Data) - Data Utilization Rate
 \\[ Data \ Utilization \ Rate = \frac{Number\ of \ Data \ Elements \ Used \ in \ Decision-Making}{Total \ Number \ of \ Data \ Elements \ Available} \times 100 \\]
 
-The *Data Utilization Rate* metric analyzes operational data to identify which data elements are actively used in decision-making processes. This can be done through user surveys, data access logs, or analytics on database queries.
+**Application**: Analyze operational data to identify which data elements are actively used in decision-making processes. This can be done through user surveys, data access logs, or analytics on database queries.
 
 ### Data Lakes and Data Warehouses - Data Coverage Ratio
 \\[ Data \ Coverage \ Ratio = \frac{Number\ of \ Business \ Questions \ Answerable \ with \ Data}{Total \ Number \ of \ Business \ Questions} \times 100 \\]
 
-The *Data Coverage Ratio* metric evaluates the extent to which data stored in the data lake or warehouse can answer key business questions. This may involve mapping data elements to specific business use cases or analytics requirements.
+**Application**: Evaluate the extent to which data stored in the data lake or warehouse can answer key business questions. This may involve mapping data elements to specific business use cases or analytics requirements.
 
 ### Data Marts - Business Alignment Index
-In data marts designed for specific business functions, the *Business Alignment Index* metric assesses how well the data aligns with the department's KPIs and objectives. This could involve regular reviews with department heads and key users to ensure the data remains relevant to their needs. It is a qualitative assessment based on alignment with departmental objectives and key performance indicators (KPIs).
+In data marts designed for specific business functions, assess how well the data aligns with the department's KPIs and objectives. This could involve regular reviews with department heads and key users to ensure the data remains relevant to their needs. It is a qualitative assessment based on alignment with departmental objectives and key performance indicators (KPIs).
 
 ### Reports and Dashboards - User Engagement Score
 \\[ User \ Engagement \ Score = \frac{Number\ of \ Active \ User \ Interactions \ with \ Reports \ or \ Dashboards}{Total \ Number \ of \ Reports \ or \ Dashboards \ Available} \\]
 
-The *User Engagement Score* metric monitors user engagement with reports and dashboards to gauge their relevance. High interaction rates may suggest that the information presented is relevant and useful to the users.
+**Application**: Monitor user engagement with reports and dashboards to gauge their relevance. High interaction rates may suggest that the information presented is relevant and useful to the users.
 
 ## Ensuring and Improving Relevance
 Strategies to maintain and enhance the relevance of data across the data infrastructure include:
@@ -41,38 +41,38 @@ Strategies to maintain and enhance the relevance of data across the data infrast
 Relevance in the context of data quality ensures that the data collected and maintained is applicable, meaningful, and useful for the business purposes it is intended for. Here are some examples of relevance metrics that can be applied in various business scenarios:
 
 ### Data Utilization Rate
-> Measure the percentage of collected data that is actively used in decision-making or operational processes, indicating its relevance to current business needs.
+**Application**: Measure the percentage of collected data that is actively used in decision-making or operational processes, indicating its relevance to current business needs.
 
-Example: A marketing department might track the utilization rate of customer data in campaign planning to ensure the data collected is relevant and actively employed in marketing strategies.
+**Example**: A marketing department might track the utilization rate of customer data in campaign planning to ensure the data collected is relevant and actively employed in marketing strategies.
 
 ### Data Relevance Score
-> Assign scores to datasets based on predefined criteria that reflect their importance and applicability to current business objectives or projects.
+**Application**: Assign scores to datasets based on predefined criteria that reflect their importance and applicability to current business objectives or projects.
 
-Example: A project management office could score project data based on its relevance to strategic initiatives, focusing resources on the most pertinent projects.
+**Example**: A project management office could score project data based on its relevance to strategic initiatives, focusing resources on the most pertinent projects.
 
 ### Data Coverage Adequacy
-> Assess whether the scope and granularity of collected data cover all necessary aspects of a business process or area, ensuring its relevance and completeness.
+**Application**: Assess whether the scope and granularity of collected data cover all necessary aspects of a business process or area, ensuring its relevance and completeness.
 
-Example: An operations team in a manufacturing firm may evaluate the adequacy of sensor data coverage in monitoring production lines, ensuring critical parameters are tracked for optimal performance.
+**Example**: An operations team in a manufacturing firm may evaluate the adequacy of sensor data coverage in monitoring production lines, ensuring critical parameters are tracked for optimal performance.
 
 ### Obsolete Data Percentage
-> Identify and quantify the proportion of data that is no longer relevant or applicable to current business processes or objectives.
+**Application**: Identify and quantify the proportion of data that is no longer relevant or applicable to current business processes or objectives.
 
-Example: An IT department might calculate the percentage of obsolete data within its systems to streamline data storage and focus on maintaining relevant data.
+**Example**: An IT department might calculate the percentage of obsolete data within its systems to streamline data storage and focus on maintaining relevant data.
 
 ### User Feedback Score on Data Relevance
-> Collect and analyze user feedback to gauge the perceived relevance of data sets or reports, using scores or ratings to quantify satisfaction.
+**Application**: Collect and analyze user feedback to gauge the perceived relevance of data sets or reports, using scores or ratings to quantify satisfaction.
 
-Example: A business intelligence team could gather feedback from end-users on the relevance of dashboards and reports, using this input to tailor data presentations to user needs.
+**Example**: A business intelligence team could gather feedback from end-users on the relevance of dashboards and reports, using this input to tailor data presentations to user needs.
 
 ### Data-Strategy Alignment Index
-> Evaluate how well data assets align with strategic business objectives, ensuring that data collection and management efforts are directed towards relevant business goals.
+**Application**: Evaluate how well data assets align with strategic business objectives, ensuring that data collection and management efforts are directed towards relevant business goals.
 
-Example: A strategic planning department might use an alignment index to assess how well data initiatives support overarching business strategies, ensuring efforts are not misdirected.
+**Example**: A strategic planning department might use an alignment index to assess how well data initiatives support overarching business strategies, ensuring efforts are not misdirected.
 
 ### Decision Impact Analysis
-> Analyze the impact of data on key business decisions to determine its relevance and effectiveness in supporting those decisions.
+**Application**: Analyze the impact of data on key business decisions to determine its relevance and effectiveness in supporting those decisions.
 
-Example: A financial analytics team could retrospectively analyze how data-driven recommendations impacted investment decisions, assessing the relevance of the data used.
+**Example**: A financial analytics team could retrospectively analyze how data-driven recommendations impacted investment decisions, assessing the relevance of the data used.
 
 Implementing these relevance metrics helps organizations ensure that their data assets remain aligned with current business needs, objectives, and processes. By regularly assessing the relevance of their data, businesses can make informed decisions about data collection, retention, and utilization strategies, ensuring that resources are allocated efficiently and effectively to maintain data that offers real value and supports the organization's goals.

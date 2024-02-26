@@ -54,13 +54,13 @@ When considering accuracy within your data quality framework, it's essential to 
 
 Implementing a combination of these metrics and checks will provide a comprehensive approach to ensuring the accuracy of data across your data infrastructure. It's important to tailor these metrics to the specific characteristics of your data and the business context in which it's used. Regular review and adjustment of these metrics will ensure they remain effective and relevant as your data environment evolves.
 
-## Accuracy Metrics Examples
+## Accuracy Metrics
 To measure accuracy, data teams employ various metrics and techniques, often tailored to the specific type of data and its intended use. Here are some examples of how accuracy can be measured throughout the data infrastructure:
 
 ### Data Sources (Operational Data) - Error Rate
 \\[ Error \ Rate = \frac{Number\ of \ Incorrect \ Records}{Total \ Number \ of \ Records} \times 100 \\]
   
-The *Error Rate* metric assesses the error rate in operational data by comparing recorded data values against verified true values (from trusted sources or manual verification). Some common uses of this metric are:
+**Application**: Assess the error rate in operational data by comparing recorded data values against verified true values (from trusted sources or manual verification). Some common uses of this metric are:
 
 * **Financial Services**:
   Banks and financial institutions use the error rate metric to monitor the accuracy of transactional data. High error rates in financial transactions can lead to significant financial loss and regulatory compliance issues.
@@ -91,12 +91,12 @@ In each of these contexts, maintaining a low error rate is important not only fo
 ### ELT Processes - Transformation Accuracy Rate
 \\[ Transformation \ Accuracy \ Rate = \frac{Number \ of \ Correctly \ Transformed \ Records}{Total \ Number \ of \ Transformed \ Records} \times 100 \\]
   
-The *Transformation Accuracy Rate* metric validates the accuracy of data post-transformation by comparing pre and post-ELT data against expected results based on transformation logic.
+**Application**: Validate the accuracy of data post-transformation by comparing pre and post-ELT data against expected results based on transformation logic.
 
 ### Data Lakes and Data Warehouses - Data Conformity Rate
 \\[ Data \ Conformity \ Rate = \frac{Number \ of \ Records \ Conforming \ to \ Data \ Models}{Total \ Number \ of \ Records} \times 100 \\]
   
-The *Data Conformity Rate* metric ensures that data in lakes and warehouses conforms to predefined data models and schemas, indicating accurate structuring and categorization. Some common use cases are:
+**Application**: Ensure that data in lakes and warehouses conforms to predefined data models and schemas, indicating accurate structuring and categorization. Some common use cases are:
 
 * **Data Governance**:
   Helps ensure that data governance policies are being followed by measuring how well the data matches the organization's data standards and models.
@@ -107,7 +107,7 @@ The *Data Conformity Rate* metric ensures that data in lakes and warehouses conf
 ### Data Marts - Attribute Accuracy
 \\[ Attribute \ Accuracy = \frac{Number \ of \ Correct \ Attribute \ Values}{Total \ Number \ of \ Attribute \ Values} \times 100 \\]
   
-For each attribute in a data mart, the *Attribute Accuracy* metric compares the values against a set of true values or rules to assess attribute-level accuracy.
+**Application**: For each attribute in a data mart, compare the values against a set of true values or rules to assess attribute-level accuracy.
 
 * **Marketing Analytics**:
   Ensuring campaign data attributes like dates, budget figures, and demographic details are correct to inform marketing strategies.
