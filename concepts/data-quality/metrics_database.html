@@ -1,0 +1,292 @@
+<!DOCTYPE HTML>
+<html lang="en" class="sidebar-visible no-js light">
+    <head>
+        <!-- Book generated using mdBook -->
+        <meta charset="UTF-8">
+        <title>Metrics/Audit Database &amp; Service - Data Reliability Engineering</title>
+
+
+        <!-- Custom HTML head -->
+        
+        <meta content="text/html; charset=utf-8" http-equiv="Content-Type">
+        <meta name="description" content="">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <meta name="theme-color" content="#ffffff" />
+
+        <link rel="icon" href="../../favicon.svg">
+        <link rel="shortcut icon" href="../../favicon.png">
+        <link rel="stylesheet" href="../../css/variables.css">
+        <link rel="stylesheet" href="../../css/general.css">
+        <link rel="stylesheet" href="../../css/chrome.css">
+        <link rel="stylesheet" href="../../css/print.css" media="print">
+
+        <!-- Fonts -->
+        <link rel="stylesheet" href="../../FontAwesome/css/font-awesome.css">
+        <link rel="stylesheet" href="../../fonts/fonts.css">
+
+        <!-- Highlight.js Stylesheets -->
+        <link rel="stylesheet" href="../../highlight.css">
+        <link rel="stylesheet" href="../../tomorrow-night.css">
+        <link rel="stylesheet" href="../../ayu-highlight.css">
+
+        <!-- Custom theme stylesheets -->
+        <link rel="stylesheet" href="../../theme/catppuccin.css">
+        <link rel="stylesheet" href="../../theme/catppuccin-highlight.css">
+
+        <!-- MathJax -->
+        <script async type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.1/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
+    </head>
+    <body>
+        <!-- Provide site root to javascript -->
+        <script type="text/javascript">
+            var path_to_root = "../../";
+            var default_theme = window.matchMedia("(prefers-color-scheme: dark)").matches ? "navy" : "light";
+        </script>
+
+        <!-- Work around some values being stored in localStorage wrapped in quotes -->
+        <script type="text/javascript">
+            try {
+                var theme = localStorage.getItem('mdbook-theme');
+                var sidebar = localStorage.getItem('mdbook-sidebar');
+
+                if (theme.startsWith('"') && theme.endsWith('"')) {
+                    localStorage.setItem('mdbook-theme', theme.slice(1, theme.length - 1));
+                }
+
+                if (sidebar.startsWith('"') && sidebar.endsWith('"')) {
+                    localStorage.setItem('mdbook-sidebar', sidebar.slice(1, sidebar.length - 1));
+                }
+            } catch (e) { }
+        </script>
+
+        <!-- Set the theme before any content is loaded, prevents flash -->
+        <script type="text/javascript">
+            var theme;
+            try { theme = localStorage.getItem('mdbook-theme'); } catch(e) { }
+            if (theme === null || theme === undefined) { theme = default_theme; }
+            var html = document.querySelector('html');
+            html.classList.remove('no-js')
+            html.classList.remove('light')
+            html.classList.add(theme);
+            html.classList.add('js');
+        </script>
+
+        <!-- Hide / unhide sidebar before it is displayed -->
+        <script type="text/javascript">
+            var html = document.querySelector('html');
+            var sidebar = 'hidden';
+            if (document.body.clientWidth >= 1080) {
+                try { sidebar = localStorage.getItem('mdbook-sidebar'); } catch(e) { }
+                sidebar = sidebar || 'visible';
+            }
+            html.classList.remove('sidebar-visible');
+            html.classList.add("sidebar-" + sidebar);
+        </script>
+
+        <nav id="sidebar" class="sidebar" aria-label="Table of contents">
+            <div class="sidebar-scrollbox">
+                <ol class="chapter"><li class="chapter-item expanded affix "><a href="../../COVER.html">Cover</a></li><li class="chapter-item expanded affix "><a href="../../TITLE.html">Title</a></li><li class="chapter-item expanded affix "><a href="../../SUMMARY.html">Summary</a></li><li class="chapter-item expanded affix "><a href="../../DEDICATION.html">Dedication</a></li><li class="chapter-item expanded affix "><a href="../../FOREWORD.html">Foreword</a></li><li class="chapter-item expanded affix "><a href="../../PREFACE.html">Preface</a></li><li class="chapter-item expanded affix "><a href="../../AUTHOR.html">Author</a></li><li class="chapter-item expanded affix "><a href="../../OBJECTIVES.html">Objectives</a></li><li class="chapter-item expanded affix "><a href="../../STRUCTURE.html">Structure</a></li><li class="chapter-item expanded "><a href="../../CONCEPTS.html"><strong aria-hidden="true">1.</strong> I - Concepts</a></li><li><ol class="section"><li class="chapter-item expanded "><a href="../../concepts/systems_intro.html"><strong aria-hidden="true">1.1.</strong> Introduction to Systems</a></li><li class="chapter-item expanded "><a href="../../concepts/systems_reliability.html"><strong aria-hidden="true">1.2.</strong> Systems Reliability</a></li><li><ol class="section"><li class="chapter-item expanded "><a href="../../concepts/systems-reliability/impediments.html"><strong aria-hidden="true">1.2.1.</strong> Impediments</a></li><li class="chapter-item expanded "><a href="../../concepts/systems-reliability/attributes.html"><strong aria-hidden="true">1.2.2.</strong> Attributes</a></li><li class="chapter-item expanded "><a href="../../concepts/systems-reliability/mechanisms.html"><strong aria-hidden="true">1.2.3.</strong> Mechanisms</a></li><li><ol class="section"><li class="chapter-item expanded "><a href="../../concepts/systems-reliability/fault_prevention_avoidance.html"><strong aria-hidden="true">1.2.3.1.</strong> Fault Prevention: Avoidance</a></li><li class="chapter-item expanded "><a href="../../concepts/systems-reliability/fault_tolerance.html"><strong aria-hidden="true">1.2.3.2.</strong> Fault Tolerance</a></li><li class="chapter-item expanded "><a href="../../concepts/systems-reliability/fault_prevention_elimination.html"><strong aria-hidden="true">1.2.3.3.</strong> Fault Prevention: Elimination</a></li><li class="chapter-item expanded "><a href="../../concepts/systems-reliability/fault_prediction.html"><strong aria-hidden="true">1.2.3.4.</strong> Fault Prediction</a></li><li class="chapter-item expanded "><a href="../../concepts/systems-reliability/reliability_tools.html"><strong aria-hidden="true">1.2.3.5.</strong> Reliability Tools</a></li><li><ol class="section"><li class="chapter-item expanded "><a href="../../concepts/systems-reliability/observability_tools.html"><strong aria-hidden="true">1.2.3.5.1.</strong> Observability Tools</a></li><li class="chapter-item expanded "><a href="../../concepts/systems-reliability/data_quality_automation_tools.html"><strong aria-hidden="true">1.2.3.5.2.</strong> Data Quality Automation Tools</a></li><li class="chapter-item expanded "><a href="../../concepts/systems-reliability/version_control_systems.html"><strong aria-hidden="true">1.2.3.5.3.</strong> Version Control Systems</a></li><li class="chapter-item expanded "><a href="../../concepts/systems-reliability/data_lineage_tools.html"><strong aria-hidden="true">1.2.3.5.4.</strong> Data Lineage Tools</a></li><li class="chapter-item expanded "><a href="../../concepts/systems-reliability/workflow_orchestration_tools.html"><strong aria-hidden="true">1.2.3.5.5.</strong> Workflow Orchestration Tools</a></li><li class="chapter-item expanded "><a href="../../concepts/systems-reliability/data_transformation_tools.html"><strong aria-hidden="true">1.2.3.5.6.</strong> Data Transformation and Testing Tools</a></li><li class="chapter-item expanded "><a href="../../concepts/systems-reliability/infrastructure_as_code_tools.html"><strong aria-hidden="true">1.2.3.5.7.</strong> Infrastructure as Code Tools</a></li><li class="chapter-item expanded "><a href="../../concepts/systems-reliability/container_orchestration_tools.html"><strong aria-hidden="true">1.2.3.5.8.</strong> Container Orchestration Tools</a></li><li class="chapter-item expanded "><a href="../../concepts/systems-reliability/fracas.html"><strong aria-hidden="true">1.2.3.5.9.</strong> Failure Reporting, Analysis, and Corrective Action System (FRACAS)</a></li><li class="chapter-item expanded "><a href="../../concepts/systems-reliability/reliability_block_diagrams.html"><strong aria-hidden="true">1.2.3.5.10.</strong> Reliability Block Diagrams</a></li></ol></li></ol></li></ol></li><li class="chapter-item expanded "><a href="../../concepts/data_quality.html"><strong aria-hidden="true">1.3.</strong> Data Quality</a></li><li><ol class="section"><li class="chapter-item expanded "><a href="../../concepts/data-quality/foundations.html"><strong aria-hidden="true">1.3.1.</strong> Foundations of Data Quality</a></li><li class="chapter-item expanded "><a href="../../concepts/data-quality/master_data.html"><strong aria-hidden="true">1.3.2.</strong> Master Data</a></li><li class="chapter-item expanded "><a href="../../concepts/data-quality/management.html"><strong aria-hidden="true">1.3.3.</strong> Data Management</a></li><li class="chapter-item expanded "><a href="../../concepts/data-quality/models.html"><strong aria-hidden="true">1.3.4.</strong> Data Quality Models</a></li><li><ol class="section"><li class="chapter-item expanded "><a href="../../concepts/data-quality/accuracy_dimension.html"><strong aria-hidden="true">1.3.4.1.</strong> Accuracy Dimension</a></li><li class="chapter-item expanded "><a href="../../concepts/data-quality/completeness_dimension.html"><strong aria-hidden="true">1.3.4.2.</strong> Completeness Dimension</a></li><li class="chapter-item expanded "><a href="../../concepts/data-quality/consistency_dimension.html"><strong aria-hidden="true">1.3.4.3.</strong> Consistency Dimension</a></li><li class="chapter-item expanded "><a href="../../concepts/data-quality/timeliness_dimension.html"><strong aria-hidden="true">1.3.4.4.</strong> Timeliness Dimension</a></li><li class="chapter-item expanded "><a href="../../concepts/data-quality/relevance_dimension.html"><strong aria-hidden="true">1.3.4.5.</strong> Relevance Dimension</a></li><li class="chapter-item expanded "><a href="../../concepts/data-quality/reliability_dimension.html"><strong aria-hidden="true">1.3.4.6.</strong> Reliability Dimension</a></li><li class="chapter-item expanded "><a href="../../concepts/data-quality/uniqueness_dimension.html"><strong aria-hidden="true">1.3.4.7.</strong> Uniqueness Dimension</a></li><li class="chapter-item expanded "><a href="../../concepts/data-quality/validity_dimension.html"><strong aria-hidden="true">1.3.4.8.</strong> Validity Dimension</a></li><li class="chapter-item expanded "><a href="../../concepts/data-quality/accessibility_dimension.html"><strong aria-hidden="true">1.3.4.9.</strong> Accessibility Dimension</a></li><li class="chapter-item expanded "><a href="../../concepts/data-quality/integrity_dimension.html"><strong aria-hidden="true">1.3.4.10.</strong> Integrity Dimension</a></li><li class="chapter-item expanded "><a href="../../concepts/data-quality/metrics_database.html" class="active"><strong aria-hidden="true">1.3.4.11.</strong> Metrics/Audit Database & Service</a></li><li class="chapter-item expanded "><a href="../../concepts/data-quality/dimensions_final_thoughts.html"><strong aria-hidden="true">1.3.4.12.</strong> Final Thoughts on Data Quality Dimensions</a></li></ol></li><li class="chapter-item expanded "><a href="../../concepts/data-quality/final_thoughts.html"><strong aria-hidden="true">1.3.5.</strong> Final Thoughts on Data Quality</a></li></ol></li><li class="chapter-item expanded "><a href="../../concepts/data_relibility.html"><strong aria-hidden="true">1.4.</strong> Data Reliability</a></li><li class="chapter-item expanded "><a href="../../concepts/processes.html"><strong aria-hidden="true">1.5.</strong> Processes</a></li><li class="chapter-item expanded "><a href="../../concepts/operations.html"><strong aria-hidden="true">1.6.</strong> Operations</a></li><li class="chapter-item expanded "><a href="../../concepts/data_architecture.html"><strong aria-hidden="true">1.7.</strong> Data Architecture</a></li><li><ol class="section"><li class="chapter-item expanded "><a href="../../concepts/data_sources.html"><strong aria-hidden="true">1.7.1.</strong> Data Sources</a></li><li class="chapter-item expanded "><a href="../../concepts/data_tier.html"><strong aria-hidden="true">1.7.2.</strong> Data Tier</a></li><li><ol class="section"><li class="chapter-item expanded "><a href="../../concepts/data_lake.html"><strong aria-hidden="true">1.7.2.1.</strong> Data Lake</a></li><li class="chapter-item expanded "><a href="../../concepts/data_warehouse.html"><strong aria-hidden="true">1.7.2.2.</strong> Data Warehouse</a></li><li><ol class="section"><li class="chapter-item expanded "><a href="../../concepts/data_warehouse_tier_architecture.html"><strong aria-hidden="true">1.7.2.2.1.</strong> Two-Tier vs Three-Tier Architecture</a></li><li><ol class="section"><li class="chapter-item expanded "><a href="../../concepts/data_warehouse_application_tier.html"><strong aria-hidden="true">1.7.2.2.1.1.</strong> Application Tier</a></li></ol></li><li class="chapter-item expanded "><a href="../../concepts/data_modelling.html"><strong aria-hidden="true">1.7.2.2.2.</strong> Data Modelling</a></li><li class="chapter-item expanded "><a href="../../concepts/data-architecture/slowly_changing_dimensions.html"><strong aria-hidden="true">1.7.2.2.3.</strong> Slowly Changing Dimensions (SCD)</a></li></ol></li><li class="chapter-item expanded "><a href="../../concepts/data_lakehouse.html"><strong aria-hidden="true">1.7.2.3.</strong> Data Lakehouse</a></li><li class="chapter-item expanded "><a href="../../concepts/data_marts.html"><strong aria-hidden="true">1.7.2.4.</strong> Data Marts</a></li></ol></li><li class="chapter-item expanded "><a href="../../concepts/application_tier.html"><strong aria-hidden="true">1.7.3.</strong> Application Tier</a></li><li class="chapter-item expanded "><a href="../../concepts/presentation_tier.html"><strong aria-hidden="true">1.7.4.</strong> Presentation Tier</a></li><li class="chapter-item expanded "><a href="../../concepts/metadata_management_tools.html"><strong aria-hidden="true">1.7.5.</strong> Metadata Management Tools</a></li><li class="chapter-item expanded "><a href="../../concepts/data-architecture/operational_data_stores.html"><strong aria-hidden="true">1.7.6.</strong> Operational Data Stores vs. Data Operational Stores</a></li></ol></li></ol></li><li class="chapter-item expanded "><div><strong aria-hidden="true">2.</strong> II - Use Cases</div></li><li><ol class="section"><li class="chapter-item expanded "><div><strong aria-hidden="true">2.1.</strong> A - Aranduka Inc.</div></li><li><ol class="section"><li class="chapter-item expanded "><div><strong aria-hidden="true">2.1.1.</strong> Data Architecture</div></li><li><ol class="section"><li class="chapter-item expanded "><div><strong aria-hidden="true">2.1.1.1.</strong> Operational System and Internal Data Sources</div></li><li class="chapter-item expanded "><div><strong aria-hidden="true">2.1.1.2.</strong> Integrating Data Partners</div></li><li class="chapter-item expanded "><div><strong aria-hidden="true">2.1.1.3.</strong> Designing the Data Lake</div></li><li><ol class="section"><li class="chapter-item expanded "><div><strong aria-hidden="true">2.1.1.3.1.</strong> Anonymized Data</div></li><li class="chapter-item expanded "><div><strong aria-hidden="true">2.1.1.3.2.</strong> Distilled Data</div></li></ol></li><li class="chapter-item expanded "><div><strong aria-hidden="true">2.1.1.4.</strong> Designing the Data Warehouse</div></li><li><ol class="section"><li class="chapter-item expanded "><div><strong aria-hidden="true">2.1.1.4.1.</strong> Core Data</div></li></ol></li><li class="chapter-item expanded "><div><strong aria-hidden="true">2.1.1.5.</strong> Designing the Data Marts</div></li></ol></li><li class="chapter-item expanded "><div><strong aria-hidden="true">2.1.2.</strong> BICC & BI</div></li><li><ol class="section"><li class="chapter-item expanded "><div><strong aria-hidden="true">2.1.2.1.</strong> Building Reliable Pipelines</div></li><li class="chapter-item expanded "><div><strong aria-hidden="true">2.1.2.2.</strong> Data Quality Assurance & Monitoring</div></li><li class="chapter-item expanded "><div><strong aria-hidden="true">2.1.2.3.</strong> Continuous Service</div></li></ol></li><li class="chapter-item expanded "><div><strong aria-hidden="true">2.1.3.</strong> Growth, Marketing & Attribution Models</div></li><li class="chapter-item expanded "><div><strong aria-hidden="true">2.1.4.</strong> Multidimensional Analysis: Geo vs Verticals</div></li></ol></li></ol></li><li class="chapter-item expanded "><div><strong aria-hidden="true">3.</strong> III - Incorporating Data Reliability Engineering</div></li><li><ol class="section"><li class="chapter-item expanded "><div><strong aria-hidden="true">3.1.</strong> Solutions Architects</div></li><li><ol class="section"><li class="chapter-item expanded "><div><strong aria-hidden="true">3.1.1.</strong> Data Architect</div></li></ol></li><li class="chapter-item expanded "><div><strong aria-hidden="true">3.2.</strong> Data Engineers</div></li><li class="chapter-item expanded "><div><strong aria-hidden="true">3.3.</strong> Backend Engineers</div></li><li class="chapter-item expanded "><div><strong aria-hidden="true">3.4.</strong> BI Engineers</div></li></ol></li><li class="chapter-item expanded "><div><strong aria-hidden="true">4.</strong> IV - Appendices</div></li><li><ol class="section"><li class="chapter-item expanded "><div><strong aria-hidden="true">4.1.</strong> Reliability Tools</div></li><li><ol class="section"><li class="chapter-item expanded "><a href="../../concepts/systems-reliability/chaos_engineering_tools.html"><strong aria-hidden="true">4.1.1.</strong> Chaos Engineering Tools</a></li><li class="chapter-item expanded "><a href="../../concepts/systems-reliability/corrective_actions.html"><strong aria-hidden="true">4.1.2.</strong> Corrective Actions</a></li><li class="chapter-item expanded "><a href="../../concepts/systems-reliability/high_availability.html"><strong aria-hidden="true">4.1.3.</strong> High Availability</a></li><li class="chapter-item expanded "><a href="../../concepts/systems-reliability/antifragility.html"><strong aria-hidden="true">4.1.4.</strong> Antifragility</a></li><li class="chapter-item expanded "><a href="../../concepts/systems-reliability/bulkhead_pattern.html"><strong aria-hidden="true">4.1.5.</strong> Bulkhead Pattern</a></li><li class="chapter-item expanded "><a href="../../concepts/systems-reliability/cold_standby.html"><strong aria-hidden="true">4.1.6.</strong> Cold Standby</a></li><li class="chapter-item expanded "><a href="../../concepts/systems-reliability/single_point_of_failure.html"><strong aria-hidden="true">4.1.7.</strong> Single Point of Failure (SPOF)</a></li><li class="chapter-item expanded "><a href="../../concepts/systems-reliability/grdhl.html"><strong aria-hidden="true">4.1.8.</strong> General Reliability Development Hazard Logs (GRDHL)</a></li><li class="chapter-item expanded "><a href="../../concepts/systems-reliability/spare_parts_stocking_strategy.html"><strong aria-hidden="true">4.1.9.</strong> Spare Parts Stocking Strategy</a></li><li class="chapter-item expanded "><a href="../../concepts/systems-reliability/availability_controls.html"><strong aria-hidden="true">4.1.10.</strong> Availability Controls</a></li></ol></li></ol></li><li class="chapter-item expanded "><a href="../../EPILOGUE.html">Epilogue</a></li><li class="chapter-item expanded affix "><a href="../../DICTIONARY.html">Dictionary</a></li><li class="chapter-item expanded affix "><a href="../../REFERENCES.html">References</a></li><li class="chapter-item expanded affix "><a href="../../NEXT.html">Next</a></li><li class="chapter-item expanded affix "><a href="../../BACK_COVER.html">Back Cover</a></li><li class="chapter-item expanded affix "><a href="../../backlog.html">Backlog</a></li></ol>
+            </div>
+            <div id="sidebar-resize-handle" class="sidebar-resize-handle"></div>
+        </nav>
+
+        <div id="page-wrapper" class="page-wrapper">
+
+            <div class="page">
+                                <div id="menu-bar-hover-placeholder"></div>
+                <div id="menu-bar" class="menu-bar sticky bordered">
+                    <div class="left-buttons">
+                        <button id="sidebar-toggle" class="icon-button" type="button" title="Toggle Table of Contents" aria-label="Toggle Table of Contents" aria-controls="sidebar">
+                            <i class="fa fa-bars"></i>
+                        </button>
+                        <button id="theme-toggle" class="icon-button" type="button" title="Change theme" aria-label="Change theme" aria-haspopup="true" aria-expanded="false" aria-controls="theme-list">
+                            <i class="fa fa-paint-brush"></i>
+                        </button>
+                        <ul id="theme-list" class="theme-popup" aria-label="Themes" role="menu">
+                            <li role="none"><button role="menuitem" class="theme" id="light">Light (default)</button></li>
+                            <li role="none"><button role="menuitem" class="theme" id="rust">Rust</button></li>
+                            <li role="none"><button role="menuitem" class="theme" id="coal">Coal</button></li>
+                            <li role="none"><button role="menuitem" class="theme" id="navy">Navy</button></li>
+                            <li role="none"><button role="menuitem" class="theme" id="ayu">Ayu</button></li>
+                            <li role="none"><button role="menuitem" class="theme" id="latte">Latte</button></li>
+                            <li role="none"><button role="menuitem" class="theme" id="frappe">Frappé</button></li>
+                            <li role="none"><button role="menuitem" class="theme" id="macchiato">Macchiato</button></li>
+                            <li role="none"><button role="menuitem" class="theme" id="mocha">Mocha</button></li>
+                        </ul>
+                        <button id="search-toggle" class="icon-button" type="button" title="Search. (Shortkey: s)" aria-label="Toggle Searchbar" aria-expanded="false" aria-keyshortcuts="S" aria-controls="searchbar">
+                            <i class="fa fa-search"></i>
+                        </button>
+                    </div>
+
+                    <h1 class="menu-title">Data Reliability Engineering</h1>
+
+                    <div class="right-buttons">
+                        <a href="../../print.html" title="Print this book" aria-label="Print this book">
+                            <i id="print-button" class="fa fa-print"></i>
+                        </a>
+
+                    </div>
+                </div>
+
+                <div id="search-wrapper" class="hidden">
+                    <form id="searchbar-outer" class="searchbar-outer">
+                        <input type="search" id="searchbar" name="searchbar" placeholder="Search this book ..." aria-controls="searchresults-outer" aria-describedby="searchresults-header">
+                    </form>
+                    <div id="searchresults-outer" class="searchresults-outer hidden">
+                        <div id="searchresults-header" class="searchresults-header"></div>
+                        <ul id="searchresults">
+                        </ul>
+                    </div>
+                </div>
+
+                <!-- Apply ARIA attributes after the sidebar and the sidebar toggle button are added to the DOM -->
+                <script type="text/javascript">
+                    document.getElementById('sidebar-toggle').setAttribute('aria-expanded', sidebar === 'visible');
+                    document.getElementById('sidebar').setAttribute('aria-hidden', sidebar !== 'visible');
+                    Array.from(document.querySelectorAll('#sidebar a')).forEach(function(link) {
+                        link.setAttribute('tabIndex', sidebar === 'visible' ? 0 : -1);
+                    });
+                </script>
+
+                <div id="content" class="content">
+                    <main>
+                        <h1 id="data-quality-metricsaudit-database--service"><a class="header" href="#data-quality-metricsaudit-database--service">Data Quality Metrics/Audit Database &amp; Service</a></h1>
+<p>Maintaining Metrics/Audit databases and services is important for several reasons, particularly in complex data environments where ensuring data integrity, compliance, and operational efficiency is required:</p>
+<h3 id="data-integrity-and-quality-assurance"><a class="header" href="#data-integrity-and-quality-assurance">Data Integrity and Quality Assurance</a></h3>
+<p>Metrics and audit databases provide a systematic way to track and measure data quality, performance, and integrity over time. By maintaining these databases, organizations can identify trends, pinpoint anomalies, and take corrective actions to uphold data standards, ensuring that stakeholders can trust and rely on the data for decision-making.</p>
+<h3 id="compliance-and-regulatory-requirements"><a class="header" href="#compliance-and-regulatory-requirements">Compliance and Regulatory Requirements</a></h3>
+<p>Many industries are subject to strict regulatory requirements regarding data management, privacy, and security. Audit databases help in logging access, changes, and operations performed on data, which is essential for demonstrating compliance with regulations such as GDPR, HIPAA, SOX, and others. They provide an immutable record that can be reviewed during audits or inspections.</p>
+<h3 id="operational-efficiency-and-optimization"><a class="header" href="#operational-efficiency-and-optimization">Operational Efficiency and Optimization</a></h3>
+<p>By analyzing metrics related to system performance, query times, resource utilization, and more, organizations can identify bottlenecks and inefficiencies within their data pipelines and infrastructure. This insight allows for targeted optimization efforts, improving overall operational efficiency and reducing costs.</p>
+<h3 id="security-and-anomaly-detection"><a class="header" href="#security-and-anomaly-detection">Security and Anomaly Detection</a></h3>
+<p>Metrics and audit logs play a critical role in security by providing detailed records of data access and system interactions. Analyzing these records helps in detecting unauthorized access, data breaches, and other security threats, enabling timely response and mitigation.</p>
+<h3 id="change-management-and-troubleshooting"><a class="header" href="#change-management-and-troubleshooting">Change Management and Troubleshooting</a></h3>
+<p>In dynamic environments where changes are frequent, maintaining a detailed record of system states, data modifications, and operational metrics is invaluable for troubleshooting issues. Audit trails and metrics allow teams to understand the impact of changes, diagnose problems, and restore system functionality more quickly.</p>
+<h3 id="knowledge-sharing-and-collaboration"><a class="header" href="#knowledge-sharing-and-collaboration">Knowledge Sharing and Collaboration</a></h3>
+<p>Metrics/Audit databases serve as a knowledge base, documenting the operational history and performance characteristics of data systems. This information can be shared across teams, improving collaboration, and enabling more informed decision-making.</p>
+<h3 id="service-level-agreements-slas-monitoring"><a class="header" href="#service-level-agreements-slas-monitoring">Service Level Agreements (SLAs) Monitoring</a></h3>
+<p>For organizations that rely on data services (either internal or external), metrics databases are essential for monitoring adherence to SLAs. They help in tracking availability, performance, and response times, ensuring that service providers meet their contractual obligations.</p>
+<h2 id="data-quality-metricsaudit-database"><a class="header" href="#data-quality-metricsaudit-database">Data Quality Metrics/Audit Database</a></h2>
+<p>Below is a conceptual example of how metrics records might be structured within a metrics database:</p>
+<pre><code class="language-sql">-- Table structure for 'data_quality_metric_records'
+CREATE TABLE data_quality_metric_records (
+    id SERIAL PRIMARY KEY,
+    metric_type VARCHAR(255) NOT NULL,
+    metric_name VARCHAR(255) NOT NULL,
+    metric_formula TEXT NOT NULL,
+    metric_value NUMERIC(5,2) NOT NULL,
+    source_system VARCHAR(255) NOT NULL,
+    target_system VARCHAR(255) NOT NULL,
+    data_domain VARCHAR(255) NOT NULL,
+    measurement_time TIMESTAMP NOT NULL DEFAULT CURRENT_TIMESTAMP,
+    notes TEXT
+);
+
+-- Sample entries for metrics
+INSERT INTO data_quality_metric_records (metric_type, metric_name, metric_formula, metric_value, source_system, target_system, data_domain, notes)
+VALUES
+('Completeness', 'Record Completeness', '(Number of Complete Records / Total Number of Records) * 100', 97.50, 'Postgres', 'S3', 'Sales', 'Monthly sales data completeness.'),
+('Completeness', 'Field Completeness', '(Number of Fields without NULLs / Total Number of Fields) * 100', 99.30, 'Oracle', 'Redshift', 'Customer', 'Customer data fields completeness.'),
+('Completeness', 'Data Mart Completeness', '(Number of Complete Data Mart Records / Total Expected Records) * 100', 98.75, 'MariaDB', 'Data Mart', 'Inventory', 'Inventory data mart completeness after dbt transformation.'),
+('Completeness', 'ELT Completeness', '(Number of Records Loaded by DMS / Number of Records in Source) * 100', 99.80, 'All Sources', 'Data Lake (S3)', 'All Domains', 'Completeness of the ELT process monitored by DMS tasks.');
+
+-- Query to retrieve the latest metrics for the 'Sales' data domain
+SELECT * FROM data_quality_metric_records
+WHERE data_domain = 'Sales'
+ORDER BY measurement_time DESC
+LIMIT 1;
+</code></pre>
+<p>In this example:</p>
+<ul>
+<li><code>id</code> is a unique identifier for each metric record.</li>
+<li><code>metric_type</code> describes the metric dimension (Accuracy, Completeness, etc.) being measured.</li>
+<li><code>metric_name</code> describes the type of metric being measured.</li>
+<li><code>metric_formula</code> provides the formula used to calculate the metric.</li>
+<li><code>metric_value</code> stores the actual metric value, in this case, a percentage.</li>
+<li><code>source_system</code> and <code>target_system</code> indicate where the data is coming from and where it is being loaded to.</li>
+<li><code>data_domain</code> specifies the domain or category of the data being measured (e.g., sales, customer, inventory).</li>
+<li><code>measurement_time</code> records the timestamp when the measurement was taken.</li>
+<li><code>notes</code> is an optional field for any additional information or context about the metric.</li>
+</ul>
+<h2 id="data-quality-service"><a class="header" href="#data-quality-service">Data Quality Service</a></h2>
+<p>In a practical data environment, it's crucial to organize data quality metrics and measurement tasks into separate, well-defined tables to maintain clarity and facilitate easy data management. Here's what the structure might look like:</p>
+<h3 id="data_quality_metrics-tables"><a class="header" href="#data_quality_metrics-tables"><code>data_quality_metrics</code> Tables</a></h3>
+<p>This table would act as a reference for all defined metrics, capturing their names, formulas, and other relevant details. As a <a href="../data-architecture/slowly_changing_dimensions.html"><strong>Type 4 Slowly Changing Dimension (SCD) table</strong></a>, it would maintain in one table (<code>data_quality_metrics_history</code>), a complete history of each metric (Type 2 SCD), including when they were created or if they were ever retired (<code>deleted_at</code>), and in the main table (<code>data_quality_metrics</code>), only the current metrics (Type 1 SCD).</p>
+<h3 id="data_quality_measurement_tasks-tables"><a class="header" href="#data_quality_measurement_tasks-tables"><code>data_quality_measurement_tasks</code> Tables</a></h3>
+<p>This table would contain information about the measurement tasks themselves, including the system used for measurement and the specific source and target systems involved. Like the metrics table, this would also be a type 4 SCD, preserving a historical record of measurement tasks' lifecycles (<code>data_quality_measurement_tasks_history</code>), and the current tasks (<code>data_quality_measurement_tasks</code>).</p>
+<h3 id="data_quality_metric_records-table"><a class="header" href="#data_quality_metric_records-table"><code>data_quality_metric_records</code> Table</a></h3>
+<p>Serving as the transaction table, <code>data_quality_metric_records</code> would hold the actual records of measurements. Each record would reference the relevant metric (<code>data_quality_metrics.id</code>) and measurement task (<code>data_quality_measurement_tasks</code>), along with the unique identifier for the run (<code>run_id</code>), and a URL pointing to the relevant logs for that run (<code>run_url</code>).</p>
+<h3 id="data-quality-service-1"><a class="header" href="#data-quality-service-1">Data Quality Service</a></h3>
+<p>The setup would be supported by a dedicated service, tentatively named <code>data-quality-service</code>, which would facilitate the recording of measurement data, potentially through an API. The management of <code>data_quality_metrics</code> and <code>data_quality_measurement_tasks</code> through their APIs, while not detailed in this example, would be a critical part of the overall data quality infrastructure.</p>
+<p>By segregating metric definitions, measurement tasks, and actual measurement records into distinct tables and managing them through a dedicated service, organizations can ensure that data quality tracking is both efficient and scalable. This approach allows for the precise pinpointing of data quality issues and facilitates a structured way to track improvements and changes over time.</p>
+<h2 id="taking-action"><a class="header" href="#taking-action">Taking Action</a></h2>
+<p>In a practical setup, it's crucial to not only collect data quality metrics but also to analyze, monitor, and act upon them effectively. Integrating observability tools, automating ticketing systems, utilizing data visualization platforms, leveraging communication systems, and disseminating reports are key to maintaining high data quality standards:</p>
+<h3 id="observability-tools-eg-datadog"><a class="header" href="#observability-tools-eg-datadog">Observability Tools (e.g., DataDog)</a></h3>
+<p>Configure DataDog to monitor <code>data_quality_metric_records</code> for significant deviations or trends in data quality metrics.</p>
+<p>Set up alerts in DataDog for when metrics fall below predefined thresholds, indicating potential data quality issues.</p>
+<h3 id="ticket-automation-eg-jira"><a class="header" href="#ticket-automation-eg-jira">Ticket Automation (e.g., Jira)</a></h3>
+<p>Automate the creation of Jira tickets through API integration when DataDog alerts trigger, ensuring immediate action on data quality issues.</p>
+<p>Include relevant details in the ticket, such as <code>metric_name</code>, <code>metric_value</code>, <code>run_url</code>, and a brief description of the potential issue for quicker resolution.</p>
+<h3 id="data-visualization-dashboards-eg-tableau-powerbi"><a class="header" href="#data-visualization-dashboards-eg-tableau-powerbi">Data Visualization Dashboards (e.g., Tableau, PowerBI)</a></h3>
+<p>Develop dashboards in Tableau or PowerBI that visualize key data quality metrics over time, providing a clear view of data quality trends and anomalies.</p>
+<p>Enable dashboard filters by <code>source_system</code>, <code>target_system</code>, and <code>data_domain</code> for targeted analysis by different teams.</p>
+<h3 id="communication-systems-eg-slack-teams"><a class="header" href="#communication-systems-eg-slack-teams">Communication Systems (e.g., Slack, Teams)</a></h3>
+<p>Set up integrations with Slack or Teams to send automated notifications about critical data quality alerts, ensuring broad awareness among relevant stakeholders.</p>
+<p>Create dedicated channels for data quality discussions, facilitating collaborative problem-solving and updates on issue resolution.</p>
+<h3 id="reports-eg-sharepoint"><a class="header" href="#reports-eg-sharepoint">Reports (e.g., SharePoint)</a></h3>
+<p>Regularly generate comprehensive data quality reports that summarize the state of data quality across different domains and systems, making them accessible on SharePoint for wider organizational visibility.</p>
+<p>Include insights, trend analyses, and recommendations for improvements in the reports to guide strategic data quality initiatives.</p>
+<p>By employing this multifaceted approach, organizations can ensure that data quality metrics are not only tracked but also analyzed and acted upon promptly. This proactive stance on data quality management enables quicker identification and resolution of issues, maintains trust in data systems, and supports informed decision-making across the organization.</p>
+
+                    </main>
+
+                    <nav class="nav-wrapper" aria-label="Page navigation">
+                        <!-- Mobile navigation buttons -->
+                            <a rel="prev" href="../../concepts/data-quality/integrity_dimension.html" class="mobile-nav-chapters previous" title="Previous chapter" aria-label="Previous chapter" aria-keyshortcuts="Left">
+                                <i class="fa fa-angle-left"></i>
+                            </a>
+
+                            <a rel="next" href="../../concepts/data-quality/dimensions_final_thoughts.html" class="mobile-nav-chapters next" title="Next chapter" aria-label="Next chapter" aria-keyshortcuts="Right">
+                                <i class="fa fa-angle-right"></i>
+                            </a>
+
+                        <div style="clear: both"></div>
+                    </nav>
+                </div>
+            </div>
+
+            <nav class="nav-wide-wrapper" aria-label="Page navigation">
+                    <a rel="prev" href="../../concepts/data-quality/integrity_dimension.html" class="nav-chapters previous" title="Previous chapter" aria-label="Previous chapter" aria-keyshortcuts="Left">
+                        <i class="fa fa-angle-left"></i>
+                    </a>
+
+                    <a rel="next" href="../../concepts/data-quality/dimensions_final_thoughts.html" class="nav-chapters next" title="Next chapter" aria-label="Next chapter" aria-keyshortcuts="Right">
+                        <i class="fa fa-angle-right"></i>
+                    </a>
+            </nav>
+
+        </div>
+
+
+
+
+        <script type="text/javascript">
+            window.playground_copyable = true;
+        </script>
+
+
+        <script src="../../elasticlunr.min.js" type="text/javascript" charset="utf-8"></script>
+        <script src="../../mark.min.js" type="text/javascript" charset="utf-8"></script>
+        <script src="../../searcher.js" type="text/javascript" charset="utf-8"></script>
+
+        <script src="../../clipboard.min.js" type="text/javascript" charset="utf-8"></script>
+        <script src="../../highlight.js" type="text/javascript" charset="utf-8"></script>
+        <script src="../../book.js" type="text/javascript" charset="utf-8"></script>
+
+        <!-- Custom JS scripts -->
+        <script type="text/javascript" src="../../assets/mermaid.min.js"></script>
+        <script type="text/javascript" src="../../assets/mermaid-init.js"></script>
+
+
+    </body>
+</html>
