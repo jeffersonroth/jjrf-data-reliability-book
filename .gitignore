@@ -12,3 +12,5 @@ target
 **/pre-commit.log
 .venv
 node_modules
+mdlint
+mdlink
