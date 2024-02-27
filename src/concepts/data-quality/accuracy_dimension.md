@@ -54,13 +54,13 @@ When considering accuracy within your data quality framework, it's essential to 
 
 Implementing a combination of these metrics and checks will provide a comprehensive approach to ensuring the accuracy of data across your data infrastructure. It's important to tailor these metrics to the specific characteristics of your data and the business context in which it's used. Regular review and adjustment of these metrics will ensure they remain effective and relevant as your data environment evolves.
 
-## Accuracy Metrics Examples
+## Accuracy Metrics
 To measure accuracy, data teams employ various metrics and techniques, often tailored to the specific type of data and its intended use. Here are some examples of how accuracy can be measured throughout the data infrastructure:
 
 ### Data Sources (Operational Data) - Error Rate
 \\[ Error \ Rate = \frac{Number\ of \ Incorrect \ Records}{Total \ Number \ of \ Records} \times 100 \\]
   
-The *Error Rate* assesses the error rate in operational data by comparing recorded data values against verified true values (from trusted sources or manual verification). Some common uses of this metric are:
+**Application**: Assess the error rate in operational data by comparing recorded data values against verified true values (from trusted sources or manual verification). Some common uses of this metric are:
 
 * **Financial Services**:
   Banks and financial institutions use the error rate metric to monitor the accuracy of transactional data. High error rates in financial transactions can lead to significant financial loss and regulatory compliance issues.
@@ -91,12 +91,12 @@ In each of these contexts, maintaining a low error rate is important not only fo
 ### ELT Processes - Transformation Accuracy Rate
 \\[ Transformation \ Accuracy \ Rate = \frac{Number \ of \ Correctly \ Transformed \ Records}{Total \ Number \ of \ Transformed \ Records} \times 100 \\]
   
-The *Transformation Accuracy Rate* validates the accuracy of data post-transformation by comparing pre and post-ELT data against expected results based on transformation logic.
+**Application**: Validate the accuracy of data post-transformation by comparing pre and post-ELT data against expected results based on transformation logic.
 
 ### Data Lakes and Data Warehouses - Data Conformity Rate
 \\[ Data \ Conformity \ Rate = \frac{Number \ of \ Records \ Conforming \ to \ Data \ Models}{Total \ Number \ of \ Records} \times 100 \\]
   
-The *Data Conformity Rate* ensures that data in lakes and warehouses conforms to predefined data models and schemas, indicating accurate structuring and categorization. Some common use cases are:
+**Application**: Ensure that data in lakes and warehouses conforms to predefined data models and schemas, indicating accurate structuring and categorization. Some common use cases are:
 
 * **Data Governance**:
   Helps ensure that data governance policies are being followed by measuring how well the data matches the organization's data standards and models.
@@ -107,7 +107,7 @@ The *Data Conformity Rate* ensures that data in lakes and warehouses conforms to
 ### Data Marts - Attribute Accuracy
 \\[ Attribute \ Accuracy = \frac{Number \ of \ Correct \ Attribute \ Values}{Total \ Number \ of \ Attribute \ Values} \times 100 \\]
   
-For each attribute in a data mart, compare the values against a set of true values or rules to assess attribute-level accuracy.
+**Application**: For each attribute in a data mart, compare the values against a set of true values or rules to assess attribute-level accuracy.
 
 * **Marketing Analytics**:
   Ensuring campaign data attributes like dates, budget figures, and demographic details are correct to inform marketing strategies.
@@ -123,35 +123,35 @@ For the examples below, let's imagine a scenario where AWS DMS loads data from m
 ### DMS Task Sensor
 > Monitors the state of an AWS Data Migration Service (DMS) task.
 
-You can extend this sensor to query the source and target databases after the DMS task is completed, comparing record counts or checksums to ensure data has been transferred correctly. The *Accuracy* could be measured as:
+You can extend this sensor to query the source and target databases after the DMS task is completed, comparing record counts or checksums to ensure data has been transferred correctly. The *Accuracy* metric could be measured as:
 
 \\[ Accuracy = \frac{Number \ of \ Records \ in \ Target}{Total \ Number \ of \ Records \ in \ Source} \times 100 \\]
 
 ### SQL Check Operator
 > Executes an SQL query and checks the result against a predefined condition.
 
-Run integrity checks such as COUNT(*) on both source and target tables, and use this operator to compare the counts. The *Accuracy* could be measured in this case as:
+Run integrity checks such as COUNT(\*) on both source and target tables, and use this operator to compare the counts. The *Accuracy* metric could be measured in this case as:
 
 \\[ Accuracy = \frac{Number \ of \ Records \ in \ Target}{Total \ Number \ of \ Records \ in \ Source} \times 100 \\]
 
 ### SQL Value Check Operator
 > Executes a SQL query and ensures that the returned value meets a certain condition.
 
-Perform field-level data validation by selecting key fields and comparing them between the source and the target after a DMS task. The *Field Accuracy* could be measured as:
+Perform field-level data validation by selecting key fields and comparing them between the source and the target after a DMS task. The *Field Accuracy* metric could be measured as:
 
 \\[ Field \ Accuracy = \frac{Number \ of \ Matching \ Field \ Values}{Total \ Number \ of \ Field \ Values \ Checked} \times 100 \\]
 
 ### dbt Run Operator
 > Executes dbt run to run transformation models.
 
-After dbt run, use dbt's built-in test functionality to perform accuracy checks on transformed data against source data or expected results. The *Transformation Accuracy* could be measured as:
+After dbt run, use dbt's built-in test functionality to perform accuracy checks on transformed data against source data or expected results. The *Transformation Accuracy* metric could be measured as:
 
 \\[ Transformation \ Accuracy = \frac{Number \ of \ Pass \ Tests}{Total \ Number \ of \ Tests} \times 100 \\]
 
 ### Data Quality Operator
 > A custom operator that you can define to implement data quality checks.
 
-Incorporate various data quality checks like hash total comparisons, data profiling, anomaly detection, and more complex validations that may not be directly supported by built-in operators. The *Accuracy* could be measured as:
+Incorporate various data quality checks like hash total comparisons, data profiling, anomaly detection, and more complex validations that may not be directly supported by built-in operators. The *Accuracy* metric could be measured as:
 
 \\[ Accuracy = (1 - \frac{Number \ of \ Pass \ Tests}{Total \ Number \ of \ Tests}) \times 100 \\]
 
