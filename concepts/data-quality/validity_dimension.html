@@ -154,52 +154,65 @@
 <blockquote>
 <p>Validity in data quality refers to the degree to which data conforms to specific syntax (format, type, range) and semantic (meaningful and appropriate content) rules defined by the data model and business requirements. Valid data adheres to predefined formats, standards, and constraints, ensuring that it is both structurally sound and contextually meaningful for its intended use.</p>
 </blockquote>
+<h2 id="validity-metrics"><a class="header" href="#validity-metrics">Validity Metrics</a></h2>
 <p>Assessing validity involves checking data against established rules and constraints to ensure it meets the required standards for format, type, range, and content. Here's how validity can be evaluated across different stages of the data infrastructure:</p>
-<h2 id="data-sources-operational-data"><a class="header" href="#data-sources-operational-data">Data Sources (Operational Data)</a></h2>
-<ul>
-<li><strong>Metric</strong>: Format Conformance Rate
-<ul>
-<li><strong>Formula</strong>: \( Format \ Conformance \ Rate = \frac{Number\ of \ Records \ Meeting \ Format \ Specifications}{Total \ Number \ of \ Records} \times 100 \)</li>
-<li><strong>Application</strong>: Analyze operational data to ensure that it conforms to expected formats (e.g., date formats, postal codes). This can be done using SQL queries or data profiling tools to check data formats against predefined patterns.</li>
-</ul>
-</li>
-</ul>
-<h2 id="data-lakes-and-data-warehouses"><a class="header" href="#data-lakes-and-data-warehouses">Data Lakes and Data Warehouses</a></h2>
-<ul>
-<li><strong>Metric</strong>: Data Type Integrity Score
-<ul>
-<li><strong>Formula</strong>: \( Data \ Type \ Integrity \ Rate = \frac{Number \ of \ Records \ with \ Correct \ Data \ Types}{Total \ Number \ of \ Records} \times 100 \)</li>
-<li><strong>Application</strong>: In data lakes and warehouses, assess the integrity of data types to ensure that data is stored in the correct format (e.g., numeric fields are stored as numbers). Automated data quality tools can scan datasets to identify type mismatches.</li>
-</ul>
-</li>
-</ul>
-<h2 id="data-marts"><a class="header" href="#data-marts">Data Marts</a></h2>
-<ul>
-<li><strong>Metric</strong>: Business Rule Compliance Rate
-<ul>
-<li><strong>Formula</strong>: \( Business \ Rule \ Compliance \ Rate = \frac{Number \ of \ Records \ Complying \ with \ Business \ Rules}{Total \ Number \ of \ Records} \times 100 \)</li>
-<li><strong>Application</strong>: For data marts, ensure that data complies with specific business rules relevant to the department or function. This involves setting up rule-based validation checks that can be run on the data mart contents.</li>
-</ul>
-</li>
-</ul>
-<h2 id="reports-and-dashboards"><a class="header" href="#reports-and-dashboards">Reports and Dashboards</a></h2>
-<ul>
-<li><strong>Metric</strong>: Content Validity Check
-<ul>
-<li><strong>Formula</strong>: Qualitative assessment based on user feedback and automated validation checks.</li>
-<li><strong>Application</strong>: Ensure that reports and dashboards contain valid data by implementing content validity checks, which might include verifying that displayed data falls within expected ranges or adheres to specific content rules.</li>
-</ul>
-</li>
-</ul>
+<h3 id="data-sources-operational-data---format-conformance-rate"><a class="header" href="#data-sources-operational-data---format-conformance-rate">Data Sources (Operational Data) - Format Conformance Rate</a></h3>
+<p>\[ Format \ Conformance \ Rate = \frac{Number\ of \ Records \ Meeting \ Format \ Specifications}{Total \ Number \ of \ Records} \times 100 \]</p>
+<p><strong>Application</strong>: Analyze operational data to ensure that it conforms to expected formats (e.g., date formats, postal codes). This can be done using SQL queries or data profiling tools to check data formats against predefined patterns.</p>
+<h3 id="data-lakes-and-data-warehouses---data-type-integrity-score"><a class="header" href="#data-lakes-and-data-warehouses---data-type-integrity-score">Data Lakes and Data Warehouses - Data Type Integrity Score</a></h3>
+<p>\[ Data \ Type \ Integrity \ Rate = \frac{Number \ of \ Records \ with \ Correct \ Data \ Types}{Total \ Number \ of \ Records} \times 100 \]</p>
+<p><strong>Application</strong>: In data lakes and warehouses, assess the integrity of data types to ensure that data is stored in the correct format (e.g., numeric fields are stored as numbers). Automated data quality tools can scan datasets to identify type mismatches.</p>
+<h3 id="data-marts---business-rule-compliance-rate"><a class="header" href="#data-marts---business-rule-compliance-rate">Data Marts - Business Rule Compliance Rate</a></h3>
+<p>\[ Business \ Rule \ Compliance \ Rate = \frac{Number \ of \ Records \ Complying \ with \ Business \ Rules}{Total \ Number \ of \ Records} \times 100 \]</p>
+<p><strong>Application</strong>: For data marts, ensure that data complies with specific business rules relevant to the department or function. This involves setting up rule-based validation checks that can be run on the data mart contents.</p>
 <h2 id="ensuring-and-improving-validity"><a class="header" href="#ensuring-and-improving-validity">Ensuring and Improving Validity</a></h2>
 <p>Strategies to maintain and enhance data validity across the data infrastructure include:</p>
 <ul>
-<li><strong>Validation Rules and Constraints</strong>: Implement comprehensive validation rules and constraints at the point of data entry and throughout data processing pipelines to ensure data validity.</li>
-<li><strong>Data Quality Tools</strong>: Utilize data quality tools that offer automated validation capabilities, allowing for the continuous checking of data against validity rules.</li>
-<li><strong>Data Cleansing</strong>: Engage in regular data cleansing activities to correct invalid data, using scripts or data quality platforms to identify and rectify issues.</li>
-<li><strong>Metadata Management</strong>: Maintain detailed metadata that specifies the valid format, type, and constraints for each data element, guiding data handling and validation processes.</li>
-<li><strong>User Education and Guidelines</strong>: Educate users involved in data entry and management about the importance of data validity and provide clear guidelines and training on maintaining it.</li>
+<li>
+<p><strong>Validation Rules and Constraints</strong>:
+Implement comprehensive validation rules and constraints at the point of data entry and throughout data processing pipelines to ensure data validity.</p>
+</li>
+<li>
+<p><strong>Data Quality Tools</strong>:
+Utilize data quality tools that offer automated validation capabilities, allowing for the continuous checking of data against validity rules.</p>
+</li>
+<li>
+<p><strong>Data Cleansing</strong>:
+Engage in regular data cleansing activities to correct invalid data, using scripts or data quality platforms to identify and rectify issues.</p>
+</li>
+<li>
+<p><strong>Metadata Management</strong>:
+Maintain detailed metadata that specifies the valid format, type, and constraints for each data element, guiding data handling and validation processes.</p>
+</li>
+<li>
+<p><strong>User Education and Guidelines</strong>:
+Educate users involved in data entry and management about the importance of data validity and provide clear guidelines and training on maintaining it.</p>
+</li>
 </ul>
+<h2 id="validity-metrics-examples"><a class="header" href="#validity-metrics-examples">Validity Metrics Examples</a></h2>
+<p>For the validity dimension in data quality, ensuring that data adheres to both structural and contextual rules is crucial. Here are some examples of validity metrics that can be applied in various business contexts:</p>
+<h3 id="format-compliance-rate"><a class="header" href="#format-compliance-rate">Format Compliance Rate</a></h3>
+<p><strong>Application</strong>: Measure the percentage of data entries that adhere to predefined format rules (e.g., date formats, phone numbers).</p>
+<p><strong>Example</strong>: A customer service database might track the format compliance rate for customer phone numbers to ensure they are stored in a uniform and usable format.</p>
+<h3 id="data-type-integrity-rate"><a class="header" href="#data-type-integrity-rate">Data Type Integrity Rate</a></h3>
+<p><strong>Application</strong>: Quantify the proportion of data that matches the expected data types defined in the data model (e.g., integers, strings).</p>
+<p><strong>Example</strong>: A financial system may monitor the data type integrity rate for transaction amounts to ensure they are recorded as numeric values, not strings.</p>
+<h3 id="range-and-boundary-adherence-rate"><a class="header" href="#range-and-boundary-adherence-rate">Range and Boundary Adherence Rate</a></h3>
+<p><strong>Application</strong>: Evaluate the percentage of data entries that fall within acceptable range limits or boundaries (e.g., age, salary caps).</p>
+<p><strong>Example</strong>: An HR system could track the adherence rate of employee salaries to ensure they fall within the defined salary bands for their roles.</p>
+<h3 id="referential-integrity-compliance"><a class="header" href="#referential-integrity-compliance">Referential Integrity Compliance</a></h3>
+<p><strong>Application</strong>: Assess the extent to which foreign key values in a database table correctly reference existing primary keys in another table, ensuring relational integrity.</p>
+<p><strong>Example</strong>: An e-commerce platform might measure referential integrity compliance to ensure that all order records correctly reference existing customer records.</p>
+<h3 id="mandatory-fields-completion-rate"><a class="header" href="#mandatory-fields-completion-rate">Mandatory Fields Completion Rate</a></h3>
+<p><strong>Application</strong>: Measure the percentage of records that have all mandatory fields filled, ensuring completeness and validity.</p>
+<p><strong>Example</strong>: A lead generation form might track the completion rate of mandatory fields to ensure that leads are captured with all necessary information.</p>
+<h3 id="logical-consistency-check-rate"><a class="header" href="#logical-consistency-check-rate">Logical Consistency Check Rate</a></h3>
+<p><strong>Application</strong>: Quantify the proportion of data that passes logical consistency checks (e.g., a child's birth date being after the parent's birth date).</p>
+<p><strong>Example</strong>: A healthcare application may monitor the logical consistency check rate for patient and family records to ensure logical relationships are maintained.</p>
+<h3 id="pattern-matching-success-rate"><a class="header" href="#pattern-matching-success-rate">Pattern Matching Success Rate</a></h3>
+<p><strong>Application</strong>: Evaluate the success rate at which data entries match predefined patterns (e.g., email address patterns, product codes).</p>
+<p><strong>Example</strong>: An online registration system could track the pattern matching success rate for email addresses to ensure they follow a valid email format.</p>
+<p>By implementing these validity metrics, organizations can ensure that their data is not only structurally sound but also contextually appropriate for its intended use. Ensuring data validity is essential for maintaining the integrity of data systems and for supporting accurate, reliable decision-making processes.</p>
 
                     </main>
 

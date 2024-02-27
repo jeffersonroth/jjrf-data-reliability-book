@@ -245,11 +245,11 @@ Establish mechanisms for users to report potential inaccuracies in reports and d
 </li>
 </ol>
 <p>Implementing a combination of these metrics and checks will provide a comprehensive approach to ensuring the accuracy of data across your data infrastructure. It's important to tailor these metrics to the specific characteristics of your data and the business context in which it's used. Regular review and adjustment of these metrics will ensure they remain effective and relevant as your data environment evolves.</p>
-<h2 id="accuracy-metrics-examples"><a class="header" href="#accuracy-metrics-examples">Accuracy Metrics Examples</a></h2>
+<h2 id="accuracy-metrics"><a class="header" href="#accuracy-metrics">Accuracy Metrics</a></h2>
 <p>To measure accuracy, data teams employ various metrics and techniques, often tailored to the specific type of data and its intended use. Here are some examples of how accuracy can be measured throughout the data infrastructure:</p>
 <h3 id="data-sources-operational-data---error-rate"><a class="header" href="#data-sources-operational-data---error-rate">Data Sources (Operational Data) - Error Rate</a></h3>
 <p>\[ Error \ Rate = \frac{Number\ of \ Incorrect \ Records}{Total \ Number \ of \ Records} \times 100 \]</p>
-<p>The <em>Error Rate</em> assesses the error rate in operational data by comparing recorded data values against verified true values (from trusted sources or manual verification). Some common uses of this metric are:</p>
+<p><strong>Application</strong>: Assess the error rate in operational data by comparing recorded data values against verified true values (from trusted sources or manual verification). Some common uses of this metric are:</p>
 <ul>
 <li>
 <p><strong>Financial Services</strong>:
@@ -287,10 +287,10 @@ In software testing, error rates can measure the accuracy of data output by new 
 <p>In each of these contexts, maintaining a low error rate is important not only for immediate operational success but also for long-term trust in the data systems, customer satisfaction, and compliance with industry standards and regulations. Regular monitoring and efforts to reduce the error rate are key practices in data quality management.</p>
 <h3 id="elt-processes---transformation-accuracy-rate"><a class="header" href="#elt-processes---transformation-accuracy-rate">ELT Processes - Transformation Accuracy Rate</a></h3>
 <p>\[ Transformation \ Accuracy \ Rate = \frac{Number \ of \ Correctly \ Transformed \ Records}{Total \ Number \ of \ Transformed \ Records} \times 100 \]</p>
-<p>The <em>Transformation Accuracy Rate</em> validates the accuracy of data post-transformation by comparing pre and post-ELT data against expected results based on transformation logic.</p>
+<p><strong>Application</strong>: Validate the accuracy of data post-transformation by comparing pre and post-ELT data against expected results based on transformation logic.</p>
 <h3 id="data-lakes-and-data-warehouses---data-conformity-rate"><a class="header" href="#data-lakes-and-data-warehouses---data-conformity-rate">Data Lakes and Data Warehouses - Data Conformity Rate</a></h3>
 <p>\[ Data \ Conformity \ Rate = \frac{Number \ of \ Records \ Conforming \ to \ Data \ Models}{Total \ Number \ of \ Records} \times 100 \]</p>
-<p>The <em>Data Conformity Rate</em> ensures that data in lakes and warehouses conforms to predefined data models and schemas, indicating accurate structuring and categorization. Some common use cases are:</p>
+<p><strong>Application</strong>: Ensure that data in lakes and warehouses conforms to predefined data models and schemas, indicating accurate structuring and categorization. Some common use cases are:</p>
 <ul>
 <li>
 <p><strong>Data Governance</strong>:
@@ -303,7 +303,7 @@ During the integration of various data sources into a data lake or warehouse, th
 </ul>
 <h3 id="data-marts---attribute-accuracy"><a class="header" href="#data-marts---attribute-accuracy">Data Marts - Attribute Accuracy</a></h3>
 <p>\[ Attribute \ Accuracy = \frac{Number \ of \ Correct \ Attribute \ Values}{Total \ Number \ of \ Attribute \ Values} \times 100 \]</p>
-<p>For each attribute in a data mart, compare the values against a set of true values or rules to assess attribute-level accuracy.</p>
+<p><strong>Application</strong>: For each attribute in a data mart, compare the values against a set of true values or rules to assess attribute-level accuracy.</p>
 <ul>
 <li>
 <p><strong>Marketing Analytics</strong>:
@@ -321,31 +321,31 @@ In finance, attribute accuracy for figures such as revenue, cost, and profit mar
 <blockquote>
 <p>Monitors the state of an AWS Data Migration Service (DMS) task.</p>
 </blockquote>
-<p>You can extend this sensor to query the source and target databases after the DMS task is completed, comparing record counts or checksums to ensure data has been transferred correctly. The <em>Accuracy</em> could be measured as:</p>
+<p>You can extend this sensor to query the source and target databases after the DMS task is completed, comparing record counts or checksums to ensure data has been transferred correctly. The <em>Accuracy</em> metric could be measured as:</p>
 <p>\[ Accuracy = \frac{Number \ of \ Records \ in \ Target}{Total \ Number \ of \ Records \ in \ Source} \times 100 \]</p>
 <h3 id="sql-check-operator"><a class="header" href="#sql-check-operator">SQL Check Operator</a></h3>
 <blockquote>
 <p>Executes an SQL query and checks the result against a predefined condition.</p>
 </blockquote>
-<p>Run integrity checks such as COUNT(*) on both source and target tables, and use this operator to compare the counts. The <em>Accuracy</em> could be measured in this case as:</p>
+<p>Run integrity checks such as COUNT(*) on both source and target tables, and use this operator to compare the counts. The <em>Accuracy</em> metric could be measured in this case as:</p>
 <p>\[ Accuracy = \frac{Number \ of \ Records \ in \ Target}{Total \ Number \ of \ Records \ in \ Source} \times 100 \]</p>
 <h3 id="sql-value-check-operator"><a class="header" href="#sql-value-check-operator">SQL Value Check Operator</a></h3>
 <blockquote>
 <p>Executes a SQL query and ensures that the returned value meets a certain condition.</p>
 </blockquote>
-<p>Perform field-level data validation by selecting key fields and comparing them between the source and the target after a DMS task. The <em>Field Accuracy</em> could be measured as:</p>
+<p>Perform field-level data validation by selecting key fields and comparing them between the source and the target after a DMS task. The <em>Field Accuracy</em> metric could be measured as:</p>
 <p>\[ Field \ Accuracy = \frac{Number \ of \ Matching \ Field \ Values}{Total \ Number \ of \ Field \ Values \ Checked} \times 100 \]</p>
 <h3 id="dbt-run-operator"><a class="header" href="#dbt-run-operator">dbt Run Operator</a></h3>
 <blockquote>
 <p>Executes dbt run to run transformation models.</p>
 </blockquote>
-<p>After dbt run, use dbt's built-in test functionality to perform accuracy checks on transformed data against source data or expected results. The <em>Transformation Accuracy</em> could be measured as:</p>
+<p>After dbt run, use dbt's built-in test functionality to perform accuracy checks on transformed data against source data or expected results. The <em>Transformation Accuracy</em> metric could be measured as:</p>
 <p>\[ Transformation \ Accuracy = \frac{Number \ of \ Pass \ Tests}{Total \ Number \ of \ Tests} \times 100 \]</p>
 <h3 id="data-quality-operator"><a class="header" href="#data-quality-operator">Data Quality Operator</a></h3>
 <blockquote>
 <p>A custom operator that you can define to implement data quality checks.</p>
 </blockquote>
-<p>Incorporate various data quality checks like hash total comparisons, data profiling, anomaly detection, and more complex validations that may not be directly supported by built-in operators. The <em>Accuracy</em> could be measured as:</p>
+<p>Incorporate various data quality checks like hash total comparisons, data profiling, anomaly detection, and more complex validations that may not be directly supported by built-in operators. The <em>Accuracy</em> metric could be measured as:</p>
 <p>\[ Accuracy = (1 - \frac{Number \ of \ Pass \ Tests}{Total \ Number \ of \ Tests}) \times 100 \]</p>
 <h3 id="python-operator"><a class="header" href="#python-operator">Python Operator</a></h3>
 <blockquote>

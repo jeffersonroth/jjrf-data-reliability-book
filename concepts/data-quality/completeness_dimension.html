@@ -154,41 +154,41 @@
 <blockquote>
 <p>Completeness is a crucial dimension of data quality, referring to the extent to which all required data is present within a dataset. It measures the absence of missing values or records in the data and ensures that datasets are fully populated with all necessary information for accurate analysis and decision-making.</p>
 </blockquote>
-<h2 id="completeness-metrics-examples"><a class="header" href="#completeness-metrics-examples">Completeness Metrics Examples</a></h2>
+<h2 id="completeness-metrics"><a class="header" href="#completeness-metrics">Completeness Metrics</a></h2>
 <p>To assess completeness, data teams utilize various measures and metrics that quantify the presence of data across different stages of the data infrastructure. Here's how completeness can be evaluated throughout the data ecosystem:</p>
 <h3 id="data-sources-operational-data---missing-data-ratio"><a class="header" href="#data-sources-operational-data---missing-data-ratio">Data Sources (Operational Data) - Missing Data Ratio</a></h3>
 <p>\[ Missing \ Data \ Ratio = \frac{Number\ of \ Missing \ Values}{Total \ Number \ of \ Values} \times 100 \]</p>
-<p>The <em>Missing Data Ratio</em> analyzes operational data to identify missing values across critical fields. Use SQL queries or data profiling tools to calculate the missing data ratio for key attributes.</p>
+<p><strong>Application</strong>: Analyze operational data to identify missing values across critical fields. Use SQL queries or data profiling tools to calculate the missing data ratio for key attributes.</p>
 <h3 id="elt-processes---record-completeness-rate"><a class="header" href="#elt-processes---record-completeness-rate">ELT Processes - Record Completeness Rate</a></h3>
 <p>\[ Record \ Completeness \ Rate = \frac{Number \ of \ Complete \ Records}{Total \ Number \ of \ Records} \times 100 \]</p>
-<p>The <em>Record Completeness Rate</em>, after ELT processes, validates the completeness of records by checking for the presence of all expected fields. Automated data quality tools or custom scripts can be used to perform this validation.</p>
+<p><strong>Application</strong>: After ELT processes, validate the completeness of records by checking for the presence of all expected fields. Automated data quality tools or custom scripts can be used to perform this validation.</p>
 <h3 id="data-lakes-and-data-warehouses---dataset-completeness"><a class="header" href="#data-lakes-and-data-warehouses---dataset-completeness">Data Lakes and Data Warehouses - Dataset Completeness</a></h3>
-<p>The <em>Dataset Completeness</em> ensures that all expected data is loaded into the data lake or warehouse and that datasets are complete. This can involve cross-referencing dataset inventories or metadata against expected data sources. There is no fixed formula, it involves assessing the presence of all expected datasets and their completeness.</p>
+<p><strong>Application</strong>: Ensure that all expected data is loaded into the data lake or warehouse and that datasets are complete. This can involve cross-referencing dataset inventories or metadata against expected data sources. There is no fixed formula, it involves assessing the presence of all expected datasets and their completeness.</p>
 <h3 id="data-marts---attribute-completeness"><a class="header" href="#data-marts---attribute-completeness">Data Marts - Attribute Completeness</a></h3>
 <p>\[ Attribute \ Completeness = \frac{Number \ of \ Records \ with \ Non-Missing \ Attribute \ Values}{Total \ Number \ of \ Records} \times 100 \]</p>
-<p>For data marts tailored to specific business functions, the <em>Attribute Completeness</em> assesses the completeness of critical attributes that support business analysis. SQL queries or data quality tools can automate this assessment.</p>
+<p><strong>Application</strong>: For data marts tailored to specific business functions, assess the completeness of critical attributes that support business analysis. SQL queries or data quality tools can automate this assessment.</p>
 <h3 id="reports-and-dashboards---information-completeness"><a class="header" href="#reports-and-dashboards---information-completeness">Reports and Dashboards - Information Completeness</a></h3>
-<p>The <em>Information Completeness</em> ensures that reports and dashboards reflect complete information, with no missing data that could lead to incorrect insights. User feedback and manual validation play a key role in this stage. There are no fixed formulas. Qualitative assessment based on user feedback and data validation checks.</p>
-<h2 id="more-completeness-metrics-examples"><a class="header" href="#more-completeness-metrics-examples">More Completeness Metrics Examples</a></h2>
+<p><strong>Application</strong>: Ensure that reports and dashboards reflect complete information, with no missing data that could lead to incorrect insights. User feedback and manual validation play a key role in this stage. There are no fixed formulas. Qualitative assessment based on user feedback and data validation checks.</p>
+<h2 id="completeness-metrics-examples"><a class="header" href="#completeness-metrics-examples">Completeness Metrics Examples</a></h2>
 <p>Completeness as a data quality dimension can be quantified through various metrics tailored to different stages in your data pipeline. Here are some metrics you might consider:</p>
 <h3 id="record-completeness-by-record"><a class="header" href="#record-completeness-by-record">Record Completeness by Record</a></h3>
 <p>\[ Completeness \ Rate \ by \ Record = \frac{Number\ of \ Complete \ Records}{Total \ Number \ of \ Records} \times 100 \]</p>
-<p>The <em>Record Completeness by Record</em> evaluates the proportion of fully populated records in your datasets, where a "complete record" has all fields filled.</p>
+<p><strong>Application</strong>: Evaluate the proportion of fully populated records in your datasets, where a "complete record" has all fields filled.</p>
 <h3 id="field-completeness-rate"><a class="header" href="#field-completeness-rate">Field Completeness Rate</a></h3>
 <p>\[ Field \ Completeness \ Rate = \frac{Number\ of \ Non-Null \ Field \ Entries}{Total \ Number \ of \ Field \ Entries} \times 100 \]</p>
-<p>The <em>Field Completeness Rate</em> measures the percentage of non-null entries for a specific field across all records, ensuring critical data attributes are not missing.</p>
+<p><strong>Application</strong>: Measure the percentage of non-null entries for a specific field across all records, ensuring critical data attributes are not missing.</p>
 <h3 id="source-coverage-rate"><a class="header" href="#source-coverage-rate">Source Coverage Rate</a></h3>
 <p>\[ Source \ Coverage \ Rate = \frac{Number \ of \ Fields \ Captured \ by \ Source}{Total \ Number \ of \ Relevant \ Fields \ in \ Source} \times 100 \]</p>
-<p>The <em>Source Coverage Rate</em> monitors the extent to which the full range of relevant fields from the source databases are captured during the ELT process.</p>
+<p><strong>Application</strong>: Monitor the extent to which the full range of relevant fields from the source databases are captured during the ELT process.</p>
 <h3 id="historical-data-coverage-rate"><a class="header" href="#historical-data-coverage-rate">Historical Data Coverage Rate</a></h3>
 <p>\[ Historical \ Data \ Coverage \ Rate = \frac{Number \ of \ Historical \ Records \ Loaded}{Expected \ Number \ of \ Historical \ Records} \times 100 \]</p>
-<p>The <em>Historical Data Coverage Rate</em> ensures all expected historical data has been loaded into the data lake or warehouse.</p>
+<p><strong>Application</strong>: Ensure all expected historical data has been loaded into the data lake or warehouse.</p>
 <h3 id="incremental-load-completeness-ratio"><a class="header" href="#incremental-load-completeness-ratio">Incremental Load Completeness Ratio</a></h3>
 <p>\[ Incremental \ Load \ Completeness \ Ratio = \frac{Number \ of \ Records \ from \ Latest \ Load}{Expected \ Number \ of \ Records \ for \ the \ Period} \times 100 \]</p>
-<p>The <em>Incremental Load Completeness Ratio</em> confirms that the data loaded during the most recent incremental load matches the expected volume for that load period.</p>
+<p><strong>Application</strong>: Confirm that the data loaded during the most recent incremental load matches the expected volume for that load period.</p>
 <h3 id="data-mart-coverage-rate"><a class="header" href="#data-mart-coverage-rate">Data Mart Coverage Rate</a></h3>
 <p>\[ Data \ Mart \ Coverage \ Rate = \frac{Number \ of \ Fields \ Used \ in \ Data \ Mart}{Total \ Number \ of \ Available \ Fields} \times 100 \]</p>
-<p>The <em>Data Mart Coverage Rate</em> checks whether the data marts include all relevant fields from the staging schemas or upstream data sources for analytics and reporting.</p>
+<p><strong>Application</strong>: Check whether the data marts include all relevant fields from the staging schemas or upstream data sources for analytics and reporting.</p>
 <p>For each of these metrics, you can use Airflow to schedule regular data quality checks, and dbt to perform data tests that evaluate completeness. Implementing these metrics will help ensure that your datasets in the data lake, data warehouse, and data marts are fully populated with the necessary information, enhancing the reliability of your data infrastructure for decision-making processes.</p>
 <h2 id="ensuring-and-improving-completeness"><a class="header" href="#ensuring-and-improving-completeness">Ensuring and Improving Completeness</a></h2>
 <p>To maintain high levels of completeness across the data infrastructure, several best practices can be implemented:</p>
