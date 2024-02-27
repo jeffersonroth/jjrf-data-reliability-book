@@ -40,7 +40,7 @@ To maintain high levels of uniqueness across the data infrastructure, several be
 * **User Training and Guidelines**:
   Educate data entry personnel on the importance of data uniqueness and provide clear guidelines for maintaining it during data collection and entry.
 
-## More Uniqueness Metrics
+## Uniqueness Metrics Examples
 Uniqueness in data quality plays a crucial role in maintaining the integrity and usefulness of data, especially in environments where the accuracy of records is paramount. Here are examples of metrics that can be applied to measure and ensure the uniqueness dimension in various data environments:
 
 ### Duplicate Record Rate

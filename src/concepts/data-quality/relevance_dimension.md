@@ -37,7 +37,7 @@ Strategies to maintain and enhance the relevance of data across the data infrast
 * **Data Lifecycle Management**:
   Establish policies for data archiving and purging, ensuring that only relevant, current data is actively maintained and available for use, reducing clutter, and focusing on valuable data assets.
 
-## More Relevance Metrics
+## Relevance Metrics Examples
 Relevance in the context of data quality ensures that the data collected and maintained is applicable, meaningful, and useful for the business purposes it is intended for. Here are some examples of relevance metrics that can be applied in various business scenarios:
 
 ### Data Utilization Rate

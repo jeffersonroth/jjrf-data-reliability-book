@@ -1,7 +1,7 @@
 # Completeness Dimension in Data Quality
 > Completeness is a crucial dimension of data quality, referring to the extent to which all required data is present within a dataset. It measures the absence of missing values or records in the data and ensures that datasets are fully populated with all necessary information for accurate analysis and decision-making.
 
-## Completeness Metrics Examples
+## Completeness Metrics
 To assess completeness, data teams utilize various measures and metrics that quantify the presence of data across different stages of the data infrastructure. Here's how completeness can be evaluated throughout the data ecosystem:
 
 ### Data Sources (Operational Data) - Missing Data Ratio
@@ -25,7 +25,7 @@ To assess completeness, data teams utilize various measures and metrics that qua
 ### Reports and Dashboards - Information Completeness
 **Application**: Ensure that reports and dashboards reflect complete information, with no missing data that could lead to incorrect insights. User feedback and manual validation play a key role in this stage. There are no fixed formulas. Qualitative assessment based on user feedback and data validation checks.
 
-## More Completeness Metrics Examples
+## Completeness Metrics Examples
 Completeness as a data quality dimension can be quantified through various metrics tailored to different stages in your data pipeline. Here are some metrics you might consider:
 
 ### Record Completeness by Record

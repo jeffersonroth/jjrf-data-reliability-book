@@ -37,7 +37,7 @@ Strategies to maintain and enhance data validity across the data infrastructure 
 * **User Education and Guidelines**:
   Educate users involved in data entry and management about the importance of data validity and provide clear guidelines and training on maintaining it.
 
-## More Validity Metrics
+## Validity Metrics Examples
 For the validity dimension in data quality, ensuring that data adheres to both structural and contextual rules is crucial. Here are some examples of validity metrics that can be applied in various business contexts:
 
 ### Format Compliance Rate

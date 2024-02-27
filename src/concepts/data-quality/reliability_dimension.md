@@ -40,7 +40,7 @@ Strategies to maintain and enhance data reliability across the data infrastructu
 * **User Education and Communication**:
   Educate users about the sources, processes, and controls in place to ensure data reliability, building user trust and confidence in the data.
 
-## More Reliability Metrics
+## Reliability Metrics Examples
 Reliability in data quality is fundamental for ensuring that data can be trusted and relied upon for consistent decision-making and analysis. Here are some examples of reliability metrics that are often applied in real-world business contexts:
 
 ### Data Source Reliability Score

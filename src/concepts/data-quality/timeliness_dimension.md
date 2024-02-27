@@ -42,7 +42,7 @@ To maintain and boost the timeliness of data across the data infrastructure, con
 * **Service Level Agreements (SLAs)**:
   Define SLAs for data timeliness, clearly outlining expected timeframes for data availability at each stage of the data infrastructure.
 
-## More Timeliness Metrics
+## Timeliness Metrics Examples
 Timeliness in data quality ensures that data is not only current but also available at the right time for decision-making and operational processes. Here are some examples of timeliness metrics that are commonly applied in various business contexts:
 
 ### Data Update Latency

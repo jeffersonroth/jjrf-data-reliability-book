@@ -37,7 +37,7 @@ To maintain and enhance data accessibility across the data infrastructure, consi
 * **Training and Support**:
   Provide training and support to users on how to access and use data systems, tools, and platforms effectively, enhancing their ability to retrieve and utilize data.
 
-## More Accessibility Metrics
+## Accessibility Metrics Examples
 Here are some examples of accessibility metrics that can be applied in various business contexts:
 
 ### Average Time to Retrieve Data
