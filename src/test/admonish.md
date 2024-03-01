@@ -1,7 +1,7 @@
 # Test mdbook-admonish
 
 <!-- toc -->
-<!-- markdownlint-disable no-empty-links -->
+<!-- markdown-link-check-disable -->
 ## Introduction
 
 [![Latest version](https://img.shields.io/crates/v/mdbook-admonish.svg)](https://crates.io/crates/mdbook-admonish)
@@ -237,5 +237,3 @@ Remember, this operation costs money!
 ```
 
 You can also set a default `title`. See the [Reference](https://github.com/tommilligan/mdbook-admonish/blob/main/book/src/reference.md) page for more details.
-
-<!-- markdownlint-enable no-empty-links -->
