@@ -1,18 +1,17 @@
 <!DOCTYPE HTML>
-<html lang="en" class="sidebar-visible no-js light">
+<html lang="en" class="light" dir="ltr">
     <head>
         <!-- Book generated using mdBook -->
         <meta charset="UTF-8">
         <title>Data Reliability Engineering</title>
-        <meta name="robots" content="noindex" />
+        <meta name="robots" content="noindex">
 
 
         <!-- Custom HTML head -->
         
-        <meta content="text/html; charset=utf-8" http-equiv="Content-Type">
         <meta name="description" content="">
         <meta name="viewport" content="width=device-width, initial-scale=1">
-        <meta name="theme-color" content="#ffffff" />
+        <meta name="theme-color" content="#ffffff">
 
         <link rel="icon" href="favicon.svg">
         <link rel="shortcut icon" href="favicon.png">
@@ -32,20 +31,22 @@
 
         <!-- Custom theme stylesheets -->
         <link rel="stylesheet" href="theme/catppuccin.css">
-        <link rel="stylesheet" href="theme/catppuccin-highlight.css">
+        <link rel="stylesheet" href="theme/catppuccin-admonish.css">
+        <link rel="stylesheet" href="theme/mdbook-admonish.css">
 
         <!-- MathJax -->
-        <script async type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.1/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
+        <script async src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.1/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
     </head>
-    <body>
+    <body class="sidebar-visible no-js">
+    <div id="body-container">
         <!-- Provide site root to javascript -->
-        <script type="text/javascript">
+        <script>
             var path_to_root = "";
             var default_theme = window.matchMedia("(prefers-color-scheme: dark)").matches ? "navy" : "light";
         </script>
 
         <!-- Work around some values being stored in localStorage wrapped in quotes -->
-        <script type="text/javascript">
+        <script>
             try {
                 var theme = localStorage.getItem('mdbook-theme');
                 var sidebar = localStorage.getItem('mdbook-sidebar');
@@ -61,50 +62,79 @@
         </script>
 
         <!-- Set the theme before any content is loaded, prevents flash -->
-        <script type="text/javascript">
+        <script>
             var theme;
             try { theme = localStorage.getItem('mdbook-theme'); } catch(e) { }
             if (theme === null || theme === undefined) { theme = default_theme; }
             var html = document.querySelector('html');
-            html.classList.remove('no-js')
             html.classList.remove('light')
             html.classList.add(theme);
-            html.classList.add('js');
+            var body = document.querySelector('body');
+            body.classList.remove('no-js')
+            body.classList.add('js');
         </script>
 
+        <input type="checkbox" id="sidebar-toggle-anchor" class="hidden">
+
         <!-- Hide / unhide sidebar before it is displayed -->
-        <script type="text/javascript">
-            var html = document.querySelector('html');
-            var sidebar = 'hidden';
+        <script>
+            var body = document.querySelector('body');
+            var sidebar = null;
+            var sidebar_toggle = document.getElementById("sidebar-toggle-anchor");
             if (document.body.clientWidth >= 1080) {
                 try { sidebar = localStorage.getItem('mdbook-sidebar'); } catch(e) { }
                 sidebar = sidebar || 'visible';
+            } else {
+                sidebar = 'hidden';
             }
-            html.classList.remove('sidebar-visible');
-            html.classList.add("sidebar-" + sidebar);
+            sidebar_toggle.checked = sidebar === 'visible';
+            body.classList.remove('sidebar-visible');
+            body.classList.add("sidebar-" + sidebar);
         </script>
 
         <nav id="sidebar" class="sidebar" aria-label="Table of contents">
             <div class="sidebar-scrollbox">
-                <ol class="chapter"><li class="chapter-item expanded affix "><a href="COVER.html">Cover</a></li><li class="chapter-item expanded affix "><a href="TITLE.html">Title</a></li><li class="chapter-item expanded affix "><a href="SUMMARY.html">Summary</a></li><li class="chapter-item expanded affix "><a href="DEDICATION.html">Dedication</a></li><li class="chapter-item expanded affix "><a href="FOREWORD.html">Foreword</a></li><li class="chapter-item expanded affix "><a href="PREFACE.html">Preface</a></li><li class="chapter-item expanded affix "><a href="AUTHOR.html">Author</a></li><li class="chapter-item expanded affix "><a href="OBJECTIVES.html">Objectives</a></li><li class="chapter-item expanded affix "><a href="STRUCTURE.html">Structure</a></li><li class="chapter-item expanded "><a href="CONCEPTS.html"><strong aria-hidden="true">1.</strong> I - Concepts</a></li><li><ol class="section"><li class="chapter-item expanded "><a href="concepts/systems_intro.html"><strong aria-hidden="true">1.1.</strong> Introduction to Systems</a></li><li class="chapter-item expanded "><a href="concepts/data_architecture.html"><strong aria-hidden="true">1.2.</strong> Data Architecture</a></li><li><ol class="section"><li class="chapter-item expanded "><a href="concepts/data_sources.html"><strong aria-hidden="true">1.2.1.</strong> Data Sources</a></li><li class="chapter-item expanded "><a href="concepts/data_tier.html"><strong aria-hidden="true">1.2.2.</strong> Data Tier</a></li><li><ol class="section"><li class="chapter-item expanded "><a href="concepts/data_lake.html"><strong aria-hidden="true">1.2.2.1.</strong> Data Lake</a></li><li class="chapter-item expanded "><a href="concepts/data_warehouse.html"><strong aria-hidden="true">1.2.2.2.</strong> Data Warehouse</a></li><li><ol class="section"><li class="chapter-item expanded "><a href="concepts/data_warehouse_tier_architecture.html"><strong aria-hidden="true">1.2.2.2.1.</strong> Two-Tier vs Three-Tier Architecture</a></li><li><ol class="section"><li class="chapter-item expanded "><a href="concepts/data_warehouse_application_tier.html"><strong aria-hidden="true">1.2.2.2.1.1.</strong> Application Tier</a></li></ol></li><li class="chapter-item expanded "><a href="concepts/data_modelling.html"><strong aria-hidden="true">1.2.2.2.2.</strong> Data Modelling</a></li><li class="chapter-item expanded "><a href="concepts/data-architecture/slowly_changing_dimensions.html"><strong aria-hidden="true">1.2.2.2.3.</strong> Slowly Changing Dimensions (SCD)</a></li></ol></li><li class="chapter-item expanded "><a href="concepts/data_lakehouse.html"><strong aria-hidden="true">1.2.2.3.</strong> Data Lakehouse</a></li><li class="chapter-item expanded "><a href="concepts/data_marts.html"><strong aria-hidden="true">1.2.2.4.</strong> Data Marts</a></li></ol></li><li class="chapter-item expanded "><a href="concepts/application_tier.html"><strong aria-hidden="true">1.2.3.</strong> Application Tier</a></li><li class="chapter-item expanded "><a href="concepts/presentation_tier.html"><strong aria-hidden="true">1.2.4.</strong> Presentation Tier</a></li><li class="chapter-item expanded "><a href="concepts/metadata_management_tools.html"><strong aria-hidden="true">1.2.5.</strong> Metadata Management Tools</a></li><li class="chapter-item expanded "><a href="concepts/data-architecture/operational_data_stores.html"><strong aria-hidden="true">1.2.6.</strong> Operational Data Stores vs. Data Operational Stores</a></li></ol></li><li class="chapter-item expanded "><a href="concepts/systems_reliability.html"><strong aria-hidden="true">1.3.</strong> Systems Reliability</a></li><li><ol class="section"><li class="chapter-item expanded "><a href="concepts/systems-reliability/impediments.html"><strong aria-hidden="true">1.3.1.</strong> Impediments</a></li><li class="chapter-item expanded "><a href="concepts/systems-reliability/attributes.html"><strong aria-hidden="true">1.3.2.</strong> Attributes</a></li><li class="chapter-item expanded "><a href="concepts/systems-reliability/mechanisms.html"><strong aria-hidden="true">1.3.3.</strong> Mechanisms</a></li><li><ol class="section"><li class="chapter-item expanded "><a href="concepts/systems-reliability/fault_prevention_avoidance.html"><strong aria-hidden="true">1.3.3.1.</strong> Fault Prevention: Avoidance</a></li><li class="chapter-item expanded "><a href="concepts/systems-reliability/fault_tolerance.html"><strong aria-hidden="true">1.3.3.2.</strong> Fault Tolerance</a></li><li class="chapter-item expanded "><a href="concepts/systems-reliability/fault_prevention_elimination.html"><strong aria-hidden="true">1.3.3.3.</strong> Fault Prevention: Elimination</a></li><li class="chapter-item expanded "><a href="concepts/systems-reliability/fault_prediction.html"><strong aria-hidden="true">1.3.3.4.</strong> Fault Prediction</a></li><li class="chapter-item expanded "><a href="concepts/systems-reliability/reliability_tools.html"><strong aria-hidden="true">1.3.3.5.</strong> Reliability Tools</a></li><li><ol class="section"><li class="chapter-item expanded "><a href="concepts/systems-reliability/observability_tools.html"><strong aria-hidden="true">1.3.3.5.1.</strong> Observability Tools</a></li><li class="chapter-item expanded "><a href="concepts/systems-reliability/data_quality_automation_tools.html"><strong aria-hidden="true">1.3.3.5.2.</strong> Data Quality Automation Tools</a></li><li class="chapter-item expanded "><a href="concepts/systems-reliability/version_control_systems.html"><strong aria-hidden="true">1.3.3.5.3.</strong> Version Control Systems</a></li><li class="chapter-item expanded "><a href="concepts/systems-reliability/data_lineage_tools.html"><strong aria-hidden="true">1.3.3.5.4.</strong> Data Lineage Tools</a></li><li class="chapter-item expanded "><a href="concepts/systems-reliability/workflow_orchestration_tools.html"><strong aria-hidden="true">1.3.3.5.5.</strong> Workflow Orchestration Tools</a></li><li class="chapter-item expanded "><a href="concepts/systems-reliability/data_transformation_tools.html"><strong aria-hidden="true">1.3.3.5.6.</strong> Data Transformation and Testing Tools</a></li><li class="chapter-item expanded "><a href="concepts/systems-reliability/infrastructure_as_code_tools.html"><strong aria-hidden="true">1.3.3.5.7.</strong> Infrastructure as Code Tools</a></li><li class="chapter-item expanded "><a href="concepts/systems-reliability/container_orchestration_tools.html"><strong aria-hidden="true">1.3.3.5.8.</strong> Container Orchestration Tools</a></li><li class="chapter-item expanded "><a href="concepts/systems-reliability/fracas.html"><strong aria-hidden="true">1.3.3.5.9.</strong> Failure Reporting, Analysis, and Corrective Action System (FRACAS)</a></li><li class="chapter-item expanded "><a href="concepts/systems-reliability/reliability_block_diagrams.html"><strong aria-hidden="true">1.3.3.5.10.</strong> Reliability Block Diagrams</a></li></ol></li></ol></li></ol></li><li class="chapter-item expanded "><a href="concepts/data_quality.html"><strong aria-hidden="true">1.4.</strong> Data Quality</a></li><li><ol class="section"><li class="chapter-item expanded "><a href="concepts/data-quality/foundations.html"><strong aria-hidden="true">1.4.1.</strong> Foundations of Data Quality</a></li><li class="chapter-item expanded "><a href="concepts/data-quality/master_data.html"><strong aria-hidden="true">1.4.2.</strong> Master Data</a></li><li class="chapter-item expanded "><a href="concepts/data-quality/management.html"><strong aria-hidden="true">1.4.3.</strong> Data Management</a></li><li class="chapter-item expanded "><a href="concepts/data-quality/models.html"><strong aria-hidden="true">1.4.4.</strong> Data Quality Models</a></li><li><ol class="section"><li class="chapter-item expanded "><a href="concepts/data-quality/accuracy_dimension.html"><strong aria-hidden="true">1.4.4.1.</strong> Accuracy Dimension</a></li><li class="chapter-item expanded "><a href="concepts/data-quality/completeness_dimension.html"><strong aria-hidden="true">1.4.4.2.</strong> Completeness Dimension</a></li><li class="chapter-item expanded "><a href="concepts/data-quality/consistency_dimension.html"><strong aria-hidden="true">1.4.4.3.</strong> Consistency Dimension</a></li><li class="chapter-item expanded "><a href="concepts/data-quality/timeliness_dimension.html"><strong aria-hidden="true">1.4.4.4.</strong> Timeliness Dimension</a></li><li class="chapter-item expanded "><a href="concepts/data-quality/relevance_dimension.html"><strong aria-hidden="true">1.4.4.5.</strong> Relevance Dimension</a></li><li class="chapter-item expanded "><a href="concepts/data-quality/reliability_dimension.html"><strong aria-hidden="true">1.4.4.6.</strong> Reliability Dimension</a></li><li class="chapter-item expanded "><a href="concepts/data-quality/uniqueness_dimension.html"><strong aria-hidden="true">1.4.4.7.</strong> Uniqueness Dimension</a></li><li class="chapter-item expanded "><a href="concepts/data-quality/validity_dimension.html"><strong aria-hidden="true">1.4.4.8.</strong> Validity Dimension</a></li><li class="chapter-item expanded "><a href="concepts/data-quality/accessibility_dimension.html"><strong aria-hidden="true">1.4.4.9.</strong> Accessibility Dimension</a></li><li class="chapter-item expanded "><a href="concepts/data-quality/integrity_dimension.html"><strong aria-hidden="true">1.4.4.10.</strong> Integrity Dimension</a></li><li class="chapter-item expanded "><a href="concepts/data-quality/metrics_database.html"><strong aria-hidden="true">1.4.4.11.</strong> Metrics/Audit Database & Service</a></li><li class="chapter-item expanded "><a href="concepts/data-quality/dimensions_final_thoughts.html"><strong aria-hidden="true">1.4.4.12.</strong> Final Thoughts on Data Quality Dimensions</a></li></ol></li><li class="chapter-item expanded "><a href="concepts/data-quality/final_thoughts.html"><strong aria-hidden="true">1.4.5.</strong> Final Thoughts on Data Quality</a></li></ol></li><li class="chapter-item expanded "><a href="concepts/data_relibility.html"><strong aria-hidden="true">1.5.</strong> Data Reliability</a></li><li class="chapter-item expanded "><a href="concepts/processes.html"><strong aria-hidden="true">1.6.</strong> Processes</a></li><li class="chapter-item expanded "><a href="concepts/operations.html"><strong aria-hidden="true">1.7.</strong> Operations</a></li></ol></li><li class="chapter-item expanded "><div><strong aria-hidden="true">2.</strong> II - Use Cases</div></li><li><ol class="section"><li class="chapter-item expanded "><div><strong aria-hidden="true">2.1.</strong> A - Aranduka Inc.</div></li><li><ol class="section"><li class="chapter-item expanded "><div><strong aria-hidden="true">2.1.1.</strong> Data Architecture</div></li><li><ol class="section"><li class="chapter-item expanded "><div><strong aria-hidden="true">2.1.1.1.</strong> Operational System and Internal Data Sources</div></li><li class="chapter-item expanded "><div><strong aria-hidden="true">2.1.1.2.</strong> Integrating Data Partners</div></li><li class="chapter-item expanded "><div><strong aria-hidden="true">2.1.1.3.</strong> Designing the Data Lake</div></li><li><ol class="section"><li class="chapter-item expanded "><div><strong aria-hidden="true">2.1.1.3.1.</strong> Anonymized Data</div></li><li class="chapter-item expanded "><div><strong aria-hidden="true">2.1.1.3.2.</strong> Distilled Data</div></li></ol></li><li class="chapter-item expanded "><div><strong aria-hidden="true">2.1.1.4.</strong> Designing the Data Warehouse</div></li><li><ol class="section"><li class="chapter-item expanded "><div><strong aria-hidden="true">2.1.1.4.1.</strong> Core Data</div></li></ol></li><li class="chapter-item expanded "><div><strong aria-hidden="true">2.1.1.5.</strong> Designing the Data Marts</div></li></ol></li><li class="chapter-item expanded "><div><strong aria-hidden="true">2.1.2.</strong> BICC & BI</div></li><li><ol class="section"><li class="chapter-item expanded "><div><strong aria-hidden="true">2.1.2.1.</strong> Building Reliable Pipelines</div></li><li class="chapter-item expanded "><div><strong aria-hidden="true">2.1.2.2.</strong> Data Quality Assurance & Monitoring</div></li><li class="chapter-item expanded "><div><strong aria-hidden="true">2.1.2.3.</strong> Continuous Service</div></li></ol></li><li class="chapter-item expanded "><div><strong aria-hidden="true">2.1.3.</strong> Growth, Marketing & Attribution Models</div></li><li class="chapter-item expanded "><div><strong aria-hidden="true">2.1.4.</strong> Multidimensional Analysis: Geo vs Verticals</div></li></ol></li></ol></li><li class="chapter-item expanded "><div><strong aria-hidden="true">3.</strong> III - Incorporating Data Reliability Engineering</div></li><li><ol class="section"><li class="chapter-item expanded "><div><strong aria-hidden="true">3.1.</strong> Solutions Architects</div></li><li><ol class="section"><li class="chapter-item expanded "><div><strong aria-hidden="true">3.1.1.</strong> Data Architect</div></li></ol></li><li class="chapter-item expanded "><div><strong aria-hidden="true">3.2.</strong> Data Engineers</div></li><li class="chapter-item expanded "><div><strong aria-hidden="true">3.3.</strong> Backend Engineers</div></li><li class="chapter-item expanded "><div><strong aria-hidden="true">3.4.</strong> BI Engineers</div></li></ol></li><li class="chapter-item expanded "><div><strong aria-hidden="true">4.</strong> IV - Appendices</div></li><li><ol class="section"><li class="chapter-item expanded "><div><strong aria-hidden="true">4.1.</strong> Reliability Tools</div></li><li><ol class="section"><li class="chapter-item expanded "><a href="concepts/systems-reliability/chaos_engineering_tools.html"><strong aria-hidden="true">4.1.1.</strong> Chaos Engineering Tools</a></li><li class="chapter-item expanded "><a href="concepts/systems-reliability/corrective_actions.html"><strong aria-hidden="true">4.1.2.</strong> Corrective Actions</a></li><li class="chapter-item expanded "><a href="concepts/systems-reliability/high_availability.html"><strong aria-hidden="true">4.1.3.</strong> High Availability</a></li><li class="chapter-item expanded "><a href="concepts/systems-reliability/antifragility.html"><strong aria-hidden="true">4.1.4.</strong> Antifragility</a></li><li class="chapter-item expanded "><a href="concepts/systems-reliability/bulkhead_pattern.html"><strong aria-hidden="true">4.1.5.</strong> Bulkhead Pattern</a></li><li class="chapter-item expanded "><a href="concepts/systems-reliability/cold_standby.html"><strong aria-hidden="true">4.1.6.</strong> Cold Standby</a></li><li class="chapter-item expanded "><a href="concepts/systems-reliability/single_point_of_failure.html"><strong aria-hidden="true">4.1.7.</strong> Single Point of Failure (SPOF)</a></li><li class="chapter-item expanded "><a href="concepts/systems-reliability/grdhl.html"><strong aria-hidden="true">4.1.8.</strong> General Reliability Development Hazard Logs (GRDHL)</a></li><li class="chapter-item expanded "><a href="concepts/systems-reliability/spare_parts_stocking_strategy.html"><strong aria-hidden="true">4.1.9.</strong> Spare Parts Stocking Strategy</a></li><li class="chapter-item expanded "><a href="concepts/systems-reliability/availability_controls.html"><strong aria-hidden="true">4.1.10.</strong> Availability Controls</a></li></ol></li></ol></li><li class="chapter-item expanded "><a href="EPILOGUE.html">Epilogue</a></li><li class="chapter-item expanded affix "><a href="DICTIONARY.html">Dictionary</a></li><li class="chapter-item expanded affix "><a href="REFERENCES.html">References</a></li><li class="chapter-item expanded affix "><a href="NEXT.html">Next</a></li><li class="chapter-item expanded affix "><a href="BACK_COVER.html">Back Cover</a></li><li class="chapter-item expanded affix "><a href="backlog.html">Backlog</a></li></ol>
+                <ol class="chapter"><li class="chapter-item expanded affix "><a href="COVER.html">Cover</a></li><li class="chapter-item expanded affix "><a href="TITLE.html">Title</a></li><li class="chapter-item expanded affix "><a href="SUMMARY.html">Summary</a></li><li class="chapter-item expanded affix "><a href="DEDICATION.html">Dedication</a></li><li class="chapter-item expanded affix "><a href="FOREWORD.html">Foreword</a></li><li class="chapter-item expanded affix "><a href="PREFACE.html">Preface</a></li><li class="chapter-item expanded affix "><a href="AUTHOR.html">Author</a></li><li class="chapter-item expanded affix "><a href="OBJECTIVES.html">Objectives</a></li><li class="chapter-item expanded affix "><a href="STRUCTURE.html">Structure</a></li><li class="chapter-item expanded "><a href="CONCEPTS.html"><strong aria-hidden="true">1.</strong> I - Concepts</a></li><li><ol class="section"><li class="chapter-item expanded "><a href="concepts/systems_intro.html"><strong aria-hidden="true">1.1.</strong> Introduction to Systems</a></li><li class="chapter-item expanded "><a href="concepts/data_architecture.html"><strong aria-hidden="true">1.2.</strong> Data Architecture</a></li><li><ol class="section"><li class="chapter-item expanded "><a href="concepts/data_sources.html"><strong aria-hidden="true">1.2.1.</strong> Data Sources</a></li><li class="chapter-item expanded "><a href="concepts/data_tier.html"><strong aria-hidden="true">1.2.2.</strong> Data Tier</a></li><li><ol class="section"><li class="chapter-item expanded "><a href="concepts/data_lake.html"><strong aria-hidden="true">1.2.2.1.</strong> Data Lake</a></li><li class="chapter-item expanded "><a href="concepts/data_warehouse.html"><strong aria-hidden="true">1.2.2.2.</strong> Data Warehouse</a></li><li><ol class="section"><li class="chapter-item expanded "><a href="concepts/data_warehouse_tier_architecture.html"><strong aria-hidden="true">1.2.2.2.1.</strong> Two-Tier vs Three-Tier Architecture</a></li><li><ol class="section"><li class="chapter-item expanded "><a href="concepts/data_warehouse_application_tier.html"><strong aria-hidden="true">1.2.2.2.1.1.</strong> Application Tier</a></li></ol></li><li class="chapter-item expanded "><a href="concepts/data_modelling.html"><strong aria-hidden="true">1.2.2.2.2.</strong> Data Modelling</a></li><li class="chapter-item expanded "><a href="concepts/data-architecture/slowly_changing_dimensions.html"><strong aria-hidden="true">1.2.2.2.3.</strong> Slowly Changing Dimensions (SCD)</a></li></ol></li><li class="chapter-item expanded "><a href="concepts/data_lakehouse.html"><strong aria-hidden="true">1.2.2.3.</strong> Data Lakehouse</a></li><li class="chapter-item expanded "><a href="concepts/data_marts.html"><strong aria-hidden="true">1.2.2.4.</strong> Data Marts</a></li></ol></li><li class="chapter-item expanded "><a href="concepts/application_tier.html"><strong aria-hidden="true">1.2.3.</strong> Application Tier</a></li><li class="chapter-item expanded "><a href="concepts/presentation_tier.html"><strong aria-hidden="true">1.2.4.</strong> Presentation Tier</a></li><li class="chapter-item expanded "><a href="concepts/metadata_management_tools.html"><strong aria-hidden="true">1.2.5.</strong> Metadata Management Tools</a></li><li class="chapter-item expanded "><a href="concepts/data-architecture/operational_data_stores.html"><strong aria-hidden="true">1.2.6.</strong> Operational Data Stores vs. Data Operational Stores</a></li></ol></li><li class="chapter-item expanded "><a href="concepts/systems_reliability.html"><strong aria-hidden="true">1.3.</strong> Systems Reliability</a></li><li><ol class="section"><li class="chapter-item expanded "><a href="concepts/systems-reliability/impediments.html"><strong aria-hidden="true">1.3.1.</strong> Impediments</a></li><li class="chapter-item expanded "><a href="concepts/systems-reliability/attributes.html"><strong aria-hidden="true">1.3.2.</strong> Attributes</a></li><li class="chapter-item expanded "><a href="concepts/systems-reliability/mechanisms.html"><strong aria-hidden="true">1.3.3.</strong> Mechanisms</a></li><li><ol class="section"><li class="chapter-item expanded "><a href="concepts/systems-reliability/fault_prevention_avoidance.html"><strong aria-hidden="true">1.3.3.1.</strong> Fault Prevention: Avoidance</a></li><li class="chapter-item expanded "><a href="concepts/systems-reliability/fault_tolerance.html"><strong aria-hidden="true">1.3.3.2.</strong> Fault Tolerance</a></li><li class="chapter-item expanded "><a href="concepts/systems-reliability/fault_prevention_elimination.html"><strong aria-hidden="true">1.3.3.3.</strong> Fault Prevention: Elimination</a></li><li class="chapter-item expanded "><a href="concepts/systems-reliability/fault_prediction.html"><strong aria-hidden="true">1.3.3.4.</strong> Fault Prediction</a></li><li class="chapter-item expanded "><a href="concepts/systems-reliability/reliability_tools.html"><strong aria-hidden="true">1.3.3.5.</strong> Reliability Tools</a></li><li><ol class="section"><li class="chapter-item expanded "><a href="concepts/systems-reliability/observability_tools.html"><strong aria-hidden="true">1.3.3.5.1.</strong> Observability Tools</a></li><li class="chapter-item expanded "><a href="concepts/systems-reliability/data_quality_automation_tools.html"><strong aria-hidden="true">1.3.3.5.2.</strong> Data Quality Automation Tools</a></li><li class="chapter-item expanded "><a href="concepts/systems-reliability/version_control_systems.html"><strong aria-hidden="true">1.3.3.5.3.</strong> Version Control Systems</a></li><li class="chapter-item expanded "><a href="concepts/systems-reliability/data_lineage_tools.html"><strong aria-hidden="true">1.3.3.5.4.</strong> Data Lineage Tools</a></li><li class="chapter-item expanded "><a href="concepts/systems-reliability/workflow_orchestration_tools.html"><strong aria-hidden="true">1.3.3.5.5.</strong> Workflow Orchestration Tools</a></li><li class="chapter-item expanded "><a href="concepts/systems-reliability/data_transformation_tools.html"><strong aria-hidden="true">1.3.3.5.6.</strong> Data Transformation and Testing Tools</a></li><li class="chapter-item expanded "><a href="concepts/systems-reliability/infrastructure_as_code_tools.html"><strong aria-hidden="true">1.3.3.5.7.</strong> Infrastructure as Code Tools</a></li><li class="chapter-item expanded "><a href="concepts/systems-reliability/container_orchestration_tools.html"><strong aria-hidden="true">1.3.3.5.8.</strong> Container Orchestration Tools</a></li><li class="chapter-item expanded "><a href="concepts/systems-reliability/fracas.html"><strong aria-hidden="true">1.3.3.5.9.</strong> Failure Reporting, Analysis, and Corrective Action System (FRACAS)</a></li><li class="chapter-item expanded "><a href="concepts/systems-reliability/reliability_block_diagrams.html"><strong aria-hidden="true">1.3.3.5.10.</strong> Reliability Block Diagrams</a></li></ol></li></ol></li></ol></li><li class="chapter-item expanded "><a href="concepts/data_quality.html"><strong aria-hidden="true">1.4.</strong> Data Quality</a></li><li><ol class="section"><li class="chapter-item expanded "><a href="concepts/data-quality/foundations.html"><strong aria-hidden="true">1.4.1.</strong> Foundations of Data Quality</a></li><li class="chapter-item expanded "><a href="concepts/data-quality/master_data.html"><strong aria-hidden="true">1.4.2.</strong> Master Data</a></li><li class="chapter-item expanded "><a href="concepts/data-quality/management.html"><strong aria-hidden="true">1.4.3.</strong> Data Management</a></li><li class="chapter-item expanded "><a href="concepts/data-quality/models.html"><strong aria-hidden="true">1.4.4.</strong> Data Quality Models</a></li><li><ol class="section"><li class="chapter-item expanded "><a href="concepts/data-quality/accuracy_dimension.html"><strong aria-hidden="true">1.4.4.1.</strong> Accuracy Dimension</a></li><li class="chapter-item expanded "><a href="concepts/data-quality/completeness_dimension.html"><strong aria-hidden="true">1.4.4.2.</strong> Completeness Dimension</a></li><li class="chapter-item expanded "><a href="concepts/data-quality/consistency_dimension.html"><strong aria-hidden="true">1.4.4.3.</strong> Consistency Dimension</a></li><li class="chapter-item expanded "><a href="concepts/data-quality/timeliness_dimension.html"><strong aria-hidden="true">1.4.4.4.</strong> Timeliness Dimension</a></li><li class="chapter-item expanded "><a href="concepts/data-quality/relevance_dimension.html"><strong aria-hidden="true">1.4.4.5.</strong> Relevance Dimension</a></li><li class="chapter-item expanded "><a href="concepts/data-quality/reliability_dimension.html"><strong aria-hidden="true">1.4.4.6.</strong> Reliability Dimension</a></li><li class="chapter-item expanded "><a href="concepts/data-quality/uniqueness_dimension.html"><strong aria-hidden="true">1.4.4.7.</strong> Uniqueness Dimension</a></li><li class="chapter-item expanded "><a href="concepts/data-quality/validity_dimension.html"><strong aria-hidden="true">1.4.4.8.</strong> Validity Dimension</a></li><li class="chapter-item expanded "><a href="concepts/data-quality/accessibility_dimension.html"><strong aria-hidden="true">1.4.4.9.</strong> Accessibility Dimension</a></li><li class="chapter-item expanded "><a href="concepts/data-quality/integrity_dimension.html"><strong aria-hidden="true">1.4.4.10.</strong> Integrity Dimension</a></li><li class="chapter-item expanded "><a href="concepts/data-quality/metrics_database.html"><strong aria-hidden="true">1.4.4.11.</strong> Metrics/Audit Database & Service</a></li><li class="chapter-item expanded "><a href="concepts/data-quality/dimensions_final_thoughts.html"><strong aria-hidden="true">1.4.4.12.</strong> Final Thoughts on Data Quality Dimensions</a></li></ol></li><li class="chapter-item expanded "><a href="concepts/data-quality/final_thoughts.html"><strong aria-hidden="true">1.4.5.</strong> Final Thoughts on Data Quality</a></li></ol></li><li class="chapter-item expanded "><a href="concepts/data_relibility.html"><strong aria-hidden="true">1.5.</strong> Data Reliability</a></li><li class="chapter-item expanded "><a href="concepts/processes.html"><strong aria-hidden="true">1.6.</strong> Processes</a></li><li class="chapter-item expanded "><a href="concepts/operations.html"><strong aria-hidden="true">1.7.</strong> Operations</a></li></ol></li><li class="chapter-item expanded "><div><strong aria-hidden="true">2.</strong> II - Use Cases</div></li><li><ol class="section"><li class="chapter-item expanded "><div><strong aria-hidden="true">2.1.</strong> A - Aranduka Inc.</div></li><li><ol class="section"><li class="chapter-item expanded "><div><strong aria-hidden="true">2.1.1.</strong> Data Architecture</div></li><li><ol class="section"><li class="chapter-item expanded "><div><strong aria-hidden="true">2.1.1.1.</strong> Operational System and Internal Data Sources</div></li><li class="chapter-item expanded "><div><strong aria-hidden="true">2.1.1.2.</strong> Integrating Data Partners</div></li><li class="chapter-item expanded "><div><strong aria-hidden="true">2.1.1.3.</strong> Designing the Data Lake</div></li><li><ol class="section"><li class="chapter-item expanded "><div><strong aria-hidden="true">2.1.1.3.1.</strong> Anonymized Data</div></li><li class="chapter-item expanded "><div><strong aria-hidden="true">2.1.1.3.2.</strong> Distilled Data</div></li></ol></li><li class="chapter-item expanded "><div><strong aria-hidden="true">2.1.1.4.</strong> Designing the Data Warehouse</div></li><li><ol class="section"><li class="chapter-item expanded "><div><strong aria-hidden="true">2.1.1.4.1.</strong> Core Data</div></li></ol></li><li class="chapter-item expanded "><div><strong aria-hidden="true">2.1.1.5.</strong> Designing the Data Marts</div></li></ol></li><li class="chapter-item expanded "><div><strong aria-hidden="true">2.1.2.</strong> BICC & BI</div></li><li><ol class="section"><li class="chapter-item expanded "><div><strong aria-hidden="true">2.1.2.1.</strong> Building Reliable Pipelines</div></li><li class="chapter-item expanded "><div><strong aria-hidden="true">2.1.2.2.</strong> Data Quality Assurance & Monitoring</div></li><li class="chapter-item expanded "><div><strong aria-hidden="true">2.1.2.3.</strong> Continuous Service</div></li></ol></li><li class="chapter-item expanded "><div><strong aria-hidden="true">2.1.3.</strong> Growth, Marketing & Attribution Models</div></li><li class="chapter-item expanded "><div><strong aria-hidden="true">2.1.4.</strong> Multidimensional Analysis: Geo vs Verticals</div></li></ol></li></ol></li><li class="chapter-item expanded "><div><strong aria-hidden="true">3.</strong> III - Incorporating Data Reliability Engineering</div></li><li><ol class="section"><li class="chapter-item expanded "><div><strong aria-hidden="true">3.1.</strong> Solutions Architects</div></li><li><ol class="section"><li class="chapter-item expanded "><div><strong aria-hidden="true">3.1.1.</strong> Data Architect</div></li></ol></li><li class="chapter-item expanded "><div><strong aria-hidden="true">3.2.</strong> Data Engineers</div></li><li class="chapter-item expanded "><div><strong aria-hidden="true">3.3.</strong> Backend Engineers</div></li><li class="chapter-item expanded "><div><strong aria-hidden="true">3.4.</strong> BI Engineers</div></li></ol></li><li class="chapter-item expanded "><div><strong aria-hidden="true">4.</strong> IV - Appendices</div></li><li><ol class="section"><li class="chapter-item expanded "><div><strong aria-hidden="true">4.1.</strong> Reliability Tools</div></li><li><ol class="section"><li class="chapter-item expanded "><a href="concepts/systems-reliability/chaos_engineering_tools.html"><strong aria-hidden="true">4.1.1.</strong> Chaos Engineering Tools</a></li><li class="chapter-item expanded "><a href="concepts/systems-reliability/corrective_actions.html"><strong aria-hidden="true">4.1.2.</strong> Corrective Actions</a></li><li class="chapter-item expanded "><a href="concepts/systems-reliability/high_availability.html"><strong aria-hidden="true">4.1.3.</strong> High Availability</a></li><li class="chapter-item expanded "><a href="concepts/systems-reliability/antifragility.html"><strong aria-hidden="true">4.1.4.</strong> Antifragility</a></li><li class="chapter-item expanded "><a href="concepts/systems-reliability/bulkhead_pattern.html"><strong aria-hidden="true">4.1.5.</strong> Bulkhead Pattern</a></li><li class="chapter-item expanded "><a href="concepts/systems-reliability/cold_standby.html"><strong aria-hidden="true">4.1.6.</strong> Cold Standby</a></li><li class="chapter-item expanded "><a href="concepts/systems-reliability/single_point_of_failure.html"><strong aria-hidden="true">4.1.7.</strong> Single Point of Failure (SPOF)</a></li><li class="chapter-item expanded "><a href="concepts/systems-reliability/grdhl.html"><strong aria-hidden="true">4.1.8.</strong> General Reliability Development Hazard Logs (GRDHL)</a></li><li class="chapter-item expanded "><a href="concepts/systems-reliability/spare_parts_stocking_strategy.html"><strong aria-hidden="true">4.1.9.</strong> Spare Parts Stocking Strategy</a></li><li class="chapter-item expanded "><a href="concepts/systems-reliability/availability_controls.html"><strong aria-hidden="true">4.1.10.</strong> Availability Controls</a></li></ol></li></ol></li><li class="chapter-item expanded "><a href="EPILOGUE.html">Epilogue</a></li><li class="chapter-item expanded affix "><a href="DICTIONARY.html">Dictionary</a></li><li class="chapter-item expanded affix "><a href="REFERENCES.html">References</a></li><li class="chapter-item expanded affix "><a href="NEXT.html">Next</a></li><li class="chapter-item expanded affix "><a href="BACK_COVER.html">Back Cover</a></li><li class="chapter-item expanded affix "><a href="backlog.html">Backlog</a></li><li class="chapter-item expanded affix "><a href="test/images.html">Test: Images</a></li><li class="chapter-item expanded affix "><a href="test/admonish.html">Test: Admonishes</a></li><li class="chapter-item expanded affix "><a href="test/diagrams.html">Test: Diagrams</a></li></ol>
             </div>
             <div id="sidebar-resize-handle" class="sidebar-resize-handle"></div>
         </nav>
+
+        <!-- Track and set sidebar scroll position -->
+        <script>
+            var sidebarScrollbox = document.querySelector('#sidebar .sidebar-scrollbox');
+            sidebarScrollbox.addEventListener('click', function(e) {
+                if (e.target.tagName === 'A') {
+                    sessionStorage.setItem('sidebar-scroll', sidebarScrollbox.scrollTop);
+                }
+            }, { passive: true });
+            var sidebarScrollTop = sessionStorage.getItem('sidebar-scroll');
+            sessionStorage.removeItem('sidebar-scroll');
+            if (sidebarScrollTop) {
+                // preserve sidebar scroll position when navigating via links within sidebar
+                sidebarScrollbox.scrollTop = sidebarScrollTop;
+            } else {
+                // scroll sidebar to current active section when navigating via "next/previous chapter" buttons
+                var activeSection = document.querySelector('#sidebar .active');
+                if (activeSection) {
+                    activeSection.scrollIntoView({ block: 'center' });
+                }
+            }
+        </script>
 
         <div id="page-wrapper" class="page-wrapper">
 
             <div class="page">
                                 <div id="menu-bar-hover-placeholder"></div>
-                <div id="menu-bar" class="menu-bar sticky bordered">
+                <div id="menu-bar" class="menu-bar sticky">
                     <div class="left-buttons">
-                        <button id="sidebar-toggle" class="icon-button" type="button" title="Toggle Table of Contents" aria-label="Toggle Table of Contents" aria-controls="sidebar">
+                        <label id="sidebar-toggle" class="icon-button" for="sidebar-toggle-anchor" title="Toggle Table of Contents" aria-label="Toggle Table of Contents" aria-controls="sidebar">
                             <i class="fa fa-bars"></i>
-                        </button>
+                        </label>
                         <button id="theme-toggle" class="icon-button" type="button" title="Change theme" aria-label="Change theme" aria-haspopup="true" aria-expanded="false" aria-controls="theme-list">
                             <i class="fa fa-paint-brush"></i>
                         </button>
                         <ul id="theme-list" class="theme-popup" aria-label="Themes" role="menu">
-                            <li role="none"><button role="menuitem" class="theme" id="light">Light (default)</button></li>
+                            <li role="none"><button role="menuitem" class="theme" id="light">Light</button></li>
                             <li role="none"><button role="menuitem" class="theme" id="rust">Rust</button></li>
                             <li role="none"><button role="menuitem" class="theme" id="coal">Coal</button></li>
                             <li role="none"><button role="menuitem" class="theme" id="navy">Navy</button></li>
@@ -125,6 +155,9 @@
                         <a href="print.html" title="Print this book" aria-label="Print this book">
                             <i id="print-button" class="fa fa-print"></i>
                         </a>
+                        <a href="https://github.com/jeffersonroth/jjrf-data-reliability-book/" title="Git repository" aria-label="Git repository">
+                            <i id="git-repository-button" class="fa fa-github"></i>
+                        </a>
 
                     </div>
                 </div>
@@ -141,7 +174,7 @@
                 </div>
 
                 <!-- Apply ARIA attributes after the sidebar and the sidebar toggle button are added to the DOM -->
-                <script type="text/javascript">
+                <script>
                     document.getElementById('sidebar-toggle').setAttribute('aria-expanded', sidebar === 'visible');
                     document.getElementById('sidebar').setAttribute('aria-hidden', sidebar !== 'visible');
                     Array.from(document.querySelectorAll('#sidebar a')).forEach(function(link) {
@@ -323,6 +356,9 @@
 <a href="./NEXT.html">Next</a>
 <a href="./BACK_COVER.html">Back Cover</a></p>
 <p><a href="./backlog.html">Backlog</a></p>
+<p><a href="./test/images.html">Test: Images</a>
+<a href="./test/admonish.html">Test: Admonishes</a>
+<a href="./test/diagrams.html">Test: Diagrams</a></p>
 <!-- markdownlint-enable no-empty-links --><div style="break-before: page; page-break-before: always;"></div><div style="break-before: page; page-break-before: always;"></div><div style="break-before: page; page-break-before: always;"></div><div style="break-before: page; page-break-before: always;"></div><div style="break-before: page; page-break-before: always;"></div><div style="break-before: page; page-break-before: always;"></div><div style="break-before: page; page-break-before: always;"></div><h1 id="concepts"><a class="header" href="#concepts">Concepts</a></h1>
 <blockquote>
 <p>The first part of this book exposes the different concepts around the data reliability engineering subject. It's intended to be heavily technical, in contrast with the subsequent parts, intended to explore practical use cases.</p>
@@ -585,24 +621,9 @@ While QuickSight doesn’t connect directly to the data lake, integration with A
 <li>Delivery Zone</li>
 <li>Explorative Zone</li>
 </ul>
-<pre><code class="language-plantuml">@startmindmap
-+ Zone
-++ Name
--- Modelling Approach
-++ Properties
-+++ Governed
-+++ Historized
-+++ Persistent
-+++ Protected
-+++ Use Case Independent
--- Data Characteristics
---- Granularity
---- Schema
---- Syntax
---- Semantics
--- User Groups
-@endmindmap
-</code></pre>
+<p>PlantUML rendering error:
+Failed to render inline diagram (Failed to generate PlantUML diagrams, PlantUML exited with code 127 (sh: 1: java: not found
+).).</p>
 <p style="text-align: center;">Zone Reference Model for Enterprise-Grade Data Lake Management - Meta-model for zones - Attributes.</p>
 <p>Regarding how a zone interacts with other zones and the outside world, we have:</p>
 <ul>
@@ -840,41 +861,9 @@ Both playing their part in analytics.</p>
 </blockquote>
 <p>It includes the adoption of information governance, information lifecycle management capabilities, and Metadata management.</p>
 <h2 id="key-components-of-data-lake-architecture"><a class="header" href="#key-components-of-data-lake-architecture">Key Components of Data Lake Architecture</a></h2>
-<pre><code class="language-plantuml">@startuml
-top to bottom direction
-
-interface "ETL/API" as ETL
-interface "ETL/API" as API
-
-note right of ETL: Data Lake micro-services
-note right of API:  Data Warehouse micro-services, Airflow...
-
-[Data Sources] --&gt; ETL
-note right of [Data Sources]
-Internal Applications (Operational System Databases, Logs...)
-Business Applications
-SaaS Applications (ERP, CRM...)
-Documents
-External Data (Appsflyer, Google Ads, Amplitude, Braze...)
-end note
-
-ETL --&gt; [Data Processing Layer]
-note right of [Data Processing Layer]
-Objects Storage
-Metadata Storage
-Replications
-end note
-[Data Processing Layer] --&gt; API
-
-API --&gt; [Data Targets]
-note right of [Data Targets]
-Data Warehouse
-BI Platforms
-Data Science Projects
-end note
-
-@enduml
-</code></pre>
+<p>PlantUML rendering error:
+Failed to render inline diagram (Failed to generate PlantUML diagrams, PlantUML exited with code 127 (sh: 1: java: not found
+).).</p>
 <p style="text-align: center;">Key Components of Data Lake Architecture.</p>
 <h4 id="data-ingestion"><a class="header" href="#data-ingestion">Data Ingestion</a></h4>
 <blockquote>
@@ -964,36 +953,9 @@ end note
 <p><strong>Improving</strong>: allow business leaders to quickly access the organization historical activities and evaluate initiatives that have been successful — or unsuccessful — in the past. This allows executives to see where they can adjust their strategy to decrease costs, maximize efficiency and increase business results.</p>
 <p><strong>Single Source of Truth</strong>: the whole organization would benefit on having a single source of truth, specially when there are multiple data sources to a common business dimension.</p>
 <h2 id="data-warehouse-architecture"><a class="header" href="#data-warehouse-architecture">Data Warehouse Architecture</a></h2>
-<pre><code class="language-plantuml">@startuml
-top to bottom direction
-
-[Data Sources]
-note right of [Data Sources]
-Internal Applications (Operational System Databases, Logs...)
-Business Applications
-SaaS Applications (ERP, CRM...)
-Documents
-External Data (Appsflyer, Google Ads, Amplitude, Braze...)
-end note
-
-[Data Sources] --&gt; [Data Warehouse]
-note right of [Data Warehouse]
-Raw Data
-Summarized/Aggregated Data
-Metadata
-end note
-
-[Data Warehouse] --&gt; [End Users Access Tools]
-note right of [End Users Access Tools]
-BI Platforms
-Reporting Tools
-OLAP
-Dashboards
-Data Mining
-end note
-
-@enduml
-</code></pre>
+<p>PlantUML rendering error:
+Failed to render inline diagram (Failed to generate PlantUML diagrams, PlantUML exited with code 127 (sh: 1: java: not found
+).).</p>
 <p style="text-align: center;">Data Warehouse Solution.</p>
 <p>There are several data warehouses architecture approaches available. Data warehouses would have in common some key components:</p>
 <h3 id="data-sources"><a class="header" href="#data-sources">Data Sources</a></h3>
@@ -1068,64 +1030,9 @@ end note
 <p><strong>Data Exploration</strong>: it is the beginning stage of data analysis. It helps to identify right dataset is vital before starting Data Exploration. All given components need to work together to play an important part in Data Warehouse building easily evolve and explore the environment.</p>
 <div style="break-before: page; page-break-before: always;"></div><h1 id="tier-architecture"><a class="header" href="#tier-architecture">Tier Architecture</a></h1>
 <h2 id="two-tier-architecture"><a class="header" href="#two-tier-architecture">Two-Tier Architecture</a></h2>
-<pre><code class="language-plantuml">@startuml
-
-[Data Sources] as DataSources
-note right of DataSources
-Data Lake
-Internal Data
-External Data
-end note
-
-interface "ETL tools" as IDataWarehouseETLs
-note right of IDataWarehouseETLs
-Data micro-services
-Airflow
-Fivetran
-end note
-DataSources --&gt; IDataWarehouseETLs
-
-database "Data Staging" as DataStaging
-note right of DataStaging
-Data Staging Layer
-end note
-IDataWarehouseETLs --&gt; DataStaging
-
-database "Data Warehouse" as DataWarehouse
-note right of DataWarehouse
-Data Warehouse Layer
-end note
-DataStaging --&gt; DataWarehouse
-
-database "Metadata" as Metadata
-Metadata &lt;--&gt; DataWarehouse
-
-interface "ETL tools" as IDataMartsETLs
-note right of IDataMartsETLs
-Data micro-services
-Airflow
-dbt
-end note
-DataWarehouse --&gt; IDataMartsETLs
-
-database "Data Marts" as DataMarts
-note right of  DataMarts
-Data Marts for specific Business Units/Departments/Areas
-end note
-IDataMartsETLs --&gt; DataMarts
-
-[End Users Access Tools] as AnalysisLayer
-note right of AnalysisLayer
-BI Platforms
-Reporting Tools
-OLAP
-Dashboards
-Data Mining
-end note
-DataMarts &lt;--&gt; AnalysisLayer
-
-@enduml
-</code></pre>
+<p>PlantUML rendering error:
+Failed to render inline diagram (Failed to generate PlantUML diagrams, PlantUML exited with code 127 (sh: 1: java: not found
+).).</p>
 <p style="text-align: center;">Two-Tier Data Warehouse Architecture.</p>
 <p><strong>Data Source Layer</strong>: A data warehouse system uses a heterogeneous source of data. That data is stored initially to the organization's relational databases or legacy databases, or it may come from an information system outside the organization walls.</p>
 <p><strong>Data Staging Layer</strong>: The data stored to the source should be extracted, cleansed to remove inconsistencies and fill gaps, and integrated to merge heterogeneous sources into one standard schema. The ETLs can combine heterogeneous schemata, extract, transform, cleanse, validate, filter, and load source data into a data warehouse. Note that this can be achieved in two ways:</p>
@@ -1136,72 +1043,9 @@ DataMarts &lt;--&gt; AnalysisLayer
 <p><strong>Data Warehouse Layer</strong>: Information is saved to one logically centralized individual repository: a data warehouse. The data warehouses can be directly accessed, but it can also be used as a source for creating data marts, which partially replicate data warehouse contents and are designed for specific enterprise departments. Metadata repositories store information on sources, access procedures, data staging, users, data mart schema, and so on.</p>
 <p><strong>Analysis Layer</strong>: In this layer, integrated data is efficiently, and flexibly accessed to issue reports, dynamically analyze information, and simulate hypothetical business scenarios. It should feature aggregated information navigators, complex query optimizers, and customer-friendly GUIs.</p>
 <h2 id="three-tier-architecture"><a class="header" href="#three-tier-architecture">Three-Tier Architecture</a></h2>
-<pre><code class="language-plantuml">@startuml
-
-[Data Sources] as DataSources
-note right of DataSources
-Data Lake
-Internal Data
-External Data
-end note
-
-interface "ETL tools" as IDataWarehouseETLs
-note right of IDataWarehouseETLs
-Data micro-services
-Airflow
-Fivetran
-end note
-DataSources --&gt; IDataWarehouseETLs
-
-database "Data Staging" as DataStaging
-note right of DataStaging
-Data Staging Layer
-end note
-IDataWarehouseETLs --&gt; DataStaging
-
-database "Reconciled Data" as ReconciledData
-note right of ReconciledData
-Reconciled Data Layer
-end note
-DataStaging --&gt; ReconciledData
-
-database "Data Warehouse" as DataWarehouse
-note right of DataWarehouse
-Data Warehouse Layer
-end note
-ReconciledData --&gt; DataWarehouse
-
-database "Metadata" as Metadata
-Metadata &lt;--&gt; DataWarehouse
-
-[Middle/Application Tier] as MiddleTier
-DataWarehouse &lt;--&gt; MiddleTier
-
-interface "ETL tools" as IDataMartsETLs
-note left of IDataMartsETLs
-Data micro-services
-Airflow
-dbt
-end note
-DataWarehouse --&gt; IDataMartsETLs
-
-database "Data Marts" as DataMarts
-IDataMartsETLs --&gt; DataMarts
-MiddleTier &lt;--&gt; DataMarts
-
-[Top/Presentation Tier] as AnalysisLayer
-note right of AnalysisLayer
-BI Platforms
-Reporting Tools
-OLAP
-Dashboards
-Data Mining
-end note
-DataMarts &lt;--&gt; AnalysisLayer
-MiddleTier &lt;--&gt; AnalysisLayer
-
-@enduml
-</code></pre>
+<p>PlantUML rendering error:
+Failed to render inline diagram (Failed to generate PlantUML diagrams, PlantUML exited with code 127 (sh: 1: java: not found
+).).</p>
 <p style="text-align: center;">Three-Tier Data Warehouse Architecture.</p>
 <p>As the name of the architecture suggests, it consists of three tiers (levels):</p>
 <ol>
@@ -4880,6 +4724,181 @@ LIMIT 1;
 <li>BPA</li>
 <li>BPR</li>
 </ul>
+<div style="break-before: page; page-break-before: always;"></div><h1 id="test-images"><a class="header" href="#test-images">Test Images</a></h1>
+<h2 id="original-svg"><a class="header" href="#original-svg">Original SVG</a></h2>
+<p align="center">
+  <img src="test/../assets/example/example.svg" alt="Example - Original">
+</p>
+<h2 id="instad-blue-pen-svg"><a class="header" href="#instad-blue-pen-svg">Instad (Blue-Pen) SVG</a></h2>
+<p align="center">
+  <img src="test/../assets/example/example-instad.svg" alt="Example - Original">
+</p><div style="break-before: page; page-break-before: always;"></div><h1 id="test-mdbook-admonish"><a class="header" href="#test-mdbook-admonish">Test mdbook-admonish</a></h1>
+<!-- toc -->
+<!-- markdown-link-check-disable -->
+<h2 id="introduction"><a class="header" href="#introduction">Introduction</a></h2>
+<p><a href="https://crates.io/crates/mdbook-admonish"><img src="https://img.shields.io/crates/v/mdbook-admonish.svg" alt="Latest version" /></a>
+<a href="https://docs.rs/mdbook-admonish"><img src="https://img.shields.io/docsrs/mdbook-admonish" alt="docs.rs" /></a></p>
+<p>A preprocessor for <a href="https://github.com/rust-lang/mdBook">mdbook</a> to add <a href="https://material.io/design">Material Design</a> admonishments, based on the <a href="https://squidfunk.github.io/mkdocs-material/reference/admonitions/">mkdocs-material</a> implementation.</p>
+<p>It turns this:</p>
+<pre><code>```admonish info
+A beautifully styled message.
+```
+</code></pre>
+<p>into this:</p>
+<pre><code class="language-admonish info">A beautifully styled message.
+</code></pre>
+<h2 id="usage"><a class="header" href="#usage">Usage</a></h2>
+<h3 id="a-basic-admonish-block"><a class="header" href="#a-basic-admonish-block">A basic <code>admonish</code> block</a></h3>
+<p>Use any <a href="https://spec.commonmark.org/0.30/#fenced-code-blocks">fenced code-block</a> as you normally would, but annotate it with <code>admonish &lt;admonition type&gt;</code>:</p>
+<pre><code>```admonish example
+My example is the best!
+```
+</code></pre>
+<pre><code class="language-admonish example">My example is the best!
+</code></pre>
+<p>See the <a href="test/%5B./reference.md#directives%5D(https://github.com/tommilligan/mdbook-admonish/blob/main/book/src/reference.html">list of directives</a> for a full list of supported admonitions. You'll find:</p>
+<ul>
+<li><code>info</code></li>
+<li><code>warning</code></li>
+<li><code>danger</code></li>
+<li><code>example</code></li>
+</ul>
+<p>and quite a few more!</p>
+<p>You can also leave out the admonition type altogether, in which case it will default to <code>note</code>:</p>
+<pre><code>```admonish
+A plain note.
+```
+</code></pre>
+<pre><code class="language-admonish">A plain note.
+</code></pre>
+<h3 id="invalid-blocks"><a class="header" href="#invalid-blocks">Invalid blocks</a></h3>
+<p>By default, if an <code>admonish</code> block cannot be parsed, an error will be rendered in the output:</p>
+<pre><code>```admonish title="\j"
+This block will error
+```
+</code></pre>
+<pre><code class="language-admonish title=&quot;\j&quot;">This block will error
+</code></pre>
+<p>You can also configure the build to fail loudly, by setting <code>on_failure = "bail"</code> in <code>book.toml</code>. See the <a href="test/%5B./reference.md#booktoml-configuration%5D(https://github.com/tommilligan/mdbook-admonish/blob/main/book/src/reference.html">configuration reference</a> for more details.</p>
+<h3 id="additional-options"><a class="header" href="#additional-options">Additional Options</a></h3>
+<p>You can pass additional options to each block. The options are structured as TOML key-value pairs.</p>
+<p>Note that some options can be passed globally, through the <code>default</code> section in <code>book.toml</code>. See the <a href="test/%5B./reference.md#booktoml-configuration%5D(https://github.com/tommilligan/mdbook-admonish/blob/main/book/src/reference.html">configuration reference</a> for more details.</p>
+<h4 id="custom-title"><a class="header" href="#custom-title">Custom title</a></h4>
+<p>A custom title can be provided, contained in a double quoted TOML string.
+Note that TOML escapes must be escaped again - for instance, write <code>\"</code> as <code>\\"</code>.</p>
+<pre><code>```admonish warning title="Data loss"
+The following steps can lead to irrecoverable data corruption.
+```
+</code></pre>
+<pre><code class="language-admonish warning title=&quot;Data loss&quot;">The following steps can lead to irrecoverable data corruption.
+</code></pre>
+<p>You can also remove the title bar entirely, by specifying the empty string:</p>
+<pre><code>```admonish success title=""
+This will take a while, go and grab a drink of water.
+```
+</code></pre>
+<pre><code class="language-admonish success title=&quot;&quot;">This will take a while, go and grab a drink of water.
+</code></pre>
+<h4 id="nested-markdownhtml"><a class="header" href="#nested-markdownhtml">Nested Markdown/HTML</a></h4>
+<p>Markdown and HTML can be used in the inner content, as you'd expect:</p>
+<pre><code>```admonish tip title="_Referencing_ and &lt;i&gt;dereferencing&lt;/i&gt;"
+The opposite of *referencing* by using `&amp;` is *dereferencing*, which is
+accomplished with the &lt;span style="color: hotpink"&gt;dereference operator&lt;/span&gt;, `*`.
+```
+</code></pre>
+<pre><code class="language-admonish tip title=&quot;_Referencing_ and &lt;i&gt;dereferencing&lt;/i&gt;&quot;">The opposite of *referencing* by using `&amp;` is *dereferencing*, which is
+accomplished with the &lt;span style="color: hotpink"&gt;dereference operator&lt;/span&gt;, `*`.
+</code></pre>
+<p>If you have code blocks you want to include in the content, use <a href="https://spec.commonmark.org/0.30/#fenced-code-blocks">tildes for the outer code fence</a>:</p>
+<pre><code>~~~admonish bug
+This syntax won't work in Python 3:
+```python
+print "Hello, world!"
+```
+~~~
+</code></pre>
+<pre><code class="language-admonish bug">This syntax won't work in Python 3:
+~~~python
+print "Hello, world!"
+~~~
+</code></pre>
+<h4 id="custom-styling"><a class="header" href="#custom-styling">Custom styling</a></h4>
+<p>If you want to provide custom styling to a specific admonition, you can attach one or more custom classnames:</p>
+<pre><code>```admonish note class="custom-0 custom-1"
+Styled with my custom CSS class.
+```
+</code></pre>
+<p>Will yield something like the following HTML, which you can then apply styles to:</p>
+<pre><code class="language-html">&lt;div class="admonition note custom-0 custom-1"
+    ...
+&lt;/div&gt;
+</code></pre>
+<h4 id="custom-css-id"><a class="header" href="#custom-css-id">Custom CSS ID</a></h4>
+<p>If you want to customize the CSS <code>id</code> field, set <code>id="custom-id"</code>.
+This will ignore <a href="test/reference.html#default"><code>default.css_id_prefix</code></a>.</p>
+<p>The default id is a normalized version of the admonishment's title,
+prefixed with the <code>default.css_id_prefix</code>,
+with an appended number if multiple blocks would have the same id.</p>
+<p>Setting the <code>id</code> field will <em>ignore</em> all other ids and the duplicate counter.</p>
+<pre><code>```admonish info title="My Info" id="my-special-info"
+Link to this block with `#my-special-info` instead of the default `#admonition-my-info`.
+```
+</code></pre>
+<h4 id="collapsible"><a class="header" href="#collapsible">Collapsible</a></h4>
+<p>For a block to be initially collapsible, and then be openable, set <code>collapsible=true</code>:</p>
+<pre><code>```admonish collapsible=true
+Content will be hidden initially.
+```
+</code></pre>
+<p>Will yield something like the following HTML, which you can then apply styles to:</p>
+<pre><code class="language-admonish collapsible=true">Content will be hidden initially.
+</code></pre>
+<h3 id="custom-blocks"><a class="header" href="#custom-blocks">Custom blocks</a></h3>
+<p>You can add new block types via the <code>book.toml</code> config:</p>
+<pre><code class="language-toml"># book.toml
+
+[[preprocessor.admonish.custom]]
+directive = "expensive"
+icon = "./money-bag.svg"
+color = "#24ab38"
+aliases = ["money", "cash", "budget"]
+</code></pre>
+<p>You must then generate the relevant CSS file, and reference it in the <code>output.html</code> section.
+<code>mdbook-admonish</code> has a helper to quickly do this for you:</p>
+<pre><code class="language-bash"># Generates a file at ./mdbook-admonish-custom.css with your styles in
+$ mdbook-admonish generate-custom ./mdbook-admonish-custom.css
+</code></pre>
+<pre><code class="language-toml"># book.toml
+
+[output.html]
+# Reference the new file, so it's bundled in with book styles
+additional-css = ["./mdbook-admonish.css", "./mdbook-admonish-custom.css"]
+</code></pre>
+<p>You can then reference the new directive (or alias) like usual in your blocks.</p>
+<pre><code>```admonish expensive
+Remember, this operation costs money!
+```
+</code></pre>
+<pre><code class="language-admonish expensive">Remember, this operation costs money!
+</code></pre>
+<p>You can also set a default <code>title</code>. See the <a href="https://github.com/tommilligan/mdbook-admonish/blob/main/book/src/reference.md">Reference</a> page for more details.</p>
+<div style="break-before: page; page-break-before: always;"></div><h1 id="test-diagrams"><a class="header" href="#test-diagrams">Test Diagrams</a></h1>
+<h2 id="mermaid"><a class="header" href="#mermaid">Mermaid</a></h2>
+<pre class="mermaid">graph TD;
+    A--&gt;B;
+    A--&gt;C;
+    B--&gt;D;
+    C--&gt;D;
+</pre>
+<h2 id="plantuml"><a class="header" href="#plantuml">PlantUML</a></h2>
+<p>PlantUML rendering error:
+Failed to render inline diagram (Failed to generate PlantUML diagrams, PlantUML exited with code 127 (sh: 1: java: not found
+).).</p>
+<h2 id="graphviz"><a class="header" href="#graphviz">Graphviz</a></h2>
+<pre><code class="language-dot process">digraph {
+    "processed" -&gt; "graph"
+}
+</code></pre>
 
                     </main>
 
@@ -4901,24 +4920,24 @@ LIMIT 1;
 
 
 
-        <script type="text/javascript">
+        <script>
             window.playground_copyable = true;
         </script>
 
 
-        <script src="elasticlunr.min.js" type="text/javascript" charset="utf-8"></script>
-        <script src="mark.min.js" type="text/javascript" charset="utf-8"></script>
-        <script src="searcher.js" type="text/javascript" charset="utf-8"></script>
+        <script src="elasticlunr.min.js"></script>
+        <script src="mark.min.js"></script>
+        <script src="searcher.js"></script>
 
-        <script src="clipboard.min.js" type="text/javascript" charset="utf-8"></script>
-        <script src="highlight.js" type="text/javascript" charset="utf-8"></script>
-        <script src="book.js" type="text/javascript" charset="utf-8"></script>
+        <script src="clipboard.min.js"></script>
+        <script src="highlight.js"></script>
+        <script src="book.js"></script>
 
         <!-- Custom JS scripts -->
-        <script type="text/javascript" src="assets/mermaid.min.js"></script>
-        <script type="text/javascript" src="assets/mermaid-init.js"></script>
+        <script src="theme/mermaid.min.js"></script>
+        <script src="theme/mermaid-init.js"></script>
 
-        <script type="text/javascript">
+        <script>
         window.addEventListener('load', function() {
             MathJax.Hub.Register.StartupHook('End', function() {
                 window.setTimeout(window.print, 100);
@@ -4926,5 +4945,6 @@ LIMIT 1;
         });
         </script>
 
+    </div>
     </body>
 </html>
