@@ -110,4 +110,8 @@
 [Back Cover](./BACK_COVER.md)
 
 [Backlog](./backlog.md)
+
+[Test: Images](./test/images.md)
+[Test: Admonishes](./test/admonish.md)
+[Test: Diagrams](./test/diagrams.md)
 <!-- markdownlint-enable no-empty-links -->
