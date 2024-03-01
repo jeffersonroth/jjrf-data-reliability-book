@@ -1,13 +1,11 @@
-FROM jeffroth/mdbook-environment
+FROM jeffroth/mdbook-environment:latest
 
 WORKDIR /usr/src/app
 
-COPY . .
-
-# Build the project. This step is optional if there's no additional Rust code to compile.
-# RUN cargo build --release
+COPY . /usr/src/app
 
 # Build the mdBook project
 RUN mdbook build
 
+# Serve the book
 CMD ["mdbook", "serve", "--hostname", "0.0.0.0"]

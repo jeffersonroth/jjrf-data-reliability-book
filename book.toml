@@ -18,14 +18,42 @@ max-level = 4
 [preprocessor.mermaid]
 command = "mdbook-mermaid"
 
-[preprocessor.catppuccin]
-assets_version = "0.1.1" # DO NOT EDIT: Managed by `mdbook-catppuccin install`
+# PlantUML
+[preprocessor.plantuml]
+plantuml-cmd = "java -jar /usr/share/plantuml/plantuml.jar"
 
+[preprocessor.catppuccin]
+assets_version = "2.1.0" # DO NOT EDIT: Managed by `mdbook-catppuccin install`
+
+[preprocessor.admonish]
+command = "mdbook-admonish"
+assets_version = "3.0.2"    # do not edit: managed by `mdbook-admonish install`
 
 [output.html]
-additional-js = ["assets/mermaid.min.js", "assets/mermaid-init.js"]
-additional-css = ["theme/catppuccin.css", "theme/catppuccin-highlight.css"]
+git-repository-url = "https://github.com/jeffersonroth/jjrf-data-reliability-book/"
+edit-url-template = "https://github.com/jeffersonroth/jjrf-data-reliability-book/edit/master/{path}"
+git-repository-icon = "fa-github"
+additional-js = ["theme/mermaid.min.js", "theme/mermaid-init.js"]
+additional-css = [
+    "theme/catppuccin.css",
+    "theme/catppuccin-admonish.css",
+    "theme/mdbook-admonish.css",
+]
 mathjax-support = true
 
 [output.html.print]
 enable = true
+
+[output.html.search]
+limit-results = 20
+use-boolean-and = true
+boost-title = 2
+boost-hierarchy = 2
+boost-paragraph = 1
+expand = true
+heading-split-level = 2
+
+# [output.latex]
+# latex = true
+# pdf = true
+# markdown = true
