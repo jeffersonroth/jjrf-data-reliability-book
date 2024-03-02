@@ -15,7 +15,7 @@ Key IaC Tools:
 * [**Google Cloud Deployment Manager (CDM)**](https://cloud.google.com/deployment-manager/): Automates the creation and management of Google Cloud resources using template or configuration files.
 * [**Kubernetes Operators**](https://kubernetes.io/docs/concepts/extend-kubernetes/operator/): Extend Kubernetes' capabilities by automating the deployment and management of complex applications on Kubernetes.
 * [**Crossplane**](https://www.crossplane.io/): An open-source Kubernetes add-on that extends clusters to manage and provision infrastructure from multiple cloud providers and services using Kubernetes API.
-* [**Ansible**](https://www.ansible.com/): An open-source tool focusing on simplicity and ease-of-use for automating software provisioning, configuration management, and application deployment.
+* [**Ansible**](https://www.ansible.com/): An open-source tool focusing on simplicity and ease of use for automating software provisioning, configuration management, and application deployment.
 * [**Chef (Progress Chef)**](https://www.chef.io/): Provides a way to define infrastructure as code, automating how infrastructure is configured, deployed, and managed across your network, regardless of its size.
 * [**SpectralOps**](https://spectralops.io/): Aims at securing infrastructure as code by identifying and mitigating risks in configuration files.
 * [**Puppet**](https://www.puppet.com/): Enables the automatic management of your infrastructure's configuration, ensuring consistency and reliability across your systems.

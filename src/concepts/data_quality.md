@@ -26,4 +26,4 @@ This chapter is divided into five parts:
 > Data Quality Models are fundamental frameworks that define, measure, and evaluate the quality of data within an organization. Here we'll explore various criteria, known as dimensions, that help evaluate and enhance the quality of organizational data.
 
 [**Final Thoughts on Data Quality**](./data-quality/final_thoughts.md)
-> This section emphasizes that good data quality, covering aspects like accuracy and completeness, is essential for data reliability and underlies trustworthy business decisions, with a focus on proactive measures to ensure data's integrity during integration, influenced by solid data architecture and metadata management.
+> This section emphasizes that good data quality, covering aspects like accuracy and completeness, is essential for data reliability and underlies trustworthy business decisions, with a focus on proactive measures to ensure data integrity during integration, influenced by solid data architecture and metadata management.

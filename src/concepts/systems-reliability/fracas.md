@@ -112,7 +112,7 @@ Despite having advanced tools and processes, DataTech Innovations faces recurrin
   The incident, RCA, corrective, and preventive measures are documented in the company's knowledge base. A company-wide presentation is conducted to share learnings, emphasizing the importance of communication and automated checks in preventing similar incidents.
 
 8. **Monitoring and Review**:
-  DataDog alerts are fine-tuned to detect similar anomalies more effectively. The effectiveness of the new schema change protocol and automated checks is monitored over the next quarter to ensure no repeat incidents.
+  DataDog alerts are fine-tuned to detect similar anomalies more effectively. The effectiveness of the new schema change protocol and automated checks are monitored over the next quarter to ensure no repeat incidents.
 
 ### Outcome
 By implementing FRACAS, PaTech not only resolves the immediate data discrepancy issue but also strengthens its data reliability framework, reducing the likelihood of similar failures. The incident fosters a culture of continuous improvement and cross-departmental collaboration, enhancing overall data trustworthiness and decision-making efficiency across the organization.

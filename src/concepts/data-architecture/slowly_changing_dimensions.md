@@ -2,9 +2,9 @@
 Slowly Changing Dimensions (SCDs) are concepts in data warehousing used to manage and track changes in dimension data over time. Dimensions in data warehousing refer to descriptive attributes related to business entities, such as products, customers, or geographical locations, which can change over time. Managing these changes accurately is crucial for historical reporting, trend analysis, and decision-making.
 
 ## Type 0: Fixed Dimension
-> No changes are allowed. The dimension data is considered to be static, and any updates to the source data are ignored.
+> No changes are allowed. The dimension data is static, and any updates to the source data are ignored.
 
-Suitable for data that truly doesn't change, such as historical data, fixed identifiers, or regulatory codes.
+Suitable for data that doesn't change, such as historical data, fixed identifiers, or regulatory codes.
 
 ## Type 1: Overwrite
 > Updates overwrite existing records, with no history of previous values being kept. This approach is simple but sacrifices historical accuracy.

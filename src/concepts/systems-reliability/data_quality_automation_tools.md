@@ -29,7 +29,7 @@ Other options, which I haven't personally tried but frequently appear in online 
 
 * [**First Eigen**](https://firsteigen.com/): A data quality management tool that provides analytics and monitoring to maintain high data quality standards across systems.
 
-* [**BigEye**](https://www.bigeye.com/): A monitoring platform designed for data engineers, providing automated data quality checks to ensure data reliability in real-time.
+* [**BigEye**](https://www.bigeye.com/): A monitoring platform designed for data engineers, providing automated data quality checks to ensure data reliability in real time.
 
 * [**Data Ladder**](https://dataladder.com/): A data quality software that provides cleansing, matching, deduplication, and enrichment features to improve data quality.
 

@@ -1,7 +1,7 @@
 # Observability and Data Observability Tools
 In the context of software and systems, observability refers to the ability to infer the internal states of a system based on its external outputs. It extends beyond monitoring by not only capturing what's going wrong but also providing insights into why it's happening.
 
-Data Observability specifically applies observability principles to data and data systems. It involves monitoring the health of the data flowing through systems, identifying issues like data anomalies, pipeline failures, schema changes, and ensuring data quality and reliability.
+Data Observability specifically applies observability principles to data and data systems. It involves monitoring the health of the data flowing through systems, identifying issues like data anomalies, pipeline failures, and schema changes, and ensuring data quality and reliability.
 
 ### Justifications
 Data observability is crucial for organizations relying heavily on data-driven decision-making because it:

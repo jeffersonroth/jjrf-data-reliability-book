@@ -5,14 +5,14 @@
 </p>
 
 ## Failures, Errors, and Faults
-> **Failures** are the result of unexpected internal problems that a system eventually exhibits in its external behavior. These problems are called **errors**, and their mechanical or algorithmic causes are referred to as **faults**.
-> When a system's behavior deviates from what is specified for it, it is said to have a **failure**, or the system have **failed**.
+> **Failures** result from unexpected internal problems that a system eventually exhibits in its external behavior. These problems are called **errors**, and their mechanical or algorithmic causes are called **faults**.
+> When a system's behavior deviates from its specifications, it is said to have a **failure**, or the system has **failed**.
 
-Systems are composed of **components**, each of which can be considered a system in itself. Thus, a failure in one system can induce a fault in another, which may result in an error and a potential failure of this system. This can continue and produce an effect on any related system, and so on.
+Systems are composed of **components**, each of which can be considered a system. Thus, a failure in one system can induce a fault in another, which may result in an error and a potential failure of this system. This failure can continue and affect any related system, and so on.
 
-A faulty component of a system is one that will produce an error under a specific set of circumstances during the system's lifetime. Seen in terms of state transitions, *a system can be considered as a number of external and internal states*. 
+A faulty component of a system will produce an error under a specific set of circumstances during the system's lifetime. Seen in terms of state transitions, *a system can be considered as the sum of external and internal states*. 
 
-An external state not specified in the system's behavior will be considered a system failure. The system itself consists of a number of components (each with its own states), all contributing to the system's external behavior. The combination of these components' states is called the system's internal state. *An unspecified internal state is considered an error, and the component that produced the illegal state transition is said to be faulty*.
+An external state not specified in the system's behavior will be considered a system failure. The system itself consists of many components (each component with its many states), all contributing to the system's external behavior. The combination of these components' states is called the system's internal state. *An unspecified internal state is considered an error, and the component that produced the illegal state transition is said to be faulty*.
 
 The three types of failures:
 * **Transient failures**: begin at a specific point in time, remain in the system for some period, and then disappear.

@@ -73,6 +73,6 @@ For the validity dimension in data quality, ensuring that data adheres to both s
 ### Pattern Matching Success Rate
 **Application**: Evaluate the success rate at which data entries match predefined patterns (e.g., email address patterns, product codes).
 
-**Example**: An online registration system could track the pattern matching success rate for email addresses to ensure they follow a valid email format.
+**Example**: An online registration system could track the pattern-matching success rate for email addresses to ensure they follow a valid email format.
 
 By implementing these validity metrics, organizations can ensure that their data is not only structurally sound but also contextually appropriate for its intended use. Ensuring data validity is essential for maintaining the integrity of data systems and for supporting accurate, reliable decision-making processes.
