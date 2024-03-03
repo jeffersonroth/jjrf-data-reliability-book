@@ -1,7 +1,8 @@
 # Systems Reliability
 > The reliability of a system is the property that allows the system's service to be justifiably qualified as reliable.
+> It measures how the system conforms to the complete, consistent, comprehensible, and unambiguous specification of its behavior.
 
-This chapter introduces the concepts of reliability and safety explored by Alan Burns and Andy Wellings in their book "Real-Time Systems and Programming Languages." These concepts, developed by different industries mainly between the 60s and 90s, and the concepts of Site Reliability Engineering (SRE), developed from the 2000s onwards, in addition to complementing it with reliability concepts worked on in other engineering fields (mechanical, industrial, etc.), as well as contextualizing it with concepts currently worked on in the software and computer systems industry.
+This chapter introduces the concepts of reliability and safety explored by Alan Burns and Andy Wellings in their book{{footnote: Alan Burns and Andrew J. Wellings. 2001. Real-Time Systems and Programming Languages: ADA 95, Real-Time Java, and Real-Time POSIX (3rd. ed.). Addison-Wesley Longman Publishing Co., Inc., USA.}} "Real-Time Systems and Programming Languages: ADA 95, Real-Time Java, and Real-Time POSIX." These concepts, developed by different industries mainly between the 60s and 90s, and the concepts of Site Reliability Engineering (SRE), developed from the 2000s onwards, in addition to complementing it with reliability concepts worked on in other engineering fields (mechanical, industrial, etc.), as well as contextualizing it with concepts currently worked on in the software and computer systems industry.
 
 I divided this chapter into three parts, each exploring one of these concepts:
 

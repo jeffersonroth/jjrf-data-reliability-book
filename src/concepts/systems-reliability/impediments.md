@@ -10,24 +10,26 @@
 
 Systems are composed of **components**, each of which can be considered a system. Thus, a failure in one system can induce a fault in another, which may result in an error and a potential failure of this system. This failure can continue and affect any related system, and so on.
 
-A faulty component of a system will produce an error under a specific set of circumstances during the system's lifetime. Seen in terms of state transitions, *a system can be considered as the sum of external and internal states*. 
+A faulty system component will produce an error under specific circumstances during the system's lifetime. *A system is the sum of external and internal states* regarding state transitions.
 
-An external state not specified in the system's behavior will be considered a system failure. The system itself consists of many components (each component with its many states), all contributing to the system's external behavior. The combination of these components' states is called the system's internal state. *An unspecified internal state is considered an error, and the component that produced the illegal state transition is said to be faulty*.
+An external state not specified in the system's behavior will be considered a failure. The system consists of many components (each with its many states), all contributing to its external behavior. The combination of these components' states is called the system's internal state. *An unspecified internal state is considered an error, and the component that produced the illegal state transition is said to be faulty*.
 
 The three types of failures:
-* **Transient failures**: begin at a specific point in time, remain in the system for some period, and then disappear.
-* **Permanent failures**: begin at a certain point and remain in the system until they are repaired.
-* **Intermittent failures**: are transient failures that occur sporadically.
+* **Transient failures**: Begin at a specific time, remain in the system for some time, and then disappear.
+* **Permanent failures**: Begin at a certain point and stay in the system until they are repaired.
+* **Intermittent failures**: These are transient failures that occur sporadically.
 
 ## Failure Modes
-> A system can fail in many ways. A designer may design the system assuming a finite number of failure modes, however, the system may fail in ways that were not anticipated. 
+> A system can fail in many ways. A designer may design the system assuming a finite number of failure modes. However, the system may fail in ways that were not anticipated.
 
 We can classify the failure modes of the services that a system provides, which are:
-* **Value failures**: the value associated with the service is incorrect.
-* **Timing failure**: the service is completed at the wrong time.
-* **Arbitrary failure**: a combination of value and timing failures.
+* **Value failures** (Value Domain): The value associated with the service is incorrect.
+* **Timing failure** (Time Domain): The service is completed at the wrong time.
+* **Arbitrary failure**: A combination of value and timing failures.
 
-Value failure modes are called **value domain**, and are classified into **boundary error**, and **wrong value**, where the value is outside the stipulated range.
+Failures in the value domain are classified into:
+* **Boundary Error (Constraint Error)**: The value is outside the expected range of values, including errors in data typing.
+* **Wrong value**: The incorrect value is within the correct range of values.
 
 Failures in the time domain can cause the service to be delivered:
 * **Too early** (premature): the service is delivered before it is required.
@@ -36,9 +38,10 @@ Failures in the time domain can cause the service to be delivered:
 * **Unexpected** (commission failure or improvisation): the service is delivered without being expected.
 
 In general, we can assume the modes in which a system can fail:
-* **Uncontrolled failure**: a system that produces arbitrary errors, both in the value domain and in the time domain (including improvisation errors).
-* **Delay failure**: a system that produces correct services in the value domain but suffers from timing delays.
-* **Silent failure**: a system that produces correct services in both the value and time domains, until it fails. The only possible failure is omission, and when it occurs, all subsequent services will also suffer from omission failures.
-* **Crash failure**: a system that has all the properties of a silent failure but allows other systems to detect that it has entered the state of silent failure.
-* **Controlled failure**: a system that fails in a specified and controlled manner.
-* **Failure-free**: a system that always produces the correct services.
+* **Uncontrolled failure**: A system that produces arbitrary errors in value and time domains (including improvisation errors).
+* **Delay failure**: A system that produces correct services in the value domain but suffers from timing delays
+* **Silent failure**: A system that produces correct services in value and time domains until it fails. The only possible failure is omission, and when it occurs, all subsequent services will also suffer from omission failures.
+* **Crash failure**: A system presenting all the properties of a silent failure but allowing other systems to detect it has entered the state of silent failure.
+* **Controlled failure**: A system that fails in a specified and controlled manner.
+
+A system consistently producing the correct services is classified as failure-free.
