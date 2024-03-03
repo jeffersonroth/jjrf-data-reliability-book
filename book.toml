@@ -35,9 +35,9 @@ edit-url-template = "https://github.com/jeffersonroth/jjrf-data-reliability-book
 git-repository-icon = "fa-github"
 additional-js = ["theme/mermaid.min.js", "theme/mermaid-init.js"]
 additional-css = [
+    "theme/mdbook-admonish.css",
     "theme/catppuccin.css",
     "theme/catppuccin-admonish.css",
-    "theme/mdbook-admonish.css",
 ]
 mathjax-support = true
 

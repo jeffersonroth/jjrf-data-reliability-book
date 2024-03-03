@@ -113,7 +113,7 @@ The ISO 8000 standard series is focused on data quality and master data manageme
 Let's explore some of the key parts of the ISO 8000 series relevant to Master Data and Data Quality:
 
 ### ISO 8000-100: Data Quality Management Principles
-> This part of the ISO 8000 series outlines the foundational principles for managing data quality, establishing a framework for assessing, improving, and maintaining the quality of data within an organization.
+> This part of the ISO 8000 series outlines the foundational principles for managing data quality; establishing a framework for assessing, improving, and maintaining the quality of data within an organization.
 
 ### ISO 8000-102: Data Quality Provenance
 > Focuses on the provenance of data, detailing how to document the source of data and its lineage. This is crucial for understanding the origins of data, assessing its reliability, and ensuring traceability.

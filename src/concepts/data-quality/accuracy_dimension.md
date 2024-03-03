@@ -1,5 +1,5 @@
 # Accuracy Dimension in Data Quality
-> Accuracy is one of the most critical dimensions of data quality, referring to the closeness of data values to the true values they are intended to represent. Ensuring accuracy is fundamental across all stages of the data infrastructure, from data sources through ELTs (Extract, Load, Transform) processes, data lakes, data warehouses, to data marts, and ultimately in reports and dashboards.
+> Accuracy is one of the most critical dimensions of data quality, referring to the closeness of data values to the true values they are intended to represent. Ensuring accuracy is fundamental across all stages of the data infrastructure, from data sources through ELTs (Extract, Load, Transform) processes, data lakes, and data warehouses, to data marts, and ultimately in reports and dashboards.
 
 When considering accuracy within your data quality framework, it's essential to implement metrics that can capture discrepancies between the data you have and the true, expected values. Here are some accuracy dimension metrics you could implement across different stages of your data infrastructure:
 
@@ -144,7 +144,7 @@ Perform field-level data validation by selecting key fields and comparing them b
 ### dbt Run Operator
 > Executes dbt run to run transformation models.
 
-After dbt run, use dbt's built-in test functionality to perform accuracy checks on transformed data against source data or expected results. The *Transformation Accuracy* metric could be measured as:
+After the dbt run, use dbt's built-in test functionality to perform accuracy checks on transformed data against source data or expected results. The *Transformation Accuracy* metric could be measured as:
 
 \\[ Transformation \ Accuracy = \frac{Number \ of \ Pass \ Tests}{Total \ Number \ of \ Tests} \times 100 \\]
 

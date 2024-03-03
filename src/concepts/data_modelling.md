@@ -76,10 +76,10 @@ This Inmon data warehouse methodology proposes constructing data marts separatel
 
 **Expert management**: this approach requires experts to manage a data warehouse effectively.
 
-In brief, the Inmon has a **high** start-up cost**, requires **more time to be in production** and meet business needs (very large projects with a very broad scope), and **requires a bigger team os specialists**, but is more **suitable for systems and** business changes**, better **integrates with the whole organization**, favors **Strategic business decision support requirements** (vs Tactical), and **facilitates Business Intelligence development**.
+In brief, the Inmon has a **high** start-up cost**, requires **more time to be in production** and meet business needs (very large projects with a very broad scope), and **requires a bigger team of specialists**, but is more **suitable for systems and** business changes**, better **integrates with the whole organization**, favors **Strategic business decision support requirements** (vs Tactical), and **facilitates Business Intelligence development**.
 
 ## Hybrid
-> In a hybrid model, the data warehouse is built using the Inmon model, and on top of the integrated data warehouse, the business process oriented data marts are built using the star schema for reporting.
+> In a hybrid model, the data warehouse is built using the Inmon model, and on top of the integrated data warehouse, the business process-oriented data marts are built using the star schema for reporting.
 
 The hybrid approach provides a **Single Source of Truth** for the data marts, creating highly flexible solutions from a BI point of view.
 
@@ -101,7 +101,7 @@ Another hybrid methodology is the Data Vault, discussed below.
 <a href="https:&#x2F;&#x2F;www.canva.com&#x2F;design&#x2F;DAFbfihtfys&#x2F;view?utm_content=DAFbfihtfys&amp;utm_campaign=designshare&amp;utm_medium=embeds&amp;utm_source=link" target="_blank" rel="noopener"><p style="text-align: center;">Example of a Hybrid Methodology approach.</p></a>
 
 ## Vault
-The **Vault Data Modelling** is a hybrid design, consisting of the best-of-breed practices from both **3rd normal form** and **star-schema**.
+The **Vault Data Modelling** is a hybrid design, consisting of the best-of-breed practices from both **3rd normal form** and **star schema**.
 
 It is not a true 3rd normal form and breaks some of the rules that 3NF dictates. It is a top-down architecture with a bottom-up design, geared to be strictly a data warehouse. It is not geared to be end-user accessible, which when built, still requires the user of a data mart or star-schema-based release for business purposes.
 
@@ -135,14 +135,14 @@ A Data Vault complements the Data Lake and is a solution for organizations that 
 <a href="https:&#x2F;&#x2F;www.canva.com&#x2F;design&#x2F;DAFbf7fKp9s&#x2F;view?utm_content=DAFbf7fKp9s&amp;utm_campaign=designshare&amp;utm_medium=embeds&amp;utm_source=link" target="_blank" rel="noopener"><p style="text-align: center;">Example of Data Vault 2.0 Modelling Methodology approach.</p></a>
 
 ## Bus Architecture
-> A bus architecture is composed of a set of tightly integrated data marts that get their power from conformed dimensions and fact tables. A conformed dimension is defined and implemented one time, so that it means the same thing everywhere it's used.
+> A bus architecture is composed of a set of tightly integrated data marts that get their power from conformed dimensions and fact tables. A conformed dimension is defined and implemented one time so that it means the same thing everywhere it's used.
 
 A dimension table is the "lookup" table of a dimensional model.
 It contains textual data that decodes an identifier in associated fact tables.
 A conformed dimension is defined and implemented one time and used throughout the multiple-star schemas that make up the enterprise data mart.
 Dimensions define the who, what, where, when, why, and how of a situation, and are laid out for the benefit of business users.
 
-> To conform a dimension, every stakeholder must agree on a common definition for the dimension, so that the dimension means the same thing no matter where it’s used.
+> To conform to a dimension, every stakeholder must agree on a common definition for the dimension, so that the dimension means the same thing no matter where it’s used.
 
 #TODO: continue from https://www.itprotoday.com/sql-server/data-warehouse-bus-architecture
 

@@ -8,9 +8,9 @@ Such as:
 * The implementation of data cleaning and validation processes for raw data.
 * The validation of table and column availability within databases.
 * The introduction of branch operators for effective data management.
-* The implementation of rigorous code review processes to maintain a clean and secure codebase.
-* The adoption of standardized coding practices and secure coding guidelines to minimize errors and security vulnerabilities.
+* Implementing rigorous code review processes to maintain a clean and secure codebase.
+* Adopting standardized coding practices and safe coding guidelines to minimize errors and security vulnerabilities.
 * The utilization of automated testing frameworks for continuous testing (unit, integration, system) throughout the development cycle.
-* The application of configuration management tools and practices to oversee changes in software and hardware, ensuring all modifications are authorized and tested.
-* The engagement in detailed requirement analysis and system design reviews to affirm the system's resilience against potential faults, including the use of modeling and simulation tools.
-* The incorporation of fail-safe and fail-soft designs to maintain system safety in case of failure, including redundancy strategies for critical components.
+* Configuration management tools and practices are applied to oversee changes in software and hardware, ensuring all modifications are authorized and tested.
+* The engagement in detailed requirement analysis and system design reviews to affirm the system's resilience against potential faults, including modeling and simulation tools.
+* Incorporating fail-safe and fail-soft designs to maintain system safety in case of failure, including redundancy strategies for critical components.

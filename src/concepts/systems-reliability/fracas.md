@@ -1,5 +1,5 @@
 # Failure Reporting, Analysis, and Corrective Action System (FRACAS)
-> FRACAS is a defined system or process for reporting, classifying, and analyzing failures, as well as planning corrective actions for such failures. It is part of the process to keep a history of analyses and actions taken.
+> FRACAS is a defined system or process for reporting, classifying, and analyzing failures and planning corrective actions for such shortcomings. Keeping a history of analyses and actions taken is part of the process.
 
 The FRACAS process is cyclical and follows the adapted FRACAS Kaizen Loop:
 * **Failure Mode Analysis**: Analysis of failure modes.
@@ -9,23 +9,23 @@ The FRACAS process is cyclical and follows the adapted FRACAS Kaizen Loop:
 * **Strategy Adjustment**: Strategy adjustment.
 
 ## Implementation
-Implementing this process involves automating the analysis of data process logs, commits, pull requests, and tickets. In the context of data reliability engineering, implementing it involves establishing a structured approach to identifying, analyzing, and resolving data-related failures systematically.
+Implementing this process involves automating the analysis of data process logs, commits, pull requests, and tickets. In the context of data reliability engineering, implementing it involves establishing a structured approach to systematically identifying, analyzing, and resolving data-related failures.
 
 Here's how it can be adapted and adopted:
 
 1. **Failure Identification**
 * **Automated Monitoring**:
-  Use observability and monitoring tools to automatically detect anomalies, failures, or performance issues in data pipelines, databases, or data processing tasks. Configure all data tools to collect and send metrics.
+  Use observability and monitoring tools to detect anomalies, failures, or performance issues in data pipelines, databases, or data processing tasks automatically. Configure all data tools to collect and send metrics.
 
 * **Alerting Mechanisms**:
   Set up alerts to notify relevant teams or individuals when potential data issues are detected, ensuring prompt attention.
 
 2. **Reporting**
 * **Centralized Reporting Platform**:
-  Implement a system where all identified issues can be reported, documented, and tracked. This platform should capture details about the failure, including when it occurred, its impact, and any immediate observations.
+  Implement a system to report, document, and track all identified issues. This platform should capture details about the failure, including when it occurred, its impact, and any immediate observations.
 
 * **User Reporting**:
-  Encourage users and stakeholders to report any data discrepancies or issues they encounter, providing a clear and straightforward mechanism for doing so.
+  Encourage users and stakeholders to report data discrepancies or issues, providing a clear and straightforward mechanism.
 
 3. **Analysis**
 * **Root Cause Analysis**:
@@ -46,16 +46,17 @@ Here's how it can be adapted and adopted:
   After implementing corrective actions, verify that the issue has been resolved and that the solution hasn't introduced new problems.
 
 * **Documentation**:
-  Document the issue, the analysis process, the corrective action taken, and the results of the implementation for future reference.
+  Document the issue, the analysis process, the corrective action taken, and the implementation results for future reference.
 
 6. **Continuous Improvement**
 * **Feedback Loop**:
   Use insights gained from FRACAS to identify areas for improvement in data processes and systems, aiming to prevent similar issues from occurring in the future.
 
-* **Training and Knowledge Sharing**: Share lessons learned from failure analyses and corrective actions with the wider team to build a culture of continuous learning and improvement.
+* **Training and Knowledge Sharing**:
+  Share lessons learned from failure analyses and corrective actions with the broader team to build a continuous learning and improvement culture.
 
 ### Notes on *Failure Identification* and *Reporting* Steps
-This can be done through automated monitoring tools that alert the team to issues such as failed ETL jobs, discrepancies in data validation checks, or performance bottlenecks.
+These steps can be done through automated monitoring tools that alert the team to issues such as failed ETL jobs, discrepancies in data validation checks, or performance bottlenecks.
 
 ### Notes on *Analysis* Steps
 Once a failure is reported, it is analyzed to understand its nature, scope, and impact. This involves digging into logs, reviewing the data processing steps where the failure occurred, and identifying the specific point of failure. The analysis aims to classify the failure (e.g., data corruption, process failure, infrastructure issue) and understand the underlying reasons for the failure.
@@ -72,15 +73,15 @@ Beyond immediate corrective actions, FRACAS also focuses on systemic improvement
 FRACAS is an iterative process. The learnings from each incident are fed back into the data engineering processes, leading to continuous improvement in data pipeline reliability and efficiency. Over time, this reduces the incidence of failures and improves the overall quality and trustworthiness of the data.
 
 ## Tools and Integration
-Integrate FRACAS with existing data management and DevOps tools to streamline the workflow. This integration can range from linking FRACAS with project management tools to automating certain steps in the process using scripts or bots.
+Integrate FRACAS with existing data management and DevOps tools to streamline the workflow. This integration can range from linking FRACAS with project management tools to automating specific steps in the process using scripts or bots.
 
-Implementing FRACAS in data reliability engineering not only helps in resolving data issues more effectively but also contributes to building a more reliable, resilient, and high-quality data infrastructure over time.
+Implementing FRACAS in data reliability engineering helps resolve data issues more effectively and contributes to building a more reliable, resilient, and high-quality data infrastructure over time.
 
 ## Use Case
-Although complete use cases will be explored in the next section of the book, here's a small use case to understand the implementation and importance of FRACAS.
+Although complete use cases will be explored in the book's next section, here's a small use case to understand the implementation and importance of FRACAS.
 
 ### Background:
-A mature startup, "PaTech",  has a complex data ecosystem with Airflow orchestrating ELT jobs via Airbyte, ETL processes through dbt models deployed in Kubernetes, and various data quality and observability tools like DataDog in place. The company's data lake and warehouse are accessed by hundreds of engineers, while its data marts serve thousands of employees across all departments.
+A mature startup, "PaTech," has a complex data ecosystem with Airflow orchestrating ELT jobs via Airbyte, ETL processes through dbt models deployed in Kubernetes, and various data quality and observability tools like DataDog in place. Hundreds of engineers access the company's data lake and warehouse, while its data marts serve thousands of employees across all departments.
 
 ### Challenge:
 Despite having advanced tools and processes, DataTech Innovations faces recurring data issues affecting data quality and availability, leading to decision-making delays and decreased trust in data systems.
@@ -112,10 +113,10 @@ Despite having advanced tools and processes, DataTech Innovations faces recurrin
   The incident, RCA, corrective, and preventive measures are documented in the company's knowledge base. A company-wide presentation is conducted to share learnings, emphasizing the importance of communication and automated checks in preventing similar incidents.
 
 8. **Monitoring and Review**:
-  DataDog alerts are fine-tuned to detect similar anomalies more effectively. The effectiveness of the new schema change protocol and automated checks is monitored over the next quarter to ensure no repeat incidents.
+  DataDog alerts are fine-tuned to detect similar anomalies more effectively. The effectiveness of the new schema change protocol and automated checks are monitored over the next quarter to ensure no repeat incidents.
 
 ### Outcome
-By implementing FRACAS, PaTech not only resolves the immediate data discrepancy issue but also strengthens its data reliability framework, reducing the likelihood of similar failures. The incident fosters a culture of continuous improvement and cross-departmental collaboration, enhancing overall data trustworthiness and decision-making efficiency across the organization.
+By implementing FRACAS, PaTech resolves the immediate data discrepancy issue and strengthens its data reliability framework, reducing the likelihood of similar failures. The incident fosters a culture of continuous improvement and cross-departmental collaboration, enhancing overall data trustworthiness and decision-making efficiency across the organization.
 
 ## Final Thoughts
 By applying FRACAS, data teams can move from reactive problem-solving to a proactive stance on improving data systems' reliability and efficiency, ultimately supporting better decision-making and operational performance across the organization.

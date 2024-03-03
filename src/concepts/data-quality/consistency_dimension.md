@@ -6,10 +6,10 @@ To evaluate consistency, data teams apply specific metrics that help identify di
 
 ### Data Sources (Operational Data)
 * **Cross-System Data Validation**:
-  Compare data values and formats across different operational databases (like Postgres, Oracle, MariaDB) to ensure they follow the same standards and rules.
+  Compare data values and formats across different operational databases (like Postgres, Oracle, and MariaDB) to ensure they follow the same standards and rules.
 
 * **Reference Data Consistency**:
-  Ensure that reference data (like country codes, product categories) used across multiple systems is consistent and up-to-date.
+  Ensure that reference data (e.g. country codes, product categories) used across multiple systems is consistent and up-to-date.
 
 #### Example: Cross-System Consistency Rate
 \\[ Consistency \ Ratio = \frac{Number\ of \ Consistent \ Records \ Across \ Systems}{Total \ Number \ of \ Compared \ Records} \times 100 \\]
@@ -18,13 +18,13 @@ To evaluate consistency, data teams apply specific metrics that help identify di
 
 ### ELT Processes
 * **Schema Consistency Checks**:
-  During ELT processes, especially with tools like AWS DMS, validate that the schema transformations applied maintain consistency in data types, formats, and naming conventions across source and target systems.
+  During ELT processes, especially with tools like AWS DMS, validate that the applied schema transformations maintain consistency in data types, formats, and naming conventions across source and target systems.
 
 * **Data Transformation Logic Validation**:
   Verify that the transformation logic in ELT does not introduce inconsistencies, especially when aggregating or modifying data.
 
 #### Example: Transformation Consistency Check
-**Application**: Consist of implementing automated checks or tests within ELT pipelines to ensure that loaded data maintains data integrity. There is no fixed formula; it involves verifying that data transformations produce consistent results across different batches or datasets.
+**Application**: Consists of implementing automated checks or tests within ELT pipelines to ensure that loaded data maintains data integrity. There is no fixed formula; it involves verifying that data transformations produce consistent results across different batches or datasets.
 
 ### Data Lakes and Data Warehouses
 * **Historical Data Alignment**:
