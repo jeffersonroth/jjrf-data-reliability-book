@@ -1,5 +1,6 @@
 book
 target
+**/mdbook-plantuml-img/**
 
 # Cache
 .mdbook-plantuml-cache/
