@@ -5,7 +5,7 @@ services:
     environment:
       - USER=$USER
     ports:
-      - "3000:3000"
+      - "3001:3000"
     volumes:
       - .:/usr/src/app:cached # Mount current directory to a non-root directory in the container
       - /usr/src/app/target # Persist the cargo build cache

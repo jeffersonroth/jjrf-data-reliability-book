@@ -1,7 +1,9 @@
 # Version Control Systems for Data
+
 Version Control Systems (VCS) are essential tools in software development, enabling developers to track and manage changes to code over time. Regarding data, the concept of version control is equally important but can be more complex due to the data's dynamic and voluminous nature.
 
 ## Importance of Version Control for Data
+
 In data projects, changes are often made to the code, such as data transformation scripts or analysis models, as well as to the data itself. Version control for data is a crucial process that ensures every change made to datasets and data processing scripts is tracked, documented, and reversible. This process is vital for three main reasons:
 
 * **Reproducibility**: Version control for data ensures that data analyses can be reproduced over time, even as data and code change.
@@ -9,6 +11,7 @@ In data projects, changes are often made to the code, such as data transformatio
 * **Auditability**: Version control for data provides a historical record of data and code changes, essential for satisfying audit requirements, especially in regulated industries.
 
 ## Version Control Systems Adapted for Data
+
 While traditional VCS tools like Git are widely used for code, adapting them for data poses challenges due to many datasets' size and binary format. However, several tools and practices have been developed to address these challenges:
 
 * **Data Versioning Tools**:
@@ -21,6 +24,7 @@ While traditional VCS tools like Git are widely used for code, adapting them for
   Techniques like event sourcing and ledger databases can be used to maintain a historical record of data changes directly within databases, allowing for versioning at the data storage level.
 
 ## Best Practices for Data Version Control
+
 Implementing version control for data involves several best practices:
 
 * **Automate Versioning**: Automate the tracking of changes to data and code as much as possible to ensure consistency and completeness of the version history.
@@ -29,6 +33,7 @@ Implementing version control for data involves several best practices:
 * **Maintain Clear Documentation**: Document changes comprehensively, including the rationale for changes and their impact on analyses or models.
 
 ## Challenges
+
 * **Data Size and Format**: Large datasets and binary data formats can be challenging to manage with traditional VCS tools.
 * **Performance**: Versioning large datasets can impact the performance of version control operations and require significant storage space.
 * **Complex Dependencies**: Data projects often involve complex dependencies between datasets, code, and computational environments, which can complicate versioning.

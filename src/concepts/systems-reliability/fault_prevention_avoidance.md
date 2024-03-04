@@ -1,9 +1,11 @@
 # Fault Prevention: Avoidance
+
 There are two phases in fault prevention: **avoidance** and **elimination**.
 
 > Avoidance aims to limit the introduction of potentially defective data and objects during the execution of the process.
 
 Such as:
+
 * The use of validated and clean information sources, when possible.
 * The implementation of data cleaning and validation processes for raw data.
 * The validation of table and column availability within databases.

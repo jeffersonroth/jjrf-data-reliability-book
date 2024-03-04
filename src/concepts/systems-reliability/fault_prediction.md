@@ -1,9 +1,11 @@
 # Failure Prediction
+>
 > Accurate and rapid prediction of failures allows those of us maintaining processes to ensure higher service availability. Unfortunately, failure prediction is much more complex than detection.
 
 To predict a failure, it must be identified and classified. Failures must also be predictable, meaning there are system (and component) state changes that lead to failure, or the failure occurs regularly following some pattern. Both cases can be translated into time series prediction problems, and sensor and log data can be used to train prediction models.
 
 The collected data will hardly be ready for use by prediction models, so one or more preprocessing tasks must be carried out:
+
 * **Data synchronization**: metrics collected by various agents must be aligned in time.
 * **Data cleaning**: removing unnecessary data and generating missing data (e.g., interpolation).
 * **Data normalization**: metric values are normalized to make magnitudes comparable.

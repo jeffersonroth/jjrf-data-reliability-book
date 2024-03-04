@@ -1,4 +1,5 @@
 # Container Orchestration Tools
+
 Container orchestration tools are essential in managing the lifecycles of containers, especially in large, dynamic environments. They automate containerized applications' deployment, scaling, networking, and management, ensuring that the infrastructure supporting data-driven applications is reliable, scalable, and efficient.
 
 In data reliability engineering, container orchestration tools facilitate the consistent deployment and operation of data pipelines, databases, and analytics tools within containers, enhancing the reliability and availability of data services.
@@ -25,6 +26,7 @@ Main Container Orchestration Tools:
 By leveraging these tools, data reliability engineers can ensure that data-centric applications and services are robust, resilient to failures, and capable of handling fluctuating workloads. This is crucial for maintaining high data quality and availability in modern data ecosystems.
 
 ## Workflow Orchestration Tools & Kubernetes Operators
+
 Using workflow orchestration tools like Apache Airflow to trigger tasks inside containers managed by Kubernetes, rather than processing and transforming data locally, offers several advantages:
 
 * **Scalability**:

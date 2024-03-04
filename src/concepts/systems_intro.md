@@ -1,9 +1,9 @@
 # Introduction to Systems
-> For the context of this book, a system is a collection of interrelated components working together towards a common goal, often to process, store, and manage data. These components can include hardware, software, databases, procedures, and people, all interacting in a structured way to achieve efficient and reliable data handling.
 
-To better understand data reliability engineering, it's essential to understand a system from a **technical** and **operational perspective**.
-Technically, a system would include the architecture, technology, and protocols that ensure data integrity, availability, and consistency.
-Operationally, it involves the procedures and practices that maintain the system's performance and reliability over time.
+```admonish tip title="Defining Systems"
+This book defines a system as a *complex arrangement of interconnected components, including hardware, software, databases, procedures, and people, that work together towards a common goal*. This goal is often to process, store, and manage data efficiently and reliably.
+```
 
-When discussing data reliability, a system is the entire ecosystem supporting the data lifecycle, from creation and storage to retrieval and usage.
-A system includes considerations of redundancy, fault tolerance, backup procedures, security measures, and regular maintenance practices, all of which contribute to the system's overall reliability and the trustworthiness of its service.
+Technically, a system includes the architecture, technology, and protocols in place to ensure data integrity, availability, and consistency. Operationally, it entails the procedures and practices employed to maintain the system's performance and reliability over time.
+
+When discussing data reliability engineering, a system encompasses the entire ecosystem that supports the data lifecycle, which includes data creation, storage, retrieval, and usage. A comprehensive system considers redundancy, fault tolerance, backup procedures, security measures, and regular maintenance practices. All of these elements contribute to the overall reliability of the system and the trustworthiness of its service.

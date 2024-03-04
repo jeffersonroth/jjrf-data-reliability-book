@@ -71,7 +71,6 @@ City Score 5: Pilar, Caacupé, Villa Hayes, Villeta, Areguá.
 
 Cities with scores 1 and 2, will have a subdivision in Microzones, also from 1 to 5, being 1 the microzones with the highest income, and other operational and financial justifying it to be the priority. Cities with City Score 3-5, will be assigned a Microzone Score equal to their City Score. The best combination would be City Score 1 and Microzone Score 1.
 
-
 User Quality
 Along with the City and Microzone Scores, the devices used to install the app, complete the registration process and make orders will also receive a score, the Device Score, also ranging from 1 to 5.
 
@@ -161,7 +160,7 @@ Influencers will be given a coupon code to be shared online, giving new users Ar
 
 For every conversion the Influencers bring, they will receive:
 
-$3.00 for UHVU conversions, $2.00 for HVU conversions, $0.50 for MVU, and $0.10 for LVU. 
+$3.00 for UHVU conversions, $2.00 for HVU conversions, $0.50 for MVU, and $0.10 for LVU.
 
 Google Analytics
 Google Analytics has the ability to detect UAC and SEM campaigns. When the web session results in an Order, those touchpoints will have priority over other online media like Facebook, Programmatic, and Google touchpoints attributed by Appsflyer.
@@ -193,12 +192,12 @@ In case none of the users mapped to the device has had an order event, the last 
 For example, John and Mike live together and share an iPad. The iPad is normally logged in with John’s account, but from time to time Mike logs out of the application to log in with his account. Since the last install, Mike’s made more orders than John, so the install event will be attributed to Mike.
 
 Registers
-The Registers Attribution process starts with the backend data. Here we’ll have the User ID, the registration method, City Score, Microzone Score, Device Score, and other relevant information. 
+The Registers Attribution process starts with the backend data. Here we’ll have the User ID, the registration method, City Score, Microzone Score, Device Score, and other relevant information.
 
 Then, we’ll fetch any touchpoint the user has attributed to the event and their devices, from AF and GA. With the touchpoint’s prioritization rules, we can detect the relevant touchpoints and attribute the squad, media source, and media delivery information.
 
 Orders
-The Orders Attribution process also starts with the backend data. Here we’ll have the User ID, the Order ID, the order Vertical, City Score, Microzone Score, Device Score, and other relevant order details. 
+The Orders Attribution process also starts with the backend data. Here we’ll have the User ID, the Order ID, the order Vertical, City Score, Microzone Score, Device Score, and other relevant order details.
 
 Then, we’ll fetch any touchpoint the user has attributed to the event and their devices, from AF and GA. With the touchpoint’s prioritization rules, we can detect the relevant touchpoints and attribute the squad, media source, and media delivery information.
 
@@ -253,7 +252,6 @@ Not all media sources are able to provide the delivery information with the same
 
 In order to normalize the delivery, we can maintain Campaigns, Ad Sets, and Ads naming conventions, that must be followed by the media squads when they set up the campaigns. Then we have to create a process to detect these naming conventions and assign the delivery data to the correct city. We must also be able to detect when campaigns are being delivered to the wrong target, so, if the media source’s granularity allows us, we must also identify the delivery that is out of range. For example, for a media source that provides the data by country, if the raw data is saying the delivery comes from any country other than Paraguay, we’ll assume the delivery is out of range. For Facebook, if a campaign targeted to Asunción D.C. is delivering elsewhere, it’ll be considered out of range. For Google, any delivery detected outside the target city will be considered out of range.
 
-
 Objective Costs & Owner
 In the best scenario, the squad or team setting up the campaign will create it under an Account with exclusive Objective Cost, like Acquisition, Activation, Retargeting, Retention, Operations, Branding, etc. If this condition is applied, the delivery’s Objective Cost will be detected by the Accounts Map, using the Account ID.
 
@@ -277,32 +275,32 @@ The fixed rates will change quarterly, based on the values communicated by the f
 Final Online Media Delivery table
 After all the conversions, validations, and distributions, the final table, to be consumed by the different Attribution Models and pipelines, will be:
 
-Column	Comments
-DATE	Validated Date.
-COUNTRY	Validated Country.
-REGION	Validated Region.
-CITY	Validated City.
-APP	Validated App.
-ACCOUNT_ID	Validated Account ID.
-ACCOUNT_NAME	Validated Account Name.
-CAMPAIGN_ID	Validated Campaign ID.
-CAMPAIGN_NAME	Validated Campaign Name.
-ADSET_ID	Validated Ad set ID.
-ADSET_NAME	Validated Ad set Name.
-AD_ID	Validated Ad ID.
-AD_NAME	Validated Ad Name.
-OBJECTIVE_COST	Validated Objective Cost.
-OS	Validated OS.
-RAW_SOURCE	Original Source.
-SOURCE	Validated Source
-SQUAD	Validated Squad
-CURRENCY	Billing Currency
-ORIGINAL_COST	Cost in the original Currency.
-COST	Converted Cost (USD).
-IMPRESSIONS	Distributed Impressions.
-CLICKS	Distributed Clicks.
-REACH	Distributed Reach.
-ASSUMED_BY	Assumed by (Aranduka or Ally).
+Column Comments
+DATE Validated Date.
+COUNTRY Validated Country.
+REGION Validated Region.
+CITY Validated City.
+APP Validated App.
+ACCOUNT_ID Validated Account ID.
+ACCOUNT_NAME Validated Account Name.
+CAMPAIGN_ID Validated Campaign ID.
+CAMPAIGN_NAME Validated Campaign Name.
+ADSET_ID Validated Ad set ID.
+ADSET_NAME Validated Ad set Name.
+AD_ID Validated Ad ID.
+AD_NAME Validated Ad Name.
+OBJECTIVE_COST Validated Objective Cost.
+OS Validated OS.
+RAW_SOURCE Original Source.
+SOURCE Validated Source
+SQUAD Validated Squad
+CURRENCY Billing Currency
+ORIGINAL_COST Cost in the original Currency.
+COST Converted Cost (USD).
+IMPRESSIONS Distributed Impressions.
+CLICKS Distributed Clicks.
+REACH Distributed Reach.
+ASSUMED_BY Assumed by (Aranduka or Ally).
 Media Costs Distribution
 The distribution process matches the delivery and the attribution data using the touchpoint date. As we’ll be using a 15-day attribution window, the process will recalculate the delivery metrics for the last 15 days every time it runs.
 
@@ -312,7 +310,7 @@ The Media Costs Distributions will work the same way for the different events (R
 
 Installs, Registers, First Orders: Acquisition.
 
-Retention Orders: 
+Retention Orders:
 
 Branding: Branding.
 
@@ -369,54 +367,54 @@ Online Media Attribution Tables
 Once the events have media source, campaigns, costs, and other delivery KPIs attributed to it, the final tables will look something like this:
 
 First Order
-Column	Comments
-EVENT_DATE	Order Date.
-EVENT_TIME	Order Timestamp.
-USER_ID	User ID.
-USER_QUALITY	User Quality (UHVU, HVU, MVU, LVU).
-ORDER_ID	Order ID.
-COUNTRY	Order Country.
-REGION	Order Region.
-CITY	Order City.
-CITY_SCORE	Order City Score.
-MICROZONE_ID	Order Microzone ID.
-MICROZONE_SCORE	Order Microzone Score.
-APP	Order App.
-APP_VERSION	Order App Version.
-OS	Order OS.
-OS_VERSION	Order OS Version.
-DEVICE_TYPE	Order Device Type.
-DEVICE	Order Device.
-DEVICE_SCORE	Order Device Score.
-VERTICAL	Order Vertical.
-TOTAL_COST	Order Total Cost (USD).
-GMV	Order GMV (USD).
-OPS_COST	Order Delivery & Operations Cost (USD).
-DISCOUNTS_COST	Order Discounts Cost (USD).
-CREDITS_COST	Order ArandukApp's Credit Cost (USD).
-GMV_SCORE	Order GMV Score.
-PAYMENT_METHOD	Order Payment Method.
-TOUCH_DATE	Attributed Touchpoint Date.
-TOUCH_TIME	Attribnuted Touchpoint Timestamp.
-TOUCH_TYPE	Attributed Touchpoint Type.
-ACCOUNT_ID	Attributed Account ID.
-ACCOUNT_NAME	Attributed Account Name.
-CAMPAIGN_ID	Attributed Campaign ID.
-CAMPAIGN_NAME	Attributed Campaign Name.
-ADSET_ID	Attributed Ad set ID.
-ADSET_NAME	Attributed Ad set Name.
-AD_ID	Attributed Ad ID.
-AD_NAME	Attributed Ad Name.
-OBJECTIVE_COST	Attributed Objective Cost.
-RAW_SOURCE	Attributed Original Source.
-SOURCE	Attributed Source
-SQUAD	Attributed Squad
-USERS	Attributed Users (% of Conversion).
-MEDIA_COST	Attributed Cost (USD).
-IMPRESSIONS	Attributed Impressions.
-CLICKS	Attributed Clicks.
-REACH	Attributed Reach.
-ASSUMED_BY	Assumed by (Aranduka or Ally).
+Column Comments
+EVENT_DATE Order Date.
+EVENT_TIME Order Timestamp.
+USER_ID User ID.
+USER_QUALITY User Quality (UHVU, HVU, MVU, LVU).
+ORDER_ID Order ID.
+COUNTRY Order Country.
+REGION Order Region.
+CITY Order City.
+CITY_SCORE Order City Score.
+MICROZONE_ID Order Microzone ID.
+MICROZONE_SCORE Order Microzone Score.
+APP Order App.
+APP_VERSION Order App Version.
+OS Order OS.
+OS_VERSION Order OS Version.
+DEVICE_TYPE Order Device Type.
+DEVICE Order Device.
+DEVICE_SCORE Order Device Score.
+VERTICAL Order Vertical.
+TOTAL_COST Order Total Cost (USD).
+GMV Order GMV (USD).
+OPS_COST Order Delivery & Operations Cost (USD).
+DISCOUNTS_COST Order Discounts Cost (USD).
+CREDITS_COST Order ArandukApp's Credit Cost (USD).
+GMV_SCORE Order GMV Score.
+PAYMENT_METHOD Order Payment Method.
+TOUCH_DATE Attributed Touchpoint Date.
+TOUCH_TIME Attribnuted Touchpoint Timestamp.
+TOUCH_TYPE Attributed Touchpoint Type.
+ACCOUNT_ID Attributed Account ID.
+ACCOUNT_NAME Attributed Account Name.
+CAMPAIGN_ID Attributed Campaign ID.
+CAMPAIGN_NAME Attributed Campaign Name.
+ADSET_ID Attributed Ad set ID.
+ADSET_NAME Attributed Ad set Name.
+AD_ID Attributed Ad ID.
+AD_NAME Attributed Ad Name.
+OBJECTIVE_COST Attributed Objective Cost.
+RAW_SOURCE Attributed Original Source.
+SOURCE Attributed Source
+SQUAD Attributed Squad
+USERS Attributed Users (% of Conversion).
+MEDIA_COST Attributed Cost (USD).
+IMPRESSIONS Attributed Impressions.
+CLICKS Attributed Clicks.
+REACH Attributed Reach.
+ASSUMED_BY Assumed by (Aranduka or Ally).
 Business Dashboards
 With the Online Media Attribution Model, Media Delivery Model,  and the Complete User Acquisition Funnel Model tables, available, the BI team can deliver some key dashboards as:
 

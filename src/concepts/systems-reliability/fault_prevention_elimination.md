@@ -1,4 +1,5 @@
 # Fault Prevention: Elimination
+>
 > The second phase of fault prevention is fault elimination. This phase typically involves procedures to find and eliminate the causes of errors.
 
 Although techniques such as code reviews (e.g. linters) and local debugging are used, peer reviews and exhaustive testing with various combinations of input states and environments are not always carried out.

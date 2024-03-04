@@ -1,4 +1,5 @@
 # Infrastructure as Code (IaC) Tools
+>
 > IaC tools like Terraform allow data engineers to define and manage infrastructure using code, ensuring that data environments are reproducible, consistent, and maintainable. This reduces the risk of environment-related inconsistencies and errors.
 
 Infrastructure as Code (IaC) is a crucial practice in DevOps and cloud computing that involves managing and provisioning computing infrastructure through machine-readable definition files rather than physical hardware configuration or interactive configuration tools. IaC enables developers and IT operations teams to automatically manage, monitor, and provision resources through code, which can be versioned and reused, ensuring consistency and efficiency across environments.

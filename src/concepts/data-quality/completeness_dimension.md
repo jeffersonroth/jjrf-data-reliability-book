@@ -1,59 +1,73 @@
 # Completeness Dimension in Data Quality
+>
 > Completeness is a crucial dimension of data quality, referring to the extent to which all required data is present within a dataset. It measures the absence of missing values or records in the data and ensures that datasets are fully populated with all necessary information for accurate analysis and decision-making.
 
 ## Completeness Metrics
+
 To assess completeness, data teams utilize various measures and metrics that quantify the presence of data across different stages of the data infrastructure. Here's how completeness can be evaluated throughout the data ecosystem:
 
 ### Data Sources (Operational Data) - Missing Data Ratio
+
 \\[ Missing \ Data \ Ratio = \frac{Number\ of \ Missing \ Values}{Total \ Number \ of \ Values} \times 100 \\]
 
 **Application**: Analyze operational data to identify missing values across critical fields. Use SQL queries or data profiling tools to calculate the missing data ratio for key attributes.
 
 ### ELT Processes - Record Completeness Rate
+
 \\[ Record \ Completeness \ Rate = \frac{Number \ of \ Complete \ Records}{Total \ Number \ of \ Records} \times 100 \\]
 
 **Application**: After ELT processes, validate the completeness of records by checking for the presence of all expected fields. Automated data quality tools or custom scripts can be used to perform this validation.
 
 ### Data Lakes and Data Warehouses - Dataset Completeness
+
 **Application**: Ensure that all expected data is loaded into the data lake or warehouse and that datasets are complete. This can involve cross-referencing dataset inventories or metadata against expected data sources. There is no fixed formula, it involves assessing the presence of all expected datasets and their completeness.
 
 ### Data Marts - Attribute Completeness
+
 \\[ Attribute \ Completeness = \frac{Number \ of \ Records \ with \ Non-Missing \ Attribute \ Values}{Total \ Number \ of \ Records} \times 100 \\]
 
 **Application**: For data marts tailored to specific business functions, assess the completeness of critical attributes that support business analysis. SQL queries or data quality tools can automate this assessment.
 
 ### Reports and Dashboards - Information Completeness
+
 **Application**: Ensure that reports and dashboards reflect complete information, with no missing data that could lead to incorrect insights. User feedback and manual validation play a key role in this stage. There are no fixed formulas. Qualitative assessment based on user feedback and data validation checks.
 
 ## Completeness Metrics Examples
+
 Completeness as a data quality dimension can be quantified through various metrics tailored to different stages in your data pipeline. Here are some metrics you might consider:
 
 ### Record Completeness by Record
+
 \\[ Completeness \ Rate \ by \ Record = \frac{Number\ of \ Complete \ Records}{Total \ Number \ of \ Records} \times 100 \\]
 
 **Application**: Evaluate the proportion of fully populated records in your datasets, where a "complete record" has all fields filled.
 
 ### Field Completeness Rate
+
 \\[ Field \ Completeness \ Rate = \frac{Number\ of \ Non-Null \ Field \ Entries}{Total \ Number \ of \ Field \ Entries} \times 100 \\]
 
 **Application**: Measure the percentage of non-null entries for a specific field across all records, ensuring critical data attributes are not missing.
 
 ### Source Coverage Rate
+
 \\[ Source \ Coverage \ Rate = \frac{Number \ of \ Fields \ Captured \ by \ Source}{Total \ Number \ of \ Relevant \ Fields \ in \ Source} \times 100 \\]
 
 **Application**: Monitor the extent to which the full range of relevant fields from the source databases are captured during the ELT process.
 
 ### Historical Data Coverage Rate
+
 \\[ Historical \ Data \ Coverage \ Rate = \frac{Number \ of \ Historical \ Records \ Loaded}{Expected \ Number \ of \ Historical \ Records} \times 100 \\]
 
 **Application**: Ensure all expected historical data has been loaded into the data lake or warehouse.
 
 ### Incremental Load Completeness Ratio
+
 \\[ Incremental \ Load \ Completeness \ Ratio = \frac{Number \ of \ Records \ from \ Latest \ Load}{Expected \ Number \ of \ Records \ for \ the \ Period} \times 100 \\]
 
 **Application**: Confirm that the data loaded during the most recent incremental load matches the expected volume for that load period.
 
 ### Data Mart Coverage Rate
+
 \\[ Data \ Mart \ Coverage \ Rate = \frac{Number \ of \ Fields \ Used \ in \ Data \ Mart}{Total \ Number \ of \ Available \ Fields} \times 100 \\]
 
 **Application**: Check whether the data marts include all relevant fields from the staging schemas or upstream data sources for analytics and reporting.
@@ -61,6 +75,7 @@ Completeness as a data quality dimension can be quantified through various metri
 For each of these metrics, you can use Airflow to schedule regular data quality checks, and dbt to perform data tests that evaluate completeness. Implementing these metrics will help ensure that your datasets in the data lake, data warehouse, and data marts are fully populated with the necessary information, enhancing the reliability of your data infrastructure for decision-making processes.
 
 ## Ensuring and Improving Completeness
+
 To maintain high levels of completeness across the data infrastructure, several best practices can be implemented:
 
 * **Data Profiling and Auditing**:

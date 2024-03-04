@@ -1,7 +1,8 @@
 # Data Modelling
 
 ## Kimball/Bottom-Up
-> The design of the Data Marts comes from the business requirements. 
+>
+> The design of the Data Marts comes from the business requirements.
 
 The primary data sources are then evaluated, and ETL tools are used to fetch data from several sources and load it into a staging area of the relational database server.
 Once data is uploaded in the data warehouse staging area, the next phase includes loading data into a dimensional data warehouse model that is denormalized by nature.
@@ -18,6 +19,7 @@ Kimball dimensional modeling allows users to construct several star schemas to f
 <a href="https:&#x2F;&#x2F;www.canva.com&#x2F;design&#x2F;DAFbfV1mwLM&#x2F;view?utm_content=DAFbfV1mwLM&amp;utm_campaign=designshare&amp;utm_medium=embeds&amp;utm_source=link" target="_blank" rel="noopener"><p style="text-align: center;">Kimball Approach to Data Warehouse Lifecycle.</p></a>
 
 ### Advantages
+
 **Fast to construct (quick initial phase)**: it is fast to construct as no normalization is involved, which means swift execution of the initial phase of the data warehousing design process.
 
 **Simplified queries**: in a star schema, most data operators can easily comprehend it because of its denormalized structure, which simplifies querying and analysis.
@@ -31,6 +33,7 @@ Kimball dimensional modeling allows users to construct several star schemas to f
 **Deeper insights**: it allows business intelligence tools to deeper across several star schemas and generates reliable insights.
 
 ### Disadvantages
+
 **No Single Source of Truth**: Data isn’t entirely integrated before reporting, so the idea of a single source of truth is lost.
 
 **Too prone to data irregularities**: this is because, in the denormalization technique, redundant data is added to database tables.
@@ -46,6 +49,7 @@ Kimball dimensional modeling allows users to construct several star schemas to f
 In brief, the Kimball approach has a **low** start-up cost**, is **faster to deliver** the first phase of the data warehouse design, and is faster to release to production (first version), but is suitable for **Tactical** business decision support requirements (versus Strategic), and **addresses individual business requirements** (vs Enterprise-wide). Another important topic that derives from this methodology approach is the **Data Warehouse Bus Architecture**.
 
 ## Inmon/Top-Down
+>
 > Subject-oriented, nonvolatile, integrated, time-variant collection of data in support of management’s decisions.
 
 On the other hand, Bill Inmon, the father of data warehousing, came up with the concept of developing a data warehouse that identifies the main subject areas and entities the enterprise works with, such as customers, products, vendors, etc. Inmon’s definition of a data warehouse is that it is a “subject-oriented, nonvolatile, integrated, time-variant collection of data in support of management’s decisions”.
@@ -58,7 +62,8 @@ Next, the physical model is constructed, which follows the normalized structure.
 
 This Inmon data warehouse methodology proposes constructing data marts separately for each division, such as finance, marketing sales, etc. All the data entering the data warehouse is integrated. The data warehouse acts as a single data source for various data marts to ensure integrity and consistency across the enterprise.
 
-### Advantages
+### Inmon Advantages
+
 **Single Source of Truth**: the data warehouse acts as a unified source of truth for the entire business, where all data is integrated.
 
 **Very low data redundancy**: there’s less possibility of data update irregularities, making the data warehouse ETL processes more straightforward and less susceptible to failure.
@@ -67,7 +72,8 @@ This Inmon data warehouse methodology proposes constructing data marts separatel
 
 **BI-friendly**: It can handle diverse company-wide reporting requirements.
 
-### Disadvantages
+### Inmon Disadvantages
+
 **Increasing complexity**: it increases as multiple tables are added to the data model with time.
 
 **Skilled Human Resources**: resources skilled in data warehouse data modeling are required, which can be expensive and challenging to find.
@@ -79,6 +85,7 @@ This Inmon data warehouse methodology proposes constructing data marts separatel
 In brief, the Inmon has a **high** start-up cost**, requires **more time to be in production** and meet business needs (very large projects with a very broad scope), and **requires a bigger team of specialists**, but is more **suitable for systems and** business changes**, better **integrates with the whole organization**, favors **Strategic business decision support requirements** (vs Tactical), and **facilitates Business Intelligence development**.
 
 ## Hybrid
+>
 > In a hybrid model, the data warehouse is built using the Inmon model, and on top of the integrated data warehouse, the business process-oriented data marts are built using the star schema for reporting.
 
 The hybrid approach provides a **Single Source of Truth** for the data marts, creating highly flexible solutions from a BI point of view.
@@ -101,11 +108,12 @@ Another hybrid methodology is the Data Vault, discussed below.
 <a href="https:&#x2F;&#x2F;www.canva.com&#x2F;design&#x2F;DAFbfihtfys&#x2F;view?utm_content=DAFbfihtfys&amp;utm_campaign=designshare&amp;utm_medium=embeds&amp;utm_source=link" target="_blank" rel="noopener"><p style="text-align: center;">Example of a Hybrid Methodology approach.</p></a>
 
 ## Vault
+
 The **Vault Data Modelling** is a hybrid design, consisting of the best-of-breed practices from both **3rd normal form** and **star schema**.
 
 It is not a true 3rd normal form and breaks some of the rules that 3NF dictates. It is a top-down architecture with a bottom-up design, geared to be strictly a data warehouse. It is not geared to be end-user accessible, which when built, still requires the user of a data mart or star-schema-based release for business purposes.
 
-Data Vault data modeling breaks data into a small number of standard components – the most common of which are **Hubs, **Links**, and **Satellites**. 
+Data Vault data modeling breaks data into a small number of standard components – the most common of which are **Hubs, **Links**, and **Satellites**.
 
 **Hubs** are entities of interest to the business. They contain just a distinct list of business keys and metadata about when each key was first loaded and from where.
 
@@ -135,6 +143,7 @@ A Data Vault complements the Data Lake and is a solution for organizations that 
 <a href="https:&#x2F;&#x2F;www.canva.com&#x2F;design&#x2F;DAFbf7fKp9s&#x2F;view?utm_content=DAFbf7fKp9s&amp;utm_campaign=designshare&amp;utm_medium=embeds&amp;utm_source=link" target="_blank" rel="noopener"><p style="text-align: center;">Example of Data Vault 2.0 Modelling Methodology approach.</p></a>
 
 ## Bus Architecture
+>
 > A bus architecture is composed of a set of tightly integrated data marts that get their power from conformed dimensions and fact tables. A conformed dimension is defined and implemented one time so that it means the same thing everywhere it's used.
 
 A dimension table is the "lookup" table of a dimensional model.
@@ -144,6 +153,7 @@ Dimensions define the who, what, where, when, why, and how of a situation, and a
 
 > To conform to a dimension, every stakeholder must agree on a common definition for the dimension, so that the dimension means the same thing no matter where it’s used.
 
-#TODO: continue from https://www.itprotoday.com/sql-server/data-warehouse-bus-architecture
-
-#TODO. Inflow, Upflow, Downflow, Outflow, and Meta flow.
+```admonish todo
+* [data warehouse bus architecture](https://www.itprotoday.com/sql-server/data-warehouse-bus-architecture)
+* Inflow, Upflow, Downflow, Outflow, and Meta flow
+```

@@ -1,4 +1,5 @@
 # Cold Standby
+
 Cold Standby is a redundancy technique used in data reliability engineering and system design to ensure high availability and continuity of service in the event of system failure. Unlike hot standby or warm standby, where backup systems or components are kept running or at a near-ready state, in cold standby, the backup systems are kept fully offline and are *only activated when the primary system fails or during maintenance periods*. Here’s a deeper look into cold standby:
 
 * **Fully Offline**: The standby system is not running during normal operations; it's fully powered down or in a dormant state.
@@ -9,6 +10,7 @@ Cold Standby is a redundancy technique used in data reliability engineering and 
 Cold standby systems are typically used in scenarios where high availability is not critically required, or the cost of maintaining a hot or warm standby system cannot be justified. Examples include non-critical batch processing systems, archival systems, or in environments where budget constraints do not allow for more sophisticated redundancy setups.
 
 Implementation considerations:
+
 * **Recovery Time**: The time to recover services using a cold standby can be significant since the system needs to be powered up, configured, and data may need to be restored from backups. This recovery time should be considered in the system's SLA (Service Level Agreement).
 * **Regular Testing**: Regular drills or tests should be conducted to ensure that the cold standby system can be brought online effectively and within the expected time frame.
 * **Data Loss Risk**: Given that data synchronization is not continuous, there is a risk of data loss for transactions or data changes that occurred after the last backup. This risk needs to be assessed and mitigated through frequent backups or other means.
