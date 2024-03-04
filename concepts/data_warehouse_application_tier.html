@@ -193,8 +193,29 @@
 <p>One could argue that OLAP is <a href="https://www.kdnuggets.com/2022/10/olap-dead.html">dead</a>, at least in the traditional format (solutions like Mondrian), and cloud/modern solutions should be applied to accompany business fast demand for data.</p>
 <p>Given this book aims to explore business scenarios mostly common to startups, in this sense, given cost restrictions, solutions like Apache Kylin seem to be a better approach (details below). When costs are less restricted, and/or data demands increase, other solutions like AWS Redshift, Snowflake, and Databricks Lakehouse are preferred/recommended.</p>
 <h2 id="snowflake"><a class="header" href="#snowflake">Snowflake</a></h2>
+<div id="admonition-todo" class="admonition admonish-info">
+<div class="admonition-title">
+<p>Todo</p>
+<p><a class="admonition-anchor-link" href="#admonition-todo"></a></p>
+</div>
+<div>
+<ul>
+<li>short description about Snowflake</li>
+</ul>
+</div>
+</div>
 <h2 id="aws-redshift"><a class="header" href="#aws-redshift">AWS Redshift</a></h2>
-<p>#TODO</p>
+<div id="admonition-todo-1" class="admonition admonish-info">
+<div class="admonition-title">
+<p>Todo</p>
+<p><a class="admonition-anchor-link" href="#admonition-todo-1"></a></p>
+</div>
+<div>
+<ul>
+<li>short description about AWS Redshift</li>
+</ul>
+</div>
+</div>
 <h2 id="snowflake-vs-aws-redshift"><a class="header" href="#snowflake-vs-aws-redshift">Snowflake vs AWS Redshift</a></h2>
 <h2 id="databricks-lakehouse-platform"><a class="header" href="#databricks-lakehouse-platform">Databricks Lakehouse Platform</a></h2>
 <blockquote>
@@ -209,10 +230,10 @@
 <p>They use a relational or extended-relational DBMS to save and handle warehouse data, and OLAP middleware to provide missing pieces. They work primarily from the data that resides in a relational database, where the base data and dimension tables are stored as relational tables. This model permits the multidimensional analysis of data.</p>
 </blockquote>
 <p>This technique relies on manipulating the data stored in the relational database to give the presence of traditional OLAP's slicing and dicing functionality.</p>
-<h4 id="advantages"><a class="header" href="#advantages">Advantages</a></h4>
+<h4 id="olap-advantages"><a class="header" href="#olap-advantages">OLAP Advantages</a></h4>
 <p><strong>Can handle large amounts of information</strong>: the data size limitation of ROLAP technology depends on the data size of the underlying RDBMS. So, ROLAP itself does not restrict the data amount.</p>
 <p>RDBMS already comes with a lot of features. So ROLAP technologies, (works on top of the RDBMS) can control these functionalities.</p>
-<h4 id="disadvantages"><a class="header" href="#disadvantages">Disadvantages</a></h4>
+<h4 id="olap-disadvantages"><a class="header" href="#olap-disadvantages">OLAP Disadvantages</a></h4>
 <p><strong>Performance can be slow</strong>: each ROLAP report is a SQL query (or multiple SQL queries) in the relational database. Query times can be prolonged if the underlying data size is large.</p>
 <p><strong>Limited by SQL functionalities</strong>: ROLAP technology relies on developing SQL statements to query the relational database, and SQL statements do not suit all needs.</p>
 <h3 id="multidimensional-olap-servers-molap"><a class="header" href="#multidimensional-olap-servers-molap">Multidimensional OLAP Servers (MOLAP)</a></h3>
@@ -220,22 +241,22 @@
 <p>It is based on a native logical model that directly supports multidimensional data and operations. Data are stored physically in multidimensional arrays, and positional techniques are used to access them.</p>
 </blockquote>
 <p>One of the significant distinctions between MOLAP and ROLAP is that data are summarized and stored in an optimized format in a multidimensional cube, instead of in a relational database. In the MOLAP model, data are structured into proprietary formats by the client's reporting requirements with the calculations pre-generated on the cubes.</p>
-<h4 id="advantages-1"><a class="header" href="#advantages-1">Advantages</a></h4>
+<h4 id="molap-advantages"><a class="header" href="#molap-advantages">MOLAP Advantages</a></h4>
 <p><strong>Excellent Performance</strong>: a MOLAP cube is built for fast information retrieval, and is optimal for slicing and dicing operations.</p>
 <p><strong>Can perform complex calculations</strong>: all evaluations have been pre-generated when the cube is created. Hence, complex calculations are not only possible, but they return quickly.</p>
-<h4 id="disadvantages-1"><a class="header" href="#disadvantages-1">Disadvantages</a></h4>
+<h4 id="molap-disadvantages"><a class="header" href="#molap-disadvantages">MOLAP Disadvantages</a></h4>
 <p><strong>Limited in the amount of information it can handle</strong>: Because all calculations are performed when the cube is built, it is not possible to contain a large amount of data in the cube itself.</p>
 <h3 id="hybrid-olap-servers-holap"><a class="header" href="#hybrid-olap-servers-holap">Hybrid OLAP Servers (HOLAP)</a></h3>
 <blockquote>
 <p>It incorporates the best features of MOLAP and ROLAP into a single architecture. It saves more substantial quantities of detailed data in the relational tables while the aggregations are stored in the pre-calculated cubes. HOLAP also can drill through from the cube down to the relational tables for delineated data.</p>
 </blockquote>
-<h4 id="advantages-2"><a class="header" href="#advantages-2">Advantages</a></h4>
+<h4 id="holap-advantages"><a class="header" href="#holap-advantages">HOLAP Advantages</a></h4>
 <ul>
 <li>It provides the benefits of both MOLAP and ROLAP.</li>
 <li>It provides fast access at all levels of aggregation.</li>
 <li>It balances the disk space requirement, as it only stores the aggregate information on the OLAP server and the detail record remains in the relational database. So no duplicate copy of the detail record is maintained.</li>
 </ul>
-<h4 id="disadvantages-2"><a class="header" href="#disadvantages-2">Disadvantages</a></h4>
+<h4 id="holap-disadvantages"><a class="header" href="#holap-disadvantages">HOLAP Disadvantages</a></h4>
 <p>HOLAP architecture is very complicated because it supports both MOLAP and ROLAP servers.</p>
 <h3 id="olap-servers-options"><a class="header" href="#olap-servers-options">OLAP Servers options</a></h3>
 <h4 id="apache-kylin"><a class="header" href="#apache-kylin">Apache Kylin</a></h4>

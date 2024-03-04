@@ -384,14 +384,17 @@
 <p>This chapter explores the concept of SRE, DataOps, DevOps, Agile methodologies, CI/CD, and other methodologies to ensure reliable data operations.</p>
 </blockquote>
 <div style="break-before: page; page-break-before: always;"></div><h1 id="introduction-to-systems"><a class="header" href="#introduction-to-systems">Introduction to Systems</a></h1>
-<blockquote>
-<p>For the context of this book, a system is a collection of interrelated components working together towards a common goal, often to process, store, and manage data. These components can include hardware, software, databases, procedures, and people, all interacting in a structured way to achieve efficient and reliable data handling.</p>
-</blockquote>
-<p>To better understand data reliability engineering, it's essential to understand a system from a <strong>technical</strong> and <strong>operational perspective</strong>.
-Technically, a system would include the architecture, technology, and protocols that ensure data integrity, availability, and consistency.
-Operationally, it involves the procedures and practices that maintain the system's performance and reliability over time.</p>
-<p>When discussing data reliability, a system is the entire ecosystem supporting the data lifecycle, from creation and storage to retrieval and usage.
-A system includes considerations of redundancy, fault tolerance, backup procedures, security measures, and regular maintenance practices, all of which contribute to the system's overall reliability and the trustworthiness of its service.</p>
+<div id="admonition-defining-systems" class="admonition admonish-tip">
+<div class="admonition-title">
+<p>Defining Systems</p>
+<p><a class="admonition-anchor-link" href="concepts/systems_intro.html#admonition-defining-systems"></a></p>
+</div>
+<div>
+<p>This book defines a system as a <em>complex arrangement of interconnected components, including hardware, software, databases, procedures, and people, that work together towards a common goal</em>. This goal is often to process, store, and manage data efficiently and reliably.</p>
+</div>
+</div>
+<p>Technically, a system includes the architecture, technology, and protocols in place to ensure data integrity, availability, and consistency. Operationally, it entails the procedures and practices employed to maintain the system's performance and reliability over time.</p>
+<p>When discussing data reliability engineering, a system encompasses the entire ecosystem that supports the data lifecycle, which includes data creation, storage, retrieval, and usage. A comprehensive system considers redundancy, fault tolerance, backup procedures, security measures, and regular maintenance practices. All of these elements contribute to the overall reliability of the system and the trustworthiness of its service.</p>
 <div style="break-before: page; page-break-before: always;"></div><h1 id="data-architecture-1"><a class="header" href="#data-architecture-1">Data Architecture</a></h1>
 <blockquote>
 <p>Data Architecture is about how the data is managed, from <strong>collection</strong>, <strong>transformations</strong>, <strong>distribution</strong>, and <strong>consumption</strong>.</p>
@@ -630,7 +633,7 @@ While QuickSight doesn’t connect directly to the data lake, integration with A
 <li>Explorative Zone</li>
 </ul>
 <p>PlantUML rendering error:
-PlantUML did not generate an image, did you forget the @startuml, @enduml block (java -jar /usr/share/plantuml/plantuml.jar -tsvg -nometadata /tmp/.tmpTX3b6j/b510a51550cb2a65e78ebfbb460618d52bd15e92.puml)?</p>
+PlantUML did not generate an image, did you forget the @startuml, @enduml block (java -jar /usr/share/plantuml/plantuml.jar -tsvg -nometadata /tmp/.tmpwF2609/b510a51550cb2a65e78ebfbb460618d52bd15e92.puml)?</p>
 <p style="text-align: center;">Zone Reference Model for Enterprise-Grade Data Lake Management - Meta-model for zones - Attributes.</p>
 <p>Regarding how a zone interacts with other zones and the outside world, we have:</p>
 <ul>
@@ -922,7 +925,7 @@ Both lay their part in analytics.</p>
 <h2 id="other-architecture-approaches"><a class="header" href="#other-architecture-approaches">Other Architecture Approaches</a></h2>
 <p><strong>Data Lake Lambda Architecture for Smart Grids Big Data Analytics</strong>: relies on Lambda architecture that is capable of performing parallel batch and real-time operations on distributed data. See the <a href="https://ieeexplore.ieee.org/abstract/document/8417407">article</a>. Also, see a brief explanation of the Lambda Architecture in this <a href="https://www.researchgate.net/profile/Ajit-Singh-46/publication/331890045_Architecture_of_Data_Lake/links/6061ef85458515e8347d6ecc/Architecture-of-Data-Lake.pdf">article</a>.</p>
 <p>A. A. Munshi and Y. A. -R. I. Mohamed, "Data Lake Lambda Architecture for Smart Grids Big Data Analytics," in IEEE Access, vol. 6, pp. 40463-40471, 2018, doi: 10.1109/ACCESS.2018.2858256.</p>
-<p>Ajit Singh, "Architecture of Data Lake", International Journal of Scientific Research in Computer Science, Engineering and Information Technology (IJSRCSEIT), ISSN : 2456-3307, Volume 5 Issue 2, pp. 411-414, March-April 2019. Available at doi: https://doi.org/10.32628/CSEIT1952121<p><hr/></p>
+<p>Ajit Singh, "Architecture of Data Lake", International Journal of Scientific Research in Computer Science, Engineering and Information Technology (IJSRCSEIT), ISSN : 2456-3307, Volume 5 Issue 2, pp. 411-414, March-April 2019. Available at doi: <a href="https://doi.org/10.32628/CSEIT1952121">https://doi.org/10.32628/CSEIT1952121</a><p><hr/></p>
 <p><a name="footnote-1"><a href="concepts/data_lake.html#to-footnote-1">1</a></a>: Prakash, S. S. (2020). Evolution of Data Warehouses to Data Lakes for Enterprise Business Intelligence. Evolution, 8(4).</p>
 <p><a name="footnote-2"><a href="concepts/data_lake.html#to-footnote-2">2</a></a>: The article discuss data lake optimizations using AWS products, like CloudWatch, Macie, CloudTrail, and S3 Intelligent-Tiering.</p>
 <p><a name="footnote-3"><a href="concepts/data_lake.html#to-footnote-3">3</a></a>: C. Giebler, C. Gröger, E. Hoos, H. Schwarz and B. Mitschang, "A Zone Reference Model for Enterprise-Grade Data Lake Management," 2020 IEEE 24th International Enterprise Distributed Object Computing Conference (EDOC), Eindhoven, Netherlands, 2020, pp. 57-66, doi: 10.1109/EDOC49727.2020.00017.</p>
@@ -1017,7 +1020,17 @@ Both lay their part in analytics.</p>
 <p>There are lots of advantages and disadvantages of priming this approach over a top-down approach (or any of the hybrid or alternative methodologies).</p>
 <p>See all the details of the different data modeling methodologies in the chapter <a href="concepts/./data_modelling.html">Data Modeling</a>. See also the implementation of a three-tier data warehouse architecture in the <a href="https://iopscience.iop.org/article/10.1088/1757-899X/306/1/012061/pdf">paper</a>{{Tangkawarow, I. R. H. T., Runtuwene, J. P. A., Sangkop, F. I., &amp; Ngantung, L. V. F. (2018, February). Three Tier-Level Architecture Data Warehouse Design of Civil Servant Data in Minahasa Regency. In IOP Conference Series: Materials Science and Engineering (Vol. 306, No. 1, p. 012061). IOP Publishing.}} "Three Tier-Level Architecture Data Warehouse Design of Civil Servant Data in Minahasa Regency".</p>
 <h2 id="maturity-stages-1"><a class="header" href="#maturity-stages-1">Maturity Stages</a></h2>
-<p>#TODO</p>
+<div id="admonition-todo" class="admonition admonish-info">
+<div class="admonition-title">
+<p>Todo</p>
+<p><a class="admonition-anchor-link" href="concepts/data_warehouse.html#admonition-todo"></a></p>
+</div>
+<div>
+<ul>
+<li>maturity stages</li>
+</ul>
+</div>
+</div>
 <h2 id="key-components-of-a-data-warehouse"><a class="header" href="#key-components-of-a-data-warehouse">Key Components of a Data Warehouse</a></h2>
 <p><strong>Data Ingestion</strong>: Allows connectors to get data from different data sources and load it into the Data Warehouse. The data will normally come from the Data Lake and External Sources connection (Fivetran), through multiple ETLs (Airflow, services, apps, ETL tools and platforms, etc.).</p>
 <p><strong>Data Storage</strong>: The data is stored in the data warehouse database, a relational database (RDBMS), like Postgres.</p>
@@ -1070,8 +1083,29 @@ Both lay their part in analytics.</p>
 <p>One could argue that OLAP is <a href="https://www.kdnuggets.com/2022/10/olap-dead.html">dead</a>, at least in the traditional format (solutions like Mondrian), and cloud/modern solutions should be applied to accompany business fast demand for data.</p>
 <p>Given this book aims to explore business scenarios mostly common to startups, in this sense, given cost restrictions, solutions like Apache Kylin seem to be a better approach (details below). When costs are less restricted, and/or data demands increase, other solutions like AWS Redshift, Snowflake, and Databricks Lakehouse are preferred/recommended.</p>
 <h2 id="snowflake"><a class="header" href="#snowflake">Snowflake</a></h2>
+<div id="admonition-todo" class="admonition admonish-info">
+<div class="admonition-title">
+<p>Todo</p>
+<p><a class="admonition-anchor-link" href="concepts/data_warehouse_application_tier.html#admonition-todo"></a></p>
+</div>
+<div>
+<ul>
+<li>short description about Snowflake</li>
+</ul>
+</div>
+</div>
 <h2 id="aws-redshift"><a class="header" href="#aws-redshift">AWS Redshift</a></h2>
-<p>#TODO</p>
+<div id="admonition-todo-1" class="admonition admonish-info">
+<div class="admonition-title">
+<p>Todo</p>
+<p><a class="admonition-anchor-link" href="concepts/data_warehouse_application_tier.html#admonition-todo-1"></a></p>
+</div>
+<div>
+<ul>
+<li>short description about AWS Redshift</li>
+</ul>
+</div>
+</div>
 <h2 id="snowflake-vs-aws-redshift"><a class="header" href="#snowflake-vs-aws-redshift">Snowflake vs AWS Redshift</a></h2>
 <h2 id="databricks-lakehouse-platform"><a class="header" href="#databricks-lakehouse-platform">Databricks Lakehouse Platform</a></h2>
 <blockquote>
@@ -1086,10 +1120,10 @@ Both lay their part in analytics.</p>
 <p>They use a relational or extended-relational DBMS to save and handle warehouse data, and OLAP middleware to provide missing pieces. They work primarily from the data that resides in a relational database, where the base data and dimension tables are stored as relational tables. This model permits the multidimensional analysis of data.</p>
 </blockquote>
 <p>This technique relies on manipulating the data stored in the relational database to give the presence of traditional OLAP's slicing and dicing functionality.</p>
-<h4 id="advantages"><a class="header" href="#advantages">Advantages</a></h4>
+<h4 id="olap-advantages"><a class="header" href="#olap-advantages">OLAP Advantages</a></h4>
 <p><strong>Can handle large amounts of information</strong>: the data size limitation of ROLAP technology depends on the data size of the underlying RDBMS. So, ROLAP itself does not restrict the data amount.</p>
 <p>RDBMS already comes with a lot of features. So ROLAP technologies, (works on top of the RDBMS) can control these functionalities.</p>
-<h4 id="disadvantages"><a class="header" href="#disadvantages">Disadvantages</a></h4>
+<h4 id="olap-disadvantages"><a class="header" href="#olap-disadvantages">OLAP Disadvantages</a></h4>
 <p><strong>Performance can be slow</strong>: each ROLAP report is a SQL query (or multiple SQL queries) in the relational database. Query times can be prolonged if the underlying data size is large.</p>
 <p><strong>Limited by SQL functionalities</strong>: ROLAP technology relies on developing SQL statements to query the relational database, and SQL statements do not suit all needs.</p>
 <h3 id="multidimensional-olap-servers-molap"><a class="header" href="#multidimensional-olap-servers-molap">Multidimensional OLAP Servers (MOLAP)</a></h3>
@@ -1097,22 +1131,22 @@ Both lay their part in analytics.</p>
 <p>It is based on a native logical model that directly supports multidimensional data and operations. Data are stored physically in multidimensional arrays, and positional techniques are used to access them.</p>
 </blockquote>
 <p>One of the significant distinctions between MOLAP and ROLAP is that data are summarized and stored in an optimized format in a multidimensional cube, instead of in a relational database. In the MOLAP model, data are structured into proprietary formats by the client's reporting requirements with the calculations pre-generated on the cubes.</p>
-<h4 id="advantages-1"><a class="header" href="#advantages-1">Advantages</a></h4>
+<h4 id="molap-advantages"><a class="header" href="#molap-advantages">MOLAP Advantages</a></h4>
 <p><strong>Excellent Performance</strong>: a MOLAP cube is built for fast information retrieval, and is optimal for slicing and dicing operations.</p>
 <p><strong>Can perform complex calculations</strong>: all evaluations have been pre-generated when the cube is created. Hence, complex calculations are not only possible, but they return quickly.</p>
-<h4 id="disadvantages-1"><a class="header" href="#disadvantages-1">Disadvantages</a></h4>
+<h4 id="molap-disadvantages"><a class="header" href="#molap-disadvantages">MOLAP Disadvantages</a></h4>
 <p><strong>Limited in the amount of information it can handle</strong>: Because all calculations are performed when the cube is built, it is not possible to contain a large amount of data in the cube itself.</p>
 <h3 id="hybrid-olap-servers-holap"><a class="header" href="#hybrid-olap-servers-holap">Hybrid OLAP Servers (HOLAP)</a></h3>
 <blockquote>
 <p>It incorporates the best features of MOLAP and ROLAP into a single architecture. It saves more substantial quantities of detailed data in the relational tables while the aggregations are stored in the pre-calculated cubes. HOLAP also can drill through from the cube down to the relational tables for delineated data.</p>
 </blockquote>
-<h4 id="advantages-2"><a class="header" href="#advantages-2">Advantages</a></h4>
+<h4 id="holap-advantages"><a class="header" href="#holap-advantages">HOLAP Advantages</a></h4>
 <ul>
 <li>It provides the benefits of both MOLAP and ROLAP.</li>
 <li>It provides fast access at all levels of aggregation.</li>
 <li>It balances the disk space requirement, as it only stores the aggregate information on the OLAP server and the detail record remains in the relational database. So no duplicate copy of the detail record is maintained.</li>
 </ul>
-<h4 id="disadvantages-2"><a class="header" href="#disadvantages-2">Disadvantages</a></h4>
+<h4 id="holap-disadvantages"><a class="header" href="#holap-disadvantages">HOLAP Disadvantages</a></h4>
 <p>HOLAP architecture is very complicated because it supports both MOLAP and ROLAP servers.</p>
 <h3 id="olap-servers-options"><a class="header" href="#olap-servers-options">OLAP Servers options</a></h3>
 <h4 id="apache-kylin"><a class="header" href="#apache-kylin">Apache Kylin</a></h4>
@@ -1137,14 +1171,14 @@ Kimball dimensional modeling allows users to construct several star schemas to f
   </iframe>
 </div>
 <a href="https:&#x2F;&#x2F;www.canva.com&#x2F;design&#x2F;DAFbfV1mwLM&#x2F;view?utm_content=DAFbfV1mwLM&amp;utm_campaign=designshare&amp;utm_medium=embeds&amp;utm_source=link" target="_blank" rel="noopener"><p style="text-align: center;">Kimball Approach to Data Warehouse Lifecycle.</p></a>
-<h3 id="advantages-3"><a class="header" href="#advantages-3">Advantages</a></h3>
+<h3 id="advantages"><a class="header" href="#advantages">Advantages</a></h3>
 <p><strong>Fast to construct (quick initial phase)</strong>: it is fast to construct as no normalization is involved, which means swift execution of the initial phase of the data warehousing design process.</p>
 <p><strong>Simplified queries</strong>: in a star schema, most data operators can easily comprehend it because of its denormalized structure, which simplifies querying and analysis.</p>
 <p><strong>Simplified business management</strong>: the data warehouse system footprint is trivial because it focuses on individual business areas and processes rather than the whole company. So, it takes less space in the database, simplifying system management.</p>
 <p><strong>Fast data retrieval</strong>: as data is segregated into fact tables and dimensions.</p>
 <p><strong>Smaller teams</strong>: a smaller team of designers and planners is sufficient for data warehouse management because data source systems are stable, and the data warehouse is process-oriented. Also, query optimization is straightforward, predictable, and controllable.</p>
 <p><strong>Deeper insights</strong>: it allows business intelligence tools to deeper across several star schemas and generates reliable insights.</p>
-<h3 id="disadvantages-3"><a class="header" href="#disadvantages-3">Disadvantages</a></h3>
+<h3 id="disadvantages"><a class="header" href="#disadvantages">Disadvantages</a></h3>
 <p><strong>No Single Source of Truth</strong>: Data isn’t entirely integrated before reporting, so the idea of a single source of truth is lost.</p>
 <p><strong>Too prone to data irregularities</strong>: this is because, in the denormalization technique, redundant data is added to database tables.</p>
 <p><strong>Too difficult and expensive to add new columns</strong>: performance issues may occur due to the addition of columns in the fact table, as these tables are quite in-depth. The addition of new columns can expand the fact table dimensions, affecting its performance.</p>
@@ -1161,12 +1195,12 @@ Kimball dimensional modeling allows users to construct several star schemas to f
 <p>The Inmon design approach uses the <strong>normalized form</strong> for building <strong>entity structure</strong>, avoiding data redundancy as much as possible. This results in clearly identifying business requirements and <strong>preventing any data update irregularities</strong>. Moreover, the advantage of this top-down approach in database design is that it is <strong>robust to business changes</strong> and contains a dimensional perspective of data across data mart.</p>
 <p>Next, the physical model is constructed, which follows the normalized structure. This Inmon model creates a <strong>Single Source of Truth</strong> for the whole business to consume. Data loading becomes less complex due to the normalized structure of the model. However, using this arrangement for querying is challenging as it includes numerous tables and links.</p>
 <p>This Inmon data warehouse methodology proposes constructing data marts separately for each division, such as finance, marketing sales, etc. All the data entering the data warehouse is integrated. The data warehouse acts as a single data source for various data marts to ensure integrity and consistency across the enterprise.</p>
-<h3 id="advantages-4"><a class="header" href="#advantages-4">Advantages</a></h3>
+<h3 id="inmon-advantages"><a class="header" href="#inmon-advantages">Inmon Advantages</a></h3>
 <p><strong>Single Source of Truth</strong>: the data warehouse acts as a unified source of truth for the entire business, where all data is integrated.</p>
 <p><strong>Very low data redundancy</strong>: there’s less possibility of data update irregularities, making the data warehouse ETL processes more straightforward and less susceptible to failure.</p>
 <p><strong>Great flexibility</strong>: it’s easier to update the data warehouse in case there’s any change in the business requirements or source data.</p>
 <p><strong>BI-friendly</strong>: It can handle diverse company-wide reporting requirements.</p>
-<h3 id="disadvantages-4"><a class="header" href="#disadvantages-4">Disadvantages</a></h3>
+<h3 id="inmon-disadvantages"><a class="header" href="#inmon-disadvantages">Inmon Disadvantages</a></h3>
 <p><strong>Increasing complexity</strong>: it increases as multiple tables are added to the data model with time.</p>
 <p><strong>Skilled Human Resources</strong>: resources skilled in data warehouse data modeling are required, which can be expensive and challenging to find.</p>
 <p><strong>Slow setup</strong>: the preliminary setup and delivery are time-consuming.</p>
@@ -1221,9 +1255,18 @@ Dimensions define the who, what, where, when, why, and how of a situation, and a
 <blockquote>
 <p>To conform to a dimension, every stakeholder must agree on a common definition for the dimension, so that the dimension means the same thing no matter where it’s used.</p>
 </blockquote>
-<p>#TODO: continue from https://www.itprotoday.com/sql-server/data-warehouse-bus-architecture</p>
-<p>#TODO. Inflow, Upflow, Downflow, Outflow, and Meta flow.</p>
-<div style="break-before: page; page-break-before: always;"></div><h1 id="slowly-changing-dimensions-scd"><a class="header" href="#slowly-changing-dimensions-scd">Slowly Changing Dimensions (SCD)</a></h1>
+<div id="admonition-todo" class="admonition admonish-info">
+<div class="admonition-title">
+<p>Todo</p>
+<p><a class="admonition-anchor-link" href="concepts/data_modelling.html#admonition-todo"></a></p>
+</div>
+<div>
+<ul>
+<li><a href="https://www.itprotoday.com/sql-server/data-warehouse-bus-architecture">data warehouse bus architecture</a></li>
+<li>Inflow, Upflow, Downflow, Outflow, and Meta flow</li>
+</ul>
+</div>
+</div><div style="break-before: page; page-break-before: always;"></div><h1 id="slowly-changing-dimensions-scd"><a class="header" href="#slowly-changing-dimensions-scd">Slowly Changing Dimensions (SCD)</a></h1>
 <p>Slowly Changing Dimensions (SCDs) are concepts in data warehousing used to manage and track changes in dimension data over time. Dimensions in data warehousing refer to descriptive attributes related to business entities, such as products, customers, or geographical locations, which can change over time. Managing these changes accurately is crucial for historical reporting, trend analysis, and decision-making.</p>
 <h2 id="type-0-fixed-dimension"><a class="header" href="#type-0-fixed-dimension">Type 0: Fixed Dimension</a></h2>
 <blockquote>
@@ -1273,7 +1316,7 @@ Type 1 and Type 0 are generally more performant for queries due to the lack of v
 <p>In practice, the choice of SCD type depends on the specific business requirements, the importance of historical accuracy, query performance needs, and the complexity that the organization can manage. It's not uncommon for a single data warehouse to employ multiple SCD types across different dimensions based on these considerations.</p>
 <div style="break-before: page; page-break-before: always;"></div><div style="break-before: page; page-break-before: always;"></div><div style="break-before: page; page-break-before: always;"></div><div style="break-before: page; page-break-before: always;"></div><div style="break-before: page; page-break-before: always;"></div><div style="break-before: page; page-break-before: always;"></div><h1 id="operational-data-stores-ods--data-operational-stores-dos"><a class="header" href="#operational-data-stores-ods--data-operational-stores-dos">Operational Data Stores (ODS) &amp; Data Operational Stores (DOS)</a></h1>
 <p>The terms "Operational Data Stores" (ODS) and "Data Operational Stores" (DOS) are often used interchangeably in the industry, but they can represent slightly different concepts depending on the context in which they are used. Here's a breakdown of the differences based on common interpretations:</p>
-<h3 id="operational-data-stores-ods"><a class="header" href="#operational-data-stores-ods">Operational Data Stores (ODS)</a></h3>
+<h3 id="operational-data-stores-ods---overview"><a class="header" href="#operational-data-stores-ods---overview">Operational Data Stores (ODS) - Overview</a></h3>
 <ul>
 <li>
 <p><strong>Purpose</strong>:
@@ -1292,7 +1335,7 @@ An ODS often involves data integration, cleansing, and consolidation processes t
 Used by business users and analysts for operational reporting, customer service inquiries, and as an interim store for data that will be loaded into a data warehouse for historical analysis.</p>
 </li>
 </ul>
-<h3 id="data-operational-stores-dos"><a class="header" href="#data-operational-stores-dos">Data Operational Stores (DOS)</a></h3>
+<h3 id="data-operational-stores-dos---overview"><a class="header" href="#data-operational-stores-dos---overview">Data Operational Stores (DOS) - Overview</a></h3>
 <ul>
 <li>
 <p><strong>Purpose</strong>:
@@ -1327,9 +1370,9 @@ ODS is more closely aligned with operational reporting and analytics, providing 
 </li>
 </ul>
 <p>In practice, the distinction between ODS and DOS can be subtle and depends on the organizational context and specific architecture. Some organizations might use the term DOS to describe what is traditionally known as an ODS, especially when emphasizing the operational aspect of the data store.</p>
-<h2 id="operational-data-stores-ods-1"><a class="header" href="#operational-data-stores-ods-1">Operational Data Stores (ODS)</a></h2>
+<h2 id="operational-data-stores-ods"><a class="header" href="#operational-data-stores-ods">Operational Data Stores (ODS)</a></h2>
 <p>Operational Data Stores (ODS) are centralized databases designed to integrate data from multiple sources for additional operations such as reporting, analysis, and operational support. The ODS is optimized for fast query performance and near real-time analysis, making it a critical component for day-to-day business operations.</p>
-<h3 id="goals-2"><a class="header" href="#goals-2">Goals</a></h3>
+<h3 id="ods-goals"><a class="header" href="#ods-goals">ODS Goals</a></h3>
 <ul>
 <li>
 <p><strong>Data Integration</strong>:
@@ -1399,9 +1442,9 @@ Cloud services like AWS RDS, Azure SQL Database, and Google Cloud SQL offer mana
 </li>
 </ul>
 <p>In the landscape of modern data architecture, ODS plays a vital role in bridging the gap between raw operational data and analytical insights. By providing timely, integrated, and cleansed data, an ODS enhances operational efficiency and decision-making, complementing the deeper, historical insights derived from data lakes and warehouses.</p>
-<h2 id="data-operational-stores-dos-1"><a class="header" href="#data-operational-stores-dos-1">Data Operational Stores (DOS)</a></h2>
+<h2 id="data-operational-stores-dos"><a class="header" href="#data-operational-stores-dos">Data Operational Stores (DOS)</a></h2>
 <p>Data operational stores (DOS) are specialized databases designed to support operational applications with real-time, transactional data requirements. Unlike analytical data stores, such as data warehouses and data lakes that are optimized for large-scale querying and analysis, DOS is optimized for high-performance, transactional workloads where speed and efficiency of read/write operations are critical.</p>
-<h3 id="goals-3"><a class="header" href="#goals-3">Goals</a></h3>
+<h3 id="dos-goals"><a class="header" href="#dos-goals">DOS Goals</a></h3>
 <ul>
 <li>
 <p><strong>Real-Time Operations</strong>:
@@ -1475,24 +1518,46 @@ While traditional DOS is often used for operational reporting and analysis acros
 <p>The operational databases within a microservices architecture can be viewed as a variant of DOS, with a narrower scope aligned with the microservice they support. The key distinction lies in the microservices' emphasis on service autonomy, data encapsulation, and decentralized data management, which contrasts with the broader, integrative purpose of traditional DOS in providing a unified operational data view. This nuanced understanding bridges the conceptual gap between microservices databases and DOS, highlighting their shared operational focus while acknowledging their architectural and functional differences.</p>
 <p>In modern architectures, both play crucial roles, with microservices' databases ensuring service independence and a DOS enhancing organizational-wide data accessibility and decision-making.</p>
 <div style="break-before: page; page-break-before: always;"></div><h1 id="systems-reliability"><a class="header" href="#systems-reliability">Systems Reliability</a></h1>
-<blockquote>
-<p>The reliability of a system is the property that allows the system's service to be justifiably qualified as reliable.
-It measures how the system conforms to the complete, consistent, comprehensible, and unambiguous specification of its behavior.</p>
-</blockquote>
-<p>This chapter introduces the concepts of reliability and safety explored by Alan Burns and Andy Wellings in their book<sup><a name="to-footnote-1"><a href="concepts/systems_reliability.html#footnote-1">1</a></a></sup> "Real-Time Systems and Programming Languages: ADA 95, Real-Time Java, and Real-Time POSIX." These concepts, developed by different industries mainly between the 60s and 90s, and the concepts of Site Reliability Engineering (SRE), developed from the 2000s onwards, in addition to complementing it with reliability concepts worked on in other engineering fields (mechanical, industrial, etc.), as well as contextualizing it with concepts currently worked on in the software and computer systems industry.</p>
-<p>I divided this chapter into three parts, each exploring one of these concepts:</p>
-<p><a href="concepts/./systems-reliability/impediments.html"><strong>Impediments</strong></a></p>
-<blockquote>
+<div id="admonition-defining-system-reliability" class="admonition admonish-tip">
+<div class="admonition-title">
+<p>Defining System Reliability</p>
+<p><a class="admonition-anchor-link" href="concepts/systems_reliability.html#admonition-defining-system-reliability"></a></p>
+</div>
+<div>
+<p>System reliability is determined by its adherence to a clear, complete, consistent, and unambiguous behavior specification. A reliable system performs predictably, without errors or failures, and is able to consistently deliver its intended service.</p>
+</div>
+</div>
+<p>This chapter aims to provide an in-depth understanding of the concepts of Reliability and Safety as presented by Alan Burns and Andy Wellings in their book<sup><a name="to-footnote-1"><a href="concepts/systems_reliability.html#footnote-1">1</a></a></sup> "Real-Time Systems and Programming Languages." These concepts, and many others, have been developed by different industries over several decades and consolidated in the sub-discipline of systems engineering known today as <strong>Reliability Engineering</strong>.</p>
+<p>I will supplement these concepts by looking at reliability in other engineering fields, such as mechanical and industrial engineering, drawing comparisons and analogies to help you better understand the core concepts.</p>
+<p>Lastly, I will contextualize these concepts with the current reliability concepts being worked on in the software, data, and computer systems industry. I will explore many tools and frameworks data teams can use to design and manage reliable data systems.</p>
+<p>I divided this chapter into <a href="concepts/./systems-reliability/impediments.html"><strong>Impediments</strong></a>, <a href="concepts/./systems-reliability/attributes.html"><strong>Attributes</strong></a>, and <a href="concepts/./systems-reliability/mechanisms.html"><strong>Mechanisms</strong></a>.</p>
+<div id="admonition-impediments" class="admonition admonish-abstract">
+<div class="admonition-title">
+<p>Impediments</p>
+<p><a class="admonition-anchor-link" href="concepts/systems_reliability.html#admonition-impediments"></a></p>
+</div>
+<div>
 <p>Impediments prevent a system from functioning perfectly or are a consequence of it. This chapter covers impediment classification, including <strong>Failures</strong>, <strong>Errors</strong>, and <strong>Defects</strong>.</p>
-</blockquote>
-<p><a href="concepts/./systems-reliability/attributes.html"><strong>Attributes</strong></a></p>
-<blockquote>
+</div>
+</div>
+<div id="admonition-attributes" class="admonition admonish-abstract">
+<div class="admonition-title">
+<p>Attributes</p>
+<p><a class="admonition-anchor-link" href="concepts/systems_reliability.html#admonition-attributes"></a></p>
+</div>
+<div>
 <p>Attributes are the ways and measures by which the <strong>quality of a reliable service can be estimated</strong>.</p>
-</blockquote>
-<p><a href="concepts/./systems-reliability/mechanisms.html"><strong>Mechanisms</strong></a></p>
-<blockquote>
+</div>
+</div>
+<div id="admonition-mechanisms" class="admonition admonish-abstract">
+<div class="admonition-title">
+<p>Mechanisms</p>
+<p><a class="admonition-anchor-link" href="concepts/systems_reliability.html#admonition-mechanisms"></a></p>
+</div>
+<div>
 <p>This chapter addresses system reliability mechanisms by internalizing and adopting best practices or applying specific methodologies, architectures, or tools. This chapter aims to create a <strong>data system reliability framework</strong> that engineers can adopt from earlier implementation phases, such as the design phase.</p>
-</blockquote>
+</div>
+</div>
 <p align="center">
   <img src="concepts/../assets/concepts/systems-reliability/concept_v1.svg" alt="Systems Reliability - Concepts">
 </p><p><hr/>
@@ -1501,51 +1566,257 @@ It measures how the system conforms to the complete, consistent, comprehensible,
 <p align="center">
   <img src="concepts/systems-reliability/../../assets/concepts/systems-reliability/impediments_v1.svg" alt="System Reliability - Impediments">
 </p>
-<h2 id="failures-errors-and-faults"><a class="header" href="#failures-errors-and-faults">Failures, Errors, and Faults</a></h2>
-<blockquote>
-<p><strong>Failures</strong> result from unexpected internal problems that a system eventually exhibits in its external behavior. These problems are called <strong>errors</strong>, and their mechanical or algorithmic causes are called <strong>faults</strong>.
-When a system's behavior deviates from its specifications, it is said to have a <strong>failure</strong>, or the system has <strong>failed</strong>.</p>
-</blockquote>
-<p>Systems are composed of <strong>components</strong>, each of which can be considered a system. Thus, a failure in one system can induce a fault in another, which may result in an error and a potential failure of this system. This failure can continue and affect any related system, and so on.</p>
-<p>A faulty system component will produce an error under specific circumstances during the system's lifetime. <em>A system is the sum of external and internal states</em> regarding state transitions.</p>
+<h2 id="failures-errors-and-defects"><a class="header" href="#failures-errors-and-defects">Failures, Errors, and Defects</a></h2>
+<div id="admonition-classifying-system-impediments" class="admonition admonish-tip">
+<div class="admonition-title">
+<p>Classifying System Impediments</p>
+<p><a class="admonition-anchor-link" href="concepts/systems-reliability/impediments.html#admonition-classifying-system-impediments"></a></p>
+</div>
+<div>
+<p><strong>Failures</strong> result from unexpected internal problems that a system eventually exhibits in its external behavior. These problems are called <strong>errors</strong>, and their mechanical or algorithmic causes are called <strong>defects</strong> or <strong>faults</strong>.</p>
+<p>When a system's behavior deviates from its specifications, it is said to have a <strong>failure</strong>, or the system has <strong>failed</strong>.</p>
+</div>
+</div>
+<p>Systems are composed of <strong>components</strong>, each of which can be considered a system. Thus, a failure in one system can induce a fault in another, which may result in an error and a potential failure of this system. This failure can continue and affect any related system, and so on. A faulty system component will produce an error under specific circumstances during the system's lifetime.</p>
+<div id="admonition-hint" class="admonition admonish-tip">
+<div class="admonition-title">
+<p>Hint</p>
+<p><a class="admonition-anchor-link" href="concepts/systems-reliability/impediments.html#admonition-hint"></a></p>
+</div>
+<div>
+<p>A system is the sum of external and internal states</p>
+</div>
+</div>
 <p>An external state not specified in the system's behavior will be considered a failure. The system consists of many components (each with its many states), all contributing to its external behavior. The combination of these components' states is called the system's internal state. <em>An unspecified internal state is considered an error, and the component that produced the illegal state transition is said to be faulty</em>.</p>
-<p>The three types of failures:</p>
+<div id="admonition-types-of-failures" class="admonition admonish-example">
+<div class="admonition-title">
+<p>Types of Failures</p>
+<p><a class="admonition-anchor-link" href="concepts/systems-reliability/impediments.html#admonition-types-of-failures"></a></p>
+</div>
+<div>
 <ul>
 <li><strong>Transient failures</strong>: Begin at a specific time, remain in the system for some time, and then disappear.</li>
 <li><strong>Permanent failures</strong>: Begin at a certain point and stay in the system until they are repaired.</li>
 <li><strong>Intermittent failures</strong>: These are transient failures that occur sporadically.</li>
 </ul>
-<h2 id="failure-modes"><a class="header" href="#failure-modes">Failure Modes</a></h2>
-<blockquote>
+</div>
+</div>
+<h2 id="failure-modes-classification"><a class="header" href="#failure-modes-classification">Failure Modes Classification</a></h2>
+<div id="admonition-defining-failure-modes" class="admonition admonish-tip">
+<div class="admonition-title">
+<p>Defining Failure Modes</p>
+<p><a class="admonition-anchor-link" href="concepts/systems-reliability/impediments.html#admonition-defining-failure-modes"></a></p>
+</div>
+<div>
 <p>A system can fail in many ways. A designer may design the system assuming a finite number of failure modes. However, the system may fail in ways that were not anticipated.</p>
-</blockquote>
-<p>We can classify the failure modes of the services that a system provides, which are:</p>
+<p>The failure mode is the specific way in which a part, component, function, equipment, subsystem, or system fails.</p>
+</div>
+</div>
+<p>There are three types of failure modes that can occur with a service: <strong>value failures</strong>, <strong>timing failures</strong>, and <strong>arbitrary failures</strong>. Value failures, also known as value domain failures, happen when the value associated with a service is incorrect. Timing failures, or time domain failures, occur when a service is completed at the wrong time. Arbitrary failures are a combination of value and timing failures.</p>
+<h3 id="value-domain-failures"><a class="header" href="#value-domain-failures">Value Domain Failures</a></h3>
+<p>Value domain failures can be classified into <strong>boundary errors</strong> and <strong>wrong values</strong>. Boundary errors occur when the value is outside the expected range, including typing errors. Those errors are commonly referred to as <strong>constraint errors</strong>. On the other hand, wrong values occur when the value is within the correct range but is still incorrect.</p>
+<div id="admonition-constraint-errors-examples" class="admonition admonish-example">
+<div class="admonition-title">
+<p>Constraint Errors Examples</p>
+<p><a class="admonition-anchor-link" href="concepts/systems-reliability/impediments.html#admonition-constraint-errors-examples"></a></p>
+</div>
+<div>
 <ul>
-<li><strong>Value failures</strong> (Value Domain): The value associated with the service is incorrect.</li>
-<li><strong>Timing failure</strong> (Time Domain): The service is completed at the wrong time.</li>
-<li><strong>Arbitrary failure</strong>: A combination of value and timing failures.</li>
+<li>
+<p>An Apache Airflow DAG aggregating daily sales data failed due to an exceeding total sales amount, leading to a constraint error while inserting data into the database. This issue may have arisen because of an unexpected sales surge or an aggregation logic error.</p>
+</li>
+<li>
+<p>An ELT process may encounter a boundary error when migrating data from a source database field defined as VARCHAR(255) to a target database field defined as VARCHAR(50) if a record contains more than 50 characters. This could result in insertion failure and data loss.</p>
+</li>
+<li>
+<p>A dbt model calculates a new metric that results in negative inventory levels for certain products due to an error in the calculation logic. The database schema enforces a constraint that inventory levels must be zero or positive, leading to a boundary error when the model tries to update the inventory table with negative values.</p>
+</li>
 </ul>
-<p>Failures in the value domain are classified into:</p>
+</div>
+</div>
+<div id="admonition-wrong-value-examples" class="admonition admonish-example">
+<div class="admonition-title">
+<p>Wrong Value Examples</p>
+<p><a class="admonition-anchor-link" href="concepts/systems-reliability/impediments.html#admonition-wrong-value-examples"></a></p>
+</div>
+<div>
 <ul>
-<li><strong>Boundary Error (Constraint Error)</strong>: The value is outside the expected range of values, including errors in data typing.</li>
-<li><strong>Wrong value</strong>: The incorrect value is within the correct range of values.</li>
+<li>
+<p>An Airflow task that updates a customer's loyalty points based on recent purchases mistakenly doubles the points due to a bug in the calculation logic. Although the updated loyalty points value remains within the acceptable range, it is incorrect, constituting a wrong value error.</p>
+</li>
+<li>
+<p>A dbt model designed to compute monthly revenue projections mistakenly uses an outdated exchange rate for currency conversion. While within the expected range, the resulting revenue figures are inaccurate due to the use of the wrong exchange rate, leading to a wrong value error.</p>
+</li>
 </ul>
-<p>Failures in the time domain can cause the service to be delivered:</p>
+</div>
+</div>
+<p>In each of these examples, the integrity and reliability of the data are compromised, either by violating predefined constraints (boundary errors) or by producing incorrect but plausible values (wrong value errors). Addressing these errors requires thorough validation, testing, and monitoring of data pipelines to ensure data accuracy and integrity.</p>
+<h3 id="time-domain-failures"><a class="header" href="#time-domain-failures">Time Domain Failures</a></h3>
+<p>Failures in the time domain can cause the service to be delivered <strong>too early</strong>, <strong>too late</strong>, <strong>infinitely late</strong>, or <strong>unexpected</strong>.</p>
 <ul>
-<li><strong>Too early</strong> (premature): the service is delivered before it is required.</li>
-<li><strong>Too late</strong> (delayed or performance error): the service is delivered after it is required.</li>
-<li><strong>Infinitely late</strong> (omission failure): the service is never delivered.</li>
-<li><strong>Unexpected</strong> (commission failure or improvisation): the service is delivered without being expected.</li>
+<li>
+<p><em>Too early</em>: <strong>premature failures</strong> cause a service to be delivered before it is required.</p>
+<div id="admonition-premature-failure-examples" class="admonition admonish-example">
+<div class="admonition-title">
+<p>Premature Failure Examples</p>
+<p><a class="admonition-anchor-link" href="concepts/systems-reliability/impediments.html#admonition-premature-failure-examples"></a></p>
+</div>
+<div>
+<ul>
+<li>
+<p>An Airflow DAG is scheduled to trigger a data processing task that depends on data to be loaded by an earlier task. If the preceding task finishes earlier than expected and the dependent task starts processing incomplete data, it results in premature service delivery.</p>
+</li>
+<li>
+<p>The AWS DMS task is configured to replicate data from a source to a target at specific intervals. If the replication task starts before the source system completes its data update cycle, it may replicate incomplete or stale data, leading to premature data availability in the target system.</p>
+</li>
 </ul>
+</div>
+</div>
+</li>
+<li>
+<p><em>Too late</em>: <strong>delayed failures</strong> cause a service to be delivered after it is required. These failures are commonly referred to as <strong>performance errors</strong>.</p>
+<div id="admonition-performance-errors-examples" class="admonition admonish-example">
+<div class="admonition-title">
+<p>Performance Errors Examples</p>
+<p><a class="admonition-anchor-link" href="concepts/systems-reliability/impediments.html#admonition-performance-errors-examples"></a></p>
+</div>
+<div>
+<ul>
+<li>
+<p>A dbt model aggregating daily sales data for reporting is scheduled to run after ETL processes are complete. If the dbt job experiences delays due to resource constraints or errors, the aggregated data becomes available too late, missing the reporting deadline.</p>
+</li>
+<li>
+<p>An Airflow DAG that coordinates a sequence of data processing tasks is experiencing unexpected delays due to a long-running task. This is causing subsequent tasks, including critical data loads into the data warehouse, to be delayed, ultimately impacting downstream processes such as reporting or analytics.</p>
+</li>
+</ul>
+</div>
+</div>
+</li>
+<li>
+<p><em>Infinitely late</em>: <strong>omission failures</strong> cause the service never to be delivered.</p>
+<div id="admonition-omission-failure-examples" class="admonition admonish-example">
+<div class="admonition-title">
+<p>Omission Failure Examples</p>
+<p><a class="admonition-anchor-link" href="concepts/systems-reliability/impediments.html#admonition-omission-failure-examples"></a></p>
+</div>
+<div>
+<ul>
+<li>
+<p>An ELT task configured to migrate data from a legacy system to a new data lake fails to start due to configuration errors or connectivity issues. The data migration does not occur, resulting in an omission failure where the data service (migration) is never delivered.</p>
+</li>
+<li>
+<p>A dbt model responsible for transforming and loading data into a data mart is disabled or deleted inadvertently. The transformation and load process is never executed, leading to an omission failure where the expected data mart is never populated.</p>
+</li>
+</ul>
+</div>
+</div>
+</li>
+<li>
+<p><em>Unexpected</em>: <strong>commission failures</strong> cause the service to be delivered without being expected. This type of failure is known as <strong>improvisation</strong>.</p>
+<div id="admonition-improvisation-failure-examples" class="admonition admonish-example">
+<div class="admonition-title">
+<p>Improvisation Failure Examples</p>
+<p><a class="admonition-anchor-link" href="concepts/systems-reliability/impediments.html#admonition-improvisation-failure-examples"></a></p>
+</div>
+<div>
+<ul>
+<li>
+<p>An Airflow DAG designed for monthly data archival is mistakenly triggered due to a manual intervention or a scheduling error, causing an unexpected data archival operation. This unexpected service might interfere with ongoing data processing or analysis tasks.</p>
+</li>
+<li>
+<p>A dbt model meant to run on an ad-hoc basis for data cleanup is inadvertently included in the regular ETL schedule. This results in unexpected data modifications or deletions, which could affect data integrity and downstream data usage.</p>
+</li>
+</ul>
+</div>
+</div>
+</li>
+</ul>
+<p>These examples highlight how timing issues in data processing workflows can lead to various types of service failures, emphasizing the importance of precise scheduling, error handling, and system monitoring to ensure timely and reliable data services.</p>
+<h3 id="failure-modes-types"><a class="header" href="#failure-modes-types">Failure Modes Types</a></h3>
 <p>In general, we can assume the modes in which a system can fail:</p>
 <ul>
-<li><strong>Uncontrolled failure</strong>: A system that produces arbitrary errors in value and time domains (including improvisation errors).</li>
-<li><strong>Delay failure</strong>: A system that produces correct services in the value domain but suffers from timing delays</li>
-<li><strong>Silent failure</strong>: A system that produces correct services in value and time domains until it fails. The only possible failure is omission, and when it occurs, all subsequent services will also suffer from omission failures.</li>
-<li><strong>Crash failure</strong>: A system presenting all the properties of a silent failure but allowing other systems to detect it has entered the state of silent failure.</li>
-<li><strong>Controlled failure</strong>: A system that fails in a specified and controlled manner.</li>
+<li>
+<p><strong>Uncontrolled failure</strong>: A system that produces arbitrary errors in value and time domains (including improvisation errors).</p>
+<div id="admonition-uncontrolled-failure-example" class="admonition admonish-example">
+<div class="admonition-title">
+<p>Uncontrolled Failure Example</p>
+<p><a class="admonition-anchor-link" href="concepts/systems-reliability/impediments.html#admonition-uncontrolled-failure-example"></a></p>
+</div>
+<div>
+<p>An Airflow DAG responsible for data aggregation experiences a memory leak in one of its tasks, leading to erratic behavior where some data records are processed multiple times (value domain error), some are skipped entirely (omission error), and others are processed at unpredictable intervals (time domain error). The failures are arbitrary, impacting both the correctness of the data (value domain) and its timeliness (time domain).</p>
+</div>
+</div>
+</li>
+<li>
+<p><strong>Delay failure</strong>: A system that produces correct services in the value domain but suffers from timing delays.</p>
+<div id="admonition-delay-failure-example" class="admonition admonish-example">
+<div class="admonition-title">
+<p>Delay Failure Example</p>
+<p><a class="admonition-anchor-link" href="concepts/systems-reliability/impediments.html#admonition-delay-failure-example"></a></p>
+</div>
+<div>
+<p>A dbt model that calculates end-of-month financial summaries experiences significant delays due to resource contention in the data warehouse. While the financial summaries are eventually calculated correctly (value domain is unaffected), they are not available in time for the monthly financial meeting (time domain error), constituting a delayed failure.</p>
+</div>
+</div>
+</li>
+<li>
+<p><strong>Silent failure</strong>: A system that produces correct services in value and time domains until it fails. The only possible failure is omission, and when it occurs, all subsequent services will also suffer from omission failures.</p>
+<div id="admonition-silent-failure-example" class="admonition admonish-example">
+<div class="admonition-title">
+<p>Silent Failure Example</p>
+<p><a class="admonition-anchor-link" href="concepts/systems-reliability/impediments.html#admonition-silent-failure-example"></a></p>
+</div>
+<div>
+<p>An ELT task silently fails to replicate a subset of records from a source database to a data lake due to a transient network issue. The task does not report any errors; subsequent data loads continue as if nothing happened. However, the missing records lead to incomplete datasets in the data lake, representing omission failures that are not immediately apparent.</p>
+</div>
+</div>
+</li>
+<li>
+<p><strong>Crash failure</strong>: A system presenting all the properties of a silent failure but allowing other systems to detect it has entered the state of silent failure.</p>
+<div id="admonition-crash-failure-example" class="admonition admonish-example">
+<div class="admonition-title">
+<p>Crash Failure Example</p>
+<p><a class="admonition-anchor-link" href="concepts/systems-reliability/impediments.html#admonition-crash-failure-example"></a></p>
+</div>
+<div>
+<p>The Airflow scheduler, responsible for triggering and managing data pipeline tasks, crashes due to an overload of scheduled jobs exceeding the system's available resources. The crash causes all data processing jobs managed by Airflow to halt, leading to a temporary cessation of data operations. However, the built-in health check mechanisms of the Airflow system detect the scheduler's unavailability and automatically initiate a restart procedure. The rapid detection and response to the crash ensure that the data pipelines are restored with minimal manual intervention, showcasing another instance of a crash failure where the system's failure state is quickly identified and mitigated.</p>
+</div>
+</div>
+</li>
+<li>
+<p><strong>Controlled failure</strong>: A system that fails in a specified and controlled manner.</p>
+<div id="admonition-crash-failure-example-1" class="admonition admonish-example">
+<div class="admonition-title">
+<p>Crash Failure Example</p>
+<p><a class="admonition-anchor-link" href="concepts/systems-reliability/impediments.html#admonition-crash-failure-example-1"></a></p>
+</div>
+<div>
+<p>A dbt model performing data validation detects that incoming data exceeds predefined quality thresholds (e.g., too many null values in a critical column). The model deliberately enters a controlled failure state, rejecting the batch of data and triggering a predefined alert to the data quality team for review without processing the faulty data further.</p>
+</div>
+</div>
+</li>
 </ul>
 <p>A system consistently producing the correct services is classified as failure-free.</p>
+<h3 id="impediments-use-case"><a class="header" href="#impediments-use-case">Impediments Use Case</a></h3>
+<p>Let's consider an example involving a data pipeline that aggregates daily sales data for a retail company:</p>
+<p><strong>Scenario</strong>:
+A data pipeline is designed to aggregate sales data from various stores at the end of each day and update a dashboard that the management team uses for decision-making.
+The pipeline includes several steps: extracting data from store databases, transforming the data to align with the aggregation schema, and loading the data into a data warehouse where the aggregation occurs.</p>
+<p><strong>Failure</strong>:
+One day, the management team noticed that the <em>sales dashboard had not been updated with the previous day's data</em>, even though the day had ended and the data should have been available.</p>
+<p><strong>Error</strong>:
+Investigation reveals that the data transformation step in the pipeline failed due to an <em>unexpected data format in one of the store's sales records</em>.
+This malformed record caused the transformation script to terminate unexpectedly, preventing the aggregated data from being loaded into the data warehouse.</p>
+<p><strong>Defect</strong>:
+The root cause (defect) is identified as a <em>lack of proper data validation and error handling</em> within the transformation script. The script was not designed to handle records with this particular formatting anomaly, leading to its premature termination.</p>
+<p><strong>Failure Domain</strong>:
+This is a failure in the <em>time domain</em>, as the expected service (daily sales data aggregation) was not delivered on time.</p>
+<p><strong>Failure Mode Classification</strong>:
+The failure mode can be classified as <em>infinitely late</em> (omission failure) since the service (updating the dashboard with aggregated sales data) was never delivered for the affected day.</p>
+<p><strong>Failure Mode Type</strong>:
+Given that the system did not alert the failure (the dashboard wasn't updated, with no error messages or alerts), this can be classified as a <em>silent failure</em>. The system failed to perform its intended function without providing any notification of the problem.</p>
+<p>In this example, the defect in the data pipeline (<em>lack of robust data validation and error handling</em>) led to an error (<em>transformation script termination</em>), resulting in a failure (<em>dashboard not updated with the latest sales data</em>).
+Understanding the distinction between defects, errors, and failures helps diagnose issues within systems and implement effective countermeasures to prevent recurrence.</p>
 <div style="break-before: page; page-break-before: always;"></div><h1 id="attributes"><a class="header" href="#attributes">Attributes</a></h1>
 <h2 id="reliability"><a class="header" href="#reliability">Reliability</a></h2>
 <blockquote>
@@ -2147,7 +2418,7 @@ Most orchestrators provide monitoring and logging features, giving insights into
 <li><a href="https://airflow.apache.org/"><strong>Apache Airflow</strong></a>: An open-source platform designed to programmatically author, schedule, and monitor workflows with a rich user interface and extensive integration capabilities.</li>
 <li><a href="https://github.com/spotify/luigi"><strong>Luigi</strong></a>: Developed by Spotify, Luigi is a Python-based tool that can manage complex pipelines of batch jobs, handle dependency resolution, manage workflows, and visualize workflows.</li>
 <li><a href="https://nifi.apache.org/"><strong>Apache NiFi</strong></a>: Provides an easy-to-use, web-based interface for designing, controlling, and monitoring data flows. It supports data routing, transformation, and system mediation logic.</li>
-<li><a href="https://www.prefect.io/"><strong>Prefect</strong></a>: A newer tool that simplifies the automation and monitoring of data workflows, strongly emphasizing error handling and recovery.</li>
+<li><a href="https://www.prefect.io/"><strong>Prefect</strong></a>: A tool that simplifies the automation and monitoring of data workflows, strongly emphasizing error handling and recovery.</li>
 <li><a href="https://aws.amazon.com/step-functions/"><strong>AWS Step Functions</strong></a>: A serverless orchestrator that makes it easy to sequence AWS Lambda functions and multiple AWS services into business-critical applications through a visual interface.</li>
 <li><a href="https://argoproj.github.io/workflows/"><strong>Argo</strong></a>: A Kubernetes-native workflow orchestration tool that enables the definition and execution of complex, parallel workflows directly within a Kubernetes cluster, making it ideal for containerized jobs and applications.</li>
 </ul>
@@ -2224,7 +2495,7 @@ Ensure that orchestration tools and workflows comply with data security and priv
 <p>dbt supports incremental data processing, allowing more efficient transformations by only processing new or changed data since the last run. This approach reduces the likelihood of processing errors due to handling smaller volumes of data at a time and ensures that the data remains up-to-date and reliable.</p>
 <h3 id="modular-and-reusable-code"><a class="header" href="#modular-and-reusable-code">Modular and Reusable Code</a></h3>
 <p>Modular and reusable SQL code is encouraged by dbt, which helps to prevent redundancy and potential errors in data transformation scripts. Standardization of common logic and reuse of macros and packages across projects further enhances the reliability of data transformations.</p>
-<p>By incorporating these features and best practices into the data transformation process, dbt plays a vital role in ensuring data accuracy, consistency, and reliability. This is critical for making well-informed business decisions and maintaining trust in data systems.</p>
+<p>By incorporating these features and best practices into the data transformation process, dbt is vital in ensuring data accuracy, consistency, and reliability. This is critical for making well-informed business decisions and maintaining trust in data systems.</p>
 <div style="break-before: page; page-break-before: always;"></div><h1 id="infrastructure-as-code-iac-tools"><a class="header" href="#infrastructure-as-code-iac-tools">Infrastructure as Code (IaC) Tools</a></h1>
 <blockquote>
 <p>IaC tools like Terraform allow data engineers to define and manage infrastructure using code, ensuring that data environments are reproducible, consistent, and maintainable. This reduces the risk of environment-related inconsistencies and errors.</p>
@@ -2325,83 +2596,55 @@ Integrating containers in CI/CD pipelines is straightforward, enabling automated
 <p>Implementing this process involves automating the analysis of data process logs, commits, pull requests, and tickets. In the context of data reliability engineering, implementing it involves establishing a structured approach to systematically identifying, analyzing, and resolving data-related failures.</p>
 <p>Here's how it can be adapted and adopted:</p>
 <ol>
-<li><strong>Failure Identification</strong></li>
-</ol>
+<li><strong>Failure Identification</strong>
 <ul>
-<li>
-<p><strong>Automated Monitoring</strong>:
-Use observability and monitoring tools to detect anomalies, failures, or performance issues in data pipelines, databases, or data processing tasks automatically. Configure all data tools to collect and send metrics.</p>
-</li>
-<li>
-<p><strong>Alerting Mechanisms</strong>:
-Set up alerts to notify relevant teams or individuals when potential data issues are detected, ensuring prompt attention.</p>
-</li>
+<li><strong>Automated Monitoring</strong>:
+Use observability and monitoring tools to detect anomalies, failures, or performance issues in data pipelines, databases, or data processing tasks automatically. Configure all data tools to collect and send metrics.</li>
+<li><strong>Alerting Mechanisms</strong>:
+Set up alerts to notify relevant teams or individuals when potential data issues are detected, ensuring prompt attention.</li>
 </ul>
-<ol start="2">
-<li><strong>Reporting</strong></li>
-</ol>
+</li>
+<li><strong>Reporting</strong>
 <ul>
-<li>
-<p><strong>Centralized Reporting Platform</strong>:
-Implement a system to report, document, and track all identified issues. This platform should capture details about the failure, including when it occurred, its impact, and any immediate observations.</p>
-</li>
-<li>
-<p><strong>User Reporting</strong>:
-Encourage users and stakeholders to report data discrepancies or issues, providing a clear and straightforward mechanism.</p>
-</li>
+<li><strong>Centralized Reporting Platform</strong>:
+Implement a system to report, document, and track all identified issues. This platform should capture details about the failure, including when it occurred, its impact, and any immediate observations.</li>
+<li><strong>User Reporting</strong>:
+Encourage users and stakeholders to report data discrepancies or issues, providing a clear and straightforward mechanism.</li>
 </ul>
-<ol start="3">
-<li><strong>Analysis</strong></li>
-</ol>
+</li>
+<li><strong>Analysis</strong>
 <ul>
-<li>
-<p><strong>Root Cause Analysis</strong>:
-For each reported failure, conduct a thorough analysis to determine the underlying cause. This might involve reviewing data logs, pipeline configurations, or recent changes to the data systems.</p>
-</li>
-<li>
-<p><strong>Collaboration</strong>:
-Involve cross-functional teams in the analysis to gain diverse perspectives, especially when dealing with complex data ecosystems.</p>
-</li>
+<li><strong>Root Cause Analysis</strong>:
+For each reported failure, conduct a thorough analysis to determine the underlying cause. This might involve reviewing data logs, pipeline configurations, or recent changes to the data systems.</li>
+<li><strong>Collaboration</strong>:
+Involve cross-functional teams in the analysis to gain diverse perspectives, especially when dealing with complex data ecosystems.</li>
 </ul>
-<ol start="4">
-<li><strong>Corrective Actions</strong></li>
-</ol>
+</li>
+<li><strong>Corrective Actions</strong>
 <ul>
-<li>
-<p><strong>Develop Solutions</strong>:
-Based on the root cause analysis, develop appropriate solutions to address the identified issues. This could range from fixing data quality errors to redesigning aspects of the data pipeline for greater resilience.</p>
-</li>
-<li>
-<p><strong>Implement Changes</strong>:
-Roll out the corrective measures, ensuring that changes are tested and monitored to confirm they effectively resolve the issue.</p>
-</li>
+<li><strong>Develop Solutions</strong>:
+Based on the root cause analysis, develop appropriate solutions to address the identified issues. This could range from fixing data quality errors to redesigning aspects of the data pipeline for greater resilience.</li>
+<li><strong>Implement Changes</strong>:
+Roll out the corrective measures, ensuring that changes are tested and monitored to confirm they effectively resolve the issue.</li>
 </ul>
-<ol start="5">
-<li><strong>Follow-Up</strong></li>
-</ol>
+</li>
+<li><strong>Follow-Up</strong>
 <ul>
-<li>
-<p><strong>Verification</strong>:
-After implementing corrective actions, verify that the issue has been resolved and that the solution hasn't introduced new problems.</p>
-</li>
-<li>
-<p><strong>Documentation</strong>:
-Document the issue, the analysis process, the corrective action taken, and the implementation results for future reference.</p>
-</li>
+<li><strong>Verification</strong>:
+After implementing corrective actions, verify that the issue has been resolved and that the solution hasn't introduced new problems.</li>
+<li><strong>Documentation</strong>:
+Document the issue, the analysis process, the corrective action taken, and the implementation results for future reference.</li>
 </ul>
-<ol start="6">
-<li><strong>Continuous Improvement</strong></li>
-</ol>
+</li>
+<li><strong>Continuous Improvement</strong>
 <ul>
-<li>
-<p><strong>Feedback Loop</strong>:
-Use insights gained from FRACAS to identify areas for improvement in data processes and systems, aiming to prevent similar issues from occurring in the future.</p>
-</li>
-<li>
-<p><strong>Training and Knowledge Sharing</strong>:
-Share lessons learned from failure analyses and corrective actions with the broader team to build a continuous learning and improvement culture.</p>
-</li>
+<li><strong>Feedback Loop</strong>:
+Use insights gained from FRACAS to identify areas for improvement in data processes and systems, aiming to prevent similar issues from occurring in the future.</li>
+<li><strong>Training and Knowledge Sharing</strong>:
+Share lessons learned from failure analyses and corrective actions with the broader team to build a continuous learning and improvement culture.</li>
 </ul>
+</li>
+</ol>
 <h3 id="notes-on-failure-identification-and-reporting-steps"><a class="header" href="#notes-on-failure-identification-and-reporting-steps">Notes on <em>Failure Identification</em> and <em>Reporting</em> Steps</a></h3>
 <p>These steps can be done through automated monitoring tools that alert the team to issues such as failed ETL jobs, discrepancies in data validation checks, or performance bottlenecks.</p>
 <h3 id="notes-on-analysis-steps"><a class="header" href="#notes-on-analysis-steps">Notes on <em>Analysis</em> Steps</a></h3>
@@ -2418,54 +2661,38 @@ Share lessons learned from failure analyses and corrective actions with the broa
 <p>Implementing FRACAS in data reliability engineering helps resolve data issues more effectively and contributes to building a more reliable, resilient, and high-quality data infrastructure over time.</p>
 <h2 id="use-case"><a class="header" href="#use-case">Use Case</a></h2>
 <p>Although complete use cases will be explored in the book's next section, here's a small use case to understand the implementation and importance of FRACAS.</p>
-<h3 id="background"><a class="header" href="#background">Background:</a></h3>
+<h3 id="background"><a class="header" href="#background">Background</a></h3>
 <p>A mature startup, "PaTech," has a complex data ecosystem with Airflow orchestrating ELT jobs via Airbyte, ETL processes through dbt models deployed in Kubernetes, and various data quality and observability tools like DataDog in place. Hundreds of engineers access the company's data lake and warehouse, while its data marts serve thousands of employees across all departments.</p>
-<h3 id="challenge"><a class="header" href="#challenge">Challenge:</a></h3>
+<h3 id="challenge"><a class="header" href="#challenge">Challenge</a></h3>
 <p>Despite having advanced tools and processes, DataTech Innovations faces recurring data issues affecting data quality and availability, leading to decision-making delays and decreased trust in data systems.</p>
 <h3 id="fracas-implementation"><a class="header" href="#fracas-implementation">FRACAS Implementation</a></h3>
 <ol>
-<li>
-<p><strong>Failure Identification</strong>:
-An anomaly detected by DataDog in the data warehouse triggers an alert. The issue involves a significant discrepancy in sales data reported by the ETL process, impacting downstream data marts and reports.</p>
-</li>
-<li>
-<p><strong>Initial Reporting</strong>:
-The alert automatically generates a Jira ticket, categorizing the issue as a high-priority data quality incident. The ticket includes initial diagnostic information from DataDog and Airflow logs.</p>
-</li>
-<li>
-<p><strong>Data Collection and Analysis</strong>:
-The data reliability engineering team, using logs from Airflow and Airbyte, identifies that a recent schema change in the source CRM system wasn't reflected in the ELT job, leading to incomplete sales data extraction.</p>
-</li>
-<li>
-<p><strong>Root Cause Analysis (RCA)</strong>:
-Further investigation reveals that the change notification from the CRM team was overlooked due to a communication gap, preventing the necessary adjustments in the ELT job.</p>
-</li>
-<li>
-<p>Corrective Actions:</p>
-</li>
-</ol>
+<li><strong>Failure Identification</strong>:
+An anomaly detected by DataDog in the data warehouse triggers an alert. The issue involves a significant discrepancy in sales data reported by the ETL process, impacting downstream data marts and reports.</li>
+<li><strong>Initial Reporting</strong>:
+The alert automatically generates a Jira ticket, categorizing the issue as a high-priority data quality incident. The ticket includes initial diagnostic information from DataDog and Airflow logs.</li>
+<li><strong>Data Collection and Analysis</strong>:
+The data reliability engineering team, using logs from Airflow and Airbyte, identifies that a recent schema change in the source CRM system wasn't reflected in the ELT job, leading to incomplete sales data extraction.</li>
+<li><strong>Root Cause Analysis (RCA)</strong>:
+Further investigation reveals that the change notification from the CRM team was overlooked due to a communication gap, preventing the necessary adjustments in the ELT job.</li>
+<li>Corrective Actions:
 <ul>
 <li><strong>Immediate</strong>:
 The ELT job is temporarily halted, and the schema change is manually incorporated to restore the integrity of the sales data. The corrected data is re-processed, and the affected data marts and reports are updated.</li>
 <li><strong>Systemic</strong>:
 The team implements a new protocol for schema change notifications, including automated alerts and a checklist in the Airflow job deployment process to verify source system schemas.</li>
 </ul>
-<ol start="6">
-<li><strong>Preventive Measures</strong>:</li>
-</ol>
+</li>
+<li><strong>Preventive Measures</strong>:
 <ul>
 <li>Introducing automated schema detection and validation in Airbyte to flag discrepancies before data extraction.</li>
 <li>Establishing a cross-functional data schema change committee to ensure all schema changes are reviewed and communicated effectively across teams.</li>
 </ul>
-<ol start="7">
-<li>
-<p><strong>Documentation and Knowledge Sharing</strong>:
-The incident, RCA, corrective, and preventive measures are documented in the company's knowledge base. A company-wide presentation is conducted to share learnings, emphasizing the importance of communication and automated checks in preventing similar incidents.</p>
 </li>
-<li>
-<p><strong>Monitoring and Review</strong>:
-DataDog alerts are fine-tuned to detect similar anomalies more effectively. The effectiveness of the new schema change protocol and automated checks are monitored over the next quarter to ensure no repeat incidents.</p>
-</li>
+<li><strong>Documentation and Knowledge Sharing</strong>:
+The incident, RCA, corrective, and preventive measures are documented in the company's knowledge base. A company-wide presentation is conducted to share learnings, emphasizing the importance of communication and automated checks in preventing similar incidents.</li>
+<li><strong>Monitoring and Review</strong>:
+DataDog alerts are fine-tuned to detect similar anomalies more effectively. The effectiveness of the new schema change protocol and automated checks are monitored over the next quarter to ensure no repeat incidents.</li>
 </ol>
 <h3 id="outcome"><a class="header" href="#outcome">Outcome</a></h3>
 <p>By implementing FRACAS, PaTech resolves the immediate data discrepancy issue and strengthens its data reliability framework, reducing the likelihood of similar failures. The incident fosters a culture of continuous improvement and cross-departmental collaboration, enhancing overall data trustworthiness and decision-making efficiency across the organization.</p>
@@ -2724,37 +2951,35 @@ Entity resolution is not a one-time task. Continuous monitoring and updating are
 <h3 id="4-variants-of-master-data-architecture"><a class="header" href="#4-variants-of-master-data-architecture">4 Variants of Master Data Architecture</a></h3>
 <p>Jochen and Weisbecker (2014) proposed four variants of master data architecture to address different organizational needs and data management strategies. Each variant offers a unique approach to handling master data, considering factors like centralization, data governance, and system integration. Here's a summary of each:</p>
 <ol>
-<li><strong>Centralized Master Data Management</strong></li>
-</ol>
+<li><strong>Centralized Master Data Management</strong>
 <ul>
 <li><strong>Description</strong>: This architecture involves a single, centralized repository where all master data is stored and managed. It serves as the authoritative source for all master data across the organization.</li>
 <li><strong>Advantages</strong>: Ensures consistency and uniformity of master data across the enterprise, simplifies governance, and reduces data redundancy.</li>
 <li><strong>Challenges</strong>: Requires significant investment in a centralized system, can lead to bottlenecks, and may be less responsive to local or departmental needs.</li>
 </ul>
-<ol start="2">
-<li><strong>Decentralized Master Data Management</strong></li>
-</ol>
+</li>
+<li><strong>Decentralized Master Data Management</strong>
 <ul>
 <li><strong>Description</strong>: In this variant, master data is managed locally within different departments or business units without a central repository. Each unit maintains its master data.</li>
 <li><strong>Advantages</strong>: Offers flexibility and allows departments to manage data according to their specific needs and processes, enabling quicker responses to local requirements.</li>
 <li><strong>Challenges</strong>: Increases the risk of data inconsistencies across the organization, complicates data integration efforts, and makes enterprise-wide data governance more challenging.</li>
 </ul>
-<ol start="3">
-<li><strong>Registry Model</strong></li>
-</ol>
+</li>
+<li><strong>Registry Model</strong>
 <ul>
 <li><strong>Description</strong>: The registry model uses a centralized registry that stores references (links or keys) to master data but not the master data itself. The actual data remains in local systems.</li>
 <li><strong>Advantages</strong>: Provides a unified view of where master data is located across the organization without centralizing the data itself, facilitating data integration and consistency checks.</li>
 <li><strong>Challenges</strong>: Does not eliminate data redundancies and may require complex synchronization mechanisms to ensure data consistency across systems.</li>
 </ul>
-<ol start="4">
-<li><strong>Hub and Spoke Model</strong></li>
-</ol>
+</li>
+<li><strong>Hub and Spoke Model</strong>
 <ul>
 <li><strong>Description</strong>: This architecture features a central hub where master data is consolidated, synchronized, and distributed to various "spoke" systems throughout the organization.</li>
 <li><strong>Advantages</strong>: Balances centralization and decentralization by allowing data to be managed centrally while also supporting local system requirements. It facilitates data sharing and consistency.</li>
 <li><strong>Challenges</strong>: Can be complex to implement and maintain, requiring robust integration and data synchronization capabilities between the hub and spoke systems.</li>
 </ul>
+</li>
+</ol>
 <p>Each of these master data architecture variants offers distinct benefits and poses unique challenges, making them suitable for different organizational contexts and data management objectives. The choice among these variants depends on factors such as the organization's size, complexity, data governance maturity, and specific business needs.</p>
 <h3 id="information-architecture-principles"><a class="header" href="#information-architecture-principles">Information Architecture Principles</a></h3>
 <p>Information Architecture (IA) principles guide the design and organization of information to make it accessible and usable. In the context of master data management, these principles help ensure that master data is effectively organized and can support business needs.</p>
@@ -2928,59 +3153,55 @@ Entity resolution is not a one-time task. Continuous monitoring and updating are
 </ul>
 <p>When creating a Master Data Management (MDM) service, organizations need to consider various architectural options to best meet their business requirements, data governance policies, and technical landscape. These options range from centralized systems to more distributed approaches, each with its advantages and challenges. Here are some common MDM architecture options:</p>
 <ol>
-<li><strong>Centralized MDM Architecture</strong></li>
-</ol>
+<li><strong>Centralized MDM Architecture</strong>
 <ul>
 <li><strong>Description</strong>: A single, central MDM system serves as the authoritative source for all master data across the organization. All applications and systems that require master data integrate with this central repository.</li>
 <li><strong>Pros</strong>: Ensures consistency and a single version of the truth for master data; simplifies governance and data quality management.</li>
 <li><strong>Cons</strong>: Can create bottlenecks; may be less responsive to local or department-specific needs; single point of failure risk.</li>
 <li><strong>Challenges</strong>: Requires significant upfront investment and effort to integrate disparate systems and data sources.</li>
 </ul>
-<ol start="2">
-<li><strong>Decentralized MDM Architecture</strong></li>
-</ol>
+</li>
+<li><strong>Decentralized MDM Architecture</strong>
 <ul>
 <li><strong>Description</strong>: Master data is managed locally within different departments or business units, with no overarching central MDM system. Each unit maintains its master data according to its specific needs.</li>
 <li><strong>Pros</strong>: Offers flexibility; allows departments to manage data according to their unique requirements; can be quicker to implement within individual departments.</li>
 <li><strong>Cons</strong>: Risk of data inconsistencies and duplication across the organization; challenges in achieving a unified view of data; more complex data integration efforts.</li>
 <li><strong>Challenges</strong>: Coordinating data governance and ensuring data quality across decentralized systems can be complex.</li>
 </ul>
-<ol start="3">
-<li><strong>Registry MDM Architecture</strong></li>
-</ol>
+</li>
+<li><strong>Registry MDM Architecture</strong>
 <ul>
 <li><strong>Description</strong>: A centralized registry holds references (links or keys) to master data but not the master data itself. Actual data remains in source systems, and the registry provides a unified view.</li>
 <li><strong>Pros</strong>: Reduces data redundancy; easier to implement than a fully centralized model; provides a unified view without moving data.</li>
 <li><strong>Cons</strong>: Data quality and consistency must still be managed in each source system; requires robust integration and synchronization mechanisms.</li>
 <li><strong>Challenges</strong>: Ensuring real-time synchronization and maintaining the accuracy of links or references in the registry.</li>
 </ul>
-<ol start="4">
-<li><strong>Hub and Spoke MDM Architecture</strong></li>
-</ol>
+</li>
+<li><strong>Hub and Spoke MDM Architecture</strong>
 <ul>
 <li><strong>Description</strong>: Combines elements of centralized and decentralized architectures. A central hub manages core master data, which is then synchronized with "spoke" systems where additional, local master data management may occur.</li>
 <li><strong>Pros</strong>: Balances central control with flexibility for local departments; facilitates data sharing and consistency.</li>
 <li><strong>Cons</strong>: Complexity in managing and synchronizing data between the hub and spokes; potential for data conflicts between central and local systems.</li>
 <li><strong>Challenges</strong>: Designing effective synchronization and conflict resolution mechanisms; managing the scalability of the system.</li>
 </ul>
-<ol start="5">
-<li><strong>Federated MDM Architecture</strong></li>
-</ol>
+</li>
+<li><strong>Federated MDM Architecture</strong>
 <ul>
-<li>**Description: A federated approach integrates multiple MDM systems, each managing master data for specific domains (e.g., customers, products) or regions, without a single central system.</li>
+<li><strong>Description</strong>: A federated approach integrates multiple MDM systems, each managing master data for specific domains (e.g., customers, products) or regions, without a single central system.</li>
 <li><strong>Pros</strong>: Allows specialized management of different data domains; can accommodate different governance models; suitable for large, geographically dispersed organizations.</li>
 <li><strong>Cons</strong>: Complex data integration and interoperability challenges; risk of inconsistencies between federated systems.</li>
 <li><strong>Challenges</strong>: Ensuring seamless data integration and consistent governance across federated MDM systems.</li>
 </ul>
-<ol start="6">
-<li><strong>Multi-Domain MDM Architecture</strong></li>
-</ol>
+</li>
+<li><strong>Multi-Domain MDM Architecture</strong>
 <ul>
 <li><strong>Description</strong>: A single MDM system is designed to manage multiple master data domains (e.g., customers, and products) within one platform, providing a unified approach to managing diverse data types.</li>
 <li><strong>Pros</strong>: Simplifies the IT landscape; reduces integration complexity; offers a consistent approach to data governance and quality across domains.</li>
 <li><strong>Cons</strong>: Requires a flexible and scalable MDM solution; may be challenging to meet the specific needs of each data domain within a single system.</li>
 <li><strong>Challenges</strong>: Balancing the flexibility needed for different data domains with the desire for a unified MDM platform.</li>
 </ul>
+</li>
+</ol>
 <h2 id="mdm-ownership"><a class="header" href="#mdm-ownership">MDM Ownership</a></h2>
 <p>Responsibility for Master Data Management (MDM) within an organization can vary significantly depending on the company's size, structure, and how data-driven its operations are. Regardless of company size, MDM responsibilities must involve collaboration between IT departments (who understand the technical aspects of data management and integration) and business units (who understand the data's practical use and business implications). This collaborative approach ensures that MDM efforts are aligned with business objectives and that master data is both technically sound and relevant to business needs.</p>
 <h3 id="small-companies"><a class="header" href="#small-companies">Small Companies</a></h3>
@@ -4303,7 +4524,7 @@ LIMIT 1;
 <p>This table would contain information about the measurement tasks themselves, including the system used for measurement and the specific source and target systems involved. Like the metrics table, this would also be a type 4 SCD, preserving a historical record of measurement tasks' lifecycles (<code>data_quality_measurement_tasks_history</code>), and the current tasks (<code>data_quality_measurement_tasks</code>).</p>
 <h3 id="data_quality_metric_records-table"><a class="header" href="#data_quality_metric_records-table"><code>data_quality_metric_records</code> Table</a></h3>
 <p>Serving as the transaction table, <code>data_quality_metric_records</code> would hold the actual records of measurements. Each record would reference the relevant metric (<code>data_quality_metrics.id</code>) and measurement task (<code>data_quality_measurement_tasks</code>), along with the unique identifier for the run (<code>run_id</code>), and a URL pointing to the relevant logs for that run (<code>run_url</code>).</p>
-<h3 id="data-quality-service-1"><a class="header" href="#data-quality-service-1">Data Quality Service</a></h3>
+<h3 id="dedicated-service"><a class="header" href="#dedicated-service">Dedicated Service</a></h3>
 <p>The setup would be supported by a dedicated service, tentatively named <code>data-quality-service</code>, which would facilitate the recording of measurement data, potentially through an API. The management of <code>data_quality_metrics</code> and <code>data_quality_measurement_tasks</code> through their APIs, while not detailed in this example, would be a critical part of the overall data quality infrastructure.</p>
 <p>By segregating metric definitions, measurement tasks, and actual measurement records into distinct tables and managing them through a dedicated service, organizations can ensure that data quality tracking is both efficient and scalable. This approach allows for the precise pinpointing of data quality issues and facilitates a structured way to track improvements and changes over time.</p>
 <h2 id="taking-action"><a class="header" href="#taking-action">Taking Action</a></h2>
@@ -4743,6 +4964,7 @@ LIMIT 1;
   <img src="test/../assets/example/example-instad.svg" alt="Example - Original">
 </p><div style="break-before: page; page-break-before: always;"></div><h1 id="test-mdbook-admonish"><a class="header" href="#test-mdbook-admonish">Test mdbook-admonish</a></h1>
 <!-- toc -->
+<!-- markdownlint-disable fenced-code-language -->
 <!-- markdown-link-check-disable -->
 <h2 id="introduction"><a class="header" href="#introduction">Introduction</a></h2>
 <p><a href="https://crates.io/crates/mdbook-admonish"><img src="https://img.shields.io/crates/v/mdbook-admonish.svg" alt="Latest version" /></a>

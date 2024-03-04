@@ -202,83 +202,55 @@
 <p>Implementing this process involves automating the analysis of data process logs, commits, pull requests, and tickets. In the context of data reliability engineering, implementing it involves establishing a structured approach to systematically identifying, analyzing, and resolving data-related failures.</p>
 <p>Here's how it can be adapted and adopted:</p>
 <ol>
-<li><strong>Failure Identification</strong></li>
-</ol>
+<li><strong>Failure Identification</strong>
 <ul>
-<li>
-<p><strong>Automated Monitoring</strong>:
-Use observability and monitoring tools to detect anomalies, failures, or performance issues in data pipelines, databases, or data processing tasks automatically. Configure all data tools to collect and send metrics.</p>
-</li>
-<li>
-<p><strong>Alerting Mechanisms</strong>:
-Set up alerts to notify relevant teams or individuals when potential data issues are detected, ensuring prompt attention.</p>
-</li>
+<li><strong>Automated Monitoring</strong>:
+Use observability and monitoring tools to detect anomalies, failures, or performance issues in data pipelines, databases, or data processing tasks automatically. Configure all data tools to collect and send metrics.</li>
+<li><strong>Alerting Mechanisms</strong>:
+Set up alerts to notify relevant teams or individuals when potential data issues are detected, ensuring prompt attention.</li>
 </ul>
-<ol start="2">
-<li><strong>Reporting</strong></li>
-</ol>
+</li>
+<li><strong>Reporting</strong>
 <ul>
-<li>
-<p><strong>Centralized Reporting Platform</strong>:
-Implement a system to report, document, and track all identified issues. This platform should capture details about the failure, including when it occurred, its impact, and any immediate observations.</p>
-</li>
-<li>
-<p><strong>User Reporting</strong>:
-Encourage users and stakeholders to report data discrepancies or issues, providing a clear and straightforward mechanism.</p>
-</li>
+<li><strong>Centralized Reporting Platform</strong>:
+Implement a system to report, document, and track all identified issues. This platform should capture details about the failure, including when it occurred, its impact, and any immediate observations.</li>
+<li><strong>User Reporting</strong>:
+Encourage users and stakeholders to report data discrepancies or issues, providing a clear and straightforward mechanism.</li>
 </ul>
-<ol start="3">
-<li><strong>Analysis</strong></li>
-</ol>
+</li>
+<li><strong>Analysis</strong>
 <ul>
-<li>
-<p><strong>Root Cause Analysis</strong>:
-For each reported failure, conduct a thorough analysis to determine the underlying cause. This might involve reviewing data logs, pipeline configurations, or recent changes to the data systems.</p>
-</li>
-<li>
-<p><strong>Collaboration</strong>:
-Involve cross-functional teams in the analysis to gain diverse perspectives, especially when dealing with complex data ecosystems.</p>
-</li>
+<li><strong>Root Cause Analysis</strong>:
+For each reported failure, conduct a thorough analysis to determine the underlying cause. This might involve reviewing data logs, pipeline configurations, or recent changes to the data systems.</li>
+<li><strong>Collaboration</strong>:
+Involve cross-functional teams in the analysis to gain diverse perspectives, especially when dealing with complex data ecosystems.</li>
 </ul>
-<ol start="4">
-<li><strong>Corrective Actions</strong></li>
-</ol>
+</li>
+<li><strong>Corrective Actions</strong>
 <ul>
-<li>
-<p><strong>Develop Solutions</strong>:
-Based on the root cause analysis, develop appropriate solutions to address the identified issues. This could range from fixing data quality errors to redesigning aspects of the data pipeline for greater resilience.</p>
-</li>
-<li>
-<p><strong>Implement Changes</strong>:
-Roll out the corrective measures, ensuring that changes are tested and monitored to confirm they effectively resolve the issue.</p>
-</li>
+<li><strong>Develop Solutions</strong>:
+Based on the root cause analysis, develop appropriate solutions to address the identified issues. This could range from fixing data quality errors to redesigning aspects of the data pipeline for greater resilience.</li>
+<li><strong>Implement Changes</strong>:
+Roll out the corrective measures, ensuring that changes are tested and monitored to confirm they effectively resolve the issue.</li>
 </ul>
-<ol start="5">
-<li><strong>Follow-Up</strong></li>
-</ol>
+</li>
+<li><strong>Follow-Up</strong>
 <ul>
-<li>
-<p><strong>Verification</strong>:
-After implementing corrective actions, verify that the issue has been resolved and that the solution hasn't introduced new problems.</p>
-</li>
-<li>
-<p><strong>Documentation</strong>:
-Document the issue, the analysis process, the corrective action taken, and the implementation results for future reference.</p>
-</li>
+<li><strong>Verification</strong>:
+After implementing corrective actions, verify that the issue has been resolved and that the solution hasn't introduced new problems.</li>
+<li><strong>Documentation</strong>:
+Document the issue, the analysis process, the corrective action taken, and the implementation results for future reference.</li>
 </ul>
-<ol start="6">
-<li><strong>Continuous Improvement</strong></li>
-</ol>
+</li>
+<li><strong>Continuous Improvement</strong>
 <ul>
-<li>
-<p><strong>Feedback Loop</strong>:
-Use insights gained from FRACAS to identify areas for improvement in data processes and systems, aiming to prevent similar issues from occurring in the future.</p>
-</li>
-<li>
-<p><strong>Training and Knowledge Sharing</strong>:
-Share lessons learned from failure analyses and corrective actions with the broader team to build a continuous learning and improvement culture.</p>
-</li>
+<li><strong>Feedback Loop</strong>:
+Use insights gained from FRACAS to identify areas for improvement in data processes and systems, aiming to prevent similar issues from occurring in the future.</li>
+<li><strong>Training and Knowledge Sharing</strong>:
+Share lessons learned from failure analyses and corrective actions with the broader team to build a continuous learning and improvement culture.</li>
 </ul>
+</li>
+</ol>
 <h3 id="notes-on-failure-identification-and-reporting-steps"><a class="header" href="#notes-on-failure-identification-and-reporting-steps">Notes on <em>Failure Identification</em> and <em>Reporting</em> Steps</a></h3>
 <p>These steps can be done through automated monitoring tools that alert the team to issues such as failed ETL jobs, discrepancies in data validation checks, or performance bottlenecks.</p>
 <h3 id="notes-on-analysis-steps"><a class="header" href="#notes-on-analysis-steps">Notes on <em>Analysis</em> Steps</a></h3>
@@ -295,54 +267,38 @@ Share lessons learned from failure analyses and corrective actions with the broa
 <p>Implementing FRACAS in data reliability engineering helps resolve data issues more effectively and contributes to building a more reliable, resilient, and high-quality data infrastructure over time.</p>
 <h2 id="use-case"><a class="header" href="#use-case">Use Case</a></h2>
 <p>Although complete use cases will be explored in the book's next section, here's a small use case to understand the implementation and importance of FRACAS.</p>
-<h3 id="background"><a class="header" href="#background">Background:</a></h3>
+<h3 id="background"><a class="header" href="#background">Background</a></h3>
 <p>A mature startup, "PaTech," has a complex data ecosystem with Airflow orchestrating ELT jobs via Airbyte, ETL processes through dbt models deployed in Kubernetes, and various data quality and observability tools like DataDog in place. Hundreds of engineers access the company's data lake and warehouse, while its data marts serve thousands of employees across all departments.</p>
-<h3 id="challenge"><a class="header" href="#challenge">Challenge:</a></h3>
+<h3 id="challenge"><a class="header" href="#challenge">Challenge</a></h3>
 <p>Despite having advanced tools and processes, DataTech Innovations faces recurring data issues affecting data quality and availability, leading to decision-making delays and decreased trust in data systems.</p>
 <h3 id="fracas-implementation"><a class="header" href="#fracas-implementation">FRACAS Implementation</a></h3>
 <ol>
-<li>
-<p><strong>Failure Identification</strong>:
-An anomaly detected by DataDog in the data warehouse triggers an alert. The issue involves a significant discrepancy in sales data reported by the ETL process, impacting downstream data marts and reports.</p>
-</li>
-<li>
-<p><strong>Initial Reporting</strong>:
-The alert automatically generates a Jira ticket, categorizing the issue as a high-priority data quality incident. The ticket includes initial diagnostic information from DataDog and Airflow logs.</p>
-</li>
-<li>
-<p><strong>Data Collection and Analysis</strong>:
-The data reliability engineering team, using logs from Airflow and Airbyte, identifies that a recent schema change in the source CRM system wasn't reflected in the ELT job, leading to incomplete sales data extraction.</p>
-</li>
-<li>
-<p><strong>Root Cause Analysis (RCA)</strong>:
-Further investigation reveals that the change notification from the CRM team was overlooked due to a communication gap, preventing the necessary adjustments in the ELT job.</p>
-</li>
-<li>
-<p>Corrective Actions:</p>
-</li>
-</ol>
+<li><strong>Failure Identification</strong>:
+An anomaly detected by DataDog in the data warehouse triggers an alert. The issue involves a significant discrepancy in sales data reported by the ETL process, impacting downstream data marts and reports.</li>
+<li><strong>Initial Reporting</strong>:
+The alert automatically generates a Jira ticket, categorizing the issue as a high-priority data quality incident. The ticket includes initial diagnostic information from DataDog and Airflow logs.</li>
+<li><strong>Data Collection and Analysis</strong>:
+The data reliability engineering team, using logs from Airflow and Airbyte, identifies that a recent schema change in the source CRM system wasn't reflected in the ELT job, leading to incomplete sales data extraction.</li>
+<li><strong>Root Cause Analysis (RCA)</strong>:
+Further investigation reveals that the change notification from the CRM team was overlooked due to a communication gap, preventing the necessary adjustments in the ELT job.</li>
+<li>Corrective Actions:
 <ul>
 <li><strong>Immediate</strong>:
 The ELT job is temporarily halted, and the schema change is manually incorporated to restore the integrity of the sales data. The corrected data is re-processed, and the affected data marts and reports are updated.</li>
 <li><strong>Systemic</strong>:
 The team implements a new protocol for schema change notifications, including automated alerts and a checklist in the Airflow job deployment process to verify source system schemas.</li>
 </ul>
-<ol start="6">
-<li><strong>Preventive Measures</strong>:</li>
-</ol>
+</li>
+<li><strong>Preventive Measures</strong>:
 <ul>
 <li>Introducing automated schema detection and validation in Airbyte to flag discrepancies before data extraction.</li>
 <li>Establishing a cross-functional data schema change committee to ensure all schema changes are reviewed and communicated effectively across teams.</li>
 </ul>
-<ol start="7">
-<li>
-<p><strong>Documentation and Knowledge Sharing</strong>:
-The incident, RCA, corrective, and preventive measures are documented in the company's knowledge base. A company-wide presentation is conducted to share learnings, emphasizing the importance of communication and automated checks in preventing similar incidents.</p>
 </li>
-<li>
-<p><strong>Monitoring and Review</strong>:
-DataDog alerts are fine-tuned to detect similar anomalies more effectively. The effectiveness of the new schema change protocol and automated checks are monitored over the next quarter to ensure no repeat incidents.</p>
-</li>
+<li><strong>Documentation and Knowledge Sharing</strong>:
+The incident, RCA, corrective, and preventive measures are documented in the company's knowledge base. A company-wide presentation is conducted to share learnings, emphasizing the importance of communication and automated checks in preventing similar incidents.</li>
+<li><strong>Monitoring and Review</strong>:
+DataDog alerts are fine-tuned to detect similar anomalies more effectively. The effectiveness of the new schema change protocol and automated checks are monitored over the next quarter to ensure no repeat incidents.</li>
 </ol>
 <h3 id="outcome"><a class="header" href="#outcome">Outcome</a></h3>
 <p>By implementing FRACAS, PaTech resolves the immediate data discrepancy issue and strengthens its data reliability framework, reducing the likelihood of similar failures. The incident fosters a culture of continuous improvement and cross-departmental collaboration, enhancing overall data trustworthiness and decision-making efficiency across the organization.</p>

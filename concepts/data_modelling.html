@@ -227,12 +227,12 @@ Kimball dimensional modeling allows users to construct several star schemas to f
 <p>The Inmon design approach uses the <strong>normalized form</strong> for building <strong>entity structure</strong>, avoiding data redundancy as much as possible. This results in clearly identifying business requirements and <strong>preventing any data update irregularities</strong>. Moreover, the advantage of this top-down approach in database design is that it is <strong>robust to business changes</strong> and contains a dimensional perspective of data across data mart.</p>
 <p>Next, the physical model is constructed, which follows the normalized structure. This Inmon model creates a <strong>Single Source of Truth</strong> for the whole business to consume. Data loading becomes less complex due to the normalized structure of the model. However, using this arrangement for querying is challenging as it includes numerous tables and links.</p>
 <p>This Inmon data warehouse methodology proposes constructing data marts separately for each division, such as finance, marketing sales, etc. All the data entering the data warehouse is integrated. The data warehouse acts as a single data source for various data marts to ensure integrity and consistency across the enterprise.</p>
-<h3 id="advantages-1"><a class="header" href="#advantages-1">Advantages</a></h3>
+<h3 id="inmon-advantages"><a class="header" href="#inmon-advantages">Inmon Advantages</a></h3>
 <p><strong>Single Source of Truth</strong>: the data warehouse acts as a unified source of truth for the entire business, where all data is integrated.</p>
 <p><strong>Very low data redundancy</strong>: there’s less possibility of data update irregularities, making the data warehouse ETL processes more straightforward and less susceptible to failure.</p>
 <p><strong>Great flexibility</strong>: it’s easier to update the data warehouse in case there’s any change in the business requirements or source data.</p>
 <p><strong>BI-friendly</strong>: It can handle diverse company-wide reporting requirements.</p>
-<h3 id="disadvantages-1"><a class="header" href="#disadvantages-1">Disadvantages</a></h3>
+<h3 id="inmon-disadvantages"><a class="header" href="#inmon-disadvantages">Inmon Disadvantages</a></h3>
 <p><strong>Increasing complexity</strong>: it increases as multiple tables are added to the data model with time.</p>
 <p><strong>Skilled Human Resources</strong>: resources skilled in data warehouse data modeling are required, which can be expensive and challenging to find.</p>
 <p><strong>Slow setup</strong>: the preliminary setup and delivery are time-consuming.</p>
@@ -287,9 +287,18 @@ Dimensions define the who, what, where, when, why, and how of a situation, and a
 <blockquote>
 <p>To conform to a dimension, every stakeholder must agree on a common definition for the dimension, so that the dimension means the same thing no matter where it’s used.</p>
 </blockquote>
-<p>#TODO: continue from https://www.itprotoday.com/sql-server/data-warehouse-bus-architecture</p>
-<p>#TODO. Inflow, Upflow, Downflow, Outflow, and Meta flow.</p>
-
+<div id="admonition-todo" class="admonition admonish-info">
+<div class="admonition-title">
+<p>Todo</p>
+<p><a class="admonition-anchor-link" href="#admonition-todo"></a></p>
+</div>
+<div>
+<ul>
+<li><a href="https://www.itprotoday.com/sql-server/data-warehouse-bus-architecture">data warehouse bus architecture</a></li>
+<li>Inflow, Upflow, Downflow, Outflow, and Meta flow</li>
+</ul>
+</div>
+</div>
                     </main>
 
                     <nav class="nav-wrapper" aria-label="Page navigation">
