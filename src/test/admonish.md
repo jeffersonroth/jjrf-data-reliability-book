@@ -1,6 +1,7 @@
 # Test mdbook-admonish
 
 <!-- toc -->
+<!-- markdownlint-disable fenced-code-language -->
 <!-- markdown-link-check-disable -->
 ## Introduction
 

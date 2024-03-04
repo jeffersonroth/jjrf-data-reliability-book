@@ -1,6 +1,7 @@
 # Test Diagrams
 
 ## Mermaid
+
 ```mermaid
 graph TD;
     A-->B;
@@ -10,6 +11,7 @@ graph TD;
 ```
 
 ## PlantUML
+
 ```plantuml
 @startuml
 A --|> B
@@ -17,6 +19,7 @@ A --|> B
 ```
 
 ## Graphviz
+
 ```dot process
 digraph {
     "processed" -> "graph"

@@ -1,4 +1,5 @@
 # Accuracy Dimension in Data Quality
+>
 > Accuracy is one of the most critical dimensions of data quality, referring to the closeness of data values to the true values they are intended to represent. Ensuring accuracy is fundamental across all stages of the data infrastructure, from data sources through ELTs (Extract, Load, Transform) processes, data lakes, and data warehouses, to data marts, and ultimately in reports and dashboards.
 
 When considering accuracy within your data quality framework, it's essential to implement metrics that can capture discrepancies between the data you have and the true, expected values. Here are some accuracy dimension metrics you could implement across different stages of your data infrastructure:
@@ -55,9 +56,11 @@ When considering accuracy within your data quality framework, it's essential to 
 Implementing a combination of these metrics and checks will provide a comprehensive approach to ensuring the accuracy of data across your data infrastructure. It's important to tailor these metrics to the specific characteristics of your data and the business context in which it's used. Regular review and adjustment of these metrics will ensure they remain effective and relevant as your data environment evolves.
 
 ## Accuracy Metrics
+
 To measure accuracy, data teams employ various metrics and techniques, often tailored to the specific type of data and its intended use. Here are some examples of how accuracy can be measured throughout the data infrastructure:
 
 ### Data Sources (Operational Data) - Error Rate
+
 \\[ Error \ Rate = \frac{Number\ of \ Incorrect \ Records}{Total \ Number \ of \ Records} \times 100 \\]
   
 **Application**: Assess the error rate in operational data by comparing recorded data values against verified true values (from trusted sources or manual verification). Some common uses of this metric are:
@@ -89,11 +92,13 @@ To measure accuracy, data teams employ various metrics and techniques, often tai
 In each of these contexts, maintaining a low error rate is important not only for immediate operational success but also for long-term trust in the data systems, customer satisfaction, and compliance with industry standards and regulations. Regular monitoring and efforts to reduce the error rate are key practices in data quality management.
 
 ### ELT Processes - Transformation Accuracy Rate
+
 \\[ Transformation \ Accuracy \ Rate = \frac{Number \ of \ Correctly \ Transformed \ Records}{Total \ Number \ of \ Transformed \ Records} \times 100 \\]
   
 **Application**: Validate the accuracy of data post-transformation by comparing pre and post-ELT data against expected results based on transformation logic.
 
 ### Data Lakes and Data Warehouses - Data Conformity Rate
+
 \\[ Data \ Conformity \ Rate = \frac{Number \ of \ Records \ Conforming \ to \ Data \ Models}{Total \ Number \ of \ Records} \times 100 \\]
   
 **Application**: Ensure that data in lakes and warehouses conforms to predefined data models and schemas, indicating accurate structuring and categorization. Some common use cases are:
@@ -105,6 +110,7 @@ In each of these contexts, maintaining a low error rate is important not only fo
   During the integration of various data sources into a data lake or warehouse, this metric can indicate the success of harmonizing disparate data formats into a consistent schema.
 
 ### Data Marts - Attribute Accuracy
+
 \\[ Attribute \ Accuracy = \frac{Number \ of \ Correct \ Attribute \ Values}{Total \ Number \ of \ Attribute \ Values} \times 100 \\]
   
 **Application**: For each attribute in a data mart, compare the values against a set of true values or rules to assess attribute-level accuracy.
@@ -116,11 +122,13 @@ In each of these contexts, maintaining a low error rate is important not only fo
   In finance, attribute accuracy for figures such as revenue, cost, and profit margins is critical for regulatory compliance and internal audits.
 
 ## Automating Accuracy Measurement with Airflow
+
 Airflow provides a robust way to automate and monitor data workflows, and you can extend its capabilities by using sensors and operators to measure the accuracy of your data as it moves through the various stages of your pipeline.
 
 For the examples below, let's imagine a scenario where AWS DMS loads data from multiple databases into Redshift, and dbt models transform the data to create Data Marts. Here are some Sensors and Operators for Accuracy Measurement in Airflow:
 
 ### DMS Task Sensor
+>
 > Monitors the state of an AWS Data Migration Service (DMS) task.
 
 You can extend this sensor to query the source and target databases after the DMS task is completed, comparing record counts or checksums to ensure data has been transferred correctly. The *Accuracy* metric could be measured as:
@@ -128,6 +136,7 @@ You can extend this sensor to query the source and target databases after the DM
 \\[ Accuracy = \frac{Number \ of \ Records \ in \ Target}{Total \ Number \ of \ Records \ in \ Source} \times 100 \\]
 
 ### SQL Check Operator
+>
 > Executes an SQL query and checks the result against a predefined condition.
 
 Run integrity checks such as COUNT(\*) on both source and target tables, and use this operator to compare the counts. The *Accuracy* metric could be measured in this case as:
@@ -135,6 +144,7 @@ Run integrity checks such as COUNT(\*) on both source and target tables, and use
 \\[ Accuracy = \frac{Number \ of \ Records \ in \ Target}{Total \ Number \ of \ Records \ in \ Source} \times 100 \\]
 
 ### SQL Value Check Operator
+>
 > Executes a SQL query and ensures that the returned value meets a certain condition.
 
 Perform field-level data validation by selecting key fields and comparing them between the source and the target after a DMS task. The *Field Accuracy* metric could be measured as:
@@ -142,6 +152,7 @@ Perform field-level data validation by selecting key fields and comparing them b
 \\[ Field \ Accuracy = \frac{Number \ of \ Matching \ Field \ Values}{Total \ Number \ of \ Field \ Values \ Checked} \times 100 \\]
 
 ### dbt Run Operator
+>
 > Executes dbt run to run transformation models.
 
 After the dbt run, use dbt's built-in test functionality to perform accuracy checks on transformed data against source data or expected results. The *Transformation Accuracy* metric could be measured as:
@@ -149,6 +160,7 @@ After the dbt run, use dbt's built-in test functionality to perform accuracy che
 \\[ Transformation \ Accuracy = \frac{Number \ of \ Pass \ Tests}{Total \ Number \ of \ Tests} \times 100 \\]
 
 ### Data Quality Operator
+>
 > A custom operator that you can define to implement data quality checks.
 
 Incorporate various data quality checks like hash total comparisons, data profiling, anomaly detection, and more complex validations that may not be directly supported by built-in operators. The *Accuracy* metric could be measured as:
@@ -156,11 +168,13 @@ Incorporate various data quality checks like hash total comparisons, data profil
 \\[ Accuracy = (1 - \frac{Number \ of \ Pass \ Tests}{Total \ Number \ of \ Tests}) \times 100 \\]
 
 ### Python Operator
+>
 > Executes a Python callable (function) to perform custom logic.
 
 Use this operator to implement custom accuracy metrics, like calculating the percentage of records within an acceptable deviation range from a golden dataset or source of truth. The metrics here will be based on the specific accuracy check implemented in the Python function.
 
 ### Sensors & Operators
+
 In your Airflow DAGs, you would typically sequence these sensors and operators such that the DMS Task Sensor runs first to ensure the DMS task has been completed. Following that, the *SQL Check* and *SQL Value Check Operators* can verify the accuracy of the data transfer.
 
 Post-transformation, the *dbt Run Operator* along with additional data quality checks using the *Python Operator* or a custom *Data Quality Operator* can be used to ensure the accuracy of the dbt transformations.
@@ -168,6 +182,7 @@ Post-transformation, the *dbt Run Operator* along with additional data quality c
 It's important to note that while these checks can provide a good indication of data accuracy, they are most effective when part of a comprehensive data quality framework that includes regular reviews, stakeholder feedback, and iterative improvements to the checks themselves. Moreover, the exact mathematical formulas might need to be adapted to the specific requirements and context of your data and business rules.
 
 ## Ensuring and Improving Accuracy
+
 Ensuring accuracy across the data infrastructure involves several key practices:
 
 * **Data Profiling and Cleaning**:
@@ -183,9 +198,11 @@ Ensuring accuracy across the data infrastructure involves several key practices:
   Create mechanisms for users to report inaccuracies in reports and dashboards, feeding back into data cleaning and improvement processes.
 
 ## Accuracy Measurement Example
+
 Measuring accuracy in a data infrastructure involves a series of steps and tools that ensure data remains consistent and true to its source throughout its lifecycle. Here's a detailed example incorporating dbt (data build tool), Soda Core, and SQL queries, illustrating how accuracy can be measured from the moment data is loaded into a data lake or warehouse, through transformation processes, and finally when it is ingested into a data mart, in a different process or pipeline, of course. Each pipeline is orchestrated by Apache Airflow.
 
 ### Pipeline 1: Validating Operational Data Post-Load
+
 * **Scenario**: Once AWS DMS (Database Migration Service) or any ELT tool finishes loading operational data into the data lake or data warehouse, immediate validation is crucial to ensure data accuracy.
 
 * **Implementation**:
@@ -196,6 +213,7 @@ Measuring accuracy in a data infrastructure involves a series of steps and tools
   * **Sample**: 'transactions_yesterday_count' | 1634264 | '2024-02-19T19:12:21.310Z' | 'order_service' | 'orders'
 
 ### Pipeline 2: Transforming Data with dbt
+
 * **Scenario**: Transformations are applied to the ingested data to prepare it for use in data marts, using dbt for data modeling and transformations. After transformations, data is ready to be ingested into data marts for specific business unit analyses.
 
 * **Implementation**:

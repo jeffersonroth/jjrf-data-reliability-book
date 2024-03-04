@@ -1,7 +1,9 @@
 # Data Lineage Tools
+>
 > Data lineage tools are essential in comprehending the flow and lifecycle of data within an organization. They track data from its origin through various transformations until it reaches its final form, providing visibility into how data is created, modified, and consumed. These tools are crucial in diagnosing and correcting errors, ensuring that data is reliable and trustworthy.
 
 ### Importance of Data Lineage
+
 Data lineage is vital for several reasons:
 
 * **Transparency**:
@@ -17,6 +19,7 @@ Data lineage is vital for several reasons:
   Data lineage allows organizations to assess the potential impact of changes in data sources or processing logic on downstream systems and reports.
 
 ### Key Features of Data Lineage Tools
+
 Effective data lineage tools typically offer the following capabilities:
 
 * **Automated Lineage Capture**:
@@ -32,6 +35,7 @@ Effective data lineage tools typically offer the following capabilities:
   Beyond just tracking data flow, these tools manage metadata, including data definitions, schemas, and usage information, enriching the lineage information.
 
 ### Popular Data Lineage Tools and Metadata Management Systems
+
 * [**Apache Atlas**](https://github.com/apache/atlas): An open-source tool designed for scalable governance and metadata management, providing rich lineage visualization and tracking.
 * [**Informatica Enterprise Data Catalog**](https://www.informatica.com/products/data-catalog/enterprise-data-catalog.html): A commercial solution offering advanced lineage tracking, metadata management, discovery, and analytics.
 * [**Collibra Data Governance Center**](https://www.collibra.com/): A data governance platform with comprehensive data lineage tracking to help organizations understand their data's journey.
@@ -41,6 +45,7 @@ Effective data lineage tools typically offer the following capabilities:
 * [**Google Cloud Data Catalog**](https://cloud.google.com/data-catalog/docs/): A fully managed and scalable metadata management service that offers discovery, understanding, and governance of data assets in Google Cloud.
 
 ### Best Practices for Implementing Data Lineage
+
 * **Start with Critical Data Elements**:
   Focus lineage efforts on the most critical data elements, expanding coverage over time.
 
@@ -56,9 +61,11 @@ Effective data lineage tools typically offer the following capabilities:
 Data lineage tools are indispensable for maintaining transparency, ensuring compliance, enhancing data quality, and facilitating impact analysis in complex data environments. As data ecosystems continue to grow in complexity, the role of data lineage in ensuring data reliability and trustworthiness becomes increasingly essential.
 
 ## Metadata Management Systems
+
 Metadata management systems are specialized tools designed to handle metadata - data about data. Metadata includes details like data source, structure, content, usage, and policies, providing context that helps users understand and work with actual data.
 
 ### Importance of Metadata Management
+
 Effective metadata management is crucial for:
 
 * **Data Understanding**:
@@ -74,6 +81,7 @@ Effective metadata management is crucial for:
   Metadata management supports compliance with regulatory requirements by documenting data lineage, privacy labels, and access controls.
 
 ### Key Features of Metadata Management Systems
+
 These systems typically offer:
 
 * **Metadata Repository**:
@@ -88,8 +96,8 @@ These systems typically offer:
 * **Lineage and Impact Analysis**:
   Visualization of data lineage, showing how data flows and transforms, and analysis tools to assess the impact of changes in data structures or sources.
 
-
 ### Best Practices for Metadata Management
+
 * **Standardize Metadata**:
   Develop a standardized approach to metadata across the organization to ensure consistency and interoperability.
 

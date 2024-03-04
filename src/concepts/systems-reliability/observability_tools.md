@@ -1,4 +1,5 @@
 # Observability and Data Observability Tools
+
 In the context of software and systems, observability refers to the ability to infer the internal states of a system based on its external outputs.
 It extends beyond monitoring by capturing what's going wrong and providing insights into why it's happening.
 
@@ -6,19 +7,23 @@ Data Observability specifically applies observability principles to data and dat
 It involves monitoring the health of the data flowing through systems, identifying anomalies, pipeline failures, and schema changes, and ensuring data quality and reliability.
 
 ### Justifications
+
 Data observability is crucial for businesses that rely heavily on data-driven decision-making processes. It ensures that data quality and consistency are maintained across pipelines.
 Secondly, it reduces downtime by enabling users to quickly identify and resolve data issues.
 Finally, it enhances trust in data by providing transparency into data lineage, health, and usage.
 
 ### What They Solve
+
 Data observability tools are designed to address common issues with data, including data downtime, which occurs when data is missing, erroneous, or otherwise unusable.
 These tools can also help detect schema changes that may break downstream analytics and identify data drifts and anomalies that can lead to incorrect analytics.
 Data observability tools can also optimize data pipelines and improve resource utilization, leading to more efficient data processing.
 
 ### Challenges
+
 Implementing data observability can be challenging due to the vast volume and variety of data, which makes comprehensive observability difficult. Integrating observability tools with existing data systems and workflows can also be daunting; balancing observability overhead with system performance is critical.
 
 ### Methods
+
 Data observability is achieved through:
 
 * **Monitoring**: Tracking key metrics and logs to understand the system's health.
@@ -26,6 +31,7 @@ Data observability is achieved through:
 * **Alerting**: Setting up real-time notifications for anomalies or issues detected in the data.
 
 ### Data Observability Tools
+
 Several tools and platforms provide data observability capabilities, ranging from open-source projects to commercial solutions. They include:
 
 * [**Prometheus**](https://prometheus.io/) & [**Grafana**](https://grafana.com/): Often used together, Prometheus is used for metrics collection, and Grafana is used for visualization; they can monitor data systems' performance and health.

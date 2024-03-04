@@ -1,5 +1,6 @@
 # Data Warehouse
-> A **Data Warehouse** (DWH), also known as Enterprise Data Warehouse (EDW), is a central repository of information that can be analyzed to make more informed decisions. 
+>
+> A **Data Warehouse** (DWH), also known as Enterprise Data Warehouse (EDW), is a central repository of information that can be analyzed to make more informed decisions.
 
 Data flows into a data warehouse from Data Lake, transactional systems, relational databases, and other sources, typically on a regular cadence. Business analysts, data engineers, data scientists, and decision-makers access the data through Business Intelligence (BI) tools, SQL clients, and other analytics applications.
 
@@ -7,6 +8,7 @@ Data flows into a data warehouse from Data Lake, transactional systems, relation
 {:toc}
 
 ## Goals
+>
 > When implementing a data warehouse, the main goals are to achieve consistency, enable data-driven decision-making and improvement, and maintain data Single Source of Truth.
 
 **Consistency**: to maintain a uniform format for all collected data, making it easier for corporate decision-makers to analyze and share data insights with their colleagues. Standardizing data from different sources also reduces the risk of error in interpretation and improves overall accuracy.
@@ -18,6 +20,7 @@ Data flows into a data warehouse from Data Lake, transactional systems, relation
 **Single Source of Truth**: the whole organization would benefit from having a single source of truth, especially when there are multiple data sources to a common business dimension.
 
 ## Data Warehouse Architecture
+
 ```plantuml
 @startuml
 top to bottom direction
@@ -49,11 +52,13 @@ end note
 
 @enduml
 ```
+
 <p style="text-align: center;">Data Warehouse Solution.</p>
 
 There are several data warehouse architecture approaches available. Data warehouses would have in common some key components:
 
 ### Data Sources
+>
 > In most architecture approaches, it’s the Source Layer, or Data Source Layer, and consists of all the data sources the Warehouse Layer will consume.
 
 **Operational System**: is a method used in data warehousing to refer to a system that is used to process the day-to-day transactions of an organization. Physically, it will normally refer to the databases the organization applications and micro-services create.
@@ -61,9 +66,11 @@ There are several data warehouse architecture approaches available. Data warehou
 **Flat Files System**: is a system of files in which transactional data is stored, and every file in the system must have a different name.
 
 ### Warehouse
+>
 > In most architecture approaches, it’s the Warehouse Layer, or Data Warehouse Layer, and consists of all the data stored in the RDBMS database with available gateway access (ODBC, JDBC, etc.). It also contains the metadata, some degree of data summarization, and business logic applied, which differentiate a **DWH database** from a **Production database**.
 
 #### Metadata
+>
 > Metadata is the road map to a data warehouse, it defines the warehouse objects and acts as a directory. This directory helps the decision support system to locate the contents of a data warehouse.
 
 It normally contains:
@@ -77,27 +84,33 @@ It normally contains:
 Metadata management tool examples are Datahub, Open Metadata, and Amundsen.
 
 #### Summarized Data
+>
 > The summarized data is the area of the data warehouse that maintains all the predefined lightly and highly summarized (aggregated) data. The main goal is to speed up query performance, and the summarized records are updated continuously as new information is loaded into the warehouse.
 
 ### End-User Access Tools
+>
 > The main purpose of a data warehouse is to provide information to the business for strategic decision-making. These end-users interact with the warehouse using end-client access tools.
 
 Examples of some of the end-user access tools can be:
-- Reporting and Query Tools
-- Application Development Tools
-- Executive Information Systems Tools
-- Online Analytical Processing Tools
-- Data Mining Tools
+
+* Reporting and Query Tools
+* Application Development Tools
+* Executive Information Systems Tools
+* Online Analytical Processing Tools
+* Data Mining Tools
 
 ### Two-Tier vs Three-Tier Architecture
+
 The data warehouse will normally be designed in a Two-Tier or a Three-Tier architecture approach. The details of which one will be explored in the chapter [Data Warehouse Tier Architecture](./data_warehouse_tier_architecture.md).
 
 In short, the tiers are:
+
 1. Bottom/Data Tier: data warehouse server with functional gateway (ODBC, JDBC, etc.).
 2. Middle/Application Tier: houses the business logic used to process user inputs. Examples: OLAP Servers, Snowflake, Apache Redshift, Databricks Data Lakehouse Platform, Apache Spark.
 3. Top/Presentation Tier: front-end tools.
 
 ## Data Modeling Methodologies
+>
 > Being one of the most important topics of data warehouse design and architecture, the data modeling methodology choosing process is arduous and polemic and will impact the whole design and implementation of the data warehouse solution.
 
 Especially for startups, the first versions or iterations of a data solution (implemented before the organization even starts discussing the implementation of a data warehouse solution) will be very similar to a **Kimball** (or Bottom-up) methodology approach, though not planned explicitly as such. This means the data marts (or the data to be accessed by the first BI tools adopted in the organization) are first formed based on the business requirements.
@@ -107,9 +120,13 @@ There are lots of advantages and disadvantages of priming this approach over a t
 See all the details of the different data modeling methodologies in the chapter [Data Modeling](./data_modelling.md). See also the implementation of a three-tier data warehouse architecture in the [paper](https://iopscience.iop.org/article/10.1088/1757-899X/306/1/012061/pdf){{Tangkawarow, I. R. H. T., Runtuwene, J. P. A., Sangkop, F. I., & Ngantung, L. V. F. (2018, February). Three Tier-Level Architecture Data Warehouse Design of Civil Servant Data in Minahasa Regency. In IOP Conference Series: Materials Science and Engineering (Vol. 306, No. 1, p. 012061). IOP Publishing.}} "Three Tier-Level Architecture Data Warehouse Design of Civil Servant Data in Minahasa Regency".
 
 ## Maturity Stages
-#TODO
+
+```admonish todo
+* maturity stages
+```
 
 ## Key Components of a Data Warehouse
+
 **Data Ingestion**: Allows connectors to get data from different data sources and load it into the Data Warehouse. The data will normally come from the Data Lake and External Sources connection (Fivetran), through multiple ETLs (Airflow, services, apps, ETL tools and platforms, etc.).
 
 **Data Storage**: The data is stored in the data warehouse database, a relational database (RDBMS), like Postgres.
@@ -123,8 +140,9 @@ See all the details of the different data modeling methodologies in the chapter 
 **Data Discovery**: This is another important stage before you can begin preparing data or analysis. All this relies on good metadata and data modeling.
 
 **Data Auditing**: It helps to evaluate risk and compliance. Two major Data auditing tasks are tracking changes to the key dataset.
-- Tracking changes to important dataset elements.
-- Captures how/when/who changes to these elements.
+
+* Tracking changes to important dataset elements.
+* Captures how/when/who changes to these elements.
 
 **Data Lineage**: It deals with data’s origins. It mainly deals with where it movers over time and what happens to it. It eases error corrections in a data analytics process from origin to destination. Some data modeling techniques may facilitate lineage in comparison to others (Vault vs Kimball vs Inmon).
 

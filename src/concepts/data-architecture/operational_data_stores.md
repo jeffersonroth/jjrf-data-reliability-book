@@ -1,7 +1,9 @@
 # Operational Data Stores (ODS) & Data Operational Stores (DOS)
+
 The terms "Operational Data Stores" (ODS) and "Data Operational Stores" (DOS) are often used interchangeably in the industry, but they can represent slightly different concepts depending on the context in which they are used. Here's a breakdown of the differences based on common interpretations:
 
-### Operational Data Stores (ODS)
+### Operational Data Stores (ODS) - Overview
+
 * **Purpose**:
   An ODS is primarily designed for integrating data from multiple sources to provide a unified and current view of operational data. It's optimized for routine, operational reporting and queries that require up-to-the-minute data.
 
@@ -14,7 +16,8 @@ The terms "Operational Data Stores" (ODS) and "Data Operational Stores" (DOS) ar
 * **Usage**:
   Used by business users and analysts for operational reporting, customer service inquiries, and as an interim store for data that will be loaded into a data warehouse for historical analysis.
 
-### Data Operational Stores (DOS)
+### Data Operational Stores (DOS) - Overview
+
 * **Purpose**:
   DOS can sometimes refer to the broader category of storage systems used for operational purposes, including databases that support online transaction processing (OLTP) systems.
 
@@ -28,6 +31,7 @@ The terms "Operational Data Stores" (ODS) and "Data Operational Stores" (DOS) ar
   Used by applications and operational systems for immediate transaction processing, such as order processing systems, inventory management systems, and other OLTP systems.
 
 ### Key Differences
+
 * **Integration**:
   ODS typically integrates data from multiple sources and provides a unified view, whereas DOS might refer to individual operational systems or databases optimized for specific applications.
 
@@ -40,9 +44,11 @@ The terms "Operational Data Stores" (ODS) and "Data Operational Stores" (DOS) ar
 In practice, the distinction between ODS and DOS can be subtle and depends on the organizational context and specific architecture. Some organizations might use the term DOS to describe what is traditionally known as an ODS, especially when emphasizing the operational aspect of the data store.
 
 ## Operational Data Stores (ODS)
+
 Operational Data Stores (ODS) are centralized databases designed to integrate data from multiple sources for additional operations such as reporting, analysis, and operational support. The ODS is optimized for fast query performance and near real-time analysis, making it a critical component for day-to-day business operations.
 
-### Goals
+### ODS Goals
+
 * **Data Integration**:
   ODS serves as an intermediary between transactional databases and analytical data warehouses, integrating data from various sources into a unified format for operational reporting and decision-making.
 
@@ -56,6 +62,7 @@ Operational Data Stores (ODS) are centralized databases designed to integrate da
   By offloading queries from transactional systems to an ODS, organizations can ensure that their operational systems remain efficient and responsive.
 
 ### ODS Uses in Modern Data Architecture
+
 In contemporary data architectures, ODS coexist with data lakes and data warehouses, each serving distinct purposes:
 
 * **Complementing Data Warehouses**:
@@ -68,6 +75,7 @@ In contemporary data architectures, ODS coexist with data lakes and data warehou
   Modern data architectures often include specialized analytical tools that directly query the ODS for operational reporting, dashboarding, and alerting, enabling faster decision-making.
 
 ### Modern Use Cases of ODS
+
 * **Customer 360 View**:
   ODS is used to aggregate data from various customer touchpoints, providing a comprehensive view of customer interactions and behavior in near real-time.
 
@@ -81,6 +89,7 @@ In contemporary data architectures, ODS coexist with data lakes and data warehou
   An ODS can store detailed transactional data required for regulatory compliance and auditing purposes, providing easy access to current and historical operational data.
 
 ### Technologies for ODS
+
 * **Relational Databases**:
   Traditional relational databases like Oracle, SQL Server, and MySQL are commonly used for ODS due to their ACID compliance and robust query capabilities.
 
@@ -93,9 +102,11 @@ In contemporary data architectures, ODS coexist with data lakes and data warehou
 In the landscape of modern data architecture, ODS plays a vital role in bridging the gap between raw operational data and analytical insights. By providing timely, integrated, and cleansed data, an ODS enhances operational efficiency and decision-making, complementing the deeper, historical insights derived from data lakes and warehouses.
 
 ## Data Operational Stores (DOS)
+
 Data operational stores (DOS) are specialized databases designed to support operational applications with real-time, transactional data requirements. Unlike analytical data stores, such as data warehouses and data lakes that are optimized for large-scale querying and analysis, DOS is optimized for high-performance, transactional workloads where speed and efficiency of read/write operations are critical.
 
-### Goals
+### DOS Goals
+
 * **Real-Time Operations**:
   DOS are used in scenarios where applications need immediate access to current, transactional data, such as e-commerce platforms, online banking systems, and other customer-facing applications.
 
@@ -109,6 +120,7 @@ Data operational stores (DOS) are specialized databases designed to support oper
   They often serve as a backend for operational applications, providing a centralized store for application data that can be easily accessed and manipulated by various services.
 
 ### DOS Uses in Modern Data Architecture
+
 In modern data architectures, DOSs coexist with data lakes and data warehouses as part of a broader data ecosystem. While data lakes and data warehouses are used for storing and analyzing large volumes of historical data, DOSs are used for operational applications that need real-time access to current data. The interaction between these components might look like this:
 
 * **Data Ingestion**:
@@ -121,6 +133,7 @@ In modern data architectures, DOSs coexist with data lakes and data warehouses a
   Some modern architectures use hybrid processing models where transactional and analytical workloads coexist, leveraging technologies like HTAP (Hybrid Transactional/Analytical Processing) systems.
 
 ### Examples of Data Operational Stores
+
 * **Relational Databases**:
   Traditional relational databases like MySQL, PostgreSQL, and Oracle Database often serve as operational stores, offering ACID (Atomicity, Consistency, Isolation, Durability) properties essential for transactional data integrity.
 
@@ -133,6 +146,7 @@ In modern data architectures, DOSs coexist with data lakes and data warehouses a
 In summary, data operational stores are a critical component of modern data architecture, particularly for applications requiring real-time data access and high transactional throughput. They complement data lakes and data warehouses by providing a layer optimized for operational activities while enabling seamless data flow and integration across the data ecosystem.
 
 ### DOS vs. Microservices Databases (Backend)
+
 Databases used by microservices in a backend architecture can be seen as a specialized form of Data Operational Stores (DOS), tailored to the specific requirements of a microservices architecture. These databases share the operational focus of traditional DOS, aimed at supporting real-time or near-real-time data access and transaction processing. However, there are notable distinctions rooted in the architectural principles and data management strategies of microservices:
 
 * **Service Autonomy**:

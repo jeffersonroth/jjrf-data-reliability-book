@@ -1,9 +1,13 @@
 # Foundations of Data Quality
+
 ## Data Lifecycle
+
 ### DAMA
+
 The Data Management Association International (DAMA) provides a comprehensive framework for understanding and managing the data lifecycle within organizations. This lifecycle encompasses all stages through which data passes, from its initial creation or capture to its eventual archiving or deletion. DAMA emphasizes the importance of managing each stage with best practices to ensure the overall quality and reliability of data.
 
 ### POSMAD Data Flow Model
+
 The POSMAD model, which stands for Plan, Obtain, Store, Maintain, Apply, and Dispose, offers a structured approach to managing the data lifecycle:
 
 1. **Plan**:
@@ -33,9 +37,11 @@ The management of the data lifecycle, as outlined by DAMA and the POSMAD model, 
 In summary, a thorough understanding and management of the data lifecycle, from the perspective of DAMA and the POSMAD model, are essential for maintaining data quality and reliability. It ensures that data remains a valuable asset for the organization, supporting informed decision-making and efficient operations.
 
 ### COBIT
+
 The data lifecycle according to the COBIT (Control Objectives for Information and Related Technologies) framework involves a structured approach to managing and governing information and technology in an enterprise. COBIT's perspective on the data lifecycle focuses on governance and management practices that ensure data integrity, security, and availability throughout its lifecycle stages. While COBIT does not explicitly define a "data lifecycle" in the same way as DAMA's POSMAD model, its principles and processes can be applied across various stages of data management to enhance data quality and reliability.
 
 Data Lifecycle Stages in the Context of COBIT:
+
 1. **Identification and Classification**:
 In this initial stage, data is identified, classified, and categorized based on its importance, sensitivity, and relevance to the business objectives. COBIT emphasizes the need for clear governance structures and policies to manage data effectively from the outset.
 
@@ -62,23 +68,29 @@ For data teams, applying COBIT's governance and management frameworks to the dat
 In summary, COBIT's approach to the data lifecycle underscores the importance of governance, risk management, and compliance practices in every stage of data management. By integrating these practices, organizations can enhance the reliability and value of their data, supporting strategic objectives and operational efficiency.
 
 ## Governance vs. Data Management vs. Data Quality Management
+
 Understanding the distinctions between governance, data management, and data quality management is crucial for data teams to effectively organize their roles, responsibilities, and processes. Aligning these activities with the ISO/IEC 38500 standards can further ensure that data practices contribute positively to the organization's strategic objectives, manage risks associated with IT and data, and optimize the performance of data and IT resources.
 
 By integrating these frameworks, organizations can create a cohesive and efficient approach to data handling that not only ensures high data quality but also aligns with broader governance goals and compliance requirements, thereby enhancing overall data reliability.
 
 ### Governance
+
 Data Governance refers to the overarching framework or system of decision rights and accountabilities regarding data and information assets within an organization. It involves setting policies, standards, and principles for data usage, security, and compliance, ensuring that data across the organization is managed as a valuable resource. Governance encompasses the strategies and policies that dictate how data is acquired, stored, accessed, and used, ensuring alignment with business objectives and regulatory requirements.
 
 ### Data Management
+
 Data Management is the implementation of architectures, policies, practices, and procedures that manage the information lifecycle needs of an enterprise. It's more tactical and operational compared to governance and involves the day-to-day activities and technical aspects of handling data, including data architecture, modeling, storage, security, and integration. Data management ensures that data is available, reliable, consistent, and accessible to meet the needs of the organization.
 
 ### Data Quality Management
+
 Data Quality Management (DQM) is a subset of data management focused specifically on maintaining high-quality data throughout the data lifecycle. It involves the processes, methodologies, and systems used to measure, monitor, and improve the quality of data. DQM covers various dimensions of data quality such as accuracy, completeness, consistency, reliability, and timeliness. It includes activities like data profiling, cleansing, validation, and enrichment to ensure that data meets the quality standards set by the organization.
 
 ### ISO/IEC 38500 Family
+
 The ISO/IEC 38500 family provides standards for corporate governance of information technology (IT). It offers guidance to those advising, informing, or assisting directors on the effective and acceptable use of IT within the organization. The ISO/IEC 38500 standards are designed to help organizations ensure that their IT investments are aligned with their business objectives, that IT risks are managed appropriately, and that the organization realizes the full potential of its IT resources.
 
 Key Principles of ISO/IEC 38500:
+
 * **Responsibility**: Everyone in the organization has some responsibility for IT, from top-level executives to end-users.
 * **Strategy**: IT strategy should align with the organization's overall business strategy, supporting its goals and objectives.
 * **Acquisition**: IT acquisitions should be made for valid reasons, with clear and transparent decision-making processes.

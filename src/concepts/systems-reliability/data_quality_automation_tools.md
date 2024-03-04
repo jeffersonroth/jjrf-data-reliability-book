@@ -1,18 +1,23 @@
 # Data Quality Automation Tools
+
 Tools like Great Expectations or Deequ allow data engineers to define and automate data quality checks within data pipelines. By continuously testing data for anomalies, inconsistencies, or deviations from defined quality rules, these tools help maintain high data quality standards.
 
 This topic will be explored in depth in the chapter on [**Data Quality**](../data_quality.md), and there will be many use cases and examples throughout the book. Additionally, I recommend using some tools, platforms, and libraries that might help automate and test data quality, including:
 
 * [**dbt (Data Build Tool)**](https://www.getdbt.com/)
+
 > An open-source tool that enables data analysts and engineers to transform data in their warehouses more effectively by defining data models, testing data quality, and documenting data.
 
 * [**Great Expectations**](https://greatexpectations.io/)
+
 > An open-source tool that allows data teams to write tests for their data, ensuring it meets defined expectations for quality.
 
 * [**AWS Deequ**](https://github.com/awslabs/deequ)
+
 > An open-source library built on top of Apache Spark for defining 'unit tests' for data, which allows for large-scale data quality verification.
 
 * [**Soda Core**](https://github.com/sodadata/soda-core)
+
 > An open-source framework for scanning, validating, and monitoring data quality, ensuring datasets meet quality standards.
 
 Other options, which I haven't personally tried but frequently appear in online rankings, including those from enterprise-level solutions:
