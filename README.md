@@ -2,7 +2,7 @@
 <br />
 <p align="center">
   <a href="https://github.com/jeffersonroth/jjrf-data-reliability-book">
-    <img src="assets/images/logo.svg" alt="Logo" width="80" height="80">
+    <img src="src/assets/images/logo.svg" alt="Logo" width="80" height="80">
   </a>
 
   <h3 align="center">Data Reliability Engineering</h3>
@@ -43,7 +43,7 @@
    docker compose up
    ```
 
-3. Check the rendered book in [localhost](localhost:3000)
+3. Check the rendered book in [localhost](localhost:3001)
 
 <!-- DEVELOPMENT -->
 
