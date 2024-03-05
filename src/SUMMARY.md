@@ -2,8 +2,8 @@
 <!-- markdownlint-disable no-empty-links -->
 [Cover](./COVER.md)
 [Title](./TITLE.md)
-[Summary](./SUMMARY.md)
 [Dedication](./DEDICATION.md)
+[Summary](./SUMMARY.md)
 [Foreword](./FOREWORD.md)
 [Preface](./PREFACE.md)
 [Author](./AUTHOR.md)
