@@ -1,7 +1,10 @@
 # Mechanisms
 
 <p align="center">
-  <img src="../../assets/concepts/systems-reliability/mechanisms_v1.svg" alt="Systems Reliability - Mechanisms">
+  <figure>
+    <img src="../../assets/concepts/systems-reliability/mechanisms_v1.svg" alt="Systems Reliability - Mechanisms">
+    <figcaption>Systems Reliability - Mechanisms.</figcaption>
+  </figure>
 </p>
 
 * [Fault Prevention: Avoidance](./fault_prevention_avoidance.md)

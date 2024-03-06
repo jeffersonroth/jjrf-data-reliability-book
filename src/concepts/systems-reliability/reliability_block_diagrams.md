@@ -78,7 +78,10 @@ Imagine a data platform where raw data is ingested from various sources into a d
 ### Example Diagram
 
 <p align="center">
-  <img src="../../assets/concepts/systems-reliability/rbd_v1.svg" alt="RBD Example">
+  <figure>
+    <img src="../../assets/concepts/systems-reliability/rbd_v1.svg" alt="RBD Example">
+    <figcaption>Reliability Block Diagrams (RBD) - Example.</figcaption>
+  </figure>
 </p>
 
 Reliability Block Diagrams offer a systematic approach to understanding and improving the reliability of data systems, making them a valuable tool in the arsenal of data reliability engineering.

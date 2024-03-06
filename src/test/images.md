@@ -1,13 +1,15 @@
 # Test Images
 
-## Original SVG
-
 <p align="center">
-  <img src="../assets/example/example.svg" alt="Example - Original">
+  <figure>
+    <img src="../assets/example/example.svg" alt="Example 1">
+    <figcaption>SVG Image Example 1.</figcaption>
+  </figure>
 </p>
 
-## Instad (Blue-Pen) SVG
-
 <p align="center">
-  <img src="../assets/example/example-instad.svg" alt="Example - Original">
+  <figure>
+    <img src="../assets/example/example-instad.svg" alt="Example 2">
+    <figcaption>SVG Image Example 2 - Blue-Pen Style (instad.io).</figcaption>
+  </figure>
 </p>
