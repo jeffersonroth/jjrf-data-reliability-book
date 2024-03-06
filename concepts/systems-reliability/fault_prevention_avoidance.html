@@ -187,23 +187,147 @@
                 <div id="content" class="content">
                     <main>
                         <h1 id="fault-prevention-avoidance"><a class="header" href="#fault-prevention-avoidance">Fault Prevention: Avoidance</a></h1>
-<p>There are two phases in fault prevention: <strong>avoidance</strong> and <strong>elimination</strong>.</p>
-<blockquote>
-<p>Avoidance aims to limit the introduction of potentially defective data and objects during the execution of the process.</p>
-</blockquote>
-<p>Such as:</p>
+<p>There are two phases in fault prevention: <strong>avoidance</strong> and <a href="./fault_prevention_elimination.html"><strong>elimination</strong></a>.</p>
+<div id="admonition-avoidance" class="admonition admonish-tip">
+<div class="admonition-title">
+<p>Avoidance</p>
+<p><a class="admonition-anchor-link" href="#admonition-avoidance"></a></p>
+</div>
+<div>
+<p><em>Avoidance</em> aims to limit the introduction of potentially defective data and objects during the execution of the process.</p>
+</div>
+</div>
+<p>Fault prevention through avoidance is a proactive approach to reducing the likelihood of errors and defects in data systems.
+It involves implementing measures and practices that ensure the quality and integrity of data and system components from the outset before problems can arise.
+The ultimate goal is to create a secure and robust environment that minimizes the introduction or propagation of faults during data processing and handling.</p>
+<p>Key strategies in fault prevention via avoidance include:</p>
 <ul>
-<li>The use of validated and clean information sources, when possible.</li>
-<li>The implementation of data cleaning and validation processes for raw data.</li>
-<li>The validation of table and column availability within databases.</li>
-<li>The introduction of branch operators for effective data management.</li>
-<li>Implementing rigorous code review processes to maintain a clean and secure codebase.</li>
-<li>Adopting standardized coding practices and safe coding guidelines to minimize errors and security vulnerabilities.</li>
-<li>The utilization of automated testing frameworks for continuous testing (unit, integration, system) throughout the development cycle.</li>
-<li>Configuration management tools and practices are applied to oversee changes in software and hardware, ensuring all modifications are authorized and tested.</li>
-<li>The engagement in detailed requirement analysis and system design reviews to affirm the system's resilience against potential faults, including modeling and simulation tools.</li>
-<li>Incorporating fail-safe and fail-soft designs to maintain system safety in case of failure, including redundancy strategies for critical components.</li>
+<li>
+<p><strong>Utilizing Reliable Data Sources</strong>:
+Minimize the risk of incorporating erroneous or low-quality data into the system by ensuring data inputs are sourced from verified and trusted sources.</p>
+<div id="admonition-example" class="admonition admonish-example">
+<div class="admonition-title">
+<p>Example</p>
+<p><a class="admonition-anchor-link" href="#admonition-example"></a></p>
+</div>
+<div>
+<p>A financial analytics firm exclusively uses financial data from regulatory-approved and audited sources to ensure the accuracy and reliability of its market analysis models.</p>
+</div>
+</div>
+</li>
+<li>
+<p><strong>Data Cleaning and Validation</strong>:
+Implement systematic processes to clean and validate data before it enters the system, removing inaccuracies, inconsistencies, and irrelevant information to maintain data quality.</p>
+<div id="admonition-example-1" class="admonition admonish-example">
+<div class="admonition-title">
+<p>Example</p>
+<p><a class="admonition-anchor-link" href="#admonition-example-1"></a></p>
+</div>
+<div>
+<p>A data engineering team routinely ingests customer data from various sources into a data lake.
+To prevent the introduction of defective data, they implement an automated ETL pipeline that includes steps for cleaning data (e.g., removing duplicates) and validating against predefined schemas before storage.</p>
+</div>
+</div>
+</li>
+<li>
+<p><strong>Database Integrity Checks</strong>:
+Regularly check the availability and integrity of tables, columns, and relationships within databases to prevent data structure-related issues.</p>
+<div id="admonition-example-2" class="admonition admonish-example">
+<div class="admonition-title">
+<p>Example</p>
+<p><a class="admonition-anchor-link" href="#admonition-example-2"></a></p>
+</div>
+<div>
+<p>An analytics engineering team discovers that some reports are failing due to missing fields in the database.
+They implement a nightly database integrity check that verifies the presence and correct data type of critical columns and alerts the team to any discrepancies.</p>
+</div>
+</div>
+</li>
+<li>
+<p><strong>Branch Operators in Data Flow</strong>:
+Use branch operators or conditional logic to manage data flow effectively, ensuring that data is processed and routed correctly based on predefined criteria.</p>
+<div id="admonition-example-3" class="admonition admonish-example">
+<div class="admonition-title">
+<p>Example</p>
+<p><a class="admonition-anchor-link" href="#admonition-example-3"></a></p>
+</div>
+<div>
+<p>In a data pipeline managing e-commerce transactions, conditional branching assesses the transaction volume and diversity of payment methods.
+It then routes high-volume or diverse payment data to sequential processing tasks, each tailored to a specific payment method, ensuring stability, while lower volumes are directed to parallel tasks for quicker processing, optimizing both resource utilization and processing accuracy.</p>
+</div>
+</div>
+</li>
+<li>
+<p><strong>Code Quality Practices</strong>:
+Enforce rigorous code review processes and adhere to standardized coding conventions and best practices to prevent bugs and vulnerabilities in the system's software components.</p>
+<div id="admonition-example-4" class="admonition admonish-example">
+<div class="admonition-title">
+<p>Example</p>
+<p><a class="admonition-anchor-link" href="#admonition-example-4"></a></p>
+</div>
+<div>
+<p>In a Python codebase, automated tools like Nix orchestrate a suite of linters (Ruff, Black, Isort) and type checkers (Mypy, Pylance) alongside formatters and beautifiers, enforcing code quality standards with predefined minimum scores, e.g., Ruff &gt; 96%.
+Additionally, Nix executes tests and safety checks, while Poetry manages dependency updates, all triggered automatically on commit or push to maintain a clean, secure, and up-to-date codebase.</p>
+</div>
+</div>
+</li>
+<li>
+<p><strong>Automated Testing</strong>:
+Leverage automated testing frameworks to continuously test software and data processing logic at various stages of development, catching and rectifying faults early.</p>
+<div id="admonition-example-5" class="admonition admonish-example">
+<div class="admonition-title">
+<p>Example</p>
+<p><a class="admonition-anchor-link" href="#admonition-example-5"></a></p>
+</div>
+<div>
+<p>A data engineering team uses dbt to transform data in their data warehouse.
+They incorporate dbt tests to validate the integrity of key tables automatically after each transformation run, ensuring data consistency and reliability.</p>
+</div>
+</div>
+</li>
+<li>
+<p><strong>Configuration Management</strong>:
+Apply configuration management tools and best practices to meticulously control changes to software and hardware configurations, ensuring stability and preventing unauthorized or untested alterations.</p>
+<div id="admonition-example-6" class="admonition admonish-example">
+<div class="admonition-title">
+<p>Example</p>
+<p><a class="admonition-anchor-link" href="#admonition-example-6"></a></p>
+</div>
+<div>
+<p>To maintain the reliability of their data analytics platform, a data platform engineering team uses Terraform to manage infrastructure as code.
+This allows them to apply version control to infrastructure changes, ensuring all modifications are reviewed, approved, and traceable.</p>
+</div>
+</div>
+</li>
+<li>
+<p><strong>System Design and Analysis</strong>:
+Conduct thorough requirements analysis and system design reviews to identify and mitigate potential fault sources, employing modeling and simulation tools where applicable.</p>
+<div id="admonition-example-7" class="admonition admonish-example">
+<div class="admonition-title">
+<p>Example</p>
+<p><a class="admonition-anchor-link" href="#admonition-example-7"></a></p>
+</div>
+<div>
+<p>During the design phase of a new data warehouse, a data architect conducts a thorough analysis using ERD (Entity-Relationship Diagram) modeling tools to ensure the system's design is robust against potential data integrity issues and can handle expected data volumes and complexities.</p>
+</div>
+</div>
+</li>
+<li>
+<p><strong>Fail-safe and Fail-soft Designs</strong>:
+Incorporate design principles that ensure the system remains operational or degrades gracefully in the event of a component failure, such as through redundancy and fallback mechanisms.</p>
+<div id="admonition-example-8" class="admonition admonish-example">
+<div class="admonition-title">
+<p>Example</p>
+<p><a class="admonition-anchor-link" href="#admonition-example-8"></a></p>
+</div>
+<div>
+<p>Pipeline A halts and alerts the team upon data anomalies (fail-safe).
+Pipelines B and C, dependents of A, also halt to maintain data integrity, while Pipelines D and E, also dependents of A, switch to redundant paths, operating in a degraded mode (fail-soft), balancing system integrity with continued operability.</p>
+</div>
+</div>
+</li>
 </ul>
+<p>By prioritizing fault prevention through avoidance, data teams can build and maintain data systems that are less susceptible to faults, thereby enhancing the overall reliability, security, and performance of data operations.</p>
 
                     </main>
 

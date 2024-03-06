@@ -188,7 +188,10 @@
                     <main>
                         <h1 id="impediments"><a class="header" href="#impediments">Impediments</a></h1>
 <p align="center">
-  <img src="../../assets/concepts/systems-reliability/impediments_v1.svg" alt="System Reliability - Impediments">
+  <figure>
+    <img src="../../assets/concepts/systems-reliability/impediments_v1.svg" alt="System Reliability - Impediments">
+    <figcaption>System Reliability - Impediments.</figcaption>
+  </figure>
 </p>
 <h2 id="failures-errors-and-defects"><a class="header" href="#failures-errors-and-defects">Failures, Errors, and Defects</a></h2>
 <div id="admonition-classifying-system-impediments" class="admonition admonish-tip">
@@ -197,11 +200,15 @@
 <p><a class="admonition-anchor-link" href="#admonition-classifying-system-impediments"></a></p>
 </div>
 <div>
-<p><strong>Failures</strong> result from unexpected internal problems that a system eventually exhibits in its external behavior. These problems are called <strong>errors</strong>, and their mechanical or algorithmic causes are called <strong>defects</strong> or <strong>faults</strong>.</p>
+<p><strong>Failures</strong> result from unexpected internal problems that a system eventually exhibits in its external behavior.
+These problems are called <strong>errors</strong>, and their mechanical or algorithmic causes are called <strong>defects</strong> or <strong>faults</strong>.</p>
 <p>When a system's behavior deviates from its specifications, it is said to have a <strong>failure</strong>, or the system has <strong>failed</strong>.</p>
 </div>
 </div>
-<p>Systems are composed of <strong>components</strong>, each of which can be considered a system. Thus, a failure in one system can induce a fault in another, which may result in an error and a potential failure of this system. This failure can continue and affect any related system, and so on. A faulty system component will produce an error under specific circumstances during the system's lifetime.</p>
+<p>Systems are composed of <strong>components</strong>, each of which can be considered a system.
+Thus, a failure in one system can induce a fault in another, which may result in an error and a potential failure of this system.
+This failure can continue and affect any related system, and so on.
+A faulty system component will produce an error under specific circumstances during the system's lifetime.</p>
 <div id="admonition-hint" class="admonition admonish-tip">
 <div class="admonition-title">
 <p>Hint</p>
@@ -211,7 +218,9 @@
 <p>A system is the sum of external and internal states</p>
 </div>
 </div>
-<p>An external state not specified in the system's behavior will be considered a failure. The system consists of many components (each with its many states), all contributing to its external behavior. The combination of these components' states is called the system's internal state. <em>An unspecified internal state is considered an error, and the component that produced the illegal state transition is said to be faulty</em>.</p>
+<p>An external state not specified in the system's behavior will be considered a failure.
+The system consists of many components (each with its many states), all contributing to its external behavior.
+The combination of these components' states is called the system's internal state. <em>An unspecified internal state is considered an error, and the component that produced the illegal state transition is said to be faulty</em>.</p>
 <div id="admonition-types-of-failures" class="admonition admonish-example">
 <div class="admonition-title">
 <p>Types of Failures</p>
@@ -232,13 +241,20 @@
 <p><a class="admonition-anchor-link" href="#admonition-defining-failure-modes"></a></p>
 </div>
 <div>
-<p>A system can fail in many ways. A designer may design the system assuming a finite number of failure modes. However, the system may fail in ways that were not anticipated.</p>
+<p>A system can fail in many ways.
+A designer may design the system assuming a finite number of failure modes, but the system may fail unexpectedly.</p>
 <p>The failure mode is the specific way in which a part, component, function, equipment, subsystem, or system fails.</p>
 </div>
 </div>
-<p>There are three types of failure modes that can occur with a service: <strong>value failures</strong>, <strong>timing failures</strong>, and <strong>arbitrary failures</strong>. Value failures, also known as value domain failures, happen when the value associated with a service is incorrect. Timing failures, or time domain failures, occur when a service is completed at the wrong time. Arbitrary failures are a combination of value and timing failures.</p>
+<p>Three types of failure modes can occur with a service: <strong>value failures</strong>, <strong>timing failures</strong>, and <strong>arbitrary failures</strong>.
+Value failures, also known as value domain failures, happen when the value associated with a service is incorrect.
+Timing failures, or time domain failures, occur when a service is completed at the wrong time.
+Arbitrary failures are a combination of value and timing failures.</p>
 <h3 id="value-domain-failures"><a class="header" href="#value-domain-failures">Value Domain Failures</a></h3>
-<p>Value domain failures can be classified into <strong>boundary errors</strong> and <strong>wrong values</strong>. Boundary errors occur when the value is outside the expected range, including typing errors. Those errors are commonly referred to as <strong>constraint errors</strong>. On the other hand, wrong values occur when the value is within the correct range but is still incorrect.</p>
+<p>Value domain failures can be classified into <strong>boundary errors</strong> and <strong>wrong values</strong>.
+Boundary errors occur when the value is outside the expected range, including typing errors.
+They are commonly referred to as <strong>constraint errors</strong>.
+On the other hand, wrong values occur when the value is within the correct range but still incorrect.</p>
 <div id="admonition-constraint-errors-examples" class="admonition admonish-example">
 <div class="admonition-title">
 <p>Constraint Errors Examples</p>
@@ -247,13 +263,16 @@
 <div>
 <ul>
 <li>
-<p>An Apache Airflow DAG aggregating daily sales data failed due to an exceeding total sales amount, leading to a constraint error while inserting data into the database. This issue may have arisen because of an unexpected sales surge or an aggregation logic error.</p>
+<p>An Apache Airflow DAG aggregating daily sales data failed due to an exceeding total sales amount, leading to a constraint error while inserting data into the database.
+This issue may have arisen because of an unexpected sales surge or an aggregation logic error.</p>
 </li>
 <li>
-<p>An ELT process may encounter a boundary error when migrating data from a source database field defined as VARCHAR(255) to a target database field defined as VARCHAR(50) if a record contains more than 50 characters. This could result in insertion failure and data loss.</p>
+<p>An ELT process may encounter a boundary error when migrating data from a source database field defined as VARCHAR(255) to a target database field defined as VARCHAR(50) if a record contains more than 50 characters.
+This could result in insertion failure and data loss.</p>
 </li>
 <li>
-<p>A dbt model calculates a new metric that results in negative inventory levels for certain products due to an error in the calculation logic. The database schema enforces a constraint that inventory levels must be zero or positive, leading to a boundary error when the model tries to update the inventory table with negative values.</p>
+<p>A dbt model calculates a new metric that results in negative inventory levels for certain products due to an error in the calculation logic.
+The database schema enforces a constraint that inventory levels must be zero or positive, leading to a boundary error when the model tries to update the inventory table with negative values.</p>
 </li>
 </ul>
 </div>
@@ -266,15 +285,18 @@
 <div>
 <ul>
 <li>
-<p>An Airflow task that updates a customer's loyalty points based on recent purchases mistakenly doubles the points due to a bug in the calculation logic. Although the updated loyalty points value remains within the acceptable range, it is incorrect, constituting a wrong value error.</p>
+<p>An Airflow task that updates a customer's loyalty points based on recent purchases mistakenly doubles the points due to a bug in the calculation logic.
+Although the updated loyalty points value remains within the acceptable range, it is incorrect, constituting a wrong value error.</p>
 </li>
 <li>
-<p>A dbt model designed to compute monthly revenue projections mistakenly uses an outdated exchange rate for currency conversion. While within the expected range, the resulting revenue figures are inaccurate due to the use of the wrong exchange rate, leading to a wrong value error.</p>
+<p>A dbt model designed to compute monthly revenue projections mistakenly uses an outdated exchange rate for currency conversion.
+While within the expected range, the resulting revenue figures are inaccurate due to the wrong exchange rate, leading to a wrong value error.</p>
 </li>
 </ul>
 </div>
 </div>
-<p>In each of these examples, the integrity and reliability of the data are compromised, either by violating predefined constraints (boundary errors) or by producing incorrect but plausible values (wrong value errors). Addressing these errors requires thorough validation, testing, and monitoring of data pipelines to ensure data accuracy and integrity.</p>
+<p>In each of these examples, the integrity and reliability of the data are compromised, either by violating predefined constraints (boundary errors) or by producing incorrect but plausible values (wrong value errors).
+Addressing these errors requires thorough validation, testing, and monitoring of data pipelines to ensure data accuracy and integrity.</p>
 <h3 id="time-domain-failures"><a class="header" href="#time-domain-failures">Time Domain Failures</a></h3>
 <p>Failures in the time domain can cause the service to be delivered <strong>too early</strong>, <strong>too late</strong>, <strong>infinitely late</strong>, or <strong>unexpected</strong>.</p>
 <ul>
@@ -288,10 +310,12 @@
 <div>
 <ul>
 <li>
-<p>An Airflow DAG is scheduled to trigger a data processing task that depends on data to be loaded by an earlier task. If the preceding task finishes earlier than expected and the dependent task starts processing incomplete data, it results in premature service delivery.</p>
+<p>An Airflow DAG is scheduled to trigger a data processing task that depends on data to be loaded by an earlier task.
+If the preceding task finishes earlier than expected and the dependent task starts processing incomplete data, it results in premature service delivery.</p>
 </li>
 <li>
-<p>The AWS DMS task is configured to replicate data from a source to a target at specific intervals. If the replication task starts before the source system completes its data update cycle, it may replicate incomplete or stale data, leading to premature data availability in the target system.</p>
+<p>The AWS DMS task is configured to replicate data from a source to a target at specific intervals.
+If the replication task starts before the source system completes its data update cycle, it may replicate incomplete or stale data, leading to premature data availability in the target system.</p>
 </li>
 </ul>
 </div>
@@ -307,10 +331,12 @@
 <div>
 <ul>
 <li>
-<p>A dbt model aggregating daily sales data for reporting is scheduled to run after ETL processes are complete. If the dbt job experiences delays due to resource constraints or errors, the aggregated data becomes available too late, missing the reporting deadline.</p>
+<p>A dbt model aggregating daily sales data for reporting is scheduled to run after ETL processes are complete.
+If the dbt job experiences delays due to resource constraints or errors, the aggregated data becomes available too late, missing the reporting deadline.</p>
 </li>
 <li>
-<p>An Airflow DAG that coordinates a sequence of data processing tasks is experiencing unexpected delays due to a long-running task. This is causing subsequent tasks, including critical data loads into the data warehouse, to be delayed, ultimately impacting downstream processes such as reporting or analytics.</p>
+<p>An Airflow DAG that coordinates a sequence of data processing tasks is experiencing unexpected delays due to a long-running task.
+This is causing subsequent tasks, including critical data loads into the data warehouse, to be delayed, ultimately impacting downstream processes such as reporting or analytics.</p>
 </li>
 </ul>
 </div>
@@ -326,10 +352,12 @@
 <div>
 <ul>
 <li>
-<p>An ELT task configured to migrate data from a legacy system to a new data lake fails to start due to configuration errors or connectivity issues. The data migration does not occur, resulting in an omission failure where the data service (migration) is never delivered.</p>
+<p>An ELT task configured to migrate data from a legacy system to a new data lake fails to start due to configuration errors or connectivity issues.
+The data migration does not occur, resulting in an omission failure where the data service (migration) is never delivered.</p>
 </li>
 <li>
-<p>A dbt model responsible for transforming and loading data into a data mart is disabled or deleted inadvertently. The transformation and load process is never executed, leading to an omission failure where the expected data mart is never populated.</p>
+<p>A dbt model responsible for transforming and loading data into a data mart is disabled or deleted inadvertently.
+The transformation and load process is never executed, leading to an omission failure where the expected data mart is never populated.</p>
 </li>
 </ul>
 </div>
@@ -345,10 +373,12 @@
 <div>
 <ul>
 <li>
-<p>An Airflow DAG designed for monthly data archival is mistakenly triggered due to a manual intervention or a scheduling error, causing an unexpected data archival operation. This unexpected service might interfere with ongoing data processing or analysis tasks.</p>
+<p>An Airflow DAG designed for monthly data archival is mistakenly triggered due to a manual intervention or a scheduling error, causing an unexpected data archival operation.
+This unexpected service might interfere with ongoing data processing or analysis tasks.</p>
 </li>
 <li>
-<p>A dbt model meant to run on an ad-hoc basis for data cleanup is inadvertently included in the regular ETL schedule. This results in unexpected data modifications or deletions, which could affect data integrity and downstream data usage.</p>
+<p>A dbt model meant to run on an ad-hoc basis for data cleanup is inadvertently included in the regular ETL schedule.
+This results in unexpected data modifications or deletions, which could affect data integrity and downstream data usage.</p>
 </li>
 </ul>
 </div>
@@ -360,62 +390,76 @@
 <p>In general, we can assume the modes in which a system can fail:</p>
 <ul>
 <li>
-<p><strong>Uncontrolled failure</strong>: A system that produces arbitrary errors in value and time domains (including improvisation errors).</p>
+<p><strong>Uncontrolled failure</strong>:
+A system that produces arbitrary errors in value and time domains (including improvisation errors).</p>
 <div id="admonition-uncontrolled-failure-example" class="admonition admonish-example">
 <div class="admonition-title">
 <p>Uncontrolled Failure Example</p>
 <p><a class="admonition-anchor-link" href="#admonition-uncontrolled-failure-example"></a></p>
 </div>
 <div>
-<p>An Airflow DAG responsible for data aggregation experiences a memory leak in one of its tasks, leading to erratic behavior where some data records are processed multiple times (value domain error), some are skipped entirely (omission error), and others are processed at unpredictable intervals (time domain error). The failures are arbitrary, impacting both the correctness of the data (value domain) and its timeliness (time domain).</p>
+<p>An Airflow DAG responsible for data aggregation experiences a memory leak in one of its tasks, leading to erratic behavior.
+This results in some data records being processed multiple times (value domain error), some being skipped entirely (omission error), and others being processed at unpredictable intervals (time domain error).
+The failures are arbitrary, impacting both the correctness of the data (value domain) and its timeliness (time domain).</p>
 </div>
 </div>
 </li>
 <li>
-<p><strong>Delay failure</strong>: A system that produces correct services in the value domain but suffers from timing delays.</p>
+<p><strong>Delay failure</strong>:
+A system that produces correct services in the value domain but suffers from timing delays.</p>
 <div id="admonition-delay-failure-example" class="admonition admonish-example">
 <div class="admonition-title">
 <p>Delay Failure Example</p>
 <p><a class="admonition-anchor-link" href="#admonition-delay-failure-example"></a></p>
 </div>
 <div>
-<p>A dbt model that calculates end-of-month financial summaries experiences significant delays due to resource contention in the data warehouse. While the financial summaries are eventually calculated correctly (value domain is unaffected), they are not available in time for the monthly financial meeting (time domain error), constituting a delayed failure.</p>
+<p>A dbt model that calculates end-of-month financial summaries experiences significant delays due to resource contention in the data warehouse.
+While the financial summaries are eventually calculated correctly (value domain is unaffected), they are not available in time for the monthly financial meeting (time domain error), constituting a delayed failure.</p>
 </div>
 </div>
 </li>
 <li>
-<p><strong>Silent failure</strong>: A system that produces correct services in value and time domains until it fails. The only possible failure is omission, and when it occurs, all subsequent services will also suffer from omission failures.</p>
+<p><strong>Silent failure</strong>:
+A system that produces correct services in value and time domains until it fails.
+The only possible failure is omission, and when it occurs, all subsequent services will also suffer from omission failures.</p>
 <div id="admonition-silent-failure-example" class="admonition admonish-example">
 <div class="admonition-title">
 <p>Silent Failure Example</p>
 <p><a class="admonition-anchor-link" href="#admonition-silent-failure-example"></a></p>
 </div>
 <div>
-<p>An ELT task silently fails to replicate a subset of records from a source database to a data lake due to a transient network issue. The task does not report any errors; subsequent data loads continue as if nothing happened. However, the missing records lead to incomplete datasets in the data lake, representing omission failures that are not immediately apparent.</p>
+<p>An ELT task silently fails to replicate a subset of records from a source database to a data lake due to a transient network issue.
+The task does not report any errors; subsequent data loads continue as if nothing happened. However, the missing records lead to incomplete datasets in the data lake, representing omission failures that are not immediately apparent.</p>
 </div>
 </div>
 </li>
 <li>
-<p><strong>Crash failure</strong>: A system presenting all the properties of a silent failure but allowing other systems to detect it has entered the state of silent failure.</p>
+<p><strong>Crash failure</strong>:
+A system that presents all the properties of a silent failure but allows other systems to detect it has entered the state of silent failure.</p>
 <div id="admonition-crash-failure-example" class="admonition admonish-example">
 <div class="admonition-title">
 <p>Crash Failure Example</p>
 <p><a class="admonition-anchor-link" href="#admonition-crash-failure-example"></a></p>
 </div>
 <div>
-<p>The Airflow scheduler, responsible for triggering and managing data pipeline tasks, crashes due to an overload of scheduled jobs exceeding the system's available resources. The crash causes all data processing jobs managed by Airflow to halt, leading to a temporary cessation of data operations. However, the built-in health check mechanisms of the Airflow system detect the scheduler's unavailability and automatically initiate a restart procedure. The rapid detection and response to the crash ensure that the data pipelines are restored with minimal manual intervention, showcasing another instance of a crash failure where the system's failure state is quickly identified and mitigated.</p>
+<p>The Airflow scheduler, responsible for triggering and managing data pipeline tasks, crashes due to an overload of scheduled jobs exceeding the system's available resources.
+The crash causes all data processing jobs managed by Airflow to halt, leading to a temporary cessation of data operations.
+However, the built-in health check mechanisms of the Airflow system detect the scheduler's unavailability and automatically initiate a restart procedure.
+The rapid detection and response to the crash ensure that the data pipelines are restored with minimal manual intervention, showcasing another instance of a crash failure where the system's failure state is quickly identified and mitigated.</p>
 </div>
 </div>
 </li>
 <li>
-<p><strong>Controlled failure</strong>: A system that fails in a specified and controlled manner.</p>
+<p><strong>Controlled failure</strong>:
+A system that fails in a specified and controlled manner.</p>
 <div id="admonition-crash-failure-example-1" class="admonition admonish-example">
 <div class="admonition-title">
 <p>Crash Failure Example</p>
 <p><a class="admonition-anchor-link" href="#admonition-crash-failure-example-1"></a></p>
 </div>
 <div>
-<p>A dbt model performing data validation detects that incoming data exceeds predefined quality thresholds (e.g., too many null values in a critical column). The model deliberately enters a controlled failure state, rejecting the batch of data and triggering a predefined alert to the data quality team for review without processing the faulty data further.</p>
+<p>A dbt model performing data validation detects that incoming data exceeds predefined quality thresholds (e.g., too many null values in a critical column).
+The model deliberately enters a controlled failure state, rejecting the batch of data and triggering a predefined alert to the data quality team for review without processing the faulty data further.</p>
 </div>
 </div>
 </li>

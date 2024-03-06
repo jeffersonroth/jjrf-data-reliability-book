@@ -648,7 +648,7 @@ While QuickSight doesn’t connect directly to the data lake, integration with A
 <li>Explorative Zone</li>
 </ul>
 <p>PlantUML rendering error:
-PlantUML did not generate an image, did you forget the @startuml, @enduml block (java -jar /usr/share/plantuml/plantuml.jar -tsvg -nometadata /tmp/.tmpwc547U/b510a51550cb2a65e78ebfbb460618d52bd15e92.puml)?</p>
+PlantUML did not generate an image, did you forget the @startuml, @enduml block (java -jar /usr/share/plantuml/plantuml.jar -tsvg -nometadata /tmp/.tmp95WkAN/b510a51550cb2a65e78ebfbb460618d52bd15e92.puml)?</p>
 <p style="text-align: center;">Zone Reference Model for Enterprise-Grade Data Lake Management - Meta-model for zones - Attributes.</p>
 <p>Regarding how a zone interacts with other zones and the outside world, we have:</p>
 <ul>
@@ -1539,12 +1539,15 @@ While traditional DOS is often used for operational reporting and analysis acros
 <p><a class="admonition-anchor-link" href="concepts/systems_reliability.html#admonition-defining-system-reliability"></a></p>
 </div>
 <div>
-<p>System reliability is determined by its adherence to a clear, complete, consistent, and unambiguous behavior specification. A reliable system performs predictably, without errors or failures, and is able to consistently deliver its intended service.</p>
+<p>System reliability is determined by its adherence to a clear, complete, consistent, and unambiguous behavior specification.
+A reliable system performs predictably without errors or failures and consistently delivers its intended service.</p>
 </div>
 </div>
-<p>This chapter aims to provide an in-depth understanding of the concepts of Reliability and Safety as presented by Alan Burns and Andy Wellings in their book<sup><a name="to-footnote-1"><a href="concepts/systems_reliability.html#footnote-1">1</a></a></sup> "Real-Time Systems and Programming Languages." These concepts, and many others, have been developed by different industries over several decades and consolidated in the sub-discipline of systems engineering known today as <strong>Reliability Engineering</strong>.</p>
+<p>This chapter aims to provide an in-depth understanding of the concepts of Reliability and Safety as presented by Alan Burns and Andy Wellings in their book<sup><a name="to-footnote-1"><a href="concepts/systems_reliability.html#footnote-1">1</a></a></sup> "Real-Time Systems and Programming Languages."
+These concepts, and many others, have been developed by different industries over several decades and consolidated in the sub-discipline of systems engineering known today as <strong>Reliability Engineering</strong>.</p>
 <p>I will supplement these concepts by looking at reliability in other engineering fields, such as mechanical and industrial engineering, drawing comparisons and analogies to help you better understand the core concepts.</p>
-<p>Lastly, I will contextualize these concepts with the current reliability concepts being worked on in the software, data, and computer systems industry. I will explore many tools and frameworks data teams can use to design and manage reliable data systems.</p>
+<p>Lastly, I will contextualize these concepts with the current reliability concepts being worked on in the software, data, and computer systems industry.
+I will explore many tools and frameworks data teams can use to design and manage reliable data systems.</p>
 <p>I divided this chapter into <a href="concepts/./systems-reliability/impediments.html"><strong>Impediments</strong></a>, <a href="concepts/./systems-reliability/attributes.html"><strong>Attributes</strong></a>, and <a href="concepts/./systems-reliability/mechanisms.html"><strong>Mechanisms</strong></a>.</p>
 <div id="admonition-impediments" class="admonition admonish-abstract">
 <div class="admonition-title">
@@ -1552,7 +1555,8 @@ While traditional DOS is often used for operational reporting and analysis acros
 <p><a class="admonition-anchor-link" href="concepts/systems_reliability.html#admonition-impediments"></a></p>
 </div>
 <div>
-<p>Impediments prevent a system from functioning perfectly or are a consequence of it. This chapter covers impediment classification, including <strong>Failures</strong>, <strong>Errors</strong>, and <strong>Defects</strong>.</p>
+<p>Impediments prevent a system from functioning perfectly or are a consequence of it.
+This chapter covers impediment classification, including <strong>Failures</strong>, <strong>Errors</strong>, and <strong>Defects</strong>.</p>
 </div>
 </div>
 <div id="admonition-attributes" class="admonition admonish-abstract">
@@ -1570,16 +1574,23 @@ While traditional DOS is often used for operational reporting and analysis acros
 <p><a class="admonition-anchor-link" href="concepts/systems_reliability.html#admonition-mechanisms"></a></p>
 </div>
 <div>
-<p>This chapter addresses system reliability mechanisms by internalizing and adopting best practices or applying specific methodologies, architectures, or tools. This chapter aims to create a <strong>data system reliability framework</strong> that engineers can adopt from earlier implementation phases, such as the design phase.</p>
+<p>This chapter addresses system reliability mechanisms by internalizing and adopting best practices or applying specific methodologies, architectures, or tools.
+This chapter aims to create a <strong>data system reliability framework</strong> that engineers can adopt from earlier implementation phases, such as the design phase.</p>
 </div>
 </div>
 <p align="center">
-  <img src="concepts/../assets/concepts/systems-reliability/concept_v1.svg" alt="Systems Reliability - Concepts">
+  <figure>
+    <img src="concepts/../assets/concepts/systems-reliability/concept_v1.svg" alt="Systems Reliability - Concepts">
+    <figcaption>Systems Reliability - Concepts.</figcaption>
+  </figure>
 </p><p><hr/>
 <p><a name="footnote-1"><a href="concepts/systems_reliability.html#to-footnote-1">1</a></a>: Alan Burns and Andrew J. Wellings. 2001. Real-Time Systems and Programming Languages: ADA 95, Real-Time Java, and Real-Time POSIX (3rd. ed.). Addison-Wesley Longman Publishing Co., Inc., USA.</p>
 <div style="break-before: page; page-break-before: always;"></div><h1 id="impediments"><a class="header" href="#impediments">Impediments</a></h1>
 <p align="center">
-  <img src="concepts/systems-reliability/../../assets/concepts/systems-reliability/impediments_v1.svg" alt="System Reliability - Impediments">
+  <figure>
+    <img src="concepts/systems-reliability/../../assets/concepts/systems-reliability/impediments_v1.svg" alt="System Reliability - Impediments">
+    <figcaption>System Reliability - Impediments.</figcaption>
+  </figure>
 </p>
 <h2 id="failures-errors-and-defects"><a class="header" href="#failures-errors-and-defects">Failures, Errors, and Defects</a></h2>
 <div id="admonition-classifying-system-impediments" class="admonition admonish-tip">
@@ -1588,11 +1599,15 @@ While traditional DOS is often used for operational reporting and analysis acros
 <p><a class="admonition-anchor-link" href="concepts/systems-reliability/impediments.html#admonition-classifying-system-impediments"></a></p>
 </div>
 <div>
-<p><strong>Failures</strong> result from unexpected internal problems that a system eventually exhibits in its external behavior. These problems are called <strong>errors</strong>, and their mechanical or algorithmic causes are called <strong>defects</strong> or <strong>faults</strong>.</p>
+<p><strong>Failures</strong> result from unexpected internal problems that a system eventually exhibits in its external behavior.
+These problems are called <strong>errors</strong>, and their mechanical or algorithmic causes are called <strong>defects</strong> or <strong>faults</strong>.</p>
 <p>When a system's behavior deviates from its specifications, it is said to have a <strong>failure</strong>, or the system has <strong>failed</strong>.</p>
 </div>
 </div>
-<p>Systems are composed of <strong>components</strong>, each of which can be considered a system. Thus, a failure in one system can induce a fault in another, which may result in an error and a potential failure of this system. This failure can continue and affect any related system, and so on. A faulty system component will produce an error under specific circumstances during the system's lifetime.</p>
+<p>Systems are composed of <strong>components</strong>, each of which can be considered a system.
+Thus, a failure in one system can induce a fault in another, which may result in an error and a potential failure of this system.
+This failure can continue and affect any related system, and so on.
+A faulty system component will produce an error under specific circumstances during the system's lifetime.</p>
 <div id="admonition-hint" class="admonition admonish-tip">
 <div class="admonition-title">
 <p>Hint</p>
@@ -1602,7 +1617,9 @@ While traditional DOS is often used for operational reporting and analysis acros
 <p>A system is the sum of external and internal states</p>
 </div>
 </div>
-<p>An external state not specified in the system's behavior will be considered a failure. The system consists of many components (each with its many states), all contributing to its external behavior. The combination of these components' states is called the system's internal state. <em>An unspecified internal state is considered an error, and the component that produced the illegal state transition is said to be faulty</em>.</p>
+<p>An external state not specified in the system's behavior will be considered a failure.
+The system consists of many components (each with its many states), all contributing to its external behavior.
+The combination of these components' states is called the system's internal state. <em>An unspecified internal state is considered an error, and the component that produced the illegal state transition is said to be faulty</em>.</p>
 <div id="admonition-types-of-failures" class="admonition admonish-example">
 <div class="admonition-title">
 <p>Types of Failures</p>
@@ -1623,13 +1640,20 @@ While traditional DOS is often used for operational reporting and analysis acros
 <p><a class="admonition-anchor-link" href="concepts/systems-reliability/impediments.html#admonition-defining-failure-modes"></a></p>
 </div>
 <div>
-<p>A system can fail in many ways. A designer may design the system assuming a finite number of failure modes. However, the system may fail in ways that were not anticipated.</p>
+<p>A system can fail in many ways.
+A designer may design the system assuming a finite number of failure modes, but the system may fail unexpectedly.</p>
 <p>The failure mode is the specific way in which a part, component, function, equipment, subsystem, or system fails.</p>
 </div>
 </div>
-<p>There are three types of failure modes that can occur with a service: <strong>value failures</strong>, <strong>timing failures</strong>, and <strong>arbitrary failures</strong>. Value failures, also known as value domain failures, happen when the value associated with a service is incorrect. Timing failures, or time domain failures, occur when a service is completed at the wrong time. Arbitrary failures are a combination of value and timing failures.</p>
+<p>Three types of failure modes can occur with a service: <strong>value failures</strong>, <strong>timing failures</strong>, and <strong>arbitrary failures</strong>.
+Value failures, also known as value domain failures, happen when the value associated with a service is incorrect.
+Timing failures, or time domain failures, occur when a service is completed at the wrong time.
+Arbitrary failures are a combination of value and timing failures.</p>
 <h3 id="value-domain-failures"><a class="header" href="#value-domain-failures">Value Domain Failures</a></h3>
-<p>Value domain failures can be classified into <strong>boundary errors</strong> and <strong>wrong values</strong>. Boundary errors occur when the value is outside the expected range, including typing errors. Those errors are commonly referred to as <strong>constraint errors</strong>. On the other hand, wrong values occur when the value is within the correct range but is still incorrect.</p>
+<p>Value domain failures can be classified into <strong>boundary errors</strong> and <strong>wrong values</strong>.
+Boundary errors occur when the value is outside the expected range, including typing errors.
+They are commonly referred to as <strong>constraint errors</strong>.
+On the other hand, wrong values occur when the value is within the correct range but still incorrect.</p>
 <div id="admonition-constraint-errors-examples" class="admonition admonish-example">
 <div class="admonition-title">
 <p>Constraint Errors Examples</p>
@@ -1638,13 +1662,16 @@ While traditional DOS is often used for operational reporting and analysis acros
 <div>
 <ul>
 <li>
-<p>An Apache Airflow DAG aggregating daily sales data failed due to an exceeding total sales amount, leading to a constraint error while inserting data into the database. This issue may have arisen because of an unexpected sales surge or an aggregation logic error.</p>
+<p>An Apache Airflow DAG aggregating daily sales data failed due to an exceeding total sales amount, leading to a constraint error while inserting data into the database.
+This issue may have arisen because of an unexpected sales surge or an aggregation logic error.</p>
 </li>
 <li>
-<p>An ELT process may encounter a boundary error when migrating data from a source database field defined as VARCHAR(255) to a target database field defined as VARCHAR(50) if a record contains more than 50 characters. This could result in insertion failure and data loss.</p>
+<p>An ELT process may encounter a boundary error when migrating data from a source database field defined as VARCHAR(255) to a target database field defined as VARCHAR(50) if a record contains more than 50 characters.
+This could result in insertion failure and data loss.</p>
 </li>
 <li>
-<p>A dbt model calculates a new metric that results in negative inventory levels for certain products due to an error in the calculation logic. The database schema enforces a constraint that inventory levels must be zero or positive, leading to a boundary error when the model tries to update the inventory table with negative values.</p>
+<p>A dbt model calculates a new metric that results in negative inventory levels for certain products due to an error in the calculation logic.
+The database schema enforces a constraint that inventory levels must be zero or positive, leading to a boundary error when the model tries to update the inventory table with negative values.</p>
 </li>
 </ul>
 </div>
@@ -1657,15 +1684,18 @@ While traditional DOS is often used for operational reporting and analysis acros
 <div>
 <ul>
 <li>
-<p>An Airflow task that updates a customer's loyalty points based on recent purchases mistakenly doubles the points due to a bug in the calculation logic. Although the updated loyalty points value remains within the acceptable range, it is incorrect, constituting a wrong value error.</p>
+<p>An Airflow task that updates a customer's loyalty points based on recent purchases mistakenly doubles the points due to a bug in the calculation logic.
+Although the updated loyalty points value remains within the acceptable range, it is incorrect, constituting a wrong value error.</p>
 </li>
 <li>
-<p>A dbt model designed to compute monthly revenue projections mistakenly uses an outdated exchange rate for currency conversion. While within the expected range, the resulting revenue figures are inaccurate due to the use of the wrong exchange rate, leading to a wrong value error.</p>
+<p>A dbt model designed to compute monthly revenue projections mistakenly uses an outdated exchange rate for currency conversion.
+While within the expected range, the resulting revenue figures are inaccurate due to the wrong exchange rate, leading to a wrong value error.</p>
 </li>
 </ul>
 </div>
 </div>
-<p>In each of these examples, the integrity and reliability of the data are compromised, either by violating predefined constraints (boundary errors) or by producing incorrect but plausible values (wrong value errors). Addressing these errors requires thorough validation, testing, and monitoring of data pipelines to ensure data accuracy and integrity.</p>
+<p>In each of these examples, the integrity and reliability of the data are compromised, either by violating predefined constraints (boundary errors) or by producing incorrect but plausible values (wrong value errors).
+Addressing these errors requires thorough validation, testing, and monitoring of data pipelines to ensure data accuracy and integrity.</p>
 <h3 id="time-domain-failures"><a class="header" href="#time-domain-failures">Time Domain Failures</a></h3>
 <p>Failures in the time domain can cause the service to be delivered <strong>too early</strong>, <strong>too late</strong>, <strong>infinitely late</strong>, or <strong>unexpected</strong>.</p>
 <ul>
@@ -1679,10 +1709,12 @@ While traditional DOS is often used for operational reporting and analysis acros
 <div>
 <ul>
 <li>
-<p>An Airflow DAG is scheduled to trigger a data processing task that depends on data to be loaded by an earlier task. If the preceding task finishes earlier than expected and the dependent task starts processing incomplete data, it results in premature service delivery.</p>
+<p>An Airflow DAG is scheduled to trigger a data processing task that depends on data to be loaded by an earlier task.
+If the preceding task finishes earlier than expected and the dependent task starts processing incomplete data, it results in premature service delivery.</p>
 </li>
 <li>
-<p>The AWS DMS task is configured to replicate data from a source to a target at specific intervals. If the replication task starts before the source system completes its data update cycle, it may replicate incomplete or stale data, leading to premature data availability in the target system.</p>
+<p>The AWS DMS task is configured to replicate data from a source to a target at specific intervals.
+If the replication task starts before the source system completes its data update cycle, it may replicate incomplete or stale data, leading to premature data availability in the target system.</p>
 </li>
 </ul>
 </div>
@@ -1698,10 +1730,12 @@ While traditional DOS is often used for operational reporting and analysis acros
 <div>
 <ul>
 <li>
-<p>A dbt model aggregating daily sales data for reporting is scheduled to run after ETL processes are complete. If the dbt job experiences delays due to resource constraints or errors, the aggregated data becomes available too late, missing the reporting deadline.</p>
+<p>A dbt model aggregating daily sales data for reporting is scheduled to run after ETL processes are complete.
+If the dbt job experiences delays due to resource constraints or errors, the aggregated data becomes available too late, missing the reporting deadline.</p>
 </li>
 <li>
-<p>An Airflow DAG that coordinates a sequence of data processing tasks is experiencing unexpected delays due to a long-running task. This is causing subsequent tasks, including critical data loads into the data warehouse, to be delayed, ultimately impacting downstream processes such as reporting or analytics.</p>
+<p>An Airflow DAG that coordinates a sequence of data processing tasks is experiencing unexpected delays due to a long-running task.
+This is causing subsequent tasks, including critical data loads into the data warehouse, to be delayed, ultimately impacting downstream processes such as reporting or analytics.</p>
 </li>
 </ul>
 </div>
@@ -1717,10 +1751,12 @@ While traditional DOS is often used for operational reporting and analysis acros
 <div>
 <ul>
 <li>
-<p>An ELT task configured to migrate data from a legacy system to a new data lake fails to start due to configuration errors or connectivity issues. The data migration does not occur, resulting in an omission failure where the data service (migration) is never delivered.</p>
+<p>An ELT task configured to migrate data from a legacy system to a new data lake fails to start due to configuration errors or connectivity issues.
+The data migration does not occur, resulting in an omission failure where the data service (migration) is never delivered.</p>
 </li>
 <li>
-<p>A dbt model responsible for transforming and loading data into a data mart is disabled or deleted inadvertently. The transformation and load process is never executed, leading to an omission failure where the expected data mart is never populated.</p>
+<p>A dbt model responsible for transforming and loading data into a data mart is disabled or deleted inadvertently.
+The transformation and load process is never executed, leading to an omission failure where the expected data mart is never populated.</p>
 </li>
 </ul>
 </div>
@@ -1736,10 +1772,12 @@ While traditional DOS is often used for operational reporting and analysis acros
 <div>
 <ul>
 <li>
-<p>An Airflow DAG designed for monthly data archival is mistakenly triggered due to a manual intervention or a scheduling error, causing an unexpected data archival operation. This unexpected service might interfere with ongoing data processing or analysis tasks.</p>
+<p>An Airflow DAG designed for monthly data archival is mistakenly triggered due to a manual intervention or a scheduling error, causing an unexpected data archival operation.
+This unexpected service might interfere with ongoing data processing or analysis tasks.</p>
 </li>
 <li>
-<p>A dbt model meant to run on an ad-hoc basis for data cleanup is inadvertently included in the regular ETL schedule. This results in unexpected data modifications or deletions, which could affect data integrity and downstream data usage.</p>
+<p>A dbt model meant to run on an ad-hoc basis for data cleanup is inadvertently included in the regular ETL schedule.
+This results in unexpected data modifications or deletions, which could affect data integrity and downstream data usage.</p>
 </li>
 </ul>
 </div>
@@ -1751,62 +1789,76 @@ While traditional DOS is often used for operational reporting and analysis acros
 <p>In general, we can assume the modes in which a system can fail:</p>
 <ul>
 <li>
-<p><strong>Uncontrolled failure</strong>: A system that produces arbitrary errors in value and time domains (including improvisation errors).</p>
+<p><strong>Uncontrolled failure</strong>:
+A system that produces arbitrary errors in value and time domains (including improvisation errors).</p>
 <div id="admonition-uncontrolled-failure-example" class="admonition admonish-example">
 <div class="admonition-title">
 <p>Uncontrolled Failure Example</p>
 <p><a class="admonition-anchor-link" href="concepts/systems-reliability/impediments.html#admonition-uncontrolled-failure-example"></a></p>
 </div>
 <div>
-<p>An Airflow DAG responsible for data aggregation experiences a memory leak in one of its tasks, leading to erratic behavior where some data records are processed multiple times (value domain error), some are skipped entirely (omission error), and others are processed at unpredictable intervals (time domain error). The failures are arbitrary, impacting both the correctness of the data (value domain) and its timeliness (time domain).</p>
+<p>An Airflow DAG responsible for data aggregation experiences a memory leak in one of its tasks, leading to erratic behavior.
+This results in some data records being processed multiple times (value domain error), some being skipped entirely (omission error), and others being processed at unpredictable intervals (time domain error).
+The failures are arbitrary, impacting both the correctness of the data (value domain) and its timeliness (time domain).</p>
 </div>
 </div>
 </li>
 <li>
-<p><strong>Delay failure</strong>: A system that produces correct services in the value domain but suffers from timing delays.</p>
+<p><strong>Delay failure</strong>:
+A system that produces correct services in the value domain but suffers from timing delays.</p>
 <div id="admonition-delay-failure-example" class="admonition admonish-example">
 <div class="admonition-title">
 <p>Delay Failure Example</p>
 <p><a class="admonition-anchor-link" href="concepts/systems-reliability/impediments.html#admonition-delay-failure-example"></a></p>
 </div>
 <div>
-<p>A dbt model that calculates end-of-month financial summaries experiences significant delays due to resource contention in the data warehouse. While the financial summaries are eventually calculated correctly (value domain is unaffected), they are not available in time for the monthly financial meeting (time domain error), constituting a delayed failure.</p>
+<p>A dbt model that calculates end-of-month financial summaries experiences significant delays due to resource contention in the data warehouse.
+While the financial summaries are eventually calculated correctly (value domain is unaffected), they are not available in time for the monthly financial meeting (time domain error), constituting a delayed failure.</p>
 </div>
 </div>
 </li>
 <li>
-<p><strong>Silent failure</strong>: A system that produces correct services in value and time domains until it fails. The only possible failure is omission, and when it occurs, all subsequent services will also suffer from omission failures.</p>
+<p><strong>Silent failure</strong>:
+A system that produces correct services in value and time domains until it fails.
+The only possible failure is omission, and when it occurs, all subsequent services will also suffer from omission failures.</p>
 <div id="admonition-silent-failure-example" class="admonition admonish-example">
 <div class="admonition-title">
 <p>Silent Failure Example</p>
 <p><a class="admonition-anchor-link" href="concepts/systems-reliability/impediments.html#admonition-silent-failure-example"></a></p>
 </div>
 <div>
-<p>An ELT task silently fails to replicate a subset of records from a source database to a data lake due to a transient network issue. The task does not report any errors; subsequent data loads continue as if nothing happened. However, the missing records lead to incomplete datasets in the data lake, representing omission failures that are not immediately apparent.</p>
+<p>An ELT task silently fails to replicate a subset of records from a source database to a data lake due to a transient network issue.
+The task does not report any errors; subsequent data loads continue as if nothing happened. However, the missing records lead to incomplete datasets in the data lake, representing omission failures that are not immediately apparent.</p>
 </div>
 </div>
 </li>
 <li>
-<p><strong>Crash failure</strong>: A system presenting all the properties of a silent failure but allowing other systems to detect it has entered the state of silent failure.</p>
+<p><strong>Crash failure</strong>:
+A system that presents all the properties of a silent failure but allows other systems to detect it has entered the state of silent failure.</p>
 <div id="admonition-crash-failure-example" class="admonition admonish-example">
 <div class="admonition-title">
 <p>Crash Failure Example</p>
 <p><a class="admonition-anchor-link" href="concepts/systems-reliability/impediments.html#admonition-crash-failure-example"></a></p>
 </div>
 <div>
-<p>The Airflow scheduler, responsible for triggering and managing data pipeline tasks, crashes due to an overload of scheduled jobs exceeding the system's available resources. The crash causes all data processing jobs managed by Airflow to halt, leading to a temporary cessation of data operations. However, the built-in health check mechanisms of the Airflow system detect the scheduler's unavailability and automatically initiate a restart procedure. The rapid detection and response to the crash ensure that the data pipelines are restored with minimal manual intervention, showcasing another instance of a crash failure where the system's failure state is quickly identified and mitigated.</p>
+<p>The Airflow scheduler, responsible for triggering and managing data pipeline tasks, crashes due to an overload of scheduled jobs exceeding the system's available resources.
+The crash causes all data processing jobs managed by Airflow to halt, leading to a temporary cessation of data operations.
+However, the built-in health check mechanisms of the Airflow system detect the scheduler's unavailability and automatically initiate a restart procedure.
+The rapid detection and response to the crash ensure that the data pipelines are restored with minimal manual intervention, showcasing another instance of a crash failure where the system's failure state is quickly identified and mitigated.</p>
 </div>
 </div>
 </li>
 <li>
-<p><strong>Controlled failure</strong>: A system that fails in a specified and controlled manner.</p>
+<p><strong>Controlled failure</strong>:
+A system that fails in a specified and controlled manner.</p>
 <div id="admonition-crash-failure-example-1" class="admonition admonish-example">
 <div class="admonition-title">
 <p>Crash Failure Example</p>
 <p><a class="admonition-anchor-link" href="concepts/systems-reliability/impediments.html#admonition-crash-failure-example-1"></a></p>
 </div>
 <div>
-<p>A dbt model performing data validation detects that incoming data exceeds predefined quality thresholds (e.g., too many null values in a critical column). The model deliberately enters a controlled failure state, rejecting the batch of data and triggering a predefined alert to the data quality team for review without processing the faulty data further.</p>
+<p>A dbt model performing data validation detects that incoming data exceeds predefined quality thresholds (e.g., too many null values in a critical column).
+The model deliberately enters a controlled failure state, rejecting the batch of data and triggering a predefined alert to the data quality team for review without processing the faulty data further.</p>
 </div>
 </div>
 </li>
@@ -1834,51 +1886,117 @@ Given that the system did not alert the failure (the dashboard wasn't updated, w
 Understanding the distinction between defects, errors, and failures helps diagnose issues within systems and implement effective countermeasures to prevent recurrence.</p>
 <div style="break-before: page; page-break-before: always;"></div><h1 id="attributes"><a class="header" href="#attributes">Attributes</a></h1>
 <h2 id="reliability"><a class="header" href="#reliability">Reliability</a></h2>
-<blockquote>
+<div id="admonition-reliability-attribute" class="admonition admonish-tip">
+<div class="admonition-title">
+<p>Reliability Attribute</p>
+<p><a class="admonition-anchor-link" href="concepts/systems-reliability/attributes.html#admonition-reliability-attribute"></a></p>
+</div>
+<div>
 <p><em>Reliability</em> is the probability <em>R(t)</em> that the system will <strong>continue functioning at the end of the process</strong>.</p>
-</blockquote>
-<p>The time <em>t</em> is measured in continuous working hours between diagnostics. The constant failure rate λ is measured in <em>failures/hour</em>. The useful life of a system component is the constant region (on a logarithmic scale) of the curve between the component's age and its failure rate. The region of the graph before equilibrium is the burn-in phase, and the region where the failure rate starts to increase is the end-of-life phase. Thus, we have <em>R(t) = exp(-λt)</em>.</p>
+</div>
+</div>
+<p>The time <em>t</em> is measured in continuous working hours between diagnostics.
+The constant failure rate λ is measured in <em>failures/hour</em>.
+The useful life of a system component is the constant region (on a logarithmic scale) of the curve between the component's age and its failure rate.
+The region of the graph before equilibrium is the burn-in phase, and the region where the failure rate starts to increase is the end-of-life phase.
+Thus, we have <em>R(t) = exp(-λt)</em>.</p>
 <h2 id="availability"><a class="header" href="#availability">Availability</a></h2>
-<blockquote>
+<div id="admonition-availability-attribute" class="admonition admonish-tip">
+<div class="admonition-title">
+<p>Availability Attribute</p>
+<p><a class="admonition-anchor-link" href="concepts/systems-reliability/attributes.html#admonition-availability-attribute"></a></p>
+</div>
+<div>
 <p><em>Availability</em> is the measure of the <strong>frequency of incorrect service periods</strong>.</p>
-</blockquote>
+</div>
+</div>
 <h2 id="dependability"><a class="header" href="#dependability">Dependability</a></h2>
-<blockquote>
+<div id="admonition-dependability-attribute" class="admonition admonish-tip">
+<div class="admonition-title">
+<p>Dependability Attribute</p>
+<p><a class="admonition-anchor-link" href="concepts/systems-reliability/attributes.html#admonition-dependability-attribute"></a></p>
+</div>
+<div>
 <p>Continuity of service delivery.</p>
-</blockquote>
 <p>It is a measure (probability) of the <strong>success with which the system conforms to the definitive specification of its behavior</strong>.</p>
+</div>
+</div>
 <h2 id="safety"><a class="header" href="#safety">Safety</a></h2>
-<blockquote>
+<div id="admonition-safety-attribute" class="admonition admonish-tip">
+<div class="admonition-title">
+<p>Safety Attribute</p>
+<p><a class="admonition-anchor-link" href="concepts/systems-reliability/attributes.html#admonition-safety-attribute"></a></p>
+</div>
+<div>
 <p><em>Safety</em> is the absence of conditions that can cause damage and the propagation of <strong>catastrophic damage</strong> in production.</p>
-</blockquote>
+</div>
+</div>
 <p>However, as this definition can classify virtually any process as unsafe, we often consider the term <strong>mishap</strong>.</p>
-<blockquote>
+<div id="admonition-mishap" class="admonition admonish-tip">
+<div class="admonition-title">
+<p>Mishap</p>
+<p><a class="admonition-anchor-link" href="concepts/systems-reliability/attributes.html#admonition-mishap"></a></p>
+</div>
+<div>
 <p>A <em>Mishap</em> is an <strong>unplanned event</strong> or sequence of events that can produce catastrophic damage.</p>
-</blockquote>
+</div>
+</div>
 <p>Despite its similarity to the definition of <em>Dependability</em>, there is a crucial difference in emphasis:  <em>Dependability</em> is the measure of success with which the system conforms to the specification of its behavior, typically in terms of probability, while <em>Safety</em> is the improbability of conditions leading to a mishap occurring, regardless of whether the intended function is performed.</p>
 <h2 id="integrity"><a class="header" href="#integrity">Integrity</a></h2>
-<blockquote>
+<div id="admonition-integrity-attribute" class="admonition admonish-tip">
+<div class="admonition-title">
+<p>Integrity Attribute</p>
+<p><a class="admonition-anchor-link" href="concepts/systems-reliability/attributes.html#admonition-integrity-attribute"></a></p>
+</div>
+<div>
 <p><em>Integrity</em> is the absence of conditions that can lead to inappropriate alterations of data in production.</p>
-</blockquote>
+</div>
+</div>
 <h2 id="confidentiality"><a class="header" href="#confidentiality">Confidentiality</a></h2>
-<blockquote>
+<div id="admonition-confidentiality-attribute" class="admonition admonish-tip">
+<div class="admonition-title">
+<p>Confidentiality Attribute</p>
+<p><a class="admonition-anchor-link" href="concepts/systems-reliability/attributes.html#admonition-confidentiality-attribute"></a></p>
+</div>
+<div>
 <p><em>Confidentiality</em> is the absence of unauthorized data access.</p>
-</blockquote>
+</div>
+</div>
 <h2 id="maintainability"><a class="header" href="#maintainability">Maintainability</a></h2>
-<blockquote>
+<div id="admonition-maintainability-attribute" class="admonition admonish-tip">
+<div class="admonition-title">
+<p>Maintainability Attribute</p>
+<p><a class="admonition-anchor-link" href="concepts/systems-reliability/attributes.html#admonition-maintainability-attribute"></a></p>
+</div>
+<div>
 <p><em>Maintainability</em> is the ability to undergo repairs and evolve.</p>
-</blockquote>
+</div>
+</div>
 <h2 id="scalability"><a class="header" href="#scalability">Scalability</a></h2>
-<blockquote>
+<div id="admonition-scalability-attribute" class="admonition admonish-tip">
+<div class="admonition-title">
+<p>Scalability Attribute</p>
+<p><a class="admonition-anchor-link" href="concepts/systems-reliability/attributes.html#admonition-scalability-attribute"></a></p>
+</div>
+<div>
 <p><em>Scalability</em> is the ability to adapt to business needs.</p>
-</blockquote>
+</div>
+</div>
 <h2 id="deficiencies"><a class="header" href="#deficiencies">Deficiencies</a></h2>
-<blockquote>
+<div id="admonition-deficiencies-attribute" class="admonition admonish-tip">
+<div class="admonition-title">
+<p>Deficiencies Attribute</p>
+<p><a class="admonition-anchor-link" href="concepts/systems-reliability/attributes.html#admonition-deficiencies-attribute"></a></p>
+</div>
+<div>
 <p><em>Deficiencies</em> are circumstances that cause or are a product of <strong>unreliability</strong>.</p>
-</blockquote>
-<div style="break-before: page; page-break-before: always;"></div><h1 id="mechanisms"><a class="header" href="#mechanisms">Mechanisms</a></h1>
+</div>
+</div><div style="break-before: page; page-break-before: always;"></div><h1 id="mechanisms"><a class="header" href="#mechanisms">Mechanisms</a></h1>
 <p align="center">
-  <img src="concepts/systems-reliability/../../assets/concepts/systems-reliability/mechanisms_v1.svg" alt="Systems Reliability - Mechanisms">
+  <figure>
+    <img src="concepts/systems-reliability/../../assets/concepts/systems-reliability/mechanisms_v1.svg" alt="Systems Reliability - Mechanisms">
+    <figcaption>Systems Reliability - Mechanisms.</figcaption>
+  </figure>
 </p>
 <ul>
 <li><a href="concepts/systems-reliability/./fault_prevention_avoidance.html">Fault Prevention: Avoidance</a></li>
@@ -1888,32 +2006,204 @@ Understanding the distinction between defects, errors, and failures helps diagno
 <li><a href="concepts/systems-reliability/./reliability_tools.html">Reliability Tools</a></li>
 </ul>
 <div style="break-before: page; page-break-before: always;"></div><h1 id="fault-prevention-avoidance"><a class="header" href="#fault-prevention-avoidance">Fault Prevention: Avoidance</a></h1>
-<p>There are two phases in fault prevention: <strong>avoidance</strong> and <strong>elimination</strong>.</p>
-<blockquote>
-<p>Avoidance aims to limit the introduction of potentially defective data and objects during the execution of the process.</p>
-</blockquote>
-<p>Such as:</p>
+<p>There are two phases in fault prevention: <strong>avoidance</strong> and <a href="concepts/systems-reliability/./fault_prevention_elimination.html"><strong>elimination</strong></a>.</p>
+<div id="admonition-avoidance" class="admonition admonish-tip">
+<div class="admonition-title">
+<p>Avoidance</p>
+<p><a class="admonition-anchor-link" href="concepts/systems-reliability/fault_prevention_avoidance.html#admonition-avoidance"></a></p>
+</div>
+<div>
+<p><em>Avoidance</em> aims to limit the introduction of potentially defective data and objects during the execution of the process.</p>
+</div>
+</div>
+<p>Fault prevention through avoidance is a proactive approach to reducing the likelihood of errors and defects in data systems.
+It involves implementing measures and practices that ensure the quality and integrity of data and system components from the outset before problems can arise.
+The ultimate goal is to create a secure and robust environment that minimizes the introduction or propagation of faults during data processing and handling.</p>
+<p>Key strategies in fault prevention via avoidance include:</p>
 <ul>
-<li>The use of validated and clean information sources, when possible.</li>
-<li>The implementation of data cleaning and validation processes for raw data.</li>
-<li>The validation of table and column availability within databases.</li>
-<li>The introduction of branch operators for effective data management.</li>
-<li>Implementing rigorous code review processes to maintain a clean and secure codebase.</li>
-<li>Adopting standardized coding practices and safe coding guidelines to minimize errors and security vulnerabilities.</li>
-<li>The utilization of automated testing frameworks for continuous testing (unit, integration, system) throughout the development cycle.</li>
-<li>Configuration management tools and practices are applied to oversee changes in software and hardware, ensuring all modifications are authorized and tested.</li>
-<li>The engagement in detailed requirement analysis and system design reviews to affirm the system's resilience against potential faults, including modeling and simulation tools.</li>
-<li>Incorporating fail-safe and fail-soft designs to maintain system safety in case of failure, including redundancy strategies for critical components.</li>
+<li>
+<p><strong>Utilizing Reliable Data Sources</strong>:
+Minimize the risk of incorporating erroneous or low-quality data into the system by ensuring data inputs are sourced from verified and trusted sources.</p>
+<div id="admonition-example" class="admonition admonish-example">
+<div class="admonition-title">
+<p>Example</p>
+<p><a class="admonition-anchor-link" href="concepts/systems-reliability/fault_prevention_avoidance.html#admonition-example"></a></p>
+</div>
+<div>
+<p>A financial analytics firm exclusively uses financial data from regulatory-approved and audited sources to ensure the accuracy and reliability of its market analysis models.</p>
+</div>
+</div>
+</li>
+<li>
+<p><strong>Data Cleaning and Validation</strong>:
+Implement systematic processes to clean and validate data before it enters the system, removing inaccuracies, inconsistencies, and irrelevant information to maintain data quality.</p>
+<div id="admonition-example-1" class="admonition admonish-example">
+<div class="admonition-title">
+<p>Example</p>
+<p><a class="admonition-anchor-link" href="concepts/systems-reliability/fault_prevention_avoidance.html#admonition-example-1"></a></p>
+</div>
+<div>
+<p>A data engineering team routinely ingests customer data from various sources into a data lake.
+To prevent the introduction of defective data, they implement an automated ETL pipeline that includes steps for cleaning data (e.g., removing duplicates) and validating against predefined schemas before storage.</p>
+</div>
+</div>
+</li>
+<li>
+<p><strong>Database Integrity Checks</strong>:
+Regularly check the availability and integrity of tables, columns, and relationships within databases to prevent data structure-related issues.</p>
+<div id="admonition-example-2" class="admonition admonish-example">
+<div class="admonition-title">
+<p>Example</p>
+<p><a class="admonition-anchor-link" href="concepts/systems-reliability/fault_prevention_avoidance.html#admonition-example-2"></a></p>
+</div>
+<div>
+<p>An analytics engineering team discovers that some reports are failing due to missing fields in the database.
+They implement a nightly database integrity check that verifies the presence and correct data type of critical columns and alerts the team to any discrepancies.</p>
+</div>
+</div>
+</li>
+<li>
+<p><strong>Branch Operators in Data Flow</strong>:
+Use branch operators or conditional logic to manage data flow effectively, ensuring that data is processed and routed correctly based on predefined criteria.</p>
+<div id="admonition-example-3" class="admonition admonish-example">
+<div class="admonition-title">
+<p>Example</p>
+<p><a class="admonition-anchor-link" href="concepts/systems-reliability/fault_prevention_avoidance.html#admonition-example-3"></a></p>
+</div>
+<div>
+<p>In a data pipeline managing e-commerce transactions, conditional branching assesses the transaction volume and diversity of payment methods.
+It then routes high-volume or diverse payment data to sequential processing tasks, each tailored to a specific payment method, ensuring stability, while lower volumes are directed to parallel tasks for quicker processing, optimizing both resource utilization and processing accuracy.</p>
+</div>
+</div>
+</li>
+<li>
+<p><strong>Code Quality Practices</strong>:
+Enforce rigorous code review processes and adhere to standardized coding conventions and best practices to prevent bugs and vulnerabilities in the system's software components.</p>
+<div id="admonition-example-4" class="admonition admonish-example">
+<div class="admonition-title">
+<p>Example</p>
+<p><a class="admonition-anchor-link" href="concepts/systems-reliability/fault_prevention_avoidance.html#admonition-example-4"></a></p>
+</div>
+<div>
+<p>In a Python codebase, automated tools like Nix orchestrate a suite of linters (Ruff, Black, Isort) and type checkers (Mypy, Pylance) alongside formatters and beautifiers, enforcing code quality standards with predefined minimum scores, e.g., Ruff &gt; 96%.
+Additionally, Nix executes tests and safety checks, while Poetry manages dependency updates, all triggered automatically on commit or push to maintain a clean, secure, and up-to-date codebase.</p>
+</div>
+</div>
+</li>
+<li>
+<p><strong>Automated Testing</strong>:
+Leverage automated testing frameworks to continuously test software and data processing logic at various stages of development, catching and rectifying faults early.</p>
+<div id="admonition-example-5" class="admonition admonish-example">
+<div class="admonition-title">
+<p>Example</p>
+<p><a class="admonition-anchor-link" href="concepts/systems-reliability/fault_prevention_avoidance.html#admonition-example-5"></a></p>
+</div>
+<div>
+<p>A data engineering team uses dbt to transform data in their data warehouse.
+They incorporate dbt tests to validate the integrity of key tables automatically after each transformation run, ensuring data consistency and reliability.</p>
+</div>
+</div>
+</li>
+<li>
+<p><strong>Configuration Management</strong>:
+Apply configuration management tools and best practices to meticulously control changes to software and hardware configurations, ensuring stability and preventing unauthorized or untested alterations.</p>
+<div id="admonition-example-6" class="admonition admonish-example">
+<div class="admonition-title">
+<p>Example</p>
+<p><a class="admonition-anchor-link" href="concepts/systems-reliability/fault_prevention_avoidance.html#admonition-example-6"></a></p>
+</div>
+<div>
+<p>To maintain the reliability of their data analytics platform, a data platform engineering team uses Terraform to manage infrastructure as code.
+This allows them to apply version control to infrastructure changes, ensuring all modifications are reviewed, approved, and traceable.</p>
+</div>
+</div>
+</li>
+<li>
+<p><strong>System Design and Analysis</strong>:
+Conduct thorough requirements analysis and system design reviews to identify and mitigate potential fault sources, employing modeling and simulation tools where applicable.</p>
+<div id="admonition-example-7" class="admonition admonish-example">
+<div class="admonition-title">
+<p>Example</p>
+<p><a class="admonition-anchor-link" href="concepts/systems-reliability/fault_prevention_avoidance.html#admonition-example-7"></a></p>
+</div>
+<div>
+<p>During the design phase of a new data warehouse, a data architect conducts a thorough analysis using ERD (Entity-Relationship Diagram) modeling tools to ensure the system's design is robust against potential data integrity issues and can handle expected data volumes and complexities.</p>
+</div>
+</div>
+</li>
+<li>
+<p><strong>Fail-safe and Fail-soft Designs</strong>:
+Incorporate design principles that ensure the system remains operational or degrades gracefully in the event of a component failure, such as through redundancy and fallback mechanisms.</p>
+<div id="admonition-example-8" class="admonition admonish-example">
+<div class="admonition-title">
+<p>Example</p>
+<p><a class="admonition-anchor-link" href="concepts/systems-reliability/fault_prevention_avoidance.html#admonition-example-8"></a></p>
+</div>
+<div>
+<p>Pipeline A halts and alerts the team upon data anomalies (fail-safe).
+Pipelines B and C, dependents of A, also halt to maintain data integrity, while Pipelines D and E, also dependents of A, switch to redundant paths, operating in a degraded mode (fail-soft), balancing system integrity with continued operability.</p>
+</div>
+</div>
+</li>
 </ul>
+<p>By prioritizing fault prevention through avoidance, data teams can build and maintain data systems that are less susceptible to faults, thereby enhancing the overall reliability, security, and performance of data operations.</p>
 <div style="break-before: page; page-break-before: always;"></div><h1 id="fault-tolerance"><a class="header" href="#fault-tolerance">Fault Tolerance</a></h1>
-<blockquote>
+<div id="admonition-fault-tolerance" class="admonition admonish-tip">
+<div class="admonition-title">
+<p>Fault Tolerance</p>
+<p><a class="admonition-anchor-link" href="concepts/systems-reliability/fault_tolerance.html#admonition-fault-tolerance"></a></p>
+</div>
+<div>
 <p>Given the limitations in fault prevention, especially as data and processes frequently change, it becomes necessary to resort to fault tolerance.</p>
-</blockquote>
+</div>
+</div>
 <p>There are different levels of fault tolerance:</p>
 <ul>
-<li><strong>Full tolerance</strong>: there is no management of adverse or unwanted conditions; the process does not adapt to internal or external values.</li>
-<li><strong>Controlled degradation</strong> (or graceful degradation): notifications are triggered in the presence of faults, and if they are significant enough to interrupt the task flow (thresholds, non-existence, or unavailability of data), branch operators will select the subsequent tasks.</li>
-<li><strong>Fail-safe</strong>: detected faults are significant enough to determine that the process should not occur; a short-circuit or circuit breaker operator cancels the execution of subsequent tasks, stakeholders are notified, and if there is no automatic process to deal with the problem, the data team can take actions such as rerunning the processes that generate the necessary inputs or escalating the case.</li>
+<li>
+<p><strong>Full tolerance</strong>: there is no management of adverse or unwanted conditions; the process does not adapt to internal or external values.</p>
+<div id="admonition-full-tolerance-example" class="admonition admonish-example">
+<div class="admonition-title">
+<p>Full Tolerance Example</p>
+<p><a class="admonition-anchor-link" href="concepts/systems-reliability/fault_tolerance.html#admonition-full-tolerance-example"></a></p>
+</div>
+<div>
+<p>A data ingestion pipeline is designed without error handling or validation mechanisms.
+Regardless of the quality or integrity of incoming data, the pipeline continuously processes and loads data into the data lake.
+This approach does not account for data anomalies, leading to potential data integrity issues downstream.</p>
+</div>
+</div>
+</li>
+<li>
+<p><strong>Controlled degradation</strong> (or graceful degradation): notifications are triggered in the presence of faults, and if they are significant enough to interrupt the task flow (thresholds, non-existence, or unavailability of data), branch operators will select the subsequent tasks.</p>
+<div id="admonition-controlled-degradation-example" class="admonition admonish-example">
+<div class="admonition-title">
+<p>Controlled Degradation Example</p>
+<p><a class="admonition-anchor-link" href="concepts/systems-reliability/fault_tolerance.html#admonition-controlled-degradation-example"></a></p>
+</div>
+<div>
+<p>A financial reporting pipeline monitors the quality of incoming transaction data.
+Suppose data anomalies exceed a certain threshold, such as missing transaction IDs or inconsistent date formats.
+In that case, the pipeline triggers alerts to the data engineering team and switches to a less detailed reporting mode that relies on aggregated data rather than transaction-level detail.
+This ensures that reports are still generated, albeit with reduced granularity, until the data quality issue is resolved.</p>
+</div>
+</div>
+</li>
+<li>
+<p><strong>Fail-safe</strong>: detected faults are significant enough to determine that the process should not occur; a short-circuit or circuit breaker operator cancels the execution of subsequent tasks, stakeholders are notified, and if there is no automatic process to deal with the problem, the data team can take actions such as rerunning the processes that generate the necessary inputs or escalating the case.</p>
+<div id="admonition-fail-safe-example" class="admonition admonish-example">
+<div class="admonition-title">
+<p>Fail-Safe Example</p>
+<p><a class="admonition-anchor-link" href="concepts/systems-reliability/fault_tolerance.html#admonition-fail-safe-example"></a></p>
+</div>
+<div>
+<p>An invoice generation pipeline processes daily transactions to produce invoices for partners.
+A fail-safe mechanism is integrated to check for data inconsistencies, such as duplicate transactions or irregular transaction values, before generating invoices.
+If discrepancies are detected that could lead to inaccurate billing, the pipeline automatically halts, preventing the generation and distribution of potentially erroneous invoices.
+The finance team and relevant stakeholders are notified of the halt, allowing the data team to investigate and rectify the issue.
+This ensures that partners are neither overcharged nor undercharged due to data inaccuracies, maintaining trust and compliance.</p>
+</div>
+</div>
+</li>
 </ul>
 <p>The design of fault-tolerant processes assumes:</p>
 <ul>
@@ -1922,26 +2212,61 @@ Understanding the distinction between defects, errors, and failures helps diagno
 <li>All possible interactions between the process and its environment have been considered.</li>
 </ul>
 <h2 id="redundancy"><a class="header" href="#redundancy">Redundancy</a></h2>
-<blockquote>
-<p>All available fault techniques include adding external elements to the system to detect and recover from faults. These elements are redundant in the sense that they are not necessary for the system's normal operation; this is called <strong>protective redundancy</strong>. The goal of tolerance is to minimize redundancy while maximizing reliability, always under system complexity and size constraints. <em>Care must be taken when designing fault-tolerant systems, as components increase the complexity and maintenance of the entire system, which can in itself lead to less reliable systems</em>.</p>
-</blockquote>
+<div id="admonition-protective-redundancy" class="admonition admonish-tip">
+<div class="admonition-title">
+<p>Protective Redundancy</p>
+<p><a class="admonition-anchor-link" href="concepts/systems-reliability/fault_tolerance.html#admonition-protective-redundancy"></a></p>
+</div>
+<div>
+<p>All available fault techniques include adding external elements to the system to detect and recover from faults.
+These elements are redundant in the sense that they are not necessary for the system's normal operation; this is called <strong>protective redundancy</strong>.</p>
+</div>
+</div>
+<p>The goal of tolerance is to minimize redundancy while maximizing reliability, always under system complexity and size constraints. <em>Care must be taken when designing fault-tolerant systems, as components increase the complexity and maintenance of the entire system, which can in itself lead to less reliable systems</em>.</p>
 <p align="center">
-  <img src="concepts/systems-reliability/../../assets/concepts/systems-reliability/fault_tolerance_v1.svg" alt="Systems Reliability - Mechanisms - Fault Tolerance - Redudancy">
+  <figure>
+    <img src="concepts/systems-reliability/../../assets/concepts/systems-reliability/fault_tolerance_v1.svg" alt="Systems Reliability - Mechanisms - Fault Tolerance - Redudancy">
+    <figcaption>Redudancy Classification and Implementation.</figcaption>
+  </figure>
 </p>
-<p>Systems Redundancy is classified into static and dynamic. <strong>Static redundancy</strong>, or masking, involves using redundant components to hide the effects of faults. <strong>Dynamic redundancy</strong> is redundancy within a component that makes it indicate, implicitly or explicitly, that the output is erroneous; another component must provide recovery. This fault tolerance technique has four phases:</p>
-<ol>
-<li><strong>Error detection</strong>: no fault tolerance action will be taken until an error has been detected.</li>
-<li><strong>Damage confinement and assessment</strong>: when an error is detected, the extent of the system that has been corrupted and its scope must be estimated (error diagnosis).</li>
-<li><strong>Error recovery</strong>: one of the most critical aspects of fault tolerance. Error recovery techniques should direct the corrupted system to a state from which it can continue its normal operation (perhaps with functional degradation).</li>
-<li><strong>Failure treatment and service continuation</strong>: an error is a failure symptom; although the damage might have been repaired, the failure still exists, and therefore, the error may recur unless some form of maintenance is performed.</li>
-</ol>
+<p>Systems Redundancy is classified into static and dynamic.
+<strong>Static redundancy</strong>, or masking, involves using redundant components to hide the effects of faults.
+<strong>Dynamic redundancy</strong> is redundancy within a component that makes it indicate, implicitly or explicitly, that the output is erroneous; another component must provide recovery.
+Dynamic redundancy involves not just the indication that an output is erroneous but also the system's ability to adapt or reconfigure in response to detected errors.</p>
+<div id="admonition-static-redundancy-example" class="admonition admonish-example">
+<div class="admonition-title">
+<p>Static Redundancy Example</p>
+<p><a class="admonition-anchor-link" href="concepts/systems-reliability/fault_tolerance.html#admonition-static-redundancy-example"></a></p>
+</div>
+<div>
+<p>In a database system, static redundancy is implemented through mirroring, where data is replicated across multiple storage devices or locations in real time.
+If one storage device fails, the system can seamlessly switch to a mirrored device without data loss or service interruption, effectively masking the fault from the end-users.</p>
+</div>
+</div>
+<div id="admonition-dynamic-redundancy-example" class="admonition admonish-example">
+<div class="admonition-title">
+<p>Dynamic Redundancy Example</p>
+<p><a class="admonition-anchor-link" href="concepts/systems-reliability/fault_tolerance.html#admonition-dynamic-redundancy-example"></a></p>
+</div>
+<div>
+<p>A self-healing database cluster uses dynamic redundancy by continuously monitoring the health of its nodes.
+If a node shows signs of failure, the cluster automatically initiates failover procedures to another node and possibly starts a replacement process for the faulty node, ensuring database availability and integrity with minimal manual intervention.</p>
+</div>
+</div>
+<p>The key difference between static and dynamic redundancy is the approach to fault tolerance.
+Static redundancy relies on duplicate resources ready to take over in case of failure, providing a straightforward but potentially resource-intensive solution.
+On the other hand, dynamic redundancy incorporates intelligence and adaptability into the system, allowing it to respond to changing conditions and failures more efficiently, often with less overhead.</p>
+<p>Whether static or dynamic, this fault tolerance technique has four phases: <strong>error detection</strong>, <strong>damage confinement and assessment</strong>, <strong>error recovery</strong>, and <strong>failure treatment and service continuation</strong>.</p>
 <h3 id="1-error-detection"><a class="header" href="#1-error-detection">1. Error Detection</a></h3>
-<blockquote>
+<p>No fault tolerance action will be taken until an error has been detected.</p>
+<div id="admonition-default" class="admonition admonish-tip">
+<div>
 <p>The effectiveness of a fault-tolerant system depends on the <strong>effectiveness of error detection</strong>.</p>
-</blockquote>
+</div>
+</div>
 <p>Error detection is classified into:</p>
 <ul>
-<li><strong>Environmental detections</strong>: Errors are detected in the application's environment and handled by exceptions.</li>
+<li><strong>Environmental detections</strong>: Errors are detected in the operational environment of the system, which are typically managed through exception-handling mechanisms.</li>
 <li><strong>Application detection</strong>: Errors are identified in the application itself.
 <ul>
 <li><strong>Reverse checks</strong>: Applied in components with an isomorphic relationship (one-to-one) between input and output. This method calculates an input value from the output value, which is then compared with the original. Inexact comparison techniques must be adopted when dealing with real numbers.</li>
@@ -1949,24 +2274,164 @@ Understanding the distinction between defects, errors, and failures helps diagno
 </ul>
 </li>
 </ul>
+<div id="admonition-environmental-detections-example" class="admonition admonish-example">
+<div class="admonition-title">
+<p>Environmental Detections Example</p>
+<p><a class="admonition-anchor-link" href="concepts/systems-reliability/fault_tolerance.html#admonition-environmental-detections-example"></a></p>
+</div>
+<div>
+<p>A data ingestion pipeline monitors external data sources for updates.
+If a source becomes unavailable due to network issues, the system triggers an exception, alerting the data engineering team to the connectivity problem.
+This allows for quick resolution, ensuring continuous data flow.</p>
+</div>
+</div>
+<div id="admonition-reverse-checks-example" class="admonition admonish-example">
+<div class="admonition-title">
+<p>Reverse Checks Example</p>
+<p><a class="admonition-anchor-link" href="concepts/systems-reliability/fault_tolerance.html#admonition-reverse-checks-example"></a></p>
+</div>
+<div>
+<p>A reverse check is performed on the report totals after creating a report summarizing the sales data by region.
+This check redistributes the totals back to the expected sales per store based on historical proportions.
+The newly distributed figures are then compared to the detailed sales data to ensure accurate report aggregation.</p>
+</div>
+</div>
+<div id="admonition-rationality-checks-example" class="admonition admonish-example">
+<div class="admonition-title">
+<p>Rationality Checks Example</p>
+<p><a class="admonition-anchor-link" href="concepts/systems-reliability/fault_tolerance.html#admonition-rationality-checks-example"></a></p>
+</div>
+<div>
+<p>During data integration processes, a rationality check ensures that all foreign key values in a child table have corresponding primary key values in the parent table.
+Records violating this constraint are identified as anomalies, indicating issues with data consistency or integrity across related tables.</p>
+</div>
+</div>
 <h3 id="2-damage-confinement-and-assessment"><a class="header" href="#2-damage-confinement-and-assessment">2. Damage Confinement and Assessment</a></h3>
-<blockquote>
+<p>When an error is detected, the extent of the system that has been corrupted and its scope must be estimated (error diagnosis).</p>
+<div id="admonition-default-1" class="admonition admonish-tip">
+<div>
 <p>There will always be a time magnitude between the occurrence of a defect and the detection of the error, making it essential to assess any damage that may have occurred in this time interval.</p>
-</blockquote>
-<p>Although the type of error detected can help evaluate the damage - when performing the error handling routine - erroneous information could have been disseminated through the system and its environment. Thus, damage assessment is directly related to the precautions taken by the system designer for damage confinement. Damage confinement refers to structuring the system in such a way as to minimize the damage caused by a faulty component.</p>
-<p><strong>Modular decomposition</strong> and <strong>atomic actions</strong> are two main techniques for structuring systems to facilitate damage confinement. Modular decomposition means that systems should be broken down into components, each represented by one or more modules. The interaction of the components occurs through well-defined interfaces, and the internal details of the modules are hidden and not directly accessible from the outside. This structuring makes it more difficult for an error in one component to propagate to another.</p>
-<p>Modular decomposition provides a static structure, while atomic actions structure the system dynamically. An action is said to be atomic if there are no interactions between the activity and the system during the action. These actions move the system from one consistent state to another and restrict information flow between components.</p>
+</div>
+</div>
+<p>Although the type of error detected can help evaluate the damage - when performing the error handling routine - erroneous information could have been disseminated through the system and its environment.
+Thus, damage assessment is directly related to the precautions taken by the system designer for damage confinement.
+Damage confinement refers to structuring the system in such a way as to minimize the damage caused by a faulty component.</p>
+<p><strong>Modular decomposition</strong> and <strong>atomic actions</strong> are two main techniques for structuring systems to facilitate damage confinement.
+Modular decomposition means that systems should be broken down into components, each represented by one or more modules.
+The interaction of the components occurs through well-defined interfaces, and the internal details of the modules are hidden and not directly accessible from the outside.
+This structuring makes it more difficult for an error in one component to propagate to another.</p>
+<p>Modular decomposition provides a static structure, while atomic actions structure the system dynamically.
+An action is said to be atomic if there are no interactions between the activity and the system during the action.
+These actions move the system from one consistent state to another and restrict information flow between components.</p>
+<p>Both strategies contribute to damage confinement and system reliability by reducing the complexity and interdependencies that can lead to widespread system failures.</p>
+<div id="admonition-modular-decomposition-and-atomic-actions-example" class="admonition admonish-example">
+<div class="admonition-title">
+<p>Modular Decomposition and Atomic Actions Example</p>
+<p><a class="admonition-anchor-link" href="concepts/systems-reliability/fault_tolerance.html#admonition-modular-decomposition-and-atomic-actions-example"></a></p>
+</div>
+<div>
+<ul>
+<li>
+<p><strong>Scenario</strong>:
+A data analytics platform is designed to ingest, process, and visualize data from various sources, providing insights to business users.
+The platform comprises several microservices, including data ingestion, processing, storage, and visualization services.</p>
+</li>
+<li>
+<p><strong>Modular Decomposition</strong>:
+The platform is divided into separate microservices, each responsible for a specific aspect of the data pipeline.
+For instance, the data ingestion service is distinct from the data processing service.</p>
+</li>
+<li>
+<p><strong>Atomic Actions</strong>:
+One critical task in the data processing microservice is transforming raw data into a format that can be analyzed.
+This transformation process is designed to be an atomic action.
+It either completes successfully and moves the data to the next stage or, in the event of a failure, entirely rolls back all changes, leaving the system in its original state without any partial modifications.</p>
+</li>
+</ul>
+</div>
+</div>
+<p>The modular approach in this example separates individual components to make them easier to maintain and update without affecting others.
+For instance, if the data processing service needs to be updated or replaced, it can be done independently of the ingestion and visualization services.
+The atomic actions example ensures data integrity and consistency.
+If the transformation operation encounters an error, such as a format inconsistency, the atomic design prevents partially transformed, potentially incorrect data from progressing through the pipeline.
+This maintains the reliability of the data output and the overall system.</p>
 <h3 id="3-error-recovery"><a class="header" href="#3-error-recovery">3. Error Recovery</a></h3>
-<blockquote>
-<p>Error recovery procedures begin once the detected error state and its possible damages have been assessed. This phase is the most important within fault tolerance techniques, which must transform an erroneous state of the system into another from which it can continue its normal operation, perhaps with some service degradation.</p>
-</blockquote>
-<p><strong>Forward recovery</strong> and <strong>backward recovery</strong> are the most common error recovery strategies. The forward error recovery attempts to continue from the erroneous state by making selective corrections to the system's state, including protecting any aspect of the controlled environment that could be put at risk or damaged by the failure.</p>
-<p>The backward recovery strategy consists of restoring the system to a safe state before the one in which the error occurred and then executing an alternative section of the task. This section will have the same functionality as the section that produced the defect but using a different algorithm. It is expected that this alternative will not produce the same defect as the previous version so that it will rely on the designer's knowledge of the possible failure modes of this component.</p>
+<p>Error recovery procedures begin once the detected error state and its possible damages have been assessed.</p>
+<div id="admonition-default-2" class="admonition admonish-tip">
+<div>
+<p>This phase is the most important within fault tolerance techniques.
+It must transform an erroneous system state into another from which it can continue its normal operation, perhaps with some service degradation.</p>
+</div>
+</div>
+<p><strong>Forward recovery</strong> and <strong>backward recovery</strong> are the most common error recovery strategies.
+The forward error recovery attempts to continue from the erroneous state by making selective corrections to the system's state, including protecting any aspect of the controlled environment that could be put at risk or damaged by the failure.</p>
+<p>The backward recovery strategy consists of restoring the system to a safe state before the one in which the error occurred and then executing an alternative section of the task.
+This section will have the same functionality as the section that produced the defect but using a different algorithm.
+It is expected that this alternative will not produce the same defect as the previous version so that it will rely on the designer's knowledge of the possible failure modes of this component.</p>
 <p>The designer must be clear about the service degradation levels, considering the services and processes that depend on it. Error recovery is part of the <a href="concepts/systems-reliability/./corrective_actions.html">Corrective Action and Preventive Action processes (CAPA)</a>.</p>
+<div id="admonition-forward-error-recovery-example" class="admonition admonish-example">
+<div class="admonition-title">
+<p>Forward Error Recovery Example</p>
+<p><a class="admonition-anchor-link" href="concepts/systems-reliability/fault_tolerance.html#admonition-forward-error-recovery-example"></a></p>
+</div>
+<div>
+<p>In a data aggregation pipeline summarizing daily social media engagement, specific post data is missing due to an outage in the platform's post-detail API for a particular subset of posts.
+The pipeline implements a forward error recovery strategy by utilizing aggregate engagement data available from an alternative API with a different granularity (post type instead of individual posts).
+This aggregate data and historical individual post engagement patterns are used to estimate the missing data for individual posts.
+An alert is generated to notify the data team of the estimation used and advises a rerun of the pipeline once the platform confirms the API is fully operational, ensuring continuity and accuracy of the engagement summary.</p>
+</div>
+</div>
+<div id="admonition-backward-error-recovery-example" class="admonition admonish-example">
+<div class="admonition-title">
+<p>Backward Error Recovery Example</p>
+<p><a class="admonition-anchor-link" href="concepts/systems-reliability/fault_tolerance.html#admonition-backward-error-recovery-example"></a></p>
+</div>
+<div>
+<p>Consider a scenario where a database update operation is part of a larger transaction in an e-commerce application.
+If an error occurs during the update—perhaps due to a database constraint violation or an unexpected interruption—the backward error recovery mechanism would involve rolling back the entire transaction to its state before the update attempt.
+This could be achieved through transaction logs or savepoints that allow the system to revert to a known good state.
+After the rollback, an alternative update operation that corrects the cause of the original error (e.g., adjusting the data to meet constraints) can be attempted, or the system can alert an operator to resolve the issue manually.
+This ensures the database remains consistent and free from partial updates that could lead to data integrity issues.</p>
+</div>
+</div>
+<p>Both forward and backward error recovery strategies aim to restore the system to a state where normal operations can continue, either by moving past the error with a best-guess approach (forward) or by returning to a safe previous state (backward), thereby maintaining the overall integrity and reliability of the system.</p>
 <h3 id="4-failure-treatment-and-continued-service"><a class="header" href="#4-failure-treatment-and-continued-service">4. Failure Treatment and Continued Service</a></h3>
-<blockquote>
-<p>An error is a manifestation of a defect, and although the error recovery phase may have brought the system to an error-free state, the error can recur. Therefore, the final phase of fault tolerance is to eradicate the failure from the system so that normal service can continue.</p>
-</blockquote>
+<p>The final phase of fault tolerance is to eradicate the failure from the system so that normal service can continue.</p>
+<div id="admonition-default-3" class="admonition admonish-tip">
+<div>
+<p>An error is a symptom of a defect and can lead to a failure. Although the immediate effects of the error might have been mitigated and the system returned to an error-free state, the underlying defect still exists. Therefore, the error may recur unless maintenance is performed to address the defect.</p>
+</div>
+</div>
+<p>Key Actions in this Phase:</p>
+<ol>
+<li><strong>Root Cause Analysis (RCA)</strong>: Identify and understand the underlying cause of the failure, going beyond treating the symptoms (errors) to address the core issue (defect or fault).</li>
+<li><strong>Implementing Fixes</strong>: Based on the RCA<sup><a name="to-footnote-1"><a href="concepts/systems-reliability/fault_tolerance.html#footnote-1">1</a></a></sup>, develop and deploy solutions that rectify the identified defect and prevent the recurrence of the same failure.</li>
+<li><strong>System Testing and Validation</strong>: Rigorously test the system to ensure that the implemented fixes have resolved the issue without introducing new problems.</li>
+<li><strong>Monitoring and Documentation</strong>: Continuously monitor the system post-fix to ensure stable operation and document the incident, analysis, fix, and lessons learned for future reference.</li>
+</ol>
+<div id="admonition-failure-treatment-and-continued-service-example" class="admonition admonish-example">
+<div class="admonition-title">
+<p>Failure Treatment and Continued Service Example</p>
+<p><a class="admonition-anchor-link" href="concepts/systems-reliability/fault_tolerance.html#admonition-failure-treatment-and-continued-service-example"></a></p>
+</div>
+<div>
+<p>Consider a data processing system for a retail company that aggregates sales data from various sources to generate daily sales reports. The system encounters a failure due to an unexpected data format change in one of the source systems, causing the aggregation process to produce incorrect sales totals.</p>
+<ul>
+<li><strong>Root Cause Analysis</strong>: The data engineering team discovers that a recent update in the source system's software altered the data export format without prior notice.</li>
+<li><strong>Implementing Fixes</strong>: The team updates the data ingestion scripts to accommodate the new data format and adds additional validation checks to flag any future unexpected changes in data formats from source systems.</li>
+<li><strong>System Testing and Validation</strong>: The updated data processing pipeline is thoroughly tested with various data scenarios to ensure it can handle the new format correctly and is resilient to similar issues.</li>
+<li><strong>Monitoring and Documentation</strong>: Post-deployment, the system is closely monitored for anomalies, and the incident is documented in the team's knowledge base, including details of the failure, analysis, fix, and preventive measures to avoid similar issues.</li>
+</ul>
+</div>
+</div>
+<h2 id="final-thoughts-on-fault-tolerance"><a class="header" href="#final-thoughts-on-fault-tolerance">Final Thoughts on Fault Tolerance</a></h2>
+<p>A well-designed fault tolerance strategy encompasses not only the implementation of redundancy and error detection mechanisms but also a comprehensive approach to system design that anticipates potential failures and mitigates their impact.</p>
+<p>Incorporating both static and dynamic redundancy, along with robust error detection and recovery techniques, allows systems to maintain their functionality and integrity even in the face of hardware malfunctions, software bugs, or external disruptions.
+This resilience is particularly vital in data engineering, analytics, and business intelligence contexts, where data accuracy and availability underpin critical decision-making processes.</p>
+<p>As systems grow in complexity and scale, the importance of fault tolerance will only increase.
+Adopting a mindset that prioritizes fault tolerance from the early stages of system design can transform potential vulnerabilities into strengths, ensuring that data systems can withstand challenges and continue to deliver value reliably.</p>
+<p>Ultimately, fault tolerance is not just a set of technical solutions but a fundamental aspect of system architecture and operational culture that champions reliability, adaptability, and continuous improvement.<p><hr/></p>
+<p><a name="footnote-1"><a href="concepts/systems-reliability/fault_tolerance.html#to-footnote-1">1</a></a>: Root Cause Analysis (RCA) is better explored later, in the chapter about <a href="concepts/systems-reliability/./corrective_actions.html"><strong>Corrective Actions</strong></a>.</p>
 <div style="break-before: page; page-break-before: always;"></div><h1 id="fault-prevention-elimination"><a class="header" href="#fault-prevention-elimination">Fault Prevention: Elimination</a></h1>
 <blockquote>
 <p>The second phase of fault prevention is fault elimination. This phase typically involves procedures to find and eliminate the causes of errors.</p>
@@ -2787,7 +3252,10 @@ In summary, Reliability Block Diagrams offer a systematic approach for data engi
 <p>Imagine a data platform where raw data is ingested from various sources into a data lake, processed through a series of transformation jobs in Apache Spark, and then loaded into a data warehouse for analytics. An RBD for this platform would include blocks for each data source, the data lake, Spark jobs, and the data warehouse. By analyzing the RBD, the data reliability engineering team might find that the transformation jobs are a reliability bottleneck. To address this, they could introduce redundancy by parallelizing the Spark jobs across multiple clusters, thereby enhancing the overall reliability of the data platform.</p>
 <h3 id="example-diagram"><a class="header" href="#example-diagram">Example Diagram</a></h3>
 <p align="center">
-  <img src="concepts/systems-reliability/../../assets/concepts/systems-reliability/rbd_v1.svg" alt="RBD Example">
+  <figure>
+    <img src="concepts/systems-reliability/../../assets/concepts/systems-reliability/rbd_v1.svg" alt="RBD Example">
+    <figcaption>Reliability Block Diagrams (RBD) - Example.</figcaption>
+  </figure>
 </p>
 <p>Reliability Block Diagrams offer a systematic approach to understanding and improving the reliability of data systems, making them a valuable tool in the arsenal of data reliability engineering.</p>
 <div style="break-before: page; page-break-before: always;"></div><h1 id="data-quality-2"><a class="header" href="#data-quality-2">Data Quality</a></h1>
@@ -4970,13 +5438,17 @@ LIMIT 1;
 <li>BPR</li>
 </ul>
 <div style="break-before: page; page-break-before: always;"></div><h1 id="test-images"><a class="header" href="#test-images">Test Images</a></h1>
-<h2 id="original-svg"><a class="header" href="#original-svg">Original SVG</a></h2>
 <p align="center">
-  <img src="test/../assets/example/example.svg" alt="Example - Original">
+  <figure>
+    <img src="test/../assets/example/example.svg" alt="Example 1">
+    <figcaption>SVG Image Example 1.</figcaption>
+  </figure>
 </p>
-<h2 id="instad-blue-pen-svg"><a class="header" href="#instad-blue-pen-svg">Instad (Blue-Pen) SVG</a></h2>
 <p align="center">
-  <img src="test/../assets/example/example-instad.svg" alt="Example - Original">
+  <figure>
+    <img src="test/../assets/example/example-instad.svg" alt="Example 2">
+    <figcaption>SVG Image Example 2 - Blue-Pen Style (instad.io).</figcaption>
+  </figure>
 </p><div style="break-before: page; page-break-before: always;"></div><h1 id="test-mdbook-admonish"><a class="header" href="#test-mdbook-admonish">Test mdbook-admonish</a></h1>
 <!-- toc -->
 <!-- markdownlint-disable fenced-code-language -->

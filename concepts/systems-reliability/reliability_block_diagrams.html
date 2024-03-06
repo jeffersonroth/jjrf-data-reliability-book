@@ -229,7 +229,10 @@ In summary, Reliability Block Diagrams offer a systematic approach for data engi
 <p>Imagine a data platform where raw data is ingested from various sources into a data lake, processed through a series of transformation jobs in Apache Spark, and then loaded into a data warehouse for analytics. An RBD for this platform would include blocks for each data source, the data lake, Spark jobs, and the data warehouse. By analyzing the RBD, the data reliability engineering team might find that the transformation jobs are a reliability bottleneck. To address this, they could introduce redundancy by parallelizing the Spark jobs across multiple clusters, thereby enhancing the overall reliability of the data platform.</p>
 <h3 id="example-diagram"><a class="header" href="#example-diagram">Example Diagram</a></h3>
 <p align="center">
-  <img src="../../assets/concepts/systems-reliability/rbd_v1.svg" alt="RBD Example">
+  <figure>
+    <img src="../../assets/concepts/systems-reliability/rbd_v1.svg" alt="RBD Example">
+    <figcaption>Reliability Block Diagrams (RBD) - Example.</figcaption>
+  </figure>
 </p>
 <p>Reliability Block Diagrams offer a systematic approach to understanding and improving the reliability of data systems, making them a valuable tool in the arsenal of data reliability engineering.</p>
 

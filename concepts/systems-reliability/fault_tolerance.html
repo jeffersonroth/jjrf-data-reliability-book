@@ -187,14 +187,62 @@
                 <div id="content" class="content">
                     <main>
                         <h1 id="fault-tolerance"><a class="header" href="#fault-tolerance">Fault Tolerance</a></h1>
-<blockquote>
+<div id="admonition-fault-tolerance" class="admonition admonish-tip">
+<div class="admonition-title">
+<p>Fault Tolerance</p>
+<p><a class="admonition-anchor-link" href="#admonition-fault-tolerance"></a></p>
+</div>
+<div>
 <p>Given the limitations in fault prevention, especially as data and processes frequently change, it becomes necessary to resort to fault tolerance.</p>
-</blockquote>
+</div>
+</div>
 <p>There are different levels of fault tolerance:</p>
 <ul>
-<li><strong>Full tolerance</strong>: there is no management of adverse or unwanted conditions; the process does not adapt to internal or external values.</li>
-<li><strong>Controlled degradation</strong> (or graceful degradation): notifications are triggered in the presence of faults, and if they are significant enough to interrupt the task flow (thresholds, non-existence, or unavailability of data), branch operators will select the subsequent tasks.</li>
-<li><strong>Fail-safe</strong>: detected faults are significant enough to determine that the process should not occur; a short-circuit or circuit breaker operator cancels the execution of subsequent tasks, stakeholders are notified, and if there is no automatic process to deal with the problem, the data team can take actions such as rerunning the processes that generate the necessary inputs or escalating the case.</li>
+<li>
+<p><strong>Full tolerance</strong>: there is no management of adverse or unwanted conditions; the process does not adapt to internal or external values.</p>
+<div id="admonition-full-tolerance-example" class="admonition admonish-example">
+<div class="admonition-title">
+<p>Full Tolerance Example</p>
+<p><a class="admonition-anchor-link" href="#admonition-full-tolerance-example"></a></p>
+</div>
+<div>
+<p>A data ingestion pipeline is designed without error handling or validation mechanisms.
+Regardless of the quality or integrity of incoming data, the pipeline continuously processes and loads data into the data lake.
+This approach does not account for data anomalies, leading to potential data integrity issues downstream.</p>
+</div>
+</div>
+</li>
+<li>
+<p><strong>Controlled degradation</strong> (or graceful degradation): notifications are triggered in the presence of faults, and if they are significant enough to interrupt the task flow (thresholds, non-existence, or unavailability of data), branch operators will select the subsequent tasks.</p>
+<div id="admonition-controlled-degradation-example" class="admonition admonish-example">
+<div class="admonition-title">
+<p>Controlled Degradation Example</p>
+<p><a class="admonition-anchor-link" href="#admonition-controlled-degradation-example"></a></p>
+</div>
+<div>
+<p>A financial reporting pipeline monitors the quality of incoming transaction data.
+Suppose data anomalies exceed a certain threshold, such as missing transaction IDs or inconsistent date formats.
+In that case, the pipeline triggers alerts to the data engineering team and switches to a less detailed reporting mode that relies on aggregated data rather than transaction-level detail.
+This ensures that reports are still generated, albeit with reduced granularity, until the data quality issue is resolved.</p>
+</div>
+</div>
+</li>
+<li>
+<p><strong>Fail-safe</strong>: detected faults are significant enough to determine that the process should not occur; a short-circuit or circuit breaker operator cancels the execution of subsequent tasks, stakeholders are notified, and if there is no automatic process to deal with the problem, the data team can take actions such as rerunning the processes that generate the necessary inputs or escalating the case.</p>
+<div id="admonition-fail-safe-example" class="admonition admonish-example">
+<div class="admonition-title">
+<p>Fail-Safe Example</p>
+<p><a class="admonition-anchor-link" href="#admonition-fail-safe-example"></a></p>
+</div>
+<div>
+<p>An invoice generation pipeline processes daily transactions to produce invoices for partners.
+A fail-safe mechanism is integrated to check for data inconsistencies, such as duplicate transactions or irregular transaction values, before generating invoices.
+If discrepancies are detected that could lead to inaccurate billing, the pipeline automatically halts, preventing the generation and distribution of potentially erroneous invoices.
+The finance team and relevant stakeholders are notified of the halt, allowing the data team to investigate and rectify the issue.
+This ensures that partners are neither overcharged nor undercharged due to data inaccuracies, maintaining trust and compliance.</p>
+</div>
+</div>
+</li>
 </ul>
 <p>The design of fault-tolerant processes assumes:</p>
 <ul>
@@ -203,26 +251,61 @@
 <li>All possible interactions between the process and its environment have been considered.</li>
 </ul>
 <h2 id="redundancy"><a class="header" href="#redundancy">Redundancy</a></h2>
-<blockquote>
-<p>All available fault techniques include adding external elements to the system to detect and recover from faults. These elements are redundant in the sense that they are not necessary for the system's normal operation; this is called <strong>protective redundancy</strong>. The goal of tolerance is to minimize redundancy while maximizing reliability, always under system complexity and size constraints. <em>Care must be taken when designing fault-tolerant systems, as components increase the complexity and maintenance of the entire system, which can in itself lead to less reliable systems</em>.</p>
-</blockquote>
+<div id="admonition-protective-redundancy" class="admonition admonish-tip">
+<div class="admonition-title">
+<p>Protective Redundancy</p>
+<p><a class="admonition-anchor-link" href="#admonition-protective-redundancy"></a></p>
+</div>
+<div>
+<p>All available fault techniques include adding external elements to the system to detect and recover from faults.
+These elements are redundant in the sense that they are not necessary for the system's normal operation; this is called <strong>protective redundancy</strong>.</p>
+</div>
+</div>
+<p>The goal of tolerance is to minimize redundancy while maximizing reliability, always under system complexity and size constraints. <em>Care must be taken when designing fault-tolerant systems, as components increase the complexity and maintenance of the entire system, which can in itself lead to less reliable systems</em>.</p>
 <p align="center">
-  <img src="../../assets/concepts/systems-reliability/fault_tolerance_v1.svg" alt="Systems Reliability - Mechanisms - Fault Tolerance - Redudancy">
+  <figure>
+    <img src="../../assets/concepts/systems-reliability/fault_tolerance_v1.svg" alt="Systems Reliability - Mechanisms - Fault Tolerance - Redudancy">
+    <figcaption>Redudancy Classification and Implementation.</figcaption>
+  </figure>
 </p>
-<p>Systems Redundancy is classified into static and dynamic. <strong>Static redundancy</strong>, or masking, involves using redundant components to hide the effects of faults. <strong>Dynamic redundancy</strong> is redundancy within a component that makes it indicate, implicitly or explicitly, that the output is erroneous; another component must provide recovery. This fault tolerance technique has four phases:</p>
-<ol>
-<li><strong>Error detection</strong>: no fault tolerance action will be taken until an error has been detected.</li>
-<li><strong>Damage confinement and assessment</strong>: when an error is detected, the extent of the system that has been corrupted and its scope must be estimated (error diagnosis).</li>
-<li><strong>Error recovery</strong>: one of the most critical aspects of fault tolerance. Error recovery techniques should direct the corrupted system to a state from which it can continue its normal operation (perhaps with functional degradation).</li>
-<li><strong>Failure treatment and service continuation</strong>: an error is a failure symptom; although the damage might have been repaired, the failure still exists, and therefore, the error may recur unless some form of maintenance is performed.</li>
-</ol>
+<p>Systems Redundancy is classified into static and dynamic.
+<strong>Static redundancy</strong>, or masking, involves using redundant components to hide the effects of faults.
+<strong>Dynamic redundancy</strong> is redundancy within a component that makes it indicate, implicitly or explicitly, that the output is erroneous; another component must provide recovery.
+Dynamic redundancy involves not just the indication that an output is erroneous but also the system's ability to adapt or reconfigure in response to detected errors.</p>
+<div id="admonition-static-redundancy-example" class="admonition admonish-example">
+<div class="admonition-title">
+<p>Static Redundancy Example</p>
+<p><a class="admonition-anchor-link" href="#admonition-static-redundancy-example"></a></p>
+</div>
+<div>
+<p>In a database system, static redundancy is implemented through mirroring, where data is replicated across multiple storage devices or locations in real time.
+If one storage device fails, the system can seamlessly switch to a mirrored device without data loss or service interruption, effectively masking the fault from the end-users.</p>
+</div>
+</div>
+<div id="admonition-dynamic-redundancy-example" class="admonition admonish-example">
+<div class="admonition-title">
+<p>Dynamic Redundancy Example</p>
+<p><a class="admonition-anchor-link" href="#admonition-dynamic-redundancy-example"></a></p>
+</div>
+<div>
+<p>A self-healing database cluster uses dynamic redundancy by continuously monitoring the health of its nodes.
+If a node shows signs of failure, the cluster automatically initiates failover procedures to another node and possibly starts a replacement process for the faulty node, ensuring database availability and integrity with minimal manual intervention.</p>
+</div>
+</div>
+<p>The key difference between static and dynamic redundancy is the approach to fault tolerance.
+Static redundancy relies on duplicate resources ready to take over in case of failure, providing a straightforward but potentially resource-intensive solution.
+On the other hand, dynamic redundancy incorporates intelligence and adaptability into the system, allowing it to respond to changing conditions and failures more efficiently, often with less overhead.</p>
+<p>Whether static or dynamic, this fault tolerance technique has four phases: <strong>error detection</strong>, <strong>damage confinement and assessment</strong>, <strong>error recovery</strong>, and <strong>failure treatment and service continuation</strong>.</p>
 <h3 id="1-error-detection"><a class="header" href="#1-error-detection">1. Error Detection</a></h3>
-<blockquote>
+<p>No fault tolerance action will be taken until an error has been detected.</p>
+<div id="admonition-default" class="admonition admonish-tip">
+<div>
 <p>The effectiveness of a fault-tolerant system depends on the <strong>effectiveness of error detection</strong>.</p>
-</blockquote>
+</div>
+</div>
 <p>Error detection is classified into:</p>
 <ul>
-<li><strong>Environmental detections</strong>: Errors are detected in the application's environment and handled by exceptions.</li>
+<li><strong>Environmental detections</strong>: Errors are detected in the operational environment of the system, which are typically managed through exception-handling mechanisms.</li>
 <li><strong>Application detection</strong>: Errors are identified in the application itself.
 <ul>
 <li><strong>Reverse checks</strong>: Applied in components with an isomorphic relationship (one-to-one) between input and output. This method calculates an input value from the output value, which is then compared with the original. Inexact comparison techniques must be adopted when dealing with real numbers.</li>
@@ -230,24 +313,164 @@
 </ul>
 </li>
 </ul>
+<div id="admonition-environmental-detections-example" class="admonition admonish-example">
+<div class="admonition-title">
+<p>Environmental Detections Example</p>
+<p><a class="admonition-anchor-link" href="#admonition-environmental-detections-example"></a></p>
+</div>
+<div>
+<p>A data ingestion pipeline monitors external data sources for updates.
+If a source becomes unavailable due to network issues, the system triggers an exception, alerting the data engineering team to the connectivity problem.
+This allows for quick resolution, ensuring continuous data flow.</p>
+</div>
+</div>
+<div id="admonition-reverse-checks-example" class="admonition admonish-example">
+<div class="admonition-title">
+<p>Reverse Checks Example</p>
+<p><a class="admonition-anchor-link" href="#admonition-reverse-checks-example"></a></p>
+</div>
+<div>
+<p>A reverse check is performed on the report totals after creating a report summarizing the sales data by region.
+This check redistributes the totals back to the expected sales per store based on historical proportions.
+The newly distributed figures are then compared to the detailed sales data to ensure accurate report aggregation.</p>
+</div>
+</div>
+<div id="admonition-rationality-checks-example" class="admonition admonish-example">
+<div class="admonition-title">
+<p>Rationality Checks Example</p>
+<p><a class="admonition-anchor-link" href="#admonition-rationality-checks-example"></a></p>
+</div>
+<div>
+<p>During data integration processes, a rationality check ensures that all foreign key values in a child table have corresponding primary key values in the parent table.
+Records violating this constraint are identified as anomalies, indicating issues with data consistency or integrity across related tables.</p>
+</div>
+</div>
 <h3 id="2-damage-confinement-and-assessment"><a class="header" href="#2-damage-confinement-and-assessment">2. Damage Confinement and Assessment</a></h3>
-<blockquote>
+<p>When an error is detected, the extent of the system that has been corrupted and its scope must be estimated (error diagnosis).</p>
+<div id="admonition-default-1" class="admonition admonish-tip">
+<div>
 <p>There will always be a time magnitude between the occurrence of a defect and the detection of the error, making it essential to assess any damage that may have occurred in this time interval.</p>
-</blockquote>
-<p>Although the type of error detected can help evaluate the damage - when performing the error handling routine - erroneous information could have been disseminated through the system and its environment. Thus, damage assessment is directly related to the precautions taken by the system designer for damage confinement. Damage confinement refers to structuring the system in such a way as to minimize the damage caused by a faulty component.</p>
-<p><strong>Modular decomposition</strong> and <strong>atomic actions</strong> are two main techniques for structuring systems to facilitate damage confinement. Modular decomposition means that systems should be broken down into components, each represented by one or more modules. The interaction of the components occurs through well-defined interfaces, and the internal details of the modules are hidden and not directly accessible from the outside. This structuring makes it more difficult for an error in one component to propagate to another.</p>
-<p>Modular decomposition provides a static structure, while atomic actions structure the system dynamically. An action is said to be atomic if there are no interactions between the activity and the system during the action. These actions move the system from one consistent state to another and restrict information flow between components.</p>
+</div>
+</div>
+<p>Although the type of error detected can help evaluate the damage - when performing the error handling routine - erroneous information could have been disseminated through the system and its environment.
+Thus, damage assessment is directly related to the precautions taken by the system designer for damage confinement.
+Damage confinement refers to structuring the system in such a way as to minimize the damage caused by a faulty component.</p>
+<p><strong>Modular decomposition</strong> and <strong>atomic actions</strong> are two main techniques for structuring systems to facilitate damage confinement.
+Modular decomposition means that systems should be broken down into components, each represented by one or more modules.
+The interaction of the components occurs through well-defined interfaces, and the internal details of the modules are hidden and not directly accessible from the outside.
+This structuring makes it more difficult for an error in one component to propagate to another.</p>
+<p>Modular decomposition provides a static structure, while atomic actions structure the system dynamically.
+An action is said to be atomic if there are no interactions between the activity and the system during the action.
+These actions move the system from one consistent state to another and restrict information flow between components.</p>
+<p>Both strategies contribute to damage confinement and system reliability by reducing the complexity and interdependencies that can lead to widespread system failures.</p>
+<div id="admonition-modular-decomposition-and-atomic-actions-example" class="admonition admonish-example">
+<div class="admonition-title">
+<p>Modular Decomposition and Atomic Actions Example</p>
+<p><a class="admonition-anchor-link" href="#admonition-modular-decomposition-and-atomic-actions-example"></a></p>
+</div>
+<div>
+<ul>
+<li>
+<p><strong>Scenario</strong>:
+A data analytics platform is designed to ingest, process, and visualize data from various sources, providing insights to business users.
+The platform comprises several microservices, including data ingestion, processing, storage, and visualization services.</p>
+</li>
+<li>
+<p><strong>Modular Decomposition</strong>:
+The platform is divided into separate microservices, each responsible for a specific aspect of the data pipeline.
+For instance, the data ingestion service is distinct from the data processing service.</p>
+</li>
+<li>
+<p><strong>Atomic Actions</strong>:
+One critical task in the data processing microservice is transforming raw data into a format that can be analyzed.
+This transformation process is designed to be an atomic action.
+It either completes successfully and moves the data to the next stage or, in the event of a failure, entirely rolls back all changes, leaving the system in its original state without any partial modifications.</p>
+</li>
+</ul>
+</div>
+</div>
+<p>The modular approach in this example separates individual components to make them easier to maintain and update without affecting others.
+For instance, if the data processing service needs to be updated or replaced, it can be done independently of the ingestion and visualization services.
+The atomic actions example ensures data integrity and consistency.
+If the transformation operation encounters an error, such as a format inconsistency, the atomic design prevents partially transformed, potentially incorrect data from progressing through the pipeline.
+This maintains the reliability of the data output and the overall system.</p>
 <h3 id="3-error-recovery"><a class="header" href="#3-error-recovery">3. Error Recovery</a></h3>
-<blockquote>
-<p>Error recovery procedures begin once the detected error state and its possible damages have been assessed. This phase is the most important within fault tolerance techniques, which must transform an erroneous state of the system into another from which it can continue its normal operation, perhaps with some service degradation.</p>
-</blockquote>
-<p><strong>Forward recovery</strong> and <strong>backward recovery</strong> are the most common error recovery strategies. The forward error recovery attempts to continue from the erroneous state by making selective corrections to the system's state, including protecting any aspect of the controlled environment that could be put at risk or damaged by the failure.</p>
-<p>The backward recovery strategy consists of restoring the system to a safe state before the one in which the error occurred and then executing an alternative section of the task. This section will have the same functionality as the section that produced the defect but using a different algorithm. It is expected that this alternative will not produce the same defect as the previous version so that it will rely on the designer's knowledge of the possible failure modes of this component.</p>
+<p>Error recovery procedures begin once the detected error state and its possible damages have been assessed.</p>
+<div id="admonition-default-2" class="admonition admonish-tip">
+<div>
+<p>This phase is the most important within fault tolerance techniques.
+It must transform an erroneous system state into another from which it can continue its normal operation, perhaps with some service degradation.</p>
+</div>
+</div>
+<p><strong>Forward recovery</strong> and <strong>backward recovery</strong> are the most common error recovery strategies.
+The forward error recovery attempts to continue from the erroneous state by making selective corrections to the system's state, including protecting any aspect of the controlled environment that could be put at risk or damaged by the failure.</p>
+<p>The backward recovery strategy consists of restoring the system to a safe state before the one in which the error occurred and then executing an alternative section of the task.
+This section will have the same functionality as the section that produced the defect but using a different algorithm.
+It is expected that this alternative will not produce the same defect as the previous version so that it will rely on the designer's knowledge of the possible failure modes of this component.</p>
 <p>The designer must be clear about the service degradation levels, considering the services and processes that depend on it. Error recovery is part of the <a href="./corrective_actions.html">Corrective Action and Preventive Action processes (CAPA)</a>.</p>
+<div id="admonition-forward-error-recovery-example" class="admonition admonish-example">
+<div class="admonition-title">
+<p>Forward Error Recovery Example</p>
+<p><a class="admonition-anchor-link" href="#admonition-forward-error-recovery-example"></a></p>
+</div>
+<div>
+<p>In a data aggregation pipeline summarizing daily social media engagement, specific post data is missing due to an outage in the platform's post-detail API for a particular subset of posts.
+The pipeline implements a forward error recovery strategy by utilizing aggregate engagement data available from an alternative API with a different granularity (post type instead of individual posts).
+This aggregate data and historical individual post engagement patterns are used to estimate the missing data for individual posts.
+An alert is generated to notify the data team of the estimation used and advises a rerun of the pipeline once the platform confirms the API is fully operational, ensuring continuity and accuracy of the engagement summary.</p>
+</div>
+</div>
+<div id="admonition-backward-error-recovery-example" class="admonition admonish-example">
+<div class="admonition-title">
+<p>Backward Error Recovery Example</p>
+<p><a class="admonition-anchor-link" href="#admonition-backward-error-recovery-example"></a></p>
+</div>
+<div>
+<p>Consider a scenario where a database update operation is part of a larger transaction in an e-commerce application.
+If an error occurs during the update—perhaps due to a database constraint violation or an unexpected interruption—the backward error recovery mechanism would involve rolling back the entire transaction to its state before the update attempt.
+This could be achieved through transaction logs or savepoints that allow the system to revert to a known good state.
+After the rollback, an alternative update operation that corrects the cause of the original error (e.g., adjusting the data to meet constraints) can be attempted, or the system can alert an operator to resolve the issue manually.
+This ensures the database remains consistent and free from partial updates that could lead to data integrity issues.</p>
+</div>
+</div>
+<p>Both forward and backward error recovery strategies aim to restore the system to a state where normal operations can continue, either by moving past the error with a best-guess approach (forward) or by returning to a safe previous state (backward), thereby maintaining the overall integrity and reliability of the system.</p>
 <h3 id="4-failure-treatment-and-continued-service"><a class="header" href="#4-failure-treatment-and-continued-service">4. Failure Treatment and Continued Service</a></h3>
-<blockquote>
-<p>An error is a manifestation of a defect, and although the error recovery phase may have brought the system to an error-free state, the error can recur. Therefore, the final phase of fault tolerance is to eradicate the failure from the system so that normal service can continue.</p>
-</blockquote>
+<p>The final phase of fault tolerance is to eradicate the failure from the system so that normal service can continue.</p>
+<div id="admonition-default-3" class="admonition admonish-tip">
+<div>
+<p>An error is a symptom of a defect and can lead to a failure. Although the immediate effects of the error might have been mitigated and the system returned to an error-free state, the underlying defect still exists. Therefore, the error may recur unless maintenance is performed to address the defect.</p>
+</div>
+</div>
+<p>Key Actions in this Phase:</p>
+<ol>
+<li><strong>Root Cause Analysis (RCA)</strong>: Identify and understand the underlying cause of the failure, going beyond treating the symptoms (errors) to address the core issue (defect or fault).</li>
+<li><strong>Implementing Fixes</strong>: Based on the RCA<sup><a name="to-footnote-1"><a href="#footnote-1">1</a></a></sup>, develop and deploy solutions that rectify the identified defect and prevent the recurrence of the same failure.</li>
+<li><strong>System Testing and Validation</strong>: Rigorously test the system to ensure that the implemented fixes have resolved the issue without introducing new problems.</li>
+<li><strong>Monitoring and Documentation</strong>: Continuously monitor the system post-fix to ensure stable operation and document the incident, analysis, fix, and lessons learned for future reference.</li>
+</ol>
+<div id="admonition-failure-treatment-and-continued-service-example" class="admonition admonish-example">
+<div class="admonition-title">
+<p>Failure Treatment and Continued Service Example</p>
+<p><a class="admonition-anchor-link" href="#admonition-failure-treatment-and-continued-service-example"></a></p>
+</div>
+<div>
+<p>Consider a data processing system for a retail company that aggregates sales data from various sources to generate daily sales reports. The system encounters a failure due to an unexpected data format change in one of the source systems, causing the aggregation process to produce incorrect sales totals.</p>
+<ul>
+<li><strong>Root Cause Analysis</strong>: The data engineering team discovers that a recent update in the source system's software altered the data export format without prior notice.</li>
+<li><strong>Implementing Fixes</strong>: The team updates the data ingestion scripts to accommodate the new data format and adds additional validation checks to flag any future unexpected changes in data formats from source systems.</li>
+<li><strong>System Testing and Validation</strong>: The updated data processing pipeline is thoroughly tested with various data scenarios to ensure it can handle the new format correctly and is resilient to similar issues.</li>
+<li><strong>Monitoring and Documentation</strong>: Post-deployment, the system is closely monitored for anomalies, and the incident is documented in the team's knowledge base, including details of the failure, analysis, fix, and preventive measures to avoid similar issues.</li>
+</ul>
+</div>
+</div>
+<h2 id="final-thoughts-on-fault-tolerance"><a class="header" href="#final-thoughts-on-fault-tolerance">Final Thoughts on Fault Tolerance</a></h2>
+<p>A well-designed fault tolerance strategy encompasses not only the implementation of redundancy and error detection mechanisms but also a comprehensive approach to system design that anticipates potential failures and mitigates their impact.</p>
+<p>Incorporating both static and dynamic redundancy, along with robust error detection and recovery techniques, allows systems to maintain their functionality and integrity even in the face of hardware malfunctions, software bugs, or external disruptions.
+This resilience is particularly vital in data engineering, analytics, and business intelligence contexts, where data accuracy and availability underpin critical decision-making processes.</p>
+<p>As systems grow in complexity and scale, the importance of fault tolerance will only increase.
+Adopting a mindset that prioritizes fault tolerance from the early stages of system design can transform potential vulnerabilities into strengths, ensuring that data systems can withstand challenges and continue to deliver value reliably.</p>
+<p>Ultimately, fault tolerance is not just a set of technical solutions but a fundamental aspect of system architecture and operational culture that champions reliability, adaptability, and continuous improvement.<p><hr/></p>
+<p><a name="footnote-1"><a href="#to-footnote-1">1</a></a>: Root Cause Analysis (RCA) is better explored later, in the chapter about <a href="./corrective_actions.html"><strong>Corrective Actions</strong></a>.</p>
 
                     </main>
 
