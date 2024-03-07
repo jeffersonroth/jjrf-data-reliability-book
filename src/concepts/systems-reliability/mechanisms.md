@@ -11,4 +11,4 @@
 * [Fault Tolerance](./fault_tolerance.md)
 * [Fault Prevention: Elimination](./fault_prevention_elimination.md)
 * [Fault Predictions](./fault_prediction.md)
-* [Reliability Tools](./reliability_tools.md)
+* [Reliability Toolkit](./reliability_tools.md)
