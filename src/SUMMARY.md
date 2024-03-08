@@ -4,7 +4,6 @@
 [Title](./TITLE.md)
 [Dedication](./DEDICATION.md)
 [Summary](./SUMMARY.md)
-[Foreword](./FOREWORD.md)
 [Preface](./PREFACE.md)
 [Author](./AUTHOR.md)
 [Objectives](./OBJECTIVES.md)
