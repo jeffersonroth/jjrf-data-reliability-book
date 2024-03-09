@@ -2,8 +2,8 @@
 
 <p align="center">
   <figure>
-    <img src="../../assets/concepts/systems-reliability/impediments_v1.svg" alt="System Reliability - Impediments">
-    <figcaption>System Reliability - Impediments.</figcaption>
+    <img src="../../assets/concepts/systems-reliability/impediments_v1.svg" alt="Systems Reliability - Impediments">
+    <figcaption>Systems Reliability - Impediments.</figcaption>
   </figure>
 </p>
 

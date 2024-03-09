@@ -1,4 +1,4 @@
-# Observability and Data Observability Tools
+# Observability
 
 In the context of software and systems, observability refers to the ability to infer the internal states of a system based on its external outputs.
 It extends beyond monitoring by capturing what's going wrong and providing insights into why it's happening.
@@ -30,7 +30,7 @@ Data observability is achieved through:
 * **Tracing**: Following data through its entire lifecycle to understand its flow and transformations.
 * **Alerting**: Setting up real-time notifications for anomalies or issues detected in the data.
 
-### Data Observability Tools
+### Toolkit
 
 Several tools and platforms provide data observability capabilities, ranging from open-source projects to commercial solutions. They include:
 
