@@ -15,38 +15,38 @@
 
 **Fault Tolerant Systems**:
 
-* Technical documentation: Manuals, specifications, and guidelines that describe how systems or software operate. 
+* Technical documentation: Manuals, specifications, and guidelines that describe how systems or software operate.
 * Safety cases: Documented arguments that a system is safe for a given application in a given environment.
-* Change Control: The process of managing changes to system or software specifications, ensuring that no unnecessary changes are made and that all changes are documented. 
-* Defensive Design: Strategies implemented in the design phase to anticipate and mitigate potential system failures or misuse. 
+* Change Control: The process of managing changes to system or software specifications, ensuring that no unnecessary changes are made and that all changes are documented.
+* Defensive Design: Strategies implemented in the design phase to anticipate and mitigate potential system failures or misuse.
 * Derating: Using components below their maximum capacity to reduce the risk of failure, thereby increasing reliability.
 * Design Debt: The future cost incurred as a result of taking shortcuts or employing suboptimal design solutions in the short term.
 * Design Life: The expected lifetime for which a product is designed to last without major degradation or failure.
 * Design Thinking: A problem-solving approach that involves empathizing with users, defining problems, ideating solutions, prototyping, and testing.
 * Durability: The ability of a system or component to withstand wear and tear over time without significant degradation.
-* Edge Case: Rare or extreme conditions that occur at the boundary of operating parameters, which may not have been fully considered in the design. 
+* Edge Case: Rare or extreme conditions that occur at the boundary of operating parameters, which may not have been fully considered in the design.
 * Entropy: In the context of systems, a measure of disorder or randomness that can lead to system degradation over time.
 * Error Tolerance: The capacity of a system to continue operating correctly in the presence of errors.
-* Fault Tolerance: The ability of a system to continue functioning in the event of a failure of some of its components. 
+* Fault Tolerance: The ability of a system to continue functioning in the event of a failure of some of its components.
 * Fail Well: Designing systems to handle failures gracefully, minimizing the impact on users and the system.
-* Fail-Safe: Designing systems to default to a safe condition in the event of a failure. 
+* Fail-Safe: Designing systems to default to a safe condition in the event of a failure.
 * Graceful Degradation: The ability of a system to continue providing functionality when some subsystems or features fail.
 * Mistake Proofing & Poka Yoke Technique: Methods used to avoid simple human errors in processes or systems, making it impossible or difficult to make mistakes.
 * No Fault Found: A situation where reported problems cannot be replicated or identified during testing or inspection.
-* Resilience: The ability of a system to recover quickly from difficulties or changes. 
+* Resilience: The ability of a system to recover quickly from difficulties or changes.
 * Safety by Design: Incorporating safety considerations into the design process to minimize risks to users and the environment.
-* Self-Healing: The capability of a system to detect and fix problems automatically. 
+* Self-Healing: The capability of a system to detect and fix problems automatically.
 * Service Life: The period during which a system or component remains functional and meets performance requirements.
 * Systems Thinking: An approach to problem-solving that views problems as parts of an overall system, rather than isolated issues.
 * Testbed: An environment or platform used for testing new technologies or systems under controlled conditions.
 * Wear and Tear: The damage that naturally and inevitably occurs as a result of normal wear or aging.
 * Deconstructability: The ease with which a system can be disassembled, typically for maintenance, repair, or recycling.
 * Refinement: The process of making incremental improvements to a system or design to enhance functionality or performance.
-* Defense in Depth: A multi-layered strategy in system security that uses several components to protect operations and information. 
-* FMEA Design and Process: Failure Mode and Effects Analysis; a systematic method for evaluating processes to identify where and how they might fail and assessing the relative impact of different failures. 
+* Defense in Depth: A multi-layered strategy in system security that uses several components to protect operations and information.
+* FMEA Design and Process: Failure Mode and Effects Analysis; a systematic method for evaluating processes to identify where and how they might fail and assessing the relative impact of different failures.
 * Physics of Failure (PoF): An approach to reliability engineering that focuses on understanding the root causes of failure at the material, component, or system levels.
 * Built-in Self-test: A mechanism that allows a system to test its operation or functionality without the need for external equipment.
-* Eliminating Single Point of Failure (SPOF): Designing systems to remove any one component whose failure would cause the entire system to fail. 
+* Eliminating Single Point of Failure (SPOF): Designing systems to remove any one component whose failure would cause the entire system to fail.
 
 The order reflects potential adaptability, starting with the most adaptable:
 
@@ -73,11 +73,11 @@ Technical documentation: Essential for maintaining clarity and understanding of 
 
 **Analysis**:
 
-* Root Cause Analysis (RCA): Identifying the primary cause of a fault or problem to prevent recurrence. 
-* Fault Tree Analysis (FTA): A top-down approach to identify various causes of system failures. 
-* Failure Mode and Effects Analysis (FMEA): Assessing potential failures in products or processes and their effects. 
-* Failure Mode, Effects, and Criticality Analysis (FMECA): An extension of FMEA that includes a criticality analysis to prioritize failure modes. 
-* Reliability, Availability, and Maintainability Study (RAMS): Evaluating a system's reliability, its availability for use, and ease of maintenance. 
+* Root Cause Analysis (RCA): Identifying the primary cause of a fault or problem to prevent recurrence.
+* Fault Tree Analysis (FTA): A top-down approach to identify various causes of system failures.
+* Failure Mode and Effects Analysis (FMEA): Assessing potential failures in products or processes and their effects.
+* Failure Mode, Effects, and Criticality Analysis (FMECA): An extension of FMEA that includes a criticality analysis to prioritize failure modes.
+* Reliability, Availability, and Maintainability Study (RAMS): Evaluating a system's reliability, its availability for use, and ease of maintenance.
 * Mission Readiness Analysis: Assessing whether a system is ready and capable of performing its intended mission.
 * Functional System Failure Analysis: Investigating failures based on the system's functional requirements.
 * Inherent Design Reliability Analysis: Analyzing reliability that's built into the design of a system.
@@ -85,14 +85,14 @@ Technical documentation: Essential for maintaining clarity and understanding of 
 * Fatigue and Creep Analysis: Examining how materials deteriorate under repeated stress (fatigue) and long-term stress (creep).
 * Component Stress Analysis: Analyzing stress on individual components to predict potential failure points.
 * Field Failure Monitoring & Data Analysis: Collecting and analyzing data from systems in use to monitor for failures.
-* Chaos Engineering: Intentionally introducing disturbances to systems to test their reliability. 
+* Chaos Engineering: Intentionally introducing disturbances to systems to test their reliability.
 * Reliability Risk Assessments & Hazard Analysis: Evaluating the risks and hazards that could impact system reliability.
 * Manufacturing Defect Analysis & Residual Risk Analysis (RCA): Identifying defects from manufacturing and analyzing risks not mitigated by controls.
-* Weibull Analysis: A statistical method used in reliability engineering for analyzing life data, failure rates, and reliability. 
+* Weibull Analysis: A statistical method used in reliability engineering for analyzing life data, failure rates, and reliability.
 * Accelerated Life Testing (ALT Analysis): Testing that uses elevated stresses to induce failures and predict a product's life under normal conditions.
 * Material Strength Analysis: Assessing the strength and durability of materials used in system components.
-* Quality of Service, Quality Control, Defect Rate, Failure Rate: Measures and controls to ensure system quality and reliability. 
-* Mean Time Between Failures (MTBF), Mean Time to Repair (MTTR), Mean Corrective Maintenance Time (MCMT), Mean Preventive Maintenance Time (MPMT), Mean Maintenance Hours per Repair (MMH/Repair), Maximum Corrective Maintenance Time (MaxCMT): Metrics that provide insights into system reliability, maintenance efficiency, and repair times. 
+* Quality of Service, Quality Control, Defect Rate, Failure Rate: Measures and controls to ensure system quality and reliability.
+* Mean Time Between Failures (MTBF), Mean Time to Repair (MTTR), Mean Corrective Maintenance Time (MCMT), Mean Preventive Maintenance Time (MPMT), Mean Maintenance Hours per Repair (MMH/Repair), Maximum Corrective Maintenance Time (MaxCMT): Metrics that provide insights into system reliability, maintenance efficiency, and repair times.
 
 Highly Adaptable to Data Reliability Engineering:
 Root Cause Analysis (RCA)
@@ -119,19 +119,19 @@ Manufacturing Defect Analysis & Residual Risk Analysis (more applicable to hardw
 
 **Data Quality**:
 
-* Data Integrity: The accuracy and consistency of data stored in a database or a data warehouse over its entire lifecycle. 
-* Data Cleansing: The process of detecting and correcting (or removing) corrupt or inaccurate records from a record set, table, or database. 
+* Data Integrity: The accuracy and consistency of data stored in a database or a data warehouse over its entire lifecycle.
+* Data Cleansing: The process of detecting and correcting (or removing) corrupt or inaccurate records from a record set, table, or database.
 * Data Corruption: The occurrence of unintended changes to data in storage or transit, leading to a loss of data accuracy and integrity.
 * Data Degradation: The gradual corruption or loss of data quality and integrity over time, often due to factors like hardware failures, software issues, or data entry errors.
 * Data Artifact: Any undesired alteration in data introduced through a technical process; can include errors, anomalies, or peculiarities in data sets.
 * Data Rot: The gradual decay of storage media that leads to the loss or corruption of the data stored on them.
 * Conformance Quality: The degree to which a product or service meets specified standards or requirements; in data quality, it can relate to adherence to data models and validation rules.
 * Credence Quality: Aspects of a product or service that are difficult to observe or assess even after consumption; in data, this might relate to the inherent trustworthiness or credibility of data sources.
-* Quality Assurance: Activities and processes aimed at ensuring that the products or services meet the required quality standards before they reach the customer. 
+* Quality Assurance: Activities and processes aimed at ensuring that the products or services meet the required quality standards before they reach the customer.
 * Quality Control: The operational techniques and activities used to fulfill requirements for quality, including measuring, examining, testing, or gauging one or more characteristics of a product or service.
 * Service Quality: The comparison of perceived expectations with actual service performance; in data services, this could relate to the reliability, availability, and performance of data systems.
 * Experience Quality: Relates to the subjective assessment of the interaction with a product or service; in data systems, this might involve user satisfaction with data tools and platforms.
-* Referential Integrity: A concept in databases where table relationships are correctly maintained, ensuring that foreign keys match primary keys. 
+* Referential Integrity: A concept in databases where table relationships are correctly maintained, ensuring that foreign keys match primary keys.
 * Reusability: The ease with which parts of a system can be used in other systems; in data management, this might relate to the ability to repurpose data models, schemas, or ETL processes.
 
 Highly Relevant:
