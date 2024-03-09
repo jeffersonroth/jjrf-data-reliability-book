@@ -7,6 +7,9 @@
 ++ Mechanisms
 +++ Fault Prevention: Avoidance
 +++ Fault Tolerance
+++++ Full Tolerance
+++++ Controlled Degradation
+++++ Fail-Safe
 +++ Fault Prevention: Elimination
 +++ Fault Predictions
 ++ Reliability Toolkit
