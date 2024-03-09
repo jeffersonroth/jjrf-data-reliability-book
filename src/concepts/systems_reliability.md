@@ -1,7 +1,7 @@
 # Systems Reliability
 
-```admonish tip title="Defining System Reliability"
-System reliability is determined by its adherence to a clear, complete, consistent, and unambiguous behavior specification.
+```admonish tip title="Defining Systems Reliability"
+Systems reliability is determined by its adherence to a clear, complete, consistent, and unambiguous behavior specification.
 A reliable system performs predictably without errors or failures and consistently delivers its intended service.
 ```
 
@@ -25,8 +25,8 @@ Attributes are the ways and measures by which the **quality of a reliable servic
 ```
 
 ```admonish tldr title="Mechanisms"
-This chapter addresses system reliability mechanisms by internalizing and adopting best practices or applying specific methodologies, architectures, or tools.
-This chapter aims to create a **data system reliability framework** that engineers can adopt from earlier implementation phases, such as the design phase.
+This chapter addresses systems reliability mechanisms by internalizing and adopting best practices or applying specific methodologies, architectures, or tools.
+This chapter aims to create a **data systems reliability framework** that engineers can adopt from earlier implementation phases, such as the design phase.
 ```
 
 <p align="center">

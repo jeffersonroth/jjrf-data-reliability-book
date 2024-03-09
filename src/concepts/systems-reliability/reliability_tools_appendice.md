@@ -1,4 +1,4 @@
-# Reliability Toolkit
+# Extended Reliability Toolkit
 
 Many tools, processes, techniques, strategies, and ideas help with reliability engineering, designed to enhance the robustness and dependability of systems across various domains.
 Among these, the Corrective Action System (FRACAS) is particularly notable within traditional sectors like automotive and manufacturing for its pivotal role in upholding product quality and reliability.
@@ -32,7 +32,7 @@ In data engineering, direct application of RBDs might be uncommon, but the princ
 Data lineage tools, for instance, provide a clear visualization of data dependencies and flows, similar to how RBDs map out component relationships.
 Data observability platforms extend this by offering comprehensive insights into the health and performance of each part of the data ecosystem, enabling proactive identification and resolution of issues before they escalate.
 Workflow orchestration tools like Apache Airflow ensure that data processes are executed in a reliable sequence, reflecting the dependency management aspect of RBDs.
-Together, these tools form a framework that enhances data system reliability, availability, and integrity, echoing the foundational goals of RBDs in traditional engineering.
+Together, these tools form a framework that enhances data systems reliability, availability, and integrity, echoing the foundational goals of RBDs in traditional engineering.
 ```
 
 * [Chaos Engineering Tools](./chaos_engineering_tools.md)

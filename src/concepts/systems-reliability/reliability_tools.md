@@ -5,7 +5,7 @@ You will be presented with a spectrum of tools, processes, techniques, and strat
 
 Interestingly, many of the tools that form the bedrock of this toolkit, such as Apache Airflow, dbt, popular Data Warehouse solutions like Redshift or Snowflake, git, and Terraform, might already be familiar to you.
 These are not just tools but catalysts for reliability when wielded with precision and understanding. For instance, consider the versatility of Apache Airflow, which can orchestrate a wide array of pipelines - from database migrations and data quality metrics collection to system monitoring and third-party data integration.
-Its ability to seamlessly connect with nearly any tool or platform amplifies its role in ensuring data system reliability.
+Its ability to seamlessly connect with nearly any tool or platform amplifies its role in ensuring data systems reliability.
 
 This chapter is structured to guide you through a coherent path, starting with the necessity and impact of [observability](./observability.md) in understanding and enhancing the reliability of data systems.
 Following this, we delve into [automating data quality](./data_quality_automation.md) and embedding these practices throughout the entire data lifecycle.

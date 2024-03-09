@@ -7,8 +7,8 @@ At its core, this book is about creating complex systems—encompassing hardware
 My journey into data reliability engineering began with my studies in Industrial Automation and Mechanical Engineering, leading to an internship in Powertrain Engineering at Volvo Group Trucks Technology.
 There, I delved into systems and application engineering, focusing on Logged Vehicle Data analysis and data mining.
 This experience highlighted the importance of reliability in systems where failures could have profound consequences.
-As I transitioned to data-centric roles, I observed a distinct approach to system reliability.
-This contrast inspired me to contemplate how the principles of system reliability could enhance the design of data systems.
+As I transitioned to data-centric roles, I observed a distinct approach to systems reliability.
+This contrast inspired me to contemplate how the principles of systems reliability could enhance the design of data systems.
 This book is a culmination of those reflections, aimed at offering practical guidance for building your own Reliability Framework.
 
 The book is inspired by foundational reliability engineering principles and extends these concepts into the domain of data systems.
