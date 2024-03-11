@@ -35,7 +35,7 @@ In this scenario, the three-tier architecture allows the platform to handle user
 
 ## Use Case
 
-The same company as the two-tier architecture [use case](./two_tier_architecture.md#use-case) expands the data team by hiring a data engineer.
+The same company as the two-tier architecture [use case](./two_tier_architecture.md#use-case), Opetence Inc., expands the data team by hiring a data engineer.
 The data engineer warns the company about the issues described in the previous use case and is authorized to create an Aurora Postgres instance (Data Engineering instance) to store raw and 3rd party data.
 
 Fivetran now loads data directly from microservices' databases, third-party data (Google Analytics, Facebook Ads, etc.), and some Google Sheets files onto the instance in a database named Fivetran.

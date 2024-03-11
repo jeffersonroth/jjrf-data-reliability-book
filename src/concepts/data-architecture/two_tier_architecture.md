@@ -44,7 +44,7 @@ In simpler setups, a POS system might use a two-tier architecture where the POS 
 
 ## Use Case
 
-An analytics team has access to an Aurora Postgres instance, where Fivetran loads data directly from microservices' databases, third-party data (Google Analytics, Facebook Ads, etc.), and some Google Sheets files.
+At Opetence Inc., an analytics team has access to an Aurora Postgres instance, where Fivetran loads data directly from microservices' databases, third-party data (Google Analytics, Facebook Ads, etc.), and some Google Sheets files.
 The analytics team transforms the data using SQL queries directly in the same database, creating "marts" in the same database to which Tableau connects.
 The microservices' database data is loaded every 5 minutes, and the data in Auroras Postgres instance is used to monitor near real-time operations.
 
