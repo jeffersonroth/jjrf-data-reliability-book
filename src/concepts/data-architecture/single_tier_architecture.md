@@ -9,6 +9,7 @@ Single-tier architecture, often referred to as a **monolithic architecture**, is
 ```admonish tip title="Single-Tier Architecture"
 This architecture is characterized by its simplicity and is often used for smaller applications or systems where scalability, high availability, and distributed processing are not primary concerns.
 ```
+
 Characteristics of Single-Tier Architecture:
 
 * **Simplicity**: Because all components are housed within a single layer or platform, the architecture is straightforward to develop, deploy, and manage.

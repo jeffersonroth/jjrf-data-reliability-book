@@ -66,6 +66,7 @@ The revised use case provides a clearer depiction of a three-tier architecture w
   * **Tableau** connects to these data marts in the Analytics database for reporting and visualization, free from raw data or PII, addressing previous security concerns.
 
 **Operational Data Handling**:
+
 * The **Operations database** within the DE instance is designated explicitly for monitoring near real-time operations. Data required for this purpose is fetched from microservices databases using **Airbyte**, a flexible, self-hosted data integration platform. This setup provides a dedicated space for operational data, separate from the analytical processing environment, enhancing system efficiency and focus.
 
 **Advantages of This Revised Architecture**:

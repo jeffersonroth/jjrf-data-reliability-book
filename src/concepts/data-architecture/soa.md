@@ -124,6 +124,7 @@ Here's a comparison:
 **Organizational Impact**:
 
 **Microservices**: Encourage small, cross-functional teams that own the entire lifecycle of a service, aligning closely with DevOps and Agile methodologies.
+
 * **SOA**: May involve more centralized governance and potentially larger development teams, focusing on maximizing service reuse across the organization.
 
 While microservices and SOA share the concept of service-based architectures, they apply these concepts differently, reflecting their distinct origins and goals.
