@@ -7,3 +7,6 @@ catppuccin:
 	mdbook-catppuccin install
 
 preprocessors: admonish catppuccin
+
+serve:
+	mdbook serve --hostname 0.0.0.0
