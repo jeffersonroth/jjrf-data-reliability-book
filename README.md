@@ -58,24 +58,30 @@ Before pushing your local branch:
 3. Run linters
 
    ```sh
-   markdownlint-cli2 --config ./.github/files/config.markdownlint-cli2.jsonc --fix > mdlint
+   markdownlint-cli2 --config ./.github/files/config.markdownlint-cli2.jsonc --fix | tee mdlint
    ```
 
 4. Run link checkers
 
   ```sh
-  find . -name \*.md -print0 | xargs -0 -n1 markdown-link-check --config ./.github/files/markdown.links.config.json > mdlink
+  find . -name \*.md -print0 | xargs -0 -n1 markdown-link-check --config ./.github/files/markdown.links.config.json | tee mdlink
   ```
 
 <!-- DEPENDENCIES -->
 
 ## Dependencies
 
-### Docker Image
+### mdBook Environment Docker Image
 >
-> Docker image used to build the book in html.
+> Personal Docker image I use to build the book in html.
 
 * [jeffroth/mdbook-environment](https://hub.docker.com/r/jeffroth/mdbook-environment)
+
+### mdBook Environment Dev Docker Image
+>
+> Personal Docker image with mdBook devtools.
+
+* [jeffroth/mdbook-environment-dev](https://hub.docker.com/r/jeffroth/mdbook-environment-dev)
 
 ### mdBook Plugins
 >
