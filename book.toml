@@ -27,18 +27,14 @@ assets_version = "2.1.0" # DO NOT EDIT: Managed by `mdbook-catppuccin install`
 
 [preprocessor.admonish]
 command = "mdbook-admonish"
-assets_version = "3.0.2"    # do not edit: managed by `mdbook-admonish install`
+assets_version = "3.0.2" # do not edit: managed by `mdbook-admonish install`
 
 [output.html]
 git-repository-url = "https://github.com/jeffersonroth/jjrf-data-reliability-book/"
-edit-url-template = "https://github.com/jeffersonroth/jjrf-data-reliability-book/edit/master/{path}"
+edit-url-template = "https://github.com/jeffersonroth/jjrf-data-reliability-book/edit/main/{path}"
 git-repository-icon = "fa-github"
 additional-js = ["theme/mermaid.min.js", "theme/mermaid-init.js"]
-additional-css = [
-    "theme/mdbook-admonish.css",
-    "theme/catppuccin.css",
-    "theme/catppuccin-admonish.css",
-]
+additional-css = ["./theme/mdbook-admonish.css", "./theme/catppuccin.css", "./theme/catppuccin-admonish.css"]
 mathjax-support = true
 
 [output.html.print]
