@@ -1,0 +1,529 @@
+<!DOCTYPE HTML>
+<html lang="en" class="light" dir="ltr">
+    <head>
+        <!-- Book generated using mdBook -->
+        <meta charset="UTF-8">
+        <title>Cloud-Native Data Architectures - Data Reliability Engineering</title>
+
+
+        <!-- Custom HTML head -->
+        
+        <meta name="description" content="">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <meta name="theme-color" content="#ffffff">
+
+        <link rel="icon" href="../../favicon.svg">
+        <link rel="shortcut icon" href="../../favicon.png">
+        <link rel="stylesheet" href="../../css/variables.css">
+        <link rel="stylesheet" href="../../css/general.css">
+        <link rel="stylesheet" href="../../css/chrome.css">
+        <link rel="stylesheet" href="../../css/print.css" media="print">
+
+        <!-- Fonts -->
+        <link rel="stylesheet" href="../../FontAwesome/css/font-awesome.css">
+        <link rel="stylesheet" href="../../fonts/fonts.css">
+
+        <!-- Highlight.js Stylesheets -->
+        <link rel="stylesheet" href="../../highlight.css">
+        <link rel="stylesheet" href="../../tomorrow-night.css">
+        <link rel="stylesheet" href="../../ayu-highlight.css">
+
+        <!-- Custom theme stylesheets -->
+        <link rel="stylesheet" href="../../theme/mdbook-admonish.css">
+        <link rel="stylesheet" href="../../theme/catppuccin.css">
+        <link rel="stylesheet" href="../../theme/catppuccin-admonish.css">
+
+        <!-- MathJax -->
+        <script async src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.1/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
+    </head>
+    <body class="sidebar-visible no-js">
+    <div id="body-container">
+        <!-- Provide site root to javascript -->
+        <script>
+            var path_to_root = "../../";
+            var default_theme = window.matchMedia("(prefers-color-scheme: dark)").matches ? "navy" : "light";
+        </script>
+
+        <!-- Work around some values being stored in localStorage wrapped in quotes -->
+        <script>
+            try {
+                var theme = localStorage.getItem('mdbook-theme');
+                var sidebar = localStorage.getItem('mdbook-sidebar');
+
+                if (theme.startsWith('"') && theme.endsWith('"')) {
+                    localStorage.setItem('mdbook-theme', theme.slice(1, theme.length - 1));
+                }
+
+                if (sidebar.startsWith('"') && sidebar.endsWith('"')) {
+                    localStorage.setItem('mdbook-sidebar', sidebar.slice(1, sidebar.length - 1));
+                }
+            } catch (e) { }
+        </script>
+
+        <!-- Set the theme before any content is loaded, prevents flash -->
+        <script>
+            var theme;
+            try { theme = localStorage.getItem('mdbook-theme'); } catch(e) { }
+            if (theme === null || theme === undefined) { theme = default_theme; }
+            var html = document.querySelector('html');
+            html.classList.remove('light')
+            html.classList.add(theme);
+            var body = document.querySelector('body');
+            body.classList.remove('no-js')
+            body.classList.add('js');
+        </script>
+
+        <input type="checkbox" id="sidebar-toggle-anchor" class="hidden">
+
+        <!-- Hide / unhide sidebar before it is displayed -->
+        <script>
+            var body = document.querySelector('body');
+            var sidebar = null;
+            var sidebar_toggle = document.getElementById("sidebar-toggle-anchor");
+            if (document.body.clientWidth >= 1080) {
+                try { sidebar = localStorage.getItem('mdbook-sidebar'); } catch(e) { }
+                sidebar = sidebar || 'visible';
+            } else {
+                sidebar = 'hidden';
+            }
+            sidebar_toggle.checked = sidebar === 'visible';
+            body.classList.remove('sidebar-visible');
+            body.classList.add("sidebar-" + sidebar);
+        </script>
+
+        <nav id="sidebar" class="sidebar" aria-label="Table of contents">
+            <div class="sidebar-scrollbox">
+                <ol class="chapter"><li class="chapter-item expanded affix "><a href="../../COVER.html">Cover</a></li><li class="chapter-item expanded affix "><a href="../../TITLE.html">Title</a></li><li class="chapter-item expanded affix "><a href="../../DEDICATION.html">Dedication</a></li><li class="chapter-item expanded affix "><a href="../../SUMMARY.html">Summary</a></li><li class="chapter-item expanded affix "><a href="../../PREFACE.html">Preface</a></li><li class="chapter-item expanded affix "><a href="../../AUTHOR.html">Author</a></li><li class="chapter-item expanded affix "><a href="../../OBJECTIVES.html">Objectives</a></li><li class="chapter-item expanded affix "><a href="../../STRUCTURE.html">Structure</a></li><li class="chapter-item expanded "><a href="../../FOUNDATIONS.html"><strong aria-hidden="true">1.</strong> I - Foundations of Data Reliability Engineering</a></li><li><ol class="section"><li class="chapter-item expanded "><div><strong aria-hidden="true">1.1.</strong> Data Reliability Engineering Principles</div></li><li class="chapter-item expanded "><a href="../../concepts/data_architecture.html"><strong aria-hidden="true">1.2.</strong> Data Architecture</a></li><li><ol class="section"><li class="chapter-item expanded "><div><strong aria-hidden="true">1.2.1.</strong> Data Architecture Principles</div></li><li class="chapter-item expanded "><a href="../../concepts/data-architecture/foundational_architectures.html"><strong aria-hidden="true">1.2.2.</strong> Foundational Architectures</a></li><li><ol class="section"><li class="chapter-item expanded "><a href="../../concepts/data-architecture/single_tier_architecture.html"><strong aria-hidden="true">1.2.2.1.</strong> Single-Tier Architecture</a></li><li class="chapter-item expanded "><a href="../../concepts/data-architecture/two_tier_architecture.html"><strong aria-hidden="true">1.2.2.2.</strong> Two-Tier Architecture</a></li><li class="chapter-item expanded "><a href="../../concepts/data-architecture/three_tier_architecture.html"><strong aria-hidden="true">1.2.2.3.</strong> Three-Tier Architecture</a></li><li class="chapter-item expanded "><a href="../../concepts/data-architecture/n_tier_architecture.html"><strong aria-hidden="true">1.2.2.4.</strong> N-Tier Architecture</a></li></ol></li><li class="chapter-item expanded "><a href="../../concepts/data-architecture/modern_architectural_paradigms.html"><strong aria-hidden="true">1.2.3.</strong> Modern Architectural Paradigms</a></li><li><ol class="section"><li class="chapter-item expanded "><a href="../../concepts/data-architecture/microservices_architecture.html"><strong aria-hidden="true">1.2.3.1.</strong> Microservices Architecture</a></li><li class="chapter-item expanded "><a href="../../concepts/data-architecture/soa.html"><strong aria-hidden="true">1.2.3.2.</strong> Service-Oriented Architecture (SOA)</a></li><li class="chapter-item expanded "><a href="../../concepts/data-architecture/cloud_native_data_architectures.html" class="active"><strong aria-hidden="true">1.2.3.3.</strong> Cloud-Native Data Architectures</a></li><li class="chapter-item expanded "><a href="../../concepts/data-architecture/data_mesh.html"><strong aria-hidden="true">1.2.3.4.</strong> Data Mesh</a></li></ol></li><li class="chapter-item expanded "><a href="../../concepts/data-architecture/data_storage_and_processing.html"><strong aria-hidden="true">1.2.4.</strong> Data Storage and Processing</a></li><li><ol class="section"><li class="chapter-item expanded "><a href="../../concepts/data-architecture/data_lake_architecture.html"><strong aria-hidden="true">1.2.4.1.</strong> Data Lake Architecture</a></li><li><ol class="section"><li class="chapter-item expanded "><a href="../../concepts/data-architecture/data_lake_architecture_layers.html"><strong aria-hidden="true">1.2.4.1.1.</strong> Data Lake Layers</a></li><li class="chapter-item expanded "><a href="../../concepts/data-architecture/data_lake_architecture_zones.html"><strong aria-hidden="true">1.2.4.1.2.</strong> Data Lake Zones</a></li><li class="chapter-item expanded "><a href="../../concepts/data-architecture/data_lake_architecture_maturity_stages.html"><strong aria-hidden="true">1.2.4.1.3.</strong> Data Lake Maturity Stages</a></li></ol></li><li class="chapter-item expanded "><a href="../../concepts/data-architecture/data_warehouse_architecture.html"><strong aria-hidden="true">1.2.4.2.</strong> Data Warehouse Architecture</a></li><li class="chapter-item expanded "><a href="../../concepts/data-architecture/data_lakehouse_architecture.html"><strong aria-hidden="true">1.2.4.3.</strong> Data Lakehouse Architecture</a></li><li class="chapter-item expanded "><a href="../../concepts/data-architecture/lambda_architecture.html"><strong aria-hidden="true">1.2.4.4.</strong> Lambda Architecture</a></li><li class="chapter-item expanded "><a href="../../concepts/data-architecture/event_driven_architecture.html"><strong aria-hidden="true">1.2.4.5.</strong> Event-Driven Architecture (EDA)</a></li></ol></li><li class="chapter-item expanded "><div><strong aria-hidden="true">1.2.5.</strong> Data Integration and Access</div></li><li><ol class="section"><li class="chapter-item expanded "><div><strong aria-hidden="true">1.2.5.1.</strong> Data Virtualization</div></li><li class="chapter-item expanded "><div><strong aria-hidden="true">1.2.5.2.</strong> Data Federation</div></li><li class="chapter-item expanded "><div><strong aria-hidden="true">1.2.5.3.</strong> Interoperability and Data Standards</div></li></ol></li><li class="chapter-item expanded "><div><strong aria-hidden="true">1.2.6.</strong> Operational Data Management</div></li><li><ol class="section"><li class="chapter-item expanded "><a href="../../concepts/data-architecture/operational_data_stores.html"><strong aria-hidden="true">1.2.6.1.</strong> Operational Data Stores vs. Data Operational Stores</a></li></ol></li><li class="chapter-item expanded "><div><strong aria-hidden="true">1.2.7.</strong> Data Governance and Management</div></li><li><ol class="section"><li class="chapter-item expanded "><div><strong aria-hidden="true">1.2.7.1.</strong> Introduction to Data Ethics and Privacy</div></li><li class="chapter-item expanded "><div><strong aria-hidden="true">1.2.7.2.</strong> Data Governance and Quality</div></li><li class="chapter-item expanded "><div><strong aria-hidden="true">1.2.7.3.</strong> Data Security and Privacy</div></li><li class="chapter-item expanded "><div><strong aria-hidden="true">1.2.7.4.</strong> Compliance and Regulatory Considerations</div></li></ol></li><li class="chapter-item expanded "><div><strong aria-hidden="true">1.2.8.</strong> Components</div></li><li><ol class="section"><li class="chapter-item expanded "><div><strong aria-hidden="true">1.2.8.1.</strong> Data Repositories</div></li><li class="chapter-item expanded "><div><strong aria-hidden="true">1.2.8.2.</strong> Data Sources</div></li><li class="chapter-item expanded "><div><strong aria-hidden="true">1.2.8.3.</strong> Data Lake</div></li><li class="chapter-item expanded "><div><strong aria-hidden="true">1.2.8.4.</strong> Data Warehouse</div></li><li class="chapter-item expanded "><div><strong aria-hidden="true">1.2.8.5.</strong> Data Modelling</div></li><li class="chapter-item expanded "><div><strong aria-hidden="true">1.2.8.6.</strong> Data Marts</div></li><li class="chapter-item expanded "><div><strong aria-hidden="true">1.2.8.7.</strong> Data Lakehouse</div></li><li class="chapter-item expanded "><a href="../../concepts/data-architecture/slowly_changing_dimensions.html"><strong aria-hidden="true">1.2.8.8.</strong> Slowly Changing Dimensions (SCD)</a></li></ol></li><li class="chapter-item expanded "><div><strong aria-hidden="true">1.2.9.</strong> Mixed Architectures</div></li></ol></li><li class="chapter-item expanded "><a href="../../concepts/systems_reliability.html"><strong aria-hidden="true">1.3.</strong> Systems Reliability</a></li><li><ol class="section"><li class="chapter-item expanded "><div><strong aria-hidden="true">1.3.1.</strong> Understanding Reliability</div></li><li><ol class="section"><li class="chapter-item expanded "><div><strong aria-hidden="true">1.3.1.1.</strong> Introduction to Reliability</div></li><li class="chapter-item expanded "><a href="../../concepts/systems-reliability/impediments.html"><strong aria-hidden="true">1.3.1.2.</strong> Impediments</a></li></ol></li><li class="chapter-item expanded "><div><strong aria-hidden="true">1.3.2.</strong> Core Attributes of Reliable Systems</div></li><li><ol class="section"><li class="chapter-item expanded "><a href="../../concepts/systems-reliability/attributes.html"><strong aria-hidden="true">1.3.2.1.</strong> Attributes</a></li></ol></li><li class="chapter-item expanded "><div><strong aria-hidden="true">1.3.3.</strong> Achieving Reliability</div></li><li><ol class="section"><li class="chapter-item expanded "><a href="../../concepts/systems-reliability/mechanisms.html"><strong aria-hidden="true">1.3.3.1.</strong> Reliability Mechanisms Overview</a></li><li><ol class="section"><li class="chapter-item expanded "><div><strong aria-hidden="true">1.3.3.1.1.</strong> Fault Prevention</div></li><li><ol class="section"><li class="chapter-item expanded "><a href="../../concepts/systems-reliability/fault_prevention_avoidance.html"><strong aria-hidden="true">1.3.3.1.1.1.</strong> Fault Prevention: Avoidance</a></li><li class="chapter-item expanded "><a href="../../concepts/systems-reliability/fault_prevention_elimination.html"><strong aria-hidden="true">1.3.3.1.1.2.</strong> Fault Prevention: Elimination</a></li></ol></li><li class="chapter-item expanded "><a href="../../concepts/systems-reliability/fault_tolerance.html"><strong aria-hidden="true">1.3.3.1.2.</strong> Fault Tolerance</a></li><li class="chapter-item expanded "><a href="../../concepts/systems-reliability/fault_prediction.html"><strong aria-hidden="true">1.3.3.1.3.</strong> Fault Prediction</a></li></ol></li><li class="chapter-item expanded "><div><strong aria-hidden="true">1.3.3.2.</strong> Risk Management and Assessment in Data Systems</div></li><li class="chapter-item expanded "><div><strong aria-hidden="true">1.3.3.3.</strong> Change Management in Data Systems</div></li><li class="chapter-item expanded "><a href="../../concepts/systems-reliability/reliability_tools.html"><strong aria-hidden="true">1.3.3.4.</strong> Reliability Toolkit</a></li><li><ol class="section"><li class="chapter-item expanded "><a href="../../concepts/systems-reliability/observability.html"><strong aria-hidden="true">1.3.3.4.1.</strong> Observability</a></li><li class="chapter-item expanded "><a href="../../concepts/systems-reliability/data_quality_automation.html"><strong aria-hidden="true">1.3.3.4.2.</strong> Data Quality Automation</a></li><li class="chapter-item expanded "><a href="../../concepts/systems-reliability/version_control_systems.html"><strong aria-hidden="true">1.3.3.4.3.</strong> Version Control</a></li><li class="chapter-item expanded "><a href="../../concepts/systems-reliability/data_lineage_tools.html"><strong aria-hidden="true">1.3.3.4.4.</strong> Data Lineage</a></li><li class="chapter-item expanded "><a href="../../concepts/systems-reliability/workflow_orchestration_tools.html"><strong aria-hidden="true">1.3.3.4.5.</strong> Workflow Orchestration</a></li><li class="chapter-item expanded "><a href="../../concepts/systems-reliability/data_transformation_tools.html"><strong aria-hidden="true">1.3.3.4.6.</strong> Data Transformation and Testing</a></li><li class="chapter-item expanded "><a href="../../concepts/systems-reliability/infrastructure_as_code_tools.html"><strong aria-hidden="true">1.3.3.4.7.</strong> Infrastructure as Code (IaC)</a></li><li class="chapter-item expanded "><a href="../../concepts/systems-reliability/container_orchestration_tools.html"><strong aria-hidden="true">1.3.3.4.8.</strong> Container Orchestration</a></li></ol></li></ol></li></ol></li><li class="chapter-item expanded "><a href="../../concepts/data_quality.html"><strong aria-hidden="true">1.4.</strong> Data Quality</a></li><li><ol class="section"><li class="chapter-item expanded "><a href="../../concepts/data-quality/foundations.html"><strong aria-hidden="true">1.4.1.</strong> Foundations of Data Quality</a></li><li class="chapter-item expanded "><a href="../../concepts/data-quality/master_data.html"><strong aria-hidden="true">1.4.2.</strong> Master Data</a></li><li class="chapter-item expanded "><a href="../../concepts/data-quality/management.html"><strong aria-hidden="true">1.4.3.</strong> Data Management</a></li><li class="chapter-item expanded "><a href="../../concepts/data-quality/models.html"><strong aria-hidden="true">1.4.4.</strong> Data Quality Models</a></li><li><ol class="section"><li class="chapter-item expanded "><a href="../../concepts/data-quality/accuracy_dimension.html"><strong aria-hidden="true">1.4.4.1.</strong> Accuracy Dimension</a></li><li class="chapter-item expanded "><a href="../../concepts/data-quality/completeness_dimension.html"><strong aria-hidden="true">1.4.4.2.</strong> Completeness Dimension</a></li><li class="chapter-item expanded "><a href="../../concepts/data-quality/consistency_dimension.html"><strong aria-hidden="true">1.4.4.3.</strong> Consistency Dimension</a></li><li class="chapter-item expanded "><a href="../../concepts/data-quality/timeliness_dimension.html"><strong aria-hidden="true">1.4.4.4.</strong> Timeliness Dimension</a></li><li class="chapter-item expanded "><a href="../../concepts/data-quality/relevance_dimension.html"><strong aria-hidden="true">1.4.4.5.</strong> Relevance Dimension</a></li><li class="chapter-item expanded "><a href="../../concepts/data-quality/reliability_dimension.html"><strong aria-hidden="true">1.4.4.6.</strong> Reliability Dimension</a></li><li class="chapter-item expanded "><a href="../../concepts/data-quality/uniqueness_dimension.html"><strong aria-hidden="true">1.4.4.7.</strong> Uniqueness Dimension</a></li><li class="chapter-item expanded "><a href="../../concepts/data-quality/validity_dimension.html"><strong aria-hidden="true">1.4.4.8.</strong> Validity Dimension</a></li><li class="chapter-item expanded "><a href="../../concepts/data-quality/accessibility_dimension.html"><strong aria-hidden="true">1.4.4.9.</strong> Accessibility Dimension</a></li><li class="chapter-item expanded "><a href="../../concepts/data-quality/integrity_dimension.html"><strong aria-hidden="true">1.4.4.10.</strong> Integrity Dimension</a></li><li class="chapter-item expanded "><a href="../../concepts/data-quality/metrics_database.html"><strong aria-hidden="true">1.4.4.11.</strong> Metrics/Audit Database & Service</a></li><li class="chapter-item expanded "><a href="../../concepts/data-quality/dimensions_final_thoughts.html"><strong aria-hidden="true">1.4.4.12.</strong> Final Thoughts on Data Quality Dimensions</a></li></ol></li><li class="chapter-item expanded "><a href="../../concepts/data-quality/final_thoughts.html"><strong aria-hidden="true">1.4.5.</strong> Final Thoughts on Data Quality</a></li></ol></li></ol></li><li class="chapter-item expanded "><a href="../../PRACTICAL_METHODOLOGIES.html"><strong aria-hidden="true">2.</strong> II - Practical Methodologies and Tools</a></li><li><ol class="section"><li class="chapter-item expanded "><a href="../../concepts/processes.html"><strong aria-hidden="true">2.1.</strong> Processes</a></li><li><ol class="section"><li class="chapter-item expanded "><div><strong aria-hidden="true">2.1.1.</strong> Introduction to Data Processes</div></li><li class="chapter-item expanded "><div><strong aria-hidden="true">2.1.2.</strong> Data Ingestion and Integration</div></li><li><ol class="section"><li class="chapter-item expanded "><div><strong aria-hidden="true">2.1.2.1.</strong> Ingesting Internal Data</div></li><li><ol class="section"><li class="chapter-item expanded "><div><strong aria-hidden="true">2.1.2.1.1.</strong> Ingesting Operational Systems Data</div></li><li class="chapter-item expanded "><div><strong aria-hidden="true">2.1.2.1.2.</strong> Ingesting Flat File Systems Data</div></li><li class="chapter-item expanded "><div><strong aria-hidden="true">2.1.2.1.3.</strong> Incorporating CRM & ERP Data</div></li></ol></li><li class="chapter-item expanded "><div><strong aria-hidden="true">2.1.2.2.</strong> Handling 3rd Party Data</div></li><li class="chapter-item expanded "><div><strong aria-hidden="true">2.1.2.3.</strong> Storing Data: Lakes vs. Warehouses</div></li></ol></li><li class="chapter-item expanded "><div><strong aria-hidden="true">2.1.3.</strong> Data Orchestration</div></li><li><ol class="section"><li class="chapter-item expanded "><div><strong aria-hidden="true">2.1.3.1.</strong> Understanding Data Orchestration</div></li><li class="chapter-item expanded "><div><strong aria-hidden="true">2.1.3.2.</strong> Orchestration Tools and Platforms</div></li><li><ol class="section"><li class="chapter-item expanded "><div><strong aria-hidden="true">2.1.3.2.1.</strong> Apache Airflow: A Comprehensive Guide</div></li></ol></li><li class="chapter-item expanded "><div><strong aria-hidden="true">2.1.3.3.</strong> Best Practices for Data Orchestration</div></li><li class="chapter-item expanded "><div><strong aria-hidden="true">2.1.3.4.</strong> Data Orchestration Strategies</div></li></ol></li><li class="chapter-item expanded "><div><strong aria-hidden="true">2.1.4.</strong> Data Pipelines</div></li><li><ol class="section"><li class="chapter-item expanded "><div><strong aria-hidden="true">2.1.4.1.</strong> Basics of Data Pipelines</div></li><li class="chapter-item expanded "><div><strong aria-hidden="true">2.1.4.2.</strong> Designing Scalable Data Pipelines</div></li><li class="chapter-item expanded "><div><strong aria-hidden="true">2.1.4.3.</strong> Monitoring Data Pipelines</div></li><li><ol class="section"><li class="chapter-item expanded "><div><strong aria-hidden="true">2.1.4.3.1.</strong> Pipeline Observability</div></li><li class="chapter-item expanded "><div><strong aria-hidden="true">2.1.4.3.2.</strong> Metadata Management</div></li></ol></li><li class="chapter-item expanded "><div><strong aria-hidden="true">2.1.4.4.</strong> Pipeline Maturity Levels</div></li><li><ol class="section"><li class="chapter-item expanded "><div><strong aria-hidden="true">2.1.4.4.1.</strong> From Reactive to Proactive</div></li><li class="chapter-item expanded "><div><strong aria-hidden="true">2.1.4.4.2.</strong> Implementing Dynamic Redundancies</div></li><li class="chapter-item expanded "><div><strong aria-hidden="true">2.1.4.4.3.</strong> Towards Self-Healing Pipelines</div></li><li class="chapter-item expanded "><div><strong aria-hidden="true">2.1.4.4.4.</strong> Advanced Error Recovery</div></li></ol></li><li class="chapter-item expanded "><div><strong aria-hidden="true">2.1.4.5.</strong> Data Transformation</div></li><li><ol class="section"><li class="chapter-item expanded "><div><strong aria-hidden="true">2.1.4.5.1.</strong> Transforming Data with dbt</div></li></ol></li><li class="chapter-item expanded "><div><strong aria-hidden="true">2.1.4.6.</strong> Integrating Data Quality within Processes</div></li></ol></li><li class="chapter-item expanded "><div><strong aria-hidden="true">2.1.5.</strong> ELT and ETL Processes</div></li><li><ol class="section"><li class="chapter-item expanded "><div><strong aria-hidden="true">2.1.5.1.</strong> Implementing ELT Processes</div></li><li class="chapter-item expanded "><div><strong aria-hidden="true">2.1.5.2.</strong> Implementing ETL Processes</div></li><li class="chapter-item expanded "><div><strong aria-hidden="true">2.1.5.3.</strong> ELT/ETL Tools and Technologies</div></li></ol></li><li class="chapter-item expanded "><div><strong aria-hidden="true">2.1.6.</strong> Tool Selection for Data Processing</div></li><li><ol class="section"><li class="chapter-item expanded "><div><strong aria-hidden="true">2.1.6.1.</strong> Identifying Requirements</div></li><li class="chapter-item expanded "><div><strong aria-hidden="true">2.1.6.2.</strong> Version Control Integration</div></li><li class="chapter-item expanded "><div><strong aria-hidden="true">2.1.6.3.</strong> Observability Integration</div></li><li class="chapter-item expanded "><div><strong aria-hidden="true">2.1.6.4.</strong> Containerization and Deployment</div></li><li class="chapter-item expanded "><div><strong aria-hidden="true">2.1.6.5.</strong> Security Considerations</div></li></ol></li><li class="chapter-item expanded "><div><strong aria-hidden="true">2.1.7.</strong> Operationalizing Data Workflows</div></li><li><ol class="section"><li class="chapter-item expanded "><div><strong aria-hidden="true">2.1.7.1.</strong> Workflow Automation and Scheduling</div></li><li class="chapter-item expanded "><div><strong aria-hidden="true">2.1.7.2.</strong> Error Handling and Recovery in Data Workflows</div></li><li class="chapter-item expanded "><div><strong aria-hidden="true">2.1.7.3.</strong> Workflow Adaptability and Resilience</div></li><li class="chapter-item expanded "><div><strong aria-hidden="true">2.1.7.4.</strong> Handling Complex Dependencies in Workflow Execution</div></li><li class="chapter-item expanded "><div><strong aria-hidden="true">2.1.7.5.</strong> System Diagnostics Design for Data Systems</div></li></ol></li><li class="chapter-item expanded "><div><strong aria-hidden="true">2.1.8.</strong> Process Optimization and Maintenance</div></li><li><ol class="section"><li class="chapter-item expanded "><div><strong aria-hidden="true">2.1.8.1.</strong> Optimizing Data Processes for Performance</div></li><li class="chapter-item expanded "><div><strong aria-hidden="true">2.1.8.2.</strong> Maintaining and Updating Data Processes</div></li><li class="chapter-item expanded "><div><strong aria-hidden="true">2.1.8.3.</strong> Future-Proofing Data Operations</div></li><li class="chapter-item expanded "><div><strong aria-hidden="true">2.1.8.4.</strong> Data Backfilling Strategies</div></li></ol></li></ol></li><li class="chapter-item expanded "><a href="../../concepts/operations.html"><strong aria-hidden="true">2.2.</strong> Operational Excellence in Data Reliability</a></li><li><ol class="section"><li class="chapter-item expanded "><div><strong aria-hidden="true">2.2.1.</strong> Cross-Functional Collaboration</div></li><li><ol class="section"><li class="chapter-item expanded "><div><strong aria-hidden="true">2.2.1.1.</strong> DataOps for Streamlined Data Management</div></li><li class="chapter-item expanded "><div><strong aria-hidden="true">2.2.1.2.</strong> Applying DevOps Principles to Data Systems</div></li><li class="chapter-item expanded "><div><strong aria-hidden="true">2.2.1.3.</strong> Agile Methodologies in Data Projects</div></li><li class="chapter-item expanded "><div><strong aria-hidden="true">2.2.1.4.</strong> Implementing CI/CD in Data Pipelines</div></li><li class="chapter-item expanded "><div><strong aria-hidden="true">2.2.1.5.</strong> Site Reliability Engineering (SRE) Practices for Data</div></li></ol></li><li class="chapter-item expanded "><div><strong aria-hidden="true">2.2.2.</strong> Building a Data Reliability Framework</div></li><li class="chapter-item expanded "><div><strong aria-hidden="true">2.2.3.</strong> Tools and Technologies for Ensuring Data Reliability</div></li><li class="chapter-item expanded "><div><strong aria-hidden="true">2.2.4.</strong> Monitoring, Metrics, and SLAs in Data Systems</div></li><li class="chapter-item expanded "><div><strong aria-hidden="true">2.2.5.</strong> Feedback Loops and Continuous Improvement</div></li><li class="chapter-item expanded "><div><strong aria-hidden="true">2.2.6.</strong> Human Factors in Data Systems</div></li><li><ol class="section"><li class="chapter-item expanded "><div><strong aria-hidden="true">2.2.6.1.</strong> Human Factors, Human Interaction, Human Errors, and Latent Human Error</div></li></ol></li></ol></li></ol></li><li class="chapter-item expanded "><a href="../../ADVANCED_APPLICATIONS.html"><strong aria-hidden="true">3.</strong> III - Advanced Applications and Real-World Case Studies</a></li><li><ol class="section"><li class="chapter-item expanded "><div><strong aria-hidden="true">3.1.</strong> Advanced Topics in Data Reliability Engineering</div></li><li><ol class="section"><li class="chapter-item expanded "><div><strong aria-hidden="true">3.1.1.</strong> Processes</div></li><li><ol class="section"><li class="chapter-item expanded "><div><strong aria-hidden="true">3.1.1.1.</strong> Managing Dependencies in Data Pipelines</div></li><li class="chapter-item expanded "><div><strong aria-hidden="true">3.1.1.2.</strong> Dynamic Scheduling of Tasks</div></li><li class="chapter-item expanded "><div><strong aria-hidden="true">3.1.1.3.</strong> Advanced Data Integration Techniques</div></li><li><ol class="section"><li class="chapter-item expanded "><div><strong aria-hidden="true">3.1.1.3.1.</strong> Data Federation and Virtualization</div></li><li class="chapter-item expanded "><div><strong aria-hidden="true">3.1.1.3.2.</strong> Streaming Data and Real-Time Processing</div></li></ol></li><li class="chapter-item expanded "><div><strong aria-hidden="true">3.1.1.4.</strong> Failure/Reliability Testing in Data Systems</div></li></ol></li><li class="chapter-item expanded "><div><strong aria-hidden="true">3.1.2.</strong> Operations</div></li><li><ol class="section"><li class="chapter-item expanded "><div><strong aria-hidden="true">3.1.2.1.</strong> Data System Scalability and Performance</div></li><li class="chapter-item expanded "><div><strong aria-hidden="true">3.1.2.2.</strong> Security and Compliance in Data Operations</div></li><li class="chapter-item expanded "><div><strong aria-hidden="true">3.1.2.3.</strong> Disaster Recovery and Business Continuity Planning</div></li><li class="chapter-item expanded "><div><strong aria-hidden="true">3.1.2.4.</strong> Cost Optimization in Data Systems</div></li></ol></li></ol></li><li class="chapter-item expanded "><div><strong aria-hidden="true">3.2.</strong> Emerging Trends in Data Reliability Engineering</div></li><li class="chapter-item expanded "><div><strong aria-hidden="true">3.3.</strong> Challenges in Advanced Data Reliability Engineering</div></li><li class="chapter-item expanded "><div><strong aria-hidden="true">3.4.</strong> Use Cases</div></li><li><ol class="section"><li class="chapter-item expanded "><div><strong aria-hidden="true">3.4.1.</strong> Aranduka Inc.</div></li></ol></li></ol></li><li class="chapter-item expanded "><a href="../../PROFESSIONALS.html"><strong aria-hidden="true">4.</strong> IV - Incorporating Data Reliability Engineering</a></li><li><ol class="section"><li class="chapter-item expanded "><div><strong aria-hidden="true">4.1.</strong> Data Engineers</div></li><li class="chapter-item expanded "><div><strong aria-hidden="true">4.2.</strong> Data Platform Engineers</div></li><li class="chapter-item expanded "><div><strong aria-hidden="true">4.3.</strong> DevOps Engineers</div></li><li class="chapter-item expanded "><div><strong aria-hidden="true">4.4.</strong> Solutions Architects</div></li><li class="chapter-item expanded "><div><strong aria-hidden="true">4.5.</strong> Cloud Engineers</div></li><li class="chapter-item expanded "><div><strong aria-hidden="true">4.6.</strong> Data Architects</div></li><li class="chapter-item expanded "><div><strong aria-hidden="true">4.7.</strong> Analytics Engineers</div></li><li class="chapter-item expanded "><div><strong aria-hidden="true">4.8.</strong> Data Scientists and Data Analysts</div></li><li class="chapter-item expanded "><div><strong aria-hidden="true">4.9.</strong> BI Professionals</div></li></ol></li><li class="chapter-item expanded "><a href="../../APPENDICES.html"><strong aria-hidden="true">5.</strong> V - Apendices and Resources</a></li><li><ol class="section"><li class="chapter-item expanded "><a href="../../concepts/systems-reliability/reliability_tools_appendice.html"><strong aria-hidden="true">5.1.</strong> Extended Reliability Toolkit</a></li><li><ol class="section"><li class="chapter-item expanded "><a href="../../concepts/systems-reliability/corrective_actions.html"><strong aria-hidden="true">5.1.1.</strong> Corrective Actions</a></li><li class="chapter-item expanded "><a href="../../concepts/systems-reliability/reliability_block_diagrams.html"><strong aria-hidden="true">5.1.2.</strong> Reliability Block Diagrams</a></li><li class="chapter-item expanded "><a href="../../concepts/systems-reliability/chaos_engineering_tools.html"><strong aria-hidden="true">5.1.3.</strong> Chaos Engineering Tools</a></li><li class="chapter-item expanded "><a href="../../concepts/systems-reliability/high_availability.html"><strong aria-hidden="true">5.1.4.</strong> High Availability</a></li><li class="chapter-item expanded "><a href="../../concepts/systems-reliability/antifragility.html"><strong aria-hidden="true">5.1.5.</strong> Antifragility</a></li><li class="chapter-item expanded "><a href="../../concepts/systems-reliability/bulkhead_pattern.html"><strong aria-hidden="true">5.1.6.</strong> Bulkhead Pattern</a></li><li class="chapter-item expanded "><a href="../../concepts/systems-reliability/cold_standby.html"><strong aria-hidden="true">5.1.7.</strong> Cold Standby</a></li><li class="chapter-item expanded "><a href="../../concepts/systems-reliability/single_point_of_failure.html"><strong aria-hidden="true">5.1.8.</strong> Single Point of Failure (SPOF)</a></li><li class="chapter-item expanded "><a href="../../concepts/systems-reliability/grdhl.html"><strong aria-hidden="true">5.1.9.</strong> General Reliability Development Hazard Logs (GRDHL)</a></li><li class="chapter-item expanded "><a href="../../concepts/systems-reliability/spare_parts_stocking_strategy.html"><strong aria-hidden="true">5.1.10.</strong> Spare Parts Stocking Strategy</a></li><li class="chapter-item expanded "><a href="../../concepts/systems-reliability/availability_controls.html"><strong aria-hidden="true">5.1.11.</strong> Availability Controls</a></li><li class="chapter-item expanded "><a href="../../concepts/systems-reliability/fmea.html"><strong aria-hidden="true">5.1.12.</strong> Failure Mode and Effects Analysis (FMEA)</a></li><li class="chapter-item expanded "><div><strong aria-hidden="true">5.1.13.</strong> Assessing Technology Maturity in Data Projects: An Adaptation of TRL</div></li><li class="chapter-item expanded "><div><strong aria-hidden="true">5.1.14.</strong> Adapting DVP Principles for Data Systems</div></li></ol></li><li class="chapter-item expanded "><div><strong aria-hidden="true">5.2.</strong> Apendices</div></li><li><ol class="section"><li class="chapter-item expanded "><a href="../../concepts/data-architecture/esb.html"><strong aria-hidden="true">5.2.1.</strong> Enterprise Service Bus (ESB)</a></li></ol></li></ol></li><li class="chapter-item expanded "><a href="../../EPILOGUE.html">Epilogue</a></li><li class="chapter-item expanded affix "><a href="../../DICTIONARY.html">Dictionary</a></li><li class="chapter-item expanded affix "><a href="../../REFERENCES.html">References</a></li><li class="chapter-item expanded affix "><a href="../../NEXT.html">Next</a></li><li class="chapter-item expanded affix "><a href="../../BACK_COVER.html">Back Cover</a></li></ol>
+            </div>
+            <div id="sidebar-resize-handle" class="sidebar-resize-handle"></div>
+        </nav>
+
+        <!-- Track and set sidebar scroll position -->
+        <script>
+            var sidebarScrollbox = document.querySelector('#sidebar .sidebar-scrollbox');
+            sidebarScrollbox.addEventListener('click', function(e) {
+                if (e.target.tagName === 'A') {
+                    sessionStorage.setItem('sidebar-scroll', sidebarScrollbox.scrollTop);
+                }
+            }, { passive: true });
+            var sidebarScrollTop = sessionStorage.getItem('sidebar-scroll');
+            sessionStorage.removeItem('sidebar-scroll');
+            if (sidebarScrollTop) {
+                // preserve sidebar scroll position when navigating via links within sidebar
+                sidebarScrollbox.scrollTop = sidebarScrollTop;
+            } else {
+                // scroll sidebar to current active section when navigating via "next/previous chapter" buttons
+                var activeSection = document.querySelector('#sidebar .active');
+                if (activeSection) {
+                    activeSection.scrollIntoView({ block: 'center' });
+                }
+            }
+        </script>
+
+        <div id="page-wrapper" class="page-wrapper">
+
+            <div class="page">
+                                <div id="menu-bar-hover-placeholder"></div>
+                <div id="menu-bar" class="menu-bar sticky">
+                    <div class="left-buttons">
+                        <label id="sidebar-toggle" class="icon-button" for="sidebar-toggle-anchor" title="Toggle Table of Contents" aria-label="Toggle Table of Contents" aria-controls="sidebar">
+                            <i class="fa fa-bars"></i>
+                        </label>
+                        <button id="theme-toggle" class="icon-button" type="button" title="Change theme" aria-label="Change theme" aria-haspopup="true" aria-expanded="false" aria-controls="theme-list">
+                            <i class="fa fa-paint-brush"></i>
+                        </button>
+                        <ul id="theme-list" class="theme-popup" aria-label="Themes" role="menu">
+                            <li role="none"><button role="menuitem" class="theme" id="light">Light</button></li>
+                            <li role="none"><button role="menuitem" class="theme" id="rust">Rust</button></li>
+                            <li role="none"><button role="menuitem" class="theme" id="coal">Coal</button></li>
+                            <li role="none"><button role="menuitem" class="theme" id="navy">Navy</button></li>
+                            <li role="none"><button role="menuitem" class="theme" id="ayu">Ayu</button></li>
+                            <li role="none"><button role="menuitem" class="theme" id="latte">Latte</button></li>
+                            <li role="none"><button role="menuitem" class="theme" id="frappe">Frappé</button></li>
+                            <li role="none"><button role="menuitem" class="theme" id="macchiato">Macchiato</button></li>
+                            <li role="none"><button role="menuitem" class="theme" id="mocha">Mocha</button></li>
+                        </ul>
+                        <button id="search-toggle" class="icon-button" type="button" title="Search. (Shortkey: s)" aria-label="Toggle Searchbar" aria-expanded="false" aria-keyshortcuts="S" aria-controls="searchbar">
+                            <i class="fa fa-search"></i>
+                        </button>
+                    </div>
+
+                    <h1 class="menu-title">Data Reliability Engineering</h1>
+
+                    <div class="right-buttons">
+                        <a href="../../print.html" title="Print this book" aria-label="Print this book">
+                            <i id="print-button" class="fa fa-print"></i>
+                        </a>
+                        <a href="https://github.com/jeffersonroth/jjrf-data-reliability-book/" title="Git repository" aria-label="Git repository">
+                            <i id="git-repository-button" class="fa fa-github"></i>
+                        </a>
+                        <a href="https://github.com/jeffersonroth/jjrf-data-reliability-book/edit/master/src/concepts/data-architecture/cloud_native_data_architectures.md" title="Suggest an edit" aria-label="Suggest an edit">
+                            <i id="git-edit-button" class="fa fa-edit"></i>
+                        </a>
+
+                    </div>
+                </div>
+
+                <div id="search-wrapper" class="hidden">
+                    <form id="searchbar-outer" class="searchbar-outer">
+                        <input type="search" id="searchbar" name="searchbar" placeholder="Search this book ..." aria-controls="searchresults-outer" aria-describedby="searchresults-header">
+                    </form>
+                    <div id="searchresults-outer" class="searchresults-outer hidden">
+                        <div id="searchresults-header" class="searchresults-header"></div>
+                        <ul id="searchresults">
+                        </ul>
+                    </div>
+                </div>
+
+                <!-- Apply ARIA attributes after the sidebar and the sidebar toggle button are added to the DOM -->
+                <script>
+                    document.getElementById('sidebar-toggle').setAttribute('aria-expanded', sidebar === 'visible');
+                    document.getElementById('sidebar').setAttribute('aria-hidden', sidebar !== 'visible');
+                    Array.from(document.querySelectorAll('#sidebar a')).forEach(function(link) {
+                        link.setAttribute('tabIndex', sidebar === 'visible' ? 0 : -1);
+                    });
+                </script>
+
+                <div id="content" class="content">
+                    <main>
+                        <h1 id="cloud-native-data-architectures"><a class="header" href="#cloud-native-data-architectures">Cloud-Native Data Architectures</a></h1>
+<div id="admonition-page-under-construction" class="admonition admonish-warning">
+<div class="admonition-title">
+<p>Page under construction</p>
+<p><a class="admonition-anchor-link" href="#admonition-page-under-construction"></a></p>
+</div>
+<div>
+<p>🚧</p>
+</div>
+</div>
+<p>Cloud-Native Data Architectures refer to the design and implementation of data management and processing systems that fully leverage cloud computing capabilities.
+These architectures are built to thrive in the dynamic, scalable, and distributed environments provided by cloud platforms like AWS, Azure, and Google Cloud Platform.
+They emphasize automation, microservices, containers, orchestration, and managed services to achieve agility, scalability, and resilience.</p>
+<p><strong>Key Components of Cloud-Native Data Architectures</strong>:</p>
+<ul>
+<li><strong>Managed Database Services</strong>: Cloud-native architectures often utilize managed database services like Amazon RDS, Azure SQL Database, or Google Cloud SQL. These services provide automated backups, scaling, replication, and maintenance, reducing the operational overhead for data teams.</li>
+<li><strong>Data Lake Solutions</strong>: Data lakes built on cloud storage services (like Amazon S3, Azure Blob Storage, or Google Cloud Storage) allow for the storage of vast amounts of structured and unstructured data. Cloud-native data lakes support big data analytics, machine learning, and data discovery at scale.</li>
+<li><strong>Serverless Data Processing</strong>: Serverless computing models, such as AWS Lambda, Azure Functions, or Google Cloud Functions, enable data processing tasks to be executed without managing servers. This model is ideal for event-driven data processing and ETL tasks, automatically scaling to meet demand.</li>
+<li><strong>Containerization and Orchestration</strong>: Containers, orchestrated by systems like Kubernetes, provide a consistent and isolated environment for running data processing applications. This approach facilitates microservices-based data architectures, ensuring portability and efficient resource use across different cloud environments.</li>
+<li><strong>Data Streaming and Real-time Analytics</strong>: Cloud-native platforms offer managed streaming services like Amazon Kinesis, Azure Event Hubs, or Google Pub/Sub, supporting real-time data ingestion, processing, and analytics. This is crucial for use cases requiring immediate insights from streaming data sources.</li>
+<li><strong>APIs and Microservices</strong>: Data APIs and microservices architectures are foundational to cloud-native data systems, enabling modular, scalable, and flexible data services that can be developed, deployed, and scaled independently.</li>
+<li><strong>Automation and CI/CD</strong>: Automation tools and CI/CD pipelines are integral to cloud-native architectures, ensuring that data infrastructure and applications can be rapidly and reliably deployed, updated, and scaled.</li>
+<li><strong>Identity and Access Management (IAM)</strong>: Cloud-native IAM services provide granular control over access to data resources, ensuring that data is secure and compliant with governance policies.</li>
+</ul>
+<p><strong>Benefits</strong>:</p>
+<ul>
+<li><strong>Scalability</strong>: Cloud-native architectures can automatically scale resources up or down based on demand, efficiently supporting varying data workloads.</li>
+<li><strong>Resilience</strong>: Leveraging cloud infrastructure and design patterns like microservices ensures high availability and fault tolerance.</li>
+<li><strong>Agility</strong>: Rapid provisioning and deployment capabilities allow data teams to quickly innovate and adapt to changing requirements.</li>
+<li><strong>Cost Efficiency</strong>: Pay-as-you-go pricing models and the ability to scale resources dynamically help optimize costs.</li>
+</ul>
+<h2 id="data-stack"><a class="header" href="#data-stack">Data Stack</a></h2>
+<p>The data stack encompasses a wide range of services covering data migration, orchestration, storage, processing, and analytics for each major cloud vendor. Here's an overview of typical data stack components for AWS, Azure, and Google Cloud:</p>
+<h3 id="aws-amazon-web-services-data-stack"><a class="header" href="#aws-amazon-web-services-data-stack">AWS (Amazon Web Services) Data Stack</a></h3>
+<ul>
+<li><strong>Data Migration</strong>: The AWS Database Migration Service (DMS) facilitates database migration to AWS, supporting both homogeneous and heterogeneous migrations.</li>
+<li><strong>Orchestration</strong>: AWS Step Functions for serverless workflows and AWS Managed Workflows for Apache Airflow (MWAA) for more complex orchestrations.</li>
+<li><strong>Data Lake</strong>: Amazon S3 for raw data storage, AWS Lake Formation for building secure data lakes quickly, and AWS Glue for data cataloging and ETL jobs.</li>
+<li><strong>Data Warehouse</strong>: Amazon Redshift provides a fully managed, petabyte-scale data warehouse service.</li>
+<li><strong>Data Processing</strong>: AWS Glue for serverless ETL, Amazon EMR for big data processing using Hadoop/Spark, and AWS Lambda for event-driven, serverless data processing tasks.</li>
+<li><strong>Streaming and Messaging</strong>: Amazon Kinesis for real-time data streaming and analytics, Amazon MSK (Managed Streaming for Apache Kafka), and Amazon SNS/SQS for pub/sub and messaging services.</li>
+<li><strong>Containers and Kubernetes</strong>: Amazon ECS (Elastic Container Service) for container management and AWS EKS (Elastic Kubernetes Service) for Kubernetes orchestration.</li>
+</ul>
+<h3 id="azure-data-stack"><a class="header" href="#azure-data-stack">Azure Data Stack</a></h3>
+<ul>
+<li><strong>Data Migration</strong>: Azure Database Migration Service supports seamless migration from multiple database sources to Azure data services.</li>
+<li><strong>Orchestration</strong>: Azure Logic Apps for serverless workflows and Azure Data Factory for data integration and ETL/ELT workflows.</li>
+<li><strong>Data Lake</strong>: Azure Data Lake Storage (ADLS) Gen2 for large-scale data storage and analytics, with Azure Data Lake Analytics for on-demand analytics job service.</li>
+<li><strong>Data Warehouse</strong>: Azure Synapse Analytics integrates big data and data warehouse technologies into a single analytics service.</li>
+<li><strong>Data Processing</strong>: Azure Databricks for big data analytics and machine learning, Azure Stream Analytics for real-time analytics, and Azure Functions for serverless computing.</li>
+<li><strong>Streaming and Messaging</strong>: Azure Event Hubs for big data streaming, Azure Kafka Service for Apache Kafka, and Azure Service Bus for messaging.</li>
+<li><strong>Containers and Kubernetes</strong>: Azure Kubernetes Service (AKS) for Kubernetes orchestration and Azure Container Instances for quick and easy container deployment.</li>
+</ul>
+<h3 id="google-cloud-platform-gcp-data-stack"><a class="header" href="#google-cloud-platform-gcp-data-stack">Google Cloud Platform (GCP) Data Stack</a></h3>
+<ul>
+<li><strong>Data Migration</strong>: Google Cloud's Database Migration Service enables easy and secure migrations to Cloud SQL databases from external databases.</li>
+<li><strong>Orchestration</strong>: Google Cloud Composer, a fully managed workflow orchestration service built on Apache Airflow.</li>
+<li><strong>Data Lake</strong>: Google Cloud Storage for scalable object storage, with integration into BigQuery for data lake analytics.</li>
+<li><strong>Data Warehouse</strong>: BigQuery, a fully managed, serverless data warehouse that enables scalable analysis over petabytes of data.</li>
+<li><strong>Data Processing</strong>: Google Cloud Dataflow for stream and batch data processing, Google Cloud Dataproc for running Apache Spark and Hadoop clusters, and Google Cloud Functions for event-driven serverless applications.</li>
+<li><strong>Streaming and Messaging</strong>: Google Pub/Sub for messaging and integration, Google Datastream for change data capture (CDC), and Google Cloud Pub/Sub for event-driven systems.</li>
+<li><strong>Containers and Kubernetes</strong>: Google Kubernetes Engine (GKE) for Kubernetes orchestration and Google Cloud Run for running stateless containers.</li>
+</ul>
+<p>Each cloud provider's data stack is designed to offer a comprehensive set of tools and services to cover all aspects of data handling, from ingestion and storage to analysis and machine learning, catering to various use cases and ensuring scalability, performance, and security.</p>
+<h2 id="databases"><a class="header" href="#databases">Databases</a></h2>
+<p>Each major cloud vendor offers a variety of database services tailored to different data management needs, such as relational, NoSQL, in-memory, and graph databases.
+Here's a list of commonly used database services by AWS, Azure, and Google Cloud:</p>
+<h3 id="aws-amazon-web-services-databases"><a class="header" href="#aws-amazon-web-services-databases">AWS (Amazon Web Services) Databases</a></h3>
+<ul>
+<li><strong>Relational Databases</strong>:
+<ul>
+<li><strong>Amazon RDS</strong>: Managed relational database service that supports MySQL, PostgreSQL, Oracle, SQL Server, and MariaDB.</li>
+<li><strong>Amazon Aurora</strong>: MySQL and PostgreSQL-compatible relational database built for the cloud, offering enhanced performance and scalability.</li>
+</ul>
+</li>
+<li><strong>NoSQL Databases</strong>:
+<ul>
+<li><strong>Amazon DynamoDB</strong>: Fast and flexible NoSQL database service for any scale, supporting key-value and document data models.</li>
+<li><strong>Amazon DocumentDB</strong>: MongoDB-compatible document database service designed for modern app development.</li>
+</ul>
+</li>
+<li><strong>In-Memory Databases</strong>:
+<ul>
+<li><strong>Amazon ElastiCache</strong>: In-memory caching service that supports Redis and Memcached, improving the performance of web applications by retrieving data from fast, managed in-memory caches.</li>
+</ul>
+</li>
+<li><strong>Graph Databases</strong>:
+<ul>
+<li>Amazon Neptune: Fully managed graph database service that supports property graph and RDF models. It is optimized for storing and navigating connected data.</li>
+</ul>
+</li>
+</ul>
+<h3 id="azure-batabases"><a class="header" href="#azure-batabases">Azure Batabases</a></h3>
+<ul>
+<li><strong>Relational Databases</strong>:
+<ul>
+<li><strong>Azure SQL Database</strong>: Fully managed relational database service based on the latest stable version of Microsoft SQL Server.</li>
+<li><strong>Azure Database for PostgreSQL</strong>: Managed PostgreSQL database service for app development and deployment.</li>
+<li><strong>Azure Database for MySQL</strong>: Fully managed MySQL database service for app development.</li>
+</ul>
+</li>
+<li><strong>NoSQL Databases</strong>:
+<ul>
+<li><strong>Azure Cosmos DB</strong>: Globally distributed, multi-model database service for any scale, offering support for document, key-value, graph, and column-family data models.</li>
+</ul>
+</li>
+<li><strong>In-Memory Databases</strong>:
+<ul>
+<li><strong>Azure Cache for Redis</strong>: Fully managed Redis cache service that provides high-throughput, low-latency access to data for applications.</li>
+</ul>
+</li>
+<li><strong>Graph Databases</strong>:
+<ul>
+<li>Azure Cosmos DB's Gremlin API: Provides graph database functionality within Cosmos DB, allowing for the creation, query, and traversal of graph data.</li>
+</ul>
+</li>
+</ul>
+<h3 id="google-cloud-platform-gcp-databases"><a class="header" href="#google-cloud-platform-gcp-databases">Google Cloud Platform (GCP) Databases</a></h3>
+<ul>
+<li><strong>Relational Databases</strong>:
+<ul>
+<li><strong>Cloud SQL</strong>: Fully managed relational database service that supports MySQL, PostgreSQL, and SQL Server.</li>
+<li><strong>Cloud Spanner</strong>: Fully managed, mission-critical relational database service with transactional consistency at global scale, schema design, and SQL querying.</li>
+</ul>
+</li>
+<li><strong>NoSQL Databases</strong>:
+<ul>
+<li><strong>Firestore</strong>: Highly scalable, serverless, NoSQL document database designed for mobile, web, and server development.</li>
+<li><strong>Cloud Bigtable</strong>: Fully managed, scalable NoSQL database service for large analytical and operational workloads.</li>
+</ul>
+</li>
+<li><strong>In-Memory Databases</strong>:
+<ul>
+<li><strong>Memorystore</strong>: Fully managed in-memory data store service for Redis and Memcached, providing scalable, secure, and highly available in-memory service for fast data access.</li>
+</ul>
+</li>
+</ul>
+<p>Each of these cloud vendors continuously evolves their database offerings to cater to a wide range of use cases, ensuring high availability, durability, and performance.
+When choosing a database service, consider factors like data model compatibility, scalability requirements, managed service benefits, and integration with other cloud services.</p>
+<h2 id="use-case"><a class="header" href="#use-case">Use Case</a></h2>
+<p>In the hypothetical scenario where Opetence Inc.<sup><a name="to-footnote-1"><a href="#footnote-1">1</a></a></sup> received a significant round of investments, the data team sought guidance on reliably scaling their data infrastructure to capitalize on this opportunity.
+Their plan, advised by an AWS expert, aimed to enhance and expand their current setup to support growing data warehousing, data marts, reports, and dashboard needs.</p>
+<p>The team's strategy involved leveraging AWS Database Migration Service (DMS) for nightly comprehensive migrations from all operational databases into an S3 bucket.
+This approach ensured a reliable nightly operational data snapshot, ready for further processing.
+In S3, dedicated data cleaning and anonymization routines were to be established, safeguarding data quality and adhering to privacy standards.</p>
+<p>The team planned to utilize AWS Lake Formation to centralize and manage this refined data, creating a robust data lake that serves as a single source of truth for the company's data.
+They intended to enhance the Staging Aurora Postgres instance for more dynamic data ingestion, including real-time streams and API data, enabling a seamless flow of diverse data types into their ecosystem.</p>
+<p>A significant upgrade was planned for their analytics backbone, Amazon Redshift, to serve as the core of their scalable data warehousing solution.
+Redshift would access the Lake Formation data and the structured data in Aurora Postgres through external schemas facilitated by Redshift Spectrum, providing a comprehensive view across all data assets.</p>
+<p>To ensure efficiency in data transformations and maintain best practices, the data team decided to containerize their dbt models and deploy them on AWS ECS.
+This setup promised greater scalability and manageability of their data transformation processes.</p>
+<p>Orchestration of the entire data ecosystem, from nightly DMS migrations to dbt transformations, was to be streamlined using AWS Managed Workflows for Apache Airflow (MWAA).
+This tool would offer robust scheduling, execution, and monitoring capabilities for their intricate data pipelines, ensuring reliability and scalability.</p>
+<p>This ambitious plan aimed to scale up Opetence Inc.'s data warehouse, data marts, and reporting capabilities and establish a future-proof, scalable, and secure data infrastructure poised to drive insightful analytics and business intelligence as the company grows.</p>
+<h3 id="implementation-plan"><a class="header" href="#implementation-plan">Implementation Plan</a></h3>
+<p>For Opetence Inc. to implement the described data infrastructure on AWS, the data team was advised to follow these steps:</p>
+<h4 id="set-up-aws-database-migration-service-dms"><a class="header" href="#set-up-aws-database-migration-service-dms">Set up AWS Database Migration Service (DMS)</a></h4>
+<ul>
+<li><strong>Configure Source Endpoints</strong>: Identify and configure the operational databases as source endpoints in AWS DMS.</li>
+<li><strong>Set up S3 as Target</strong>: Configure an Amazon S3 bucket as the target endpoint for DMS, ensuring it has the necessary permissions for DMS to write to it.</li>
+<li><strong>Create Migration Tasks</strong>: Set up nightly migration tasks for full-load transfers from each operational database to S3. Select the appropriate migration type and configure task settings according to their requirements.</li>
+</ul>
+<h4 id="clean-and-anonymize-data-in-s3"><a class="header" href="#clean-and-anonymize-data-in-s3">Clean and Anonymize Data in S3</a></h4>
+<ul>
+<li><strong>Implement Cleaning and Anonymization Logic</strong>: Develop AWS Lambda functions or AWS Glue jobs to clean (remove inconsistencies, fill gaps) and anonymize (mask or remove sensitive information) the data stored in S3.</li>
+<li><strong>Trigger Processes</strong>: Use Amazon CloudWatch Events to schedule and trigger these processing jobs after the DMS tasks are completed each night.</li>
+</ul>
+<h4 id="establish-the-data-lake-with-aws-lake-formation"><a class="header" href="#establish-the-data-lake-with-aws-lake-formation">Establish the Data Lake with AWS Lake Formation</a></h4>
+<ul>
+<li><strong>Define Data Lake Storage</strong>: Use the cleaned and anonymized data in S3 as the foundation of their data lake.</li>
+<li><strong>Set up Lake Formation</strong>: Register their S3 buckets with AWS Lake Formation, defining data access roles and permissions to secure and manage access.</li>
+<li><strong>Catalog Data</strong>: Use AWS Glue crawlers to discover and catalog data, creating a comprehensive data catalog that makes data easily searchable and queryable.</li>
+</ul>
+<h4 id="integrate-streaming-and-queue-data"><a class="header" href="#integrate-streaming-and-queue-data">Integrate Streaming and Queue Data</a></h4>
+<ul>
+<li><strong>Set up Kafka, SQS/SNS</strong>: Ensure the Kafka clusters and SQS/SNS topics are correctly configured for data production.</li>
+<li><strong>Consume Data</strong>: Develop microservices or use AWS Lambda functions triggered by Kafka SQS/SNS messages to consume and process this data.</li>
+<li><strong>Store in Aurora Postgres</strong>: Insert processed data into the Staging Aurora Postgres instance, organizing it into schemas that reflect the data's source and nature.</li>
+</ul>
+<h4 id="integrate-data-with-redshift"><a class="header" href="#integrate-data-with-redshift">Integrate Data with Redshift</a></h4>
+<ul>
+<li><strong>Configure Redshift</strong>: Set up an Amazon Redshift cluster as their data warehouse.</li>
+<li><strong>External Schemas for S3 Data</strong>: Use Redshift Spectrum to create external schemas that map to the data in their S3-based data lake.</li>
+<li><strong>External Schemas for Aurora Data</strong>: Similarly, use Redshift Spectrum to access data in their Aurora Postgres instance, treating it as an external schema within Redshift.</li>
+</ul>
+<h4 id="deploy-dbt-models-on-ecs"><a class="header" href="#deploy-dbt-models-on-ecs">Deploy dbt Models on ECS</a></h4>
+<ul>
+<li><strong>Containerize dbt</strong>: Package the dbt projects into Docker containers, ensuring all dependencies are correctly included.</li>
+<li><strong>Push to ECR</strong>: Upload the dbt Docker images to Amazon Elastic Container Registry (ECR).</li>
+<li><strong>Run on ECS</strong>: Set up AWS ECS tasks to run their dbt models, ensuring they have the necessary permissions to access Redshift and other data sources.</li>
+</ul>
+<h4 id="orchestrate-with-mwaa"><a class="header" href="#orchestrate-with-mwaa">Orchestrate with MWAA</a></h4>
+<ul>
+<li><strong>Set up MWAA</strong>: Configure their Amazon Managed Workflows for Apache Airflow (MWAA) environment.</li>
+<li><strong>Define DAGs</strong>: Create Directed Acyclic Graphs (DAGs) in Airflow to orchestrate the data workflows, including DMS migrations, data cleaning, data processing with dbt on ECS, and Glue jobs for the data lake.</li>
+<li><strong>Schedule and Monitor</strong>: Use Airflow's scheduling and monitoring capabilities to manage and monitor the execution of their data pipelines, ensuring data flows smoothly from source to insights.</li>
+</ul>
+<p>By following these steps, Opetence Inc.'s data team can build a robust, scalable, and secure data infrastructure on AWS that leverages managed services for efficiency and focuses on delivering insights from a wide variety of data sources.</p>
+<h3 id="risks-and-suggestions"><a class="header" href="#risks-and-suggestions">Risks and Suggestions</a></h3>
+<p>The team at Opetence Inc. is on a promising path with their planned infrastructure enhancements.
+However, a few additional considerations and potential risks associated with vendor lock-in could be addressed:</p>
+<p><strong>Suggestions</strong>:</p>
+<ul>
+<li><strong>Cost Management</strong>: As the infrastructure scales, closely monitor and manage costs to avoid unexpected expenses. Tools like AWS Cost Explorer and budget alerts can help manage and optimize spending.</li>
+<li><strong>Performance Tuning</strong>: Regularly review the performance of data pipelines, databases, and storage solutions. Utilize services like Amazon Redshift Advisor and AWS Trusted Advisor to identify optimization opportunities.</li>
+<li><strong>Disaster Recovery and High Availability</strong>: Ensure the architecture includes robust disaster recovery and high availability strategies. This could involve multi-region deployments, automated backups, and failover mechanisms.</li>
+<li><strong>Compliance and Security</strong>: As data assets grow, maintaining compliance with relevant data protection regulations becomes increasingly critical. Regular audits, data encryption, and fine-grained access controls should be part of the security and compliance strategy.</li>
+<li><strong>Data Governance</strong>: Implement a comprehensive data governance framework to manage data accessibility, quality, and lineage. This ensures that data remains reliable, consistent, and usable across the organization.</li>
+</ul>
+<p><strong>Risks of Vendor Lock-in</strong>:</p>
+<ul>
+<li><strong>Reduced Flexibility</strong>: Heavy reliance on a single vendor's technologies and services can limit the ability to adopt new tools or services that may offer better performance or cost savings.</li>
+<li><strong>Cost Control</strong>: Being locked into a single vendor's ecosystem might lead to less competitive pricing and higher costs in the long run as the bargaining power diminishes.</li>
+<li><strong>Compliance and Data Sovereignty</strong>: Depending on the geographic locations of the vendor's data centers, there may be concerns about compliance with data sovereignty laws, which could necessitate data residency within specific legal jurisdictions.</li>
+<li><strong>Innovation Pace</strong>: The pace of innovation and the introduction of new features are dictated by the vendor. If the vendor's roadmap doesn't align with the company's needs, it might hinder or delay strategic initiatives.</li>
+<li><strong>Exit Strategy Complexity</strong>: Transitioning away from a vendor's ecosystem can be complex, time-consuming, and costly. It involves data migration, retraining staff, and potentially significant architectural changes.</li>
+</ul>
+<p>To mitigate these risks, Opetence Inc. could consider the following strategies:</p>
+<ul>
+<li><strong>Multi-Cloud Strategy</strong>: Incorporating services from multiple cloud providers can reduce dependency on a single vendor, although it introduces complexity in managing multiple environments.</li>
+<li><strong>Use of Open Standards and Technologies</strong>: Whenever possible, use open standards and technologies that offer flexibility to move between platforms and vendors.</li>
+<li><strong>Build Abstraction Layers</strong>: Implementing abstraction layers in the data architecture can make it easier to switch underlying technologies with minimal impact on the overall system.</li>
+<li><strong>Regularly Review Vendor Alternatives</strong>: Stay informed about the offerings and capabilities of different vendors and regularly assess whether a switch or diversification might be beneficial.</li>
+</ul>
+<p>By carefully considering these suggestions and being mindful of the risks associated with vendor lock-in, Opetence Inc. can build a scalable, resilient, and cost-effective data infrastructure that supports its growth while maintaining the flexibility to adapt to future needs.</p>
+<h3 id="niche-cloud-providers"><a class="header" href="#niche-cloud-providers">Niche Cloud Providers</a></h3>
+<p>Expanding the cloud vendor ecosystem beyond AWS, Azure, and Google Cloud can provide Opetence Inc. with specialized solutions that might offer unique advantages for specific components of their data architecture.
+Exploring niche or specialized cloud vendors can complement their infrastructure, potentially offering better performance, cost-efficiency, or features for particular use cases.
+Here are some examples:</p>
+<div id="admonition-snowflake" class="admonition admonish-example">
+<div class="admonition-title">
+<p>Snowflake</p>
+<p><a class="admonition-anchor-link" href="#admonition-snowflake"></a></p>
+</div>
+<div>
+<p>Snowflake's Data Cloud offers a highly scalable and fully managed data warehouse solution that seamlessly integrates with AWS, Azure, and GCP, providing a flexible and powerful option for data warehousing and analytics.</p>
+</div>
+</div>
+<div id="admonition-databricks" class="admonition admonish-example">
+<div class="admonition-title">
+<p>Databricks</p>
+<p><a class="admonition-anchor-link" href="#admonition-databricks"></a></p>
+</div>
+<div>
+<p>Databricks offers a unified analytics platform that facilitates collaboration between data scientists, engineers, and business analysts. It's built on top of Apache Spark and provides optimized big data processing and machine learning performance.</p>
+</div>
+</div>
+<div id="admonition-confluent" class="admonition admonish-example">
+<div class="admonition-title">
+<p>Confluent</p>
+<p><a class="admonition-anchor-link" href="#admonition-confluent"></a></p>
+</div>
+<div>
+<p>For teams heavily reliant on Kafka for real-time data streaming, Confluent, founded by the original creators of Kafka, provides a fully managed Kafka service that simplifies stream processing and integration.</p>
+</div>
+</div>
+<div id="admonition-mongodb-atlas" class="admonition admonish-example">
+<div class="admonition-title">
+<p>MongoDB Atlas</p>
+<p><a class="admonition-anchor-link" href="#admonition-mongodb-atlas"></a></p>
+</div>
+<div>
+<p>For projects that require a flexible, document-based NoSQL database, MongoDB Atlas offers a fully managed service with global cloud database capabilities, making it an excellent choice for applications needing a schema-less storage solution.</p>
+</div>
+</div>
+<div id="admonition-redis-labs" class="admonition admonish-example">
+<div class="admonition-title">
+<p>Redis Labs</p>
+<p><a class="admonition-anchor-link" href="#admonition-redis-labs"></a></p>
+</div>
+<div>
+<p>For high-performance caching and in-memory data storage, Redis Labs offers enterprise-grade Redis deployments with enhanced security, scalability, and durability.</p>
+</div>
+</div>
+<div id="admonition-timescaledb" class="admonition admonish-example">
+<div class="admonition-title">
+<p>TimescaleDB</p>
+<p><a class="admonition-anchor-link" href="#admonition-timescaledb"></a></p>
+</div>
+<div>
+<p>For time-series data management, TimescaleDB provides a robust, scalable SQL database designed to handle time-series data easily, making it ideal for IoT, monitoring, and analytics applications.</p>
+</div>
+</div>
+<p>Exploring these vendors allows Opetence Inc. to cherry-pick best-of-breed solutions for specific needs, potentially enhancing their architecture's capabilities.
+However, incorporating multiple vendors also introduces complexity in terms of integration, vendor management, and the potential for vendor lock-in with each chosen solution.
+The data team should carefully assess the trade-offs between leveraging specialized solutions and maintaining a manageable, cohesive cloud strategy.<p><hr/></p>
+<p><a name="footnote-1"><a href="#to-footnote-1">1</a></a>: Company used as Use Case for <a href="./two_tier_architecture.html">two-tier</a>, <a href="./three_tier_architecture.html">three-tier</a>, <a href="./n_tier_architecture.html">n-tier</a>, and <a href="./microservices_architecture.html">microservives</a> architecture chapters.</p>
+
+                    </main>
+
+                    <nav class="nav-wrapper" aria-label="Page navigation">
+                        <!-- Mobile navigation buttons -->
+                            <a rel="prev" href="../../concepts/data-architecture/soa.html" class="mobile-nav-chapters previous" title="Previous chapter" aria-label="Previous chapter" aria-keyshortcuts="Left">
+                                <i class="fa fa-angle-left"></i>
+                            </a>
+
+                            <a rel="next prefetch" href="../../concepts/data-architecture/data_mesh.html" class="mobile-nav-chapters next" title="Next chapter" aria-label="Next chapter" aria-keyshortcuts="Right">
+                                <i class="fa fa-angle-right"></i>
+                            </a>
+
+                        <div style="clear: both"></div>
+                    </nav>
+                </div>
+            </div>
+
+            <nav class="nav-wide-wrapper" aria-label="Page navigation">
+                    <a rel="prev" href="../../concepts/data-architecture/soa.html" class="nav-chapters previous" title="Previous chapter" aria-label="Previous chapter" aria-keyshortcuts="Left">
+                        <i class="fa fa-angle-left"></i>
+                    </a>
+
+                    <a rel="next prefetch" href="../../concepts/data-architecture/data_mesh.html" class="nav-chapters next" title="Next chapter" aria-label="Next chapter" aria-keyshortcuts="Right">
+                        <i class="fa fa-angle-right"></i>
+                    </a>
+            </nav>
+
+        </div>
+
+
+
+
+        <script>
+            window.playground_copyable = true;
+        </script>
+
+
+        <script src="../../elasticlunr.min.js"></script>
+        <script src="../../mark.min.js"></script>
+        <script src="../../searcher.js"></script>
+
+        <script src="../../clipboard.min.js"></script>
+        <script src="../../highlight.js"></script>
+        <script src="../../book.js"></script>
+
+        <!-- Custom JS scripts -->
+        <script src="../../theme/mermaid.min.js"></script>
+        <script src="../../theme/mermaid-init.js"></script>
+
+
+    </div>
+    </body>
+</html>
