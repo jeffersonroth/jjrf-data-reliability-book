@@ -11,3 +11,18 @@ services:
       - /usr/src/app/target # Persist the cargo build cache
       - /usr/src/app/book # Persist the generated book if necessary
     working_dir: /usr/src/app # Set the working directory to where the volume is mounted
+    networks:
+      - my_custom_network
+
+  dev:
+    image: jeffroth/mdbook-environment-dev:latest
+    volumes:
+      - .:/usr/src/app:cached # Mount current directory to a non-root directory in the container
+      - /usr/src/app/src # Persist the markdown files
+    working_dir: /usr/src/app # Set the working directory to where the volume is mounted
+    networks:
+      - my_custom_network
+
+networks:
+  my_custom_network:
+    driver: bridge
