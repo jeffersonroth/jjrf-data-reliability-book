@@ -1,0 +1,23 @@
+services:
+  app:
+    entrypoint:
+    - sleep
+    - infinity
+    image: docker/dev-environments-default:stable-1
+    init: true
+    volumes:
+    - type: bind
+      source: /var/run/docker.sock
+      target: /var/run/docker.sock
+  
+  mdbook-environment:
+    build: .
+    environment:
+      - USER=$USER
+    ports:
+      - "3001:3000"
+    volumes:
+      - .:/usr/src/app:cached # Mount current directory to a non-root directory in the container
+      - /usr/src/app/target # Persist the cargo build cache
+      - /usr/src/app/book # Persist the generated book if necessary
+    working_dir: /usr/src/app # Set the working directory to where the volume is mounted
