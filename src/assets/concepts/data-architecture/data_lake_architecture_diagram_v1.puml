@@ -1,0 +1,63 @@
+@startuml
+!define RECTANGLE class
+
+RECTANGLE DataSources {
+    :Operational Databases;
+    :Logs;
+    :Business Applications;
+    :SaaS (ERP, CRM...);
+    :External Data (Google Analytics...);
+}
+
+RECTANGLE IngestionLayer {
+    :Batch ETL Processes;
+    :Stream Processing;
+    :APIs;
+}
+
+RECTANGLE RawLayer <<Raw Data>> {
+    :Unprocessed Files;
+    :Event Streams;
+}
+
+RECTANGLE CuratedLayer <<Curated Data>> {
+    :Cleansed Data;
+    :Enriched Data;
+}
+
+RECTANGLE ConsumptionLayer <<Consumption Data>> {
+    :Aggregated Data;
+    :Business Views;
+}
+
+RECTANGLE Governance {
+    :Data Catalog;
+    :Metadata Management;
+    :Data Lineage;
+    :Access Control;
+}
+
+RECTANGLE Security {
+    :Encryption;
+    :Anonymization;
+}
+
+RECTANGLE DataConsumers {
+    :BI Tools;
+    :Data Science Platforms;
+    :Data Warehouse;
+    :External APIs;
+}
+
+DataSources -down-> IngestionLayer : Ingests
+IngestionLayer -down-> RawLayer : Stores
+RawLayer -down-> CuratedLayer : Processes & Refines
+CuratedLayer -down-> ConsumptionLayer : Aggregates & Summarizes
+RawLayer -right-> Governance : Catalogs
+CuratedLayer -right-> Governance : Catalogs
+ConsumptionLayer -right-> Governance : Catalogs
+RawLayer -left-> Security : Secures
+CuratedLayer -left-> Security : Secures
+ConsumptionLayer -left-> Security : Secures
+ConsumptionLayer -down-> DataConsumers : Serves
+@enduml
