@@ -1,12 +1,12 @@
 # Summary
 <!-- markdownlint-disable no-empty-links -->
-[Cover](./COVER.md)
-[Title](./TITLE.md)
-[Dedication](./DEDICATION.md)
-[Summary](./SUMMARY.md)
-[Preface](./PREFACE.md)
-[Author](./AUTHOR.md)
-[Objectives](./OBJECTIVES.md)
+[Cover](./COVER.md) |
+[Title](./TITLE.md) |
+[Dedication](./DEDICATION.md) |
+[Summary](./SUMMARY.md) |
+[Preface](./PREFACE.md) |
+[Author](./AUTHOR.md) |
+[Objectives](./OBJECTIVES.md) |
 [Structure](./STRUCTURE.md)
 
 - [I - Foundations of Data Reliability Engineering](./FOUNDATIONS.md)
@@ -23,12 +23,15 @@
       - [Service-Oriented Architecture (SOA)](./concepts/data-architecture/soa.md)
       - [Cloud-Native Data Architectures](./concepts/data-architecture/cloud_native_data_architectures.md)
       - [Data Mesh](./concepts/data-architecture/data_mesh.md)
-    - [Data Storage and Processing]()
+    - [Data Storage and Processing](./concepts/data-architecture/data_storage_and_processing.md)
       - [Data Lake Architecture](./concepts/data-architecture/data_lake_architecture.md)
+        - [Data Lake Layers](./concepts/data-architecture/data_lake_architecture_layers.md)
+        - [Data Lake Zones](./concepts/data-architecture/data_lake_architecture_zones.md)
+        - [Data Lake Maturity Stages](./concepts/data-architecture/data_lake_architecture_maturity_stages.md)
       - [Data Warehouse Architecture](./concepts/data-architecture/data_warehouse_architecture.md)
-      - [Data Lakehouse Architecture]()
-      - [Lambda Architecture]()
-      - [Event-Driven Architecture (EDA)]()
+      - [Data Lakehouse Architecture](./concepts/data-architecture/data_lakehouse_architecture.md)
+      - [Lambda Architecture](./concepts/data-architecture/lambda_architecture.md)
+      - [Event-Driven Architecture (EDA)](./concepts/data-architecture/event_driven_architecture.md)
     - [Data Integration and Access]()
       - [Data Virtualization]()
       - [Data Federation]()
@@ -203,9 +206,9 @@
   - [Apendices]()
     - [Enterprise Service Bus (ESB)](./concepts/data-architecture/esb.md)
 
-[Epilogue](./EPILOGUE.md)
-[Dictionary](./DICTIONARY.md)
-[References](./REFERENCES.md)
-[Next](./NEXT.md)
+[Epilogue](./EPILOGUE.md) |
+[Dictionary](./DICTIONARY.md) |
+[References](./REFERENCES.md) |
+[Next](./NEXT.md) |
 [Back Cover](./BACK_COVER.md)
 <!-- markdownlint-enable no-empty-links -->

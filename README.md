@@ -137,6 +137,18 @@ Before pushing your local branch:
 
 * [Official](https://mermaid.live/)
 
+### Unicode Characters
+>
+> Use Unicode Characters in hexadecimal: &#x24B6; = \&#x24B6;.
+
+* [Unicode Characters List](https://en.wikipedia.org/wiki/List_of_Unicode_characters)
+
+### Emojicodes
+>
+> Use valid emojicodes: :fire: = :fire\:.
+
+* [Emojipedia](https://emojipedia.org/)
+
 <!-- LICENSE -->
 
 ## License
