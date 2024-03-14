@@ -1,9 +1,14 @@
+# Build
 book
 target
 **/mdbook-plantuml-img/**
 
 # Cache
 .mdbook-plantuml-cache/
+
+# Dev
+mdlint.log
+mdlink.log
 
 # Other
 .vscode/
@@ -13,6 +18,4 @@ target
 **/pre-commit.log
 .venv
 node_modules
-mdlint
-mdlink
 compose-dev.yaml

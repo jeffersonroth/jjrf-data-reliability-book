@@ -14,5 +14,5 @@
     "MD001": false
   },
   // globs expression. See https://github.com/DavidAnson/markdownlint-cli2#command-line
-  "globs": ["README.md", "src/*.md", "src/**/*.md"]
+  "globs": ["*.md", "*.markdown", "src/**/*.md", "src/**/*.markdown"]
 }

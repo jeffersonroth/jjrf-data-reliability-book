@@ -187,7 +187,7 @@
   - [Analytics Engineers]()
   - [Data Scientists and Data Analysts]()
   - [BI Professionals]()
-- [V - Apendices and Resources](./APPENDICES.md)
+- [V - Appendices and Resources](./APPENDICES.md)
   - [Extended Reliability Toolkit](./concepts/systems-reliability/reliability_tools_appendice.md)
     - [Corrective Actions](./concepts/systems-reliability/corrective_actions.md)
     - [Reliability Block Diagrams](./concepts/systems-reliability/reliability_block_diagrams.md)
@@ -203,7 +203,7 @@
     - [Failure Mode and Effects Analysis (FMEA)](./concepts/systems-reliability/fmea.md)
     - [Assessing Technology Maturity in Data Projects: An Adaptation of TRL]()
     - [Adapting DVP Principles for Data Systems]()
-  - [Apendices]()
+  - [Appendices]()
     - [Enterprise Service Bus (ESB)](./concepts/data-architecture/esb.md)
 
 [Epilogue](./EPILOGUE.md) |
