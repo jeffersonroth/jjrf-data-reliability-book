@@ -7,7 +7,7 @@
 <br />
 <p align="center">
   <a href="https://github.com/jeffersonroth">
-    <img src="./assets/images/logo.svg" alt="Logo" width="80" height="80">
+    <img src="https://raw.githubusercontent.com/jeffersonroth/common-assets/main/assets/images/logo.svg" alt="Logo" width="80" height="80">
   </a>
   <h1 align="center">Data Reliability Engineering</h1>
   <h3 align="center">Reliability Frameworks: Building Safe, Reliable, and Highly Available Data Systems.</h3>
