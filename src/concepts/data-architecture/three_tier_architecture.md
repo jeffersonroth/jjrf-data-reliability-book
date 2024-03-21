@@ -35,7 +35,7 @@ In this scenario, the three-tier architecture allows the platform to handle user
 
 ## Use Case
 
-The same company as the two-tier architecture [use case](./two_tier_architecture.md#use-case), Opetence Inc., expands the data team by hiring a data engineer.
+[Opetence Inc.](../../use-cases/opetence/opetence_inc.md) expands the data team by hiring a data engineer.
 The data engineer warns the company about the issues described in the previous use case and is authorized to create an Aurora Postgres instance (Data Engineering instance) to store raw and 3rd party data.
 
 Fivetran now loads data directly from microservices' databases, third-party data (Google Analytics, Facebook Ads, etc.), and some Google Sheets files onto the instance in a database named Fivetran.
@@ -59,7 +59,7 @@ The revised use case provides a clearer depiction of a three-tier architecture w
   * The **Fivetran database** for data loaded from microservices, third-party sources like Google Analytics and Facebook Ads, and Google Sheets files.
   * **Exclusive databases** for data from specific partners like Braze, ensuring data segregation and security.
 * **Application Logic Layer (Tier 2)**: This tier is responsible for data processing, cleaning, and preparation:
-  * The **Staging database** within the DE instance, where cleaned and anonymized data is organized into schemas based on their source or service (e.g., order_service, product_service, google_analytics, facebook_ads).
+  * The **Staging database** within the DE instance, where cleaned and anonymized data is organized into schemas based on their source or service (e.g., `order_service`, `product_service`, `google_analytics`, `facebook_ads`).
   * Selected schemas are made available in the **Analytics Aurora Postgres instance** as external schemas, which the analytics team can access but not modify, ensuring data integrity and security.
 * **Presentation Layer (Tier 3)**: This tier focuses on data consumption, analysis, and visualization:
   * The analytics team uses **dbt** within the Analytics database to transform external schema data into "marts" tailored for specific analytical needs.
@@ -114,3 +114,31 @@ Here are some changes and enhancements that could be considered:
 By leveraging these strategies, the data engineer can significantly enhance the performance, scalability, and security of the existing data architecture without the immediate need for a data lake or data warehouse solution.
 This can be done efficiently using the current Aurora Postgres instances and the flexibility offered by microservices architecture.
 However, adopting a data lake or data warehouse architecture will always be a better solution, as it was for this specific use case.
+
+```admonish todo
+Structure the Use Case as:
+
+Introduction to the Use Case and Current Architectural Evolution:
+Briefly recap the journey from the previous architecture to the current state, emphasizing the transition towards a more structured approach.
+
+Alignment with Three-Tier Architecture Principles:
+Discuss how the new changes align with the foundational principles of a Three-Tier Architecture, such as separation of concerns and scalability.
+
+Deviations from Ideal Three-Tier Architecture:
+Identify where and how Opetence Inc.'s current architecture diverges from the ideal model, focusing on areas that fall short of best practices.
+
+Challenges Faced by the Data Engineer:
+Detail the obstacles and resistance the data engineer encountered in advocating for architectural changes, highlighting the effort required to achieve even incremental improvements.
+
+Strategic Improvements and Their Impact:
+Assess the improvements made, such as the introduction of the DE instance and staging areas, and discuss their impact on data management and security.
+
+Identifying Persistent Architectural and Operational Challenges:
+Examine ongoing challenges within the current architecture, such as potential scalability issues, data silos, or governance concerns.
+
+Contrasting with a Sound Three-Tier Architecture:
+Present a well-defined model of a Three-Tier Architecture, detailing how each layer should function and interact with the others. Then, contrast this with Opetence Inc.'s implementation, pointing out specific shortcomings and areas for further improvement.
+
+Recommendations for Bridging the Gap:
+Offer concrete recommendations for how Opetence Inc. could evolve its architecture towards the ideal model, suggesting actionable steps and considerations for a more robust and scalable data infrastructure.
+```

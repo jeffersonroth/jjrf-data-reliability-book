@@ -17,7 +17,7 @@ This approach not only simplifies the architecture but also ensures better gover
     <figcaption>Data Lake Architecture Layers.</figcaption>
 </figure>
 
-The layered data lake model approach is structured as:
+The layered data lake model approach is structured as follows:
 
 * **Ingestion Layer**
 * **Distillation Layer**
@@ -27,7 +27,7 @@ The layered data lake model approach is structured as:
 
 The **Raw Data** entering the Data Lake consists of streaming and batch data from many sources, including Operational Systems and third-party data. Representing the data leaving the Data Lake, the **Business Systems** consists of databases, the Data Warehouse, dashboards, reports, and external data connections.
 
-The Ingestion, Distillation, and Processing layers constitute the medallion architecture, a data design pattern that organizes data in a Data Lake. It consists of three layers designed to improve the quality and structure of data as it flows through each layer. This design pattern, also called "multi-hop" architecture, is used to process data in multiple sequential stages. This architecture aims to incrementally and progressively improve the structure and quality of data as it flows through each layer of the architecture.
+The Ingestion, Distillation, and Processing layers form what is known as the medallion architecture within a Data Lake. This data design pattern organizes data into three distinct layers, each designed to incrementally enhance the data's structure and quality as it progresses from one layer to the next. Also referred to as a 'multi-hop' architecture, this approach processes data across multiple, sequential stages, ensuring that with each 'hop,' the data becomes more refined and ready for analytical use.
 
 ## Ingestion Layer (Bronze or Raw)
 
@@ -68,7 +68,7 @@ The medallion or multi-hop architecture allows for a clear separation of concern
 
 * **Flexibility**: By separating data processing into distinct stages, the architecture provides flexibility in applying different transformations and data quality rules at each stage, allowing for iterative improvements and optimizations.
 * **Scalability**: Each layer can scale independently based on the processing and storage needs, accommodating varying data volumes and complexity of transformations.
-* **Governance and Quality Control**: With clear demarcations between raw, refined, and curated data, appropriate governance policies, data quality checks, and security measures can be applied more easily at each stage, improving the overall reliability and trustworthiness of the data.
+* **Governance and Quality Control**: The clear separation of data into raw, refined, and curated categories within the medallion architecture allows a more straightforward application of governance policies, data quality checks, and security measures at each stage. This structure enhances the data's reliability and trustworthiness.
 * **Accessibility**: By the time data reaches the Gold layer, it's in a form that's readily accessible and usable by business analysts, data scientists, and decision-makers, speeding up the time-to-insight.
 
 Overall, the medallion or multi-hop architecture is a comprehensive approach to managing data in a Data Lake, ensuring that data flows smoothly from ingestion to consumption while maintaining quality, governance, and accessibility.
@@ -76,5 +76,5 @@ Overall, the medallion or multi-hop architecture is a comprehensive approach to 
 ## Use Case
 
 ```admonish todo
-Guide Opetence Inc. to implement a layered data alake architecture.
+Guide Opetence Inc. to implement a layered data lake architecture.
 ```

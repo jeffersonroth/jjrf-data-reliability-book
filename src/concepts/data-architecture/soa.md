@@ -132,7 +132,7 @@ Microservices aim for fine-grained services and independence at all levels, wher
 
 ## Use Case
 
-Given Opetence Inc.'s{{footnote:Company used as Use Case for [two-tier](./two_tier_architecture.md), [three-tier](./three_tier_architecture.md), [n-tier](./n_tier_architecture.md), and [microservives](./microservices_architecture.md) architecture chapters.}} characteristics as a recently founded startup with small teams, extensive use of cloud services, and enforcing microservices architecture for backend development, a microservices approach would naturally extend to the data team. However, there could still be scenarios where adopting Service-Oriented Architecture (SOA) elements within the data team could be beneficial, particularly in areas where broad integration, comprehensive service capabilities, or extensive reuse across multiple business domains is required. Here are a few potential use cases:
+Given [Opetence Inc.](../../use-cases/opetence/opetence_inc.md) characteristics as a recently founded startup with small teams, extensive use of cloud services, and enforcing microservices architecture for backend development, a microservices approach would naturally extend to the data team. However, there could still be scenarios where adopting Service-Oriented Architecture (SOA) elements within the data team could be beneficial, particularly in areas where broad integration, comprehensive service capabilities, or extensive reuse across multiple business domains is required. Here are a few potential use cases:
 
 **Enterprise Data Integration**:
 

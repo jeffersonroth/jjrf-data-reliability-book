@@ -176,6 +176,7 @@
   - [Emerging Trends in Data Reliability Engineering]()
   - [Challenges in Advanced Data Reliability Engineering]()
   - [Use Cases]()
+    - [Opetence Inc.](./use-cases/opetence/opetence_inc.md)
     - [Aranduka Inc.]()
 - [IV - Incorporating Data Reliability Engineering](./PROFESSIONALS.md)
   - [Data Engineers]()

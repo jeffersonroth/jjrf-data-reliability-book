@@ -44,9 +44,19 @@ In simpler setups, a POS system might use a two-tier architecture where the POS 
 
 ## Use Case
 
-At Opetence Inc., an analytics team has access to an Aurora Postgres instance, where Fivetran loads data directly from microservices' databases, third-party data (Google Analytics, Facebook Ads, etc.), and some Google Sheets files.
+```admonish tip title="Opetence Inc."
+This use case explores [Opetence Inc.](../../use-cases/opetence/opetence_inc.md)'s data management and architecture approach before any formal data team was in place, as described in the company profile.
+At this time, the 'analytics team' was essentially one business individual who set up the initial, quite risky, 'architecture.'
+The upcoming challenges and recommendations might be seen as the kind of changes a data engineer would propose after joining the company, aiming to improve the company's data handling and security.
+```
+
+### Current Architectural Landscape
+
+Opetence Inc.'s analytics team has access to an Aurora Postgres instance, where Fivetran loads data directly from microservices' databases, third-party data (Google Analytics, Facebook Ads, etc.), and some Google Sheets files.
 The analytics team transforms the data using SQL queries directly in the same database, creating "marts" in the same database to which Tableau connects.
 The microservices' database data is loaded every 5 minutes, and the data in Auroras Postgres instance is used to monitor near real-time operations.
+
+### Alignment with Two-Tier Architecture
 
 The scenario described can be considered a variation of the two-tier architecture, with some elements that expand beyond the traditional definition. Here's a breakdown of how it aligns with and diverges from classic two-tier architecture:
 
@@ -64,6 +74,8 @@ The scenario described can be considered a variation of the two-tier architectur
 While the core of the described scenario—direct interaction between the analytics team (client) and the Aurora Postgres instance (server)—fits the two-tier architecture model, the automated data ingestion and real-time monitoring aspects introduce complexities that are often addressed with more layered architectural approaches.
 Therefore, this scenario could be seen as a two-tier architecture at its foundation, with extensions that incorporate elements typically found in more advanced, multi-tier architectures.
 
+### Identifying Architectural Challenges
+
 However, while this setup facilitates direct data manipulation and reporting, it does introduce several challenges and potential issues:
 
 * **Performance Bottlenecks**: Having all transformations, data loading, and analytics operations directly on the Aurora Postgres instance can lead to performance bottlenecks. Continuous data loading from microservices and third-party sources every 5 minutes, coupled with complex SQL queries for transformations and data mart creation, can strain the database, affecting its responsiveness and the performance of applications relying on it, such as Tableau dashboards.
@@ -74,7 +86,7 @@ However, while this setup facilitates direct data manipulation and reporting, it
 * **Scalability Issues**: As data volume grows and the number of microservices and third-party data sources increases, the system may struggle to scale efficiently. The direct and constant load on the Aurora instance might not sustainably support larger datasets or more complex analytics requirements.
 * **Lack of Isolation Between Operational and Analytical Workloads**: Mixing operational and analytical workloads in a single database instance can lead to resource contention, where analytical queries compete with operational transactions for CPU, memory, and I/O resources, potentially degrading the performance of both workloads.
 
-Recommendations for Addressing These Issues:
+### Strategic Recommendations for Architectural Improvement
 
 * **Implement a Data Lake or Data Warehouse**: Consider introducing an intermediate storage layer, such as a data lake or a dedicated data warehouse, to decouple raw data ingestion from transformation and analytics workloads. This can help manage performance, improve security, and enhance scalability.
 * **Data Governance Framework**: Establish a robust data governance framework with clear policies on data access, quality, security, and compliance. Implement role-based access control (RBAC) to ensure users and applications only have access to the data they are authorized to use.
