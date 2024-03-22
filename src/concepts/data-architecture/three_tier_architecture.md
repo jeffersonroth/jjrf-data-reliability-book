@@ -35,15 +35,14 @@ In this scenario, the three-tier architecture allows the platform to handle user
 
 ## Use Case
 
-[Opetence Inc.](../../use-cases/opetence/opetence_inc.md) expands the data team by hiring a data engineer.
-The data engineer warns the company about the issues described in the previous use case and is authorized to create an Aurora Postgres instance (Data Engineering instance) to store raw and 3rd party data.
+[Opetence Inc.](../../use-cases/opetence/opetence_inc.md) expands the data team by hiring two data engineers. The engineers warn the company about the critical issues described in the previous use case and their possible economic and legal consequences. They are authorized to create an Aurora Postgres instance (Data Engineering instance) to store raw and third-party data.
 
 Fivetran now loads data directly from microservices' databases, third-party data (Google Analytics, Facebook Ads, etc.), and some Google Sheets files onto the instance in a database named Fivetran.
 Some data partners can also store data directly in the DE instance, each in its exclusive database (e.g., Braze database).
 
-The data engineer cleans and anonymizes the data and makes it available in the DE instance in a database called Staging.
+The data engineering team cleans and anonymizes the data and makes it available in the DE instance in a database called Staging.
 The staging data is organized in schemas (`order_service`, `product_service`, etc., and `google_analytics`, `facebook_ads`, etc.).
-The data engineer makes some of these schemas available in the Analytics Aurora Postgres instance as external schemas.
+The team makes some of these schemas available as external schemas in the Analytics Aurora Postgres instance.
 The analytics team has usage permissions to see the data structure but can't select from it.
 
 The analytics team transforms the external data in the Analytics database using dbt, creating the "marts."
@@ -52,6 +51,8 @@ Tableau still has access to the Analytics database, but there's no raw data or P
 Only the microservices data needed for near real-time operations monitoring are frequently fetched into the Operations database in the DE instance, using a self-deployed Airbyte platform connected directly to the microservices' databases.
 The migrations tasks are not of type full load and only maintain the time window needed for monitoring.
 A dbt model runs in the Operations database, transforming the data into the desired format for monitoring purposes.
+
+### Alignment with Three-Tier Architecture Principles
 
 The revised use case provides a clearer depiction of a three-tier architecture within a data-centric environment, with distinct separation and specialization at each layer:
 
@@ -79,7 +80,9 @@ The revised use case provides a clearer depiction of a three-tier architecture w
 This use case is a more refined example of three-tier architecture in a data environment, with clear boundaries between data ingestion and storage, data processing and staging, and data analysis and presentation.
 It addresses many of the performance, security, and scalability concerns presented in the original scenario, illustrating the benefits of a well-structured data architecture in supporting efficient and secure data operations.
 
-The data engineer understands the current setup is not optimal, and the company is still far from migrating to a better solution, but separating data and application logic tiers was a win.
+### Identifying Persistent Architectural and Operational Challenges
+
+The data engineering team understands the current setup is not optimal, and the company is still far from migrating to a better solution, but separating data and application logic tiers was a win.
 However, identifying flaws in the current data management scenario is crucial for making a solid case for migration to a more structured and scalable solution like a data lake or data warehouse.
 Here are some potential risks and issues that could be present in the current scenario:
 
@@ -97,23 +100,26 @@ Here are some potential risks and issues that could be present in the current sc
 Addressing these issues in a comprehensive assessment can help build a compelling argument for migrating to a more modern data management solution.
 Highlighting the potential for improved efficiency, better decision-making, and enhanced data security can be particularly persuasive in gaining approval for the transition.
 
-If the company is not ready to adopt a data lake or data warehouse solution and prefers to continue utilizing Aurora Postgres reserved instances, the data engineer can still implement several strategies to optimize the current architecture, leveraging the flexibility of microservices and the existing database infrastructure.
+### Suggestions
+
+Should Opetence Inc. choose not to transition to a modern data architecture, such as a hybrid data lake and data warehouse approach, the data engineering team still has options to enhance the current setup by employing [microservices architecture](./microservices_architecture.md) and existing database systems.
+It's important to recognize that although this modified approach addresses certain critical issues from the prior setup, it does not represent an ideal or fully optimized solution.
+A more integrated approach combining aspects of data lakes and data warehouses would more effectively resolve these challenges, offering greater security, maintainability, efficiency, and cost-effectiveness.
+
 Here are some changes and enhancements that could be considered:
 
-* **Database Partitioning and Sharding**: Implement database partitioning to divide large tables into smaller, more manageable pieces, improving query performance. Sharding, or distributing data across multiple databases or instances, can also help balance the load and improve scalability.
-* **Microservices for Data Processing**: Utilize microservices architecture for specific data processing tasks. For instance, microservices can be created to perform data cleansing, transformation, and anonymization tasks before the data is ingested into staging or analytics databases. This can offload some processing from the databases and improve overall system efficiency.
-* **Caching Strategies**: Implement caching layers within the data architecture to store frequently accessed data and reduce direct database hits. This can be particularly effective for data required for near real-time operations monitoring, reducing latency and improving response times.
-* **Data Archiving**: Develop an archiving strategy to move older, less frequently accessed data out of the primary databases to free up resources and maintain performance. This archived data can be stored in a more cost-effective storage solution and still be accessible if needed for historical analysis.
-* **Optimized Data Models**: Review and optimize the data models used within the databases to ensure they are efficient for the queries and analyses performed. This might include denormalizing some data structures, adding appropriate indexes, or optimizing query designs.
-* **Database as a Service (DBaaS) Enhancements**: Explore advanced features offered by Aurora Postgres and other DBaaS solutions, such as performance insights, automated scaling, and query optimization, to enhance database performance and management.
-* **Service Mesh for Microservices**: Implement a service mesh to manage communication between microservices, providing enhanced control over data flow, security, and monitoring. This can help ensure that data processing microservices work together seamlessly and efficiently.
-* **API Gateway for Data Access**: Introduce an API gateway as an intermediate layer between clients (like Tableau) and data sources. The API gateway can manage data requests, enforce access controls, and provide an additional abstraction layer, reducing direct database access.
-* **Data Validation and Quality Services**: Develop microservices dedicated to continuous data validation and quality checks. This will ensure that data entering the system meets predefined quality standards, helping maintain data integrity across the system.
-* **Load Balancing and Auto-Scaling**: Utilize load balancing and auto-scaling features to dynamically adjust resources based on demand, particularly for data processing microservices. This ensures that the system can handle peak loads efficiently without over-provisioning resources.
+* **Microservices for Data Processing**: Transitioning the existing Python code for data processing from MWAA to microservices deployed on ECS could address the issues with resource limitations and failures. This approach aligns with the company's DevOps expertise, allowing for more reliable and scalable data processing. Airflow could trigger these ECS tasks, providing a more robust solution for data cleansing, anonymization, and preparation before ingestion into the analytics database.
+* **Optimized Data Models**: Reviewing and optimizing the data models within the dbt framework is crucial. Given the issues with Aurora Postgres instances crashing due to poorly designed models, optimizing these models could lead to significant improvements in stability and performance. This might involve simplifying the models, reducing unnecessary complexity, and ensuring they are efficiently designed for the queries they support.
+* **API Gateway for Data Access**: Implementing an API Gateway to manage access to the data, especially for Tableau, could improve security and efficiency. This gateway could provide a controlled access point to the cleansed and anonymized data, potentially through external tables in the data lake, facilitating a more stable and secure connection for Tableau and other BI tools.
 
-By leveraging these strategies, the data engineer can significantly enhance the performance, scalability, and security of the existing data architecture without the immediate need for a data lake or data warehouse solution.
-This can be done efficiently using the current Aurora Postgres instances and the flexibility offered by microservices architecture.
-However, adopting a data lake or data warehouse architecture will always be a better solution, as it was for this specific use case.
+By leveraging these strategies, the data team at Opetence Inc. can significantly improve the existing data architecture's performance, scalability, and security without immediately resorting to a data lake or data warehouse solution.
+These enhancements can be realized using the current Aurora Postgres instances and the flexibility offered by a microservices architecture.
+However, it's important to note that while these improvements can address some of the critical issues, they may not be as efficient, scalable, or cost-effective as adopting a more modern data architecture, such as a data lake or data warehouse.
+
+Looking ahead, while the immediate security concerns have been addressed, it's crucial for the team to advocate for migrating to a modern data architecture.
+The current setup may struggle to keep pace with business demands and scalability requirements for data usage.
+Should the data team successfully communicate the importance and benefits of transitioning to the architecture proposed in the [Layered Data Lake Architecture](./data_lake_architecture_layers.md#use-case) chapter, the migration could be achieved within a few months.
+Failure to do so might result in prolonged efforts to adjust the existing architecture, potentially leading to a loss of trust in the data team's capabilities and its eventual dissolution.
 
 ```admonish todo
 Structure the Use Case as:

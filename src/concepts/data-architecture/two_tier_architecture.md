@@ -50,7 +50,7 @@ At this time, the 'analytics team' was essentially one business individual who s
 The upcoming challenges and recommendations might be seen as the kind of changes a data engineer would propose after joining the company, aiming to improve the company's data handling and security.
 ```
 
-### Current Architectural Landscape
+### Current Architecture
 
 Opetence Inc.'s analytics team has access to an Aurora Postgres instance, where Fivetran loads data directly from microservices' databases, third-party data (Google Analytics, Facebook Ads, etc.), and some Google Sheets files.
 The analytics team transforms the data using SQL queries directly in the same database, creating "marts" in the same database to which Tableau connects.

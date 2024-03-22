@@ -78,3 +78,65 @@ Overall, the medallion or multi-hop architecture is a comprehensive approach to 
 ```admonish todo
 Guide Opetence Inc. to implement a layered data lake architecture.
 ```
+
+At Opetence Inc., the data team is setting up a layered data lake architecture using Apache Airflow for orchestration and Amazon S3 for storage, focusing on ELT processes and data privacy.
+The company hasn't moved to a data warehouse yet, so the analytics database (Aurora Postgres) will act as the data processing layer.
+This use case won't cover the management of the database's demand for read/write operations.
+
+### Custom Layered Data Lake Implementation
+
+#### Setting Up the Infrastructure
+
+* **Amazon S3** will serve as the backbone of the data lake, where all data, regardless of format, will be stored. Create a well-structured bucket hierarchy in S3 to represent each layer of the data lake (Ingestion, Distillation, Processing).
+* **Apache Airflow** will orchestrate the data workflows, managing tasks such as triggering Airbyte for data ingestion, initiating data transformation jobs, and ensuring data moves correctly through each layer of the data lake.
+
+#### Ingestion Layer
+
+* **Airbyte**, deployed on Kubernetes, will pull data from various operational databases and third-party services. Airflow will trigger these Airbyte tasks, ensuring data is ingested into the S3 Ingestion Layer (Bronze) in a raw format.
+* After ingestions, each object will include custom metadata, such as ingestion timestamps and source identifiers, to facilitate auditing and traceability.
+
+#### Distillation Layer
+
+* Data in the Distillation Layer (Silver) will be structured and cleansed. Airflow will execute Python scripts that transform raw data into a more analyzable format, performing tasks like schema validation, deduplication, and basic cleansing.
+* Data masking and anonymization processes will be performed in this layer to protect PII and sensitive information. This can be achieved through predefined Airflow tasks that apply hashing, tokenization, or encryption techniques to sensitive fields.
+* All files are in **Parquet** format.
+
+#### Processing Layer
+
+* The Processing Layer (Gold) is where data is further refined and prepared for specific analytical purposes. Airflow will manage complex data transformation jobs that might involve advanced data modeling techniques, aggregations, and summarizations to create domain-specific data marts or datasets in the analytics database, mainly using dbt.
+* This layer should only contain high-quality, business-ready data that analysts can use to generate insights. The data should also be ready for use by BI and visualization tools.
+* The decision not to maintain a separate Processing Layer within S3 is strategic, given the current team structure and resources. This is especially true because it allows the analytics team to maintain their data products independently from the data engineering team without having to know Python or Airflow.
+
+#### Unified Operations Layer
+
+* The team will leverage Airflow's logging and monitoring capabilities to implement the Unified Operations Layer. This includes tracking the health and performance of data workflows, auditing data lineage, and ensuring data quality across the data lake.
+* Alerts and notifications will be set within Airflow to inform data engineers of any failures or issues in the data workflows.
+
+### Cloud-Native Layered Data Lake Implementation
+
+If Opetence Inc. were to implement a layered data lake solution using AWS cloud-native solutions, the following platforms would likely be adopted:
+
+* **AWS DMS** could be used for initial and ongoing data migrations from operational databases to S3, offering a more managed solution compared to Airbyte.
+* **AWS Glue** can serve both as a data catalog to manage metadata across the data lake and as an ETL service to transform data, potentially replacing custom Python scripts or Spark jobs managed by Airflow.
+* **AWS Lake Formation** simplifies setting up a secure data lake and handling tasks like access control, data cataloging, and data clean-up, which might reduce the operational complexity of managing these aspects manually.
+* **AWS Managed Workflows for Apache Airflow (MWAA)** would provide a managed environment to orchestrate complex workflows, such as data processing, transformation, and batch jobs, potentially enhancing the operational efficiency of data pipeline management compared to a self-managed Airflow setup.
+* **dbt on ECS**: Deploying dbt models on **Amazon Elastic Container Service (ECS)** offers a scalable and serverless environment for running dbt transformations. This approach enables the company to leverage dbt's powerful data modeling capabilities within a containerized setup, ensuring consistent execution and easy scaling of data transformation tasks.
+
+#### Comparison of Implementations
+
+**Development Effort**:
+
+* The Airflow + S3-based approach requires significant upfront development to set up workflows, scripts, and infrastructure configurations.
+* Using AWS services like DMS, Glue, and Lake Formation can reduce development time due to their managed nature and built-in capabilities.
+
+**Maintainability**:
+
+* The custom Airflow + S3 solution might become complex to maintain as the data ecosystem grows due to the need to manage scripts, workflows, and infrastructure.
+* AWS services offer better maintainability through managed services, reducing the burden of infrastructure management and scaling.
+
+**Cost Implications**:
+
+* The Airflow + S3 approach might have lower initial costs, especially if open-source tools are used and infrastructure is managed efficiently. However, operational costs can grow with scale due to the need for ongoing maintenance and management.
+* While potentially higher in initial costs due to their managed nature, AWS services might offer better cost predictability and can scale more efficiently with demand.
+
+Implementing a layered data lake architecture at Opetence Inc. requires careful consideration of the trade-offs between custom development and using managed services. The choice depends on the company's needs, skills, and long-term data strategy.
