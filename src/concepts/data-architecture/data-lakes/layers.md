@@ -13,7 +13,7 @@ In the context of Data Lakes, layers such as Ingestion, Processing, and Insights
 This approach not only simplifies the architecture but also ensures better governance, more efficient data processing, and easier access for end-users to derive insights.
 
 <figure>
-    <img src="../../assets/concepts/data-architecture/data_lake_architecture_layers_v1.svg" alt="Data Lake Architecture Layers" style="width:100%">
+    <img src="../../../assets/concepts/data-architecture/data_lake_architecture_layers_v1.svg" alt="Data Lake Architecture Layers" style="width:100%">
     <figcaption>Data Lake Architecture Layers.</figcaption>
 </figure>
 
@@ -90,24 +90,24 @@ This use case won't cover the management of the database's demand for read/write
 * **Amazon S3** will serve as the backbone of the data lake, where all data, regardless of format, will be stored. Create a well-structured bucket hierarchy in S3 to represent each layer of the data lake (Ingestion, Distillation, Processing).
 * **Apache Airflow** will orchestrate the data workflows, managing tasks such as triggering Airbyte for data ingestion, initiating data transformation jobs, and ensuring data moves correctly through each layer of the data lake.
 
-#### Ingestion Layer
+#### Ingestion Layer Implementation
 
 * **Airbyte**, deployed on Kubernetes, will pull data from various operational databases and third-party services. Airflow will trigger these Airbyte tasks, ensuring data is ingested into the S3 Ingestion Layer (Bronze) in a raw format.
 * After ingestions, each object will include custom metadata, such as ingestion timestamps and source identifiers, to facilitate auditing and traceability.
 
-#### Distillation Layer
+#### Distillation Layer Implementation
 
 * Data in the Distillation Layer (Silver) will be structured and cleansed. Airflow will execute Python scripts that transform raw data into a more analyzable format, performing tasks like schema validation, deduplication, and basic cleansing.
 * Data masking and anonymization processes will be performed in this layer to protect PII and sensitive information. This can be achieved through predefined Airflow tasks that apply hashing, tokenization, or encryption techniques to sensitive fields.
 * All files are in **Parquet** format.
 
-#### Processing Layer
+#### Processing Layer Implementation
 
 * The Processing Layer (Gold) is where data is further refined and prepared for specific analytical purposes. Airflow will manage complex data transformation jobs that might involve advanced data modeling techniques, aggregations, and summarizations to create domain-specific data marts or datasets in the analytics database, mainly using dbt.
 * This layer should only contain high-quality, business-ready data that analysts can use to generate insights. The data should also be ready for use by BI and visualization tools.
 * The decision not to maintain a separate Processing Layer within S3 is strategic, given the current team structure and resources. This is especially true because it allows the analytics team to maintain their data products independently from the data engineering team without having to know Python or Airflow.
 
-#### Unified Operations Layer
+#### Unified Operations Layer Implementation
 
 * The team will leverage Airflow's logging and monitoring capabilities to implement the Unified Operations Layer. This includes tracking the health and performance of data workflows, auditing data lineage, and ensuring data quality across the data lake.
 * Alerts and notifications will be set within Airflow to inform data engineers of any failures or issues in the data workflows.

@@ -109,7 +109,7 @@ When choosing a database service, consider factors like data model compatibility
 
 ## Use Case
 
-In the hypothetical scenario where [Opetence Inc.](../../use-cases/opetence/opetence_inc.md) received a significant round of investments, the data team sought guidance on reliably scaling their data infrastructure to capitalize on this opportunity.
+In the hypothetical scenario where [Opetence Inc.](../../../use-cases/opetence/opetence_inc.md) received a significant round of investments, the data team sought guidance on reliably scaling their data infrastructure to capitalize on this opportunity.
 Their plan, advised by an AWS expert, aimed to enhance and expand their current setup to support growing data warehousing, data marts, reports, and dashboard needs.
 
 The team's strategy involved leveraging AWS Database Migration Service (DMS) for nightly comprehensive migrations from all operational databases into an S3 bucket.

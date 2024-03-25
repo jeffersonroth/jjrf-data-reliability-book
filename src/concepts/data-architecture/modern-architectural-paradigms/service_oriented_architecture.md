@@ -132,7 +132,7 @@ Microservices aim for fine-grained services and independence at all levels, wher
 
 ## Use Case
 
-Given [Opetence Inc.](../../use-cases/opetence/opetence_inc.md) characteristics as a recently founded startup with small teams, extensive use of cloud services, and enforcing microservices architecture for backend development, a microservices approach would naturally extend to the data team. However, there could still be scenarios where adopting Service-Oriented Architecture (SOA) elements within the data team could be beneficial, particularly in areas where broad integration, comprehensive service capabilities, or extensive reuse across multiple business domains is required. Here are a few potential use cases:
+Given [Opetence Inc.](../../../use-cases/opetence/opetence_inc.md) characteristics as a recently founded startup with small teams, extensive use of cloud services, and enforcing microservices architecture for backend development, a microservices approach would naturally extend to the data team. However, there could still be scenarios where adopting Service-Oriented Architecture (SOA) elements within the data team could be beneficial, particularly in areas where broad integration, comprehensive service capabilities, or extensive reuse across multiple business domains is required. Here are a few potential use cases:
 
 **Enterprise Data Integration**:
 
@@ -150,7 +150,7 @@ SOA can provide a centralized approach in scenarios where multiple microservices
 **Complex Business Processes**:
 
 SOA can offer robust solutions for complex business processes requiring the orchestration of multiple data services and workflows.
-Utilizing an [enterprise service bus (ESB)](./esb.md) or similar middleware within an SOA framework can manage these complex interactions more effectively than a purely microservices-based approach.
+Utilizing an [enterprise service bus (ESB)](./../esb.md) or similar middleware within an SOA framework can manage these complex interactions more effectively than a purely microservices-based approach.
 
 **Regulatory Compliance and Data Governance**:
 

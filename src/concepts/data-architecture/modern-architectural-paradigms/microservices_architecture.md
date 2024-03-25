@@ -92,7 +92,7 @@ By developing these microservices, the data engineering team can provide robust,
 
 ## Use Case
 
-At [Opetence Inc.](../../use-cases/opetence/opetence_inc.md), the data engineering team's growth and the business's evolving data needs led to the adoption of a microservices architecture to enhance their data handling capabilities, particularly focusing on managing and processing data stored in Amazon S3 in Parquet format.
+At [Opetence Inc.](../../../use-cases/opetence/opetence_inc.md), the data engineering team's growth and the business's evolving data needs led to the adoption of a microservices architecture to enhance their data handling capabilities, particularly focusing on managing and processing data stored in Amazon S3 in Parquet format.
 
 **Background**:
 

@@ -48,7 +48,7 @@ The team agrees that the old Aurora Postgres (**Legacy DWH**) instance must be d
 
 1. **Phase 1**: Create the **Data Engineering Aurora Postgres instance (DE)** to store operational and third-party data and migrate the Legacy DWH instance into the same virtual private cloud (VPC). In this phase, the Legacy DWH would be migrated as is, and some minor security actions would be made as manage database users (`fivetran_user`, `tableau_user`, `braze_user`, etc.) permissions through a service. This phase also will deploy the Airbyte platform for operational data migrations.
 2. **Phase 2**: Clean, cleanse, mask, and anonymize the data within the DE instance. The data would be available in the Legacy DWH as foreign schemas through a foreign server, so only the `dbt_user` could select from it. The data would also be available in the **Data Analytics Aurora Postgres instance (DA)**, where the legacy dbt models should start being migrated. *The DA instance would not be productive at this point*.
-3. **Phase 3**: All data sources will be available as foreign schemas in the DA instance so the dbt models can create the data marts. Tableau will connect to the DA instance. The Legacy DWH instance will be deprecated and removed. 
+3. **Phase 3**: All data sources will be available as foreign schemas in the DA instance so the dbt models can create the data marts. Tableau will connect to the DA instance. The Legacy DWH instance will be deprecated and removed.
 
 Once Phase 3 is completed, we'll have the following:
 
