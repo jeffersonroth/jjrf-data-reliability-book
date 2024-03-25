@@ -96,7 +96,15 @@ These examples demonstrate how n-tier architecture can be tailored to meet the s
 
 This use case continues to build on top of the use cases presented in the [two-tier](./two_tier_architecture.md#use-case) and [three-tier](./three_tier_architecture.md#use-case) architecture use cases.
 
-[Opetence Inc.](../../use-cases/opetence/opetence_inc.md) updated its data infrastructure to enhance efficiency and scalability, centralizing around Apache Airflow for orchestrating data pipelines and dbt for data transformations.
+### Architectural Evolution
+
+```admonish todo
+Brief of the current architecture, and how it evolve from the previous one.
+```
+
+### Proposal and Implementation Plan
+
+[Opetence Inc.](../../../use-cases/opetence/opetence_inc.md) updated its data infrastructure to enhance efficiency and scalability, centralizing around Apache Airflow for orchestrating data pipelines and dbt for data transformations.
 This setup streamlined workflows and simplified data processing. Nightly ELT processes for microservices' databases were automated using Airbyte, reducing system load by scheduling tasks during off-peak hours.
 A significant upgrade involved adopting Amazon S3 buckets for storing raw data in Parquet format, leveraging cloud storage's scalability and cost-effectiveness.
 Redash was introduced to enable non-analytics teams to query transformed data marts, fostering a broader data-driven culture.
