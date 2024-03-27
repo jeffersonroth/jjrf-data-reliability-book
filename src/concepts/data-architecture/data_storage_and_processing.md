@@ -18,6 +18,14 @@ Key Components:
 * **Management and Security**: Tools and practices ensuring data governance, cataloging, and secure access to the data lake's contents.
 ```
 
+```admonish tldr title="Transactional Data Lake Architecture"
+...
+
+Key Components:
+
+* ...
+```
+
 ```admonish tldr title="Data Warehouse Architecture"
 A Data Warehouse is a system used for reporting and data analysis, serving as a core component of business intelligence.
 It is designed to aggregate, cleanse, and consolidate large volumes of data from multiple sources into a comprehensive repository for query and analysis.

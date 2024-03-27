@@ -96,52 +96,66 @@ These examples demonstrate how n-tier architecture can be tailored to meet the s
 
 This use case continues to build on top of the use cases presented in the [two-tier](./two_tier_architecture.md#use-case) and [three-tier](./three_tier_architecture.md#use-case) architecture use cases.
 
-Opetence Inc. updated its data infrastructure to enhance efficiency and scalability, centralizing around Apache Airflow for orchestrating data pipelines and dbt for data transformations.
-This setup streamlined workflows and simplified data processing. Nightly ELT processes for microservices' databases were automated using Airbyte, reducing system load by scheduling tasks during off-peak hours.
-A significant upgrade involved adopting Amazon S3 buckets for storing raw data in Parquet format, leveraging cloud storage's scalability and cost-effectiveness.
-Redash was introduced to enable non-analytics teams to query transformed data marts, fostering a broader data-driven culture.
-DataHub was implemented as the go-to metadata management system to manage the growing importance of metadata, enhancing data discoverability and trust.
-For the near real-time operational data, a bespoke microservice created a Data Operational Store (DOS), directly feeding operational dashboards and platforms like Tableau through a secured API Gateway, ensuring streamlined and controlled data access.
+### Architectural Evolution
 
-This restructuration reflects the n-tier architecture as follows:
+Upon completing the last phase of the migration plan and deprecating the Legacy DWH Aurora Postgres instance, [Opetence Inc.](../../../use-cases/opetence/opetence_inc.md)'s data team now manages two main Aurora Postgres instances: the **Data Engineering Aurora Postgres instance (DE)** and the **Data Analytics Aurora Postgres instance (DA)**.
 
-* **Data Ingestion Tier**:
-  * Airbyte for nightly ELT processes from microservices' databases.
-  * Fivetran for specific third-party integrations.
-  * Custom solutions for Google Sheets data ingestion.
-* **Data Storage Tier**:
-  * Amazon S3 buckets for storing raw data in Parquet format.
-  * Aurora Postgres instances for staging, transformed, and operational data.
-  * Data Processing and Transformation Tier:
-  * Apache Airflow for orchestrating data pipelines.
-  * dbt for data transformation and preparing data marts.
-* **Data Access and API Management Tier**:
-  * API Gateway to provide secure and unified access to data for various consumers.
-* **Data Operational Store (DOS) Tier**:
-  * A specialized microservice creating a DOS for near real-time operational data needs.
-* **Analytics and Reporting Tier**:
-  * Redash to enable broader access to data insights and reporting outside the analytics team.
-  * Tableau and other dashboard platforms for operational teams, accessing DOS data through the API Gateway.
-  * Tableau for Business Intelligence dashboards, accessing the marts through direct database access.
-* **Metadata Management Tier**:
-  * DataHub as the metadata management system to enhance data discoverability, governance, and trust.
+The DE instance is composed of one database managing live Operations data, one database for each external data partner that needs a direct connection to deliver their data, and one Staging database containing cleaned, cleansed, masked, and anonymized data from operational data (internal) and third-party data (external). The DA database consumes the Staging data through a foreign server, so dbt can consume it to create the data marts and reports. The Tableau server connects to the DA database to consume data from the data marts.
 
-This structure illustrates the n-tier architecture's ability to decompose the data ecosystem into specialized, scalable tiers, each focused on a distinct aspect of data handling and analysis, ensuring efficiency and adaptability.
+### Proposal and Implementation Plan
 
-**Accessing the DOS for Near Real-Time Operational Data**:
+Now that the primary security concerns have been solved, the data engineering team has set new plans to reduce costs and optimize and modernize the data infrastructure.
 
-* **API Gateway Integration**: Tableau accesses near real-time operational data through an API Gateway, which acts as the intermediary between Tableau and the DOS. The API Gateway manages authentication, authorization, request routing, and potentially data transformation to ensure Tableau receives the necessary operational data in the required format.
-* **Real-Time Data Feeds**: The DOS is optimized for speed and efficiency, providing Tableau with the latest operational data. This setup is crucial for dashboards that monitor real-time metrics or operational KPIs, where up-to-the-minute data is essential.
+```admonish tldr title="Workflow Orchestration"
+Airflow should trigger and monitor 100% of the pipelines, including Airbyte and dbt tasks. In a combined effort with the DevOps team, the data engineering team now maintains a self-deployed Apache Airflow platform.
+```
 
-**Accessing the Analytics Database for Business Dashboards**:
+```admonish tldr title="Operational Data Replication"
+The data engineering team now maintains a self-deployed Airbyte platform, which is also a combined effort with the DevOps team. Nightly Airbyte tasks are triggered and monitored by Airflow, which consumes the operational data into an S3 bucket. Many transformation tasks clean, cleanse, mask, and anonymize the raw data in the S3 bucket, before making them available in the Staging database. No PII or sensitive data can now reach the DE instance. Storing raw and intermediate data in S3 also reduced considerably the RDS costs.
+```
 
-* **Direct Database Connection**: Tableau connects directly to the Analytics Aurora Postgres database for business intelligence dashboards, where transformed and aggregated data marts are stored. This connection might use Tableau's built-in database connectors, allowing for efficient querying and data visualization.
-* **Data Transformation and Mart**: The data within the Analytics database has been pre-processed and transformed (using dbt) to support business intelligence needs. This data is structured into marts that are optimized for analysis, enabling Tableau to generate comprehensive business dashboards.
+```admonish tldr title="External Data Sources"
+The team discovered that several data partners, including Segment and Braze, could deliver their data directly to S3 buckets. To manage this influx of data, Airflow orchestrates pipelines that clean, mask, and anonymize the incoming raw data within these S3 buckets. However, to minimize the impact on the Data Engineering (DE) instance, the pipeline that makes the cleaned data available in the Staging database runs only a few times daily. For critical data partners like Appsflyer, Stripe, SAP, and Google Analytics, Fivetran remains the primary integration tool, but for others like Intercom and Google Sheets, the team has transitioned to Airbyte. Customer Data Platforms (CDP), such as Segment and Customer Engagement Platforms (CEP), such as Braze, and other external sources generate a significant volume of data. By storing this data in S3, the team has significantly reduced data storage costs.
+```
 
-In this dual-access setup, Tableau leverages the strengths of both data stores—real-time operational insights from the DOS and in-depth analytical views from the Analytics database.
-The API Gateway manages and secures access to the DOS, ensuring operational data is delivered swiftly and securely to support real-time decision-making.
-Meanwhile, the direct connection to the Analytics database allows for deep insights into business performance metrics, trends, and strategic insights, supported by the rich, pre-processed data in the data marts.
-This bifurcated approach ensures that users have the right data in the right context, whether for immediate operational needs or longer-term strategic analysis.
+```admonish tldr title="Data Transformations"
+On the data engineering side, many transformations are performed using Python and Bash scripts, which Airflow executes using the PythonOperator and BashOperator, respectively. Some transformations required more resources (CPU, memory, or disk space) than the Airflow environment could provide, so they were converted to containerized scripts deployed to AWS ECS or AWS Lambda functions. On the analytics side, dbt was deployed to AWS ECS, so Airflow can manage it using custom ECS operators.
+```
 
-Please note that, even with all these updates, the company would benefit more, with probably a lower price, from implementing a proper data lake, data warehouse architecture, or a combination of both.
-These and many more architectures will be discussed in detail later on.
+```admonish tldr title="Live Operations Monitoring"
+A bespoke microservice was created to manage live operations data. The microservice consumes data from many message queues (AWS SQS) and internal and external APIs, such as e-commerce platforms and voucher partners. The processed data is stored in an Operational Data Store (ODS), where Tableau and other visualization and operations monitoring tools connect to.
+```
+
+```admonish tldr title="Metadata Management & Data Lineage"
+The data engineering team now maintains a DataHub instance deployed to AWS EKS. DataHub is a modern data catalog that enables end-to-end data discovery, observability, and governance. Despite the platform's many uses, the team will only use the lineage and data discovery features, integrating S3 buckets, RDS databases, Airflow, dbt, and Tableau. Future projects will enable data quality, observability, and governance features.
+```
+
+```admonish tldr title="Data Visualization and Exploration"
+To enable the company, especially the product teams and business analysts, to explore the data in the marts, a Redash instance was deployed to AWS EC2.
+```
+
+### Alignment with N-Tier Architecture Principles
+
+The described use case aligns with an N-Tier data architecture through its structured and layered approach to managing data and operational processes, each with a designated purpose and function, contributing to a scalable, flexible, and maintainable system. This architecture enables clear separation of concerns, enabling independent development, testing, and maintenance of each layer.
+
+```admonish tldr title="Data Layer"
+The use of multiple Aurora Postgres instances for different purposes (DE for data engineering tasks and DA for data analytics) embodies the data tier, where raw and processed data are stored and managed. The inclusion of an S3 bucket for raw and intermediate data storage further diversifies the data storage strategy, optimizing costs and performance.
+```
+
+```admonish tldr title="Application Logic Layer"
+The orchestration of data workflows with Apache Airflow, transformation tasks with dbt, and data integration with Airbyte represents the application logic layer. This tier is responsible for processing data, executing business logic, and ensuring data is appropriately transformed and available for analytical purposes. The use of containerized scripts and AWS ECS for resource-intensive tasks exemplifies the scalability and flexibility of this tier.
+```
+
+```admonish tldr title="Presentation Layer"
+The utilization of Tableau and Redash for data visualization, exploration, and reporting embodies the presentation layer, where processed and analyzed data is made accessible to end-users in an understandable and interactive format.
+```
+
+```admonish tldr title="Metadata Management & Data Lineage"
+Implementing DataHub for metadata management and data lineage introduces an additional tier focused on data discovery and lineage. This layer enhances the overall architecture by providing tools for understanding data origins, transformations, and usage, which is crucial for maintaining data quality and compliance.
+```
+
+```admonish tldr title="Live Operations Monitoring"
+The creation of a custom microservice for managing live operations data, which interfaces with various data sources and stores processed data in an ODS, represents an extension of the application logic tier, tailored explicitly for real-time operational needs.
+```
+
+Please note that, even with all these updates, the company would benefit more, with probably a lower price, from implementing a proper data lake, data warehouse architecture, or a combination of both. For instance, a data lake approach would clearly and logically structure the data in the S3 buckets, and the adoption of a data warehouse solution would free the data engineering team from the hassle of administrating so many Postgres instances and offer the analytics team a modern and specialized platform for data analysis and marts creation. These and many more architectures will be discussed in detail later on.

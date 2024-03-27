@@ -16,7 +16,7 @@ Data Lake Architecture revolves around a centralized repository that facilitates
 * **Identification Key**: In a Data Lake, every data element is identified by a unique identifier and a set of metadata information.
 
 <figure>
-    <img src="../../assets/concepts/data-architecture/data_lake_architecture_v1.svg" alt="Data Lake Architecture Conceptual & Physical Components" style="width:100%">
+    <img src="../../../assets/concepts/data-architecture/data_lake_architecture_v1.svg" alt="Data Lake Architecture Conceptual & Physical Components" style="width:100%">
     <figcaption>Data Lake Architecture Conceptual & Physical Components.</figcaption>
 </figure>
 
@@ -81,7 +81,7 @@ Organizations might use data lakes for raw data storage and exploratory analytic
 This hybrid approach allows businesses to balance the flexibility and scale of data lakes with the performance and structure of traditional data warehouses.
 
 <figure>
-    <img src="../../assets/concepts/data-architecture/data_lake_architecture_diagram_v1.svg" alt="Data Lake Architecture" style="width:100%">
+    <img src="../../../assets/concepts/data-architecture/data_lake_architecture_diagram_v1.svg" alt="Data Lake Architecture" style="width:100%">
     <figcaption>Data Lake Architecture.</figcaption>
 </figure>
 
@@ -91,7 +91,7 @@ Data governance and security are overarching concerns that apply across all laye
 Finally, the processed and curated data is made available to various consumers, including BI tools and data science platforms, and possibly even back into a data warehouse or exposed through APIs.
 
 The diagram shows a comprehensive view of the Data Lake Architecture, illustrating the different components and how data flows from its sources to its use in data-driven applications.
-The following sections will discuss the architecture in detail, dividing its primary components into separate [layers](./data_lake_architecture_layers.md) and [zones](./data_lake_architecture_zones.md).
+The following sections will discuss the architecture in detail, dividing its primary components into separate [layers](./layers.md) and [zones](./zones.md).
 Each layer and zone serves a unique purpose, from initial data ingestion and storage to processing, governance, and the presentation of insights.
 Understanding these layers and zones is important to comprehend how data lakes handle large amounts of diverse data, ensuring both scalability and flexibility while maintaining data integrity and accessibility.
-The implementation of a Data Lake solution consists of some main [maturity stages](./data_lake_architecture_maturity_stages.md), which also be discussed in the following sections.
+The implementation of a Data Lake solution consists of some main [maturity stages](./maturity_stages.md), which also be discussed in the following sections.
