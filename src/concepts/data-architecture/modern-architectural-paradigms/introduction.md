@@ -15,7 +15,7 @@ This leads to increased agility in deploying new features and updates and improv
 ```
 
 ```admonish tldr title="Service-Oriented Architecture (SOA)"
-[SOA](./soa.md) is a design philosophy that involves creating software components (services) that provide application functionality as services to other components via a communications protocol, typically over a network.
+[SOA](./service_oriented_architecture.md) is a design philosophy that involves creating software components (services) that provide application functionality as services to other components via a communications protocol, typically over a network.
 In the context of data architecture, SOA facilitates the integration of disparate systems, enabling seamless data exchange and interoperability.
 It supports the reusability and composability of services, making it easier to modify and extend data services without significant disruption.
 ```

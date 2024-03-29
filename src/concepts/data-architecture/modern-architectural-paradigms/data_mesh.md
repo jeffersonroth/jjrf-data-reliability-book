@@ -50,7 +50,7 @@ In each of these examples, the implementation of Data Mesh principles needs to b
 
 ## Use Case
 
-Suppose the CEO of Opetence Inc.{{footnote:Company used as Use Case for [two-tier](./two_tier_architecture.md), [three-tier](./three_tier_architecture.md), [n-tier](./n_tier_architecture.md), [microservives](./microservices_architecture.md), and [cloud-native](./cloud_native_data_architectures.md) data architectures chapters.}} comes across a LinkedIn post discussing the advantages of Data Mesh.
+Suppose the CEO of [Opetence Inc.](../../../use-cases/opetence/opetence_inc.md) comes across a LinkedIn post discussing the advantages of Data Mesh.
 In such a situation, the CTO is asked to prepare a proposal to enable individual teams/verticals to be more data-driven and self-sufficient in creating their own dashboards and reports.
 
 The CTO then requests the data team, consisting of two data engineers and two analytics engineers, to develop a comprehensive plan in collaboration with the product teams to enhance the company's data capabilities.
