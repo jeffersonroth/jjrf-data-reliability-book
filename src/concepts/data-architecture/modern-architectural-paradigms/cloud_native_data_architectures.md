@@ -109,88 +109,65 @@ When choosing a database service, consider factors like data model compatibility
 
 ## Use Case
 
-In the hypothetical scenario where [Opetence Inc.](../../../use-cases/opetence/opetence_inc.md) received a significant round of investments, the data team sought guidance on reliably scaling their data infrastructure to capitalize on this opportunity.
-Their plan, advised by an AWS expert, aimed to enhance and expand their current setup to support growing data warehousing, data marts, reports, and dashboard needs.
+In this hypothetical use case, [Opetence Inc.](../../../use-cases/opetence/opetence_inc.md) received a significant round of investments, part of which would be invested in modernizing and automating the data processes. The data infrastructure should work flawlessly so the company can focus its resources on the analytics team, managing data marts and dashboards that could support all the business needs. As advised by the investors' AWS solutions architect, the new architecture would include:
 
-The team's strategy involved leveraging AWS Database Migration Service (DMS) for nightly comprehensive migrations from all operational databases into an S3 bucket.
-This approach ensured a reliable nightly operational data snapshot, ready for further processing.
-In S3, dedicated data cleaning and anonymization routines were to be established, safeguarding data quality and adhering to privacy standards.
+```admonish tldr title="AWS Database Migration Service (DMS)"
+* **Purpose**: Used to migrate relational databases, data warehouses, NoSQL databases, and other types of data stores to AWS. In this scenario, it continuously captures data changes and loads them into Amazon S3, serving as the initial ingestion point.
+* **Process**: Configure AWS DMS tasks to capture data from source databases and replicate it to Amazon S3 buckets in Parquet format.
+```
 
-The team planned to utilize AWS Lake Formation to centralize and manage this refined data, creating a robust data lake that serves as a single source of truth for the company's data.
-They intended to enhance the Staging Aurora Postgres instance for more dynamic data ingestion, including real-time streams and API data, enabling a seamless flow of diverse data types into their ecosystem.
+```admonish tldr title="AWS Lake Formation"
+* **Purpose**: Simplifies the setup and management of a secure and efficient data lake. It handles data cataloging, cleaning, classification, audition, and securing data access. It integrates with **AWS Key Management Service (KMS)** to encrypt PII and sensitive information.
+* **Process**: Once data is in S3, use Lake Formation to define a data catalog, set up permissions, and manage metadata for the datasets in S3. This is the foundation for a structured data lake ready for analysis and querying.
+```
 
-A significant upgrade was planned for their analytics backbone, Amazon Redshift, to serve as the core of their scalable data warehousing solution.
-Redshift would access the Lake Formation data and the structured data in Aurora Postgres through external schemas facilitated by Redshift Spectrum, providing a comprehensive view across all data assets.
+```admonish tldr title="AWS Glue"
+* **Purpose**: Serverless data integration service that makes it easy to discover, prepare, and combine data for analytics, machine learning, and application development.
+* **Process**: Use AWS Glue for ETL (extract, transform, load) jobs to clean, transform, and enrich the raw data in S3. This might involve deduplication, schema evolution, and data partitioning to optimize for analytics.
+```
 
-To ensure efficiency in data transformations and maintain best practices, the data team decided to containerize their dbt models and deploy them on AWS ECS.
-This setup promised greater scalability and manageability of their data transformation processes.
+```admonish tldr title="AWS Redshift Spectrum"
+* **Purpose**: Allow complex queries to run directly on data stored in S3, using the same SQL syntax as Redshift, without needing to load the data into Redshift tables.
+* **Process**: Define external tables in Redshift Spectrum that point to the S3 data locations. This allows for querying vast amounts of data in S3 directly from Redshift, enabling seamless integration of the data lake with Redshift's powerful analytics capabilities. The dbt models can use these external tables directly.
+```
 
-Orchestration of the entire data ecosystem, from nightly DMS migrations to dbt transformations, was to be streamlined using AWS Managed Workflows for Apache Airflow (MWAA).
-This tool would offer robust scheduling, execution, and monitoring capabilities for their intricate data pipelines, ensuring reliability and scalability.
+The solutions architect suggested using Amazon Managed Workflows for Apache Airflow (MWAA). Still, it was agreed that the current ECS + Fargate solution would be optimal, given it's already implemented, similar DevOps processes in the company employ a similar solution, and the data engineering team is already adopting the solution to deploy dbt and many internal scripts and tools.
 
-This ambitious plan aimed to scale up Opetence Inc.'s data warehouse, data marts, and reporting capabilities and establish a future-proof, scalable, and secure data infrastructure poised to drive insightful analytics and business intelligence as the company grows.
+### Revised Architecture and Infrastructure Overview
 
-### Implementation Plan
+The Use Cases section will discuss the detailed implementation for each tool, solution, or platform. Once the data engineering team finishes implementing all suggested changes, the data architecture will comprehend the following:
 
-For Opetence Inc. to implement the described data infrastructure on AWS, the data team was advised to follow these steps:
+```admonish tldr title="Data Ingestion and Integration"
+**AWS DMS** would be responsible for replicating all the internal operational data to an S3 bucket in Parquet format. Data partners capable of delivering their data directly to the company's S3 buckets, such as **Braze** and **Segment**, would continue to do so. **Fivetran** would manage any other data partner, as the team agreed to deprecate the Airbyte solution deployed to AWS EKS.
+```
 
-#### Set up AWS Database Migration Service (DMS)
+```admonish tldr title="Data Storage and Management"
+S3 would be the primary data storage solution, housing both raw and processed data. S3's scalability and robust security features make it ideal for managing large volumes of data. **AWS Lake Formation** would then organize the data within S3 into a structured data lake, improving data discoverability and accessibility while maintaining governance and security.
+```
 
-* **Configure Source Endpoints**: Identify and configure the operational databases as source endpoints in AWS DMS.
-* **Set up S3 as Target**: Configure an Amazon S3 bucket as the target endpoint for DMS, ensuring it has the necessary permissions for DMS to write to it.
-* **Create Migration Tasks**: Set up nightly migration tasks for full-load transfers from each operational database to S3. Select the appropriate migration type and configure task settings according to their requirements.
+```admonish tldr title="Data Processing and Transformation"
+Working directly in the Parquet files in S3, many containerized solutions would continue to be deployed to **AWS ECS**, many transformations would continue to be deployed to **AWS Lambda** functions, and small **Python** and **Bash** scripts would continue to be executed directly by Airflow. A few would be rewritten in **AWS Glue**.
+```
 
-#### Clean and Anonymize Data in S3
+```admonish tldr title="Analytics and Business Intelligence"
+The data marts would continue to be managed by **dbt** models, which now consume the Data Lake files directly using **AWS Redshift Spectrum**. The marts are now stored in **AWS Redshift**. Business intelligence tools like **Tableau** are integrated with Redshift to enable advanced data visualization and reporting, supporting data-driven decision-making.
+```
 
-* **Implement Cleaning and Anonymization Logic**: Develop AWS Lambda functions or AWS Glue jobs to clean (remove inconsistencies, fill gaps) and anonymize (mask or remove sensitive information) the data stored in S3.
-* **Trigger Processes**: Use Amazon CloudWatch Events to schedule and trigger these processing jobs after the DMS tasks are completed each night.
+```admonish tldr title="Security and Compliance Framework"
+**IAM Roles** and **Policies** ensure granular access control to AWS resources, adhering to best practices in security and compliance. Data is **encrypted** both at rest and in transit, meeting industry and regulatory standards for data security.
+```
 
-#### Establish the Data Lake with AWS Lake Formation
+```admonish tldr title="System Monitoring and Optimization"
+**AWS CloudWatch** offers monitoring and logging for AWS resources, providing insights into system performance and operational health to maintain optimal performance.
+```
 
-* **Define Data Lake Storage**: Use the cleaned and anonymized data in S3 as the foundation of their data lake.
-* **Set up Lake Formation**: Register their S3 buckets with AWS Lake Formation, defining data access roles and permissions to secure and manage access.
-* **Catalog Data**: Use AWS Glue crawlers to discover and catalog data, creating a comprehensive data catalog that makes data easily searchable and queryable.
+```admonish tldr title="Workflow Orchestration and Operations"
+**Apache Airflow** would continue to be the backbone and heart of all the data architecture. It orchestrates, triggers, and monitors all of the architecture components above.
+```
 
-#### Integrate Streaming and Queue Data
+### Identifying Architectural Risks and Challenges
 
-* **Set up Kafka, SQS/SNS**: Ensure the Kafka clusters and SQS/SNS topics are correctly configured for data production.
-* **Consume Data**: Develop microservices or use AWS Lambda functions triggered by Kafka SQS/SNS messages to consume and process this data.
-* **Store in Aurora Postgres**: Insert processed data into the Staging Aurora Postgres instance, organizing it into schemas that reflect the data's source and nature.
-
-#### Integrate Data with Redshift
-
-* **Configure Redshift**: Set up an Amazon Redshift cluster as their data warehouse.
-* **External Schemas for S3 Data**: Use Redshift Spectrum to create external schemas that map to the data in their S3-based data lake.
-* **External Schemas for Aurora Data**: Similarly, use Redshift Spectrum to access data in their Aurora Postgres instance, treating it as an external schema within Redshift.
-
-#### Deploy dbt Models on ECS
-
-* **Containerize dbt**: Package the dbt projects into Docker containers, ensuring all dependencies are correctly included.
-* **Push to ECR**: Upload the dbt Docker images to Amazon Elastic Container Registry (ECR).
-* **Run on ECS**: Set up AWS ECS tasks to run their dbt models, ensuring they have the necessary permissions to access Redshift and other data sources.
-
-#### Orchestrate with MWAA
-
-* **Set up MWAA**: Configure their Amazon Managed Workflows for Apache Airflow (MWAA) environment.
-* **Define DAGs**: Create Directed Acyclic Graphs (DAGs) in Airflow to orchestrate the data workflows, including DMS migrations, data cleaning, data processing with dbt on ECS, and Glue jobs for the data lake.
-* **Schedule and Monitor**: Use Airflow's scheduling and monitoring capabilities to manage and monitor the execution of their data pipelines, ensuring data flows smoothly from source to insights.
-
-By following these steps, Opetence Inc.'s data team can build a robust, scalable, and secure data infrastructure on AWS that leverages managed services for efficiency and focuses on delivering insights from a wide variety of data sources.
-
-### Risks and Suggestions
-
-The team at Opetence Inc. is on a promising path with their planned infrastructure enhancements.
-However, a few additional considerations and potential risks associated with vendor lock-in could be addressed:
-
-**Suggestions**:
-
-* **Cost Management**: As the infrastructure scales, closely monitor and manage costs to avoid unexpected expenses. Tools like AWS Cost Explorer and budget alerts can help manage and optimize spending.
-* **Performance Tuning**: Regularly review the performance of data pipelines, databases, and storage solutions. Utilize services like Amazon Redshift Advisor and AWS Trusted Advisor to identify optimization opportunities.
-* **Disaster Recovery and High Availability**: Ensure the architecture includes robust disaster recovery and high availability strategies. This could involve multi-region deployments, automated backups, and failover mechanisms.
-* **Compliance and Security**: As data assets grow, maintaining compliance with relevant data protection regulations becomes increasingly critical. Regular audits, data encryption, and fine-grained access controls should be part of the security and compliance strategy.
-* **Data Governance**: Implement a comprehensive data governance framework to manage data accessibility, quality, and lineage. This ensures that data remains reliable, consistent, and usable across the organization.
-
-**Risks of Vendor Lock-in**:
+The team at Opetence Inc. is on a promising path with their planned infrastructure enhancements. However, a few additional considerations and potential risks associated with vendor lock-in could be addressed:
 
 * **Reduced Flexibility**: Heavy reliance on a single vendor's technologies and services can limit the ability to adopt new tools or services that may offer better performance or cost savings.
 * **Cost Control**: Being locked into a single vendor's ecosystem might lead to less competitive pricing and higher costs in the long run as the bargaining power diminishes.
@@ -198,45 +175,49 @@ However, a few additional considerations and potential risks associated with ven
 * **Innovation Pace**: The pace of innovation and the introduction of new features are dictated by the vendor. If the vendor's roadmap doesn't align with the company's needs, it might hinder or delay strategic initiatives.
 * **Exit Strategy Complexity**: Transitioning away from a vendor's ecosystem can be complex, time-consuming, and costly. It involves data migration, retraining staff, and potentially significant architectural changes.
 
-To mitigate these risks, Opetence Inc. could consider the following strategies:
+To mitigate these risks, the company could consider the following strategies:
 
 * **Multi-Cloud Strategy**: Incorporating services from multiple cloud providers can reduce dependency on a single vendor, although it introduces complexity in managing multiple environments.
 * **Use of Open Standards and Technologies**: Whenever possible, use open standards and technologies that offer flexibility to move between platforms and vendors.
 * **Build Abstraction Layers**: Implementing abstraction layers in the data architecture can make it easier to switch underlying technologies with minimal impact on the overall system.
 * **Regularly Review Vendor Alternatives**: Stay informed about the offerings and capabilities of different vendors and regularly assess whether a switch or diversification might be beneficial.
 
-By carefully considering these suggestions and being mindful of the risks associated with vendor lock-in, Opetence Inc. can build a scalable, resilient, and cost-effective data infrastructure that supports its growth while maintaining the flexibility to adapt to future needs.
+By carefully considering these suggestions and being mindful of the risks associated with vendor lock-in, the company can build a scalable, resilient, and cost-effective data infrastructure that supports its growth while maintaining the flexibility to adapt to future needs.
 
-### Niche Cloud Providers
+### Recommendations for Strategic Improvements
 
-Expanding the cloud vendor ecosystem beyond AWS, Azure, and Google Cloud can provide Opetence Inc. with specialized solutions that might offer unique advantages for specific components of their data architecture.
-Exploring niche or specialized cloud vendors can complement their infrastructure, potentially offering better performance, cost-efficiency, or features for particular use cases.
-Here are some examples:
+* **Cost Management**: As the infrastructure scales, closely monitor and manage costs to avoid unexpected expenses. Tools like AWS Cost Explorer and budget alerts can help manage and optimize spending.
+* **Performance Tuning**: Regularly review the performance of data pipelines, databases, and storage solutions. Utilize services like Amazon Redshift Advisor and AWS Trusted Advisor to identify optimization opportunities.
+* **Disaster Recovery and High Availability**: Ensure the architecture includes robust disaster recovery and high availability strategies. This could involve multi-region deployments, automated backups, and failover mechanisms.
+* **Compliance and Security**: As data assets grow, maintaining compliance with relevant data protection regulations becomes increasingly critical. Regular audits, data encryption, and fine-grained access controls should be part of the security and compliance strategy.
+* **Data Governance**: Implement a comprehensive data governance framework to manage data accessibility, quality, and lineage. This ensures that data remains reliable, consistent, and usable across the organization.
 
-```admonish example title="Snowflake"
-Snowflake's Data Cloud offers a highly scalable and fully managed data warehouse solution that seamlessly integrates with AWS, Azure, and GCP, providing a flexible and powerful option for data warehousing and analytics.
+#### Niche Cloud Providers
+
+Expanding the cloud vendor ecosystem beyond AWS, Azure, and Google Cloud can provide the company with specialized solutions that might offer unique advantages for specific data architecture components. Exploring niche or specialized cloud vendors can complement their infrastructure, potentially offering better performance, cost-efficiency, or features for particular use cases. Here are some examples:
+
+```admonish tldr title="Snowflake"
+Snowflake's Data Cloud offers a highly scalable and fully managed data warehouse solution that seamlessly integrates with AWS, Azure, and GCP. It provides a flexible and powerful option for data warehousing and analytics.
 ```
 
-```admonish example title="Databricks"
+```admonish tldr title="Databricks"
 Databricks offers a unified analytics platform that facilitates collaboration between data scientists, engineers, and business analysts. It's built on top of Apache Spark and provides optimized big data processing and machine learning performance.
 ```
 
-```admonish example title="Confluent"
-For teams heavily reliant on Kafka for real-time data streaming, Confluent, founded by the original creators of Kafka, provides a fully managed Kafka service that simplifies stream processing and integration.
+```admonish tldr title="Confluent"
+For teams heavily reliant on Kafka for real-time data streaming, Confluent, founded by Kafka's original creators, provides a fully managed Kafka service that simplifies stream processing and integration.
 ```
 
-```admonish example title="MongoDB Atlas"
+```admonish tldr title="MongoDB Atlas"
 For projects that require a flexible, document-based NoSQL database, MongoDB Atlas offers a fully managed service with global cloud database capabilities, making it an excellent choice for applications needing a schema-less storage solution.
 ```
 
-```admonish example title="Redis Labs"
-For high-performance caching and in-memory data storage, Redis Labs offers enterprise-grade Redis deployments with enhanced security, scalability, and durability.
+```admonish tldr title="Redis Labs"
+Redis Labs offers enterprise-grade Redis deployments with enhanced security, scalability, and durability for high-performance caching and in-memory data storage.
 ```
 
-```admonish example title="TimescaleDB"
+```admonish tldr title="TimescaleDB"
 For time-series data management, TimescaleDB provides a robust, scalable SQL database designed to handle time-series data easily, making it ideal for IoT, monitoring, and analytics applications.
 ```
 
-Exploring these vendors allows Opetence Inc. to cherry-pick best-of-breed solutions for specific needs, potentially enhancing their architecture's capabilities.
-However, incorporating multiple vendors also introduces complexity in terms of integration, vendor management, and the potential for vendor lock-in with each chosen solution.
-The data team should carefully assess the trade-offs between leveraging specialized solutions and maintaining a manageable, cohesive cloud strategy.
+Exploring these vendors allows Opetence Inc. to cherry-pick best-of-breed solutions for specific needs, potentially enhancing their architecture's capabilities. However, incorporating multiple vendors also introduces complexity in terms of integration, vendor management, and the potential for vendor lock-in with each chosen solution. The data team should carefully assess the trade-offs between leveraging specialized solutions and maintaining a manageable, cohesive cloud strategy.

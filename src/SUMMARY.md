@@ -209,7 +209,7 @@
     - [Assessing Technology Maturity in Data Projects: An Adaptation of TRL]()
     - [Adapting DVP Principles for Data Systems]()
   - [Appendices]()
-    - [Enterprise Service Bus (ESB)](./concepts/data-architecture/esb.md)
+    - [Enterprise Service Bus (ESB)](./concepts/data-architecture/modern-architectural-paradigms/enterprise_service_bus.md)
 
 [Epilogue](./EPILOGUE.md) |
 [Dictionary](./DICTIONARY.md) |

@@ -1,7 +1,6 @@
 # Enterprise Service Bus (ESB)
 
-An Enterprise Service Bus (ESB) is a middleware tool designed to facilitate the integration of various applications and services across an enterprise.
-In the context of data engineering, an ESB is a central hub that manages communication, data transformation, and routing between different data sources, applications, and services within an organization's IT landscape.
+An Enterprise Service Bus (ESB) is a middleware tool designed to facilitate the integration of various applications and services across an enterprise. In the context of data engineering, an ESB is a central hub that manages communication, data transformation, and routing between different data sources, applications, and services within an organization's IT landscape.
 
 **Key Concepts of ESB**:
 
@@ -20,6 +19,4 @@ In the context of data engineering, an ESB is a central hub that manages communi
 * **Service Orchestration**: Coordinating complex data workflows that involve multiple microservices, APIs, and legacy systems.
 * **API Management**: Facilitating secure and efficient access to data services and APIs for internal and external consumers.
 
-ESBs were more prevalent in the era of SOA but are used less frequently in the microservices and cloud-native paradigms due to their centralized nature and potential for becoming bottlenecks.
-Modern alternatives often focus on lighter, more decentralized approaches to integration, such as API gateways or event-driven architectures.
-However, understanding ESBs can still provide valuable insights into integration patterns and principles applicable in various data engineering contexts.
+ESBs were more prevalent in the era of SOA but are used less frequently in the microservices and cloud-native paradigms due to their centralized nature and potential for becoming bottlenecks. Modern alternatives often focus on lighter, more decentralized approaches to integration, such as API gateways or event-driven architectures. However, understanding ESBs can still provide valuable insights into integration patterns and principles applicable in various data engineering contexts.

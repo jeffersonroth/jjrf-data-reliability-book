@@ -16,7 +16,7 @@ In the context of data systems, this architectural style offers a way to break d
 * **Fault Isolation**: Failures in one service have limited impact, reducing the risk of system-wide outages. This isolation improves the data system's overall resilience.
 * **Scalability**: Microservices can be scaled horizontally, meaning that instances of services can be increased or decreased based on demand. This is particularly beneficial for data systems where different components may experience varying loads.
 
-* **Implementing Microservices in Data Systems**:
+**Implementing Microservices in Data Systems**:
 
 * **Data Ingestion Microservices**: Handle the intake of data from various sources, ensuring that data is ingested efficiently and reliably into the system.
 * **Data Transformation Microservices**: Perform transformations on the ingested data, such as cleaning, normalization, enrichment, and aggregation, preparing it for analysis or storage.
@@ -92,42 +92,57 @@ By developing these microservices, the data engineering team can provide robust,
 
 ## Use Case
 
-At [Opetence Inc.](../../../use-cases/opetence/opetence_inc.md), the data engineering team's growth and the business's evolving data needs led to the adoption of a microservices architecture to enhance their data handling capabilities, particularly focusing on managing and processing data stored in Amazon S3 in Parquet format.
+### Architectural Evolution
 
-**Background**:
+Adapting its infrastructure to fit a three-tier architecture led [Opetence Inc.](../../../use-cases/opetence/opetence_inc.md) to include many microservices, such as Apache Airflow and dbt, deployed to AWS Elastic Container Service (ECS) and running in serverless Fargate instances. Non-resource-intensive, simple, and quick Python and Bash scripts continued to run using Airflow's `PythonOperator` and `BashOperator`, respectively. Tasks not fitting this category would run AWS Lambda or ECS + Fargate.
 
-The company stores raw data from various sources, including operational microservices databases, third-party data (like Google Analytics and Facebook Ads), and Google Sheets, in an Amazon S3 bucket. However, this raw data comes in various formats and needs to be standardized, cleaned, and anonymized before it can be utilized effectively for analytics and operational reporting.
+The obvious advantage of maintaining fully containerized transformations is the possibility of not being dependent on specific libraries, library versions, and even languages. Each transformation would only access the resources needed for its completion, such as database access and API authentication. These microservices can evolve 100% independently of Airflow and each other.
 
-**Microservices for Data Preparation and Management**:
+Airbyte deployment to ECS wasn't yet available at the time of this use case, so it was deployed to AWS Elastic Kubernetes Service (EKS) using their official Helm chart. The details of how the company worked with the DevOps team to deploy Airbyte to EKS, deploy Airflow, dbt, and many microservices to ECS, and run them on Fargate will be available in the Use Cases section.
 
-* Now comprising two engineers, the data engineering team developed microservices to manage the S3 data lifecycle.
-* Each microservice is a containerized solution deployed to the AWS Elastic Container Registry (ECR), then AWS Elastic Container Service (ECS), and then orchestrated using Apache Airflow.
+```admonish todo
+- Diagram with cross-dependent DAGs.
+```
 
-**Key Functionalities**:
+### Alignment with Microservices Architecture Principles
 
-* **Staging Area Processing**: The microservice identifies data in non-Parquet formats and temporarily stores it in a dedicated staging area within the S3 bucket. It then transforms these files into Parquet format, leveraging Parquet's storage and query performance efficiency.
-* **Data Cleaning and Anonymization**: Once in Parquet format, the data undergoes cleaning to remove inconsistencies and errors. The microservice also masks and anonymizes the data to protect sensitive information, aligning with privacy regulations and company policies.
-* **Final Layer Preparation**: After cleaning and anonymization, the microservice moves the prepared data to a "final layer" within the S3 bucket. This layer serves as the clean, reliable data source ready for ingestion into downstream systems like the Aurora Postgres instance.
-* **Automated Workflows**: The microservice is integrated with Apache Airflow to automate and schedule these tasks, ensuring that the data in the S3 bucket is continuously monitored, processed, and maintained without manual intervention.
-* **Monitoring and Logging**: The microservice includes comprehensive monitoring and logging capabilities, tracking each step of the data processing workflow. This ensures transparency, facilitates debugging and helps optimize performance.
+```admonish tldr title="Decomposition"
+Pipelines are decomposed into smaller independent tasks.
 
-**Microservices Deployment**:
+The same pipeline (Airflow DAG) can now replicate data from one data source to an S3 bucket (Airbyte) and then have tasks cleansing, cleaning, masking, and anonymizing the data (`LambdaInvokeFunctionOperator` + `LambdaFunctionStateSensor`) in Parquet files.
 
-* **Containerization**: By packaging the data processing application into containers, the team encapsulates the application and its dependencies into a standalone unit. This encapsulation is a hallmark of microservices, allowing each service to be developed, deployed, and scaled independently.
-* **AWS ECR**: Utilizing AWS ECR as the container registry for storing and managing container images aligns with cloud-native principles often associated with microservices architectures. ECR provides a secure, scalable, and efficient way to store and deploy container images, facilitating easy deployment and versioning of individual microservices.
-* **AWS ECS**: ECS provides robust orchestration capabilities for containerized applications, managing the deployment, scaling, and management of container instances. When Airflow triggers microservices via ECS, it leverages ECS's capabilities to efficiently manage the container lifecycle, including starting, stopping, and scaling containers based on the defined tasks and workflows.
-* **Apache Airflow**: Employing Apache Airflow to orchestrate the containerized tasks integrates well with the microservices approach by defining, scheduling, and monitoring workflows. Airflow can dynamically manage the containerized microservices, orchestrating complex data pipelines that involve multiple microservices working together to achieve the data processing goals.
+A subsequential Airflow DAG would wait (`ExternalTaskSensor`) for the transformed Parquet files, then trigger (`ECSRunTaskOperator`) tasks to upsert the data into the Staging database in the DE Aurora Postgres instance.
+A subsequential Airflow DAG would then wait for all DAGs to upserting data to Staging for the sources/schemas a dbt model is dependent on, then trigger the dbt model task (custom `DbtRunTaskOperator` built on top of `ECSRunTaskOperator`).
 
-In this setup, each containerized task managed by Airflow can be considered a microservice, especially if these tasks are designed to perform specific, independent functions within the data processing pipeline.
-This approach enhances the system's modularity, scalability, and resilience—key benefits of a microservices architecture.
+Another DAG would wait for all dbt tasks a report depends on in their respective DAGs to finish, then trigger the tasks that create the reports and publish them to their respective targets (email, S3 buckets, FTP servers, etc.).
+```
 
-By leveraging ECS as the runtime environment for microservices, Airflow can focus on orchestrating and scheduling the workflows while ECS handles the complexities of container management.
-This separation of concerns leads to a more robust, scalable, and maintainable data processing infrastructure, aligning well with microservices architecture principles and cloud-native practices.
+```admonish tldr title="Autonomy"
+Each microservice is developed, deployed, and managed independently, allowing teams to use the best tools and languages suited for each service's specific requirements.
 
-**Impact on Opetence Inc.**:
+For **Airbyte**, the DevOps team can change the service deployment (`airbyte` repo), such as migrating the authentication method from Basic HTTP to an OIDC authentication method using Okta Single Sign-On (SSO), while the data engineering team can bump Airbyte's app and Helm charts versions. The team can also independently use Terraform to manage Airbyte sources and targets (e.g., Postgres databases, S3 buckets, Google Analytics, etc.) in the data engineering infrastructure repo (`de-infrastructure` repo).
 
-* **Enhanced Data Quality and Availability**: The microservice ensures that only high-quality, anonymized data reaches the Aurora Postgres instance, supporting more accurate and reliable analytics and reporting.
-* **Operational Efficiency**: Automating the data preparation process reduces manual effort and accelerates data availability for business needs.
-* **Scalability and Flexibility**: Adopting a microservices architecture allows the data engineering team to scale and update this service independently from other systems, providing agility to adapt to future data requirements.
+For **dbt**, the data engineering team can manage the ECS deployment process or profiles (`de-dbt` repo), while the analytics teams can manage the models.
+```
 
-This use case demonstrates how microservices architecture enables Opetence Inc. to manage its data lifecycle in S3 efficiently, from ingestion to transformation, ensuring data is ready for strategic use across the company.
+```admonish tldr title="Decentralized Governance"
+Microservices encourage decentralized decision-making, with teams responsible for their services from development to production.
+
+**Airflow** and **dbt** use different Python versions. Many transformation scripts written in Python depend on different packages, which are often incompatible.
+
+Some transformations benefit from tools that are not always written in Python, and the ability to encapsulate them in containerized applications with all their dependencies facilitates and accelerates development. For example, many Parquet modular encryption tools are available as CLI tools or support Rust, C, Java, and even JavaScript APIs.
+```
+
+```admonish tldr title="Agility"
+With independently deployable services, updates and new features can be rolled out quickly without impacting the entire system. The analytics team, for example, can alter dbt models independently without depending on the data engineering team for approval, so the team can quickly respond to business demands. This is unless a new model is added and needs to be orchestrated by Airflow or DAGs managing existing models change their dependencies or schedule.
+```
+
+```admonish tldr title="Fault Isolation"
+Failures in one service have limited impact, reducing the risk of system-wide outages.
+```
+
+```admonish tldr title="Scalability"
+Microservices can be scaled horizontally, meaning that instances of services can be increased or decreased based on demand.
+```
+
+This use case demonstrates how microservices architecture enabled Opetence Inc. to efficiently manage its data lifecycle in S3 and databases, from ingestion to transformation into marts and reports. All of that is orchestrated by one microservice: Apache Airflow.
