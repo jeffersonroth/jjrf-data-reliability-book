@@ -1,3 +1,7 @@
+```admonish warning title="Page under construction"
+:construction:
+```
+
 # Data Quality, Data Management, and Data Process Quality
 >
 > These three pillars form the foundation upon which reliable, actionable insights are built, driving business strategies and operational efficiencies. This chapter delves into the core concepts and frameworks that govern these critical areas, exploring established models and methodologies designed to elevate an organization's data capabilities.

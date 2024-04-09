@@ -1,3 +1,7 @@
+```admonish warning title="Page under construction"
+:construction:
+```
+
 # Cold Standby
 
 Cold Standby is a redundancy technique used in data reliability engineering and system design to ensure high availability and continuity of service in the event of system failure. Unlike hot standby or warm standby, where backup systems or components are kept running or at a near-ready state, in cold standby, the backup systems are kept fully offline and are *only activated when the primary system fails or during maintenance periods*. Here’s a deeper look into cold standby:

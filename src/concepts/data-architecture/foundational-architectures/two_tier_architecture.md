@@ -1,13 +1,8 @@
-<title>Foundational Architectures: Two-Tier Architecture.</title>
-<meta name="description" content="Two-Tier Foundational Architecture.">
-<meta name="author" content="Jefferson Roth">
-<meta name="keywords" content="architecture, data architecture, foundational architecture, two-tier, Opetence Inc., use cases, use case">
-
-# Two-Tier Architecture
-
 ```admonish warning title="Page under construction"
 :construction:
 ```
+
+# Two-Tier Architecture
 
 ```admonish tip title="Two-Tier Architecture"
 Two-tier architectures balance simplicity and separation of concerns, making them suitable for applications where the direct client-server model suffices.

@@ -1,3 +1,7 @@
+```admonish warning title="Page under construction"
+:construction:
+```
+
 # Single Point of Failure (SPOF)
 
 Eliminating Single Point of Failure (SPOF) is a critical strategy in data reliability engineering aimed at enhancing the resilience and availability of data systems. A Single Point of Failure refers to *any component, system, or aspect of the infrastructure whose failure would lead to the failure of the entire system*. This could be a database, a network component, a server, or even a piece of software that is critical to data processing or storage.

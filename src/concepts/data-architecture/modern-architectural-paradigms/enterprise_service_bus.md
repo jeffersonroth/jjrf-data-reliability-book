@@ -1,3 +1,7 @@
+```admonish warning title="Page under construction"
+:construction:
+```
+
 # Enterprise Service Bus (ESB)
 
 An Enterprise Service Bus (ESB) is a middleware tool designed to facilitate the integration of various applications and services across an enterprise. In the context of data engineering, an ESB is a central hub that manages communication, data transformation, and routing between different data sources, applications, and services within an organization's IT landscape.

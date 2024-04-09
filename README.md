@@ -1,7 +1,7 @@
 <!-- PROJECT LOGO -->
 <br />
 <p align="center">
-  <a href="https://github.com/jeffersonroth/jjrf-data-reliability-book">
+  <a href="https://github.com/jeffersonroth">
     <img src="https://raw.githubusercontent.com/jeffersonroth/common-assets/main/assets/images/logo.svg" alt="Logo" width="80" height="80">
   </a>
 
@@ -58,13 +58,13 @@ Before pushing your local branch:
 3. Run linters
 
    ```sh
-   markdownlint-cli2 --config ./.github/files/config.markdownlint-cli2.jsonc --fix | tee mdlint
+   markdownlint-cli2 --config ./.github/files/config.markdownlint-cli2.jsonc --fix | tee mdlint.log
    ```
 
 4. Run link checkers
 
   ```sh
-  find . -name \*.md -print0 | xargs -0 -n1 markdown-link-check --config ./.github/files/markdown.links.config.json | tee mdlink
+  find . -name \*.md -print0 | xargs -0 -n1 markdown-link-check --config ./.github/files/markdown.links.config.json | tee mdlink.log
   ```
 
 <!-- DEPENDENCIES -->

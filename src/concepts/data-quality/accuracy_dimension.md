@@ -1,3 +1,7 @@
+```admonish warning title="Page under construction"
+:construction:
+```
+
 # Accuracy Dimension in Data Quality
 >
 > Accuracy is one of the most critical dimensions of data quality, referring to the closeness of data values to the true values they are intended to represent. Ensuring accuracy is fundamental across all stages of the data infrastructure, from data sources through ELTs (Extract, Load, Transform) processes, data lakes, and data warehouses, to data marts, and ultimately in reports and dashboards.

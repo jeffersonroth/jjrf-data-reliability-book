@@ -1,3 +1,7 @@
+```admonish warning title="Page under construction"
+:construction:
+```
+
 # Integrity Dimension in Data Quality
 >
 > Integrity in data quality refers to the consistency, accuracy, and trustworthiness of data across its lifecycle. It involves maintaining data's completeness, coherence, and credibility, ensuring that it remains unaltered from its source through various transformations and usage. Data integrity is crucial for ensuring that the information used for decision-making, reporting, and analysis is reliable and reflects the true state of affairs.

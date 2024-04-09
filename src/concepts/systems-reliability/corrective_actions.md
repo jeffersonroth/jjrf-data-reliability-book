@@ -1,3 +1,7 @@
+```admonish warning title="Page under construction"
+:construction:
+```
+
 # Corrective Actions
 
 The Corrective Actions principle involves a systematic approach to identify, analyze, and rectify faults, errors, or non-conformities in processes, systems, or products, and to implement measures to prevent their recurrence. This principle is fundamental to quality management and reliability engineering, ensuring continuous improvement and adherence to standards. It emphasizes the importance of:

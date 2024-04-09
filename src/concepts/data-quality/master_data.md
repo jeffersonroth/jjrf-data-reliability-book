@@ -1,3 +1,7 @@
+```admonish warning title="Page under construction"
+:construction:
+```
+
 # Master Data
 
 Master Data refers to the core data within an organization that is essential for its operations and decision-making processes. This data is non-transactional and represents the business's key entities such as customers, products, employees, suppliers, and more. Master data is characterized by its stability and consistency across the organization and is used across various systems, applications, and processes.

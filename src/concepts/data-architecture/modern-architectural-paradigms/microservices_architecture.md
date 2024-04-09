@@ -1,8 +1,8 @@
-# Microservices Architecture in Data Systems
-
 ```admonish warning title="Page under construction"
 :construction:
 ```
+
+# Microservices Architecture in Data Systems
 
 Microservices architecture is a design approach that structures an application as a collection of loosely coupled services that implement business capabilities.
 In the context of data systems, this architectural style offers a way to break down complex data processing tasks into smaller, manageable services that can be developed, deployed, and scaled independently.

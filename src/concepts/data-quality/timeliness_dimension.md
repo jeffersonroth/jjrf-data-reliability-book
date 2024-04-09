@@ -1,3 +1,7 @@
+```admonish warning title="Page under construction"
+:construction:
+```
+
 # Timeliness Dimension in Data Quality
 >
 > Timeliness refers to the degree to which data is up-to-date and available when required. It's a critical dimension of data quality that ensures data is current and provided within an acceptable timeframe, making it particularly relevant for time-sensitive decisions and operations.

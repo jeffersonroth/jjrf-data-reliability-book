@@ -1,3 +1,7 @@
+```admonish warning title="Page under construction"
+:construction:
+```
+
 # Spare Parts Stocking Strategy
 >
 > Ideally, clean data sources with complex transformations and cleanings, which save time and processing and can be used in multiple stages of multiple processes, will always be available. However, they may temporarily be unavailable or fail. Once such sources are identified and found to be critical to a system or process, it is prudent to have minimal cleaning and transformation tasks that work on raw data or sources of the source. These may not result in final data with the same level of detail but will be good enough.

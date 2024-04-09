@@ -1,8 +1,8 @@
-# Foundational Architectures
-
 ```admonish warning title="Page under construction"
 :construction:
 ```
+
+# Foundational Architectures
 
 Foundational Architectures in data systems refer to the underlying structural frameworks that dictate the organization, storage, processing, and flow of data within and across information systems.
 These architectures are "foundational" because they serve as the basic models upon which more complex and specialized data systems can be constructed.

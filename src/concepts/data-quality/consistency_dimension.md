@@ -1,3 +1,7 @@
+```admonish warning title="Page under construction"
+:construction:
+```
+
 # Consistency Dimension in Data Quality
 >
 > Consistency in data quality refers to the absence of discrepancy and contradiction in the data across different datasets, systems, or time periods. It ensures that data remains uniform, coherent, and aligned with predefined rules or formats across the entire data infrastructure, minimizing conflicts and errors that can arise from inconsistent data.

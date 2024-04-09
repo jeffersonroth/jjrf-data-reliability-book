@@ -1,8 +1,8 @@
-# Data Storage and Processing
-
 ```admonish warning title="Page under construction"
 :construction:
 ```
+
+# Data Storage and Processing
 
 Let's explore Data Storage and Processing and how they form the foundation for efficiently managing and utilizing vast amounts of data in different architectures.
 

@@ -1,8 +1,8 @@
-# Modern Architectural Paradigms in Data Architecture
-
 ```admonish warning title="Page under construction"
 :construction:
 ```
+
+# Modern Architectural Paradigms in Data Architecture
 
 Modern architectural paradigms have significantly influenced how organizations design, implement, and manage their data architectures.
 These paradigms prioritize scalability, flexibility, and agility, catering to the dynamic needs of today's data-driven enterprises.

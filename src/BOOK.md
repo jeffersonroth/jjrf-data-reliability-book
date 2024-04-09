@@ -1,9 +1,3 @@
-# Title
-
-```admonish warning title="Page under construction"
-:construction:
-```
-
 <br />
 <p align="center">
   <a href="https://github.com/jeffersonroth">

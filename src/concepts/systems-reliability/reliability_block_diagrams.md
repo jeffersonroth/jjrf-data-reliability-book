@@ -1,3 +1,7 @@
+```admonish warning title="Page under construction"
+:construction:
+```
+
 # Reliability Block Diagrams
 >
 > Reliability Block Diagrams (RBD) are a method for diagramming and identifying how the reliability of components (or subsystems) *R(t)* contributes to the success or failure of a redundancy. This method can be used to design and optimize components and select redundancies, aiming to lower failure rates.

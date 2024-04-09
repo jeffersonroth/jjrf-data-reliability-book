@@ -1,3 +1,7 @@
+```admonish warning title="Page under construction"
+:construction:
+```
+
 # Availability Controls
 >
 > Availability failures can occur for numerous reasons (from hardware to bugs), and some systems or processes are significant enough that availability controls should be implemented to ensure that certain services or data remain available when such failures occur.
