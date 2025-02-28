@@ -8,7 +8,7 @@ Fixes # (issue)
 
 ## Type of change
 
-Please select options that apply to the pull request.
+Please select the options that apply to the pull request.
 
 - [ ] Book content changes (.md)
 - [ ] Bug fix (non-breaking change which fixes an issue)
