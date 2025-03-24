@@ -1,3 +1,7 @@
+```admonish warning title="Page under construction"
+:construction:
+```
+
 # Fault Tolerance
 
 ```admonish tip title="Fault Tolerance"

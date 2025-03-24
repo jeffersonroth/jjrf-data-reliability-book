@@ -1,3 +1,7 @@
+```admonish warning title="Page under construction"
+:construction:
+```
+
 # Fault Prevention: Elimination
 >
 > The second phase of fault prevention is fault elimination. This phase typically involves procedures to find and eliminate the causes of errors.

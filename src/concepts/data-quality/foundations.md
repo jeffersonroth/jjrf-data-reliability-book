@@ -1,3 +1,7 @@
+```admonish warning title="Page under construction"
+:construction:
+```
+
 # Foundations of Data Quality
 
 ## Data Lifecycle

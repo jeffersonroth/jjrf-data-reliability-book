@@ -1,8 +1,8 @@
-# Cloud-Native Data Architectures
-
 ```admonish warning title="Page under construction"
 :construction:
 ```
+
+# Cloud-Native Data Architectures
 
 Cloud-Native Data Architectures refer to the design and implementation of data management and processing systems that fully leverage cloud computing capabilities.
 These architectures are built to thrive in the dynamic, scalable, and distributed environments provided by cloud platforms like AWS, Azure, and Google Cloud Platform.

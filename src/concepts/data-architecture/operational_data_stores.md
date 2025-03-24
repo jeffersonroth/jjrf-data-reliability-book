@@ -1,3 +1,7 @@
+```admonish warning title="Page under construction"
+:construction:
+```
+
 # Operational Data Stores (ODS) & OLTP Databases
 
 The terms "Operational Data Stores" (ODS) and "OLTP Databases" are often discussed in data architecture, each serving distinct purposes. Here's an overview of the differences and functionalities of each:

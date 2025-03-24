@@ -1,6 +1,12 @@
+```admonish warning title="Page under construction"
+:construction:
+```
+
 # Foundations of Data Reliability Engineering
->
-> The opening section of this book exposes the different concepts and foundations surrounding data reliability engineering. It is intended to be heavily technical, setting the stage for the practical applications and use cases discussed in later sections.
+
+```admonish tip title="Foundations of Data Reliability Engineering"
+The opening section of this book exposes the different concepts and foundations surrounding data reliability engineering. It is intended to be heavily technical, setting the stage for the practical applications and use cases discussed in later sections.
+```
 
 The foundational concepts are structured into the following chapters:
 

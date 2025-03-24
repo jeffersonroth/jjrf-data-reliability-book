@@ -1,13 +1,8 @@
-<title>Opetence Inc.</title>
-<meta name="description" content="Opetence Inc.'s use cases">
-<meta name="author" content="Jefferson Roth">
-<meta name="keywords" content="Opetence Inc., use cases, use case">
-
-# Opetence Inc
-
 ```admonish warning title="Page under construction"
 :construction:
 ```
+
+# Opetence Inc
 
 ```admonish tip title="Opetence Inc."
 Opetence Inc. stands for Incompetence.

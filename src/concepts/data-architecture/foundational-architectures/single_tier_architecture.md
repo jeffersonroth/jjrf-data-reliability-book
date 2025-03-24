@@ -1,8 +1,8 @@
-# Single-Tier Architecture
-
 ```admonish warning title="Page under construction"
 :construction:
 ```
+
+# Single-Tier Architecture
 
 Single-tier architecture, often referred to as a **monolithic architecture**, is a software application model where the user interface, business logic, and data storage layers are combined into a single program or platform that runs on a single platform or server.
 

@@ -1,8 +1,8 @@
-# Data Lake Architecture
-
 ```admonish warning title="Page under construction"
 :construction:
 ```
+
+# Data Lake Architecture
 
 Data Lake Architecture revolves around a centralized repository that facilitates the storage of all structured and unstructured data at any scale. The data stored can be in its raw format, and it's only transformed when it's ready to be used rather than pre-processing upon ingestion.
 

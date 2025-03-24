@@ -1,3 +1,7 @@
+```admonish warning title="Page under construction"
+:construction:
+```
+
 # Preface
 
 Adopting robust, reliable, and secure data systems is crucial for ensuring data integrity, supporting informed decision-making, and safeguarding sensitive information against breaches and failures.

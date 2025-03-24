@@ -1,8 +1,8 @@
-# Service-Oriented Architecture (SOA) in Data Systems
-
 ```admonish warning title="Page under construction"
 :construction:
 ```
+
+# Service-Oriented Architecture (SOA) in Data Systems
 
 Service-Oriented Architecture (SOA) is an architectural pattern where functionality is organized around business processes and encapsulated as interoperable services. These services are designed to be reusable and can be combined to accomplish complex business tasks. Historically, SOA has been utilized in creating flexible, scalable, and modular infrastructure within data systems, particularly in SOA-based Business Intelligence architecture.
 

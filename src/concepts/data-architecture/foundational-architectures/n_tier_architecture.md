@@ -1,8 +1,8 @@
-# N-Tier Architecture
-
 ```admonish warning title="Page under construction"
 :construction:
 ```
+
+# N-Tier Architecture
 
 ```admonish tip title="N-Tier Architecture"
 N-tier architecture is an extension of the three-tier architecture that further separates concerns and functionalities into more discrete layers or tiers.

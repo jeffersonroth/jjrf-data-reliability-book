@@ -1,8 +1,8 @@
-# Data Mesh
-
 ```admonish warning title="Page under construction"
 :construction:
 ```
+
+# Data Mesh
 
 Data Mesh is an architectural and organizational paradigm that treats data as a product, emphasizing domain-oriented decentralized data ownership and architecture.
 It's particularly suitable for large organizations with complex and distributed data landscapes.

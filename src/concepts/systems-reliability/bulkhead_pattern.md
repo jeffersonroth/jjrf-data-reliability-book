@@ -1,3 +1,7 @@
+```admonish warning title="Page under construction"
+:construction:
+```
+
 # Bulkhead Pattern
 >
 > In the nautical world, we find bulkheads, wooden plates found in ships, designed to prevent the ship from sinking when a portion of the hull is compromised. The Bulkhead Pattern adapts exactly this idea, that a failure in one portion of the system should not compromise the entire system.

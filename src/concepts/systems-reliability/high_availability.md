@@ -1,3 +1,7 @@
+```admonish warning title="Page under construction"
+:construction:
+```
+
 # Control Systems High Availability
 >
 > Control Systems High Availability refers to the design and implementation of control systems in a way that ensures they are **consistently available and operational**, minimizing downtime and maintaining continuous service. *High availability in control systems is achieved through redundancy, fault tolerance, failover strategies, and robust system monitoring*.

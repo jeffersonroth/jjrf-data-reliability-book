@@ -1,3 +1,7 @@
+```admonish warning title="Page under construction"
+:construction:
+```
+
 # Completeness Dimension in Data Quality
 >
 > Completeness is a crucial dimension of data quality, referring to the extent to which all required data is present within a dataset. It measures the absence of missing values or records in the data and ensures that datasets are fully populated with all necessary information for accurate analysis and decision-making.

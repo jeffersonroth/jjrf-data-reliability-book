@@ -1,8 +1,8 @@
-# Data Lake Layers
-
 ```admonish warning title="Page under construction"
 :construction:
 ```
+
+# Data Lake Layers
 
 Data Lake layering was introduced to maximize the value and usability of the data stored within a Data Lake and address challenges related to data quality, governance, and accessibility.
 These layers serve different purposes in the data management lifecycle and help organize data logically and efficiently, facilitating processing, analysis, and consumption.

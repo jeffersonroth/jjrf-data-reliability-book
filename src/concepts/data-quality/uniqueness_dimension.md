@@ -1,3 +1,7 @@
+```admonish warning title="Page under construction"
+:construction:
+```
+
 # Uniqueness Dimension in Data Quality
 >
 > Uniqueness is a critical dimension of data quality that ensures each data item or entity is represented only once within a dataset or across integrated systems. It aims to prevent duplicates, which can lead to inaccuracies in analysis, reporting, and decision-making processes. Ensuring uniqueness is particularly important in databases, data warehouses, and customer relationship management (CRM) systems where the integrity of data like customer records, product information, and transaction details is important.

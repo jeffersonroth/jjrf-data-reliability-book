@@ -1,3 +1,7 @@
+```admonish warning title="Page under construction"
+:construction:
+```
+
 # Accessibility Dimension in Data Quality
 >
 > Accessibility in data quality refers to the ease with which data can be retrieved and used by authorized individuals or systems. It ensures that data is available when needed, through appropriate channels, and in usable formats, while also maintaining necessary security and privacy controls. Accessibility is crucial for efficient decision-making, operational processes, and ensuring that data serves its intended purpose effectively.

@@ -1,3 +1,7 @@
+```admonish warning title="Page under construction"
+:construction:
+```
+
 # Observability
 
 In the context of software and systems, observability refers to the ability to infer the internal states of a system based on its external outputs.

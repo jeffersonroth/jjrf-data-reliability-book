@@ -1,3 +1,7 @@
+```admonish warning title="Page under construction"
+:construction:
+```
+
 # Slowly Changing Dimensions (SCD)
 
 Slowly Changing Dimensions (SCDs) are concepts in data warehousing used to manage and track changes in dimension data over time. Dimensions in data warehousing refer to descriptive attributes related to business entities, such as products, customers, or geographical locations, which can change over time. Managing these changes accurately is crucial for historical reporting, trend analysis, and decision-making.

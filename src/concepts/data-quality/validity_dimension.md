@@ -1,3 +1,7 @@
+```admonish warning title="Page under construction"
+:construction:
+```
+
 # Validity Dimension in Data Quality
 >
 > Validity in data quality refers to the degree to which data conforms to specific syntax (format, type, range) and semantic (meaningful and appropriate content) rules defined by the data model and business requirements. Valid data adheres to predefined formats, standards, and constraints, ensuring that it is both structurally sound and contextually meaningful for its intended use.

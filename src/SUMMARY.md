@@ -1,18 +1,15 @@
 # Summary
-<!-- markdownlint-disable no-empty-links -->
-[Cover](./COVER.md) |
-[Title](./TITLE.md) |
-[Dedication](./DEDICATION.md) |
-[Summary](./SUMMARY.md) |
-[Preface](./PREFACE.md) |
-[Author](./AUTHOR.md) |
-[Objectives](./OBJECTIVES.md) |
-[Structure](./STRUCTURE.md)
+<!-- markdownlint-disable no-empty-links single-h1 -->
 
-- [I - Foundations of Data Reliability Engineering](./FOUNDATIONS.md)
-  - [Data Reliability Engineering Principles]()
+[Book](./BOOK.md)
+[Preface](./PREFACE.md)
+
+---
+
+# I - Foundations of Data Reliability Engineering
+
+- [Foundations of Data Reliability Engineering](./FOUNDATIONS.md)
   - [Data Architecture](./concepts/data_architecture.md)
-    - [Data Architecture Principles]()
     - [Foundational Architectures](./concepts/data-architecture/foundational-architectures/introduction.md)
       - [Single-Tier Architecture](./concepts/data-architecture/foundational-architectures/single_tier_architecture.md)
       - [Two-Tier Architecture](./concepts/data-architecture/foundational-architectures/two_tier_architecture.md)
@@ -99,7 +96,10 @@
       - [Metrics/Audit Database & Service](./concepts/data-quality/metrics_database.md)
       - [Final Thoughts on Data Quality Dimensions](./concepts/data-quality/dimensions_final_thoughts.md)
     - [Final Thoughts on Data Quality](./concepts/data-quality/final_thoughts.md)
-- [II - Practical Methodologies and Tools](./PRACTICAL_METHODOLOGIES.md)
+
+# II - Data Reliability Engineering Toolkit: Tools & Methodologies
+
+- [Practical Methodologies and Tools](./PRACTICAL_METHODOLOGIES.md)
   - [Processes](./concepts/processes.md)
     - [Introduction to Data Processes]()
     - [Data Ingestion and Integration]()
@@ -163,7 +163,10 @@
     - [Feedback Loops and Continuous Improvement]()
     - [Human Factors in Data Systems]()
       - [Human Factors, Human Interaction, Human Errors, and Latent Human Error]()
-- [III - Advanced Applications and Real-World Case Studies](./ADVANCED_APPLICATIONS.md)
+
+# III - Advanced Applications and Real-World Case Studies
+
+- [Advanced Applications and Real-World Case Studies](./ADVANCED_APPLICATIONS.md)
   - [Advanced Topics in Data Reliability Engineering]()
     - [Processes]()
       - [Managing Dependencies in Data Pipelines]()
@@ -182,7 +185,10 @@
   - [Use Cases]()
     - [Opetence Inc.](./use-cases/opetence/opetence_inc.md)
     - [Aranduka Inc.]()
-- [IV - Incorporating Data Reliability Engineering](./PROFESSIONALS.md)
+
+# IV - Incorporating Data Reliability Engineering
+
+- [Incorporating Data Reliability Engineering](./PROFESSIONALS.md)
   - [Data Engineers]()
   - [Data Platform Engineers]()
   - [DevOps Engineers]()
@@ -192,7 +198,10 @@
   - [Analytics Engineers]()
   - [Data Scientists and Data Analysts]()
   - [BI Professionals]()
-- [V - Appendices and Resources](./APPENDICES.md)
+
+# V - Appendices and Resources
+
+- [Appendices and Resources](./APPENDICES.md)
   - [Extended Reliability Toolkit](./concepts/systems-reliability/reliability_tools_appendice.md)
     - [Corrective Actions](./concepts/systems-reliability/corrective_actions.md)
     - [Reliability Block Diagrams](./concepts/systems-reliability/reliability_block_diagrams.md)
@@ -211,9 +220,12 @@
   - [Appendices]()
     - [Enterprise Service Bus (ESB)](./concepts/data-architecture/modern-architectural-paradigms/enterprise_service_bus.md)
 
-[Epilogue](./EPILOGUE.md) |
-[Dictionary](./DICTIONARY.md) |
-[References](./REFERENCES.md) |
-[Next](./NEXT.md) |
+---
+
+[Author](./AUTHOR.md)
+[Objectives](./OBJECTIVES.md)
+[Structure](./STRUCTURE.md)
+[Epilogue](./EPILOGUE.md)
+[Dictionary](./DICTIONARY.md)
+[Next](./NEXT.md)
 [Back Cover](./BACK_COVER.md)
-<!-- markdownlint-enable no-empty-links -->

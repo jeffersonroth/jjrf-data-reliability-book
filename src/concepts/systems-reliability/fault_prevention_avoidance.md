@@ -1,3 +1,7 @@
+```admonish warning title="Page under construction"
+:construction:
+```
+
 # Fault Prevention: Avoidance
 
 There are two phases in fault prevention: **avoidance** and [**elimination**](./fault_prevention_elimination.md).

@@ -1,3 +1,7 @@
+```admonish warning title="Page under construction"
+:construction:
+```
+
 # Practical Methodologies and Tools
 >
 > This section builds upon the foundational principles introduced earlier, steering towards the actionable methodologies and frameworks crucial for the implementation and upkeep of reliable data systems. It unfolds the intricacies of managing and operationalizing data workflows, offering an in-depth analysis of ETL/ELT processes, data ingestion, and integration techniques. Moreover, it delves into adapting methodologies like DataOps, DevOps, Agile, CI/CD, and SRE practices to meet the specific needs of data systems, aiming to achieve operational excellence. This exploration provides readers with a comprehensive understanding of the strategies and best practices essential for efficient and reliable data operations.

@@ -1,3 +1,7 @@
+```admonish warning title="Page under construction"
+:construction:
+```
+
 # Data Quality Models
 >
 > Data Quality Models are fundamental frameworks that define, measure, and evaluate the quality of data within an organization. These models are crucial because they provide a structured approach to identifying and quantifying the various aspects of data quality, which are essential for ensuring that data is accurate, consistent, reliable, and fit for its intended use.

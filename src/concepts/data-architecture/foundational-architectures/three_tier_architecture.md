@@ -1,13 +1,8 @@
-<title>Foundational Architectures: Three-Tier Architecture.</title>
-<meta name="description" content="Three-Tier Foundational Architecture.">
-<meta name="author" content="Jefferson Roth">
-<meta name="keywords" content="architecture, data architecture, foundational architecture, three-tier, Opetence Inc., use cases, use case">
-
-# Three-Tier Architecture
-
 ```admonish warning title="Page under construction"
 :construction:
 ```
+
+# Three-Tier Architecture
 
 ```admonish tip title="Three-Tier Architecture"
 This model enhances application performance, scalability, maintainability, and security by segregating functionalities into distinct layers that interact with each other through well-defined interfaces.
